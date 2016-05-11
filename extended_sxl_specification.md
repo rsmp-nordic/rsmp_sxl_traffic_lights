@@ -417,27 +417,84 @@ All messages should be acknowledged by the other part (The SCADA acknowledges th
 **Note 2!**
 The TLC shuld allways send the whole week.
 
-S0027/M0017 Time table
-----------------------
-Time Table. Defines time tables.
-Each time definition is written as t-o-h-m where:
-t=time table nr (1-12)
-o=function
-h=hour - switching time
-m=minute - switching minute
+## S0027 Time tables
+-------------------------
 
-Function legend:
-0=no plan is selected by time table
-1=set plan 1
-…
-16= set plan 16
+###Description
+This status returns all avalable time tables in the TLC
 
-hour and minute is using local time (not UTC)
++ **ObjectType:** Traffic Controller
++ **Object:** 
++ **StatusCodeId:** S0027
++ **Description:** Time tables
 
-Each time definition is separated with a semicolon
+### Return value
++ **Name:** Status
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Time Tables
 
-E.g.
-t-o-h-m;t-o-h-m;
+#### Definition of return string
+The return string is defined as;
+
+```
+t-o-h-m
+```
+
+Where:
+
+| legend | description |
+| ------- | ---------- |
+| t | Time table nr (1-12) |
+| o | Function |
+| h | Hour - switching time |
+| m | Minute - Switching time |
+
+and function legend is defined as:
+
+| legend | Selected plan by time table |
+| ------- | ---------- |
+| 0 | No plan is selected by time table |
+| 1 | set plan 1 |
+| ... | ... |
+| 16 | set plan 16 |
+
+**Note!**
+each status is separated by a semicolon (;) E.g. t-o-h-m;t-o-h-m;
+**Note 2!**
+Hour and minute is using local time (not UTC)
+
+### Example message
+
+**Status request**
+``` json
+	{"mType":"rSMsg",
+		"type":"StatusRequest",
+		"mId":"a82f7796-3cf6-4319-835b-ec8bf21bae69",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"sS":[{"sCI":"S0027",
+		"n":"status"}]}
+```
+
+**Status Response**
+``` json
+	{"mType":"rSMsg",
+		"type":"StatusResponse",
+		"mId":"1ed16ca5-2ea7-4e06-9226-d1b482b16db4",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"sTs":"2016-05-11T13:46:57.781Z",
+		"sS":[{"sCI":"S0027",
+		"n":"status",
+		"s":"1-0-22-30;2-3-06-30;3-14-13-00;4-5-14-00;",
+		"q":"recent"}]}
+```
+
+**Note!**
+All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
 M0014. Command table (C-pulses)
 -------------------------------------
@@ -484,6 +541,28 @@ Day of week legend:
 *  4=Friday
 *  5=Saturday
 *  6=Sunday
+
+M0017 Time table
+----------------------
+Time Table. Defines time tables.
+Each time definition is written as t-o-h-m where:
+t=time table nr (1-12)
+o=function
+h=hour - switching time
+m=minute - switching minute
+
+Function legend:
+0=no plan is selected by time table
+1=set plan 1
+…
+16= set plan 16
+
+hour and minute is using local time (not UTC)
+
+Each time definition is separated with a semicolon
+
+E.g.
+t-o-h-m;t-o-h-m;
 
 ### Examples
 
