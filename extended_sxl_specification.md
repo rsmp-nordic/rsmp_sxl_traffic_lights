@@ -39,7 +39,7 @@ Below listed Statuses and commands is the extenstion of the RSMP SXL.
 
 + M0014 - Set command table
 + M0015 - Set offset time
-+ M0016 - Set waek time table
++ M0016 - Set week time table
 + M0017 - Set time tables
 
 ## S0022. List of time plans
@@ -111,7 +111,7 @@ All time plans are separated with a comma (,)
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-## S0023. Command table
+## S0023 Command table
 -------------------------
 
 ###Description
@@ -152,7 +152,7 @@ and avalable commands are:
 | 2-255 | reserved |
 
 **Note!**
-each command is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
+each status is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
 
 
 ### Example message
@@ -187,7 +187,7 @@ each command is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
 **Note!**
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
-## S0024. Offset time
+## S0024 Offset time
 -------------------------
 
 ###Description
@@ -220,7 +220,7 @@ Where:
 
 
 **Note!**
-each command is separated by a semicolon (;) E.g. pp-tt;pp-tt;
+each status is separated by a semicolon (;) E.g. pp-tt;pp-tt;
 
 
 ### Example message
@@ -337,22 +337,85 @@ Format according to W3C XML dateTime with a resolution of 3 decimal places. All 
 **Note!**
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
-S0026/M0016 Week time table
----------------------------
-Week time table. Defines time table to use for each week day
-Each day is written as d-t where:
-d=day of week
-t=time table nr
+## S0026 Week time table
+-------------------------
 
-Day of week legend:
-*  0=Monday
-*  1=Tuesday
-*  2=Wednesday
-*  3=Thursday
-*  4=Friday
-*  5=Saturday
-*  6=Sunday
+###Description
+This status returns time tables to use for each week day.
 
++ **ObjectType:** Traffic Controller
++ **Object:** 
++ **StatusCodeId:** S0026
++ **Description:** Week time table
+
+### Return value
++ **Name:** Status
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Week time table
+
+#### Definition of return string
+The return string is defined as;
+
+```
+d-t
+```
+
+Where:
+
+| legend | description |
+| ------- | ---------- |
+| d | day of week |
+| t | time table nr |
+
+and day of week legend are defined as:
+
+| legend | Day of week |
+| ------- | ---------- |
+| 0 | Monday |
+| 1 | Tuesday |
+| 2 | Wednesday |
+| 3 | Thursday |
+| 4 | Friday |
+| 5 | Saturday |
+| 6 | Sunday |
+
+**Note!**
+each status is separated by a semicolon (;) E.g. d-t;d-t;
+
+### Example message
+
+**Status request**
+``` json
+	{"mType":"rSMsg",
+		"type":"StatusRequest",
+		"mId":"2af769ea-d715-44aa-af72-cfb666795a46",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"sS":[{"sCI":"S0026",
+		"n":"status"}]}
+```
+
+**Status Response**
+``` json
+	{"mType":"rSMsg",
+		"type":"StatusResponse",
+		"mId":"2ef406ed-17d1-4e50-b952-ebfb8dca18dc",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"sTs":"2016-05-11T13:31:41.476Z",
+		"sS":[{"sCI":"S0026",
+		"n":"status",
+		"s":"0-2;1-3;2-1;3-1;4-1:5-4;6-4;",
+		"q":"recent"}]}
+```
+
+**Note!**
+All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+**Note 2!**
+The TLC shuld allways send the whole week.
 
 S0027/M0017 Time table
 ----------------------
@@ -394,7 +457,7 @@ Each command is written as pp-o-gg-cc where:
 E.g. 
 pp-o-gg-cc;pp-o-gg-cc;
 
-SM0015. Offset time
+M0015. Offset time
 ------------------------
 Offset table
 Each offset time is written as pp-tt where:
@@ -405,6 +468,22 @@ Each offset time is separated with a semicolon
 
 E.g.
 pp-tt;pp-tt;
+
+M0016 Week time table
+---------------------------
+Week time table. Defines time table to use for each week day
+Each day is written as d-t where:
+d=day of week
+t=time table nr
+
+Day of week legend:
+*  0=Monday
+*  1=Tuesday
+*  2=Wednesday
+*  3=Thursday
+*  4=Friday
+*  5=Saturday
+*  6=Sunday
 
 ### Examples
 
