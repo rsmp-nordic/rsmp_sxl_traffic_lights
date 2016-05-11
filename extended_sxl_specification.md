@@ -679,27 +679,75 @@ each command is separated by a semicolon (;) E.g. d-t;d-t;
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-M0017 Time table
-----------------------
-Time Table. Defines time tables.
-Each time definition is written as t-o-h-m where:
-t=time table nr (1-12)
-o=function
-h=hour - switching time
-m=minute - switching minute
+## M0017 Set time tables
+-------------------------
 
-Function legend:
-0=no plan is selected by time table
-1=set plan 1
-…
-16= set plan 16
+###Description
+This command changes plans of specific time tables
++ **ObjectType:** Traffic Controller
++ **Object:** 
++ **CommandCodeId:** M0017
++ **Description:** Set time tables
 
-hour and minute is using local time (not UTC)
+### Argument
++ **Name:** Status
++ **Command:** SetTimeTable
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Defines time tables
 
-Each time definition is separated with a semicolon
+#### Definition of argument
+The argument is defined as;
 
-E.g.
-t-o-h-m;t-o-h-m;
+```
+t-o-h-m
+```
+
+Where:
+
+| legend | description |
+| ------- | ---------- |
+| t | Time table nr (1-12) |
+| o | Function |
+| h | Hour - switching time |
+| m | Minute - Switching time |
+
+and function legend is defined as:
+
+| legend | Selected plan by time table |
+| ------- | ---------- |
+| 0 | No plan is selected by time table |
+| 1 | set plan 1 |
+| ... | ... |
+| 16 | set plan 16 |
+
+**Note!**
+each status is separated by a semicolon (;) E.g. t-o-h-m;t-o-h-m;
+**Note 2!**
+Hour and minute is using local time (not UTC)
+
+### Argument
++ **Name:** SecurityCode
++ **Command:** SetStop
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Security code 2
+
+### Example message
+
+**Command request**
+``` json
+	
+```
+
+**Command Response**
+``` json
+	
+```
+
+**Note!**
+All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+
 
 ### Examples
 
