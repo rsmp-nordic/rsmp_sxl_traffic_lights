@@ -187,12 +187,11 @@ each command is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
 **Note!**
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
-
 ## S0024. Offset time
 -------------------------
 
 ###Description
-This status returns the whole commandtable
+This status returns the offset times of the whole table.
 
 + **ObjectType:** Traffic Controller
 + **Object:** 
@@ -257,22 +256,86 @@ each command is separated by a semicolon (;) E.g. pp-tt;pp-tt;
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
 
+## S0025 Time-to-green
+-------------------------
+
+###Description
+This status returns the whole commandtable
+
++ **ObjectType:** Traffic Controller
++ **Object:** 
++ **StatusCodeId:** S0025
++ **Description:** Time-To-Green
+
+### Return value
++ **Name:** StartTime
++ **Type:** String
++ **Value:** [time stamp]
++ **Comment:** Time stamp for start of measuring.
+
+#### Definition of return string
+Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
+
+### Return value
++ **Name:** minEndTime
++ **Type:** String
++ **Value:** [time stamp]
++ **Comment:** Time stamp for start of measuring.
+
+#### Definition of return string
+Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
+
+### Return value
++ **Name:** maxEndTime
++ **Type:** String
++ **Value:** [time stamp]
++ **Comment:** Time stamp for start of measuring.
+
+#### Definition of return string
+Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
+
+### Return value
++ **Name:** nextTime
++ **Type:** String
++ **Value:** [time stamp]
++ **Comment:** Time stamp for start of measuring.
+
+#### Definition of return string
+Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
+
+### Return value
++ **Name:** nextMinEndTime
++ **Type:** String
++ **Value:** [time stamp]
++ **Comment:** Time stamp for start of measuring.
+
+#### Definition of return string
+Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
+
+### Return value
++ **Name:** nextMaxEndTime
++ **Type:** String
++ **Value:** [time stamp]
++ **Comment:** Time stamp for start of measuring.
+
+#### Definition of return string
+Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
 
+### Example message
 
-S0025. Time-to-green
---------------------
-Time stamps
-  * startTime
-  * minEndTime
-  * maxEndTime
-  * nextTime
-  * nextMinEndTime
-  * nextMaxEndTime
+**Status request**
+``` json
+	
+```
 
-Time stamp for start of measuring. Format according to W3C XML dateTime with a
-resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+**Status Response**
+``` json
+	
+```
 
+**Note!**
+All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
 S0026/M0016 Week time table
 ---------------------------
