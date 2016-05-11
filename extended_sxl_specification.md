@@ -24,6 +24,24 @@ tbd.
 
 ### Added statuses/commands
 
+Below listed Statuses and commands is the extenstion of the RSMP SXL.
+
+#### Added Statuses
+
++ S0022 - List of time plans
++ S0023 - Command table
++ S0024 - Offset time
++ S0025 - Time-to-green
++ S0026 - Week time table
++ S0027 - Time tables
+
+#### Added Commands
+
++ M0014 - Set command table
++ M0015 - Set offset time
++ M0016 - Set waek time table
++ M0017 - Set time tables
+
 ## S0022. List of time plans
 -------------------------
 
