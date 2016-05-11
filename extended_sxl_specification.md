@@ -500,7 +500,7 @@ All messages should be acknowledged by the other part (The SCADA acknowledges th
 -------------------------
 
 ###Description
-This status returns all avalable time tables in the TLCThis command sends commands to a specific signal group in a specific plan at a specific cycle step
+This command sends commands to a specific signal group in a specific plan at a specific cycle step
 + **ObjectType:** Traffic Controller
 + **Object:** 
 + **CommandCodeId:** M0014
@@ -561,17 +561,52 @@ each command is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-M0015. Offset time
-------------------------
-Offset table
-Each offset time is written as pp-tt where:
- * pp=time plan
- * tt=offset time in seconds
+## M0015 Set Offset time
+-------------------------
 
-Each offset time is separated with a semicolon
+###Description
+This command sets offset times of a specific Time plan
++ **ObjectType:** Traffic Controller
++ **Object:** 
++ **CommandCodeId:** M0015
++ **Description:** Set offset time
 
-E.g.
-pp-tt;pp-tt;
+### Argument
++ **Name:** Status
++ **Command:** SetOffset
++ **Type:** integer
++ **Value:** [0-255]
++ **Comment:** Set offset time
+
+### Argument
++ **Name:** plan
++ **Command:** SetOffset
++ **Type:** integer
++ **Value:** [0-255]
++ **Comment:** Time plan nr
+
+### Argument
++ **Name:** SecurityCode
++ **Command:** SetStop
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Security code 2
+
+### Example message
+
+**Command request**
+``` json
+	
+```
+
+**Command Response**
+``` json
+	
+```
+
+**Note!**
+All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+
 
 M0016 Week time table
 ---------------------------
