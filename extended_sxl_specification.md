@@ -148,7 +148,7 @@ and avalable commands are:
 
 | legend | description |
 | ------- | ---------- |
-| 1 | Give green to group with it's own max available time |
+| 1 | Give green to group |
 | 2-255 | reserved |
 
 **Note!**
@@ -188,19 +188,75 @@ each command is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
 
+## S0024. Offset time
+-------------------------
+
+###Description
+This status returns the whole commandtable
+
++ **ObjectType:** Traffic Controller
++ **Object:** 
++ **StatusCodeId:** S0024
++ **Description:** Offset time
+
+### Return value
++ **Name:** Status
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Offset table
+
+#### Definition of return string
+The return string is defined as;
+
+```
+pp-tt
+```
+
+Where:
+
+| legend | description |
+| ------- | ---------- |
+| pp | time plan |
+| tt | offset time in seconds |
 
 
-S0024/M0015. Offset time
-------------------------
-Offset table
-Each offset time is written as pp-tt where:
- * pp=time plan
- * tt=offset time in seconds
+**Note!**
+each command is separated by a semicolon (;) E.g. pp-tt;pp-tt;
 
-Each offset time is separated with a semicolon
 
-E.g.
-pp-tt;pp-tt;
+### Example message
+
+**Status request**
+``` json
+	{"mType":"rSMsg",
+		"type":"StatusRequest",
+		"mId":"696c1eb9-e9bf-411c-8cef-9edd9c48338f",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"sS":[{"sCI":"S0024",
+		"n":"status"}]}
+```
+
+**Status Response**
+``` json
+	{"mType":"rSMsg",
+		"type":"StatusResponse",
+		"mId":"097edc53-cd4c-4fb8-9ed7-59c77869704b",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"sTs":"2016-05-11T13:00:56.432Z",
+		"sS":[{"sCI":"S0024",
+		"n":"status",
+		"s":"01-20;02-10;",
+		"q":"recent"}]}
+```
+
+**Note!**
+All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+
+
 
 
 
@@ -257,7 +313,35 @@ Each time definition is separated with a semicolon
 E.g.
 t-o-h-m;t-o-h-m;
 
-M0014 Command table (C-pulses)
+M0014. Command table (C-pulses)
+-------------------------------------
+Command table. Defines command, e.g. c-pulses.
+Each command is written as pp-o-gg-cc where:
+ * pp=time plan
+ * o=command
+ * gg=group number
+ * cc=cycle step
+ 
+ Command legend:
+ * 1=Give green to group
+ * 2-255=Reserved
+ 
+ Each command is separated with a semicolon
+
+E.g. 
+pp-o-gg-cc;pp-o-gg-cc;
+
+SM0015. Offset time
+------------------------
+Offset table
+Each offset time is written as pp-tt where:
+ * pp=time plan
+ * tt=offset time in seconds
+
+Each offset time is separated with a semicolon
+
+E.g.
+pp-tt;pp-tt;
 
 ### Examples
 
