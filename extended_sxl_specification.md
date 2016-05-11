@@ -83,7 +83,7 @@ All time plans are separated with a comma (,)
 ``` json
 	{"mType":"rSMsg",
 		"type":"StatusRequest",
-		"mId":"4d5dcb2e-7f5d-4c87-a186-a2c466dafd3b",
+		"mId":"48d93d8c-40ee-448b-adfd-4f8609a5cee3",
 		"ntsOId":"AA+BBCCC=DDDEEFFF",
 		"xNId":"",
 		"cId":"AA+BBCCC=DDDEEFFF",
@@ -95,16 +95,15 @@ All time plans are separated with a comma (,)
 ``` json
 	{"mType":"rSMsg",
 		"type":"StatusResponse",
-		"mId":"339319bd-9c4e-4318-b34f-851d41ee7bd1",
+		"mId":"2404e9cc-88df-4994-ad3c-ca7bb8cf8d59",
 		"ntsOId":"AA+BBCCC=DDDEEFFF",
 		"xNId":"",
 		"cId":"AA+BBCCC=DDDEEFFF",
-		"sTs":"2016-05-11T09:55:07.712Z",
+		"sTs":"2016-05-11T19:37:06.678Z",
 		"sS":[{"sCI":"S0022",
 		"n":"status",
 		"s":"1,2,3,5",
 		"q":"recent"}]}
-
 ```
 
 **Note!**
@@ -262,7 +261,7 @@ All messages should be acknowledged by the other part (The SCADA acknowledges th
 ###Description
 This status returns the whole commandtable
 
-+ **ObjectType:** Traffic Controller
++ **ObjectType:** Signal Group
 + **Object:** 
 + **StatusCodeId:** S0025
 + **Description:** Time-To-Green
@@ -326,12 +325,49 @@ Format according to W3C XML dateTime with a resolution of 3 decimal places. All 
 
 **Status request**
 ``` json
-	
+	{"mType":"rSMsg",
+		"type":"StatusRequest",
+		"mId":"4bd1b76d-4be2-4b07-9a3f-48768c960951",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFF1",
+		"sS":[{"sCI":"S0025",
+		"n":"startTime"},{"sCI":"S0025",
+		"n":"minEndTime"},{"sCI":"S0025",
+		"n":"maxEndTime"},{"sCI":"S0025",
+		"n":"nextTime"},{"sCI":"S0025",
+		"n":"nextMinEndTime"},{"sCI":"S0025",
+		"n":"nextMaxEndTime"}]}
 ```
 
 **Status Response**
 ``` json
-	
+	{"mType":"rSMsg",
+		"type":"StatusResponse",
+		"mId":"18e1f203-c2aa-4fb8-b7fe-5babf93f46f8",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFF1",
+		"sTs":"2016-05-11T19:58:02.487Z",
+		"sS":[{"sCI":"S0025",
+		"n":"startTime",
+		"s":"2016-05-11T21:55:10.231Z",
+		"q":"recent"},{"sCI":"S0025",
+		"n":"minEndTime",
+		"s":"2016-05-11T21:55:08.231Z",
+		"q":"recent"},{"sCI":"S0025",
+		"n":"maxEndTime",
+		"s":"2016-05-11T21:55:13.231Z",
+		"q":"recent"},{"sCI":"S0025",
+		"n":"nextTime",
+		"s":"2016-05-11T21:55:50.231Z",
+		"q":"recent"},{"sCI":"S0025",
+		"n":"nextMinEndTime",
+		"s":"2016-05-11T21:55:45.231Z",
+		"q":"recent"},{"sCI":"S0025",
+		"n":"nextMaxEndTime",
+		"s":"2016-05-11T21:55:55.231Z",
+		"q":"recent"}]}
 ```
 
 **Note!**
