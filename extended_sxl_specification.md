@@ -608,21 +608,76 @@ This command sets offset times of a specific Time plan
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-M0016 Week time table
----------------------------
-Week time table. Defines time table to use for each week day
-Each day is written as d-t where:
-d=day of week
-t=time table nr
+## M0016 Set week time table
+-------------------------
 
-Day of week legend:
-*  0=Monday
-*  1=Tuesday
-*  2=Wednesday
-*  3=Thursday
-*  4=Friday
-*  5=Saturday
-*  6=Sunday
+###Description
+This command sends commands change time plan of specific day
++ **ObjectType:** Traffic Controller
++ **Object:** 
++ **CommandCodeId:** M0016
++ **Description:** Set week time table
+
+### Argument
++ **Name:** Status
++ **Command:** SetWeekTable
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Command table
+
+#### Definition of argument
+The argument is defined as;
+
+```
+d-t
+```
+
+Where:
+
+Where:
+
+| legend | description |
+| ------- | ---------- |
+| d | day of week |
+| t | time table nr |
+
+and day of week legend are defined as:
+
+| legend | Day of week |
+| ------- | ---------- |
+| 0 | Monday |
+| 1 | Tuesday |
+| 2 | Wednesday |
+| 3 | Thursday |
+| 4 | Friday |
+| 5 | Saturday |
+| 6 | Sunday |
+
+**Note!**
+each command is separated by a semicolon (;) E.g. d-t;d-t;
+
+### Argument
++ **Name:** SecurityCode
++ **Command:** SetStop
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Security code 2
+
+### Example message
+
+**Command request**
+``` json
+	
+```
+
+**Command Response**
+``` json
+	
+```
+
+**Note!**
+All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+
 
 M0017 Time table
 ----------------------
