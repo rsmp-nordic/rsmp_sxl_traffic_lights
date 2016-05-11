@@ -496,23 +496,70 @@ Hour and minute is using local time (not UTC)
 **Note!**
 All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
 
-M0014. Command table (C-pulses)
--------------------------------------
-Command table. Defines command, e.g. c-pulses.
-Each command is written as pp-o-gg-cc where:
- * pp=time plan
- * o=command
- * gg=group number
- * cc=cycle step
- 
- Command legend:
- * 1=Give green to group
- * 2-255=Reserved
- 
- Each command is separated with a semicolon
+## M0014 Set command table
+-------------------------
 
-E.g. 
-pp-o-gg-cc;pp-o-gg-cc;
+###Description
+This status returns all avalable time tables in the TLCThis command sends commands to a specific signal group in a specific plan at a specific cycle step
++ **ObjectType:** Traffic Controller
++ **Object:** 
++ **CommandCodeId:** M0014
++ **Description:** Set command table
+
+### Argument
++ **Name:** Status
++ **Command:** SetCommands
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Command table
+
+#### Definition of argument
+The argument is defined as;
+
+```
+pp-o-gg-cc
+```
+
+Where:
+
+| legend | description |
+| ------- | ---------- |
+| pp | Plan |
+| o | Command |
+| gg | Group number |
+| cc | Cycle step |
+
+and command legend is defined as:
+
+| legend | Command |
+| ------- | ---------- |
+| 1 | Give green to group |
+| 2-255 | reserved |
+
+**Note!**
+each command is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
+### Argument
++ **Name:** SecurityCode
++ **Command:** SetStop
++ **Type:** String
++ **Value:** [text]
++ **Comment:** Security code 2
+
+### Example message
+
+**Command request**
+``` json
+	
+```
+
+**Command Response**
+``` json
+	
+```
+
+**Note!**
+All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+
 
 M0015. Offset time
 ------------------------
