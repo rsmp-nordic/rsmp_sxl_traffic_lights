@@ -60,7 +60,7 @@ This status returns a comma separated list of time plans available in the TLC.
 + **Comment:** Comma separated list of configured time plans
 
 #### Definition of return string
-The return string is defined as;
+The return string is defined as:
 
 ```
 n,n,n
@@ -128,7 +128,7 @@ This status returns the whole commandtable
 + **Comment:** Command table. Defines command, e.g. c-pulses.
 
 #### Definition of return string
-The return string is defined as;
+The return string is defined as:
 
 ```
 pp-o-gg-cc
@@ -151,7 +151,7 @@ and available commands are:
 | 2-255 | reserved |
 
 **Note!**
-each status is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
+each status is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 
 
 ### Example message
@@ -179,7 +179,7 @@ each status is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
 		"sTs":"2016-05-11T12:38:59.953Z",
 		"sS":[{"sCI":"S0023",
 		"n":"status",
-		"s":"01-1-01-30;01-1-02-10;",
+		"s":"01-1-01-30:01-1-02-10:",
 		"q":"recent"}]}
 ```
 
@@ -204,7 +204,7 @@ This status returns the offset times of the whole table.
 + **Comment:** Offset table
 
 #### Definition of return string
-The return string is defined as;
+The return string is defined as:
 
 ```
 pp-tt
@@ -219,7 +219,7 @@ Where:
 
 
 **Note!**
-each status is separated by a semicolon (;) E.g. pp-tt;pp-tt;
+each status is separated by a colon (:) E.g. pp-tt:pp-tt:
 
 
 ### Example message
@@ -247,7 +247,7 @@ each status is separated by a semicolon (;) E.g. pp-tt;pp-tt;
 		"sTs":"2016-05-11T13:00:56.432Z",
 		"sS":[{"sCI":"S0024",
 		"n":"status",
-		"s":"01-20;02-10;",
+		"s":"01-20:02-10:",
 		"q":"recent"}]}
 ```
 
@@ -391,7 +391,7 @@ This status returns time tables to use for each week day.
 + **Comment:** Week time table
 
 #### Definition of return string
-The return string is defined as;
+The return string is defined as:
 
 ```
 d-t
@@ -417,7 +417,7 @@ and day of week legend are defined as:
 | 6 | Sunday |
 
 **Note!**
-each status is separated by a semicolon (;) E.g. d-t;d-t;
+each status is separated by a semicolon (:) E.g. d-t:d-t:
 
 ### Example message
 
@@ -444,7 +444,7 @@ each status is separated by a semicolon (;) E.g. d-t;d-t;
 		"sTs":"2016-05-11T13:31:41.476Z",
 		"sS":[{"sCI":"S0026",
 		"n":"status",
-		"s":"0-2;1-3;2-1;3-1;4-1:5-4;6-4;",
+		"s":"0-2:1-3:2-1:3-1:4-1:5-4:6-4:",
 		"q":"recent"}]}
 ```
 
@@ -471,7 +471,7 @@ This status returns all available time tables in the TLC
 + **Comment:** Time Tables
 
 #### Definition of return string
-The return string is defined as;
+The return string is defined as:
 
 ```
 t-o-h-m
@@ -496,7 +496,7 @@ and function legend is defined as:
 | 16 | set plan 16 |
 
 **Note!**
-each status is separated by a semicolon (;) E.g. t-o-h-m;t-o-h-m;
+each status is separated by a colon (:) E.g. t-o-h-m:t-o-h-m:
 **Note 2!**
 Hour and minute is using local time (not UTC)
 
@@ -525,7 +525,7 @@ Hour and minute is using local time (not UTC)
 		"sTs":"2016-05-11T13:46:57.781Z",
 		"sS":[{"sCI":"S0027",
 		"n":"status",
-		"s":"1-0-22-30;2-3-06-30;3-14-13-00;4-5-14-00;",
+		"s":"1-0-22-30:2-3-06-30:3-14-13-00:4-5-14-00:",
 		"q":"recent"}]}
 ```
 
@@ -550,7 +550,7 @@ This command sends commands to a specific signal group in a specific plan at a s
 + **Comment:** Command table
 
 #### Definition of argument
-The argument is defined as;
+The argument is defined as:
 
 ```
 pp-o-gg-cc
@@ -573,7 +573,7 @@ and command legend is defined as:
 | 2-255 | reserved |
 
 **Note!**
-each command is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
+each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 ### Argument
 + **Name:** SecurityCode
 + **Command:** SetStop
@@ -662,7 +662,7 @@ This command sends commands change time plan of specific day
 + **Comment:** Command table
 
 #### Definition of argument
-The argument is defined as;
+The argument is defined as:
 
 ```
 d-t
@@ -690,7 +690,7 @@ and day of week legend are defined as:
 | 6 | Sunday |
 
 **Note!**
-each command is separated by a semicolon (;) E.g. d-t;d-t;
+each command is separated by a colon (:) E.g. d-t:d-t:
 
 ### Argument
 + **Name:** SecurityCode
@@ -733,7 +733,7 @@ This command changes plans of specific time tables
 + **Comment:** Defines time tables
 
 #### Definition of argument
-The argument is defined as;
+The argument is defined as:
 
 ```
 t-o-h-m
@@ -758,7 +758,7 @@ and function legend is defined as:
 | 16 | set plan 16 |
 
 **Note!**
-each status is separated by a semicolon (;) E.g. t-o-h-m;t-o-h-m;
+each status is separated by a colon (:) E.g. t-o-h-m:t-o-h-m:
 **Note 2!**
 Hour and minute is using local time (not UTC)
 
