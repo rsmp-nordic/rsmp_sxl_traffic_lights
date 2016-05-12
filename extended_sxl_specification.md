@@ -587,12 +587,37 @@ each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 
 **Command request**
 ``` json
-	
+	{"mType":"rSMsg",
+		"type":"CommandRequest",
+		"mId":"2840c768-1005-4b2b-a59e-a123b063c430
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"arg":[{"cCI":"M0014",
+		"n":"status",
+		"cO":"setCommands",
+		"v":"01-1-01-30:01-1-02-10"},{"cCI":"M0014"
+		"n":"securityCode",
+		"cO":"setCommands",
+		"v":"2312"}]}	
 ```
 
 **Command Response**
 ``` json
-	
+        {"mType":"rSMsg",
+                "type":"CommandResponse",
+                "mId":"2e8e7ef7-488c-43d9-beac-b7a9cea66cc6
+                "ntsOId":"AA+BBCCC=DDDEEFFF",
+                "xNId":"",
+                "cId":"AA+BBCCC=DDDEEFFF",
+                "cTS":"2016-05-12T12:04:25.199Z",
+                "rvs":[{"cCI":"M0014",
+                "n":"status",
+                "v":"01-1-01-30:01-1-02-10",
+                "age":"recent"},{"cCI":"M0014",
+                "n":"securityCode",
+                "v":"2312",
+                "age":"recent"}]}
 ```
 
 **Note!**
