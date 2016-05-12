@@ -614,7 +614,7 @@ This command sets offset times of a specific Time plan
 + **Command:** SetOffset
 + **Type:** integer
 + **Value:** [0-255]
-+ **Comment:** Set offset time
++ **Comment:** Set offset time in seconds
 
 ### Argument
 + **Name:** plan
