@@ -1,16 +1,12 @@
 Copenhagen extended SXL (1.0.13)
 ================================
-Specification (working copy)
+Specification
 
 Draft 4
 
 This document defines supplements to the official signal exchange list (SXL)
 defined for traffic light controllers (TLC).
 
-
-### Background
-
-tbd.
 
 ### Versions of SXL for TLC
 
@@ -898,4 +894,25 @@ All messages should be acknowledged by the other part (The supervision system ac
 
 ### Examples
 
-tbd.
+Example #1
+In order to change the c-pulses of the TLC using RSMP:
+
+1, Read the command table of the TLC, using RSMP status S0023.
+The command table should contain all the c-pulses configured in the TLC.
+E.g.
+Signal group 4,5 and 6 have a c-pulse at second 65, plan 5
+05-1-4-65:
+05-1-5-65:
+05-1-6-65:
+
+2, Modify the command table to your liking and set the new command table of the
+TLC using M0014. M0014 replaces any previous command table already set in the
+TLC. The RSMP command table is a separated input source for c-pulses and should
+not erase any other c-pulses of the TLC which might have been set using a
+non-RSMP method.
+E.g.
+Signal group 4,5 and 6 have a c-pulse at second 75, plan 5
+05-1-4-75:
+05-1-5-75:
+05-1-6-75:
+
