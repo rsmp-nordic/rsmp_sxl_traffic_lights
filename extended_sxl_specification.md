@@ -610,7 +610,7 @@ This command sets offset times of a specific Time plan
 + **Description:** Set offset time
 
 ### Argument
-+ **Name:** Status
++ **Name:** status
 + **Command:** SetOffset
 + **Type:** integer
 + **Value:** [0-255]
