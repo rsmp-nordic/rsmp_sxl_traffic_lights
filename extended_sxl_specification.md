@@ -589,7 +589,7 @@ each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 ``` json
 	{"mType":"rSMsg",
 		"type":"CommandRequest",
-		"mId":"2840c768-1005-4b2b-a59e-a123b063c430
+		"mId":"2840c768-1005-4b2b-a59e-a123b063c430",
 		"ntsOId":"AA+BBCCC=DDDEEFFF",
 		"xNId":"",
 		"cId":"AA+BBCCC=DDDEEFFF",
@@ -606,7 +606,7 @@ each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 ``` json
         {"mType":"rSMsg",
                 "type":"CommandResponse",
-                "mId":"2e8e7ef7-488c-43d9-beac-b7a9cea66cc6
+                "mId":"2e8e7ef7-488c-43d9-beac-b7a9cea66cc6",
                 "ntsOId":"AA+BBCCC=DDDEEFFF",
                 "xNId":"",
                 "cId":"AA+BBCCC=DDDEEFFF",
