@@ -712,7 +712,7 @@ each command is separated by a semicolon (;) E.g. d-t;d-t;
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
 ## M0017 Set time tables
@@ -782,7 +782,7 @@ Hour and minute is using local time (not UTC)
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
 ### Examples
