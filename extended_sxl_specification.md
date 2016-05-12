@@ -28,22 +28,22 @@ Below listed statuses and commands are the additions of SXL 1.0.13 from the prev
 
 #### Added statuses
 
-+ S0022 - List of time plans
-+ S0023 - Command table
-+ S0024 - Offset time
-+ S0025 - Time-to-green
-+ S0026 - Week time table
-+ S0027 - Time tables
++ [S0022](#S0022) - List of time plans
++ [S0023](#S0023) - Command table
++ [S0024](#S0024) - Offset time
++ [S0025](#S0025) - Time-to-green
++ [S0026](#S0026) - Week time table
++ [S0027](#S0027)- Time tables
 
 #### Added commands
 
-+ M0014 - Set command table
-+ M0015 - Set offset time
-+ M0016 - Set week time table
-+ M0017 - Set time tables
++ [M0014](#M0014) - Set command table
++ [M0015](#M0015) - Set offset time
++ [M0016](#M0016) - Set week time table
++ [M0017](#M0017) - Set time tables
 
-## S0022. List of time plans
--------------------------
+## S0022. List of time plans <a id="S0022"></a>
+----------------------------
 
 ###Description
 This status returns a comma separated list of time plans available in the TLC.
@@ -114,8 +114,8 @@ All time plans are separated with a comma (,)
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-## S0023 Command table
--------------------------
+## S0023 Command table <a id="S0023"></a>
+----------------------
 
 ###Description
 This status returns the whole commandtable
@@ -195,8 +195,8 @@ each status is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 **Note!**
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
-## S0024 Offset time
--------------------------
+## S0024 Offset time <a id="S0024"></a>
+--------------------
 
 ###Description
 This status returns the offset times of the whole table.
@@ -268,8 +268,8 @@ each status is separated by a colon (:) E.g. pp-tt:pp-tt:
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-## S0025 Time-to-green
--------------------------
+## S0025 Time-to-green <a id="S0025"></a>
+----------------------
 
 ###Description
 This status returns the whole commandtable
@@ -380,8 +380,8 @@ Format according to W3C XML dateTime with a resolution of 3 decimal places. All 
 **Note!**
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
-## S0026 Week time table
--------------------------
+## S0026 Week time table <a id="S0026"></a>
+------------------------
 
 ###Description
 This status returns time tables to use for each week day.
@@ -464,8 +464,8 @@ All messages should be acknowledged by the other part (The supervision system ac
 **Note 2!**
 The TLC should always send the whole week.
 
-## S0027 Time tables
--------------------------
+## S0027 Time tables <a id="S0027"></a>
+--------------------
 
 ###Description
 This status returns all available time tables in the TLC
@@ -547,8 +547,8 @@ Hour and minute is using local time (not UTC)
 **Note!**
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
-## M0014 Set command table
--------------------------
+## M0014 Set command table <a id="M0014"></a>
+--------------------------
 
 ###Description
 This command sends commands to a specific signal group in a specific plan at a specific cycle step
@@ -636,8 +636,8 @@ each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-## M0015 Set Offset time
--------------------------
+## M0015 Set Offset time <a id="M0015"></a>
+------------------------
 
 ###Description
 This command sets offset times of a specific Time plan
@@ -709,8 +709,8 @@ This command sets offset times of a specific Time plan
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-## M0016 Set week time table
--------------------------
+## M0016 Set week time table <a id="M0016"></a>
+----------------------------
 
 ###Description
 This command sends commands change time plan of specific day
@@ -803,8 +803,8 @@ each command is separated by a colon (:) E.g. d-t:d-t:
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-## M0017 Set time tables
--------------------------
+## M0017 Set time tables <a id="M0017"></a>
+------------------------
 
 ###Description
 This command changes plans of specific time tables
