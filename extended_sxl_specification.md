@@ -344,7 +344,7 @@ Format according to W3C XML dateTime with a resolution of 3 decimal places. All 
 	"mId":"4bd1b76d-4be2-4b07-9a3f-48768c960951",
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFF1",
+	"cId":"KK+AG0503=001SG002",
 	"sS": [
 		{"sCI":"S0025", "n":"startTime"},
 		{"sCI":"S0025", "n":"minEndTime"},
@@ -364,7 +364,7 @@ Format according to W3C XML dateTime with a resolution of 3 decimal places. All 
 	"mId":"18e1f203-c2aa-4fb8-b7fe-5babf93f46f8",
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFF1",
+	"cId":"KK+AG0503=001SG002",
 	"sTs":"2016-05-11T19:58:02.487Z",
 	"sS": [
 		{"sCI":"S0025", "n":"startTime", "s":"2016-05-11T21:55:10.231Z", "q":"recent"},
