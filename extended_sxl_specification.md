@@ -85,9 +85,9 @@ All time plans are separated with a comma (,)
 	"mType":"rSMsg",
 	"type":"StatusRequest",
 	"mId":"48d93d8c-40ee-448b-adfd-4f8609a5cee3",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sS": [
 		{ "sCI":"S0022", "n":"status" }
 	]
@@ -100,9 +100,9 @@ All time plans are separated with a comma (,)
 	"mType":"rSMsg",
 	"type":"StatusResponse",
 	"mId":"2404e9cc-88df-4994-ad3c-ca7bb8cf8d59",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T19:37:06.678Z",
 	"sS": [
 		{"sCI":"S0022", "n":"status", "s":"1,2,3,5", "q":"recent"}
@@ -167,9 +167,9 @@ each status is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 	"mType":"rSMsg",
 	"type":"StatusRequest",
 	"mId":"481da9fe-b1af-4043-9868-61d26d325d71",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sS": [
 		{ "sCI":"S0023", "n":"status" }
 	]
@@ -182,9 +182,9 @@ each status is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 	"mType":"rSMsg",
 	"type":"StatusResponse",
 	"mId":"64d47cbc-b018-4647-82e9-eb806058ef3e",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T12:38:59.953Z",
 	"sS": [
 		{"sCI":"S0023", "n":"status", "s":"01-1-01-30:01-1-02-10:", "q":"recent"}
@@ -239,9 +239,9 @@ each status is separated by a colon (:) E.g. pp-tt:pp-tt:
 	"mType":"rSMsg",
 	"type":"StatusRequest",
 	"mId":"696c1eb9-e9bf-411c-8cef-9edd9c48338f",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sS": [
 		{ "sCI":"S0024", "n":"status"}
 	]
@@ -254,9 +254,9 @@ each status is separated by a colon (:) E.g. pp-tt:pp-tt:
 	"mType":"rSMsg",
 	"type":"StatusResponse",
 	"mId":"097edc53-cd4c-4fb8-9ed7-59c77869704b",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:00:56.432Z",
 	"sS": [
 		{"sCI":"S0024", "n":"status", "s":"01-20:02-10:", "q":"recent" }
@@ -342,7 +342,7 @@ Format according to W3C XML dateTime with a resolution of 3 decimal places. All 
 	"mType":"rSMsg",
 	"type":"StatusRequest",
 	"mId":"4bd1b76d-4be2-4b07-9a3f-48768c960951",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"AA+BBCCC=DDDEEFF1",
 	"sS": [
@@ -362,7 +362,7 @@ Format according to W3C XML dateTime with a resolution of 3 decimal places. All 
 	"mType":"rSMsg",
 	"type":"StatusResponse",
 	"mId":"18e1f203-c2aa-4fb8-b7fe-5babf93f46f8",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"AA+BBCCC=DDDEEFF1",
 	"sTs":"2016-05-11T19:58:02.487Z",
@@ -434,9 +434,9 @@ each status is separated by a semicolon (:) E.g. d-t:d-t:
 	"mType":"rSMsg",
 	"type":"StatusRequest",
 	"mId":"2af769ea-d715-44aa-af72-cfb666795a46",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sS": [
 		{"sCI":"S0026", "n":"status"}
 	]
@@ -449,9 +449,9 @@ each status is separated by a semicolon (:) E.g. d-t:d-t:
 	"mType":"rSMsg",
 	"type":"StatusResponse",
 	"mId":"2ef406ed-17d1-4e50-b952-ebfb8dca18dc",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:31:41.476Z",
 	"sS": [
 		{"sCI":"S0026", "n":"status", "s":"0-2:1-3:2-1:3-1:4-1:5-4:6-4:", "q":"recent"}
@@ -519,9 +519,9 @@ Hour and minute is using local time (not UTC)
 	"mType":"rSMsg",
 	"type":"StatusRequest",
 	"mId":"a82f7796-3cf6-4319-835b-ec8bf21bae69",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sS": [
 		{"sCI":"S0027", "n":"status"}
 	]
@@ -534,9 +534,9 @@ Hour and minute is using local time (not UTC)
 	"mType":"rSMsg",
 	"type":"StatusResponse",
 	"mId":"1ed16ca5-2ea7-4e06-9226-d1b482b16db4",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:46:57.781Z",
 	"sS":[
 		{"sCI":"S0027", "n":"status", "s":"1-0-22-30:2-3-06-30:3-14-13-00:4-5-14-00:", "q":"recent"}
@@ -605,9 +605,9 @@ each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 	"mType":"rSMsg",
 	"type":"CommandRequest",
 	"mId":"2840c768-1005-4b2b-a59e-a123b063c430",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"arg": [
 		{"cCI":"M0014", "n":"status", "cO":"setCommands", "v":"01-1-01-30:01-1-02-10"},
 		{"cCI":"M0014" "n":"securityCode", "cO":"setCommands", "v":"2312"}
@@ -621,9 +621,9 @@ each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 	"mType":"rSMsg",
 	"type":"CommandResponse",
 	"mId":"2e8e7ef7-488c-43d9-beac-b7a9cea66cc6",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:04:25.199Z",
 	"rvs":[
 		{"cCI":"M0014", "n":"status", "v":"01-1-01-30:01-1-02-10", "age":"recent"},
@@ -675,9 +675,9 @@ This command sets offset times of a specific Time plan
 	"mType":"rSMsg",
 	"type":"CommandRequest",
 	"mId":"a00cbdc3-65a9-42e4-9658-0af2eb92db60",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"arg": [
 		{"cCI":"M0015", "n":"status", "cO":"setOffset", "v":"30"},
 		{"cCI":"M0015", "n":"plan", "cO":"setOffset", "v":"1"},
@@ -692,9 +692,9 @@ This command sets offset times of a specific Time plan
 	"mType":"rSMsg",
 	"type":"CommandResponse",
 	"mId":"77291dd5-468c-42b4-96aa-f1553cf57466",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:05:57.558Z",
 	"rvs": [
 		{"cCI":"M0015", "n":"status", "v":"30", "age":"recent"},
@@ -772,9 +772,9 @@ each command is separated by a colon (:) E.g. d-t:d-t:
 	"mType":"rSMsg",
 	"type":"CommandRequest",
 	"mId":"7fe05b51-1436-4bf4-a1e8-54c946395e95",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"arg": [
 		{"cCI":"M0016", "n":"status", "cO":"setWeekTable", "v":"0-2:1-3:2-1:3-1:4-1:5-4:6-4:"},
 		{"cCI":"M0016", "n":"securityCode", "cO":"setWeekTable", "v":"2314"}
@@ -788,9 +788,9 @@ each command is separated by a colon (:) E.g. d-t:d-t:
 	"mType":"rSMsg",
 	"type":"CommandResponse",
 	"mId":"3c635519-c745-44e5-ab1d-8da0d0cabb84",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:09:47.574Z",
 	"rvs": [
 		{"cCI":"M0016", "n":"status", "v":"0-2:1-3:2-1:3-1:4-1:5-4:6-4:", "age":"recent"},
@@ -865,9 +865,9 @@ Hour and minute is using local time (not UTC)
 	"mType":"rSMsg",
 	"type":"CommandRequest",
 	"mId":"0e05974d-223b-47a0-9992-fbe00dd352bd",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"arg": [
 		{"cCI":"M0017", "n":"status", "cO":"setTimeTable", "v":"1-0-22-30:2-3-06-30:3-14-13-00:4-5-14-00:"},
 		{"cCI" "n":"securityCode", "cO":"setTimeTable", "v":"2321"}
@@ -881,9 +881,9 @@ Hour and minute is using local time (not UTC)
 	"mType":"rSMsg",
 	"type":"CommandResponse",
 	"mId":"25b1947b-284a-4fff-b723-448f7c1b80b4",
-	"ntsOId":"AA+BBCCC=DDDEEFFF",
+	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
-	"cId":"AA+BBCCC=DDDEEFFF",
+	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:11:14.105Z",
 	"rvs": [
 		{"cCI":"M0017", "n":"status", "v":"1-0-22-30:2-3-06-30:3-14-13-00:4-5-14-00:", "age":"recent"},
