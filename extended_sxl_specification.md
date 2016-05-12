@@ -149,7 +149,7 @@ and available commands are:
 | ------- | ---------- |
 | 1 | Give green to group |
 | 2 | Red |
-| 2-255 | reserved |
+| 3-255 | reserved |
 
 **Note!**
 each status is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
@@ -572,7 +572,7 @@ and command legend is defined as:
 | ------- | ---------- |
 | 1 | Give green to group |
 | 2 | Red |
-| 2-255 | reserved |
+| 3-255 | reserved |
 
 **Note!**
 each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
