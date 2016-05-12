@@ -610,7 +610,7 @@ each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 	"cId":"KK+AG0503=001TC000",
 	"arg": [
 		{"cCI":"M0014", "n":"status", "cO":"setCommands", "v":"01-1-01-30:01-1-02-10"},
-		{"cCI":"M0014" "n":"securityCode", "cO":"setCommands", "v":"2312"}
+		{"cCI":"M0014", "n":"securityCode", "cO":"setCommands", "v":"2312"}
 	]
 }
 ```
