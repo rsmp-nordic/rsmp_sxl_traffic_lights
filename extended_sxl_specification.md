@@ -19,14 +19,14 @@ tbd.
   * SXL 1.0.8-1.0.11: Extensions for coordination support
                       Adds commands/statuses needed for coordination between TLCs
   * SXL 1.0.12:       Revised traffic counting (draft, not finished)
-  * SXL 1.0.13:       SXL extensions by the Copenhagen Municipality
+  * SXL 1.0.13:       SXL extensions by the City of Copenhagen
 
 
 ### Added statuses/commands
 
-Below listed Statuses and commands is the extenstion of the RSMP SXL.
+Below listed statuses and commands are the additions of SXL 1.0.13 from the previous SXL. No statuses, commands or other message types has been removed.
 
-#### Added Statuses
+#### Added statuses
 
 + S0022 - List of time plans
 + S0023 - Command table
@@ -35,7 +35,7 @@ Below listed Statuses and commands is the extenstion of the RSMP SXL.
 + S0026 - Week time table
 + S0027 - Time tables
 
-#### Added Commands
+#### Added commands
 
 + M0014 - Set command table
 + M0015 - Set offset time
@@ -46,7 +46,7 @@ Below listed Statuses and commands is the extenstion of the RSMP SXL.
 -------------------------
 
 ###Description
-This status returns a comma separated list of time plans avalable in the TLC.
+This status returns a comma separated list of time plans available in the TLC.
 
 + **ObjectType:** Traffic Controller
 + **Object:** 
@@ -57,7 +57,7 @@ This status returns a comma separated list of time plans avalable in the TLC.
 + **Name:** Status
 + **Type:** String
 + **Value:** [text]
-+ **Comment:** Comma spearated list of configured time plans
++ **Comment:** Comma separated list of configured time plans
 
 #### Definition of return string
 The return string is defined as;
@@ -73,7 +73,7 @@ Where:
 | n | index of timeplan |
 
 **Note!**
-The length of the string, (I.e. number of parameters in string) is defined by number of avalable time plans in the TLC.
+The length of the string, (I.e. number of parameters in string) is defined by number of available time plans in the TLC.
 **Note 2!**
 All time plans are separated with a comma (,)
 
@@ -107,7 +107,7 @@ All time plans are separated with a comma (,)
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
 ## S0023 Command table
@@ -143,7 +143,7 @@ Where:
 | gg | group number |
 | cc | cycle step |
 
-and avalable commands are:
+and available commands are:
 
 | legend | description |
 | ------- | ---------- |
@@ -184,7 +184,7 @@ each status is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 ## S0024 Offset time
 -------------------------
@@ -252,7 +252,7 @@ each status is separated by a semicolon (;) E.g. pp-tt;pp-tt;
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
 ## S0025 Time-to-green
@@ -371,7 +371,7 @@ Format according to W3C XML dateTime with a resolution of 3 decimal places. All 
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 ## S0026 Week time table
 -------------------------
@@ -449,15 +449,15 @@ each status is separated by a semicolon (;) E.g. d-t;d-t;
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 **Note 2!**
-The TLC shuld allways send the whole week.
+The TLC should always send the whole week.
 
 ## S0027 Time tables
 -------------------------
 
 ###Description
-This status returns all avalable time tables in the TLC
+This status returns all available time tables in the TLC
 
 + **ObjectType:** Traffic Controller
 + **Object:** 
@@ -530,7 +530,7 @@ Hour and minute is using local time (not UTC)
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 ## M0014 Set command table
 -------------------------
@@ -594,7 +594,7 @@ each command is separated by a semicolon (;) E.g. pp-o-gg-cc;pp-o-gg-cc;
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
 ## M0015 Set Offset time
@@ -641,7 +641,7 @@ This command sets offset times of a specific Time plan
 ```
 
 **Note!**
-All messages should be acknowledged by the other part (The SCADA acknowledges the TLC's messages and vice versa). The acknowledg messages are not presented in the above examples. For more information see the RSMP specification.
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
 ## M0016 Set week time table
