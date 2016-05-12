@@ -42,7 +42,7 @@ Below listed statuses and commands are the additions of SXL 1.0.13 from the prev
 + [M0016](#M0016) - Set week time table
 + [M0017](#M0017) - Set time tables
 
-## S0022. List of time plans <a id="S0022"></a>
+## S0022 List of time plans <a id="S0022"></a>
 ----------------------------
 
 ###Description
