@@ -148,6 +148,7 @@ and available commands are:
 | legend | description |
 | ------- | ---------- |
 | 1 | Give green to group |
+| 2 | Red |
 | 2-255 | reserved |
 
 **Note!**
@@ -570,6 +571,7 @@ and command legend is defined as:
 | legend | Command |
 | ------- | ---------- |
 | 1 | Give green to group |
+| 2 | Red |
 | 2-255 | reserved |
 
 **Note!**
