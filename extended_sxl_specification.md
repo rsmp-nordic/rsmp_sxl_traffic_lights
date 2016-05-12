@@ -578,7 +578,7 @@ and command legend is defined as:
 each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 ### Argument
 + **Name:** SecurityCode
-+ **Command:** SetStop
++ **Command:** SetCommands
 + **Type:** String
 + **Value:** [text]
 + **Comment:** Security code 2
