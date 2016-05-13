@@ -59,7 +59,7 @@ This status returns a comma separated list of time plans available in the TLC.
 The return string is defined as:
 
 ```
-n,n,n
+n
 ```
 
 Where:
@@ -145,11 +145,14 @@ Where:
 
 and available commands are:
 
-| legend | description |
+| legend | Command |
 | ------- | ---------- |
 | 1 | Give green to group |
 | 2 | Red |
-| 3-255 | reserved |
+| 3 | reserved |
+| ... | ... |
+| 255 | reserved |
+
 
 **Note!**  
 each status is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
@@ -582,7 +585,9 @@ and command legend is defined as:
 | ------- | ---------- |
 | 1 | Give green to group |
 | 2 | Red |
-| 3-255 | reserved |
+| 3 | reserved |
+| ... | ... |
+| 255 | reserved |
 
 **Note!**  
 each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
@@ -728,8 +733,6 @@ The argument is defined as:
 ```
 d-t
 ```
-
-Where:
 
 Where:
 
@@ -894,25 +897,24 @@ All messages should be acknowledged by the other part (The supervision system ac
 
 ### Examples
 
-** Example #1**
+** Example #1 **
 In order to change the c-pulses of the TLC using RSMP:
 
 1, Read the command table of the TLC, using RSMP status S0023.
 The command table should contain all the c-pulses configured in the TLC.
 E.g.
-Signal group 4,5 and 6 have a c-pulse at second 65, plan 5
-* 05-1-4-65:
-* 05-1-5-65:
-* 05-1-6-65:
-
+Signal group 4,5 and 6 have a c-pulse at second 65, plan 5  
+```
+05-1-4-65:05-1-5-65:05-1-6-65:
+```
 2, Modify the command table to your liking and set the new command table of the
 TLC using M0014. M0014 replaces any previous command table already set in the
 TLC. The RSMP command table is a separated input source for c-pulses and should
 not erase any other c-pulses of the TLC which might have been set using a
 non-RSMP method.
 E.g.
-Signal group 4,5 and 6 have a c-pulse at second 75, plan 5
-* 05-1-4-75:
-* 05-1-5-75:
-* 05-1-6-75:
+Signal group 4,5 and 6 have a c-pulse at second 75, plan 5 
+``` 
+05-1-4-75:05-1-5-75:05-1-6-75:
+```
 
