@@ -68,9 +68,9 @@ Where:
 | ------- | ---------- |
 | n | index of timeplan |
 
-**Note!**
-The length of the string, (I.e. number of parameters in string) is defined by number of available time plans in the TLC.
-**Note 2!**
+**Note!**  
+The length of the string, (I.e. number of parameters in string) is defined by number of available time plans in the TLC.  
+**Note 2!**  
 All time plans are separated with a comma (,)
 
 ### Example message
@@ -106,7 +106,7 @@ All time plans are separated with a comma (,)
 }
 ```
 
-**Note!**
+**Note!**  
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
@@ -151,7 +151,7 @@ and available commands are:
 | 2 | Red |
 | 3-255 | reserved |
 
-**Note!**
+**Note!**  
 each status is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 
 
@@ -188,7 +188,7 @@ each status is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 }
 ```
 
-**Note!**
+**Note!**  
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 ## S0024 Offset time <a id="S0024"></a>
@@ -223,7 +223,7 @@ Where:
 | tt | offset time in seconds |
 
 
-**Note!**
+**Note!**  
 each status is separated by a colon (:) E.g. pp-tt:pp-tt:
 
 
@@ -260,7 +260,7 @@ each status is separated by a colon (:) E.g. pp-tt:pp-tt:
 }
 ```
 
-**Note!**
+**Note!**  
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
@@ -373,7 +373,7 @@ Format according to W3C XML dateTime with a resolution of 3 decimal places. All 
 }
 ```
 
-**Note!**
+**Note!**  
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 ## S0026 Week time table <a id="S0026"></a>
@@ -419,8 +419,8 @@ and day of week legend are defined as:
 | 5 | Saturday |
 | 6 | Sunday |
 
-**Note!**
-each status is separated by a semicolon (:) E.g. d-t:d-t:
+**Note!**  
+each status is separated by a colon (:) E.g. d-t:d-t:
 
 ### Example message
 
@@ -455,9 +455,9 @@ each status is separated by a semicolon (:) E.g. d-t:d-t:
 }
 ```
 
-**Note!**
-All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-**Note 2!**
+**Note!**  
+All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.  
+**Note 2!**  
 The TLC should always send the whole week.
 
 ## S0027 Time tables <a id="S0027"></a>
@@ -502,9 +502,9 @@ and function legend is defined as:
 | ... | ... |
 | 16 | set plan 16 |
 
-**Note!**
-each status is separated by a colon (:) E.g. t-o-h-m:t-o-h-m:
-**Note 2!**
+**Note!**  
+each status is separated by a colon (:) E.g. t-o-h-m:t-o-h-m:  
+**Note 2!**  
 Hour and minute is using local time (not UTC)
 
 ### Example message
@@ -540,7 +540,7 @@ Hour and minute is using local time (not UTC)
 }
 ```
 
-**Note!**
+**Note!**  
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 ## M0014 Set command table <a id="M0014"></a>
@@ -584,7 +584,7 @@ and command legend is defined as:
 | 2 | Red |
 | 3-255 | reserved |
 
-**Note!**
+**Note!**  
 each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 ### Argument
 + **Name:** SecurityCode
@@ -628,7 +628,7 @@ each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 }
 ```
 
-**Note!**
+**Note!**  
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
@@ -701,7 +701,7 @@ This command sets offset times of a specific Time plan
 
 ```
 
-**Note!**
+**Note!**  
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
@@ -750,7 +750,7 @@ and day of week legend are defined as:
 | 5 | Saturday |
 | 6 | Sunday |
 
-**Note!**
+**Note!**  
 each command is separated by a colon (:) E.g. d-t:d-t:
 
 ### Argument
@@ -795,7 +795,7 @@ each command is separated by a colon (:) E.g. d-t:d-t:
 }
 ```
 
-**Note!**
+**Note!**  
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
@@ -841,9 +841,9 @@ and function legend is defined as:
 | ... | ... |
 | 16 | set plan 16 |
 
-**Note!**
-each status is separated by a colon (:) E.g. t-o-h-m:t-o-h-m:
-**Note 2!**
+**Note!**  
+each status is separated by a colon (:) E.g. t-o-h-m:t-o-h-m:  
+**Note 2!**  
 Hour and minute is using local time (not UTC)
 
 ### Argument
@@ -888,22 +888,22 @@ Hour and minute is using local time (not UTC)
 }
 ```
 
-**Note!**
+**Note!**  
 All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
 ### Examples
 
-Example #1
+** Example #1**
 In order to change the c-pulses of the TLC using RSMP:
 
 1, Read the command table of the TLC, using RSMP status S0023.
 The command table should contain all the c-pulses configured in the TLC.
 E.g.
 Signal group 4,5 and 6 have a c-pulse at second 65, plan 5
-05-1-4-65:
-05-1-5-65:
-05-1-6-65:
+* 05-1-4-65:
+* 05-1-5-65:
+* 05-1-6-65:
 
 2, Modify the command table to your liking and set the new command table of the
 TLC using M0014. M0014 replaces any previous command table already set in the
@@ -912,7 +912,7 @@ not erase any other c-pulses of the TLC which might have been set using a
 non-RSMP method.
 E.g.
 Signal group 4,5 and 6 have a c-pulse at second 75, plan 5
-05-1-4-75:
-05-1-5-75:
-05-1-6-75:
+* 05-1-4-75:
+* 05-1-5-75:
+* 05-1-6-75:
 
