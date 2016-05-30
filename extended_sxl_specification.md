@@ -868,26 +868,270 @@ and function legend is defined as:
 > All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-### Examples
+## Examples
 
-**Example #1**  
-In order to change the c-pulses of the TLC using RSMP:
+###Example #1 - Scenario for extending the green time in one direction
+ 
+This is an example of how to extend the green time of one signal group in one intersection. In this example the intersection is a simple intersecion with the following data:
 
-1, Read the command table of the TLC, using RSMP status S0023.
-The command table should contain all the c-pulses configured in the TLC.
-E.g.
-Signal group 4,5 and 6 have a c-pulse at second 65, plan 5  
-```
-05-1-4-65:05-1-5-65:05-1-6-65:
-```
-2, Modify the command table to your liking and set the new command table of the
-TLC using M0014. M0014 replaces any previous command table already set in the
-TLC. The RSMP command table is a separated input source for c-pulses and should
-not erase any other c-pulses of the TLC which might have been set using a
-non-RSMP method.
-E.g.
-Signal group 4,5 and 6 have a c-pulse at second 75, plan 5 
-``` 
-05-1-4-75:05-1-5-75:05-1-6-75:
+- 4 signal groups
+- 1 time plan
+
+The result of this example is that one signal group gets a 2 seconds longer green time. 
+
+#### Flowchart
+![alt text](https://github.com/cityofcph/rsmp/blob/master/FlowChart_Extending_Green.png?raw=true "Flowchart Extending Green")
+
+#### Request command table
+This action is performed in the **Management system.**
+
+The Management system sends a status request for status S0023 - Command table
+
+#### RSMP message #1
+The RSMP message for requesting command table is as follows:
+
+**Direction:** Management system -> TLC
+``` json
+	{
+		"mType":"rSMsg",
+		"type":"StatusRequest",
+		"mId":"38a0aec9-8b50-4da2-bb69-fc0bb821c47f",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"sS":[{"sCI":"S0023",
+		"n":"status"}]
+	}
 ```
 
+**Direction:** TLC -> Management system
+``` json
+	{
+		"mType":"rSMsg",
+		"type":"MessageAck",
+		"oMId":"38a0aec9-8b50-4da2-bb69-fc0bb821c47f"
+	}
+```
+
+#### Send Command table
+This action is performed in the **TLC**
+
+The TLC sends the **whole** command table. The return value is a colon separated list of all C-pulses, for all time plans. See description for S0023 for more details of this status.
+
+#### RSMP message #2
+Below is an example return value. This is a very simple intersection with only one time plan and four signal groups. 
+
+**Direction:** TLC -> Management system
+``` json
+	{
+		"mType":"rSMsg",
+		"type":"StatusResponse",
+		"mId":"21496e12-63bf-43ed-9bfe-7db4bc90fe69",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"sTs":"2016-05-30T11:43:32.904Z",
+		"sS":[{"sCI":"S0023",
+		"n":"status",
+		"s":"01-1-01-02:01-1-02-02:01-2-01-35:01-2-02-35:01-1-03-38:01-1-04-38:01-2-03-52:01-2-04-55:01-1-01-56:01-1-02-56",
+		"q":"recent"}]
+	}
+```
+
+**Direction:** Management system -> TLC
+``` json
+	{
+		"mType":"rSMsg",
+		"type":"MessageAck",
+		"oMId":"21496e12-63bf-43ed-9bfe-7db4bc90fe69"
+	}
+```
+
+From this messages the management system can extract the contents of the command table of the TLC. In the table listed below is the data extracted.
+
+| Time plan | Command | group number (Signal group) | cycle step |
+|-----------|---------|-----------------------------|------------|
+| 01 | Give green to group | Signal group 1 | 02 |
+| 01 | Give green to group | Signal group 2 | 02 |
+| 01 | Red | Signal group 1 | 35 |
+| 01 | Red | Signal group 2 | 35 |
+| 01 | Give green to group | Signal group 3 | 38 |
+| 01 | Give green to group | Signal group 4 | 38 |
+| 01 | Red | Signal group 3 | 52 |
+| 01 | Red | Signal group 4 | 55 |
+| 01 | Give green to group | Signal group 1 | 56 |
+| 01 | Give green to group | Signal group 2 | 56 |
+
+This can be translated into the sequence diagram below
+```
+				------------------------------------------------------------
+Signal Group 1 |##                                ######################    | 
+Signal Group 2 |##                                ######################    |
+Signal Group 3 |#####################################            ###########|
+Signal Group 4 |#####################################                 ######|
+			    ------------------------------------------------------------
+			  0    5    10   15   20   25   30   35   40   45   50   55    60
+```
+
+#### Receive Command table
+This action is performed in the **Management system**
+
+The Management system Receives the command table.
+
+#### Alter the command table
+This action is performed in the **Management system**
+
+Changes to the command table is performed in oder to extend the green time.
+
+#### Send new Command table
+This action is performed in the **Management system**
+
+The management system sends the alterd command table to the TLC.
+
+#### RSMP message #3
+The RSMP message for sending the altered command table to the TLC is listed below:
+
+**Direction:** Management system -> TLC
+``` json
+	{
+		"mType":"rSMsg",
+		"type":"CommandRequest",
+		"mId":"12d5ca83-9cc0-400c-9048-e964137cdf46",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"arg":[{"cCI":"M0014",
+		"n":"status",
+		"cO":"setCommands",
+		"v":"01-1-01-02:01-1-02-02:01-2-01-35:01-2-02-35:01-1-03-38:01-1-04-38:01-2-03-54:01-2-04-55:01-1-01-56:01-1-02-56"},{"cCI":"M0014",
+		"n":"securityCode",
+		"cO":"setCommands",
+		"v":"1234"}]
+	}
+```
+
+#### Receive the new command table
+This action is performed in the **TLC**
+
+The TLC Receives the new, alterd, command table. In this example there have been a change in green time of Signal Group 3. The new Command table is listed below with the changed value highlighed in bold.
+
+| Time plan | Command | group number (Signal group) | cycle step |
+|-----------|---------|-----------------------------|------------|
+| 01 | Give green to group | Signal group 1 | 02 |
+| 01 | Give green to group | Signal group 2 | 02 |
+| 01 | Red | Signal group 1 | 35 |
+| 01 | Red | Signal group 2 | 35 |
+| 01 | Give green to group | Signal group 3 | 38 |
+| 01 | Give green to group | Signal group 4 | 38 |
+| 01 | Red | Signal group 3 | **54** |
+| 01 | Red | Signal group 4 | 55 |
+| 01 | Give green to group | Signal group 1 | 56 |
+| 01 | Give green to group | Signal group 2 | 56 |
+
+This can be translated into the sequence diagram below
+```
+				------------------------------------------------------------
+Signal Group 1 |##                                ######################    | 
+Signal Group 2 |##                                ######################    |
+Signal Group 3 |#####################################                #######|
+Signal Group 4 |#####################################                 ######|
+			    ------------------------------------------------------------
+			  0    5    10   15   20   25   30   35   40   45   50   55    60
+```
+
+#### Check Validity
+This action is performed in the **TLC**
+
+The TLC Checks if the changed value is allowed to be changed. 
+
+#### decision IF OK
+This action is performed in the **TLC**
+
+If the command table is allowed to be altered according to the Received command table the TLC sends Acknowledgment to the management system. (See description below) If the command table is **Not** allowed to be changed the TLC sends an **not Acknowledgment** to the management system. (See below)
+
+#### Perform Changes
+This action is performed in the **TLC** 
+
+This action is performed if the changes in the command table is allowed to be performed. 
+
+The command table in the TLC is alterd according to the recived command table.
+
+#### Send ACK
+This action is performed in the **TLC** 
+
+This action is performed if the changes in the command table is allowed to be performed. 
+
+The TLC sends a message Acknowledgment .
+
+#### RSMP Message #4a
+
+**Direction:** TLC -> Management system
+``` json
+	{
+		"mType":"rSMsg",
+		"type":"MessageAck",
+		"oMId":"12d5ca83-9cc0-400c-9048-e964137cdf46"
+	}
+```
+
+#### Send NACK
+This action is performed in the **TLC** 
+
+This action is performed if the changes in the command table is **Not** allowed to be performed.
+
+The TLC sends a **not Acknowledged** .
+
+#### RSMP Message #4b
+
+**Direction:** TLC -> Management system
+``` json
+	{
+		"mType":"rSMsg",
+		"type":"MessageNotAck",
+		"oMId":"12d5ca83-9cc0-400c-9048-e964137cdf46",
+		"rea": "alarmCode: Changes to command table could not be performed"
+	}
+```
+
+#### Send Command Response
+This action is performed in the **TLC**
+
+> I have to verify that this step is to be performed if the TLC Sends an NACK. I am not sure that is supposed to be performed if the command table was not altered.
+> Karl-Fredrik
+
+The TLC sends a CommandResponse to the management system.
+
+#### RSMP Message #5
+Below is an Command response. 
+
+> I have to verify that this step is to be performed if the TLC Sends an NACK. I am not sure that is supposed to be performed if the command table was not altered.
+> Karl-Fredrik
+
+**Direction:** TLC -> Management system
+``` json
+	{
+		"mType":"rSMsg",
+		"type":"CommandResponse",
+		"mId":"49da577a-6d68-48b7-9180-9653007e92c4",
+		"ntsOId":"AA+BBCCC=DDDEEFFF",
+		"xNId":"",
+		"cId":"AA+BBCCC=DDDEEFFF",
+		"cTS":"2016-05-30T12:27:25.906Z",
+		"rvs":[{"cCI":"M0014",
+		"n":"status",
+		"v":"01-1-01-02:01-1-02-02:01-2-01-35:01-2-02-35:01-1-03-38:01-1-04-38:01-2-03-54:01-2-04-55:01-1-01-56:01-1-02-56",
+		"age":"recent"},{"cCI":"M0014",
+		"n":"securityCode",
+		"v":"1234",
+		"age":"recent"}]
+	}
+```
+
+**Direction:** Management system -> TLC
+``` json
+	{
+		"mType":"rSMsg",
+		"type":"MessageAck",
+		"oMId":"49da577a-6d68-48b7-9180-9653007e92c4"
+	}
+```
