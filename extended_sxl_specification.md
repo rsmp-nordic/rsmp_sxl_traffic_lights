@@ -265,7 +265,7 @@ Where:
 ## S0025 Time-to-green
 
 ###Description
-This status returns the whole commandtable
+This status returns the whole Time to Green status
 
 | ObjectType | Object | StatusCodeId | description |
 | ---------- | ------ | ------------ | ----------- |
@@ -275,7 +275,7 @@ This status returns the whole commandtable
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| StartTime | String | [time stamp] | Time stamp for start of measuring. |
+| MinToGEstimate | String | [time stamp] | Timestamp for the estimated minimum time of next green (During green phase, this value points to the next green phase) |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -283,7 +283,7 @@ This status returns the whole commandtable
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| minEndTime | String | [time stamp] | Time stamp for start of measuring. |
+| MaxToGEstimate | String | [time stamp] | Timestamp for the estimated maximum time of next green (During green phase, this value points to the next green phase) |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -291,7 +291,7 @@ This status returns the whole commandtable
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| maxEndTime | String | [time stamp] | Time stamp for start of measuring. |
+| LikelyToGEstimate | String | [time stamp] | Timestamp for the estimated likely time of next green (During green phase, this value points to the next green phase) |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -299,7 +299,7 @@ This status returns the whole commandtable
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| nextTime | String | [time stamp] | Time stamp for start of measuring. |  
+| ToGConfidence | Integer | 0-100 (%) | Current confidence of the Time of Green |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -307,7 +307,7 @@ This status returns the whole commandtable
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| nextMinEndTime | String | [time stamp] | Time stamp for start of measuring. |
+| MinToREstimate | String | [time stamp] | Timestamp for the estimated minimum time of next red (During red phase, this value points to the next red phase) |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -315,9 +315,26 @@ This status returns the whole commandtable
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| nextMaxEndTime | String | [time stamp] | Time stamp for start of measuring. |
+| MaxToREstimate | String | [time stamp] | Timestamp for the estimated maximum time of next red (During red phase, this value points to the next red phase) |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
+
+### Return value
+
+| Name | Type | Value | Comment |
+| ---- | ---- | ----- | ------- |
+| LikelyToREstimate | String | [time stamp] | Timestamp for the estimated likely time of next red (During red phase, this value points to the next red phase) |
+
+> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
+
+### Return value
+
+| Name | Type | Value | Comment |
+| ---- | ---- | ----- | ------- |
+| ToRConfidence | Integer | 0-100 (%) | Current confidence of the Time of Red |
+
+> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
+
 
 ### Example message
 
@@ -331,12 +348,14 @@ This status returns the whole commandtable
 	"xNId":"",
 	"cId":"KK+AG0503=001SG002",
 	"sS": [
-		{"sCI":"S0025", "n":"startTime"},
-		{"sCI":"S0025", "n":"minEndTime"},
-		{"sCI":"S0025", "n":"maxEndTime"},
-		{"sCI":"S0025", "n":"nextTime"},
-		{"sCI":"S0025", "n":"nextMinEndTime"},
-		{"sCI":"S0025", "n":"nextMaxEndTime"}
+		{"sCI":"S0025", "n":"MinToGEstimate"},
+		{"sCI":"S0025", "n":"MaxToGEstimate"},
+		{"sCI":"S0025", "n":"LikelyToGEstimate"},
+		{"sCI":"S0025", "n":"ToGConfidence"},
+		{"sCI":"S0025", "n":"MinToREstimate"},
+		{"sCI":"S0025", "n":"MaxToREstimate"},
+		{"sCI":"S0025", "n":"LikelyToREstimate"},
+		{"sCI":"S0025", "n":"ToRConfidence"}
 	]
 }
 ```
@@ -352,12 +371,14 @@ This status returns the whole commandtable
 	"cId":"KK+AG0503=001SG002",
 	"sTs":"2016-05-11T19:58:02.487Z",
 	"sS": [
-		{"sCI":"S0025", "n":"startTime", "s":"2016-05-11T21:55:10.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"minEndTime", "s":"2016-05-11T21:55:08.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"maxEndTime", "s":"2016-05-11T21:55:13.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"nextTime", "s":"2016-05-11T21:55:50.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"nextMinEndTime", "s":"2016-05-11T21:55:45.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"nextMaxEndTime", "s":"2016-05-11T21:55:55.231Z", "q":"recent"}
+		{"sCI":"S0025", "n":"MinToGEstimate", "s":"2016-05-11T21:55:10.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"MaxToGEstimate", "s":"2016-05-11T21:56:08.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"LikelyToGEstimate", "s":"2016-05-11T21:55:13.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"ToGConfidence", "s":"87", "q":"recent"},
+		{"sCI":"S0025", "n":"MinToREstimate", "s":"2016-05-11T21:57:45.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"MaxToREstimate", "s":"2016-05-11T21:57:55.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"LikelyToREstimate", "s":"2016-05-11T21:57:45.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"ToRConfidence", "s":"75", "q":"recent"}
 	]
 }
 ```
