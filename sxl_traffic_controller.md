@@ -5,8 +5,8 @@
 + **Reviewed**:
 + **Approved**:
 + **Created date**: 2010-04-20
-+ **SXL revision**: 1.0.13-draft4
-+ **Revision date**: 2016-12-13
++ **SXL revision**: 1.0.13-Draft 8
++ **Revision date**: 2017-03-21
 + **RSMP version**: 3.1.2
 
 Sections
@@ -67,7 +67,7 @@ Aggregated status per grouped object
 |Traffic Controller|A0009|Other error|Defined by manufacturer||3|D|
 |Signal group|A0101|Pushbutton error|Defined by manufacturer||3|D|
 |Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer||2|D|
-|Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer||3|D|
+|Signal group|[A0202](#A0202)|Less serious hardware error|Defined by manufacturer||3|D|
 |Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer||3|D|
 |Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer||3|D|
 ## Return values
@@ -140,6 +140,7 @@ Aggregated status per grouped object
 |Signal Group|[S0025](#S0025)|Time-of-Green / Time-of-Red|
 |Traffic Controller|[S0026](#S0026)|Week time table|
 |Traffic Controller|[S0027](#S0027)|Time tables|
+|Traffic Controller|[S0028](#S0028)|Cycle time|
 |Traffic Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
 |Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
 |Traffic Controller|[S0095](#S0095)|Version av Traffic Controller|
@@ -304,7 +305,7 @@ Aggregated status per grouped object
 ### S0023
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|status|string|[text]|Command table. Defines command, e.g. c-pulses.<br>Each command is written as pp-o-gg-cc where:<br>pp=time plan<br>o=command<br>gg=group number<br>cc=cycle step<br><br>Command legend:<br>1=Give green to group<br>2=Red<br>2-255=Reserved<br><br>Each command is separated with a comma<br>E.g.<br>pp-o-gg-cc,pp-o-gg-cc|
+|status|string|[text]|Command table. Defines command, <br>Each command are written as pp-dd-ee where:<br>pp=Time plan<br>dd=Dynamic band number (from 1-10)<br>ee=Extension in seconds in this band<br><br>Each command is separated with a comma.<br><br>E.g. <br>pp-dd-ee,pp-dd-ee|
 
 <a id="S0024"></a>
 ### S0024
@@ -323,7 +324,7 @@ Aggregated status per grouped object
 |minToREstimate   |string|[time stamp]|Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
 |maxToREstimate|string|[time stamp]|Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
 |likelyToREstimate   |string|[time stamp]|Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|timeToRConfidence|integer|[0-100]|Confidence of the likelyToREstimate. 0-100%|
+|ToRConfidence|integer|[0-100]|Confidence of the likelyToREstimate. 0-100%|
 
 <a id="S0026"></a>
 ### S0026
@@ -336,6 +337,12 @@ Aggregated status per grouped object
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Time Table. Defines time tables.<br>Each time definition is written as t-o-h-m where:<br>t=time table nr (1-12)<br>o=function<br>h=hour - switching time<br>m=minute - switching minute<br><br>Function legend:<br>0=no plan is selected by time table<br>1=set plan 1<br>…<br>16= set plan 16<br><br>hour and minute is using local time (not UTC)<br><br>Each time definition is separated with a comma <br><br>E.g.<br>t-o-h-m,t-o-h-m<br>|
+
+<a id="S0028"></a>
+### S0028
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Cycle time table<br>Each cycle time is written as pp-tt where:<br>pp=time plan<br>tt=cycle time in seconds<br><br>Each cycle time is separated with a comma<br><br><br>E.g.<br>pp-tt,pp-tt|
 
 <a id="S0091"></a>
 ### S0091
@@ -460,6 +467,7 @@ Aggregated status per grouped object
 |Traffic Controller|[M0015](#M0015)|Set Offset time|
 |Traffic Controller|[M0016](#M0016)|Set week time table|
 |Traffic Controller|[M0017](#M0017)|Set time tables|
+|Traffic Controller|[M0018](#M0018)|Set Cycle time|
 |Traffic Controller|[M0103](#M0103)|Set security code|
 |Traffic Controller|[M0104](#M0104)|Set clock|
 ## Arguments
@@ -471,7 +479,7 @@ Aggregated status per grouped object
 |status|setValue|string|<ul><li>NormalControl</li><li>YellowFlash</li><li>Dark</li></ul>|NormalControl: Normal Control<br>YellowFlash: Enables yellow flash<br>Dark: Enables dark mode|
 |securityCode|setValue|string|[text]|Security code 2 |
 |timeout|setValue|unit|[0-1440]|Time in minutes until controller automatically reverts to previous functional position.<br>0=no automatic return|
-|intersection|setValue|ordinal|[1-255]|Intersection number|
+|intersection|setValue|ordinal|[0-255]|Intersection number|
 
 <a id="M0002"></a>
 ### M0002
@@ -561,7 +569,7 @@ Aggregated status per grouped object
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |plan|setCommands|integer|[0-255]|Plan to be changed|
-|status|setCommands|string|[text]|Command table. Defines command, e.g. c-pulses.<br>Each command are written as o-gg-cc where:<br>o=command<br>gg=group number<br>cc=cycle step<br><br>Command legend:<br>1=Give green to group<br>2=Red<br>2-255=Reserved<br><br>Each command is separated with a comma.<br><br>E.g. <br>o-gg-cc,o-gg-cc|
+|status|setCommands|string|[text]|Command table. Defines command, <br>Each command are written as dd-ee where:<br>dd=Dynamic band number (from 1-10)<br>ee=Extension in seconds in this band<br><br>Each command is separated with a comma.<br><br>E.g. <br>dd-ee,dd-ee|
 |securityCode|setCommands|string|[text]|Security code 2|
 
 <a id="M0015"></a>
@@ -585,6 +593,14 @@ Aggregated status per grouped object
 |----|-------|----|-----|-------|
 |status|setTimeTable|string|[text]|Time Table. Defines time tables.<br>Each time definition is written as t-o-h-m where:<br>t=time table nr (1-12)<br>o=function<br>h=hour - switching time<br>m=minute - switching minute<br><br>Function legend:<br>0=no plan is selected by time table<br>1=set plan 1<br>…<br>16= set plan 16<br><br>hour and minute is using local time (not UTC)<br><br>Each time definition is separated with a comma.<br><br>E.g.<br>t-o-h-m,t-o-h-m<br>|
 |securityCode|setTimeTable|string|[text]|Security code 2|
+
+<a id="M0018"></a>
+### M0018
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setCylceTime|integer|[1-255]|Set cycle time in seconds|
+|plan|setCylceTime|integer|[0-255]|Time plan nr|
+|securityCode|setOffset|string|[text]|Security code 2|
 
 <a id="M0103"></a>
 ### M0103
