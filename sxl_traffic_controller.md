@@ -70,27 +70,28 @@ Aggregated status per grouped object
 |Signal group|[A0202](#A0202)|Less serious hardware error|Defined by manufacturer||3|D|
 |Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer||3|D|
 |Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer||3|D|
+## Return values
 
 <a id="A0008"></a>
-## Return Values for A0008
+### A0008
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |timeplan|ordinal|[designation]|Current time plan|
 
 <a id="A0201"></a>
-## Return Values for A0201
+### A0201
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |color|string|<ul><li>red</li><li>yellow</li><li>green</li></ul>|Color of lamp|
 
 <a id="A0202"></a>
-## Return Values for A0202
+### A0202
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |color|string|<ul><li>red</li><li>yellow</li><li>green</li></ul>|Color of lamp|
 
 <a id="A0301"></a>
-## Return Values for A0301
+### A0301
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |detector|ordinal|[designation]|Designation of the detector|
@@ -99,7 +100,7 @@ Aggregated status per grouped object
 |manual|boolean|<ul><li>True</li><li>False</li></ul>|Manually controlled detector logic (True/False)|
 
 <a id="A0302"></a>
-## Return Values for A0302
+### A0302
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |detector|ordinal|[designation]|Designation of the detector|
@@ -141,9 +142,10 @@ Aggregated status per grouped object
 |Detector logic|[S0202](#S0202)|Traffic Counting: Vehicle speed|
 |Detector logic|[S0203](#S0203)|Traffic Counting: Occupancy|
 |Detector logic|[S0204](#S0204)|Traffic Counting: Number of vehicles of given classification|
+## Return values
 
 <a id="S0001"></a>
-## Return Values for S0001
+### S0001
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |signalgroupstatus|string|[text]|Signal group status as text field|
@@ -152,158 +154,158 @@ Aggregated status per grouped object
 |stage|integer|[0-999]|Current stage (isolated)|
 
 <a id="S0002"></a>
-## Return Values for S0002
+### S0002
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |detectorlogicstatus|string|[text]|Detector logic status as text field|
 
 <a id="S0003"></a>
-## Return Values for S0003
+### S0003
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |inputstatus|string|[text]|Input status as text field|
 |extendedinputstatus|string|[text]|Extended input status as text field|
 
 <a id="S0004"></a>
-## Return Values for S0004
+### S0004
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |outputstatus|string|[text]|Output status as text field|
 |extendedoutputstatus|string|[text]|Extended output status as text field|
 
 <a id="S0005"></a>
-## Return Values for S0005
+### S0005
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Controller is not in start up mode<br>True: Controller is currently in start up mode|
 
 <a id="S0006"></a>
-## Return Values for S0006
+### S0006
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Emergency stage inactive<br>True: Emergency stage active|
 |emergencystage|ordinal|[1-255]|Number of emergency stage|
 
 <a id="S0007"></a>
-## Return Values for S0007
+### S0007
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[1-255]|Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Traffic Controller in dark mode<br>True: Traffic Controller not in dark mode|
 
 <a id="S0008"></a>
-## Return Values for S0008
+### S0008
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[1-255]|Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Manual control inactive<br>True: Manual control active|
 
 <a id="S0009"></a>
-## Return Values for S0009
+### S0009
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[1-255]|Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False:  Fixed time control inactive<br>True:  Fixed time control active|
 
 <a id="S0010"></a>
-## Return Values for S0010
+### S0010
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[1-255]|Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Isolated control disabled<br>True: Isolated control enabled (Vehicle actuated control or Fixed time control)|
 
 <a id="S0011"></a>
-## Return Values for S0011
+### S0011
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[1-255]|Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Yellow flash disabled<br>True: Yellow flash enabled|
 
 <a id="S0012"></a>
-## Return Values for S0012
+### S0012
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[1-255]|Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: All red disabled<br>True: All red enabled|
 
 <a id="S0013"></a>
-## Return Values for S0013
+### S0013
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[1-255]|Intersection number|
 |status|integer|<ul><li>0</li><li>1</li><li>2</li></ul>|0: disabled<br>1: dark mode<br>2: yellow flash|
 
 <a id="S0014"></a>
-## Return Values for S0014
+### S0014
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|ordinal|[1-255]|Current time plan|
 
 <a id="S0015"></a>
-## Return Values for S0015
+### S0015
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|ordinal|[1-255]|Current traffic situation|
 
 <a id="S0016"></a>
-## Return Values for S0016
+### S0016
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |number|long|[1-65025]|Number of detector logics|
 
 <a id="S0017"></a>
-## Return Values for S0017
+### S0017
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |number|long|[1-65025]|Number of signal groups|
 
 <a id="S0018"></a>
-## Return Values for S0018
+### S0018
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |number|long|[1-65025]|Number of time plans|
 
 <a id="S0019"></a>
-## Return Values for S0019
+### S0019
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |number|long|[1-65025]|Number of traffic situations|
 
 <a id="S0020"></a>
-## Return Values for S0020
+### S0020
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[1-255]|Intersection number|
 |controlmode|string|<ul><li>startup</li><li>control</li><li>standby</li><li>failure</li><li>test</li></ul>|Startup mode<br>Normal control<br>Standby mode<br>Failure mode<br>Test mode|
 
 <a id="S0021"></a>
-## Return Values for S0021
+### S0021
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |detectorlogics|string|[text]|Manually set detector logics (1/0) as text field|
 
 <a id="S0091"></a>
-## Return Values for S0091
+### S0091
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |user|string|<ul><li>[username]</li><li>[nobody]</li></ul>|username: User currently logged in<br>nobody: No one logged in|
 |status|string|<ul><li>login</li><li>logout</li></ul>|login: Somebody currently logged in<br>logout: Nobody currently logged in|
 
 <a id="S0092"></a>
-## Return Values for S0092
+### S0092
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |user|string|<ul><li>[username]</li><li>[nobody]</li></ul>|username: User currently logged in<br>nobody: No one logged in|
 |status|string|<ul><li>login</li><li>logout</li></ul>|login: Somebody currently logged in<br>logout: Nobody currently logged in|
 
 <a id="S0095"></a>
-## Return Values for S0095
+### S0095
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Manufacturer, product name and version of traffic controller|
 
 <a id="S0096"></a>
-## Return Values for S0096
+### S0096
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |year|integer|YYYY|Year according to format YYYY. NOTE: UTC is used|
@@ -314,28 +316,28 @@ Aggregated status per grouped object
 |second|integer|SS|Second (00-59) according to format SS. Note: UTC is used|
 
 <a id="S0201"></a>
-## Return Values for S0201
+### S0201
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
 |vehicles|long|[number]|Number of vehicles on a given detector logic (since last update)|
 
 <a id="S0202"></a>
-## Return Values for S0202
+### S0202
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
 |speed|unit|[speed]|Average speed in km/h (integer)|
 
 <a id="S0203"></a>
-## Return Values for S0203
+### S0203
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
 |occupancy|scale|[0-100]|Occupancy in percent (0-100%) (integer)|
 
 <a id="S0204"></a>
-## Return Values for S0204
+### S0204
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -365,9 +367,10 @@ Aggregated status per grouped object
 |Signal group|[M0011](#M0011)|Stop of signal group. Orders a signal group to red. Requires security code 2|
 |Traffic Controller|[M0103](#M0103)|Set security code|
 |Traffic Controller|[M0104](#M0104)|Set clock|
+## Arguments
 
 <a id="M0001"></a>
-## Arguments for M0001
+### M0001
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setValue|string|<ul><li>NormalControl</li><li>YellowFlash</li><li>Dark</li></ul>|NormalControl: Normal Control<br>YellowFlash: Enables yellow flash<br>Dark: Enables dark mode|
@@ -376,7 +379,7 @@ Aggregated status per grouped object
 |intersection|setValue|ordinal|[1-255]|Intersection number|
 
 <a id="M0002"></a>
-## Arguments for M0002
+### M0002
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setPlan|boolean|<ul><li>False</li><li>True</li></ul>|False: Controller uses time plan according to programming<br>True: Contoller uses time plan according to command|
@@ -384,7 +387,7 @@ Aggregated status per grouped object
 |timeplan|setPlan|ordinal|[1-255]|designation på time plan|
 
 <a id="M0003"></a>
-## Arguments for M0003
+### M0003
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setTrafficSituation|boolean|<ul><li>False</li><li>True</li></ul>|False: Controller uses traffic situation according to own programming<br>True: Contoller uses traffic situation according to command|
@@ -392,14 +395,14 @@ Aggregated status per grouped object
 |traficsituation|setTrafficSituation|ordinal|[1-255]|designation of traficsituation|
 
 <a id="M0004"></a>
-## Arguments for M0004
+### M0004
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setRestart|boolean|True|True: Restart controller|
 |securityCode|setRestart|string|[text]|Security code 2|
 
 <a id="M0005"></a>
-## Arguments for M0005
+### M0005
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setEmergency|boolean|<ul><li>False</li><li>True</li></ul>|False: Activate emergency route<br>True: Deactivate emergency route|
@@ -407,7 +410,7 @@ Aggregated status per grouped object
 |emergencyroute|setEmergency|ordinal|[1-255]|Number of emergency route|
 
 <a id="M0006"></a>
-## Arguments for M0006
+### M0006
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: Deactivate input<br>True: Activate input|
@@ -415,14 +418,14 @@ Aggregated status per grouped object
 |input|setInput|ordinal|[1-255]|Number of Input|
 
 <a id="M0007"></a>
-## Arguments for M0007
+### M0007
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setFixedTime|boolean|<ul><li>False</li><li>True</li></ul>|False: Deactivate fixed time control<br>True: Activate fixed time control|
 |securityCode|setFixedTime|string|[text]|Security code 2|
 
 <a id="M0008"></a>
-## Arguments for M0008
+### M0008
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setForceDetectorLogic|boolean|<ul><li>False</li><li>True</li></ul>|False: Deactivate manual control of detector logic<br>True: Activate manual control of detector logic|
@@ -430,21 +433,21 @@ Aggregated status per grouped object
 |mode|setForceDetectorLogic|boolean|<ul><li>False</li><li>True</li></ul>|False: Deactivate detector logic<br>True: Activate detector logic|
 
 <a id="M0010"></a>
-## Arguments for M0010
+### M0010
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setStart|boolean|<ul><li>False</li><li>True</li></ul>|False: No command (default)<br>True: Order a signal group to green|
 |securityCode|setStart|string|[text]|Security code 2|
 
 <a id="M0011"></a>
-## Arguments for M0011
+### M0011
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setStop|boolean|<ul><li>False</li><li>True</li></ul>|False: No command (default)<br>True: Order a signal group to red|
 |securityCode|setStop|string|[text]|Security code 2|
 
 <a id="M0103"></a>
-## Arguments for M0103
+### M0103
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setSecurityCode|string|<ul><li>Level1</li><li>Level2</li></ul>|Level1: Change security code 1<br>Level2: Change security code 2|
@@ -452,7 +455,7 @@ Aggregated status per grouped object
 |newSecurityCode|setSecurityCode|string|[text]|New security code|
 
 <a id="M0104"></a>
-## Arguments for M0104
+### M0104
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |securityCode|setDate|string|[text]|Security code 1|
