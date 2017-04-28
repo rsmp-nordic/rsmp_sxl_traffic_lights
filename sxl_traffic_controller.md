@@ -54,22 +54,22 @@ Aggregated status per grouped object
 <a id="alarms"></a>
 
 # Alarms
-| ObjectType | Object (optional) | alarmCodeId | Description | externalAlarmCodeId | externalNtsAlarmCodeId | Priority | Category |
-| ---------- | ----------------- |:-----------:| ----------- | ------------------- | ---------------------- |:--------:|:--------:|
-|Traffic Controller||A0001|Serious hardware error|Defined by manufacturer||2|D|
-|Traffic Controller||A0002|Less serious hardware error|Defined by manufacturer||3|D|
-|Traffic Controller||A0003|Serious configuration error|Defined by manufacturer||2|D|
-|Traffic Controller||A0004|Less serious configuration error|Defined by manufacturer||3|D|
-|Traffic Controller||A0005|Communication error between traffic controllers / synchronisation error|Defined by manufacturer||3|D|
-|Traffic Controller||A0006|Safety error|Defined by manufacturer||2|D|
-|Traffic Controller||A0007|Communication error between one or multiple traffic controllers and central control system|Defined by manufacturer||3|D|
-|Signal group||[A0008](#A0008)|Dead lock error|Defined by manufacturer||2|D|
-|Traffic Controller||A0009|Other error|Defined by manufacturer||3|D|
-|Signal group||A0101|Pushbutton error|Defined by manufacturer||3|D|
-|Signal group||[A0201](#A0201)|Serious lamp error|Defined by manufacturer||2|D|
-|Signal group||[A0202](#A0202)|Less serious hardware error|Defined by manufacturer||3|D|
-|Detector logic||[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer||3|D|
-|Detector logic||[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer||3|D|
+| ObjectType | alarmCodeId | Description | externalAlarmCodeId | externalNtsAlarmCodeId | Priority | Category |
+| ---------- |:-----------:| ----------- | ------------------- | ---------------------- |:--------:|:--------:|
+|Traffic Controller|A0001|Serious hardware error|Defined by manufacturer||2|D|
+|Traffic Controller|A0002|Less serious hardware error|Defined by manufacturer||3|D|
+|Traffic Controller|A0003|Serious configuration error|Defined by manufacturer||2|D|
+|Traffic Controller|A0004|Less serious configuration error|Defined by manufacturer||3|D|
+|Traffic Controller|A0005|Communication error between traffic controllers / synchronisation error|Defined by manufacturer||3|D|
+|Traffic Controller|A0006|Safety error|Defined by manufacturer||2|D|
+|Traffic Controller|A0007|Communication error between one or multiple traffic controllers and central control system|Defined by manufacturer||3|D|
+|Signal group|[A0008](#A0008)|Dead lock error|Defined by manufacturer||2|D|
+|Traffic Controller|A0009|Other error|Defined by manufacturer||3|D|
+|Signal group|A0101|Pushbutton error|Defined by manufacturer||3|D|
+|Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer||2|D|
+|Signal group|[A0202](#A0202)|Less serious hardware error|Defined by manufacturer||3|D|
+|Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer||3|D|
+|Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer||3|D|
 
 <a id="A0008"></a>
 ## Return Values for A0008
@@ -110,37 +110,37 @@ Aggregated status per grouped object
 <a id="status"></a>
 
 # Status
-| ObjectType | Object (optional) | statusCodeId | Description |
-| ---------- | ----------------- |:------------:| ----------- |
-|Traffic Controller||[S0001](#S0001)|Signal group status|
-|Traffic Controller||[S0002](#S0002)|Detector logic status|
-|Traffic Controller||[S0003](#S0003)|Input status|
-|Traffic Controller||[S0004](#S0004)|Outputstatus|
-|Traffic Controller||[S0005](#S0005)|Traffic Controller starting|
-|Traffic Controller||[S0006](#S0006)|Emergency stage|
-|Traffic Controller||[S0007](#S0007)|Controller switched on|
-|Traffic Controller||[S0008](#S0008)|Manual control|
-|Traffic Controller||[S0009](#S0009)|Fixed time control|
-|Traffic Controller||[S0010](#S0010)|Isolated control|
-|Traffic Controller||[S0011](#S0011)|Yellow flash|
-|Traffic Controller||[S0012](#S0012)|All red|
-|Traffic Controller||[S0013](#S0013)|Police key|
-|Traffic Controller||[S0014](#S0014)|Current time plan|
-|Traffic Controller||[S0015](#S0015)|Current traffic situation|
-|Traffic Controller||[S0016](#S0016)|Number of detector logics|
-|Traffic Controller||[S0017](#S0017)|Number of signal groups|
-|Traffic Controller||[S0018](#S0018)|Number of time plans|
-|Traffic Controller||[S0019](#S0019)|Number of traffic situations|
-|Traffic Controller||[S0020](#S0020)|Control mode|
-|Traffic Controller||[S0021](#S0021)|Manually set detector logic|
-|Traffic Controller||[S0091](#S0091)|Operator logged in/out OP-panel|
-|Traffic Controller||[S0092](#S0092)|Operator logged in/out web-interface|
-|Traffic Controller||[S0095](#S0095)|Version av Traffic Controller|
-|Traffic Controller||[S0096](#S0096)|Current date and time|
-|Detector logic||[S0201](#S0201)|Traffic Counting: Number of vehicles|
-|Detector logic||[S0202](#S0202)|Traffic Counting: Vehicle speed|
-|Detector logic||[S0203](#S0203)|Traffic Counting: Occupancy|
-|Detector logic||[S0204](#S0204)|Traffic Counting: Number of vehicles of given classification|
+| ObjectType | statusCodeId | Description |
+| ---------- |:------------:| ----------- |
+|Traffic Controller|[S0001](#S0001)|Signal group status|
+|Traffic Controller|[S0002](#S0002)|Detector logic status|
+|Traffic Controller|[S0003](#S0003)|Input status|
+|Traffic Controller|[S0004](#S0004)|Outputstatus|
+|Traffic Controller|[S0005](#S0005)|Traffic Controller starting|
+|Traffic Controller|[S0006](#S0006)|Emergency stage|
+|Traffic Controller|[S0007](#S0007)|Controller switched on|
+|Traffic Controller|[S0008](#S0008)|Manual control|
+|Traffic Controller|[S0009](#S0009)|Fixed time control|
+|Traffic Controller|[S0010](#S0010)|Isolated control|
+|Traffic Controller|[S0011](#S0011)|Yellow flash|
+|Traffic Controller|[S0012](#S0012)|All red|
+|Traffic Controller|[S0013](#S0013)|Police key|
+|Traffic Controller|[S0014](#S0014)|Current time plan|
+|Traffic Controller|[S0015](#S0015)|Current traffic situation|
+|Traffic Controller|[S0016](#S0016)|Number of detector logics|
+|Traffic Controller|[S0017](#S0017)|Number of signal groups|
+|Traffic Controller|[S0018](#S0018)|Number of time plans|
+|Traffic Controller|[S0019](#S0019)|Number of traffic situations|
+|Traffic Controller|[S0020](#S0020)|Control mode|
+|Traffic Controller|[S0021](#S0021)|Manually set detector logic|
+|Traffic Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
+|Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
+|Traffic Controller|[S0095](#S0095)|Version av Traffic Controller|
+|Traffic Controller|[S0096](#S0096)|Current date and time|
+|Detector logic|[S0201](#S0201)|Traffic Counting: Number of vehicles|
+|Detector logic|[S0202](#S0202)|Traffic Counting: Vehicle speed|
+|Detector logic|[S0203](#S0203)|Traffic Counting: Occupancy|
+|Detector logic|[S0204](#S0204)|Traffic Counting: Number of vehicles of given classification|
 
 <a id="S0001"></a>
 ## Return Values for S0001
@@ -351,20 +351,20 @@ Aggregated status per grouped object
 <a id="commands"></a>
 
 # Commands
-| ObjectType | Object (optional) | commandCodeId | Description |
-| ---------- | ----------------- |:-------------:| ----------- |
-|Traffic Controller||[M0001](#M0001)|Sets functional position<br>Requires security code 2|
-|Traffic Controller||[M0002](#M0002)|Sets current time plan<br>Requires security code 2|
-|Traffic Controller||[M0003](#M0003)|Sets traffic situation the controller uses.<br>Requires security code 2|
-|Traffic Controller||[M0004](#M0004)|Restarts Traffic Controller<br>Requires security code 2|
-|Traffic Controller||[M0005](#M0005)|Activate emergency route<br>Requires security code 2|
-|Traffic Controller||[M0006](#M0006)|Activate input<br>Requires security code 2|
-|Traffic Controller||[M0007](#M0007)|Activate fixed time control<br>Requires security code 2|
-|Detector logic||[M0008](#M0008)|Sets manual activation of detector logic.<br>Requires security code 2|
-|Signal group||[M0010](#M0010)|Start of signal group. Orders a signal group to green. Requires security code 2|
-|Signal group||[M0011](#M0011)|Stop of signal group. Orders a signal group to red. Requires security code 2|
-|Traffic Controller||[M0103](#M0103)|Set security code|
-|Traffic Controller||[M0104](#M0104)|Set clock|
+| ObjectType | commandCodeId | Description |
+| ---------- |:-------------:| ----------- |
+|Traffic Controller|[M0001](#M0001)|Sets functional position<br>Requires security code 2|
+|Traffic Controller|[M0002](#M0002)|Sets current time plan<br>Requires security code 2|
+|Traffic Controller|[M0003](#M0003)|Sets traffic situation the controller uses.<br>Requires security code 2|
+|Traffic Controller|[M0004](#M0004)|Restarts Traffic Controller<br>Requires security code 2|
+|Traffic Controller|[M0005](#M0005)|Activate emergency route<br>Requires security code 2|
+|Traffic Controller|[M0006](#M0006)|Activate input<br>Requires security code 2|
+|Traffic Controller|[M0007](#M0007)|Activate fixed time control<br>Requires security code 2|
+|Detector logic|[M0008](#M0008)|Sets manual activation of detector logic.<br>Requires security code 2|
+|Signal group|[M0010](#M0010)|Start of signal group. Orders a signal group to green. Requires security code 2|
+|Signal group|[M0011](#M0011)|Stop of signal group. Orders a signal group to red. Requires security code 2|
+|Traffic Controller|[M0103](#M0103)|Set security code|
+|Traffic Controller|[M0104](#M0104)|Set clock|
 
 <a id="M0001"></a>
 ## Arguments for M0001
