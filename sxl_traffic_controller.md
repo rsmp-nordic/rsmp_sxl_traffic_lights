@@ -5,8 +5,8 @@
 + **Reviewed**:
 + **Approved**:
 + **Created date**: 2010-04-20
-+ **SXL revision**: 1.0.7
-+ **Revision date**: 2012-10-04
++ **SXL revision**: 1.0.10
++ **Revision date**: 2013-11-07
 + **RSMP version**: 3.1.2
 
 Sections
@@ -363,8 +363,10 @@ Aggregated status per grouped object
 |Traffic Controller|[M0006](#M0006)|Activate input<br>Requires security code 2|
 |Traffic Controller|[M0007](#M0007)|Activate fixed time control<br>Requires security code 2|
 |Detector logic|[M0008](#M0008)|Sets manual activation of detector logic.<br>Requires security code 2|
-|Signal group|[M0010](#M0010)|Start of signal group. Orders a signal group to green. Requires security code 2|
-|Signal group|[M0011](#M0011)|Stop of signal group. Orders a signal group to red. Requires security code 2|
+|Signal group|[M0010](#M0010)|Request start of a signal group. Orders a signal group to green. Requires security code 2|
+|Signal group|[M0011](#M0011)|Request stop of signal group. Orders a signal group to red. Requires security code 2|
+|Traffic Controller|[M0012](#M0012)|Request start or stop of a series of signal groups. Requires security code 2|
+|Traffic Controller|[M0013](#M0013)|Activate a series of inputs<br>Requires security code 2|
 |Traffic Controller|[M0103](#M0103)|Set security code|
 |Traffic Controller|[M0104](#M0104)|Set clock|
 ## Arguments
@@ -445,6 +447,20 @@ Aggregated status per grouped object
 |----|-------|----|-----|-------|
 |status|setStop|boolean|<ul><li>False</li><li>True</li></ul>|False: No command (default)<br>True: Order a signal group to red|
 |securityCode|setStop|string|[text]|Security code 2|
+
+<a id="M0012"></a>
+### M0012
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setStart|string||Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format,  &lt;semicolon&gt; is used in example below.<br><br>1=Order signal group to green<br>0=Order signal group to red<br><br>Format: [Offset],[Bits to set],[Bits to unset]&lt;semicolon&gt;…<br> <br>Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. <br> <br>Example 1:<br>"5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off<br>(Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0)<br> <br>Example 2:<br>"22, 1, 4" sets input 22 = on and 24 = off<br>(Input starts from no. 22 and bit 0 = 1 and bit 2 = 0)<br> <br>And both thease examples could be sent in the same message as:<br>"5,4143,65&lt;semicolon&gt;22,1,4"<br><br>Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red|
+|securityCode|setStart|string|[text]|Security code 2|
+
+<a id="M0013"></a>
+### M0013
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setInput|string||Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format,  &lt;semicolon&gt; is used in example below.<br><br>Format: [Offset],[Bits to set],[Bits to unset]&lt;semicolon&gt;…<br> <br>Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. <br> <br>Example 1:<br>"5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off<br>(Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0)<br> <br>Example 2:<br>"22, 1, 4" sets input 22 = on and 24 = off<br>(Input starts from no. 22 and bit 0 = 1 and bit 2 = 0)<br> <br>And both thease examples could be sent in the same message as:<br>"5,4143,65&lt;semicolon&gt;22,1,4"<br><br>Such a message would activate input 6,7,10,17,22 and deactive input 5,11,24|
+|securityCode|setInput|string|[text]|Security code 2|
 
 <a id="M0103"></a>
 ### M0103
