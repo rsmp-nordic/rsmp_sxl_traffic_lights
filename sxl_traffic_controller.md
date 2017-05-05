@@ -6,7 +6,7 @@
 + **Approved**:
 + **Created date**: 2010-04-20
 + **SXL revision**: 1.0.13-Draft 9
-+ **Revision date**: 2017-03-21
++ **Revision date**: 2017-03-23
 + **RSMP version**: 3.1.2
 
 Sections
