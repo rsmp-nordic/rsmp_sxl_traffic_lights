@@ -67,7 +67,7 @@ Aggregated status per grouped object
 |Traffic Controller|A0009|Other error|Defined by manufacturer||3|D|
 |Signal group|A0101|Pushbutton error|Defined by manufacturer||3|D|
 |Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer||2|D|
-|Signal group|[A0202](#A0202)|Less serious hardware error|Defined by manufacturer||3|D|
+|Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer||3|D|
 |Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer||3|D|
 |Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer||3|D|
 ## Return values
