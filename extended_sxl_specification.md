@@ -1,26 +1,24 @@
-Copenhagen extended SXL (1.0.13)
+Copenhagen extended SXL (RSMP++)
 ================================
 Specification
 
 Draft 9
 
-This document defines supplements to the official signal exchange list (SXL)
+This document defines supplements to the signal exchange list (SXL)
 defined for traffic light controllers (TLC).
 
+The SXL extension was initiated by the City of Copenhagen to enable more flexible traffic management using the RSMP protocol.
 
-### Versions of SXL for TLC
+The extension focuses on four elements:
 
-  * SXL 1.0.7:        The official SXL used for traffic light controllers
-                      (official supported version)
-  * SXL 1.0.8-1.0.11: Extensions for coordination support
-                      Adds commands/statuses needed for coordination between TLCs
-  * SXL 1.0.12:       Revised traffic counting (draft, not finished)
-  * SXL 1.0.13:       SXL extensions by the City of Copenhagen
-
+- Ability to read and modify offset times
+- Ability to read and modify green times
+- Ability to read and modify time tables
+- Ability to get predicted time-to-green / time-to-red
 
 ### Added statuses/commands
 
-Below listed statuses and commands are the additions of SXL 1.0.13 from the previous SXL. No statuses, commands or other message types has been removed.
+Below listed statuses and commands are the additions of the SXL from the previous SXL. No statuses, commands or other message types has been removed.
 
 #### Added statuses
 
