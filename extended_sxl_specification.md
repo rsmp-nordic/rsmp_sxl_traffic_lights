@@ -2,7 +2,7 @@ Copenhagen extended SXL (1.0.13)
 ================================
 Specification
 
-Draft 4
+Draft 9
 
 This document defines supplements to the official signal exchange list (SXL)
 defined for traffic light controllers (TLC).
@@ -123,13 +123,13 @@ This status returns the whole commandtable
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| Status | String | [text] | Command table. Defines command, e.g. c-pulses. |
+| Status | String | [text] | Command table. Defines time extensions |
 
 #### Definition of return string
 The return string is defined as:
 
 ```
-pp-o-gg-cc
+pp-dd-ee
 ```
 
 Where:
@@ -137,23 +137,11 @@ Where:
 | legend | description |
 | ------- | ---------- |
 | pp | time plan |
-| o | command |
-| gg | group number |
-| cc | cycle step |
-
-and available commands are:
-
-| legend | Command |
-| ------- | ---------- |
-| 1 | Give green to group |
-| 2 | Red |
-| 3 | reserved |
-| ... | ... |
-| 255 | reserved |
-
+| dd | dynamic band number (from 1-10) |
+| ee | extension in seconds in this band |
 
 **Note!**  
-> Each status is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
+> Each command is separated with a comma.
 
 
 ### Example message
@@ -184,7 +172,7 @@ and available commands are:
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T12:38:59.953Z",
 	"sS": [
-		{"sCI":"S0023", "n":"status", "s":"01-1-01-30:01-1-02-10:", "q":"recent"}
+		{"sCI":"S0023", "n":"status", "s":"01-1-30,01-1-10:", "q":"recent"}
 	]
 }
 ```
@@ -275,7 +263,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| MinToGEstimate | String | [time stamp] | Timestamp for the estimated minimum time of next green (During green phase, this value points to the next green phase) |
+| minToGEstimate | String | [time stamp] | Timestamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green.  |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -283,7 +271,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| MaxToGEstimate | String | [time stamp] | Timestamp for the estimated maximum time of next green (During green phase, this value points to the next green phase) |
+| maxToGEstimate | String | [time stamp] | Timestamp for the maximum time time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green.  |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -291,7 +279,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| LikelyToGEstimate | String | [time stamp] | Timestamp for the estimated likely time of next green (During green phase, this value points to the next green phase) |
+| likelyToGEstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -299,7 +287,13 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| ToGConfidence | Integer | 0-100 (%) | Current confidence of the Time of Green |
+| ToGConfidence | Integer | 0-100 (%) | Confidence of the likelyToGEstatimate |
+
+### Return value
+
+| Name | Type | Value | Comment |
+| ---- | ---- | ----- | ------- |
+| minToREstimate | String | [time stamp] | Timestamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -307,7 +301,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| MinToREstimate | String | [time stamp] | Timestamp for the estimated minimum time of next red (During red phase, this value points to the next red phase) |
+| maxToREstimate | String | [time stamp] | Timestamp for the maximum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -315,7 +309,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| MaxToREstimate | String | [time stamp] | Timestamp for the estimated maximum time of next red (During red phase, this value points to the next red phase) |
+| likelyToREstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time time for the next red.  |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -323,17 +317,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| LikelyToREstimate | String | [time stamp] | Timestamp for the estimated likely time of next red (During red phase, this value points to the next red phase) |
-
-> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
-
-### Return value
-
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
-| ToRConfidence | Integer | 0-100 (%) | Current confidence of the Time of Red |
-
-> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
+| ToRConfidence | Integer | 0-100 (%) | Confidence of the likelyToREstimate |
 
 
 ### Example message
@@ -348,13 +332,13 @@ This status returns the whole Time to Green status
 	"xNId":"",
 	"cId":"KK+AG0503=001SG002",
 	"sS": [
-		{"sCI":"S0025", "n":"MinToGEstimate"},
-		{"sCI":"S0025", "n":"MaxToGEstimate"},
-		{"sCI":"S0025", "n":"LikelyToGEstimate"},
+		{"sCI":"S0025", "n":"minToGEstimate"},
+		{"sCI":"S0025", "n":"maxToGEstimate"},
+		{"sCI":"S0025", "n":"likelyToGEstimate"},
 		{"sCI":"S0025", "n":"ToGConfidence"},
-		{"sCI":"S0025", "n":"MinToREstimate"},
-		{"sCI":"S0025", "n":"MaxToREstimate"},
-		{"sCI":"S0025", "n":"LikelyToREstimate"},
+		{"sCI":"S0025", "n":"minToREstimate"},
+		{"sCI":"S0025", "n":"maxToREstimate"},
+		{"sCI":"S0025", "n":"likelyToREstimate"},
 		{"sCI":"S0025", "n":"ToRConfidence"}
 	]
 }
@@ -371,13 +355,13 @@ This status returns the whole Time to Green status
 	"cId":"KK+AG0503=001SG002",
 	"sTs":"2016-05-11T19:58:02.487Z",
 	"sS": [
-		{"sCI":"S0025", "n":"MinToGEstimate", "s":"2016-05-11T21:55:10.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"MaxToGEstimate", "s":"2016-05-11T21:56:08.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"LikelyToGEstimate", "s":"2016-05-11T21:55:13.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"minToGEstimate", "s":"2016-05-11T21:55:10.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"maxToGEstimate", "s":"2016-05-11T21:56:08.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"likelyToGEstimate", "s":"2016-05-11T21:55:13.231Z", "q":"recent"},
 		{"sCI":"S0025", "n":"ToGConfidence", "s":"87", "q":"recent"},
-		{"sCI":"S0025", "n":"MinToREstimate", "s":"2016-05-11T21:57:45.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"MaxToREstimate", "s":"2016-05-11T21:57:55.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"LikelyToREstimate", "s":"2016-05-11T21:57:45.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"minToREstimate", "s":"2016-05-11T21:57:45.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"maxToREstimate", "s":"2016-05-11T21:57:55.231Z", "q":"recent"},
+		{"sCI":"S0025", "n":"likelyToREstimate", "s":"2016-05-11T21:57:45.231Z", "q":"recent"},
 		{"sCI":"S0025", "n":"ToRConfidence", "s":"75", "q":"recent"}
 	]
 }
@@ -429,7 +413,7 @@ and day of week legend are defined as:
 | 6 | Sunday |
 
 **Note!**  
-> each status is separated by a colon (:) E.g. d-t:d-t:
+> each status is separated by a comma (,) E.g. d-t,d-t,
 
 ### Example message
 
@@ -459,7 +443,7 @@ and day of week legend are defined as:
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:31:41.476Z",
 	"sS": [
-		{"sCI":"S0026", "n":"status", "s":"0-2:1-3:2-1:3-1:4-1:5-4:6-4:", "q":"recent"}
+		{"sCI":"S0026", "n":"status", "s":"0-2,1-3,2-1,3-1,4-1,5-4,6-4,", "q":"recent"}
 	]
 }
 ```
@@ -512,7 +496,7 @@ and function legend is defined as:
 | 16 | set plan 16 |
 
 **Note!**  
-> each status is separated by a colon (:) E.g. t-o-h-m:t-o-h-m:  
+> each status is separated by a comma (,) E.g. t-o-h-m,t-o-h-m,  
 
 **Note 2!**  
 > Hour and minute is using local time (not UTC)
@@ -545,13 +529,47 @@ and function legend is defined as:
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:46:57.781Z",
 	"sS":[
-		{"sCI":"S0027", "n":"status", "s":"1-0-22-30:2-3-06-30:3-14-13-00:4-5-14-00:", "q":"recent"}
+		{"sCI":"S0027", "n":"status", "s":"1-0-22-30,2-3-06-30,3-14-13-00,4-5-14-00,", "q":"recent"}
 	]
 }
 ```
 
 **Note!**  
 > All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
+
+<a id="S0028"></a>
+## S0028 Cycle time table
+
+###Description
+This status returns cycle times for all time tables in the TLC
+
+| ObjectType | Object | StatusCodeId | Description |
+| ---------- | ------ | ------------ | ----------- |
+| Traffic Controller |   | S0028 | Cycle time tables |
+
+### Return value
+
+| Name | Type | Value | Comment |
+| ---- | ---- | ----- | ------- |
+| Status | String | [text] | Cycle time tables |
+
+#### Definition of return string
+The return string is defined as:
+
+```
+pp-tt
+```
+
+Where:
+
+| legend | description |
+| ------- | ---------- |
+| pp | Time plan |
+| tt | Cycle time in seconds |
+
+
+**Note!**  
+> each status is separated by a comma (,) E.g. pp-tt,pp-tt,  
 
 <a id="M0014"></a>
 ## M0014 Set command table
@@ -567,42 +585,39 @@ This command sends commands to a specific signal group in a specific plan at a s
 
 | Name | Command | Type | Value | Comment |
 | ---- | ------- | ---- | ----- | ------- |
-| Status | SetCommands | String | [text] | Command table |
+| Status | setCommands | integer | [0-255] | Plan to be changed |
 
 #### Definition of argument
-The argument is defined as:
-
-```
-pp-o-gg-cc
-```
-
-Where:
-
-| legend | description |
-| ------- | ---------- |
-| pp | Plan |
-| o | Command |
-| gg | Group number |
-| cc | Cycle step |
-
-and command legend is defined as:
-
-| legend | Command |
-| ------- | ---------- |
-| 1 | Give green to group |
-| 2 | Red |
-| 3 | reserved |
-| ... | ... |
-| 255 | reserved |
-
-**Note!**  
-> each command is separated by a colon (:) E.g. pp-o-gg-cc:pp-o-gg-cc:
 
 ### Argument
 
 | Name | Command | Type | Value | Comment |
 | ---- | ------- | ---- | ----- | ------- |
-| SecurityCode | SetStop | String | [text] | Security code 2 |
+| Status | setCommands | String | [text] | Command table |
+
+#### Definition of argument
+The argument is defined as:
+
+```
+dd-ee
+```
+
+Where:
+
+| legend  | description |
+| ------- | ----------  |
+| dd      | Dynamic band number (from 1-10) |
+| ee      | Extension in seconds in this band |
+
+
+**Note!**  
+> each command is separated by a comma (,) E.g. dd-ee,dd-ee,
+
+### Argument
+
+| Name | Command | Type | Value | Comment |
+| ---- | ------- | ---- | ----- | ------- |
+| securityCode | setCommands | String | [text] | Security code 2 |
 
 ### Example message
 
@@ -616,7 +631,8 @@ and command legend is defined as:
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"arg": [
-		{"cCI":"M0014", "n":"status", "cO":"setCommands", "v":"01-1-01-30:01-1-02-10"},
+		{"cCI":"M0014", "n":"plan", "cO":"setCommands", "v":"1"},
+		{"cCI":"M0014", "n":"status", "cO":"setCommands", "v":"01-01,02-02"},
 		{"cCI":"M0014", "n":"securityCode", "cO":"setCommands", "v":"2312"}
 	]
 }
@@ -633,7 +649,8 @@ and command legend is defined as:
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:04:25.199Z",
 	"rvs":[
-		{"cCI":"M0014", "n":"status", "v":"01-1-01-30:01-1-02-10", "age":"recent"},
+		{"cCI":"M0014", "n":"plan", "v":"1", "age":"recent"},
+		{"cCI":"M0014", "n":"status", "v":"01-01,02-02", "age":"recent"},
 		{"cCI":"M0014", "n":"securityCode", "v":"2312", "age":"recent"}
 	]
 }
@@ -656,13 +673,13 @@ This command sets offset times of a specific Time plan
 
 | Name | Command | Type | Value | Comment |
 | ---- | ------- | ---- | ----- | ------- |
-| Status | SetOffset | integer | [0-255] | Set offset time in seconds |
+| status | setOffset | integer | [0-255] | Set offset time in seconds |
 
 ### Argument
 
 | Name | Command | Type | Value | Comment |
 | ---- | ------- | ---- | ----- | ------- |
-| plan | SetOffset | integer | [0-255] | Time plan nr |
+| plan | setOffset | integer | [0-255] | Time plan nr |
 
 ### Argument
 
@@ -722,7 +739,7 @@ This command sets offset times of a specific Time plan
 
 | Name | Command | Type | Value | Comment |
 | ---- | ------- | ---- | ----- | ------- |
-| Status | SetWeekTable | String | [text] | Command table |
+| Status | setWeekTable | String | [text] | Command table |
 
 #### Definition of argument
 The argument is defined as:
@@ -811,7 +828,7 @@ This command changes plans of specific time tables
 
 | Name | Command | Type | Value | Comment |
 | ---- | ------- | ---- | ----- | ------- |
-| Status | SetTimeTable | String | [text] | Defines time tables |
+| Status | setTimeTable | String | [text] | Defines time tables |
 
 #### Definition of argument
 The argument is defined as:
@@ -848,7 +865,7 @@ and function legend is defined as:
 
 | Name | Command | Type | Value | Comment |
 | ---- | ------- | ---- | ----- | ------- |
-| SecurityCode | SetStop | String | [text] | Security code 2 |
+| SecurityCode | setTimeTable | String | [text] | Security code 2 |
 
 ### Example message
 
@@ -863,7 +880,7 @@ and function legend is defined as:
 	"cId":"KK+AG0503=001TC000",
 	"arg": [
 		{"cCI":"M0017", "n":"status", "cO":"setTimeTable", "v":"1-0-22-30:2-3-06-30:3-14-13-00:4-5-14-00:"},
-		{"cCI" "n":"securityCode", "cO":"setTimeTable", "v":"2321"}
+		{"cCI":"M0017", "n":"securityCode", "cO":"setTimeTable", "v":"2321"}
 	]
 }
 ```
@@ -889,270 +906,3 @@ and function legend is defined as:
 > All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 
-## Examples
-
-###Example #1 - Scenario for extending the green time in one direction
- 
-This is an example of how to extend the green time of one signal group in one intersection. In this example the intersection is a simple intersecion with the following data:
-
-- 4 signal groups
-- 1 time plan
-
-The result of this example is that one signal group gets a 2 seconds longer green time. 
-
-#### Flowchart
-![alt text](https://github.com/cityofcph/rsmp/blob/master/FlowChart_Extending_Green.png?raw=true "Flowchart Extending Green")
-
-#### Request command table
-This action is performed in the **Management system.**
-
-The Management system sends a status request for status S0023 - Command table
-
-#### RSMP message #1
-The RSMP message for requesting command table is as follows:
-
-**Direction:** Management system -> TLC
-``` json
-	{
-		"mType":"rSMsg",
-		"type":"StatusRequest",
-		"mId":"38a0aec9-8b50-4da2-bb69-fc0bb821c47f",
-		"ntsOId":"AA+BBCCC=DDDEEFFF",
-		"xNId":"",
-		"cId":"AA+BBCCC=DDDEEFFF",
-		"sS":[{"sCI":"S0023",
-		"n":"status"}]
-	}
-```
-
-**Direction:** TLC -> Management system
-``` json
-	{
-		"mType":"rSMsg",
-		"type":"MessageAck",
-		"oMId":"38a0aec9-8b50-4da2-bb69-fc0bb821c47f"
-	}
-```
-
-#### Send Command table
-This action is performed in the **TLC**
-
-The TLC sends the **whole** command table. The return value is a colon separated list of all C-pulses, for all time plans. See description for S0023 for more details of this status.
-
-#### RSMP message #2
-Below is an example return value. This is a very simple intersection with only one time plan and four signal groups. 
-
-**Direction:** TLC -> Management system
-``` json
-	{
-		"mType":"rSMsg",
-		"type":"StatusResponse",
-		"mId":"21496e12-63bf-43ed-9bfe-7db4bc90fe69",
-		"ntsOId":"AA+BBCCC=DDDEEFFF",
-		"xNId":"",
-		"cId":"AA+BBCCC=DDDEEFFF",
-		"sTs":"2016-05-30T11:43:32.904Z",
-		"sS":[{"sCI":"S0023",
-		"n":"status",
-		"s":"01-1-01-02:01-1-02-02:01-2-01-35:01-2-02-35:01-1-03-38:01-1-04-38:01-2-03-52:01-2-04-55:01-1-01-56:01-1-02-56",
-		"q":"recent"}]
-	}
-```
-
-**Direction:** Management system -> TLC
-``` json
-	{
-		"mType":"rSMsg",
-		"type":"MessageAck",
-		"oMId":"21496e12-63bf-43ed-9bfe-7db4bc90fe69"
-	}
-```
-
-From this messages the management system can extract the contents of the command table of the TLC. In the table listed below is the data extracted.
-
-| Time plan | Command | group number (Signal group) | cycle step |
-|-----------|---------|-----------------------------|------------|
-| 01 | Give green to group | Signal group 1 | 02 |
-| 01 | Give green to group | Signal group 2 | 02 |
-| 01 | Red | Signal group 1 | 35 |
-| 01 | Red | Signal group 2 | 35 |
-| 01 | Give green to group | Signal group 3 | 38 |
-| 01 | Give green to group | Signal group 4 | 38 |
-| 01 | Red | Signal group 3 | 52 |
-| 01 | Red | Signal group 4 | 55 |
-| 01 | Give green to group | Signal group 1 | 56 |
-| 01 | Give green to group | Signal group 2 | 56 |
-
-This can be translated into the sequence diagram below
-```
-				------------------------------------------------------------
-Signal Group 1 |##                                ######################    | 
-Signal Group 2 |##                                ######################    |
-Signal Group 3 |#####################################            ###########|
-Signal Group 4 |#####################################                 ######|
-			    ------------------------------------------------------------
-			  0    5    10   15   20   25   30   35   40   45   50   55    60
-```
-
-#### Receive Command table
-This action is performed in the **Management system**
-
-The Management system Receives the command table.
-
-#### Alter the command table
-This action is performed in the **Management system**
-
-Changes to the command table is performed in oder to extend the green time.
-
-#### Send new Command table
-This action is performed in the **Management system**
-
-The management system sends the alterd command table to the TLC.
-
-#### RSMP message #3
-The RSMP message for sending the altered command table to the TLC is listed below:
-
-**Direction:** Management system -> TLC
-``` json
-	{
-		"mType":"rSMsg",
-		"type":"CommandRequest",
-		"mId":"12d5ca83-9cc0-400c-9048-e964137cdf46",
-		"ntsOId":"AA+BBCCC=DDDEEFFF",
-		"xNId":"",
-		"cId":"AA+BBCCC=DDDEEFFF",
-		"arg":[{"cCI":"M0014",
-		"n":"status",
-		"cO":"setCommands",
-		"v":"01-1-01-02:01-1-02-02:01-2-01-35:01-2-02-35:01-1-03-38:01-1-04-38:01-2-03-54:01-2-04-55:01-1-01-56:01-1-02-56"},{"cCI":"M0014",
-		"n":"securityCode",
-		"cO":"setCommands",
-		"v":"1234"}]
-	}
-```
-
-#### Receive the new command table
-This action is performed in the **TLC**
-
-The TLC Receives the new, alterd, command table. In this example there have been a change in green time of Signal Group 3. The new Command table is listed below with the changed value highlighed in bold.
-
-| Time plan | Command | group number (Signal group) | cycle step |
-|-----------|---------|-----------------------------|------------|
-| 01 | Give green to group | Signal group 1 | 02 |
-| 01 | Give green to group | Signal group 2 | 02 |
-| 01 | Red | Signal group 1 | 35 |
-| 01 | Red | Signal group 2 | 35 |
-| 01 | Give green to group | Signal group 3 | 38 |
-| 01 | Give green to group | Signal group 4 | 38 |
-| 01 | Red | Signal group 3 | **54** |
-| 01 | Red | Signal group 4 | 55 |
-| 01 | Give green to group | Signal group 1 | 56 |
-| 01 | Give green to group | Signal group 2 | 56 |
-
-This can be translated into the sequence diagram below
-```
-				------------------------------------------------------------
-Signal Group 1 |##                                ######################    | 
-Signal Group 2 |##                                ######################    |
-Signal Group 3 |#####################################                #######|
-Signal Group 4 |#####################################                 ######|
-			    ------------------------------------------------------------
-			  0    5    10   15   20   25   30   35   40   45   50   55    60
-```
-
-#### Check Validity
-This action is performed in the **TLC**
-
-The TLC Checks if the changed value is allowed to be changed. 
-
-#### decision IF OK
-This action is performed in the **TLC**
-
-If the command table is allowed to be altered according to the Received command table the TLC sends Acknowledgment to the management system. (See description below) If the command table is **Not** allowed to be changed the TLC sends an **not Acknowledgment** to the management system. (See below)
-
-#### Perform Changes
-This action is performed in the **TLC** 
-
-This action is performed if the changes in the command table is allowed to be performed. 
-
-The command table in the TLC is alterd according to the recived command table.
-
-#### Send ACK
-This action is performed in the **TLC** 
-
-This action is performed if the changes in the command table is allowed to be performed. 
-
-The TLC sends a message Acknowledgment .
-
-#### RSMP Message #4a
-
-**Direction:** TLC -> Management system
-``` json
-	{
-		"mType":"rSMsg",
-		"type":"MessageAck",
-		"oMId":"12d5ca83-9cc0-400c-9048-e964137cdf46"
-	}
-```
-
-#### Send NACK
-This action is performed in the **TLC** 
-
-This action is performed if the changes in the command table is **Not** allowed to be performed.
-
-The TLC sends a **not Acknowledged** .
-
-#### RSMP Message #4b
-
-**Direction:** TLC -> Management system
-``` json
-	{
-		"mType":"rSMsg",
-		"type":"MessageNotAck",
-		"oMId":"12d5ca83-9cc0-400c-9048-e964137cdf46",
-		"rea": "alarmCode: Changes to command table could not be performed"
-	}
-```
-
-#### Send Command Response
-This action is performed in the **TLC**
-
-> I have to verify that this step is to be performed if the TLC Sends an NACK. I am not sure that is supposed to be performed if the command table was not altered.
-> Karl-Fredrik
-
-The TLC sends a CommandResponse to the management system.
-
-#### RSMP Message #5
-Below is an Command response. 
-
-> I have to verify that this step is to be performed if the TLC Sends an NACK. I am not sure that is supposed to be performed if the command table was not altered.
-> Karl-Fredrik
-
-**Direction:** TLC -> Management system
-``` json
-	{
-		"mType":"rSMsg",
-		"type":"CommandResponse",
-		"mId":"49da577a-6d68-48b7-9180-9653007e92c4",
-		"ntsOId":"AA+BBCCC=DDDEEFFF",
-		"xNId":"",
-		"cId":"AA+BBCCC=DDDEEFFF",
-		"cTS":"2016-05-30T12:27:25.906Z",
-		"rvs":[{"cCI":"M0014",
-		"n":"status",
-		"v":"01-1-01-02:01-1-02-02:01-2-01-35:01-2-02-35:01-1-03-38:01-1-04-38:01-2-03-54:01-2-04-55:01-1-01-56:01-1-02-56",
-		"age":"recent"},{"cCI":"M0014",
-		"n":"securityCode",
-		"v":"1234",
-		"age":"recent"}]
-	}
-```
-
-**Direction:** Management system -> TLC
-``` json
-	{
-		"mType":"rSMsg",
-		"type":"MessageAck",
-		"oMId":"49da577a-6d68-48b7-9180-9653007e92c4"
-	}
-```
