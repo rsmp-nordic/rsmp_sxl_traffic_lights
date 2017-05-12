@@ -877,7 +877,7 @@ and function legend is defined as:
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"arg": [
-		{"cCI":"M0017", "n":"status", "cO":"setTimeTable", "v":"1-0-22-30,2-3-06-30,3-14-13-00,4-5-14-00"},
+		{"cCI":"M0017", "n":"status", "cO":"setTimeTable", "v":"1-1-6-30,1-0-9-0,1-1-15-30,1-0-18-0,2-1-7-0,2-0-9-0"},
 		{"cCI":"M0017", "n":"securityCode", "cO":"setTimeTable", "v":"2321"}
 	]
 }
@@ -894,7 +894,7 @@ and function legend is defined as:
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:11:14.105Z",
 	"rvs": [
-		{"cCI":"M0017", "n":"status", "v":"1-0-22-30,2-3-06-30,3-14-13-00,4-5-14-00", "age":"recent"},
+		{"cCI":"M0017", "n":"status", "v":"1-1-6-30,1-0-9-0,1-1-15-30,1-0-18-0,2-1-7-0,2-0-9-0", "age":"recent"},
 		{"cCI":"M0017", "n":"securityCode", "v":"2321", "age":"recent"}
 	]
 }
