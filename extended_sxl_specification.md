@@ -269,7 +269,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| maxToGEstimate | String | [time stamp] | Timestamp for the maximum time time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green.  |
+| maxToGEstimate | String | [time stamp] | Timestamp for the maximum time time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green.  |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -277,7 +277,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| likelyToGEstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |
+| likelyToGEstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to green. If the signal group is green, it is the likely time for the next green. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -299,7 +299,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| maxToREstimate | String | [time stamp] | Timestamp for the maximum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |
+| maxToREstimate | String | [time stamp] | Timestamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -307,7 +307,7 @@ This status returns the whole Time to Green status
 
 | Name | Type | Value | Comment |
 | ---- | ---- | ----- | ------- |
-| likelyToREstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time time for the next red.  |
+| likelyToREstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to red. If the signal group is red, it is the likely time for the next red.  |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
