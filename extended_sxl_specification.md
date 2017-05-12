@@ -766,7 +766,7 @@ and day of week legend are defined as:
 | 6 | Sunday |
 
 **Note!**  
-each command is separated by a colon (:) E.g. d-t:d-t:
+each status is separated by a comma (,) E.g. d-t,d-t
 
 ### Argument
 
@@ -786,7 +786,7 @@ each command is separated by a colon (:) E.g. d-t:d-t:
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"arg": [
-		{"cCI":"M0016", "n":"status", "cO":"setWeekTable", "v":"0-2:1-3:2-1:3-1:4-1:5-4:6-4:"},
+		{"cCI":"M0016", "n":"status", "cO":"setWeekTable", "v":"0-2,1-3,2-1,3-1,4-1,5-4,6-4"},
 		{"cCI":"M0016", "n":"securityCode", "cO":"setWeekTable", "v":"2314"}
 	]
 }
@@ -803,7 +803,7 @@ each command is separated by a colon (:) E.g. d-t:d-t:
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:09:47.574Z",
 	"rvs": [
-		{"cCI":"M0016", "n":"status", "v":"0-2:1-3:2-1:3-1:4-1:5-4:6-4:", "age":"recent"},
+		{"cCI":"M0016", "n":"status", "v":"0-2,1-3,2-1,3-1,4-1,5-4,6-4", "age":"recent"},
 		{"cCI":"M0016", "n":"securityCode", "v":"2314", "age":"recent"}
 	]
 }
