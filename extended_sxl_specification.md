@@ -209,7 +209,7 @@ Where:
 | tt | offset time in seconds |
 
 **Note!**  
-> each status is separated by a colon (:) E.g. pp-tt:pp-tt:
+> each status is separated by a comma (,) E.g. pp-tt,pp-tt
 
 ### Example message
 
@@ -239,7 +239,7 @@ Where:
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:00:56.432Z",
 	"sS": [
-		{"sCI":"S0024", "n":"status", "s":"01-20:02-10:", "q":"recent" }
+		{"sCI":"S0024", "n":"status", "s":"01-20,02-10", "q":"recent" }
 	]
 }
 ```
