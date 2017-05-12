@@ -411,7 +411,7 @@ and day of week legend are defined as:
 | 6 | Sunday |
 
 **Note!**  
-> each status is separated by a comma (,) E.g. d-t,d-t,
+> each status is separated by a comma (,) E.g. d-t,d-t
 
 ### Example message
 
@@ -441,7 +441,7 @@ and day of week legend are defined as:
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:31:41.476Z",
 	"sS": [
-		{"sCI":"S0026", "n":"status", "s":"0-2,1-3,2-1,3-1,4-1,5-4,6-4,", "q":"recent"}
+		{"sCI":"S0026", "n":"status", "s":"0-2,1-3,2-1,3-1,4-1,5-4,6-4", "q":"recent"}
 	]
 }
 ```
@@ -494,7 +494,7 @@ and function legend is defined as:
 | 16 | set plan 16 |
 
 **Note!**  
-> each status is separated by a comma (,) E.g. t-o-h-m,t-o-h-m,  
+> each status is separated by a comma (,) E.g. t-o-h-m,t-o-h-m
 
 **Note 2!**  
 > Hour and minute is using local time (not UTC)
@@ -527,7 +527,7 @@ and function legend is defined as:
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:46:57.781Z",
 	"sS":[
-		{"sCI":"S0027", "n":"status", "s":"1-0-22-30,2-3-06-30,3-14-13-00,4-5-14-00,", "q":"recent"}
+		{"sCI":"S0027", "n":"status", "s":"1-0-22-30,2-3-06-30,3-14-13-00,4-5-14-00", "q":"recent"}
 	]
 }
 ```
@@ -567,7 +567,7 @@ Where:
 
 
 **Note!**  
-> each status is separated by a comma (,) E.g. pp-tt,pp-tt,  
+> each status is separated by a comma (,) E.g. pp-tt,pp-tt
 
 <a id="M0014"></a>
 ## M0014 Set command table
@@ -609,7 +609,7 @@ Where:
 
 
 **Note!**  
-> each command is separated by a comma (,) E.g. dd-ee,dd-ee,
+> each command is separated by a comma (,) E.g. dd-ee,dd-ee
 
 ### Argument
 
