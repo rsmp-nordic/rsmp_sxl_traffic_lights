@@ -27,7 +27,7 @@ Below listed statuses and commands are the additions of the SXL from the previou
 + [S0024](#S0024) - Offset time
 + [S0025](#S0025) - Time-to-green
 + [S0026](#S0026) - Week time table
-+ [S0027](#S0027)- Time tables
++ [S0027](#S0027) - Time tables
 
 #### Added commands
 
@@ -39,17 +39,17 @@ Below listed statuses and commands are the additions of the SXL from the previou
 <a id="S0022"></a>
 ## S0022 List of time plans 
 
-###Description
+### Description
 This status returns a comma separated list of time plans available in the TLC.
 
-| ObjectType | Object | StatusCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | S0022 | List of time plans |
+| ObjectType         | Object | StatusCodeId | Description        |
+| ------------------ | ------ | ------------ | ------------------ |
+| Traffic Controller |        | S0022        | List of time plans |
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name   | Type   | Value  | Comment                                        |
+| ------ | ------ | ------ | ---------------------------------------------- |
 | Status | String | [text] | Comma separated list of configures time plans. |
 
 #### Definition of return string
@@ -61,9 +61,9 @@ n
 
 Where:
 
-| legend | description |
-| ------- | ---------- |
-| n | index of timeplan |
+| legend | description       |
+| ------ | ----------------- |
+| n      | index of timeplan |
 
 **Note!**  
 > The length of the string, (I.e. number of parameters in string) is defined by number of available time plans in the TLC.  
@@ -110,17 +110,17 @@ Where:
 <a id="S0023"></a>
 ## S0023 Command table 
 
-###Description
+### Description
 This status returns the whole commandtable
 
-| ObjectType | Object | StatusCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | S0023 | Command table |
+| ObjectType         | Object | StatusCodeId | Description   |
+| ------------------ | ------ | ------------ | ------------- |
+| Traffic Controller |        | S0023        | Command table |
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name   | Type   | Value  | Comment                                |
+| ------ | ------ | ------ | -------------------------------------- |
 | Status | String | [text] | Command table. Defines time extensions |
 
 #### Definition of return string
@@ -132,11 +132,11 @@ pp-dd-ee
 
 Where:
 
-| legend | description |
-| ------- | ---------- |
-| pp | time plan |
-| dd | dynamic band number (from 1-10) |
-| ee | extension in seconds in this band |
+| legend | description                       |
+| ------ | --------------------------------- |
+| pp     | time plan                         |
+| dd     | dynamic band number (from 1-10)   |
+| ee     | extension in seconds in this band |
 
 **Note!**  
 > Each command is separated with a comma.
@@ -181,17 +181,17 @@ Where:
 <a id="S0024"></a>
 ## S0024 Offset time
 
-###Description
+### Description
 This status returns the offset times of the whole table.
 
-| ObjectType | Object | StatusCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | S0024 | Offset time |
+| ObjectType         | Object | StatusCodeId | Description |
+| ------------------ | ------ | ------------ | ----------- |
+| Traffic Controller |        | S0024        | Offset time |
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name   | Type   | Value  | Comment      |
+| ------ | ------ | ------ | ------------ |
 | Status | String | [text] | Offset table |
 
 #### Definition of return string
@@ -203,10 +203,10 @@ pp-tt
 
 Where:
 
-| legend | description |
-| ------- | ---------- |
-| pp | time plan |
-| tt | offset time in seconds |
+| legend | description            |
+| ------ | ---------------------- |
+| pp     | time plan              |
+| tt     | offset time in seconds |
 
 **Note!**  
 > each status is separated by a comma (,) E.g. pp-tt,pp-tt
@@ -250,71 +250,71 @@ Where:
 <a id="S0025"></a>
 ## S0025 Time-to-green
 
-###Description
+### Description
 This status returns the whole Time to Green status
 
-| ObjectType | Object | StatusCodeId | description |
-| ---------- | ------ | ------------ | ----------- |
-| Signal Group |   | S0025 | Time-To-Green |
+| ObjectType   | Object | StatusCodeId | description   |
+| ------------ | ------ | ------------ | ------------- |
+| Signal Group |        | S0025        | Time-To-Green |
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
-| minToGEstimate | String | [time stamp] | Timestamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green.  |
+| Name           | Type   | Value        | Comment                                                                                                                                      |
+| -------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| minToGEstimate | String | [time stamp] | Timestamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
-| maxToGEstimate | String | [time stamp] | Timestamp for the maximum time time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green.  |
+| Name           | Type   | Value        | Comment                                                                                                                                           |
+| -------------- | ------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| maxToGEstimate | String | [time stamp] | Timestamp for the maximum time time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name              | Type   | Value        | Comment                                                                                                                                         |
+| ----------------- | ------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | likelyToGEstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to green. If the signal group is green, it is the likely time for the next green. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name          | Type    | Value     | Comment                               |
+| ------------- | ------- | --------- | ------------------------------------- |
 | ToGConfidence | Integer | 0-100 (%) | Confidence of the likelyToGEstatimate |
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name           | Type   | Value        | Comment                                                                                                                                |
+| -------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
 | minToREstimate | String | [time stamp] | Timestamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name           | Type   | Value        | Comment                                                                                                                                |
+| -------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
 | maxToREstimate | String | [time stamp] | Timestamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
-| likelyToREstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to red. If the signal group is red, it is the likely time for the next red.  |
+| Name              | Type   | Value        | Comment                                                                                                                                   |
+| ----------------- | ------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| likelyToREstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to red. If the signal group is red, it is the likely time for the next red. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name          | Type    | Value     | Comment                             |
+| ------------- | ------- | --------- | ----------------------------------- |
 | ToRConfidence | Integer | 0-100 (%) | Confidence of the likelyToREstimate |
 
 
@@ -371,17 +371,17 @@ This status returns the whole Time to Green status
 <a id="S0026"></a>
 ## S0026 Week time table
 
-###Description
+### Description
 This status returns time tables to use for each week day.
 
-| ObjectType | Object | StatusCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | S0026 | Week time table |
+| ObjectType         | Object | StatusCodeId | Description     |
+| ------------------ | ------ | ------------ | --------------- |
+| Traffic Controller |        | S0026        | Week time table |
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name   | Type   | Value  | Comment         |
+| ------ | ------ | ------ | --------------- |
 | Status | String | [text] | Week time table |
 
 #### Definition of return string
@@ -393,22 +393,22 @@ d-t
 
 Where:
 
-| legend | description |
-| ------- | ---------- |
-| d | day of week |
-| t | time table nr |
+| legend | description   |
+| ------ | ------------- |
+| d      | day of week   |
+| t      | time table nr |
 
 and day of week legend are defined as:
 
 | legend | Day of week |
-| ------- | ---------- |
-| 0 | Monday |
-| 1 | Tuesday |
-| 2 | Wednesday |
-| 3 | Thursday |
-| 4 | Friday |
-| 5 | Saturday |
-| 6 | Sunday |
+| ------ | ----------- |
+| 0      | Monday      |
+| 1      | Tuesday     |
+| 2      | Wednesday   |
+| 3      | Thursday    |
+| 4      | Friday      |
+| 5      | Saturday    |
+| 6      | Sunday      |
 
 **Note!**  
 > each status is separated by a comma (,) E.g. d-t,d-t
@@ -455,17 +455,17 @@ and day of week legend are defined as:
 <a id="S0027"></a>
 ## S0027 Time tables
 
-###Description
+### Description
 This status returns all available time tables in the TLC
 
-| ObjectType | Object | StatusCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | S0027 | Time tables |
+| ObjectType         | Object | StatusCodeId | Description |
+| ------------------ | ------ | ------------ | ----------- |
+| Traffic Controller |        | S0027        | Time tables |
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name   | Type   | Value  | Comment     |
+| ------ | ------ | ------ | ----------- |
 | Status | String | [text] | Time tables |
 
 #### Definition of return string
@@ -477,21 +477,21 @@ t-o-h-m
 
 Where:
 
-| legend | description |
-| ------- | ---------- |
-| t | Time table nr (1-12) |
-| o | Function |
-| h | Hour - switching time |
-| m | Minute - Switching time |
+| legend | description             |
+| ------ | ----------------------- |
+| t      | Time table nr (1-12)    |
+| o      | Function                |
+| h      | Hour - switching time   |
+| m      | Minute - Switching time |
 
 and function legend is defined as:
 
-| legend | Selected plan by time table |
-| ------- | ---------- |
-| 0 | No plan is selected by time table |
-| 1 | set plan 1 |
-| ... | ... |
-| 16 | set plan 16 |
+| legend | Selected plan by time table       |
+| ------ | --------------------------------- |
+| 0      | No plan is selected by time table |
+| 1      | set plan 1                        |
+| ...    | ...                               |
+| 16     | set plan 16                       |
 
 **Note!**  
 > each status is separated by a comma (,) E.g. t-o-h-m,t-o-h-m
@@ -538,17 +538,17 @@ and function legend is defined as:
 <a id="S0028"></a>
 ## S0028 Cycle time table
 
-###Description
+### Description
 This status returns cycle times for all time tables in the TLC
 
-| ObjectType | Object | StatusCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | S0028 | Cycle time tables |
+| ObjectType         | Object | StatusCodeId | Description       |
+| ------------------ | ------ | ------------ | ----------------- |
+| Traffic Controller |        | S0028        | Cycle time tables |
 
 ### Return value
 
-| Name | Type | Value | Comment |
-| ---- | ---- | ----- | ------- |
+| Name   | Type   | Value  | Comment           |
+| ------ | ------ | ------ | ----------------- |
 | Status | String | [text] | Cycle time tables |
 
 #### Definition of return string
@@ -560,10 +560,10 @@ pp-tt
 
 Where:
 
-| legend | description |
-| ------- | ---------- |
-| pp | Time plan |
-| tt | Cycle time in seconds |
+| legend | description           |
+| ------ | --------------------- |
+| pp     | Time plan             |
+| tt     | Cycle time in seconds |
 
 
 **Note!**  
@@ -572,25 +572,25 @@ Where:
 <a id="M0014"></a>
 ## M0014 Set command table
 
-###Description
+### Description
 This command sends commands to a specific signal group in a specific plan at a specific cycle step
 
-| ObjectType | Object | CommandCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | M0014 | Set command table |
+| ObjectType         | Object | CommandCodeId | Description       |
+| ------------------ | ------ | ------------- | ----------------- |
+| Traffic Controller |        | M0014         | Set command table |
 
 ### Argument
 
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
+| Name   | Command     | Type    | Value   | Comment            |
+| ------ | ----------- | ------- | ------- | ------------------ |
 | Status | setCommands | integer | [0-255] | Plan to be changed |
 
 #### Definition of argument
 
 ### Argument
 
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
+| Name   | Command     | Type   | Value  | Comment       |
+| ------ | ----------- | ------ | ------ | ------------- |
 | Status | setCommands | String | [text] | Command table |
 
 #### Definition of argument
@@ -602,10 +602,10 @@ dd-ee
 
 Where:
 
-| legend  | description |
-| ------- | ----------  |
-| dd      | Dynamic band number (from 1-10) |
-| ee      | Extension in seconds in this band |
+| legend | description                       |
+| ------ | --------------------------------- |
+| dd     | Dynamic band number (from 1-10)   |
+| ee     | Extension in seconds in this band |
 
 
 **Note!**  
@@ -613,8 +613,8 @@ Where:
 
 ### Argument
 
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
+| Name         | Command     | Type   | Value  | Comment         |
+| ------------ | ----------- | ------ | ------ | --------------- |
 | securityCode | setCommands | String | [text] | Security code 2 |
 
 ### Example message
@@ -660,17 +660,17 @@ Where:
 <a id="M0015"></a>
 ## M0015 Set Offset time 
 
-###Description
+### Description
 This command sets offset times of a specific Time plan
 
-| ObjectType | Object | CommandCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | M0015 | Set offset time |
+| ObjectType         | Object | CommandCodeId | Description     |
+| ------------------ | ------ | ------------- | --------------- |
+| Traffic Controller |        | M0015         | Set offset time |
 
 ### Argument
 
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
+| Name   | Command   | Type    | Value   | Comment                    |
+| ------ | --------- | ------- | ------- | -------------------------- |
 | status | setOffset | integer | [0-255] | Set offset time in seconds |
 
 ### Argument
@@ -681,8 +681,8 @@ This command sets offset times of a specific Time plan
 
 ### Argument
 
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
+| Name         | Command | Type   | Value  | Comment         |
+| ------------ | ------- | ------ | ------ | --------------- |
 | SecurityCode | SetStop | String | [text] | Security code 2 |
 
 ### Example message
@@ -729,14 +729,14 @@ This command sets offset times of a specific Time plan
 <a id="M0016"></a>
 ## M0016 Set week time table 
 
-| ObjectType | Object | CommandCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | M0016 | Set week time table |
+| ObjectType         | Object | CommandCodeId | Description         |
+| ------------------ | ------ | ------------- | ------------------- |
+| Traffic Controller |        | M0016         | Set week time table |
 
 ### Argument
 
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
+| Name   | Command      | Type   | Value  | Comment       |
+| ------ | ------------ | ------ | ------ | ------------- |
 | Status | setWeekTable | String | [text] | Command table |
 
 #### Definition of argument
@@ -748,30 +748,30 @@ d-t
 
 Where:
 
-| legend | description |
-| ------- | ---------- |
-| d | day of week |
-| t | time table nr |
+| legend | description   |
+| ------ | ------------- |
+| d      | day of week   |
+| t      | time table nr |
 
 and day of week legend are defined as:
 
 | legend | Day of week |
-| ------- | ---------- |
-| 0 | Monday |
-| 1 | Tuesday |
-| 2 | Wednesday |
-| 3 | Thursday |
-| 4 | Friday |
-| 5 | Saturday |
-| 6 | Sunday |
+| ------ | ----------- |
+| 0      | Monday      |
+| 1      | Tuesday     |
+| 2      | Wednesday   |
+| 3      | Thursday    |
+| 4      | Friday      |
+| 5      | Saturday    |
+| 6      | Sunday      |
 
 **Note!**  
 each status is separated by a comma (,) E.g. d-t,d-t
 
 ### Argument
 
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
+| Name         | Command | Type   | Value  | Comment         |
+| ------------ | ------- | ------ | ------ | --------------- |
 | SecurityCode | SetStop | String | [text] | Security code 2 |
 
 ### Example message
@@ -815,17 +815,17 @@ each status is separated by a comma (,) E.g. d-t,d-t
 <a id="M0017"></a>
 ## M0017 Set time tables 
 
-###Description
+### Description
 This command changes plans of specific time tables
 
-| ObjectType | Object | CommandCodeId | Description |
-| ---------- | ------ | ------------ | ----------- |
-| Traffic Controller |   | M0017 | Set time tables |
+| ObjectType         | Object | CommandCodeId | Description     |
+| ------------------ | ------ | ------------- | --------------- |
+| Traffic Controller |        | M0017         | Set time tables |
 
 ### Argument
 
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
+| Name   | Command      | Type   | Value  | Comment             |
+| ------ | ------------ | ------ | ------ | ------------------- |
 | Status | setTimeTable | String | [text] | Defines time tables |
 
 #### Definition of argument
@@ -837,21 +837,21 @@ t-o-h-m
 
 Where:
 
-| legend | description |
-| ------- | ---------- |
-| t | Time table nr (1-12) |
-| o | Function |
-| h | Hour - switching time |
-| m | Minute - Switching time |
+| legend | description             |
+| ------ | ----------------------- |
+|   t    | Time table nr (1-12)    |
+|   o    | Function                |
+|   h    | Hour - switching time   |
+|   m    | Minute - Switching time |
 
 and function legend is defined as:
 
-| legend | Selected plan by time table |
-| ------- | ---------- |
-| 0 | No plan is selected by time table |
-| 1 | set plan 1 |
-| ... | ... |
-| 16 | set plan 16 |
+| legend | Selected plan by time table       |
+| ------ | --------------------------------- |
+|   0    | No plan is selected by time table |
+|   1    | set plan 1                        |
+|  ...   | ...                               |
+|   16   | set plan 16                       |
 
 **Note!**  
 > each status is separated by a comma (,) E.g. t-o-h-m,t-o-h-m
@@ -861,8 +861,8 @@ and function legend is defined as:
 
 ### Argument
 
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
+| Name         | Command      | Type   | Value  | Comment         |
+| ------------ | -------- --- | ------ | ------ | --------------- |
 | SecurityCode | setTimeTable | String | [text] | Security code 2 |
 
 ### Example message
