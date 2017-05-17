@@ -74,24 +74,32 @@ Aggregated status per grouped object
 
 <a id="A0008"></a>
 ### A0008
+Dead lock error
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |timeplan|ordinal|[designation]|Current time plan|
 
 <a id="A0201"></a>
 ### A0201
+Serious lamp error
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |color|string|<ul><li>red</li><li>yellow</li><li>green</li></ul>|Color of lamp|
 
 <a id="A0202"></a>
 ### A0202
+Less serious lamp error
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |color|string|<ul><li>red</li><li>yellow</li><li>green</li></ul>|Color of lamp|
 
 <a id="A0301"></a>
 ### A0301
+Detector error (hardware)
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |detector|ordinal|[designation]|Designation of the detector|
@@ -101,6 +109,8 @@ Aggregated status per grouped object
 
 <a id="A0302"></a>
 ### A0302
+Detector error (logic error)
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |detector|ordinal|[designation]|Designation of the detector|
@@ -157,6 +167,8 @@ Aggregated status per grouped object
 
 <a id="S0001"></a>
 ### S0001
+Signal group status
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |signalgroupstatus|string|[text]|Signal group status as text field|
@@ -166,12 +178,16 @@ Aggregated status per grouped object
 
 <a id="S0002"></a>
 ### S0002
+Detector logic status
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |detectorlogicstatus|string|[text]|Detector logic status as text field|
 
 <a id="S0003"></a>
 ### S0003
+Input status
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |inputstatus|string|[text]|Input status as text field|
@@ -179,6 +195,8 @@ Aggregated status per grouped object
 
 <a id="S0004"></a>
 ### S0004
+Outputstatus
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |outputstatus|string|[text]|Output status as text field|
@@ -186,12 +204,16 @@ Aggregated status per grouped object
 
 <a id="S0005"></a>
 ### S0005
+Traffic Controller starting
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Controller is not in start up mode<br>True: Controller is currently in start up mode|
 
 <a id="S0006"></a>
 ### S0006
+Emergency stage
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Emergency stage inactive<br>True: Emergency stage active|
@@ -199,6 +221,8 @@ Aggregated status per grouped object
 
 <a id="S0007"></a>
 ### S0007
+Controller switched on
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
@@ -206,6 +230,8 @@ Aggregated status per grouped object
 
 <a id="S0008"></a>
 ### S0008
+Manual control
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
@@ -213,6 +239,8 @@ Aggregated status per grouped object
 
 <a id="S0009"></a>
 ### S0009
+Fixed time control
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
@@ -220,6 +248,8 @@ Aggregated status per grouped object
 
 <a id="S0010"></a>
 ### S0010
+Isolated control
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
@@ -227,6 +257,8 @@ Aggregated status per grouped object
 
 <a id="S0011"></a>
 ### S0011
+Yellow flash
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
@@ -234,6 +266,8 @@ Aggregated status per grouped object
 
 <a id="S0012"></a>
 ### S0012
+All red
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
@@ -241,6 +275,8 @@ Aggregated status per grouped object
 
 <a id="S0013"></a>
 ### S0013
+Police key
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
@@ -248,42 +284,56 @@ Aggregated status per grouped object
 
 <a id="S0014"></a>
 ### S0014
+Current time plan
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|ordinal|[1-255]|Current time plan|
 
 <a id="S0015"></a>
 ### S0015
+Current traffic situation
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|ordinal|[1-255]|Current traffic situation|
 
 <a id="S0016"></a>
 ### S0016
+Number of detector logics
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |number|long|[1-65025]|Number of detector logics|
 
 <a id="S0017"></a>
 ### S0017
+Number of signal groups
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |number|long|[1-65025]|Number of signal groups|
 
 <a id="S0018"></a>
 ### S0018
+Number of time plans
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |number|long|[1-65025]|Number of time plans|
 
 <a id="S0019"></a>
 ### S0019
+Number of traffic situations
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |number|long|[1-65025]|Number of traffic situations|
 
 <a id="S0020"></a>
 ### S0020
+Control mode
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
@@ -291,30 +341,40 @@ Aggregated status per grouped object
 
 <a id="S0021"></a>
 ### S0021
+Manually set detector logic
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |detectorlogics|string|[text]|Manually set detector logics (1/0) as text field|
 
 <a id="S0022"></a>
 ### S0022
+List of time plans
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Comma separated list of configured time plans. E.g. "1,2,3,5"|
 
 <a id="S0023"></a>
 ### S0023
+Command table
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Command table. Defines command, <br>Each command are written as pp-dd-ee where:<br>pp=Time plan<br>dd=Dynamic band number (from 1-10)<br>ee=Extension in seconds in this band<br><br>Each command is separated with a comma.<br><br>E.g. <br>pp-dd-ee,pp-dd-ee|
 
 <a id="S0024"></a>
 ### S0024
+Offset time
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Offset table<br>Each offset time is written as pp-tt where:<br>pp=time plan<br>tt=offset time in seconds<br><br>Each offset time is separated with a comma<br><br><br>E.g.<br>pp-tt,pp-tt|
 
 <a id="S0025"></a>
 ### S0025
+Time-of-Green / Time-of-Red
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |minToGEstimate   |string|[time stamp]|Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -328,24 +388,32 @@ Aggregated status per grouped object
 
 <a id="S0026"></a>
 ### S0026
+Week time table
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Week time table. Defines time table to use for each week day<br>Each day is written as d-t where:<br>d=day of week<br>t=time table nr<br><br>Day of week legend:<br>0=Monday<br>1=Tuesday<br>2=Wednesday<br>3=Thursday<br>4=Friday<br>5=Saturday<br>6=Sunday<br><br>Each segment is separated with a colorn<br>E.g.<br>d-t,d-t|
 
 <a id="S0027"></a>
 ### S0027
+Time tables
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Time Table. Defines time tables.<br>Each time definition is written as t-o-h-m where:<br>t=time table nr (1-12)<br>o=function<br>h=hour - switching time<br>m=minute - switching minute<br><br>Function legend:<br>0=no plan is selected by time table<br>1=set plan 1<br>…<br>16= set plan 16<br><br>hour and minute is using local time (not UTC)<br><br>Each time definition is separated with a comma <br><br>E.g.<br>t-o-h-m,t-o-h-m<br>|
 
 <a id="S0028"></a>
 ### S0028
+Cycle time
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Cycle time table<br>Each cycle time is written as pp-tt where:<br>pp=time plan<br>tt=cycle time in seconds<br><br>Each cycle time is separated with a comma<br><br><br>E.g.<br>pp-tt,pp-tt|
 
 <a id="S0091"></a>
 ### S0091
+Operator logged in/out OP-panel
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |user|string|<ul><li>[username]</li><li>[nobody]</li></ul>|username: User currently logged in<br>nobody: No one logged in|
@@ -353,6 +421,8 @@ Aggregated status per grouped object
 
 <a id="S0092"></a>
 ### S0092
+Operator logged in/out web-interface
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |user|string|<ul><li>[username]</li><li>[nobody]</li></ul>|username: User currently logged in<br>nobody: No one logged in|
@@ -360,12 +430,16 @@ Aggregated status per grouped object
 
 <a id="S0095"></a>
 ### S0095
+Version av Traffic Controller
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Manufacturer, product name and version of traffic controller|
 
 <a id="S0096"></a>
 ### S0096
+Current date and time
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |year|integer|YYYY|Year according to format YYYY. NOTE: UTC is used|
@@ -377,6 +451,8 @@ Aggregated status per grouped object
 
 <a id="S0201"></a>
 ### S0201
+Traffic Counting: Number of vehicles
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -384,6 +460,8 @@ Aggregated status per grouped object
 
 <a id="S0202"></a>
 ### S0202
+Traffic Counting: Vehicle speed
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -391,6 +469,8 @@ Aggregated status per grouped object
 
 <a id="S0203"></a>
 ### S0203
+Traffic Counting: Occupancy
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -398,6 +478,8 @@ Aggregated status per grouped object
 
 <a id="S0204"></a>
 ### S0204
+Traffic Counting: Number of vehicles of given classification
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -413,6 +495,8 @@ Aggregated status per grouped object
 
 <a id="S0205"></a>
 ### S0205
+Traffic Counting: Number of vehicles
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -420,6 +504,8 @@ Aggregated status per grouped object
 
 <a id="S0206"></a>
 ### S0206
+Traffic Counting: Vehicle speed
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -427,6 +513,8 @@ Aggregated status per grouped object
 
 <a id="S0207"></a>
 ### S0207
+Traffic Counting: Occupancy
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -434,6 +522,8 @@ Aggregated status per grouped object
 
 <a id="S0208"></a>
 ### S0208
+Traffic Counting: Number of vehicles of given classification
+
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
@@ -474,6 +564,8 @@ Aggregated status per grouped object
 
 <a id="M0001"></a>
 ### M0001
+Sets functional position<br>Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setValue|string|<ul><li>NormalControl</li><li>YellowFlash</li><li>Dark</li></ul>|NormalControl: Normal Control<br>YellowFlash: Enables yellow flash<br>Dark: Enables dark mode|
@@ -483,6 +575,8 @@ Aggregated status per grouped object
 
 <a id="M0002"></a>
 ### M0002
+Sets current time plan<br>Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setPlan|boolean|<ul><li>False</li><li>True</li></ul>|False: Controller uses time plan according to programming<br>True: Contoller uses time plan according to command|
@@ -491,6 +585,8 @@ Aggregated status per grouped object
 
 <a id="M0003"></a>
 ### M0003
+Sets traffic situation the controller uses.<br>Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setTrafficSituation|boolean|<ul><li>False</li><li>True</li></ul>|False: Controller uses traffic situation according to own programming<br>True: Contoller uses traffic situation according to command|
@@ -499,6 +595,8 @@ Aggregated status per grouped object
 
 <a id="M0004"></a>
 ### M0004
+Restarts Traffic Controller<br>Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setRestart|boolean|True|True: Restart controller|
@@ -506,6 +604,8 @@ Aggregated status per grouped object
 
 <a id="M0005"></a>
 ### M0005
+Activate emergency route<br>Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setEmergency|boolean|<ul><li>False</li><li>True</li></ul>|False: Activate emergency route<br>True: Deactivate emergency route|
@@ -514,6 +614,8 @@ Aggregated status per grouped object
 
 <a id="M0006"></a>
 ### M0006
+Activate input<br>Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: Deactivate input<br>True: Activate input|
@@ -523,6 +625,8 @@ Aggregated status per grouped object
 
 <a id="M0007"></a>
 ### M0007
+Activate fixed time control<br>Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setFixedTime|boolean|<ul><li>False</li><li>True</li></ul>|False: Deactivate fixed time control<br>True: Activate fixed time control|
@@ -530,6 +634,8 @@ Aggregated status per grouped object
 
 <a id="M0008"></a>
 ### M0008
+Sets manual activation of detector logic.<br>Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setForceDetectorLogic|boolean|<ul><li>False</li><li>True</li></ul>|False: Deactivate manual control of detector logic<br>True: Activate manual control of detector logic|
@@ -538,6 +644,8 @@ Aggregated status per grouped object
 
 <a id="M0010"></a>
 ### M0010
+Start of signal group. Orders a signal group to green. Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setStart|boolean|<ul><li>False</li><li>True</li></ul>|False: No command (default)<br>True: Order a signal group to green|
@@ -545,6 +653,8 @@ Aggregated status per grouped object
 
 <a id="M0011"></a>
 ### M0011
+Stop of signal group. Orders a signal group to red. Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setStop|boolean|<ul><li>False</li><li>True</li></ul>|False: No command (default)<br>True: Order a signal group to red|
@@ -552,6 +662,8 @@ Aggregated status per grouped object
 
 <a id="M0012"></a>
 ### M0012
+Request start or stop of a series of signal groups. Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setStart|string||Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format, colon is used in example below.<br><br>1=Order signal group to green<br>0=Order signal group to red<br><br>Format: [Offset],[Bits to set],[Bits to unset]:…<br> <br>Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. <br> <br>Example 1:<br>"5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off<br>(Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0)<br> <br>Example 2:<br>"22, 1, 4" sets input 22 = on and 24 = off<br>(Input starts from no. 22 and bit 0 = 1 and bit 2 = 0)<br> <br>And both thease examples could be sent in the same message as:<br>"5,4143,65:22,1,4"<br><br>Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red|
@@ -559,6 +671,8 @@ Aggregated status per grouped object
 
 <a id="M0013"></a>
 ### M0013
+Activate a series of inputs<br>Requires security code 2
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setInput|string||Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format,  colon, ":" is used in example below.<br><br>Format: [Offset],[Bits to set],[Bits to unset]:…<br> <br>Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. <br> <br>Example 1:<br>"5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off<br>(Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0)<br> <br>Example 2:<br>"22, 1, 4" sets input 22 = on and 24 = off<br>(Input starts from no. 22 and bit 0 = 1 and bit 2 = 0)<br> <br>And both thease examples could be sent in the same message as:<br>"5,4143:65:22,1,4"<br><br>Such a message would activate input 6,7,10,17,22 and deactive input 5,11,24|
@@ -566,6 +680,8 @@ Aggregated status per grouped object
 
 <a id="M0014"></a>
 ### M0014
+Set command table
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |plan|setCommands|integer|[0-255]|Plan to be changed|
@@ -574,6 +690,8 @@ Aggregated status per grouped object
 
 <a id="M0015"></a>
 ### M0015
+Set Offset time
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setOffset|integer|[0-255]|Set offset time in seconds|
@@ -582,6 +700,8 @@ Aggregated status per grouped object
 
 <a id="M0016"></a>
 ### M0016
+Set week time table
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setWeekTable|string|[text]|Week time table. Defines time table to use for each week day<br>Each segment is written as d-t where:<br>d=day of week<br>t=time table nr<br><br>Day of week legend:<br>0=Monday<br>1=Tuesday<br>2=Wednesday<br>3=Thursday<br>4=Friday<br>5=Saturday<br>6=Sunday<br><br>Each segment is separated with a comma<br><br>E.g.<br>d-t,d-t|
@@ -589,6 +709,8 @@ Aggregated status per grouped object
 
 <a id="M0017"></a>
 ### M0017
+Set time tables
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setTimeTable|string|[text]|Time Table. Defines time tables.<br>Each time definition is written as t-o-h-m where:<br>t=time table nr (1-12)<br>o=function<br>h=hour - switching time<br>m=minute - switching minute<br><br>Function legend:<br>0=no plan is selected by time table<br>1=set plan 1<br>…<br>16= set plan 16<br><br>hour and minute is using local time (not UTC)<br><br>Each time definition is separated with a comma.<br><br>E.g.<br>t-o-h-m,t-o-h-m<br>|
@@ -596,6 +718,8 @@ Aggregated status per grouped object
 
 <a id="M0018"></a>
 ### M0018
+Set Cycle time
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setCylceTime|integer|[1-255]|Set cycle time in seconds|
@@ -604,6 +728,8 @@ Aggregated status per grouped object
 
 <a id="M0103"></a>
 ### M0103
+Set security code
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |status|setSecurityCode|string|<ul><li>Level1</li><li>Level2</li></ul>|Level1: Change security code 1<br>Level2: Change security code 2|
@@ -612,6 +738,8 @@ Aggregated status per grouped object
 
 <a id="M0104"></a>
 ### M0104
+Set clock
+
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |securityCode|setDate|string|[text]|Security code 1|
