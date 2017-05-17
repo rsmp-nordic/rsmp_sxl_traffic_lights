@@ -54,22 +54,22 @@ Aggregated status per grouped object
 <a id="alarms"></a>
 
 # Alarms
-| ObjectType | alarmCodeId | Description | externalAlarmCodeId | externalNtsAlarmCodeId | Priority | Category |
-| ---------- |:-----------:| ----------- | ------------------- | ---------------------- |:--------:|:--------:|
-|Traffic Controller|A0001|Serious hardware error|Defined by manufacturer||2|D|
-|Traffic Controller|A0002|Less serious hardware error|Defined by manufacturer||3|D|
-|Traffic Controller|A0003|Serious configuration error|Defined by manufacturer||2|D|
-|Traffic Controller|A0004|Less serious configuration error|Defined by manufacturer||3|D|
-|Traffic Controller|A0005|Communication error between traffic controllers / synchronisation error|Defined by manufacturer||3|D|
-|Traffic Controller|A0006|Safety error|Defined by manufacturer||2|D|
-|Traffic Controller|A0007|Communication error between one or multiple traffic controllers and central control system|Defined by manufacturer||3|D|
-|Signal group|[A0008](#A0008)|Dead lock error|Defined by manufacturer||2|D|
-|Traffic Controller|A0009|Other error|Defined by manufacturer||3|D|
-|Signal group|A0101|Pushbutton error|Defined by manufacturer||3|D|
-|Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer||2|D|
-|Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer||3|D|
-|Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer||3|D|
-|Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer||3|D|
+| ObjectType | alarmCodeId | Description | externalAlarmCodeId | Priority | Category |
+| ---------- |:-----------:| ----------- | ------------------- |:--------:|:--------:|
+|Traffic Controller|A0001|Serious hardware error|Defined by manufacturer|2|D|
+|Traffic Controller|A0002|Less serious hardware error|Defined by manufacturer|3|D|
+|Traffic Controller|A0003|Serious configuration error|Defined by manufacturer|2|D|
+|Traffic Controller|A0004|Less serious configuration error|Defined by manufacturer|3|D|
+|Traffic Controller|A0005|Communication error between traffic controllers / synchronisation error|Defined by manufacturer|3|D|
+|Traffic Controller|A0006|Safety error|Defined by manufacturer|2|D|
+|Traffic Controller|A0007|Communication error between one or multiple traffic controllers and central control system|Defined by manufacturer|3|D|
+|Signal group|[A0008](#A0008)|Dead lock error|Defined by manufacturer|2|D|
+|Traffic Controller|A0009|Other error|Defined by manufacturer|3|D|
+|Signal group|A0101|Pushbutton error|Defined by manufacturer|3|D|
+|Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer|2|D|
+|Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer|3|D|
+|Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer|3|D|
+|Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer|3|D|
 ## Return values
 
 <a id="A0008"></a>
