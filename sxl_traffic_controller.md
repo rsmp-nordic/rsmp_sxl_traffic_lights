@@ -33,8 +33,8 @@ Single objects
 |----------|-----------|
 |Signal group||
 |Detector logic||
-<a id="aggregated_status"></a>
 
+<a id="aggregated_status"></a>
 Aggregated status per grouped object
 ====================================
 |ObjectType|Status|functionalPosition|functionalState|Description|
@@ -51,8 +51,8 @@ Aggregated status per grouped object
 |6|Connected / Normal - In Use||
 |7|Connected / Normal - Idle|Traffic Controller dark according to configuration.<br>NOTE! When dark according to configuration the controller is considered to be in use|
 |8|Not Connected||
-<a id="alarms"></a>
 
+<a id="alarms"></a>
 # Alarms
 | ObjectType | alarmCodeId | Description | externalAlarmCodeId | Priority | Category |
 | ---------- |:-----------:| ----------- | ------------------- |:--------:|:--------:|
@@ -70,6 +70,7 @@ Aggregated status per grouped object
 |Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer|3|D|
 |Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer|3|D|
 |Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer|3|D|
+
 ## Return values
 
 <a id="A0008"></a>
@@ -118,6 +119,7 @@ Detector error (logic error)
 |errormode|string|<ul><li>on</li><li>off</li></ul>|Dectector forced on/off while detector error|
 |manual|boolean|<ul><li>True</li><li>False</li></ul>|Manually controlled detector logic (True/False)|
 |logicerror|string|<ul><li>always_off</li><li>always_on</li><li>intermittent</li></ul>|Type of logic error<br>always_off: no detection during prefined max time<br>always on: detection constantly on during predefined max time<br>intermittent: intermittent logic fault (flutter)|
+
 <a id="status"></a>
 
 # Status
@@ -163,6 +165,7 @@ Detector error (logic error)
 |Traffic Controller|[S0206](#S0206)|Traffic Counting: Vehicle speed|
 |Traffic Controller|[S0207](#S0207)|Traffic Counting: Occupancy|
 |Traffic Controller|[S0208](#S0208)|Traffic Counting: Number of vehicles of given classification|
+
 ## Return values
 
 <a id="S0001"></a>
@@ -536,6 +539,7 @@ Traffic Counting: Number of vehicles of given classification
 |MC|string|[0-65535;...]|Number of motor cycles<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
 |C|string|[0-65535;...]|Number of bicycles<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
 |F|string|[0-65535;...]|Number of pedestrians<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
+
 <a id="commands"></a>
 
 # Commands
@@ -560,6 +564,7 @@ Traffic Counting: Number of vehicles of given classification
 |Traffic Controller|[M0018](#M0018)|Set Cycle time|
 |Traffic Controller|[M0103](#M0103)|Set security code|
 |Traffic Controller|[M0104](#M0104)|Set clock|
+
 ## Arguments
 
 <a id="M0001"></a>
