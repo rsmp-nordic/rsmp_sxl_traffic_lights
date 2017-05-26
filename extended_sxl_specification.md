@@ -50,7 +50,7 @@ This status returns a comma separated list of time plans available in the TLC.
 
 | Name   | Type   | Value  | Comment                                        |
 | ------ | ------ | ------ | ---------------------------------------------- |
-| Status | String | [text] | Comma separated list of configures time plans. |
+| status | string | [text] | Comma separated list of configures time plans. |
 
 #### Definition of return string
 The return string is defined as:
@@ -121,7 +121,7 @@ This status returns the whole commandtable
 
 | Name   | Type   | Value  | Comment                                |
 | ------ | ------ | ------ | -------------------------------------- |
-| Status | String | [text] | Command table. Defines time extensions |
+| status | string | [text] | Command table. Defines time extensions |
 
 #### Definition of return string
 The return string is defined as:
@@ -192,7 +192,7 @@ This status returns the offset times of the whole table.
 
 | Name   | Type   | Value  | Comment      |
 | ------ | ------ | ------ | ------------ |
-| Status | String | [text] | Offset table |
+| status | string | [text] | Offset table |
 
 #### Definition of return string
 The return string is defined as:
@@ -261,7 +261,7 @@ This status returns the whole Time to Green status
 
 | Name           | Type   | Value        | Comment                                                                                                                                      |
 | -------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| minToGEstimate | String | [time stamp] | Timestamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |
+| minToGEstimate | string | [time stamp] | Timestamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -269,7 +269,7 @@ This status returns the whole Time to Green status
 
 | Name           | Type   | Value        | Comment                                                                                                                                           |
 | -------------- | ------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| maxToGEstimate | String | [time stamp] | Timestamp for the maximum time time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green. |
+| maxToGEstimate | string | [time stamp] | Timestamp for the maximum time time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -277,7 +277,7 @@ This status returns the whole Time to Green status
 
 | Name              | Type   | Value        | Comment                                                                                                                                         |
 | ----------------- | ------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| likelyToGEstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to green. If the signal group is green, it is the likely time for the next green. |
+| likelyToGEstimate | string | [time stamp] | Timestamp for the most likely time for the signal group to go to green. If the signal group is green, it is the likely time for the next green. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -285,13 +285,13 @@ This status returns the whole Time to Green status
 
 | Name          | Type    | Value     | Comment                               |
 | ------------- | ------- | --------- | ------------------------------------- |
-| ToGConfidence | Integer | 0-100 (%) | Confidence of the likelyToGEstatimate |
+| ToGConfidence | integer | 0-100 (%) | Confidence of the likelyToGEstatimate |
 
 ### Return value
 
 | Name           | Type   | Value        | Comment                                                                                                                                |
 | -------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| minToREstimate | String | [time stamp] | Timestamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |
+| minToREstimate | string | [time stamp] | Timestamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -299,7 +299,7 @@ This status returns the whole Time to Green status
 
 | Name           | Type   | Value        | Comment                                                                                                                                |
 | -------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| maxToREstimate | String | [time stamp] | Timestamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |
+| maxToREstimate | string | [time stamp] | Timestamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -307,7 +307,7 @@ This status returns the whole Time to Green status
 
 | Name              | Type   | Value        | Comment                                                                                                                                   |
 | ----------------- | ------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| likelyToREstimate | String | [time stamp] | Timestamp for the most likely time for the signal group to go to red. If the signal group is red, it is the likely time for the next red. |
+| likelyToREstimate | string | [time stamp] | Timestamp for the most likely time for the signal group to go to red. If the signal group is red, it is the likely time for the next red. |
 
 > Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
 
@@ -315,7 +315,7 @@ This status returns the whole Time to Green status
 
 | Name          | Type    | Value     | Comment                             |
 | ------------- | ------- | --------- | ----------------------------------- |
-| ToRConfidence | Integer | 0-100 (%) | Confidence of the likelyToREstimate |
+| ToRConfidence | integer | 0-100 (%) | Confidence of the likelyToREstimate |
 
 
 ### Example message
@@ -382,7 +382,7 @@ This status returns time tables to use for each week day.
 
 | Name   | Type   | Value  | Comment         |
 | ------ | ------ | ------ | --------------- |
-| Status | String | [text] | Week time table |
+| status | string | [text] | Week time table |
 
 #### Definition of return string
 The return string is defined as:
@@ -466,7 +466,7 @@ This status returns all available time tables in the TLC
 
 | Name   | Type   | Value  | Comment     |
 | ------ | ------ | ------ | ----------- |
-| Status | String | [text] | Time tables |
+| status | string | [text] | Time tables |
 
 #### Definition of return string
 The return string is defined as:
@@ -549,7 +549,7 @@ This status returns cycle times for all time tables in the TLC
 
 | Name   | Type   | Value  | Comment           |
 | ------ | ------ | ------ | ----------------- |
-| Status | String | [text] | Cycle time tables |
+| status | string | [text] | Cycle time tables |
 
 #### Definition of return string
 The return string is defined as:
@@ -583,7 +583,7 @@ This command sends commands to a specific signal group in a specific plan at a s
 
 | Name   | Command     | Type    | Value   | Comment            |
 | ------ | ----------- | ------- | ------- | ------------------ |
-| Status | setCommands | integer | [0-255] | Plan to be changed |
+| status | setCommands | integer | [0-255] | Plan to be changed |
 
 #### Definition of argument
 
@@ -591,7 +591,7 @@ This command sends commands to a specific signal group in a specific plan at a s
 
 | Name   | Command     | Type   | Value  | Comment       |
 | ------ | ----------- | ------ | ------ | ------------- |
-| Status | setCommands | String | [text] | Command table |
+| status | setCommands | string | [text] | Command table |
 
 #### Definition of argument
 The argument is defined as:
@@ -681,9 +681,9 @@ This command sets offset times of a specific Time plan
 
 ### Argument
 
-| Name         | Command | Type   | Value  | Comment         |
-| ------------ | ------- | ------ | ------ | --------------- |
-| SecurityCode | SetStop | String | [text] | Security code 2 |
+| Name         | Command   | Type   | Value  | Comment         |
+| ------------ | --------- | ------ | ------ | --------------- |
+| securityCode | setOffset | string | [text] | Security code 2 |
 
 ### Example message
 
@@ -737,7 +737,7 @@ This command sets offset times of a specific Time plan
 
 | Name   | Command      | Type   | Value  | Comment       |
 | ------ | ------------ | ------ | ------ | ------------- |
-| Status | setWeekTable | String | [text] | Command table |
+| status | setWeekTable | string | [text] | Command table |
 
 #### Definition of argument
 The argument is defined as:
@@ -770,9 +770,9 @@ each status is separated by a comma (,) E.g. d-t,d-t
 
 ### Argument
 
-| Name         | Command | Type   | Value  | Comment         |
-| ------------ | ------- | ------ | ------ | --------------- |
-| SecurityCode | SetStop | String | [text] | Security code 2 |
+| Name         | Command      | Type   | Value  | Comment         |
+| ------------ | ------------ | ------ | ------ | --------------- |
+| securityCode | setWeekTable | String | [text] | Security code 2 |
 
 ### Example message
 
@@ -826,7 +826,7 @@ This command changes plans of specific time tables
 
 | Name   | Command      | Type   | Value  | Comment             |
 | ------ | ------------ | ------ | ------ | ------------------- |
-| Status | setTimeTable | String | [text] | Defines time tables |
+| status | setTimeTable | string | [text] | Defines time tables |
 
 #### Definition of argument
 The argument is defined as:
@@ -863,7 +863,7 @@ and function legend is defined as:
 
 | Name         | Command      | Type   | Value  | Comment         |
 | ------------ | -------- --- | ------ | ------ | --------------- |
-| SecurityCode | setTimeTable | String | [text] | Security code 2 |
+| securityCode | setTimeTable | string | [text] | Security code 2 |
 
 ### Example message
 
