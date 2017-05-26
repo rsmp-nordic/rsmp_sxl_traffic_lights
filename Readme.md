@@ -12,7 +12,7 @@ This repository is a cooperation between Trafikverket and the City of Copenhagen
 
 ### Current version
 
-The current version of the SXL 1.0.13 draft 9 can be found here: <a href="sxl_traffic_controller.md">sxl_traffic_controller.md</a>. 
+The current version of the SXL 1.0.13 draft 10 can be found here: <a href="sxl_traffic_controller.md">sxl_traffic_controller.md</a>.
 
 ### Specification for Copenhagen extended SXL (RSMP++)
 
