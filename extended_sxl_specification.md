@@ -2,7 +2,7 @@ Copenhagen extended SXL (RSMP++)
 ================================
 Specification
 
-Draft 9
+Draft 10
 
 This document defines supplements to the signal exchange list (SXL)
 defined for traffic light controllers (TLC).
@@ -37,6 +37,7 @@ Below listed statuses and commands are the additions of the SXL from the previou
 + [M0016](#M0016) - Set week time table
 + [M0017](#M0017) - Set time tables
 + [M0018](#M0018) - Set cycle time
++ [M0019](#M0019) - Force input
 
 <a id="S0022"></a>
 ## S0022 List of time plans 
@@ -932,6 +933,81 @@ This command changes cycle time
 | Name         | Command      | Type   | Value  | Comment         |
 | ------------ | -------- --- | ------ | ------ | --------------- |
 | securityCode | setCycleTime | String | [text] | Security code 2 |
+
+### Example message
+
+**Command request**
+``` json
+ {
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"0e05974d-223b-47a0-9992-fbe00dd352bd",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg": [
+		{"cCI":"M0018", "n":"status", "cO":"setCycleTime", "v":"2"},
+		{"cCI":"M0018", "n":"plan", "cO":"setCycleTime", "v":"80"},
+		{"cCI":"M0018", "n":"securityCode", "cO":"setCycleTime", "v":"2321"}
+	]
+}
+```
+
+**Command Response**
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"25b1947b-284a-4fff-b723-448f7c1b80b4",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2016-05-12T12:11:14.105Z",
+	"rvs": [
+		{"cCI":"M0018", "n":"status", "v":"2", "age":"recent"},
+		{"cCI":"M0018", "n":"plan", "v":"80", "age":"recent"},
+		{"cCI":"M0018", "n":"securityCode", "v":"2321", "age":"recent"}
+	]
+}
+```
+
+**Note!**  
+> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
+
+<a id="M0019"></a>
+## M0019 Force input
+
+### Description
+This command changes cycle time
+
+| ObjectType         | Object | CommandCodeId | Description     |
+| ------------------ | ------ | ------------- | --------------- |
+| Traffic Controller |        | M0019         | Force input     |
+
+### Argument
+
+| Name   | Command      | Type    | Value   | Comment                   |
+| ------ | ------------ | ------- | ------- | ------------------------- |
+| status | setInput     | boolean | <ul><li>False</li><li>True</li></ul> | False: Force input<br>True: Release input |
+
+### Argument
+
+| Name         | Command      | Type   | Value  | Comment         |
+| ------------ | -------- --- | ------ | ------ | --------------- |
+| securityCode | setInput     | String | [text] | Security code 2 |
+
+### Argument
+
+| Name         | Command      | Type    | Value   | Comment         |
+| ------------ | -------- --- | ------- | ------- | --------------- |
+| input        | setInput     | ordinal | [1-255] | Number of Input |
+
+### Argument
+
+| Name         | Command      | Type    | Value   | Comment         |
+| ------------ | -------- --- | ------- | ------- | --------------- |
+| input        | setInput     | ordinal | [1-255] | Number of Input |
+
 
 ### Example message
 
