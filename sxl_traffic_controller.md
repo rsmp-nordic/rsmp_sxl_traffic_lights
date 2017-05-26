@@ -5,8 +5,8 @@
 + **Reviewed**:
 + **Approved**:
 + **Created date**: 2010-04-20
-+ **SXL revision**: 1.0.13
-+ **Revision date**: 2016-21-11
++ **SXL revision**: 1.0.13-Draft 10
++ **Revision date**: 2017-05-17
 + **RSMP version**: 3.1.2
 
 Sections
@@ -67,7 +67,7 @@ Aggregated status per grouped object
 |Traffic Controller|A0009|Other error|Defined by manufacturer|3|D|
 |Signal group|A0101|Pushbutton error|Defined by manufacturer|3|D|
 |Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer|2|D|
-|Signal group|[A0202](#A0202)|Less serious hardware error|Defined by manufacturer|3|D|
+|Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer|3|D|
 |Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer|3|D|
 |Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer|3|D|
 
@@ -91,7 +91,7 @@ Serious lamp error
 
 <a id="A0202"></a>
 ### A0202
-Less serious hardware error
+Less serious lamp error
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
@@ -679,9 +679,9 @@ Set Cycle time
 
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
-|status|setCylceTime|integer|[1-255]|Set cycle time in seconds|
-|plan|setCylceTime|integer|[0-255]|Time plan nr|
-|securityCode|setOffset|string|[text]|Security code 2|
+|status|setCycleTime|integer|[1-255]|Set cycle time in seconds|
+|plan|setCycleTime|integer|[0-255]|Time plan nr|
+|securityCode|setCycleTime|string|[text]|Security code 2|
 
 <a id="M0019"></a>
 ### M0019
