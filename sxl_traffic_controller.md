@@ -5,8 +5,8 @@
 + **Reviewed**:
 + **Approved**:
 + **Created date**: 2010-04-20
-+ **SXL revision**: 1.0.13-Draft 9
-+ **Revision date**: 2017-03-23
++ **SXL revision**: 1.0.13
++ **Revision date**: 2016-21-11
 + **RSMP version**: 3.1.2
 
 Sections
@@ -45,7 +45,7 @@ Aggregated status per grouped object
 |------------------------|-----------|-------|
 |1|Local mode|Traffic Controller is in local mode. NTS has no control.|
 |2|No communications||
-|3|High priority fault|Traffic Controller is in fail safe mode; e.g. yellow flash or dark mode|
+|3|High priority fault|Traffic Controller is in fail safe mode<br> e.g. yellow flash or dark mode|
 |4|Medium priority fault|Traffic Controller has a medium priority fault, but not in fail safe mode.<br>E.g. several lamp faults or detector fault|
 |5|Low priority fault|Traffic Controller has a low priority fault. E.g. Detector fault|
 |6|Connected / Normal - In Use||
@@ -67,7 +67,7 @@ Aggregated status per grouped object
 |Traffic Controller|A0009|Other error|Defined by manufacturer|3|D|
 |Signal group|A0101|Pushbutton error|Defined by manufacturer|3|D|
 |Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer|2|D|
-|Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer|3|D|
+|Signal group|[A0202](#A0202)|Less serious hardware error|Defined by manufacturer|3|D|
 |Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer|3|D|
 |Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer|3|D|
 
@@ -91,7 +91,7 @@ Serious lamp error
 
 <a id="A0202"></a>
 ### A0202
-Less serious lamp error
+Less serious hardware error
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
@@ -161,10 +161,6 @@ Detector error (logic error)
 |Detector logic|[S0202](#S0202)|Traffic Counting: Vehicle speed|
 |Detector logic|[S0203](#S0203)|Traffic Counting: Occupancy|
 |Detector logic|[S0204](#S0204)|Traffic Counting: Number of vehicles of given classification|
-|Traffic Controller|[S0205](#S0205)|Traffic Counting: Number of vehicles|
-|Traffic Controller|[S0206](#S0206)|Traffic Counting: Vehicle speed|
-|Traffic Controller|[S0207](#S0207)|Traffic Counting: Occupancy|
-|Traffic Controller|[S0208](#S0208)|Traffic Counting: Number of vehicles of given classification|
 
 ## Return values
 
@@ -496,50 +492,6 @@ Traffic Counting: Number of vehicles of given classification
 |C|long|[number]|Number of bicycles|
 |F|long|[number]|Number of pedestrians|
 
-<a id="S0205"></a>
-### S0205
-Traffic Counting: Number of vehicles
-
-|Name|Type|Value|Comment|
-|----|----|-----|-------|
-|start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|vehicles|string|[0-65535;...]|Number of vehicles<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-
-<a id="S0206"></a>
-### S0206
-Traffic Counting: Vehicle speed
-
-|Name|Type|Value|Comment|
-|----|----|-----|-------|
-|start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|speed|string|[0-65535;...]|Average speed in km/h (integer)<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-
-<a id="S0207"></a>
-### S0207
-Traffic Counting: Occupancy
-
-|Name|Type|Value|Comment|
-|----|----|-----|-------|
-|start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|occupancy|string|[0-100;...]|Occupancy in percent (%) (0-100)<br> Value expressed as an integer with a range of 0-100.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-
-<a id="S0208"></a>
-### S0208
-Traffic Counting: Number of vehicles of given classification
-
-|Name|Type|Value|Comment|
-|----|----|-----|-------|
-|start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|P|string|[0-65535;...]|Number of cars<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-|PS|string|[0-65535;...]|Number of cars with trailers<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-|L|string|[0-65535;...]|Number of trucks<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-|LS|string|[0-65535;...]|Number of trucks with trailers<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-|B|string|[0-65535;...]|Number of busses<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-|SP|string|[0-65535;...]|Number of trams<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-|MC|string|[0-65535;...]|Number of motor cycles<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-|C|string|[0-65535;...]|Number of bicycles<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-|F|string|[0-65535;...]|Number of pedestrians<br> Value expressed as an integer with a range of 0-65535.<br> Contains data from all detector logics. Each detector logic is separated with a semicolon ”;”. <br> The value is set to “-1” if no data could be measured (e.g. detector fault)<br>|
-
 <a id="commands"></a>
 
 # Commands
@@ -562,6 +514,7 @@ Traffic Counting: Number of vehicles of given classification
 |Traffic Controller|[M0016](#M0016)|Set week time table|
 |Traffic Controller|[M0017](#M0017)|Set time tables|
 |Traffic Controller|[M0018](#M0018)|Set Cycle time|
+|Traffic Controller|[M0019](#M0019)|Force input<br>Requires security code 2|
 |Traffic Controller|[M0103](#M0103)|Set security code|
 |Traffic Controller|[M0104](#M0104)|Set clock|
 
@@ -626,7 +579,6 @@ Activate input<br>Requires security code 2
 |status|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: Deactivate input<br>True: Activate input|
 |securityCode|setInput|string|[text]|Security code 2|
 |input|setInput|ordinal|[1-255]|Number of Input|
-|inputValue|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: input forced to False<br>True: input forced to True|
 
 <a id="M0007"></a>
 ### M0007
@@ -730,6 +682,17 @@ Set Cycle time
 |status|setCylceTime|integer|[1-255]|Set cycle time in seconds|
 |plan|setCylceTime|integer|[0-255]|Time plan nr|
 |securityCode|setOffset|string|[text]|Security code 2|
+
+<a id="M0019"></a>
+### M0019
+Force input<br>Requires security code 2
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: Force input<br>True: Release input|
+|securityCode|setInput|string|[text]|Security code 2|
+|input|setInput|ordinal|[1-255]|Number of Input|
+|inputValue|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: input forced to False<br>True: input forced to True|
 
 <a id="M0103"></a>
 ### M0103

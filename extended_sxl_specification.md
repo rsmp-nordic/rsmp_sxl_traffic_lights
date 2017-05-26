@@ -28,6 +28,7 @@ Below listed statuses and commands are the additions of the SXL from the previou
 + [S0025](#S0025) - Time-to-green
 + [S0026](#S0026) - Week time table
 + [S0027](#S0027) - Time tables
++ [S0028](#S0028) - Cycle time
 
 #### Added commands
 
@@ -35,6 +36,7 @@ Below listed statuses and commands are the additions of the SXL from the previou
 + [M0015](#M0015) - Set offset time
 + [M0016](#M0016) - Set week time table
 + [M0017](#M0017) - Set time tables
++ [M0018](#M0018) - Set cycle time
 
 <a id="S0022"></a>
 ## S0022 List of time plans 
@@ -536,7 +538,7 @@ and function legend is defined as:
 > All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 <a id="S0028"></a>
-## S0028 Cycle time table
+## S0028 Cycle time
 
 ### Description
 This status returns cycle times for all time tables in the TLC
@@ -903,4 +905,70 @@ and function legend is defined as:
 **Note!**  
 > All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
+<a id="M0018"></a>
+## M0018 Set cycle time
 
+### Description
+This command changes cycle time
+
+| ObjectType         | Object | CommandCodeId | Description     |
+| ------------------ | ------ | ------------- | --------------- |
+| Traffic Controller |        | M0018         | Set cycle time  |
+
+### Argument
+
+| Name   | Command      | Type    | Value   | Comment                   |
+| ------ | ------------ | ------- | ------- | ------------------------- |
+| status | setCycleTime | integer | [1-255] | Set cycle time in seconds |
+
+### Argument
+
+| Name         | Command      | Type   | Value  | Comment         |
+| ------------ | -------- --- | ------ | ------ | --------------- |
+| plan         | setCycleTime | string | [text] | Time plan nr    |
+
+### Argument
+
+| Name         | Command      | Type   | Value  | Comment         |
+| ------------ | -------- --- | ------ | ------ | --------------- |
+| securityCode | setCycleTime | String | [text] | Security code 2 |
+
+### Example message
+
+**Command request**
+``` json
+ {
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"0e05974d-223b-47a0-9992-fbe00dd352bd",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg": [
+		{"cCI":"M0018", "n":"status", "cO":"setCycleTime", "v":"2"},
+		{"cCI":"M0018", "n":"plan", "cO":"setCycleTime", "v":"80"},
+		{"cCI":"M0018", "n":"securityCode", "cO":"setCycleTime", "v":"2321"}
+	]
+}
+```
+
+**Command Response**
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"25b1947b-284a-4fff-b723-448f7c1b80b4",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2016-05-12T12:11:14.105Z",
+	"rvs": [
+		{"cCI":"M0018", "n":"status", "v":"2", "age":"recent"},
+		{"cCI":"M0018", "n":"plan", "v":"80", "age":"recent"},
+		{"cCI":"M0018", "n":"securityCode", "v":"2321", "age":"recent"}
+	]
+}
+```
+
+**Note!**  
+> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
