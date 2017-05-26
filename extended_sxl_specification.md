@@ -1006,7 +1006,7 @@ This command changes cycle time
 
 | Name         | Command      | Type    | Value   | Comment         |
 | ------------ | -------- --- | ------- | ------- | --------------- |
-| input        | setInput     | ordinal | [1-255] | Number of Input |
+| inputValue   | setInput     | boolean | <ul><li>False</li><li>True</li></ul> |  False: input forced to False<br>True: input forced to True |
 
 
 ### Example message
