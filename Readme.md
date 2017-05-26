@@ -7,7 +7,7 @@ This repository is a cooperation between Trafikverket and the City of Copenhagen
   * SXL 1.0.7:        SXL used for traffic light controllers from 2012.
   * SXL 1.0.8-1.0.11: Extensions for coordination support.
                       Adds commands/statuses needed for coordination between TLCs
-  * SXL 1.0.12:       Draft, Improved traffic counting
+  * SXL 1.0.12:       Draft, Improved traffic counting. Moved to branch 'improved_traffic_counting'
   * SXL 1.0.13:       Draft, RSMP++, SXL extensions by the City of Copenhagen
 
 ### Current version
@@ -16,5 +16,5 @@ The current version of the SXL 1.0.13 draft 10 can be found here: <a href="sxl_t
 
 ### Specification for Copenhagen extended SXL (RSMP++)
 
-Specification for Copenhagen extended SXL, RSMP++ can be found here: <a href="extended_sxl_specification.md">extended_sxl_specification.md</a>
+Specification for Copenhagen extended SXL, RSMP++ including examples, can be found here: <a href="extended_sxl_specification.md">extended_sxl_specification.md</a>
 
