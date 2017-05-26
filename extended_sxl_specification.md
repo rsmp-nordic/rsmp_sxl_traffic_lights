@@ -865,7 +865,7 @@ and function legend is defined as:
 ### Argument
 
 | Name         | Command      | Type   | Value  | Comment         |
-| ------------ | -------- --- | ------ | ------ | --------------- |
+| ------------ | ------------ | ------ | ------ | --------------- |
 | securityCode | setTimeTable | string | [text] | Security code 2 |
 
 ### Example message
@@ -925,13 +925,13 @@ This command changes cycle time
 ### Argument
 
 | Name         | Command      | Type   | Value  | Comment         |
-| ------------ | -------- --- | ------ | ------ | --------------- |
+| ------------ | ------------ | ------ | ------ | --------------- |
 | plan         | setCycleTime | string | [text] | Time plan nr    |
 
 ### Argument
 
 | Name         | Command      | Type   | Value  | Comment         |
-| ------------ | -------- --- | ------ | ------ | --------------- |
+| ------------ | ------------ | ------ | ------ | --------------- |
 | securityCode | setCycleTime | String | [text] | Security code 2 |
 
 ### Example message
@@ -993,19 +993,19 @@ This command changes cycle time
 ### Argument
 
 | Name         | Command      | Type   | Value  | Comment         |
-| ------------ | -------- --- | ------ | ------ | --------------- |
-| securityCode | setInput     | String | [text] | Security code 2 |
+| ------------ | ------------ | ------ | ------ | --------------- |
+| securityCode | setInput     | string | [text] | Security code 2 |
 
 ### Argument
 
 | Name         | Command      | Type    | Value   | Comment         |
-| ------------ | -------- --- | ------- | ------- | --------------- |
+| ------------ | ------------ | ------- | ------- | --------------- |
 | input        | setInput     | ordinal | [1-255] | Number of Input |
 
 ### Argument
 
 | Name         | Command      | Type    | Value   | Comment         |
-| ------------ | -------- --- | ------- | ------- | --------------- |
+| ------------ | ------------ | ------- | ------- | --------------- |
 | inputValue   | setInput     | boolean | <ul><li>False</li><li>True</li></ul> |  False: input forced to False<br>True: input forced to True |
 
 
