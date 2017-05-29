@@ -42,38 +42,6 @@ Below listed statuses and commands are the additions of the SXL from the previou
 <a id="S0022"></a>
 ## S0022 List of time plans 
 
-### Description
-This status returns a comma separated list of time plans available in the TLC.
-
-| ObjectType         | Object | StatusCodeId | Description        |
-| ------------------ | ------ | ------------ | ------------------ |
-| Traffic Controller |        | S0022        | List of time plans |
-
-### Return value
-
-| Name   | Type   | Value  | Comment                                        |
-| ------ | ------ | ------ | ---------------------------------------------- |
-| status | string | [text] | Comma separated list of configures time plans. |
-
-#### Definition of return string
-The return string is defined as:
-
-```
-n
-```
-
-Where:
-
-| legend | description       |
-| ------ | ----------------- |
-| n      | index of timeplan |
-
-**Note!**  
-> The length of the string, (I.e. number of parameters in string) is defined by number of available time plans in the TLC.  
-
-**Note 2!**  
-> All time plans are separated with a comma (,)
-
 ### Example message
 
 **Status request**
@@ -106,44 +74,8 @@ Where:
 	]
 }
 ```
-
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-
 <a id="S0023"></a>
 ## S0023 Command table 
-
-### Description
-This status returns the whole commandtable
-
-| ObjectType         | Object | StatusCodeId | Description   |
-| ------------------ | ------ | ------------ | ------------- |
-| Traffic Controller |        | S0023        | Command table |
-
-### Return value
-
-| Name   | Type   | Value  | Comment                                |
-| ------ | ------ | ------ | -------------------------------------- |
-| status | string | [text] | Command table. Defines time extensions |
-
-#### Definition of return string
-The return string is defined as:
-
-```
-pp-dd-ee
-```
-
-Where:
-
-| legend | description                       |
-| ------ | --------------------------------- |
-| pp     | time plan                         |
-| dd     | dynamic band number (from 1-10)   |
-| ee     | extension in seconds in this band |
-
-**Note!**  
-> Each command is separated with a comma.
-
 
 ### Example message
 
@@ -177,42 +109,8 @@ Where:
 	]
 }
 ```
-
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-
 <a id="S0024"></a>
 ## S0024 Offset time
-
-### Description
-This status returns the offset times of the whole table.
-
-| ObjectType         | Object | StatusCodeId | Description |
-| ------------------ | ------ | ------------ | ----------- |
-| Traffic Controller |        | S0024        | Offset time |
-
-### Return value
-
-| Name   | Type   | Value  | Comment      |
-| ------ | ------ | ------ | ------------ |
-| status | string | [text] | Offset table |
-
-#### Definition of return string
-The return string is defined as:
-
-```
-pp-tt
-```
-
-Where:
-
-| legend | description            |
-| ------ | ---------------------- |
-| pp     | time plan              |
-| tt     | offset time in seconds |
-
-**Note!**  
-> each status is separated by a comma (,) E.g. pp-tt,pp-tt
 
 ### Example message
 
@@ -247,79 +145,8 @@ Where:
 }
 ```
 
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-
 <a id="S0025"></a>
 ## S0025 Time-to-green
-
-### Description
-This status returns the whole Time to Green status
-
-| ObjectType   | Object | StatusCodeId | description   |
-| ------------ | ------ | ------------ | ------------- |
-| Signal Group |        | S0025        | Time-To-Green |
-
-### Return value
-
-| Name           | Type   | Value        | Comment                                                                                                                                      |
-| -------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| minToGEstimate | string | [time stamp] | Timestamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |
-
-> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
-
-### Return value
-
-| Name           | Type   | Value        | Comment                                                                                                                                           |
-| -------------- | ------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| maxToGEstimate | string | [time stamp] | Timestamp for the maximum time time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green. |
-
-> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
-
-### Return value
-
-| Name              | Type   | Value        | Comment                                                                                                                                         |
-| ----------------- | ------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| likelyToGEstimate | string | [time stamp] | Timestamp for the most likely time for the signal group to go to green. If the signal group is green, it is the likely time for the next green. |
-
-> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
-
-### Return value
-
-| Name          | Type    | Value     | Comment                               |
-| ------------- | ------- | --------- | ------------------------------------- |
-| ToGConfidence | integer | 0-100 (%) | Confidence of the likelyToGEstatimate |
-
-### Return value
-
-| Name           | Type   | Value        | Comment                                                                                                                                |
-| -------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| minToREstimate | string | [time stamp] | Timestamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |
-
-> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
-
-### Return value
-
-| Name           | Type   | Value        | Comment                                                                                                                                |
-| -------------- | ------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| maxToREstimate | string | [time stamp] | Timestamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |
-
-> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
-
-### Return value
-
-| Name              | Type   | Value        | Comment                                                                                                                                   |
-| ----------------- | ------ | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| likelyToREstimate | string | [time stamp] | Timestamp for the most likely time for the signal group to go to red. If the signal group is red, it is the likely time for the next red. |
-
-> Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. _2009-10-02T14:34:34.341Z_
-
-### Return value
-
-| Name          | Type    | Value     | Comment                             |
-| ------------- | ------- | --------- | ----------------------------------- |
-| ToRConfidence | integer | 0-100 (%) | Confidence of the likelyToREstimate |
-
 
 ### Example message
 
@@ -367,54 +194,8 @@ This status returns the whole Time to Green status
 	]
 }
 ```
-
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-
 <a id="S0026"></a>
 ## S0026 Week time table
-
-### Description
-This status returns time tables to use for each week day.
-
-| ObjectType         | Object | StatusCodeId | Description     |
-| ------------------ | ------ | ------------ | --------------- |
-| Traffic Controller |        | S0026        | Week time table |
-
-### Return value
-
-| Name   | Type   | Value  | Comment         |
-| ------ | ------ | ------ | --------------- |
-| status | string | [text] | Week time table |
-
-#### Definition of return string
-The return string is defined as:
-
-```
-d-t
-```
-
-Where:
-
-| legend | description   |
-| ------ | ------------- |
-| d      | day of week   |
-| t      | time table nr |
-
-and day of week legend are defined as:
-
-| legend | Day of week |
-| ------ | ----------- |
-| 0      | Monday      |
-| 1      | Tuesday     |
-| 2      | Wednesday   |
-| 3      | Thursday    |
-| 4      | Friday      |
-| 5      | Saturday    |
-| 6      | Sunday      |
-
-**Note!**  
-> each status is separated by a comma (,) E.g. d-t,d-t
 
 ### Example message
 
@@ -448,59 +229,8 @@ and day of week legend are defined as:
 	]
 }
 ```
-
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.  
-
-**Note 2!**  
-> The TLC should always send the whole week.
-
 <a id="S0027"></a>
 ## S0027 Time tables
-
-### Description
-This status returns all available time tables in the TLC
-
-| ObjectType         | Object | StatusCodeId | Description |
-| ------------------ | ------ | ------------ | ----------- |
-| Traffic Controller |        | S0027        | Time tables |
-
-### Return value
-
-| Name   | Type   | Value  | Comment     |
-| ------ | ------ | ------ | ----------- |
-| status | string | [text] | Time tables |
-
-#### Definition of return string
-The return string is defined as:
-
-```
-t-o-h-m
-```
-
-Where:
-
-| legend | description             |
-| ------ | ----------------------- |
-| t      | Time table nr (1-12)    |
-| o      | Function                |
-| h      | Hour - switching time   |
-| m      | Minute - Switching time |
-
-and function legend is defined as:
-
-| legend | Selected plan by time table       |
-| ------ | --------------------------------- |
-| 0      | No plan is selected by time table |
-| 1      | set plan 1                        |
-| ...    | ...                               |
-| 16     | set plan 16                       |
-
-**Note!**  
-> each status is separated by a comma (,) E.g. t-o-h-m,t-o-h-m
-
-**Note 2!**  
-> Hour and minute is using local time (not UTC)
 
 ### Example message
 
@@ -535,90 +265,11 @@ and function legend is defined as:
 }
 ```
 
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-
 <a id="S0028"></a>
 ## S0028 Cycle time
 
-### Description
-This status returns cycle times for all time tables in the TLC
-
-| ObjectType         | Object | StatusCodeId | Description       |
-| ------------------ | ------ | ------------ | ----------------- |
-| Traffic Controller |        | S0028        | Cycle time tables |
-
-### Return value
-
-| Name   | Type   | Value  | Comment           |
-| ------ | ------ | ------ | ----------------- |
-| status | string | [text] | Cycle time tables |
-
-#### Definition of return string
-The return string is defined as:
-
-```
-pp-tt
-```
-
-Where:
-
-| legend | description           |
-| ------ | --------------------- |
-| pp     | Time plan             |
-| tt     | Cycle time in seconds |
-
-
-**Note!**  
-> each status is separated by a comma (,) E.g. pp-tt,pp-tt
-
 <a id="M0014"></a>
 ## M0014 Set command table
-
-### Description
-This command sends commands to a specific signal group in a specific plan at a specific cycle step
-
-| ObjectType         | Object | CommandCodeId | Description       |
-| ------------------ | ------ | ------------- | ----------------- |
-| Traffic Controller |        | M0014         | Set command table |
-
-### Argument
-
-| Name   | Command     | Type    | Value   | Comment            |
-| ------ | ----------- | ------- | ------- | ------------------ |
-| status | setCommands | integer | [0-255] | Plan to be changed |
-
-#### Definition of argument
-
-### Argument
-
-| Name   | Command     | Type   | Value  | Comment       |
-| ------ | ----------- | ------ | ------ | ------------- |
-| status | setCommands | string | [text] | Command table |
-
-#### Definition of argument
-The argument is defined as:
-
-```
-dd-ee
-```
-
-Where:
-
-| legend | description                       |
-| ------ | --------------------------------- |
-| dd     | Dynamic band number (from 1-10)   |
-| ee     | Extension in seconds in this band |
-
-
-**Note!**  
-> each command is separated by a comma (,) E.g. dd-ee,dd-ee
-
-### Argument
-
-| Name         | Command     | Type   | Value  | Comment         |
-| ------------ | ----------- | ------ | ------ | --------------- |
-| securityCode | setCommands | String | [text] | Security code 2 |
 
 ### Example message
 
@@ -657,36 +308,8 @@ Where:
 }
 ```
 
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-
 <a id="M0015"></a>
 ## M0015 Set Offset time 
-
-### Description
-This command sets offset times of a specific Time plan
-
-| ObjectType         | Object | CommandCodeId | Description     |
-| ------------------ | ------ | ------------- | --------------- |
-| Traffic Controller |        | M0015         | Set offset time |
-
-### Argument
-
-| Name   | Command   | Type    | Value   | Comment                    |
-| ------ | --------- | ------- | ------- | -------------------------- |
-| status | setOffset | integer | [0-255] | Set offset time in seconds |
-
-### Argument
-
-| Name | Command | Type | Value | Comment |
-| ---- | ------- | ---- | ----- | ------- |
-| plan | setOffset | integer | [0-255] | Time plan nr |
-
-### Argument
-
-| Name         | Command   | Type   | Value  | Comment         |
-| ------------ | --------- | ------ | ------ | --------------- |
-| securityCode | setOffset | string | [text] | Security code 2 |
 
 ### Example message
 
@@ -725,57 +348,8 @@ This command sets offset times of a specific Time plan
 }
 
 ```
-
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-
 <a id="M0016"></a>
 ## M0016 Set week time table 
-
-| ObjectType         | Object | CommandCodeId | Description         |
-| ------------------ | ------ | ------------- | ------------------- |
-| Traffic Controller |        | M0016         | Set week time table |
-
-### Argument
-
-| Name   | Command      | Type   | Value  | Comment       |
-| ------ | ------------ | ------ | ------ | ------------- |
-| status | setWeekTable | string | [text] | Command table |
-
-#### Definition of argument
-The argument is defined as:
-
-```
-d-t
-```
-
-Where:
-
-| legend | description   |
-| ------ | ------------- |
-| d      | day of week   |
-| t      | time table nr |
-
-and day of week legend are defined as:
-
-| legend | Day of week |
-| ------ | ----------- |
-| 0      | Monday      |
-| 1      | Tuesday     |
-| 2      | Wednesday   |
-| 3      | Thursday    |
-| 4      | Friday      |
-| 5      | Saturday    |
-| 6      | Sunday      |
-
-**Note!**  
-each status is separated by a comma (,) E.g. d-t,d-t
-
-### Argument
-
-| Name         | Command      | Type   | Value  | Comment         |
-| ------------ | ------------ | ------ | ------ | --------------- |
-| securityCode | setWeekTable | String | [text] | Security code 2 |
 
 ### Example message
 
@@ -812,61 +386,8 @@ each status is separated by a comma (,) E.g. d-t,d-t
 }
 ```
 
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-
 <a id="M0017"></a>
 ## M0017 Set time tables 
-
-### Description
-This command changes plans of specific time tables
-
-| ObjectType         | Object | CommandCodeId | Description     |
-| ------------------ | ------ | ------------- | --------------- |
-| Traffic Controller |        | M0017         | Set time tables |
-
-### Argument
-
-| Name   | Command      | Type   | Value  | Comment             |
-| ------ | ------------ | ------ | ------ | ------------------- |
-| status | setTimeTable | string | [text] | Defines time tables |
-
-#### Definition of argument
-The argument is defined as:
-
-```
-t-o-h-m
-```
-
-Where:
-
-| legend | description             |
-| ------ | ----------------------- |
-|   t    | Time table nr (1-12)    |
-|   o    | Function                |
-|   h    | Hour - switching time   |
-|   m    | Minute - Switching time |
-
-and function legend is defined as:
-
-| legend | Selected plan by time table       |
-| ------ | --------------------------------- |
-|   0    | No plan is selected by time table |
-|   1    | set plan 1                        |
-|  ...   | ...                               |
-|   16   | set plan 16                       |
-
-**Note!**  
-> each status is separated by a comma (,) E.g. t-o-h-m,t-o-h-m
-  
-**Note 2!**  
-> Hour and minute is using local time (not UTC)
-
-### Argument
-
-| Name         | Command      | Type   | Value  | Comment         |
-| ------------ | ------------ | ------ | ------ | --------------- |
-| securityCode | setTimeTable | string | [text] | Security code 2 |
 
 ### Example message
 
@@ -903,36 +424,8 @@ and function legend is defined as:
 }
 ```
 
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
-
 <a id="M0018"></a>
 ## M0018 Set cycle time
-
-### Description
-This command changes cycle time
-
-| ObjectType         | Object | CommandCodeId | Description     |
-| ------------------ | ------ | ------------- | --------------- |
-| Traffic Controller |        | M0018         | Set cycle time  |
-
-### Argument
-
-| Name   | Command      | Type    | Value   | Comment                   |
-| ------ | ------------ | ------- | ------- | ------------------------- |
-| status | setCycleTime | integer | [1-255] | Set cycle time in seconds |
-
-### Argument
-
-| Name         | Command      | Type   | Value  | Comment         |
-| ------------ | ------------ | ------ | ------ | --------------- |
-| plan         | setCycleTime | string | [text] | Time plan nr    |
-
-### Argument
-
-| Name         | Command      | Type   | Value  | Comment         |
-| ------------ | ------------ | ------ | ------ | --------------- |
-| securityCode | setCycleTime | String | [text] | Security code 2 |
 
 ### Example message
 
@@ -970,45 +463,10 @@ This command changes cycle time
 	]
 }
 ```
-
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
 
 <a id="M0019"></a>
 ## M0019 Force input
 
-### Description
-This command changes cycle time
-
-| ObjectType         | Object | CommandCodeId | Description     |
-| ------------------ | ------ | ------------- | --------------- |
-| Traffic Controller |        | M0019         | Force input     |
-
-### Argument
-
-| Name   | Command      | Type    | Value   | Comment                   |
-| ------ | ------------ | ------- | ------- | ------------------------- |
-| status | setInput     | boolean | <ul><li>False</li><li>True</li></ul> | False: Force input<br>True: Release input |
-
-### Argument
-
-| Name         | Command      | Type   | Value  | Comment         |
-| ------------ | ------------ | ------ | ------ | --------------- |
-| securityCode | setInput     | string | [text] | Security code 2 |
-
-### Argument
-
-| Name         | Command      | Type    | Value   | Comment         |
-| ------------ | ------------ | ------- | ------- | --------------- |
-| input        | setInput     | ordinal | [1-255] | Number of Input |
-
-### Argument
-
-| Name         | Command      | Type    | Value   | Comment         |
-| ------------ | ------------ | ------- | ------- | --------------- |
-| inputValue   | setInput     | boolean | <ul><li>False</li><li>True</li></ul> |  False: input forced to False<br>True: input forced to True |
-
-
 ### Example message
 
 **Command request**
@@ -1045,6 +503,3 @@ This command changes cycle time
 	]
 }
 ```
-
-**Note!**  
-> All messages should be acknowledged by the other part (The supervision system acknowledges the TLC's messages and vice versa). The acknowledge messages are not presented in the above examples. For more information see the RSMP specification.
