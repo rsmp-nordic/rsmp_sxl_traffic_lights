@@ -4,8 +4,7 @@ Appendix - definition of signal groups status
 Signal groups status (S0001) is defined as a text string where each character represents the current status for each signal group.
 Each character has the following definition:
 
-|-------|-------------------------------------------|-----------------------|------------|------------|
-| ASCII | Definition                                | Output                | Green req. | Definition |
+| ASCII | Definition                                | Output                | Green req. | Definition (swedish) |
 |-------|-------------------------------------------|-----------------------|------------|------------|
 | a     | disabled                                  | Dark                  | -          |            |
 | b     | manual control to dark                    | Dark                  | -          |            |
@@ -35,5 +34,4 @@ Each character has the following definition:
 | N     | fixed yellow or yellow-green              | Yellow                | Y/N        |            |
 | O     | variable yellow or yellow-green           | Yellow                | Y          | Signalgruppsstatus "Fast gul" kan utökas med en trafikstyrt variabel del "Variabelt gult", signalgruppstatuset förlängs vanligtvis av detektorlogiker. (V-funktion) |
 | P     | variable red                              | Red                   | Y          | Den fasta rödtiden/spärrtiden ska kunna utökas med en trafikstyrt variabel del. Den mäts oftast parallellt med den fasta innebärande att den måste vara längre för att få någon effekt. (R-funktion) |
-|-------|-------------------------------------------|-----------------------|------------|------------|
 
