@@ -35,5 +35,5 @@ Each character has the following definition:
 | N     | fixed yellow or yellow-green              | Yellow                | Y/N        |            |
 | O     | variable yellow or yellow-green           | Yellow                | Y          | Signalgruppsstatus "Fast gul" kan utökas med en trafikstyrt variabel del "Variabelt gult", signalgruppstatuset förlängs vanligtvis av detektorlogiker. (V-funktion) |
 | P     | variable red                              | Red                   | Y          | Den fasta rödtiden/spärrtiden ska kunna utökas med en trafikstyrt variabel del. Den mäts oftast parallellt med den fasta innebärande att den måste vara längre för att få någon effekt. (R-funktion) |
-|-------|-------------------------------------------|--------------------------------------------------
+|-------|-------------------------------------------|-----------------------|------------|------------|
 
