@@ -5,8 +5,8 @@
 + **Reviewed**:
 + **Approved**:
 + **Created date**: 2010-04-20
-+ **SXL revision**: 1.0.13-Draft 10
-+ **Revision date**: 2017-05-17
++ **SXL revision**: 1.0.13-Draft 11
++ **Revision date**: 2017-06-16
 + **RSMP version**: 3.1.2
 
 Sections
