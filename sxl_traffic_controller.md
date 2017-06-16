@@ -153,6 +153,7 @@ Detector error (logic error)
 |Traffic Controller|[S0026](#S0026)|Week time table|
 |Traffic Controller|[S0027](#S0027)|Time tables|
 |Traffic Controller|[S0028](#S0028)|Cycle time|
+|Traffic Controller|[S0029](#S0029)|Forced input status|
 |Traffic Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
 |Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
 |Traffic Controller|[S0095](#S0095)|Version av Traffic Controller|
@@ -408,6 +409,14 @@ Cycle time
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|string|[text]|Cycle time table<br>Each cycle time is written as pp-tt where:<br>pp=time plan<br>tt=cycle time in seconds<br><br>Each cycle time is separated with a comma<br><br><br>E.g.<br>pp-tt,pp-tt|
+
+<a id="S0029"></a>
+### S0029
+Forced input status
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Forced input status as text field|
 
 <a id="S0091"></a>
 ### S0091

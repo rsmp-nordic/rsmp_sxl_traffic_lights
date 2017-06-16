@@ -268,6 +268,42 @@ Below listed statuses and commands are the additions of the SXL from the previou
 <a id="S0028"></a>
 ## S0028 Cycle time
 
+<a id="S0029"></a>
+## S0029 Forced input status
+
+### Example message
+
+**Status request**
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"a82f7796-3cf6-4319-835b-ec8bf21bae69",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS": [
+		{"sCI":"S0029", "n":"status"}
+	]
+}
+```
+
+**Status Response**
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"1ed16ca5-2ea7-4e06-9226-d1b482b16db4",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2016-05-11T13:46:57.781Z",
+	"sS":[
+		{"sCI":"S0029", "n":"status", "s":"000000100010000010", "q":"recent"}
+	]
+}
+```
+
 <a id="M0014"></a>
 ## M0014 Set command table
 
