@@ -2,7 +2,11 @@
 
 This repository is a cooperation between Trafikverket and the City of Copenhagen to coordinate the work on the SXL for traffic lights.
 
-### Specification for Copenhagen extended SXL (RSMP++)
+### Signal exchange list (SXL)
 
-Specification for Copenhagen extended SXL, RSMP++ including examples, can be found here: <a href="extended_sxl_specification.md">extended_sxl_specification.md</a>
+The signal exchange list can be found here: <a href="sxl_traffic_controller.md">sxl_traffic_controller.md</a>
+
+### Examples for version 1.0.13 (RSMP++)
+
+Examples for added status & commands in version 1.0.13 (RSMP++), can be found here: <a href="appendix_examples_rsmp++.md">appendix_examples_rsmp++.md</a>
 

@@ -1,24 +1,7 @@
-Copenhagen extended SXL (RSMP++)
-================================
-Specification
+Examples for RSMP++
+===================
 
-Draft 10
-
-This document defines supplements to the signal exchange list (SXL)
-defined for traffic light controllers (TLC).
-
-The SXL extension was initiated by the City of Copenhagen to enable more flexible traffic management using the RSMP protocol.
-
-The extension focuses on four elements:
-
-- Ability to read and modify offset times
-- Ability to read and modify green times
-- Ability to read and modify time tables
-- Ability to get predicted time-to-green / time-to-red
-
-### Added statuses/commands
-
-Below listed statuses and commands are the additions of the SXL from the previous SXL. No statuses, commands or other message types has been removed.
+This document contains examples for the added statuses and commands in version 1.0.13 (RSMP++)
 
 #### Added statuses
 
