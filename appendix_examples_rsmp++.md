@@ -251,6 +251,75 @@ This document contains examples for the added statuses and commands in version 1
 <a id="S0028"></a>
 ## S0028 Cycle time
 
+### Example message
+
+**Status request**
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"a82f7796-3cf6-4319-835b-ec8bf21bae69",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS": [
+		{"sCI":"S0028", "n":"status"}
+	]
+}
+```
+
+**Status Response**
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"1ed16ca5-2ea7-4e06-9226-d1b482b16db4",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2016-05-11T13:46:57.781Z",
+	"sS":[
+		{"sCI":"S0028", "n":"status", "s":"01-80,02-80,03-75", "q":"recent"}
+	]
+}
+```
+
+<a id="S0029"></a>
+## S0029 Forced input status
+
+### Example message
+
+**Status request**
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"a82f7796-3cf6-4319-835b-ec8bf21bae69",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS": [
+		{"sCI":"S0029", "n":"status"}
+	]
+}
+```
+
+**Status Response**
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"1ed16ca5-2ea7-4e06-9226-d1b482b16db4",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2016-05-11T13:46:57.781Z",
+	"sS":[
+		{"sCI":"S0029", "n":"status", "s":"000000100010000010", "q":"recent"}
+	]
+}
+```
+
 <a id="M0014"></a>
 ## M0014 Set command table
 
@@ -462,9 +531,10 @@ This document contains examples for the added statuses and commands in version 1
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"arg": [
-		{"cCI":"M0018", "n":"status", "cO":"setCycleTime", "v":"2"},
-		{"cCI":"M0018", "n":"plan", "cO":"setCycleTime", "v":"80"},
-		{"cCI":"M0018", "n":"securityCode", "cO":"setCycleTime", "v":"2321"}
+		{"cCI":"M0018", "n":"status", "cO":"setInput", "v":"True"},
+		{"cCI":"M0018", "n":"securityCode", "cO":"setInput", "v":"2321"}
+		{"cCI":"M0018", "n":"input", "cO":"setInput", "v":"2"},
+		{"cCI":"M0018", "n":"inputValue", "cO":"setInput", "v":"True"},
 	]
 }
 ```
@@ -480,9 +550,10 @@ This document contains examples for the added statuses and commands in version 1
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:11:14.105Z",
 	"rvs": [
-		{"cCI":"M0018", "n":"status", "v":"2", "age":"recent"},
-		{"cCI":"M0018", "n":"plan", "v":"80", "age":"recent"},
+		{"cCI":"M0018", "n":"status", "v":"True", "age":"recent"},
 		{"cCI":"M0018", "n":"securityCode", "v":"2321", "age":"recent"}
+		{"cCI":"M0018", "n":"input", "v":"2", "age":"recent"},
+		{"cCI":"M0018", "n":"inputValue", "v":"2321", "age":"True"}
 	]
 }
 ```
