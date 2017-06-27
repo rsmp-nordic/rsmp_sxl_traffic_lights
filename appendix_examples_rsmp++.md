@@ -1,5 +1,5 @@
-Examples for RSMP++
-===================
+Appendix - Examples for RSMP++
+==============================
 
 This document contains examples for the added statuses and commands in version 1.0.13 (RSMP++)
 
@@ -532,9 +532,9 @@ This document contains examples for the added statuses and commands in version 1
 	"cId":"KK+AG0503=001TC000",
 	"arg": [
 		{"cCI":"M0018", "n":"status", "cO":"setInput", "v":"True"},
-		{"cCI":"M0018", "n":"securityCode", "cO":"setInput", "v":"2321"}
+		{"cCI":"M0018", "n":"securityCode", "cO":"setInput", "v":"2321"},
 		{"cCI":"M0018", "n":"input", "cO":"setInput", "v":"2"},
-		{"cCI":"M0018", "n":"inputValue", "cO":"setInput", "v":"True"},
+		{"cCI":"M0018", "n":"inputValue", "cO":"setInput", "v":"True"}
 	]
 }
 ```
@@ -551,7 +551,7 @@ This document contains examples for the added statuses and commands in version 1
 	"cTS":"2016-05-12T12:11:14.105Z",
 	"rvs": [
 		{"cCI":"M0018", "n":"status", "v":"True", "age":"recent"},
-		{"cCI":"M0018", "n":"securityCode", "v":"2321", "age":"recent"}
+		{"cCI":"M0018", "n":"securityCode", "v":"2321", "age":"recent"},
 		{"cCI":"M0018", "n":"input", "v":"2", "age":"recent"},
 		{"cCI":"M0018", "n":"inputValue", "v":"2321", "age":"True"}
 	]

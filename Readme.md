@@ -8,5 +8,5 @@ The signal exchange list can be found here: <a href="sxl_traffic_controller.md">
 
 ### Examples for version 1.0.13 (RSMP++)
 
-Examples for added status & commands in version 1.0.13 (RSMP++), can be found here: <a href="appendix_examples_rsmp++.md">appendix_examples_rsmp++.md</a>
+Examples for added status & commands in version 1.0.13 (RSMP++) can be found here: <a href="appendix_examples_rsmp++.md">appendix_examples_rsmp++.md</a>
 
