@@ -33,7 +33,7 @@ The SXL additions was initiated by the City of Copenhagen to enable more flexibl
 
 The extension focuses on these elements:
 
-- Ability to read configured time plans
+- Ability to read list of configured time plans
 - Ability to read and modify offset times
 - Ability to read and modify green times
 - Ability to read and modify time tables
