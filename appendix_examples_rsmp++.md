@@ -12,6 +12,7 @@ This document contains examples for the added statuses and commands in version 1
 + [S0026](#S0026) - Week time table
 + [S0027](#S0027) - Time tables
 + [S0028](#S0028) - Cycle time
++ [S0029](#S0029) - Forced input status
 
 #### Added commands
 
