@@ -495,7 +495,7 @@ Traffic Counting: Number of vehicles of given classification
 |PS|long|[number]|Number of cars with trailers|
 |L|long|[number]|Number of trucks|
 |LS|long|[number]|Number of trucks with trailers|
-|B|long|[antal]|Number of busses|
+|B|long|[number]|Number of busses|
 |SP|long|[number]|Number of trams|
 |MC|long|[number]|Number of motor cycles|
 |C|long|[number]|Number of bicycles|
