@@ -5,8 +5,8 @@
 + **Reviewed**:
 + **Approved**:
 + **Created date**: 2010-04-20
-+ **SXL revision**: 1.0.11
-+ **Revision date**: 2014-12-05
++ **SXL revision**: 1.0.13
++ **Revision date**: 2017-06-26
 + **RSMP version**: 3.1.2
 
 Sections
@@ -146,6 +146,14 @@ Detector error (logic error)
 |Traffic Controller|[S0019](#S0019)|Number of traffic situations|
 |Traffic Controller|[S0020](#S0020)|Control mode|
 |Traffic Controller|[S0021](#S0021)|Manually set detector logic|
+|Traffic Controller|[S0022](#S0022)|List of time plans|
+|Traffic Controller|[S0023](#S0023)|Command table|
+|Traffic Controller|[S0024](#S0024)|Offset time|
+|Signal Group|[S0025](#S0025)|Time-of-Green / Time-of-Red|
+|Traffic Controller|[S0026](#S0026)|Week time table|
+|Traffic Controller|[S0027](#S0027)|Time tables|
+|Traffic Controller|[S0028](#S0028)|Cycle time|
+|Traffic Controller|[S0029](#S0029)|Forced input status|
 |Traffic Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
 |Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
 |Traffic Controller|[S0095](#S0095)|Version av Traffic Controller|
@@ -343,6 +351,77 @@ Manually set detector logic
 |----|----|-----|-------|
 |detectorlogics|string|[text]|Manually set detector logics (1/0) as text field|
 
+<a id="S0022"></a>
+### S0022
+List of time plans
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Comma separated list of configured time plans. E.g. "1,2,3,5"|
+
+<a id="S0023"></a>
+### S0023
+Command table
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Command table. Defines command, <br>Each command are written as pp-dd-ee where:<br>pp=Time plan<br>dd=Dynamic band number (from 1-10)<br>ee=Extension in seconds in this band<br><br>Each command is separated with a comma.<br><br>E.g. <br>pp-dd-ee,pp-dd-ee|
+
+<a id="S0024"></a>
+### S0024
+Offset time
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Offset table<br>Each offset time is written as pp-tt where:<br>pp=time plan<br>tt=offset time in seconds<br><br>Each offset time is separated with a comma<br><br><br>E.g.<br>pp-tt,pp-tt|
+
+<a id="S0025"></a>
+### S0025
+Time-of-Green / Time-of-Red
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|minToGEstimate   |string|[time stamp]|Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
+|maxToGEstimate   |string|[time stamp]|Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
+|likelyToGEstimate   |string|[time stamp]|Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
+|ToGConfidence|integer|[0-100]|Confidence of the likelyToGEstimate. 0-100%|
+|minToREstimate   |string|[time stamp]|Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
+|maxToREstimate|string|[time stamp]|Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
+|likelyToREstimate   |string|[time stamp]|Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red.<br>Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
+|ToRConfidence|integer|[0-100]|Confidence of the likelyToREstimate. 0-100%|
+
+<a id="S0026"></a>
+### S0026
+Week time table
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Week time table. Defines time table to use for each week day<br>Each day is written as d-t where:<br>d=day of week<br>t=time table nr<br><br>Day of week legend:<br>0=Monday<br>1=Tuesday<br>2=Wednesday<br>3=Thursday<br>4=Friday<br>5=Saturday<br>6=Sunday<br><br>Each segment is separated with a colorn<br>E.g.<br>d-t,d-t|
+
+<a id="S0027"></a>
+### S0027
+Time tables
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Time Table. Defines time tables.<br>Each time definition is written as t-o-h-m where:<br>t=time table nr (1-12)<br>o=function<br>h=hour - switching time<br>m=minute - switching minute<br><br>Function legend:<br>0=no plan is selected by time table<br>1=set plan 1<br>…<br>16= set plan 16<br><br>hour and minute is using local time (not UTC)<br><br>Each time definition is separated with a comma <br><br>E.g.<br>t-o-h-m,t-o-h-m<br>|
+
+<a id="S0028"></a>
+### S0028
+Cycle time
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Cycle time table<br>Each cycle time is written as pp-tt where:<br>pp=time plan<br>tt=cycle time in seconds<br><br>Each cycle time is separated with a comma<br><br><br>E.g.<br>pp-tt,pp-tt|
+
+<a id="S0029"></a>
+### S0029
+Forced input status
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Forced input status as text field|
+
 <a id="S0091"></a>
 ### S0091
 Operator logged in/out OP-panel
@@ -487,6 +566,12 @@ Traffic Counting: Number of vehicles of given classification
 |Signal group|[M0011](#M0011)|Stop of signal group. Orders a signal group to red. Requires security code 2|
 |Traffic Controller|[M0012](#M0012)|Request start or stop of a series of signal groups. Requires security code 2|
 |Traffic Controller|[M0013](#M0013)|Activate a series of inputs<br>Requires security code 2|
+|Traffic Controller|[M0014](#M0014)|Set command table|
+|Traffic Controller|[M0015](#M0015)|Set Offset time|
+|Traffic Controller|[M0016](#M0016)|Set week time table|
+|Traffic Controller|[M0017](#M0017)|Set time tables|
+|Traffic Controller|[M0018](#M0018)|Set Cycle time|
+|Traffic Controller|[M0019](#M0019)|Force input<br>Requires security code 2|
 |Traffic Controller|[M0103](#M0103)|Set security code|
 |Traffic Controller|[M0104](#M0104)|Set clock|
 
@@ -606,6 +691,65 @@ Activate a series of inputs<br>Requires security code 2
 |----|-------|----|-----|-------|
 |status|setInput|string||Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format,  colon, ":" is used in example below.<br><br>Format: [Offset],[Bits to set],[Bits to unset]:…<br> <br>Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. <br> <br>Example 1:<br>"5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off<br>(Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0)<br> <br>Example 2:<br>"22, 1, 4" sets input 22 = on and 24 = off<br>(Input starts from no. 22 and bit 0 = 1 and bit 2 = 0)<br> <br>And both thease examples could be sent in the same message as:<br>"5,4143:65:22,1,4"<br><br>Such a message would activate input 6,7,10,17,22 and deactive input 5,11,24|
 |securityCode|setInput|string|[text]|Security code 2|
+
+<a id="M0014"></a>
+### M0014
+Set command table
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|plan|setCommands|integer|[0-255]|Plan to be changed|
+|status|setCommands|string|[text]|Command table. Defines command, <br>Each command are written as dd-ee where:<br>dd=Dynamic band number (from 1-10)<br>ee=Extension in seconds in this band<br><br>Each command is separated with a comma.<br><br>E.g. <br>dd-ee,dd-ee|
+|securityCode|setCommands|string|[text]|Security code 2|
+
+<a id="M0015"></a>
+### M0015
+Set Offset time
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setOffset|integer|[0-255]|Set offset time in seconds|
+|plan|setOffset|integer|[0-255]|Time plan nr|
+|securityCode|setOffset|string|[text]|Security code 2|
+
+<a id="M0016"></a>
+### M0016
+Set week time table
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setWeekTable|string|[text]|Week time table. Defines time table to use for each week day<br>Each segment is written as d-t where:<br>d=day of week<br>t=time table nr<br><br>Day of week legend:<br>0=Monday<br>1=Tuesday<br>2=Wednesday<br>3=Thursday<br>4=Friday<br>5=Saturday<br>6=Sunday<br><br>Each segment is separated with a comma<br><br>E.g.<br>d-t,d-t|
+|securityCode|setWeekTable|string|[text]|Security code 2|
+
+<a id="M0017"></a>
+### M0017
+Set time tables
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setTimeTable|string|[text]|Time Table. Defines time tables.<br>Each time definition is written as t-o-h-m where:<br>t=time table nr (1-12)<br>o=function<br>h=hour - switching time<br>m=minute - switching minute<br><br>Function legend:<br>0=no plan is selected by time table<br>1=set plan 1<br>…<br>16= set plan 16<br><br>hour and minute is using local time (not UTC)<br><br>Each time definition is separated with a comma.<br><br>E.g.<br>t-o-h-m,t-o-h-m<br>|
+|securityCode|setTimeTable|string|[text]|Security code 2|
+
+<a id="M0018"></a>
+### M0018
+Set Cycle time
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setCycleTime|integer|[1-255]|Set cycle time in seconds|
+|plan|setCycleTime|integer|[0-255]|Time plan nr|
+|securityCode|setCycleTime|string|[text]|Security code 2|
+
+<a id="M0019"></a>
+### M0019
+Force input<br>Requires security code 2
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: Force input<br>True: Release input|
+|securityCode|setInput|string|[text]|Security code 2|
+|input|setInput|ordinal|[1-255]|Number of Input|
+|inputValue|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: input forced to False<br>True: input forced to True|
 
 <a id="M0103"></a>
 ### M0103
