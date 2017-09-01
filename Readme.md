@@ -8,11 +8,11 @@ The signal exchange list can be found here: <a href="sxl_traffic_controller.md">
 
 ### Appendices for the SXL
 
-# RSMP++. Examples for added status & commands in version 1.0.13 (RSMP++) can be found here:
+- RSMP++. Examples for added status & commands in version 1.0.13 (RSMP++) can be found here:
   <a href="appendix_examples_rsmp++.md">appendix_examples_rsmp++.md</a>
 
-# Signal group status (S0001) can be found here:
+- Signal group status (S0001) can be found here:
   <a href="appendix_definition_of_signal_group_status.md">appendix_definition_of_signal_group_status.md</a>
 
-# Traffic data needs additional requirements in order to work correctly. They can be found here:
+- Traffic data needs additional requirements in order to work correctly. They can be found here:
   <a href="appendix_traffic_data.md">appendix_traffic_data.md</a>
