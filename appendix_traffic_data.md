@@ -1,7 +1,7 @@
 Appendix - traffic data
 =======================
 
-Traffic data (S0201-S0204) needs additional requirements in order to work
+Traffic data (S0201-S0208) needs additional requirements in order to work
 correctly.
 
 - Traffic counting must be made at even time intervals.
@@ -19,7 +19,7 @@ correctly.
  
 - Buffering of traffic data during connection interruptions should be
   possible to enable/disable in the equipment. If buffering is enabled it
-  means that active subscriptions of traffic data (S0201-S0204) should remain
+  means that active subscriptions of traffic data (S0201-S0208) should remain
   active and not be canceled at connection interruption or at reestablishment.
 
 - The traffic data must be buffered according to the time interval as
