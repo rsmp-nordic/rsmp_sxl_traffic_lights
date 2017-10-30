@@ -396,7 +396,7 @@ Week time table
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|status|string|[text]|Week time table. Defines time table to use for each week day<br>Each day is written as d-t where:<br>d=day of week<br>t=time table nr<br><br>Day of week legend:<br>0=Monday<br>1=Tuesday<br>2=Wednesday<br>3=Thursday<br>4=Friday<br>5=Saturday<br>6=Sunday<br><br>Each segment is separated with a colorn<br>E.g.<br>d-t,d-t|
+|status|string|[text]|Week time table. Defines time table to use for each week day<br>Each day is written as d-t where:<br>d=day of week<br>t=time table nr<br><br>Day of week legend:<br>0=Monday<br>1=Tuesday<br>2=Wednesday<br>3=Thursday<br>4=Friday<br>5=Saturday<br>6=Sunday<br><br>Each segment is separated with a comma<br>E.g.<br>d-t,d-t|
 
 <a id="S0027"></a>
 ### S0027
