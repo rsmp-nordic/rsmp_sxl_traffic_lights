@@ -128,7 +128,7 @@ Detector error (logic error)
 |Traffic Controller|[S0001](#S0001)|Signal group status|
 |Traffic Controller|[S0002](#S0002)|Detector logic status|
 |Traffic Controller|[S0003](#S0003)|Input status|
-|Traffic Controller|[S0004](#S0004)|Outputstatus|
+|Traffic Controller|[S0004](#S0004)|Output status|
 |Traffic Controller|[S0005](#S0005)|Traffic Controller starting|
 |Traffic Controller|[S0006](#S0006)|Emergency stage|
 |Traffic Controller|[S0007](#S0007)|Controller switched on|
@@ -199,7 +199,7 @@ Input status
 
 <a id="S0004"></a>
 ### S0004
-Outputstatus
+Output status
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
