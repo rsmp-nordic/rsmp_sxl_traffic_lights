@@ -53,3 +53,18 @@ The old traffic data statuses, S0201-S0204, may cause excessive amount of
 network traffic if subscriptions are established for each detector logic. The
 new traffic data statuses contains data from all detector logics in the same
 status message.
+
+1.0.15 (2019-05-16)
+===================
+- Ability to force outputs
+- Ability to change trigger level sensitivity for loop detectors
+- Ability to read signal program version and checksum
+- Door/cabinet alarm
+
+The folloing commands/statues/alarms has been added:
+- M0020 Force output
+- S0030 Forced output status
+- M0021 Set trigger level sensitivity for loop detector
+- S0031 Trigger level sensitivity for loop detector
+- S0097 Signal Program Version
+- A0010 Door alarm
