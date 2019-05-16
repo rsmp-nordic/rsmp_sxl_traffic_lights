@@ -5,8 +5,8 @@
 + **Reviewed**:
 + **Approved**:
 + **Created date**: 2010-04-20
-+ **SXL revision**: 1.0.14
-+ **Revision date**: 2017-10-30
++ **SXL revision**: 1.0.15
++ **Revision date**: 2019-05-15
 + **RSMP version**: 3.1.2
 
 Sections
@@ -33,6 +33,7 @@ Single objects
 |----------|-----------|
 |Signal group||
 |Detector logic||
+|Door||
 
 <a id="aggregated_status"></a>
 Aggregated status per grouped object
@@ -65,6 +66,7 @@ Aggregated status per grouped object
 |Traffic Controller|A0007|Communication error between one or multiple traffic controllers and central control system|Defined by manufacturer|3|D|
 |Signal group|[A0008](#A0008)|Dead lock error|Defined by manufacturer|2|D|
 |Traffic Controller|A0009|Other error|Defined by manufacturer|3|D|
+|Door|A0010|Door open|Defined by manufacturer|3|D|
 |Signal group|A0101|Pushbutton error|Defined by manufacturer|3|D|
 |Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer|2|D|
 |Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer|3|D|
@@ -154,10 +156,13 @@ Detector error (logic error)
 |Traffic Controller|[S0027](#S0027)|Time tables|
 |Traffic Controller|[S0028](#S0028)|Cycle time|
 |Traffic Controller|[S0029](#S0029)|Forced input status|
+|Traffic Controller|[S0030](#S0030)|Forced output status|
+|Traffic Controller|[S0031](#S0031)|Trigger level sensitivity for loop detector|
 |Traffic Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
 |Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
-|Traffic Controller|[S0095](#S0095)|Version av Traffic Controller|
+|Traffic Controller|[S0095](#S0095)|Version of Traffic Controller|
 |Traffic Controller|[S0096](#S0096)|Current date and time|
+|Traffic Controller|[S0097](#S0097)|Version of Traffic Program|
 |Detector logic|[S0201](#S0201)|Traffic Counting: Number of vehicles|
 |Detector logic|[S0202](#S0202)|Traffic Counting: Vehicle speed|
 |Detector logic|[S0203](#S0203)|Traffic Counting: Occupancy|
@@ -422,6 +427,22 @@ Forced input status
 |----|----|-----|-------|
 |status|string|[text]|Forced input status as text field|
 
+<a id="S0030"></a>
+### S0030
+Forced output status
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Forced output status as text field|
+
+<a id="S0031"></a>
+### S0031
+Trigger level sensitivity for loop detector
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Loop detector trigger level sensitivity is written as dd-ss where:<br>dd=loop detector number<br>ss=sensitivity value<br>Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.|
+
 <a id="S0091"></a>
 ### S0091
 Operator logged in/out OP-panel
@@ -442,7 +463,7 @@ Operator logged in/out web-interface
 
 <a id="S0095"></a>
 ### S0095
-Version av Traffic Controller
+Version of Traffic Controller
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
@@ -460,6 +481,15 @@ Current date and time
 |hour|integer|HH|Hour of day (00-23) according to format DD. Note: UTC is used|
 |minute|integer|MM|Minute (00-59) according to format MM. Note: UTC is used|
 |second|integer|SS|Second (00-59) according to format SS. Note: UTC is used|
+
+<a id="S0097"></a>
+### S0097
+Version of Traffic Program
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|version|integer|[0-999]|Version of the Traffic Program |
+|hash|string|[text]|Checksum or cryptographic hash of the traffic program|
 
 <a id="S0201"></a>
 ### S0201
@@ -572,6 +602,8 @@ Traffic Counting: Number of vehicles of given classification
 |Traffic Controller|[M0017](#M0017)|Set time tables|
 |Traffic Controller|[M0018](#M0018)|Set Cycle time|
 |Traffic Controller|[M0019](#M0019)|Force input<br>Requires security code 2|
+|Traffic Controller|[M0020](#M0020)|Force output<br>Requires security code 2|
+|Traffic Controller|[M0021](#M0021)|Set trigger level sensitivity for loop detector<br>Requires security code 2|
 |Traffic Controller|[M0103](#M0103)|Set security code|
 |Traffic Controller|[M0104](#M0104)|Set clock|
 
@@ -750,6 +782,26 @@ Force input<br>Requires security code 2
 |securityCode|setInput|string|[text]|Security code 2|
 |input|setInput|ordinal|[1-255]|Number of Input|
 |inputValue|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: input forced to False<br>True: input forced to True|
+
+<a id="M0020"></a>
+### M0020
+Force output<br>Requires security code 2
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setOutput|boolean|<ul><li>False</li><li>True</li></ul>|False: Force output<br>True: Release output|
+|securityCode|setInput|string|[text]|Security code 2|
+|output|setOutput|ordinal|[1-255]|Number of Output|
+|outputValue|setOutput|boolean|<ul><li>False</li><li>True</li></ul>|False: output forced to False<br>True: output forced to True|
+
+<a id="M0021"></a>
+### M0021
+Set trigger level sensitivity for loop detector<br>Requires security code 2
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setLevel|string|[text]|Loop detector trigger level sensitivity is written as dd-ss where:<br>dd=loop detector number<br>ss=sensitivity value|
+|securityCode|setInput|string|[text]|Security code 2|
 
 <a id="M0103"></a>
 ### M0103
