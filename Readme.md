@@ -14,3 +14,7 @@ The main SXL documentation is located in:
 
 - Additional requirements when using traffic data statuses S0201-S0208:
   <a href="appendix_traffic_data.md">appendix_traffic_data.md</a>
+
+### FAQ
+
+Please see the <a href="faq.md">faq.md</a> for frequently asked questions.
