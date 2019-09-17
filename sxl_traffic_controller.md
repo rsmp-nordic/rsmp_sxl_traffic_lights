@@ -638,7 +638,7 @@ Sets traffic situation the controller uses.<br>Requires security code 2
 |----|-------|----|-----|-------|
 |status|setTrafficSituation|boolean|<ul><li>False</li><li>True</li></ul>|False: Controller uses traffic situation according to own programming<br>True: Contoller uses traffic situation according to command|
 |securityCode|setTrafficSituation|string|[text]|Security code 2|
-|traficsituation|setTrafficSituation|ordinal|[1-255]|designation of traficsituation|
+|trafficsituation|setTrafficSituation|ordinal|[1-255]|designation of trafficsituation|
 
 <a id="M0004"></a>
 ### M0004
