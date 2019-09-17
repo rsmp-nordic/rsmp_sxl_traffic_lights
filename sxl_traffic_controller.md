@@ -5,8 +5,8 @@
 + **Reviewed**:
 + **Approved**:
 + **Created date**: 2010-04-20
-+ **SXL revision**: 1.0.14
-+ **Revision date**: 2017-10-30
++ **SXL revision**: 1.0.15-draft
++ **Revision date**: 2019-xx-xx
 + **RSMP version**: 3.1.2
 
 Sections
@@ -154,6 +154,7 @@ Detector error (logic error)
 |Traffic Controller|[S0027](#S0027)|Time tables|
 |Traffic Controller|[S0028](#S0028)|Cycle time|
 |Traffic Controller|[S0029](#S0029)|Forced input status|
+|Traffic Controller|[S0030](#S0030)|Forced output status|
 |Traffic Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
 |Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
 |Traffic Controller|[S0095](#S0095)|Version av Traffic Controller|
@@ -422,6 +423,14 @@ Forced input status
 |----|----|-----|-------|
 |status|string|[text]|Forced input status as text field|
 
+<a id="S0030"></a>
+### S0030
+Forced output status
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Forced output status as text field|
+
 <a id="S0091"></a>
 ### S0091
 Operator logged in/out OP-panel
@@ -572,6 +581,7 @@ Traffic Counting: Number of vehicles of given classification
 |Traffic Controller|[M0017](#M0017)|Set time tables|
 |Traffic Controller|[M0018](#M0018)|Set Cycle time|
 |Traffic Controller|[M0019](#M0019)|Force input<br>Requires security code 2|
+|Traffic Controller|[M0020](#M0020)|Force output<br>Requires security code 2|
 |Traffic Controller|[M0103](#M0103)|Set security code|
 |Traffic Controller|[M0104](#M0104)|Set clock|
 
@@ -750,6 +760,17 @@ Force input<br>Requires security code 2
 |securityCode|setInput|string|[text]|Security code 2|
 |input|setInput|ordinal|[1-255]|Number of Input|
 |inputValue|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: input forced to False<br>True: input forced to True|
+
+<a id="M0020"></a>
+### M0020
+Force output<br>Requires security code 2
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setOutput|boolean|<ul><li>False</li><li>True</li></ul>|False: Force output<br>True: Release output|
+|securityCode|setInput|string|[text]|Security code 2|
+|output|setOutput|ordinal|[1-255]|Number of Output|
+|outputValue|setOutput|boolean|<ul><li>False</li><li>True</li></ul>|False: output forced to False<br>True: output forced to True|
 
 <a id="M0103"></a>
 ### M0103

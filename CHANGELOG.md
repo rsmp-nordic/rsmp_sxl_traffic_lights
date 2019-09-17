@@ -53,3 +53,11 @@ The old traffic data statuses, S0201-S0204, may cause excessive amount of
 network traffic if subscriptions are established for each detector logic. The
 new traffic data statuses contains data from all detector logics in the same
 status message.
+
+1.0.15-draft (2019-xx-xx)
+=========================
+- Ability to force outputs
+
+The following commands/statuses/alarms has been added:
+- M0020 Force output
+- S0030 Forced output status
