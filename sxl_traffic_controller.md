@@ -155,6 +155,7 @@ Detector error (logic error)
 |Traffic Controller|[S0028](#S0028)|Cycle time|
 |Traffic Controller|[S0029](#S0029)|Forced input status|
 |Traffic Controller|[S0030](#S0030)|Forced output status|
+|Traffic Controller|[S0031](#S0031)|Trigger level sensitivity for loop detector|
 |Traffic Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
 |Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
 |Traffic Controller|[S0095](#S0095)|Version av Traffic Controller|
@@ -431,6 +432,14 @@ Forced output status
 |----|----|-----|-------|
 |status|string|[text]|Forced output status as text field|
 
+<a id="S0031"></a>
+### S0031
+Trigger level sensitivity for loop detector
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|status|string|[text]|Loop detector trigger level sensitivity is written as dd-ss where:<br>dd=loop detector number<br>ss=sensitivity value<br>Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.|
+
 <a id="S0091"></a>
 ### S0091
 Operator logged in/out OP-panel
@@ -582,6 +591,7 @@ Traffic Counting: Number of vehicles of given classification
 |Traffic Controller|[M0018](#M0018)|Set Cycle time|
 |Traffic Controller|[M0019](#M0019)|Force input<br>Requires security code 2|
 |Traffic Controller|[M0020](#M0020)|Force output<br>Requires security code 2|
+|Traffic Controller|[M0021](#M0021)|Set trigger level sensitivity for loop detector<br>Requires security code 2|
 |Traffic Controller|[M0103](#M0103)|Set security code|
 |Traffic Controller|[M0104](#M0104)|Set clock|
 
@@ -771,6 +781,15 @@ Force output<br>Requires security code 2
 |securityCode|setInput|string|[text]|Security code 2|
 |output|setOutput|ordinal|[1-255]|Number of Output|
 |outputValue|setOutput|boolean|<ul><li>False</li><li>True</li></ul>|False: output forced to False<br>True: output forced to True|
+
+<a id="M0021"></a>
+### M0021
+Set trigger level sensitivity for loop detector<br>Requires security code 2
+
+|Name|Command|Type|Value|Comment|
+|----|-------|----|-----|-------|
+|status|setLevel|string|[text]|Loop detector trigger level sensitivity is written as dd-ss where:<br>dd=loop detector number<br>ss=sensitivity value|
+|securityCode|setInput|string|[text]|Security code 2|
 
 <a id="M0103"></a>
 ### M0103
