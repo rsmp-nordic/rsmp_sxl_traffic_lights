@@ -160,6 +160,7 @@ Detector error (logic error)
 |Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
 |Traffic Controller|[S0095](#S0095)|Version av Traffic Controller|
 |Traffic Controller|[S0096](#S0096)|Current date and time|
+|Traffic Controller|[S0097](#S0097)|Version of Traffic Program|
 |Detector logic|[S0201](#S0201)|Traffic Counting: Number of vehicles|
 |Detector logic|[S0202](#S0202)|Traffic Counting: Vehicle speed|
 |Detector logic|[S0203](#S0203)|Traffic Counting: Occupancy|
@@ -478,6 +479,15 @@ Current date and time
 |hour|integer|HH|Hour of day (00-23) according to format DD. Note: UTC is used|
 |minute|integer|MM|Minute (00-59) according to format MM. Note: UTC is used|
 |second|integer|SS|Second (00-59) according to format SS. Note: UTC is used|
+
+<a id="S0097"></a>
+### S0097
+Version of Traffic Program
+
+|Name|Type|Value|Comment|
+|----|----|-----|-------|
+|version|string|[text]|Version of the traffic program<br>Includes<ul><li>all signal programs, including program versions</li><li>time plans</li><li>safety matrix</li><li>intergreen times</li><li>detector settings</li></ul>|
+|hash|string|[text]|Checksum or cryptographic hash of the traffic program|
 
 <a id="S0201"></a>
 ### S0201
