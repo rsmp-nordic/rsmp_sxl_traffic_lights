@@ -57,7 +57,10 @@ status message.
 1.0.15-draft (2019-xx-xx)
 =========================
 - Ability to force outputs
+- Ability to change trigger level sensitivity for loop detectors
 
 The following commands/statuses/alarms has been added:
 - M0020 Force output
 - S0030 Forced output status
+- M0021 Set trigger level sensitivity for loop detector
+- S0031 Trigger level sensitivity for loop detector
