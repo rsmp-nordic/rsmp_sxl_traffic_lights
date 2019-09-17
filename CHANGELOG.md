@@ -59,6 +59,7 @@ status message.
 - Ability to force outputs
 - Ability to change trigger level sensitivity for loop detectors
 - Ability to read signal program version and checksum
+- Door/cabinet alarm
 
 The following commands/statuses/alarms has been added:
 - M0020 Force output
@@ -66,3 +67,4 @@ The following commands/statuses/alarms has been added:
 - M0021 Set trigger level sensitivity for loop detector
 - S0031 Trigger level sensitivity for loop detector
 - S0097 Signal Program Version
+- A0010 Door alarm

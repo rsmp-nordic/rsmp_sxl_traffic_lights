@@ -33,6 +33,7 @@ Single objects
 |----------|-----------|
 |Signal group||
 |Detector logic||
+|Door||
 
 <a id="aggregated_status"></a>
 Aggregated status per grouped object
@@ -65,6 +66,7 @@ Aggregated status per grouped object
 |Traffic Controller|A0007|Communication error between one or multiple traffic controllers and central control system|Defined by manufacturer|3|D|
 |Signal group|[A0008](#A0008)|Dead lock error|Defined by manufacturer|2|D|
 |Traffic Controller|A0009|Other error|Defined by manufacturer|3|D|
+|Door|A0010|Door open|Defined by manufacturer|3|D|
 |Signal group|A0101|Pushbutton error|Defined by manufacturer|3|D|
 |Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer|2|D|
 |Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer|3|D|
