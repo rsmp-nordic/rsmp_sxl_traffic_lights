@@ -160,7 +160,7 @@ Detector error (logic error)
 |Traffic Controller|[S0031](#S0031)|Trigger level sensitivity for loop detector|
 |Traffic Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
 |Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
-|Traffic Controller|[S0095](#S0095)|Version av Traffic Controller|
+|Traffic Controller|[S0095](#S0095)|Version of Traffic Controller|
 |Traffic Controller|[S0096](#S0096)|Current date and time|
 |Traffic Controller|[S0097](#S0097)|Version of Traffic Program|
 |Detector logic|[S0201](#S0201)|Traffic Counting: Number of vehicles|
@@ -463,7 +463,7 @@ Operator logged in/out web-interface
 
 <a id="S0095"></a>
 ### S0095
-Version av Traffic Controller
+Version of Traffic Controller
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
