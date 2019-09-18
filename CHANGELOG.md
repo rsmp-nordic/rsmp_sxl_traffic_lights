@@ -60,6 +60,9 @@ status message.
 - Ability to change trigger level sensitivity for loop detectors
 - Ability to read signal program version and checksum
 - Door/cabinet alarm
+- Change *ordinal*, *unit* and *scale* data types to *integer* or *string*
+  This change is made to avoid assumptions of data types which may not be
+  true. Needed to comply with RSMP 3.1.3 and later.
 
 The following commands/statuses/alarms has been added:
 - M0020 Force output
