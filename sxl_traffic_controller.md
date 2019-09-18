@@ -81,7 +81,7 @@ Dead lock error
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|timeplan|ordinal|[designation]|Current time plan|
+|timeplan|integer|[designation]|Current time plan|
 
 <a id="A0201"></a>
 ### A0201
@@ -105,7 +105,7 @@ Detector error (hardware)
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|detector|ordinal|[designation]|Designation of the detector|
+|detector|string|[designation]|Designation of the detector|
 |type|string|<ul><li>loop</li><li>input</li></ul>|Type of detector.<br>loop: Inductive detector loop<br>input: External input|
 |errormode|string|<ul><li>on</li><li>off</li></ul>|Dectector forced on/off while detector error|
 |manual|boolean|<ul><li>True</li><li>False</li></ul>|Manually controlled detector logic (True/False)|
@@ -116,7 +116,7 @@ Detector error (logic error)
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|detector|ordinal|[designation]|Designation of the detector|
+|detector|string|[designation]|Designation of the detector|
 |type|string|<ul><li>loop</li><li>input</li></ul>|Type of detector.<br>loop: Inductive detector loop<br>input: External input|
 |errormode|string|<ul><li>on</li><li>off</li></ul>|Dectector forced on/off while detector error|
 |manual|boolean|<ul><li>True</li><li>False</li></ul>|Manually controlled detector logic (True/False)|
@@ -181,8 +181,8 @@ Signal group status
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |signalgroupstatus|string|[text]|Signal group status as text field|
-|cyclecounter|unit|[0-999]|Cycle counter|
-|basecyclecounter|unit|[0-999]|Base cycle counter|
+|cyclecounter|integer|[0-999]|Cycle counter|
+|basecyclecounter|integer|[0-999]|Base cycle counter|
 |stage|integer|[0-999]|Current stage (isolated)|
 
 <a id="S0002"></a>
@@ -226,7 +226,7 @@ Emergency stage
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Emergency stage inactive<br>True: Emergency stage active|
-|emergencystage|ordinal|[1-255]|Number of emergency stage|
+|emergencystage|integer|[1-255]|Number of emergency stage|
 
 <a id="S0007"></a>
 ### S0007
@@ -234,7 +234,7 @@ Controller switched on
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Traffic Controller in dark mode<br>True: Traffic Controller not in dark mode|
 
 <a id="S0008"></a>
@@ -243,7 +243,7 @@ Manual control
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Manual control inactive<br>True: Manual control active|
 
 <a id="S0009"></a>
@@ -252,7 +252,7 @@ Fixed time control
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False:  Fixed time control inactive<br>True:  Fixed time control active|
 
 <a id="S0010"></a>
@@ -261,7 +261,7 @@ Isolated control
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Isolated control disabled<br>True: Isolated control enabled (Vehicle actuated control or Fixed time control)|
 
 <a id="S0011"></a>
@@ -270,7 +270,7 @@ Yellow flash
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Yellow flash disabled<br>True: Yellow flash enabled|
 
 <a id="S0012"></a>
@@ -279,7 +279,7 @@ All red
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: All red disabled<br>True: All red enabled|
 
 <a id="S0013"></a>
@@ -288,7 +288,7 @@ Police key
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
 |status|integer|<ul><li>0</li><li>1</li><li>2</li></ul>|0: disabled<br>1: dark mode<br>2: yellow flash|
 
 <a id="S0014"></a>
@@ -297,7 +297,7 @@ Current time plan
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|status|ordinal|[1-255]|Current time plan|
+|status|integer|[1-255]|Current time plan|
 
 <a id="S0015"></a>
 ### S0015
@@ -305,7 +305,7 @@ Current traffic situation
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|status|ordinal|[1-255]|Current traffic situation|
+|status|integer|[1-255]|Current traffic situation|
 
 <a id="S0016"></a>
 ### S0016
@@ -345,7 +345,7 @@ Control mode
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|ordinal|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
 |controlmode|string|<ul><li>startup</li><li>control</li><li>standby</li><li>failure</li><li>test</li></ul>|<ul><li>Startup mode</li><li>Normal control</li><li>Standby mode</li><li>Failure mode</li><li>Test mode</li></ul>|
 
 <a id="S0021"></a>
@@ -507,7 +507,7 @@ Traffic Counting: Vehicle speed
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|speed|unit|[speed]|Average speed in km/h (integer)|
+|speed|integer|[speed]|Average speed in km/h|
 
 <a id="S0203"></a>
 ### S0203
@@ -516,7 +516,7 @@ Traffic Counting: Occupancy
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |starttime|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|occupancy|scale|[0-100]|Occupancy in percent (0-100%) (integer)|
+|occupancy|integer|[0-100]|Occupancy in percent (0-100%)|
 
 <a id="S0204"></a>
 ### S0204
@@ -617,8 +617,8 @@ Sets functional position<br>Requires security code 2
 |----|-------|----|-----|-------|
 |status|setValue|string|<ul><li>NormalControl</li><li>YellowFlash</li><li>Dark</li></ul>|NormalControl: Normal Control<br>YellowFlash: Enables yellow flash<br>Dark: Enables dark mode|
 |securityCode|setValue|string|[text]|Security code 2 |
-|timeout|setValue|unit|[0-1440]|Time in minutes until controller automatically reverts to previous functional position.<br>0=no automatic return|
-|intersection|setValue|ordinal|[0-255]|Intersection number|
+|timeout|setValue|integer|[0-1440]|Time in minutes until controller automatically reverts to previous functional position.<br>0=no automatic return|
+|intersection|setValue|integer|[0-255]|Intersection number|
 
 <a id="M0002"></a>
 ### M0002
@@ -628,7 +628,7 @@ Sets current time plan<br>Requires security code 2
 |----|-------|----|-----|-------|
 |status|setPlan|boolean|<ul><li>False</li><li>True</li></ul>|False: Controller uses time plan according to programming<br>True: Contoller uses time plan according to command|
 |securityCode|setPlan|string|[text]|Security code 2|
-|timeplan|setPlan|ordinal|[1-255]|designation på time plan|
+|timeplan|setPlan|integer|[1-255]|designation på time plan|
 
 <a id="M0003"></a>
 ### M0003
@@ -638,7 +638,7 @@ Sets traffic situation the controller uses.<br>Requires security code 2
 |----|-------|----|-----|-------|
 |status|setTrafficSituation|boolean|<ul><li>False</li><li>True</li></ul>|False: Controller uses traffic situation according to own programming<br>True: Contoller uses traffic situation according to command|
 |securityCode|setTrafficSituation|string|[text]|Security code 2|
-|trafficsituation|setTrafficSituation|ordinal|[1-255]|designation of trafficsituation|
+|trafficsituation|setTrafficSituation|integer|[1-255]|designation of trafficsituation|
 
 <a id="M0004"></a>
 ### M0004
@@ -657,7 +657,7 @@ Activate emergency route<br>Requires security code 2
 |----|-------|----|-----|-------|
 |status|setEmergency|boolean|<ul><li>False</li><li>True</li></ul>|False: Activate emergency route<br>True: Deactivate emergency route|
 |securityCode|setEmergency|string|[text]|Security code 2|
-|emergencyroute|setEmergency|ordinal|[1-255]|Number of emergency route|
+|emergencyroute|setEmergency|integer|[1-255]|Number of emergency route|
 
 <a id="M0006"></a>
 ### M0006
@@ -667,7 +667,7 @@ Activate input<br>Requires security code 2
 |----|-------|----|-----|-------|
 |status|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: Deactivate input<br>True: Activate input|
 |securityCode|setInput|string|[text]|Security code 2|
-|input|setInput|ordinal|[1-255]|Number of Input|
+|input|setInput|integer|[1-255]|Number of Input|
 
 <a id="M0007"></a>
 ### M0007
@@ -780,7 +780,7 @@ Force input<br>Requires security code 2
 |----|-------|----|-----|-------|
 |status|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: Force input<br>True: Release input|
 |securityCode|setInput|string|[text]|Security code 2|
-|input|setInput|ordinal|[1-255]|Number of Input|
+|input|setInput|integer|[1-255]|Number of Input|
 |inputValue|setInput|boolean|<ul><li>False</li><li>True</li></ul>|False: input forced to False<br>True: input forced to True|
 
 <a id="M0020"></a>
@@ -791,7 +791,7 @@ Force output<br>Requires security code 2
 |----|-------|----|-----|-------|
 |status|setOutput|boolean|<ul><li>False</li><li>True</li></ul>|False: Force output<br>True: Release output|
 |securityCode|setInput|string|[text]|Security code 2|
-|output|setOutput|ordinal|[1-255]|Number of Output|
+|output|setOutput|integer|[1-255]|Number of Output|
 |outputValue|setOutput|boolean|<ul><li>False</li><li>True</li></ul>|False: output forced to False<br>True: output forced to True|
 
 <a id="M0021"></a>
