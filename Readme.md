@@ -6,8 +6,8 @@ The main SXL documentation is located in:
 <a href="sxl_traffic_controller.md">sxl_traffic_controller.md</a>
 
 ### Appendices
-- Examples of statuses and commands added in version 1.0.13, including command tables (dynamic bands) and time-of-green/red:
-  <a href="appendix_examples_rsmp++.md">appendix_examples_rsmp++.md</a>
+- Examples of all alarms, statuses and commands:
+  <a href="appendix_examples.md">appendix_examples.md</a>
 
 - Definition of signal groups status fields used in S0001:
   <a href="appendix_definition_of_signal_group_status.md">appendix_definition_of_signal_group_status.md</a>
