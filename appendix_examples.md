@@ -52,6 +52,14 @@ This document contains examples for all message types.
 + [S0027](#S0027) - Time tables
 + [S0028](#S0028) - Cycle time
 + [S0029](#S0029) - Forced input status
++ [S0091](#S0091) - Operator logged in/out OP-panel
++ [S0092](#S0092) - Operator logged web-interface
++ [S0095](#S0095) - Version of Traffic Controller
++ [S0096](#S0096) - Current date and time
++ [S0205](#S0205) - Traffic Counting: Number of vehicles
++ [S0206](#S0206) - Traffic Counting: Vehicle speed
++ [S0207](#S0207) - Traffic Counting: Occupancy
++ [S0208](#S0208) - Traffic Counting: Number of vehicles of given classification
 
 #### Commands
 
@@ -1331,9 +1339,10 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [
-		{ "sCI":"S0022", "n":"status" }
-	]
+	"sS": [{
+		"sCI":"S0022",
+		"n":"status"
+	}]
 }
 ```
 
@@ -1347,9 +1356,12 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T19:37:06.678Z",
-	"sS": [
-		{"sCI":"S0022", "n":"status", "s":"1,2,3,5", "q":"recent"}
-	]
+	"sS": [{
+		"sCI":"S0022",
+		"n":"status",
+		"s":"1,2,3,5",
+		"q":"recent"
+	}]
 }
 ```
 <a id="S0023"></a>
@@ -1366,9 +1378,10 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [
-		{ "sCI":"S0023", "n":"status" }
-	]
+	"sS": [{
+		"sCI":"S0023",
+		"n":"status"
+	}]
 }
 ```
 
@@ -1382,9 +1395,12 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T12:38:59.953Z",
-	"sS": [
-		{"sCI":"S0023", "n":"status", "s":"01-1-30,01-2-10:", "q":"recent"}
-	]
+	"sS": [{
+		"sCI":"S0023",
+		"n":"status",
+		"s":"01-1-30,01-2-10:",
+		"q":"recent"
+	}]
 }
 ```
 <a id="S0024"></a>
@@ -1401,9 +1417,10 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [
-		{ "sCI":"S0024", "n":"status"}
-	]
+	"sS": [{
+		"sCI":"S0024",
+		"n":"status"
+	}]
 }
 ```
 
@@ -1417,9 +1434,12 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:00:56.432Z",
-	"sS": [
-		{"sCI":"S0024", "n":"status", "s":"01-20,02-10", "q":"recent" }
-	]
+	"sS": [{
+		"sCI":"S0024",
+		"n":"status",
+		"s":"01-20,02-10",
+		"q":"recent"
+	}]
 }
 ```
 
@@ -1437,16 +1457,31 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001SG002",
-	"sS": [
-		{"sCI":"S0025", "n":"minToGEstimate"},
-		{"sCI":"S0025", "n":"maxToGEstimate"},
-		{"sCI":"S0025", "n":"likelyToGEstimate"},
-		{"sCI":"S0025", "n":"ToGConfidence"},
-		{"sCI":"S0025", "n":"minToREstimate"},
-		{"sCI":"S0025", "n":"maxToREstimate"},
-		{"sCI":"S0025", "n":"likelyToREstimate"},
-		{"sCI":"S0025", "n":"ToRConfidence"}
-	]
+	"sS": [{
+		"sCI":"S0025",
+		"n":"minToGEstimate"
+	},{
+		"sCI":"S0025",
+		"n":"maxToGEstimate"
+	},{
+		"sCI":"S0025",
+		"n":"likelyToGEstimate"
+	},{
+		"sCI":"S0025",
+		"n":"ToGConfidence"
+	},{
+		"sCI":"S0025",
+		"n":"minToREstimate"
+	},{
+		"sCI":"S0025",
+		"n":"maxToREstimate"
+	},{
+		"sCI":"S0025",
+		"n":"likelyToREstimate"
+	},{
+		"sCI":"S0025",
+		"n":"ToRConfidence"
+	}]
 }
 ```
 
@@ -1460,16 +1495,47 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001SG002",
 	"sTs":"2016-05-11T19:58:02.487Z",
-	"sS": [
-		{"sCI":"S0025", "n":"minToGEstimate", "s":"2016-05-11T21:55:10.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"maxToGEstimate", "s":"2016-05-11T21:56:08.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"likelyToGEstimate", "s":"2016-05-11T21:55:13.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"ToGConfidence", "s":"87", "q":"recent"},
-		{"sCI":"S0025", "n":"minToREstimate", "s":"2016-05-11T21:57:45.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"maxToREstimate", "s":"2016-05-11T21:57:55.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"likelyToREstimate", "s":"2016-05-11T21:57:45.231Z", "q":"recent"},
-		{"sCI":"S0025", "n":"ToRConfidence", "s":"75", "q":"recent"}
-	]
+	"sS": [{
+		"sCI":"S0025",
+		"n":"minToGEstimate",
+		"s":"2016-05-11T21:55:10.231Z",
+		"q":"recent"
+	},{
+		"sCI":"S0025",
+		"n":"maxToGEstimate",
+		"s":"2016-05-11T21:56:08.231Z",
+		"q":"recent"
+	},{
+		"sCI":"S0025",
+		"n":"likelyToGEstimate",
+		"s":"2016-05-11T21:55:13.231Z",
+		"q":"recent"
+	},{
+		"sCI":"S0025",
+		"n":"ToGConfidence",
+		"s":"87",
+		"q":"recent"
+	},{
+		"sCI":"S0025",
+		"n":"minToREstimate",
+		"s":"2016-05-11T21:57:45.231Z",
+		"q":"recent"
+	},{
+		"sCI":"S0025",
+		"n":"maxToREstimate",
+		"s":"2016-05-11T21:57:55.231Z",
+		"q":"recent"
+	},{
+		"sCI":"S0025",
+		"n":"likelyToREstimate",
+		"s":"2016-05-11T21:57:45.231Z",
+		"q":"recent"
+	},{
+		"sCI":"S0025",
+		"n":"ToRConfidence",
+		"s":"75",
+		"q":"recent"
+	}]
 }
 ```
 <a id="S0026"></a>
@@ -1486,9 +1552,10 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [
-		{"sCI":"S0026", "n":"status"}
-	]
+	"sS": [{
+		"sCI":"S0026",
+		"n":"status"
+	}]
 }
 ```
 
@@ -1502,9 +1569,12 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:31:41.476Z",
-	"sS": [
-		{"sCI":"S0026", "n":"status", "s":"0-2,1-3,2-1,3-1,4-1,5-4,6-4", "q":"recent"}
-	]
+	"sS": [{
+		"sCI":"S0026",
+		"n":"status",
+		"s":"0-2,1-3,2-1,3-1,4-1,5-4,6-4",
+		"q":"recent"
+	}]
 }
 ```
 <a id="S0027"></a>
@@ -1521,9 +1591,10 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [
-		{"sCI":"S0027", "n":"status"}
-	]
+	"sS": [{
+		"sCI":"S0027",
+		"n":"status"
+	}]
 }
 ```
 
@@ -1537,9 +1608,12 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:46:57.781Z",
-	"sS":[
-		{"sCI":"S0027", "n":"status", "s":"1-0-22-30,2-3-06-30,3-14-13-00,4-5-14-00", "q":"recent"}
-	]
+	"sS":[{
+		"sCI":"S0027",
+		"n":"status",
+		"s":"1-0-22-30,2-3-06-30,3-14-13-00,4-5-14-00",
+		"q":"recent"
+	}]
 }
 ```
 
@@ -1557,9 +1631,10 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [
-		{"sCI":"S0028", "n":"status"}
-	]
+	"sS": [{
+		"sCI":"S0028",
+		"n":"status"
+	}]
 }
 ```
 
@@ -1573,9 +1648,12 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:46:57.781Z",
-	"sS":[
-		{"sCI":"S0028", "n":"status", "s":"01-80,02-80,03-75", "q":"recent"}
-	]
+	"sS":[{
+		"sCI":"S0028",
+		"n":"status",
+		"s":"01-80,02-80,03-75",
+		"q":"recent"
+	}]
 }
 ```
 
@@ -1593,9 +1671,10 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [
-		{"sCI":"S0029", "n":"status"}
-	]
+	"sS": [{
+		"sCI":"S0029",
+		"n":"status"
+	}]
 }
 ```
 
@@ -1609,204 +1688,454 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:46:57.781Z",
-	"sS":[
-		{"sCI":"S0029", "n":"status", "s":"000000100010000010", "q":"recent"}
-	]
+	"sS":[{
+		"sCI":"S0029",
+		"n":"status",
+		"s":"000000100010000010",
+		"q":"recent"
+	}]
 }
 ```
 
-{"mType":"rSMsg",
-                "type":"StatusRequest",
-                "mId":"9b6591b4-5633-401f-b882-e393393e97fe",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sS":[{"sCI":"S0091",
-                "n":"user"},{"sCI":"S0091",
-                "n":"status"}]}
+<a id="S0091"></a>
+## S0091 Operator logged in/out OP-panel
 
-2019-09-26 15:34:31.475 Rx <-   {"mType":"rSMsg",
-                "type":"StatusResponse",
-                "mId":"a58b40b3-ba7f-4f09-8be5-bbf4598caafe",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sTs":"2019-09-26T13:34:31.402Z",
-                "sS":[{"sCI":"S0091",
-                "n":"user",
-                "s":"admin",
-                "q":"recent"},{"sCI":"S0091",
-                "n":"status",
-                "s":"login",
-                "q":"recent"}]}
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"9b6591b4-5633-401f-b882-e393393e97fe",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0091",
+		"n":"user"
+	},{
+		"sCI":"S0091",
+		"n":"status"
+	}]
+}
+```
 
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"a58b40b3-ba7f-4f09-8be5-bbf4598caafe",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-26T13:34:31.402Z",
+	"sS":[{
+		"sCI":"S0091",
+		"n":"user",
+		"s":"admin",
+		"q":"recent"
+	},{
+		"sCI":"S0091",
+		"n":"status",
+		"s":"login",
+		"q":"recent"
+	}]
+}
+```
 
-{"mType":"rSMsg",
-                "type":"StatusRequest",
-                "mId":"7e14e715-d7eb-4aed-a899-fa21fb0d3f4e",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sS":[{"sCI":"S0092",
-                "n":"user"},{"sCI":"S0092",
-                "n":"status"}]}
+<a id="S0092"></a>
+## S0092 Operator logged web-interface
 
-2019-09-26 15:35:06.630 Rx <-   {"mType":"rSMsg",
-                "type":"StatusResponse",
-                "mId":"f1fbc4ac-921c-43be-ad0c-36c54e666ef3",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sTs":"2019-09-26T13:35:06.573Z",
-                "sS":[{"sCI":"S0092",
-                "n":"user",
-                "s":"admin",
-                "q":"recent"},{"sCI":"S0092",
-                "n":"status",
-                "s":"login",
-                "q":"recent"}]}
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"7e14e715-d7eb-4aed-a899-fa21fb0d3f4e",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0092",
+		"n":"user"
+	},{
+		"sCI":"S0092",
+		"n":"status"
+	}]
+}
+```
 
-{"mType":"rSMsg",
-                "type":"StatusRequest",
-                "mId":"aef9678f-60b9-47a0-8470-70af4632a01d",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sS":[{"sCI":"S0095",
-                "n":"status"}]}
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"f1fbc4ac-921c-43be-ad0c-36c54e666ef3",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-26T13:35:06.573Z",
+	"sS":[{
+		"sCI":"S0092",
+		"n":"user",
+		"s":"admin",
+		"q":"recent"
+	},{
+		"sCI":"S0092",
+		"n":"status",
+		"s":"login",
+		"q":"recent"
+	}]
+}
+```
 
-2019-09-26 15:37:23.101 Rx <-   {"mType":"rSMsg",
-                "type":"StatusResponse",
-                "mId":"9ba06a0a-28d5-4236-86e5-d83a212ced09",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sTs":"2019-09-26T13:37:23.031Z",
-                "sS":[{"sCI":"S0095",
-                "n":"status",
-                "s":"TLC product 13, version 5",
-                "q":"recent"}]}
+<a id="S0095"></a>
+## S0095 Version of Traffic Controller
 
-{"mType":"rSMsg",
-                "type":"StatusRequest",
-                "mId":"66a6f25e-930a-40c7-9957-04075716e2e8",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sS":[{"sCI":"S0096",
-                "n":"year"},{"sCI":"S0096",
-                "n":"month"},{"sCI":"S0096",
-                "n":"day"},{"sCI":"S0096",
-                "n":"hour"},{"sCI":"S0096",
-                "n":"minute"},{"sCI":"S0096",
-                "n":"second"}]}
-{"mType":"rSMsg",
-                "type":"StatusResponse",
-                "mId":"b9c8a436-f8ae-4d45-9af4-264032c0a0a1",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sTs":"2019-09-26T13:40:30.826Z",
-                "sS":[{"sCI":"S0096",
-                "n":"year",
-                "s":"2017",
-                "q":"recent"},{"sCI":"S0096",
-                "n":"month",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0096",
-                "n":"day",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0096",
-                "n":"hour",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0096",
-                "n":"minute",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0096",
-                "n":"second",
-                "s":"0",
-                "q":"recent"}]}
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"aef9678f-60b9-47a0-8470-70af4632a01d",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0095",
+		"n":"status"
+	}]
+}
+```
 
-{"mType":"rSMsg",
-                "type":"StatusRequest",
-                "mId":"6e8c41c7-032b-4d7f-a6ce-9ecec9d1ce1b",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sS":[{"sCI":"S0205",
-                "n":"start"},{"sCI":"S0205",
-                "n":"vehicles"},{"sCI":"S0206",
-                "n":"start"},{"sCI":"S0206",
-                "n":"speed"},{"sCI":"S0207",
-                "n":"start"},{"sCI":"S0207",
-                "n":"occupancy"},{"sCI":"S0208",
-                "n":"start"},{"sCI":"S0208",
-                "n":"P"},{"sCI":"S0208",
-                "n":"PS"},{"sCI":"S0208",
-                "n":"L"},{"sCI":"S0208",
-                "n":"LS"},{"sCI":"S0208",
-                "n":"B"},{"sCI":"S0208",
-                "n":"SP"},{"sCI":"S0208",
-                "n":"MC"},{"sCI":"S0208",
-                "n":"C"},{"sCI":"S0208",
-                "n":"F"}]}
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"9ba06a0a-28d5-4236-86e5-d83a212ced09",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-26T13:37:23.031Z",
+	"sS":[{
+		"sCI":"S0095",
+		"n":"status",
+		"s":"TLC product 13, version 5",
+		"q":"recent"
+	}]
+}
+```
 
-{"mType":"rSMsg",
-                "type":"StatusResponse",
-                "mId":"41d59f04-0713-416a-9583-7f7a1c25a629",
-                "ntsOId":"KK+AG0503=001TC000",
-                "xNId":"",
-                "cId":"KK+AG0503=001TC000",
-                "sTs":"2019-09-26T13:47:26.943Z",
-                "sS":[{"sCI":"S0205",
-                "n":"start",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0205",
-                "n":"vehicles",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0206",
-                "n":"start",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0206",
-                "n":"speed",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0207",
-                "n":"start",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0207",
-                "n":"occupancy",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"start","s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"P",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"PS",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"L",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"LS",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"B",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"SP",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"MC",
-                "s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"C",
-"s":"0",
-                "q":"recent"},{"sCI":"S0208",
-                "n":"F",
-                "s":"0",
-                "q":"recent"}]}
+<a id="S0096"></a>
+## S0096 Current date and time
 
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"66a6f25e-930a-40c7-9957-04075716e2e8",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0096",
+		"n":"year"
+	},{
+		"sCI":"S0096",
+		"n":"month"
+	},{
+		"sCI":"S0096",
+		"n":"day"
+	},{
+		"sCI":"S0096",
+		"n":"hour"
+	},{
+		"sCI":"S0096",
+		"n":"minute"
+	},{
+		"sCI":"S0096",
+		"n":"second"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"b9c8a436-f8ae-4d45-9af4-264032c0a0a1",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-26T13:40:30.826Z",
+	"sS":[{
+		"sCI":"S0096",
+		"n":"year",
+		"s":"2017",
+		"q":"recent"
+	},{
+		"sCI":"S0096",
+		"n":"month",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0096",
+		"n":"day",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0096",
+		"n":"hour",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0096",
+		"n":"minute",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0096",
+		"n":"second",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0205"></a>
+## S0205 Traffic Counting: Number of vehicles
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"df92c79d-05a5-4397-9cce-dbfefa25b5ef",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0205",
+		"n":"start"
+	},{
+		"sCI":"S0205",
+		"n":"vehicles"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"dd704047-6996-4ada-b953-78b9e13ce8ae",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-29T17:57:55.993Z",
+	"sS":[{
+		"sCI":"S0205",
+		"n":"start",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0205",
+		"n":"vehicles",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0206"></a>
+## S0206 Traffic Counting: Vehicle speed
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"79769973-3bc9-4ec3-b1a4-55c252197f6f",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0206",
+		"n":"start"
+	},{
+		"sCI":"S0206",
+		"n":"speed"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"c2d3b89f-c684-483d-a548-dc85099229f2",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-29T18:01:08.571Z",
+	"sS":[{
+		"sCI":"S0206",
+		"n":"start",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0206",
+		"n":"speed",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0207"></a>
+## S0207 Traffic Counting: Occupancy
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"e4707ad3-4d3b-4ce6-b9b1-48277da47c6f",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0207",
+		"n":"start"
+	},{
+		"sCI":"S0207",
+		"n":"occupancy"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"8d10ad23-407f-4ddd-8d2a-4d69af883e72",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-29T18:05:06.776Z",
+	"sS":[{
+		"sCI":"S0207",
+		"n":"start",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0207",
+		"n":"occupancy",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0208"></a>
+## S0208 Traffic Counting: Number of vehicles of given classification
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"78219ac2-80ff-46df-a9e8-4051909311bf",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0208",
+		"n":"start"
+	},{
+		"sCI":"S0208",
+		"n":"P"
+	},{
+		"sCI":"S0208",
+		"n":"PS"
+	},{
+		"sCI":"S0208",
+		"n":"L"
+	},{
+		"sCI":"S0208",
+		"n":"LS"
+	},{
+		"sCI":"S0208",
+		"n":"B"
+	},{
+		"sCI":"S0208",
+		"n":"SP"
+	},{
+		"sCI":"S0208",
+		"n":"MC"
+	},{
+		"sCI":"S0208",
+		"n":"C"
+	},{
+		"sCI":"S0208",
+		"n":"F"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"4c7a1249-a189-460f-a44d-5547fa706c08",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-29T18:08:34.230Z",
+	"sS":[{
+		"sCI":"S0208",
+		"n":"start",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0208",
+		"n":"P",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0208",
+		"n":"PS",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0208",
+		"n":"L",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0208",
+		"n":"LS",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0208",
+		"n":"B",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0208",
+		"n":"SP",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0208",
+		"n":"MC",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0208",
+		"n":"C",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0208",
+		"n":"F",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
 
 <a id="M0014"></a>
 ## M0014 Set command table
@@ -1822,11 +2151,22 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [
-		{"cCI":"M0014", "n":"plan", "cO":"setCommands", "v":"1"},
-		{"cCI":"M0014", "n":"status", "cO":"setCommands", "v":"01-01,02-02"},
-		{"cCI":"M0014", "n":"securityCode", "cO":"setCommands", "v":"2312"}
-	]
+	"arg": [{
+		"cCI":"M0014",
+		"n":"plan",
+		"cO":"setCommands",
+		"v":"1"
+	},{
+		"cCI":"M0014",
+		"n":"status",
+		"cO":"setCommands",
+		"v":"01-01,02-02"
+	},{
+		"cCI":"M0014",
+		"n":"securityCode",
+		"cO":"setCommands",
+		"v":"2312"
+	}]
 }
 ```
 
@@ -1840,11 +2180,22 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:04:25.199Z",
-	"rvs":[
-		{"cCI":"M0014", "n":"plan", "v":"1", "age":"recent"},
-		{"cCI":"M0014", "n":"status", "v":"01-01,02-02", "age":"recent"},
-		{"cCI":"M0014", "n":"securityCode", "v":"2312", "age":"recent"}
-	]
+	"rvs":[{
+		"cCI":"M0014",
+		"n":"plan",
+		"v":"1",
+		"age":"recent"
+	},{
+		"cCI":"M0014",
+		"n":"status",
+		"v":"01-01,02-02",
+		"age":"recent"
+	},{
+		"cCI":"M0014",
+		"n":"securityCode",
+		"v":"2312",
+		"age":"recent"
+	}]
 }
 ```
 
@@ -1862,11 +2213,22 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [
-		{"cCI":"M0015", "n":"status", "cO":"setOffset", "v":"30"},
-		{"cCI":"M0015", "n":"plan", "cO":"setOffset", "v":"1"},
-		{"cCI":"M0015", "n":"securityCode", "cO":"setOffset", "v":"2314"}
-	]
+	"arg": [{
+		"cCI":"M0015",
+		"n":"status",
+		"cO":"setOffset",
+		"v":"30"
+	},{
+		"cCI":"M0015",
+		"n":"plan",
+		"cO":"setOffset",
+		"v":"1"
+	},{
+		"cCI":"M0015",
+		"n":"securityCode",
+		"cO":"setOffset",
+		"v":"2314"
+	}]
 }
 ```
 
@@ -1880,11 +2242,22 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:05:57.558Z",
-	"rvs": [
-		{"cCI":"M0015", "n":"status", "v":"30", "age":"recent"},
-		{"cCI":"M0015", "n":"plan", "v":"1", "age":"recent"},
-		{"cCI":"M0015", "n":"securityCode", "v":"2314", "age":"recent"}
-	]
+	"rvs": [{
+		"cCI":"M0015",
+		"n":"status",
+		"v":"30",
+		"age":"recent"
+	},{
+		"cCI":"M0015",
+		"n":"plan",
+		"v":"1",
+		"age":"recent"
+	},{
+		"cCI":"M0015",
+		"n":"securityCode",
+		"v":"2314",
+		"age":"recent"
+	}]
 }
 
 ```
@@ -1902,10 +2275,17 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [
-		{"cCI":"M0016", "n":"status", "cO":"setWeekTable", "v":"0-2,1-3,2-1,3-1,4-1,5-4,6-4"},
-		{"cCI":"M0016", "n":"securityCode", "cO":"setWeekTable", "v":"2314"}
-	]
+	"arg": [{
+		"cCI":"M0016",
+		"n":"status",
+		"cO":"setWeekTable",
+		"v":"0-2,1-3,2-1,3-1,4-1,5-4,6-4"
+	},{
+		"cCI":"M0016",
+		"n":"securityCode",
+		"cO":"setWeekTable",
+		"v":"2314"
+	}]
 }
 ```
 
@@ -1919,10 +2299,17 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:09:47.574Z",
-	"rvs": [
-		{"cCI":"M0016", "n":"status", "v":"0-2,1-3,2-1,3-1,4-1,5-4,6-4", "age":"recent"},
-		{"cCI":"M0016", "n":"securityCode", "v":"2314", "age":"recent"}
-	]
+	"rvs": [{
+		"cCI":"M0016",
+		"n":"status",
+		"v":"0-2,1-3,2-1,3-1,4-1,5-4,6-4",
+		"age":"recent"
+	},{
+		"cCI":"M0016",
+		"n":"securityCode",
+		"v":"2314",
+		"age":"recent"
+	}]
 }
 ```
 
@@ -1940,10 +2327,17 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [
-		{"cCI":"M0017", "n":"status", "cO":"setTimeTable", "v":"1-1-6-30,1-0-9-0,1-1-15-30,1-0-18-0,2-1-7-0,2-0-9-0"},
-		{"cCI":"M0017", "n":"securityCode", "cO":"setTimeTable", "v":"2321"}
-	]
+	"arg": [{
+		"cCI":"M0017",
+		"n":"status",
+		"cO":"setTimeTable",
+		"v":"1-1-6-30,1-0-9-0,1-1-15-30,1-0-18-0,2-1-7-0,2-0-9-0"
+	},{
+		"cCI":"M0017",
+		"n":"securityCode",
+		"cO":"setTimeTable",
+		"v":"2321"
+	}]
 }
 ```
 
@@ -1957,10 +2351,17 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:11:14.105Z",
-	"rvs": [
-		{"cCI":"M0017", "n":"status", "v":"1-1-6-30,1-0-9-0,1-1-15-30,1-0-18-0,2-1-7-0,2-0-9-0", "age":"recent"},
-		{"cCI":"M0017", "n":"securityCode", "v":"2321", "age":"recent"}
-	]
+	"rvs": [{
+		"cCI":"M0017",
+		"n":"status",
+		"v":"1-1-6-30,1-0-9-0,1-1-15-30,1-0-18-0,2-1-7-0,2-0-9-0",
+		"age":"recent"
+	},{
+		"cCI":"M0017",
+		"n":"securityCode",
+		"v":"2321",
+		"age":"recent"
+	}]
 }
 ```
 
@@ -1978,11 +2379,22 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [
-		{"cCI":"M0018", "n":"status", "cO":"setCycleTime", "v":"2"},
-		{"cCI":"M0018", "n":"plan", "cO":"setCycleTime", "v":"80"},
-		{"cCI":"M0018", "n":"securityCode", "cO":"setCycleTime", "v":"2321"}
-	]
+	"arg": [{
+		"cCI":"M0018",
+		"n":"status",
+		"cO":"setCycleTime",
+		"v":"2"
+	},{
+		"cCI":"M0018",
+		"n":"plan",
+		"cO":"setCycleTime",
+		"v":"80"
+	},{
+		"cCI":"M0018",
+		"n":"securityCode",
+		"cO":"setCycleTime",
+		"v":"2321"
+	}]
 }
 ```
 
@@ -1996,11 +2408,22 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:11:14.105Z",
-	"rvs": [
-		{"cCI":"M0018", "n":"status", "v":"2", "age":"recent"},
-		{"cCI":"M0018", "n":"plan", "v":"80", "age":"recent"},
-		{"cCI":"M0018", "n":"securityCode", "v":"2321", "age":"recent"}
-	]
+	"rvs": [{
+		"cCI":"M0018",
+		"n":"status",
+		"v":"2",
+		"age":"recent"
+	},{
+		"cCI":"M0018",
+		"n":"plan",
+		"v":"80",
+		"age":"recent"
+	},{
+		"cCI":"M0018",
+		"n":"securityCode",
+		"v":"2321",
+		"age":"recent"
+	}]
 }
 ```
 
@@ -2018,12 +2441,27 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [
-		{"cCI":"M0018", "n":"status", "cO":"setInput", "v":"True"},
-		{"cCI":"M0018", "n":"securityCode", "cO":"setInput", "v":"2321"},
-		{"cCI":"M0018", "n":"input", "cO":"setInput", "v":"2"},
-		{"cCI":"M0018", "n":"inputValue", "cO":"setInput", "v":"True"}
-	]
+	"arg": [{
+		"cCI":"M0018",
+		"n":"status",
+		"cO":"setInput",
+		"v":"True"
+	},{
+		"cCI":"M0018",
+		"n":"securityCode",
+		"cO":"setInput",
+		"v":"2321"
+	},{
+		"cCI":"M0018",
+		"n":"input",
+		"cO":"setInput",
+		"v":"2"
+	},{
+		"cCI":"M0018",
+		"n":"inputValue",
+		"cO":"setInput",
+		"v":"True"
+	}]
 }
 ```
 
@@ -2037,11 +2475,26 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:11:14.105Z",
-	"rvs": [
-		{"cCI":"M0018", "n":"status", "v":"True", "age":"recent"},
-		{"cCI":"M0018", "n":"securityCode", "v":"2321", "age":"recent"},
-		{"cCI":"M0018", "n":"input", "v":"2", "age":"recent"},
-		{"cCI":"M0018", "n":"inputValue", "v":"2321", "age":"True"}
-	]
+	"rvs": [{
+		"cCI":"M0018",
+		"n":"status",
+		"v":"True",
+		"age":"recent"
+	},{
+		"cCI":"M0018",
+		"n":"securityCode",
+		"v":"2321",
+		"age":"recent"
+	},{
+		"cCI":"M0018",
+		"n":"input",
+		"v":"2",
+		"age":"recent"
+	},{
+		"cCI":"M0018",
+		"n":"inputValue",
+		"v":"2321",
+		"age":"True"
+	}]
 }
 ```
