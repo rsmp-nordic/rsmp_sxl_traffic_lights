@@ -52,10 +52,17 @@ This document contains examples for all message types.
 + [S0027](#S0027) - Time tables
 + [S0028](#S0028) - Cycle time
 + [S0029](#S0029) - Forced input status
++ [S0030](#S0030) - Forced output status
++ [S0031](#S0031) - Trigger level sensitivity for loop detector
 + [S0091](#S0091) - Operator logged in/out OP-panel
 + [S0092](#S0092) - Operator logged web-interface
 + [S0095](#S0095) - Version of Traffic Controller
 + [S0096](#S0096) - Current date and time
++ [S0097](#S0097) - Version of Traffic Program
++ [S0201](#S0201) - Traffic Counting: Number of vehicles
++ [S0202](#S0202) - Traffic Counting: Vehicle speed
++ [S0203](#S0203) - Traffic Counting: Occupancy
++ [S0204](#S0204) - Traffic Counting: Number of vehicles of given classification
 + [S0205](#S0205) - Traffic Counting: Number of vehicles
 + [S0206](#S0206) - Traffic Counting: Vehicle speed
 + [S0207](#S0207) - Traffic Counting: Occupancy
@@ -63,12 +70,28 @@ This document contains examples for all message types.
 
 #### Commands
 
++ [M0001](#M0001) - Sets functional position
++ [M0002](#M0002) - Sets current time plan
++ [M0003](#M0003) - Sets traffic situation the controller uses
++ [M0004](#M0004) - Restarts Traffic Controller
++ [M0005](#M0005) - Activate emergency route
++ [M0006](#M0006) - Activate input
++ [M0007](#M0007) - Activate fixed time control
++ [M0008](#M0008) - Sets manual activation of detector logic
++ [M0010](#M0010) - Start of signal group
++ [M0011](#M0011) - Stop of signal group
++ [M0012](#M0012) - Request start or stop of a series of signal groups
++ [M0013](#M0013) - Activate a series of inputs
 + [M0014](#M0014) - Set command table
 + [M0015](#M0015) - Set offset time
 + [M0016](#M0016) - Set week time table
 + [M0017](#M0017) - Set time tables
 + [M0018](#M0018) - Set cycle time
 + [M0019](#M0019) - Force input
++ [M0020](#M0020) - Force output
++ [M0021](#M0021) - Set trigger level sensitivity for loop detector
++ [M0103](#M0103) - Set security code
++ [M0104](#M0104) - Set clock
 
 <a id="A0001"></a>
 ## A0001 Serious hardware error
@@ -299,6 +322,27 @@ This document contains examples for all message types.
 
 <a id="A0010"></a>
 ## A0010 Door open
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"Alarm",
+	"mId":"48630a74-e8c1-4179-9e89-47d01ee27800",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DO001",
+	"aCId":"A0010",
+	"xACId":"Defined by manufacturer",
+	"xNACId":"",
+	"aSp":"Issue",
+	"ack":"notAcknowledged",
+	"aS":"Active",
+	"sS":"notSuspended",
+	"aTs":"2019-09-30T13:20:58.183Z",
+	"cat":"D",
+	"pri":"3",
+	"rvs":[]}
+```
 
 <a id="A0101"></a>
 ## A0101 Pushbutton error
@@ -1697,6 +1741,78 @@ This document contains examples for all message types.
 }
 ```
 
+<a id="S0030"></a>
+## S0030 Forced output status
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"032be599-861e-40f1-a896-7cb539a0b863",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0030",
+		"n":"status"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"d1d7a68f-b0eb-4add-b91a-87dddbfde665",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-30T12:14:47.021Z",
+	"sS":[{
+		"sCI":"S0030",
+		"n":"status",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0031"></a>
+## S0031 Trigger level sensitivity for loop detector
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"70264134-0ecb-4c47-8da0-946c202f9a0e",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0031",
+		"n":"status"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"418f0597-1578-4045-89eb-849b22263c5c",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-30T12:17:48.793Z",
+	"sS":[{
+		"sCI":"S0031",
+		"n":"status",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
 <a id="S0091"></a>
 ## S0091 Operator logged in/out OP-panel
 
@@ -1891,6 +2007,290 @@ This document contains examples for all message types.
 	},{
 		"sCI":"S0096",
 		"n":"second",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0097"></a>
+## S0097 Version of Traffic Program
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"b4e70a7e-12ca-4619-98af-419ecf2a74da",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sS":[{
+		"sCI":"S0097",
+		"n":"version"
+	},{
+		"sCI":"S0097",
+		"n":"hash"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"f18f2032-39e8-4397-bc82-d5355c76caf4",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"sTs":"2019-09-30T12:21:30.640Z",
+	"sS":[{
+		"sCI":"S0097",
+		"n":"version",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0097",
+		"n":"hash",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0201"></a>
+## S0201 Traffic Counting: Number of vehicles
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"af196dee-bc6b-449e-96bd-8794acea95b2",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"sS":[{
+		"sCI":"S0201",
+		"n":"starttime"
+	},{
+		"sCI":"S0201",
+		"n":"vehicles"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"84c4b90f-142e-416c-8656-17d720be0791",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"sTs":"2019-09-30T12:24:10.904Z",
+	"sS":[{
+		"sCI":"S0201",
+		"n":"starttime",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0201",
+		"n":"vehicles",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0202"></a>
+## S0202 Traffic Counting: Vehicle speed
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"b41fca74-11ee-4486-bda2-9a0b1e3f53b2",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"sS":[{
+		"sCI":"S0202",
+		"n":"starttime"
+	},{
+		"sCI":"S0202",
+		"n":"speed"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"36d04216-d85e-41bf-9012-84698d286a37",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"sTs":"2019-09-30T12:28:21.855Z",
+	"sS":[{
+		"sCI":"S0202",
+		"n":"starttime",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0202",
+		"n":"speed",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0203"></a>
+## S0203 Traffic Counting: Occupancy
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"311c3959-1f4f-4d74-9513-6319348fb6d2",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"sS":[{
+		"sCI":"S0203",
+		"n":"starttime"
+	},{
+		"sCI":"S0203",
+		"n":"occupancy"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"bf47496c-c9c7-404a-bb0d-8fa36b28bf42",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"sTs":"2019-09-30T12:30:55.630Z",
+	"sS":[{
+		"sCI":"S0203",
+		"n":"starttime",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0203",
+		"n":"occupancy",
+		"s":"0",
+		"q":"recent"
+	}]
+}
+```
+
+<a id="S0204"></a>
+## S0204 Traffic Counting: Number of vehicles of given classification
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusRequest",
+	"mId":"e497a551-60ba-42b5-911c-f107d0cbc84d",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"sS":[{
+		"sCI":"S0204",
+		"n":"starttime"
+	},{
+		"sCI":"S0204",
+		"n":"P"
+	},{
+		"sCI":"S0204",
+		"n":"PS"
+	},{
+		"sCI":"S0204",
+		"n":"L"
+	},{
+		"sCI":"S0204",
+		"n":"LS"
+	},{
+		"sCI":"S0204",
+		"n":"B"
+	},{
+		"sCI":"S0204",
+		"n":"SP"
+	},{
+		"sCI":"S0204",
+		"n":"MC"
+	},{
+		"sCI":"S0204",
+		"n":"C"
+	},{
+		"sCI":"S0204",
+		"n":"F"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"StatusResponse",
+	"mId":"ad4d10dc-7a0b-4417-9714-931bfb71bc5d",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"sTs":"2019-09-30T12:48:44.730Z",
+	"sS":[{
+		"sCI":"S0204",
+		"n":"starttime",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0204",
+		"n":"P",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0204",
+		"n":"PS",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0204",
+		"n":"L",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0204",
+		"n":"LS",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0204",
+		"n":"B",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0204",
+		"n":"SP",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0204",
+		"n":"MC",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0204",
+		"n":"C",
+		"s":"0",
+		"q":"recent"
+	},{
+		"sCI":"S0204",
+		"n":"F",
 		"s":"0",
 		"q":"recent"
 	}]
@@ -2137,6 +2537,652 @@ This document contains examples for all message types.
 }
 ```
 
+<a id="M0001"></a>
+## M0001 Sets functional position
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"c7fb8423-8232-43e1-b632-68c299ce4360",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0001",
+		"n":"status",
+		"cO":"setValue",
+		"v":"NormalControl"
+	},{
+		"cCI":"M0001",
+		"n":"securityCode",
+		"cO":"setValue",
+		"v":"[text]"
+	},{
+		"cCI":"M0001",
+		"n":"timeout",
+		"cO":"setValue",
+		"v":"[0-1440]"
+	},{
+		"cCI":"M0001",
+		"n":"intersection",
+		"cO":"setValue",
+		"v":"[0-255]"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"8dc16a94-d200-439a-a0f9-75020fd96530",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T07:03:33.360Z",
+	"rvs":[{
+		"cCI":"M0001",
+		"n":"status",
+		"v":"NormalControl",
+		"age":"recent"
+	},{
+		"cCI":"M0001",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	},{
+		"cCI":"M0001",
+		"n":"timeout",
+		"v":null,
+		"age":"unknown"
+	},{
+		"cCI":"M0001",
+		"n":"intersection",
+		"v":null,
+		"age":"unknown"
+	}]
+}
+```
+
+<a id="M0002"></a>
+## M0002 Sets current time plan
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"5066622c-cd03-44c2-9e21-dd02d8998585",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0002",
+		"n":"status",
+		"cO":"setPlan",
+		"v":"False"
+	},{
+		"cCI":"M0002",
+		"n":"securityCode",
+		"cO":"setPlan",
+		"v":"[text]"
+	},{
+		"cCI":"M0002",
+		"n":"timeplan",
+		"cO":"setPlan",
+		"v":"[1-255]"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"84038dc5-fefd-4984-aec2-41aba312b43b",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T07:35:08.934Z",
+	"rvs":[{
+		"cCI":"M0002",
+		"n":"status",
+		"v":"False",
+		"age":"recent"
+	},{
+		"cCI":"M0002",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	},{
+		"cCI":"M0002",
+		"n":"timeplan",
+		"v":null,
+		"age":"unknown"
+	}]
+}
+```
+
+<a id="M0003"></a>
+## M0003 Sets traffic situation the controller uses
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"63f4f782-e7d5-446c-b583-489b1a26bca5",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0003",
+		"n":"status",
+		"cO":"setTrafficSituation",
+		"v":"False"
+	},{
+		"cCI":"M0003",
+		"n":"securityCode",
+		"cO":"setTrafficSituation",
+		"v":"[text]"
+	},{
+		"cCI":"M0003",
+		"n":"trafficsituation",
+		"cO":"setTrafficSituation",
+		"v":"[1-255]"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"c5640a4c-93c3-4928-9e9b-f6bb9060d126",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T07:39:14.978Z",
+	"rvs":[{
+		"cCI":"M0003",
+		"n":"status",
+		"v":"False",
+		"age":"recent"
+	},{
+		"cCI":"M0003",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	},{
+		"cCI":"M0003",
+		"n":"trafficsituation",
+		"v":null,
+		"age":"unknown"
+	}]
+}
+```
+
+<a id="M0004"></a>
+## M0004 Restarts Traffic Controller
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"d6734246-c087-4b27-9fe6-e1e0b9e78f41",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0004",
+		"n":"status",
+		"cO":"setRestart",
+		"v":"True"
+	},{
+		"cCI":"M0004",
+		"n":"securityCode",
+		"cO":"setRestart",
+		"v":"1234"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"ddc41905-5c8b-4aad-91ec-71d2ae8b4e2b",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T07:46:44.187Z",
+	"rvs":[{
+		"cCI":"M0004",
+		"n":"status",
+		"v":"True",
+		"age":"recent"
+	},{
+		"cCI":"M0004",
+		"n":"securityCode",
+		"v":"1234",
+		"age":"recent"
+	}]
+}
+```
+
+<a id="M0005"></a>
+## M0005 Activate emergency route
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"b5517db0-ec6f-4bef-ad18-05673cbeecde",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0005",
+		"n":"status",
+		"cO":"setEmergency",
+		"v":"False"
+	},{
+		"cCI":"M0005",
+		"n":"securityCode",
+		"cO":"setEmergency",
+		"v":"[text]"
+	},{
+		"cCI":"M0005",
+		"n":"emergencyroute",
+		"cO":"setEmergency",
+		"v":"[1-255]"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"0ea1da9d-675a-4059-8bb6-015152399b72",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T07:52:11.612Z",
+	"rvs":[{
+		"cCI":"M0005",
+		"n":"status",
+		"v":"False",
+		"age":"recent"
+	},{
+		"cCI":"M0005",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	},{
+		"cCI":"M0005",
+		"n":"emergencyroute",
+		"v":null,
+		"age":"unknown"
+	}]
+}
+```
+
+<a id="M0006"></a>
+## M0006 Activate input
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"3e0a4825-d064-457c-a2b8-608c0d0f2284",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0006",
+		"n":"status",
+		"cO":"setInput",
+		"v":"False"
+	},{
+		"cCI":"M0006",
+		"n":"securityCode",
+		"cO":"setInput",
+		"v":"[text]"
+	},{
+		"cCI":"M0006",
+		"n":"input",
+		"cO":"setInput",
+		"v":"[1-255]"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"f34dc677-3d05-418c-9496-db73deb248e3",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T08:12:02.519Z",
+	"rvs":[{
+		"cCI":"M0006",
+		"n":"status",
+		"v":"False",
+		"age":"recent"
+	},{
+		"cCI":"M0006",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	},{
+		"cCI":"M0006",
+		"n":"input",
+		"v":null,
+		"age":"unknown"
+	}]
+}
+```
+
+<a id="M0007"></a>
+## M0007 Activate fixed time control
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"f11d1a8b-595a-457a-a3c7-2826c5cfdc64",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0007",
+		"n":"status",
+		"cO":"setFixedTime",
+		"v":"False"
+	},{
+		"cCI":"M0007",
+		"n":"securityCode",
+		"cO":"setFixedTime",
+		"v":"[text]"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"ba308115-06ae-4813-ba19-fb95ffc36907",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T08:15:54.862Z",
+	"rvs":[{
+		"cCI":"M0007",
+		"n":"status",
+		"v":"False",
+		"age":"recent"
+	},{
+		"cCI":"M0007",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	}]
+}
+```
+
+<a id="M0008"></a>
+## M0008 Sets manual activation of detector logic
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"756914f6-51c1-4407-8dbd-328b2f9dbc2b",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"arg":[{
+		"cCI":"M0008",
+		"n":"status",
+		"cO":"setForceDetectorLogic",
+		"v":"False"
+	},{
+		"cCI":"M0008",
+		"n":"securityCode",
+		"cO":"setForceDetectorLogic",
+		"v":"[text]"
+	},{
+		"cCI":"M0008",
+		"n":"mode",
+		"cO":"setForceDetectorLogic",
+		"v":"False"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"9cd20b07-267a-4746-8882-d61de2a7318c",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001DL001",
+	"cTS":"2019-09-30T08:18:57.492Z",
+	"rvs":[{
+		"cCI":"M0008",
+		"n":"status",
+		"v":"False",
+		"age":"recent"
+	},{
+		"cCI":"M0008",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	},{
+		"cCI":"M0008",
+		"n":"mode",
+		"v":"False",
+		"age":"recent"
+	}]
+}
+```
+
+<a id="M0010"></a>
+## M0010 Start of signal group
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"6da0f9d7-9ee7-4055-9368-1c737da785d2",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001SG001",
+	"arg":[{
+		"cCI":"M0010",
+		"n":"status",
+		"cO":"setStart",
+		"v":"False"
+	},{
+		"cCI":"M0010",
+		"n":"securityCode",
+		"cO":"setStart",
+		"v":"[text]"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"fbc4cc9e-9175-4608-8c75-c12603ad3aa4",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001SG001",
+	"cTS":"2019-09-30T08:23:57.132Z",
+	"rvs":[{
+		"cCI":"M0010",
+		"n":"status",
+		"v":"False",
+		"age":"recent"
+	},{
+		"cCI":"M0010",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	}]
+}
+```
+
+<a id="M0011"></a>
+## M0011 Stop of signal group
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"ec458c36-6af8-4908-be29-0bd5391dd27d",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001SG001",
+	"arg":[{
+		"cCI":"M0011",
+		"n":"status",
+		"cO":"setStop",
+		"v":"False"
+	},{
+		"cCI":"M0011",
+		"n":"securityCode",
+		"cO":"setStop",
+		"v":"[text]"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"4965db4d-03bb-4a2c-93d7-f89c563f65f2",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001SG001",
+	"cTS":"2019-09-30T11:18:38.657Z",
+	"rvs":[{
+		"cCI":"M0011",
+		"n":"status",
+		"v":"False",
+		"age":"recent"
+	},{
+		"cCI":"M0011",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	}]
+}
+```
+
+<a id="M0012"></a>
+## M0012 Request start or stop of a series of signal groups
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"128e056d-67ba-4506-98be-6bca01e3b5c8",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0012",
+		"n":"status",
+		"cO":"setStart",
+		"v":"5,4134,65;5,11"
+	},{
+		"cCI":"M0012",
+		"n":"securityCode",
+		"cO":"setStart",
+		"v":"1234"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"472523c4-d4a0-4064-a576-2d46b9550005",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T11:26:34.006Z",
+	"rvs":[{
+		"cCI":"M0012",
+		"n":"status",
+		"v":"5,4134,65;5,11",
+		"age":"recent"
+	},{
+		"cCI":"M0012",
+		"n":"securityCode",
+		"v":"1234",
+		"age":"recent"
+	}]
+}
+```
+
+<a id="M0013"></a>
+## M0013 Activate a series of inputs
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"486d9574-7816-41db-9cb9-561b54d23b1e",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0013",
+		"n":"status",
+		"cO":"setInput",
+		"v":"5,4134,65;511"
+	},{
+		"cCI":"M0013",
+		"n":"securityCode",
+		"cO":"setInput",
+		"v":"1234"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"7fe7e4bf-5116-406b-a757-7b83d38727ac",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T11:30:52.851Z",
+	"rvs":[{
+		"cCI":"M0013",
+		"n":"status",
+		"v":"5,4134,65;511",
+		"age":"recent"
+	},{
+		"cCI":"M0013",
+		"n":"securityCode",
+		"v":"1234",
+		"age":"recent"
+	}]
+}
+```
+
 <a id="M0014"></a>
 ## M0014 Set command table
 
@@ -2200,7 +3246,7 @@ This document contains examples for all message types.
 ```
 
 <a id="M0015"></a>
-## M0015 Set Offset time 
+## M0015 Set Offset time
 
 ### Example message
 
@@ -2498,3 +3544,274 @@ This document contains examples for all message types.
 	}]
 }
 ```
+
+<a id="M0020"></a>
+## M0020 Force output
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"1caf4fed-6182-431e-a88e-fa537ac00c8e",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0020",
+		"n":"status",
+		"cO":"setOutput",
+		"v":"False"
+	},{
+		"cCI":"M0020",
+		"n":"securityCode",
+		"cO":"setInput",
+		"v":"[text]"
+	},{
+		"cCI":"M0020",
+		"n":"output",
+		"cO":"setOutput",
+		"v":"[1-255]"
+	},{
+		"cCI":"M0020",
+		"n":"outputValue",
+		"cO":"setOutput",
+		"v":"False"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"7e008cd8-e51f-487c-bd66-87993059eb8c",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T13:23:54.049Z",
+	"rvs":[{
+		"cCI":"M0020",
+		"n":"status",
+		"v":"False",
+		"age":"recent"
+	},{
+		"cCI":"M0020",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	},{
+		"cCI":"M0020",
+		"n":"output",
+		"v":null,
+		"age":"unknown"
+	},{
+		"cCI":"M0020",
+		"n":"outputValue",
+		"v":"False",
+		"age":"recent"
+	}]
+}
+```
+
+<a id="M0021"></a>
+## M0021 Set trigger level sensitivity for loop detector
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"a6697f11-4f62-4349-8325-857beb150d8a",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0021",
+		"n":"status",
+		"cO":"setLevel",
+		"v":"[text]"
+	},{
+		"cCI":"M0021",
+		"n":"securityCode",
+		"cO":"setInput",
+		"v":"[text]"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"332bfbc4-67b2-4047-a718-a3d10f129214",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T13:32:18.840Z",
+	"rvs":[{
+		"cCI":"M0021",
+		"n":"status",
+		"v":"[text]",
+		"age":"recent"
+	},{
+		"cCI":"M0021",
+		"n":"securityCode",
+		"v":"[text]",
+		"age":"recent"
+	}]
+}
+```
+
+<a id="M0103"></a>
+## M0103 Set security code
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"1b1d9227-d566-4ff2-8bbb-c3f18f9ac846",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0103",
+		"n":"status",
+		"cO":"setSecurityCode",
+		"v":"Level1"
+	},{
+		"cCI":"M0103",
+		"n":"oldSecurityCode",
+		"cO":"setSecurityCode",
+		"v":"1234"
+	},{
+		"cCI":"M0103",
+		"n":"newSecurityCode",
+		"cO":"setSecurityCode",
+		"v":"5678"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"605c1029-a948-45e7-a98a-11e83cbcc41a",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T13:34:54.635Z",
+	"rvs":[{
+		"cCI":"M0103",
+		"n":"status",
+		"v":"Level1",
+		"age":"recent"
+	},{
+		"cCI":"M0103",
+		"n":"oldSecurityCode",
+		"v":"1234",
+		"age":"recent"
+	},{
+		"cCI":"M0103",
+		"n":"newSecurityCode",
+		"v":"5678",
+		"age":"recent"
+	}]
+}
+```
+
+<a id="M0104"></a>
+## M0104 Set clock
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandRequest",
+	"mId":"c9584b41-e2ad-4eb4-bca4-c3847af4e78d",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"arg":[{
+		"cCI":"M0104",
+		"n":"securityCode",
+		"cO":"setDate",
+		"v":"1234"
+	},{
+		"cCI":"M0104",
+		"n":"year",
+		"cO":"setDate",
+		"v":"YYYY"
+	},{
+		"cCI":"M0104",
+		"n":"month",
+		"cO":"setDate",
+		"v":"MM"
+	},{
+		"cCI":"M0104",
+		"n":"day",
+		"cO":"setDate",
+		"v":"DD"
+	},{
+		"cCI":"M0104",
+		"n":"hour",
+		"cO":"setDate",
+		"v":"HH"
+	},{
+		"cCI":"M0104",
+		"n":"minute",
+		"cO":"setDate",
+		"v":"MM"
+	},{
+		"cCI":"M0104",
+		"n":"second",
+		"cO":"setDate",
+		"v":"SS"
+	}]
+}
+```
+
+``` json
+{
+	"mType":"rSMsg",
+	"type":"CommandResponse",
+	"mId":"a37bd105-4f01-4e16-aaa9-7922c6732337",
+	"ntsOId":"KK+AG0503=001TC000",
+	"xNId":"",
+	"cId":"KK+AG0503=001TC000",
+	"cTS":"2019-09-30T13:40:56.551Z",
+	"rvs":[{
+		"cCI":"M0104",
+		"n":"securityCode",
+		"v":"1234",
+		"age":"recent"
+	},{
+		"cCI":"M0104",
+		"n":"year",
+		"v":null,
+		"age":"unknown"
+	},{
+		"cCI":"M0104",
+		"n":"month",
+		"v":null,
+		"age":"unknown"
+	},{
+		"cCI":"M0104",
+		"n":"day",
+		"v":null,
+		"age":"unknown"
+	},{
+		"cCI":"M0104",
+		"n":"hour",
+		"v":null,
+		"age":"unknown"
+	},{
+		"cCI":"M0104",
+		"n":"minute",
+		"v":null,
+		"age":"unknown"
+	},{
+		"cCI":"M0104",
+		"n":"second",
+		"v":null,
+		"age":"unknown"
+	}]
+}
