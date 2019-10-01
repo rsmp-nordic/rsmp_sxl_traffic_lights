@@ -105,7 +105,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"aCId":"A0001",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR GROUP #4 MISSING",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -130,7 +130,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"aCId":"A0002",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR IO #1 MISSING",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -155,7 +155,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"aCId":"A0003",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR IO #1 ERROR",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -179,7 +179,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"aCId":"A0004",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR INSTRUCTION #5",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -204,7 +204,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"aCId":"A0005",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR: COMM ERROR 4",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -229,7 +229,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"aCId":"A0006",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR MAINS #4",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -254,7 +254,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"aCId":"A0007",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR COMM ERROR #9",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -279,7 +279,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001SG001",
 	"aCId":"A0008",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR DELAY #10",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -290,7 +290,7 @@ This document contains examples for all message types.
 	"pri":"2",
 	"rvs":[{
 		"n":"timeplan",
-		"v":"[designation]"
+		"v":"9"
 	}]
 }
 ```
@@ -307,7 +307,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"aCId":"A0009",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR NO PLANS",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -332,7 +332,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001DO001",
 	"aCId":"A0010",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR DOOR #5 OPEN",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -356,7 +356,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001SG001",
 	"aCId":"A0101",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR PUSH BUTTON #3",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -381,7 +381,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001SG001",
 	"aCId":"A0201",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR LAMP OFF RED #1",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -409,7 +409,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001SG001",
 	"aCId":"A0202",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR LAMP E4 RED #1",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -437,7 +437,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001DL001",
 	"aCId":"A0301",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR LOOP OPEN #1",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -448,7 +448,7 @@ This document contains examples for all message types.
 	"pri":"3",
 	"rvs":[{
 		"n":"detector",
-		"v":"D1"
+		"v":"1"
 	},{
 		"n":"type",
 		"v":"loop"
@@ -474,7 +474,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001DL001",
 	"aCId":"A0302",
-	"xACId":"Defined by manufacturer",
+	"xACId":"ERROR DETECTOR LOGIC OPEN #1",
 	"xNACId":"",
 	"aSp":"Issue",
 	"ack":"notAcknowledged",
@@ -485,7 +485,7 @@ This document contains examples for all message types.
 	"pri":"3",
 	"rvs":[{
 		"n":"detector",
-		"v":"D1"
+		"v":"1"
 	},{
 		"n":"type",
 		"v":"loop"
@@ -541,12 +541,12 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0001",
 		"n":"signalgroupstatus",
-		"s":"FA0",
+		"s":"FF3FFF0",
 		"q":"recent"
 	},{
 		"sCI":"S0001",
 		"n":"cyclecounter",
-		"s":"0",
+		"s":"76",
 		"q":"recent"
 	},{
 		"sCI":"S0001",
@@ -556,14 +556,14 @@ This document contains examples for all message types.
 	},{
 		"sCI":"S0001",
 		"n":"stage",
-		"s":"0",
+		"s":"2",
 		"q":"recent"
 	}]
 }
 ```
 
 <a id="S0002"></a>
-## S0002 Signal group status
+## S0002 Detector logic status
 
 ``` json
 {
@@ -631,7 +631,7 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0003",
 		"n":"inputstatus",
-		"s":"1010101",
+		"s":"0000000000000000001000000000000000000010",
 		"q":"recent"
 	},{
 		"sCI":"S0003",
@@ -674,7 +674,7 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0004",
 		"n":"outputstatus",
-		"s":"1010101",
+		"s":"0000000000000000001000000000000000000010",
 		"q":"recent"
 	},{
 		"sCI":"S0004",
@@ -803,7 +803,7 @@ This document contains examples for all message types.
 	},{
 		"sCI":"S0007",
 		"n":"status",
-		"s":"0",
+		"s":"1",
 		"q":"recent"
 	}]
 }
@@ -842,7 +842,7 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0008",
 		"n":"intersection",
-		"s":"0",
+		"s":"1",
 		"q":"recent"
 	},{
 		"sCI":"S0008",
@@ -886,7 +886,7 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0009",
 		"n":"intersection",
-		"s":"0",
+		"s":"1",
 		"q":"recent"
 	},{
 		"sCI":"S0009",
@@ -930,7 +930,7 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0010",
 		"n":"intersection",
-		"s":"0",
+		"s":"1",
 		"q":"recent"
 	},{
 		"sCI":"S0010",
@@ -1067,7 +1067,7 @@ This document contains examples for all message types.
 	},{
 		"sCI":"S0013",
 		"n":"status",
-		"s":"0",
+		"s":"1",
 		"q":"recent"
 	}]
 }
@@ -1363,7 +1363,7 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0021",
 		"n":"detectorlogics",
-		"s":"11010011",
+		"s":"000000000000000000000000",
 		"q":"recent"
 	}]
 }
@@ -1987,27 +1987,27 @@ This document contains examples for all message types.
 	},{
 		"sCI":"S0096",
 		"n":"month",
-		"s":"0",
+		"s":"5",
 		"q":"recent"
 	},{
 		"sCI":"S0096",
 		"n":"day",
-		"s":"0",
+		"s":"12",
 		"q":"recent"
 	},{
 		"sCI":"S0096",
 		"n":"hour",
-		"s":"0",
+		"s":"10",
 		"q":"recent"
 	},{
 		"sCI":"S0096",
 		"n":"minute",
-		"s":"0",
+		"s":"16",
 		"q":"recent"
 	},{
 		"sCI":"S0096",
 		"n":"second",
-		"s":"0",
+		"s":"31",
 		"q":"recent"
 	}]
 }
@@ -2046,12 +2046,12 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0097",
 		"n":"version",
-		"s":"0",
+		"s":"96",
 		"q":"recent"
 	},{
 		"sCI":"S0097",
 		"n":"hash",
-		"s":"0",
+		"s":"63b417a713575c7838e4a915b92c617e7b5957bf",
 		"q":"recent"
 	}]
 }
@@ -2090,12 +2090,12 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0201",
 		"n":"starttime",
-		"s":"0",
+		"s":"2019-03-12T12:00:00.000Z",
 		"q":"recent"
 	},{
 		"sCI":"S0201",
 		"n":"vehicles",
-		"s":"0",
+		"s":"20",
 		"q":"recent"
 	}]
 }
@@ -2134,12 +2134,12 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0202",
 		"n":"starttime",
-		"s":"0",
+		"s":"2019-03-12T12:00:00.000Z",
 		"q":"recent"
 	},{
 		"sCI":"S0202",
 		"n":"speed",
-		"s":"0",
+		"s":"54",
 		"q":"recent"
 	}]
 }
@@ -2178,12 +2178,12 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0203",
 		"n":"starttime",
-		"s":"0",
+		"s":"2019-03-12T12:00:00.000Z",
 		"q":"recent"
 	},{
 		"sCI":"S0203",
 		"n":"occupancy",
-		"s":"0",
+		"s":"23",
 		"q":"recent"
 	}]
 }
@@ -2246,52 +2246,52 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0204",
 		"n":"starttime",
-		"s":"0",
+		"s":""2019-03-12T12:00:00.000Z,
 		"q":"recent"
 	},{
 		"sCI":"S0204",
 		"n":"P",
-		"s":"0",
+		"s":"2",
 		"q":"recent"
 	},{
 		"sCI":"S0204",
 		"n":"PS",
-		"s":"0",
+		"s":"43",
 		"q":"recent"
 	},{
 		"sCI":"S0204",
 		"n":"L",
-		"s":"0",
+		"s":"9",
 		"q":"recent"
 	},{
 		"sCI":"S0204",
 		"n":"LS",
-		"s":"0",
+		"s":"3",
 		"q":"recent"
 	},{
 		"sCI":"S0204",
 		"n":"B",
-		"s":"0",
+		"s":"2",
 		"q":"recent"
 	},{
 		"sCI":"S0204",
 		"n":"SP",
-		"s":"0",
+		"s":"3",
 		"q":"recent"
 	},{
 		"sCI":"S0204",
 		"n":"MC",
-		"s":"0",
+		"s":"4",
 		"q":"recent"
 	},{
 		"sCI":"S0204",
 		"n":"C",
-		"s":"0",
+		"s":"6",
 		"q":"recent"
 	},{
 		"sCI":"S0204",
 		"n":"F",
-		"s":"0",
+		"s":"2",
 		"q":"recent"
 	}]
 }
@@ -2330,12 +2330,12 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0205",
 		"n":"start",
-		"s":"0",
+		"s":"2019-03-12T12:00:00.000Z",
 		"q":"recent"
 	},{
 		"sCI":"S0205",
 		"n":"vehicles",
-		"s":"0",
+		"s":"32:31:24:41:41:32",
 		"q":"recent"
 	}]
 }
@@ -2374,12 +2374,12 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0206",
 		"n":"start",
-		"s":"0",
+		"s":"2019-03-12T12:00:00.000Z",
 		"q":"recent"
 	},{
 		"sCI":"S0206",
 		"n":"speed",
-		"s":"0",
+		"s":"32:31:24:41:41:32",
 		"q":"recent"
 	}]
 }
@@ -2418,12 +2418,12 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0207",
 		"n":"start",
-		"s":"0",
+		"s":"2019-03-12T12:00:00.000Z",
 		"q":"recent"
 	},{
 		"sCI":"S0207",
 		"n":"occupancy",
-		"s":"0",
+		"s":"32:31:24:41:41:32",
 		"q":"recent"
 	}]
 }
@@ -2486,52 +2486,52 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0208",
 		"n":"start",
-		"s":"0",
+		"s":"2019-03-12T12:00:00.000Z",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"P",
-		"s":"0",
+		"s":"2:3:2:1:1:2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"PS",
-		"s":"0",
+		"s":"9:3:5:1:1:2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"L",
-		"s":"0",
+		"s":"3:5:2:1:1:2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"LS",
-		"s":"0",
+		"s":"2:3:2:1:1:2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"B",
-		"s":"0",
+		"s":"8:3:2:1:1:2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"SP",
-		"s":"0",
+		"s":"1:1:2:1:1:2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"MC",
-		"s":"0",
+		"s":"4:3:3:1:1:2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"C",
-		"s":"0",
+		"s":"8:3:2:1:1:2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"F",
-		"s":"0",
+		"s":"5:3:2:1:1:2",
 		"q":"recent"
 	}]
 }
@@ -2557,18 +2557,18 @@ This document contains examples for all message types.
 		"cCI":"M0001",
 		"n":"securityCode",
 		"cO":"setValue",
-		"v":"[text]"
+		"v":"1234"
 	},{
 		"cCI":"M0001",
 		"n":"timeout",
 		"cO":"setValue",
-		"v":"[0-1440]"
+		"v":"0"
 	},{
 		"cCI":"M0001",
 		"n":"intersection",
 		"cO":"setValue",
-		"v":"[0-255]"
-	}]
+		"v":"0"
+	]
 }
 ```
 
@@ -2589,18 +2589,18 @@ This document contains examples for all message types.
 	},{
 		"cCI":"M0001",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	},{
 		"cCI":"M0001",
 		"n":"timeout",
-		"v":null,
-		"age":"unknown"
+		"v":"0",
+		"age":"recent"
 	},{
 		"cCI":"M0001",
 		"n":"intersection",
-		"v":null,
-		"age":"unknown"
+		"v":"0",
+		"age":"recent"
 	}]
 }
 ```
@@ -2620,17 +2620,17 @@ This document contains examples for all message types.
 		"cCI":"M0002",
 		"n":"status",
 		"cO":"setPlan",
-		"v":"False"
+		"v":"True"
 	},{
 		"cCI":"M0002",
 		"n":"securityCode",
 		"cO":"setPlan",
-		"v":"[text]"
+		"v":"1234"
 	},{
 		"cCI":"M0002",
 		"n":"timeplan",
 		"cO":"setPlan",
-		"v":"[1-255]"
+		"v":"1"
 	}]
 }
 ```
@@ -2648,17 +2648,17 @@ This document contains examples for all message types.
 		"cCI":"M0002",
 		"n":"status",
 		"v":"False",
-		"age":"recent"
+		"age":"True"
 	},{
 		"cCI":"M0002",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	},{
 		"cCI":"M0002",
 		"n":"timeplan",
-		"v":null,
-		"age":"unknown"
+		"v":"1",
+		"age":"recent"
 	}]
 }
 ```
@@ -2678,17 +2678,17 @@ This document contains examples for all message types.
 		"cCI":"M0003",
 		"n":"status",
 		"cO":"setTrafficSituation",
-		"v":"False"
+		"v":"True"
 	},{
 		"cCI":"M0003",
 		"n":"securityCode",
 		"cO":"setTrafficSituation",
-		"v":"[text]"
+		"v":"1234"
 	},{
 		"cCI":"M0003",
 		"n":"trafficsituation",
 		"cO":"setTrafficSituation",
-		"v":"[1-255]"
+		"v":"1"
 	}]
 }
 ```
@@ -2705,18 +2705,18 @@ This document contains examples for all message types.
 	"rvs":[{
 		"cCI":"M0003",
 		"n":"status",
-		"v":"False",
+		"v":"True",
 		"age":"recent"
 	},{
 		"cCI":"M0003",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	},{
 		"cCI":"M0003",
 		"n":"trafficsituation",
-		"v":null,
-		"age":"unknown"
+		"v":"1",
+		"age":"recent"
 	}]
 }
 ```
@@ -2789,12 +2789,12 @@ This document contains examples for all message types.
 		"cCI":"M0005",
 		"n":"securityCode",
 		"cO":"setEmergency",
-		"v":"[text]"
+		"v":"1234"
 	},{
 		"cCI":"M0005",
 		"n":"emergencyroute",
 		"cO":"setEmergency",
-		"v":"[1-255]"
+		"v":"1"
 	}]
 }
 ```
@@ -2816,13 +2816,13 @@ This document contains examples for all message types.
 	},{
 		"cCI":"M0005",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	},{
 		"cCI":"M0005",
 		"n":"emergencyroute",
-		"v":null,
-		"age":"unknown"
+		"v":"1",
+		"age":"recent"
 	}]
 }
 ```
@@ -2842,17 +2842,17 @@ This document contains examples for all message types.
 		"cCI":"M0006",
 		"n":"status",
 		"cO":"setInput",
-		"v":"False"
+		"v":"True"
 	},{
 		"cCI":"M0006",
 		"n":"securityCode",
 		"cO":"setInput",
-		"v":"[text]"
+		"v":"1234"
 	},{
 		"cCI":"M0006",
 		"n":"input",
 		"cO":"setInput",
-		"v":"[1-255]"
+		"v":"1"
 	}]
 }
 ```
@@ -2869,18 +2869,18 @@ This document contains examples for all message types.
 	"rvs":[{
 		"cCI":"M0006",
 		"n":"status",
-		"v":"False",
+		"v":"True",
 		"age":"recent"
 	},{
 		"cCI":"M0006",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	},{
 		"cCI":"M0006",
 		"n":"input",
-		"v":null,
-		"age":"unknown"
+		"v":"1",
+		"age":"recent"
 	}]
 }
 ```
@@ -2900,12 +2900,12 @@ This document contains examples for all message types.
 		"cCI":"M0007",
 		"n":"status",
 		"cO":"setFixedTime",
-		"v":"False"
+		"v":"True"
 	},{
 		"cCI":"M0007",
 		"n":"securityCode",
 		"cO":"setFixedTime",
-		"v":"[text]"
+		"v":"1234"
 	}]
 }
 ```
@@ -2922,12 +2922,12 @@ This document contains examples for all message types.
 	"rvs":[{
 		"cCI":"M0007",
 		"n":"status",
-		"v":"False",
+		"v":"True",
 		"age":"recent"
 	},{
 		"cCI":"M0007",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	}]
 }
@@ -2948,17 +2948,17 @@ This document contains examples for all message types.
 		"cCI":"M0008",
 		"n":"status",
 		"cO":"setForceDetectorLogic",
-		"v":"False"
+		"v":"True"
 	},{
 		"cCI":"M0008",
 		"n":"securityCode",
 		"cO":"setForceDetectorLogic",
-		"v":"[text]"
+		"v":"1234"
 	},{
 		"cCI":"M0008",
 		"n":"mode",
 		"cO":"setForceDetectorLogic",
-		"v":"False"
+		"v":"True"
 	}]
 }
 ```
@@ -2975,17 +2975,17 @@ This document contains examples for all message types.
 	"rvs":[{
 		"cCI":"M0008",
 		"n":"status",
-		"v":"False",
+		"v":"True",
 		"age":"recent"
 	},{
 		"cCI":"M0008",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	},{
 		"cCI":"M0008",
 		"n":"mode",
-		"v":"False",
+		"v":"True",
 		"age":"recent"
 	}]
 }
@@ -3006,12 +3006,12 @@ This document contains examples for all message types.
 		"cCI":"M0010",
 		"n":"status",
 		"cO":"setStart",
-		"v":"False"
+		"v":"True"
 	},{
 		"cCI":"M0010",
 		"n":"securityCode",
 		"cO":"setStart",
-		"v":"[text]"
+		"v":"1234"
 	}]
 }
 ```
@@ -3028,12 +3028,12 @@ This document contains examples for all message types.
 	"rvs":[{
 		"cCI":"M0010",
 		"n":"status",
-		"v":"False",
+		"v":"True",
 		"age":"recent"
 	},{
 		"cCI":"M0010",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	}]
 }
@@ -3054,12 +3054,12 @@ This document contains examples for all message types.
 		"cCI":"M0011",
 		"n":"status",
 		"cO":"setStop",
-		"v":"False"
+		"v":"True"
 	},{
 		"cCI":"M0011",
 		"n":"securityCode",
 		"cO":"setStop",
-		"v":"[text]"
+		"v":"1234"
 	}]
 }
 ```
@@ -3076,12 +3076,12 @@ This document contains examples for all message types.
 	"rvs":[{
 		"cCI":"M0011",
 		"n":"status",
-		"v":"False",
+		"v":"True",
 		"age":"recent"
 	},{
 		"cCI":"M0011",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	}]
 }
@@ -3560,22 +3560,22 @@ This document contains examples for all message types.
 		"cCI":"M0020",
 		"n":"status",
 		"cO":"setOutput",
-		"v":"False"
+		"v":"True"
 	},{
 		"cCI":"M0020",
 		"n":"securityCode",
 		"cO":"setInput",
-		"v":"[text]"
+		"v":"1234"
 	},{
 		"cCI":"M0020",
 		"n":"output",
 		"cO":"setOutput",
-		"v":"[1-255]"
+		"v":"1"
 	},{
 		"cCI":"M0020",
 		"n":"outputValue",
 		"cO":"setOutput",
-		"v":"False"
+		"v":"True"
 	}]
 }
 ```
@@ -3592,22 +3592,22 @@ This document contains examples for all message types.
 	"rvs":[{
 		"cCI":"M0020",
 		"n":"status",
-		"v":"False",
+		"v":"True",
 		"age":"recent"
 	},{
 		"cCI":"M0020",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	},{
 		"cCI":"M0020",
 		"n":"output",
-		"v":null,
-		"age":"unknown"
+		"v":"1",
+		"age":"recent"
 	},{
 		"cCI":"M0020",
 		"n":"outputValue",
-		"v":"False",
+		"v":"True",
 		"age":"recent"
 	}]
 }
@@ -3628,12 +3628,12 @@ This document contains examples for all message types.
 		"cCI":"M0021",
 		"n":"status",
 		"cO":"setLevel",
-		"v":"[text]"
+		"v":"01=54"
 	},{
 		"cCI":"M0021",
 		"n":"securityCode",
 		"cO":"setInput",
-		"v":"[text]"
+		"v":"1234"
 	}]
 }
 ```
@@ -3650,12 +3650,12 @@ This document contains examples for all message types.
 	"rvs":[{
 		"cCI":"M0021",
 		"n":"status",
-		"v":"[text]",
+		"v":"01=54",
 		"age":"recent"
 	},{
 		"cCI":"M0021",
 		"n":"securityCode",
-		"v":"[text]",
+		"v":"1234",
 		"age":"recent"
 	}]
 }
@@ -3739,32 +3739,32 @@ This document contains examples for all message types.
 		"cCI":"M0104",
 		"n":"year",
 		"cO":"setDate",
-		"v":"YYYY"
+		"v":"2019"
 	},{
 		"cCI":"M0104",
 		"n":"month",
 		"cO":"setDate",
-		"v":"MM"
+		"v":"09"
 	},{
 		"cCI":"M0104",
 		"n":"day",
 		"cO":"setDate",
-		"v":"DD"
+		"v":"30"
 	},{
 		"cCI":"M0104",
 		"n":"hour",
 		"cO":"setDate",
-		"v":"HH"
+		"v":"11"
 	},{
 		"cCI":"M0104",
 		"n":"minute",
 		"cO":"setDate",
-		"v":"MM"
+		"v":"30"
 	},{
 		"cCI":"M0104",
 		"n":"second",
 		"cO":"setDate",
-		"v":"SS"
+		"v":"34"
 	}]
 }
 ```
@@ -3786,32 +3786,32 @@ This document contains examples for all message types.
 	},{
 		"cCI":"M0104",
 		"n":"year",
-		"v":null,
-		"age":"unknown"
+		"v":"2019",
+		"age":"recent"
 	},{
 		"cCI":"M0104",
 		"n":"month",
-		"v":null,
-		"age":"unknown"
+		"v":"09",
+		"age":"recent"
 	},{
 		"cCI":"M0104",
 		"n":"day",
-		"v":null,
-		"age":"unknown"
+		"v":"30",
+		"age":"recent"
 	},{
 		"cCI":"M0104",
 		"n":"hour",
-		"v":null,
-		"age":"unknown"
+		"v":"11",
+		"age":"recent"
 	},{
 		"cCI":"M0104",
 		"n":"minute",
-		"v":null,
-		"age":"unknown"
+		"v":"30",
+		"age":"recent"
 	},{
 		"cCI":"M0104",
 		"n":"second",
-		"v":null,
-		"age":"unknown"
+		"v":"34",
+		"age":"recent"
 	}]
 }
