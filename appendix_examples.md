@@ -505,6 +505,7 @@ This document contains examples for all message types.
 <a id="S0001"></a>
 ## S0001 Signal group status
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -529,6 +530,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -565,6 +567,7 @@ This document contains examples for all message types.
 <a id="S0002"></a>
 ## S0002 Detector logic status
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -580,6 +583,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -601,6 +605,7 @@ This document contains examples for all message types.
 <a id="S0003"></a>
 ## S0003 Input status
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -619,6 +624,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -645,6 +651,7 @@ This document contains examples for all message types.
 <a id="S0004"></a>
 ## S0004 Output status
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -663,8 +670,10 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
-{"mType":"rSMsg",
+{
+	"mType":"rSMsg",
 	"type":"StatusResponse",
 	"mId":"3d7bc8ea-d658-47cb-b7a3-07b6d6842934",
 	"ntsOId":"KK+AG0503=001TC000",
@@ -688,6 +697,7 @@ This document contains examples for all message types.
 <a id="S0005"></a>
 ## S0005 Traffic Controller starting
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -703,6 +713,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -724,6 +735,7 @@ This document contains examples for all message types.
 <a id="S0006"></a>
 ## S0006 Emergency stage
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -742,6 +754,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -768,6 +781,7 @@ This document contains examples for all message types.
 <a id="S0007"></a>
 ## S0007 Controller switched on
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -786,6 +800,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -812,6 +827,7 @@ This document contains examples for all message types.
 <a id="S0008"></a>
 ## S0008 Manual control
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -830,6 +846,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -856,6 +873,7 @@ This document contains examples for all message types.
 <a id="S0009"></a>
 ## S0009 Fixed time control
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -874,6 +892,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -900,6 +919,7 @@ This document contains examples for all message types.
 <a id="S0010"></a>
 ## S0010 Isolated control
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -918,6 +938,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -944,6 +965,7 @@ This document contains examples for all message types.
 <a id="S0011"></a>
 ## S0011 Yellow flash
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -962,6 +984,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -988,6 +1011,7 @@ This document contains examples for all message types.
 <a id="S0012"></a>
 ## S0012 All red
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1006,6 +1030,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1032,6 +1057,7 @@ This document contains examples for all message types.
 <a id="S0013"></a>
 ## S0013 Police key
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1050,6 +1076,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1076,6 +1103,7 @@ This document contains examples for all message types.
 <a id="S0014"></a>
 ## S0014 Current time plan
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1091,6 +1119,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1112,6 +1141,7 @@ This document contains examples for all message types.
 <a id="S0015"></a>
 ## S0015 Current traffic situation
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1127,6 +1157,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1148,6 +1179,7 @@ This document contains examples for all message types.
 <a id="S0016"></a>
 ## S0016 Number of detector logics
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1163,6 +1195,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1184,6 +1217,7 @@ This document contains examples for all message types.
 <a id="S0017"></a>
 ## S0017 Number of signal groups
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1199,6 +1233,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1220,6 +1255,7 @@ This document contains examples for all message types.
 <a id="S0018"></a>
 ## S0018 Number of time plans
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1235,6 +1271,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1256,6 +1293,7 @@ This document contains examples for all message types.
 <a id="S0019"></a>
 ## S0019 Number of traffic situations
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1271,6 +1309,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1292,6 +1331,7 @@ This document contains examples for all message types.
 <a id="S0020"></a>
 ## S0020 Control mode
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1310,6 +1350,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1336,6 +1377,7 @@ This document contains examples for all message types.
 <a id="S0021"></a>
 ## S0021 Manually set detector logic
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1351,6 +1393,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1372,9 +1415,7 @@ This document contains examples for all message types.
 <a id="S0022"></a>
 ## S0022 List of time plans 
 
-### Example message
-
-**Status request**
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1383,7 +1424,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0022",
 		"n":"status"
 	}]
@@ -1400,7 +1441,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T19:37:06.678Z",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0022",
 		"n":"status",
 		"s":"1,2,3,5",
@@ -1411,9 +1452,7 @@ This document contains examples for all message types.
 <a id="S0023"></a>
 ## S0023 Command table 
 
-### Example message
-
-**Status request**
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1422,7 +1461,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0023",
 		"n":"status"
 	}]
@@ -1439,7 +1478,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T12:38:59.953Z",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0023",
 		"n":"status",
 		"s":"01-1-30,01-2-10:",
@@ -1450,9 +1489,7 @@ This document contains examples for all message types.
 <a id="S0024"></a>
 ## S0024 Offset time
 
-### Example message
-
-**Status request**
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1461,7 +1498,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0024",
 		"n":"status"
 	}]
@@ -1478,7 +1515,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:00:56.432Z",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0024",
 		"n":"status",
 		"s":"01-20,02-10",
@@ -1490,9 +1527,7 @@ This document contains examples for all message types.
 <a id="S0025"></a>
 ## S0025 Time-to-green
 
-### Example message
-
-**Status request**
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1501,7 +1536,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001SG002",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0025",
 		"n":"minToGEstimate"
 	},{
@@ -1539,7 +1574,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001SG002",
 	"sTs":"2016-05-11T19:58:02.487Z",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0025",
 		"n":"minToGEstimate",
 		"s":"2016-05-11T21:55:10.231Z",
@@ -1585,9 +1620,7 @@ This document contains examples for all message types.
 <a id="S0026"></a>
 ## S0026 Week time table
 
-### Example message
-
-**Status request**
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1596,7 +1629,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0026",
 		"n":"status"
 	}]
@@ -1613,7 +1646,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"sTs":"2016-05-11T13:31:41.476Z",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0026",
 		"n":"status",
 		"s":"0-2,1-3,2-1,3-1,4-1,5-4,6-4",
@@ -1624,9 +1657,7 @@ This document contains examples for all message types.
 <a id="S0027"></a>
 ## S0027 Time tables
 
-### Example message
-
-**Status request**
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1635,7 +1666,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0027",
 		"n":"status"
 	}]
@@ -1664,9 +1695,7 @@ This document contains examples for all message types.
 <a id="S0028"></a>
 ## S0028 Cycle time
 
-### Example message
-
-**Status request**
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1675,7 +1704,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0028",
 		"n":"status"
 	}]
@@ -1704,9 +1733,7 @@ This document contains examples for all message types.
 <a id="S0029"></a>
 ## S0029 Forced input status
 
-### Example message
-
-**Status request**
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1715,7 +1742,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"sS": [{
+	"sS":[{
 		"sCI":"S0029",
 		"n":"status"
 	}]
@@ -1744,6 +1771,7 @@ This document contains examples for all message types.
 <a id="S0030"></a>
 ## S0030 Forced output status
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1759,6 +1787,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1780,6 +1809,7 @@ This document contains examples for all message types.
 <a id="S0031"></a>
 ## S0031 Trigger level sensitivity for loop detector
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1816,6 +1846,7 @@ This document contains examples for all message types.
 <a id="S0091"></a>
 ## S0091 Operator logged in/out OP-panel
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1860,6 +1891,7 @@ This document contains examples for all message types.
 <a id="S0092"></a>
 ## S0092 Operator logged web-interface
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1904,6 +1936,7 @@ This document contains examples for all message types.
 <a id="S0095"></a>
 ## S0095 Version of Traffic Controller
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1940,6 +1973,7 @@ This document contains examples for all message types.
 <a id="S0096"></a>
 ## S0096 Current date and time
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2016,6 +2050,7 @@ This document contains examples for all message types.
 <a id="S0097"></a>
 ## S0097 Version of Traffic Program
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2060,6 +2095,7 @@ This document contains examples for all message types.
 <a id="S0201"></a>
 ## S0201 Traffic Counting: Number of vehicles
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2104,6 +2140,7 @@ This document contains examples for all message types.
 <a id="S0202"></a>
 ## S0202 Traffic Counting: Vehicle speed
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2148,6 +2185,7 @@ This document contains examples for all message types.
 <a id="S0203"></a>
 ## S0203 Traffic Counting: Occupancy
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2192,6 +2230,7 @@ This document contains examples for all message types.
 <a id="S0204"></a>
 ## S0204 Traffic Counting: Number of vehicles of given classification
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2234,6 +2273,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2300,6 +2340,7 @@ This document contains examples for all message types.
 <a id="S0205"></a>
 ## S0205 Traffic Counting: Number of vehicles
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2318,6 +2359,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2344,6 +2386,7 @@ This document contains examples for all message types.
 <a id="S0206"></a>
 ## S0206 Traffic Counting: Vehicle speed
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2362,6 +2405,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2388,6 +2432,7 @@ This document contains examples for all message types.
 <a id="S0207"></a>
 ## S0207 Traffic Counting: Occupancy
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2406,6 +2451,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2432,6 +2478,7 @@ This document contains examples for all message types.
 <a id="S0208"></a>
 ## S0208 Traffic Counting: Number of vehicles of given classification
 
+**Status Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2474,6 +2521,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2540,6 +2588,7 @@ This document contains examples for all message types.
 <a id="M0001"></a>
 ## M0001 Sets functional position
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2572,6 +2621,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2608,6 +2658,7 @@ This document contains examples for all message types.
 <a id="M0002"></a>
 ## M0002 Sets current time plan
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2635,6 +2686,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2666,6 +2718,7 @@ This document contains examples for all message types.
 <a id="M0003"></a>
 ## M0003 Sets traffic situation the controller uses
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2693,6 +2746,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2724,6 +2778,7 @@ This document contains examples for all message types.
 <a id="M0004"></a>
 ## M0004 Restarts Traffic Controller
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2746,6 +2801,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2772,6 +2828,7 @@ This document contains examples for all message types.
 <a id="M0005"></a>
 ## M0005 Activate emergency route
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2799,6 +2856,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2830,6 +2888,7 @@ This document contains examples for all message types.
 <a id="M0006"></a>
 ## M0006 Activate input
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2857,6 +2916,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2888,6 +2948,7 @@ This document contains examples for all message types.
 <a id="M0007"></a>
 ## M0007 Activate fixed time control
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2910,6 +2971,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2936,6 +2998,7 @@ This document contains examples for all message types.
 <a id="M0008"></a>
 ## M0008 Sets manual activation of detector logic
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2963,6 +3026,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2994,6 +3058,7 @@ This document contains examples for all message types.
 <a id="M0010"></a>
 ## M0010 Start of signal group
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3016,6 +3081,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3042,6 +3108,7 @@ This document contains examples for all message types.
 <a id="M0011"></a>
 ## M0011 Stop of signal group
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3064,6 +3131,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3090,6 +3158,7 @@ This document contains examples for all message types.
 <a id="M0012"></a>
 ## M0012 Request start or stop of a series of signal groups
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3112,6 +3181,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3138,6 +3208,7 @@ This document contains examples for all message types.
 <a id="M0013"></a>
 ## M0013 Activate a series of inputs
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3160,6 +3231,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3186,9 +3258,7 @@ This document contains examples for all message types.
 <a id="M0014"></a>
 ## M0014 Set command table
 
-### Example message
-
-**Command request**
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3197,7 +3267,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [{
+	"arg":[{
 		"cCI":"M0014",
 		"n":"plan",
 		"cO":"setCommands",
@@ -3248,9 +3318,7 @@ This document contains examples for all message types.
 <a id="M0015"></a>
 ## M0015 Set Offset time
 
-### Example message
-
-**Command request**
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3259,7 +3327,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [{
+	"arg":[{
 		"cCI":"M0015",
 		"n":"status",
 		"cO":"setOffset",
@@ -3288,7 +3356,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:05:57.558Z",
-	"rvs": [{
+	"rvs":[{
 		"cCI":"M0015",
 		"n":"status",
 		"v":"30",
@@ -3305,14 +3373,12 @@ This document contains examples for all message types.
 		"age":"recent"
 	}]
 }
-
 ```
+
 <a id="M0016"></a>
 ## M0016 Set week time table 
 
-### Example message
-
-**Command request**
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3321,7 +3387,7 @@ This document contains examples for all message types.
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [{
+	"arg":[{
 		"cCI":"M0016",
 		"n":"status",
 		"cO":"setWeekTable",
@@ -3345,7 +3411,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:09:47.574Z",
-	"rvs": [{
+	"rvs":[{
 		"cCI":"M0016",
 		"n":"status",
 		"v":"0-2,1-3,2-1,3-1,4-1,5-4,6-4",
@@ -3362,18 +3428,16 @@ This document contains examples for all message types.
 <a id="M0017"></a>
 ## M0017 Set time tables 
 
-### Example message
-
-**Command request**
+**Command Request**
 ``` json
- {
+{
 	"mType":"rSMsg",
 	"type":"CommandRequest",
 	"mId":"0e05974d-223b-47a0-9992-fbe00dd352bd",
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [{
+	"arg":[{
 		"cCI":"M0017",
 		"n":"status",
 		"cO":"setTimeTable",
@@ -3397,7 +3461,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:11:14.105Z",
-	"rvs": [{
+	"rvs":[{
 		"cCI":"M0017",
 		"n":"status",
 		"v":"1-1-6-30,1-0-9-0,1-1-15-30,1-0-18-0,2-1-7-0,2-0-9-0",
@@ -3414,18 +3478,16 @@ This document contains examples for all message types.
 <a id="M0018"></a>
 ## M0018 Set cycle time
 
-### Example message
-
-**Command request**
+**Command Request**
 ``` json
- {
+{
 	"mType":"rSMsg",
 	"type":"CommandRequest",
 	"mId":"0e05974d-223b-47a0-9992-fbe00dd352bd",
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [{
+	"arg":[{
 		"cCI":"M0018",
 		"n":"status",
 		"cO":"setCycleTime",
@@ -3454,7 +3516,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:11:14.105Z",
-	"rvs": [{
+	"rvs":[{
 		"cCI":"M0018",
 		"n":"status",
 		"v":"2",
@@ -3476,18 +3538,16 @@ This document contains examples for all message types.
 <a id="M0019"></a>
 ## M0019 Force input
 
-### Example message
-
-**Command request**
+**Command Request**
 ``` json
- {
+{
 	"mType":"rSMsg",
 	"type":"CommandRequest",
 	"mId":"0e05974d-223b-47a0-9992-fbe00dd352bd",
 	"ntsOId":"KK+AG0503=001TC000",
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
-	"arg": [{
+	"arg":[{
 		"cCI":"M0018",
 		"n":"status",
 		"cO":"setInput",
@@ -3521,7 +3581,7 @@ This document contains examples for all message types.
 	"xNId":"",
 	"cId":"KK+AG0503=001TC000",
 	"cTS":"2016-05-12T12:11:14.105Z",
-	"rvs": [{
+	"rvs":[{
 		"cCI":"M0018",
 		"n":"status",
 		"v":"True",
@@ -3548,6 +3608,7 @@ This document contains examples for all message types.
 <a id="M0020"></a>
 ## M0020 Force output
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3580,6 +3641,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3616,6 +3678,7 @@ This document contains examples for all message types.
 <a id="M0021"></a>
 ## M0021 Set trigger level sensitivity for loop detector
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3638,6 +3701,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3664,6 +3728,7 @@ This document contains examples for all message types.
 <a id="M0103"></a>
 ## M0103 Set security code
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3691,6 +3756,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3722,6 +3788,7 @@ This document contains examples for all message types.
 <a id="M0104"></a>
 ## M0104 Set clock
 
+**Command Request**
 ``` json
 {
 	"mType":"rSMsg",
@@ -3769,6 +3836,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Command Response**
 ``` json
 {
 	"mType":"rSMsg",
