@@ -1,7 +1,7 @@
 # Signal Exchange List
 + **Plant Id**: Plant id
 + **Plant Name**: Plant name
-+ **Constructor**: David Otterdahl
++ **Constructor**: RSMP Nordic
 + **Reviewed**:
 + **Approved**:
 + **Created date**: 2010-04-20
