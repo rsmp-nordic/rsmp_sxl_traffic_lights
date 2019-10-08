@@ -96,6 +96,7 @@ This document contains examples for all message types.
 <a id="A0001"></a>
 ## A0001 Serious hardware error
 
+**Alarm Issue: active**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1825,6 +1826,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1865,6 +1867,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1910,6 +1913,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -1952,6 +1956,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2004,6 +2009,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2069,6 +2075,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2114,6 +2121,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2159,6 +2167,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
@@ -2204,6 +2213,7 @@ This document contains examples for all message types.
 }
 ```
 
+**Status Response**
 ``` json
 {
 	"mType":"rSMsg",
