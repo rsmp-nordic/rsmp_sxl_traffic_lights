@@ -329,7 +329,7 @@ Number of time plans
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|number|long|[1-65025]|Number of time plans|
+|number|long|[1-65025]|Number of time plans (depreciated)|
 
 <a id="S0019"></a>
 ### S0019
