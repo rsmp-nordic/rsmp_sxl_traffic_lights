@@ -168,9 +168,9 @@ field is empty for this reason.
 	"mType": "rSMsg",
 	"type": "CommandRequest",
 	"mId": "E68A0010-C336-41ac-BD58-5C80A72C7092",
-	"ntsOId": "21005",
-	"xNId": "23055",
-	"cId": "O+2043C=481WA001",
+	"ntsOId": "",
+	"xNId": "",
+	"cId": "KK+AG9998=001TC000",
 	"arg": [{
 		"cCI": "M0002",
 		"n": "status",
