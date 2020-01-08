@@ -1,0 +1,30 @@
+# MSC for establish coordination with synchronized cycle counter
+
+msc {
+  hscale = "1.5", arcgradient = "0";
+
+  a [label="Site (follower)"], b [label="Site (leader)"];
+
+  b abox b [ label = "1. Coordination is possible? (if configured)" ];
+  |||;
+  a<=b [ label = "StatusSubscribe S0004" ];
+  |||;
+  a=>b [ label = "StatusUpdate S0004" ];
+  |||;
+  b abox b [ label = "2. Change timeplan" ];
+  |||;
+  b abox b [ label = "3. Change timeplan of all followers" ];
+  |||;
+  a<=b [ label = "CommandRequest M0002" ];
+  |||;
+  a=>b [ label = "CommandResponse M0002" ];
+  |||;
+  b abox b [ label = "4. Wait until base cycle counter reaches zero. The leader sets 'synchronisation pulse' of all followers, which resets their base cycle counter." ];
+  |||;
+  a<=b [ label = "CommandRequest S0013" ];
+  |||;
+  a=>b [ label = "CommandResponse S0013" ];
+  |||;
+  a abox b [ label = "5. Coordination active. If configured, terminate if 'coordination is possible' turns false in any follower" ];
+  |||;
+}
