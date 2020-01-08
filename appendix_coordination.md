@@ -200,38 +200,10 @@ When the primary TLC has connected, messages between the TLC:S are
 sent according to 2.2.2.2. Communication is continuously established
 even if coordination is not active.
 
-Handshake
----------
-At communication establishment, messages are sent in the following
-order. The messages are sent both from primary and secondary TLC:s. 
- 
-1. RSMP/SXL-version (according to chapter 5.4.6 in the
-   RSMP specification). SiteID verification is performed.
-2. Watchdog (according to chapter 5.4.7 in the RSMP-specification)
-3. Aggregated status (according to chapter 5.4.2 in the
-   RSMP-specification).
+The handshake sequence is defined in the RSMP specification, section [Communication establishment between sites](https://github.com/rsmp-nordic/rsmp_core/blob/master/rst/rsmp.rst#communication-establishment-between-sites)
 
-![Figure 2: Message sequence](appendix_coordination_img/figure2.png)
-
-Note:
-- SiteId which is transmitted in RSMP/SXL version is the TLC:s own
-  siteId 
-- If siteId is not coherent with the expected siteId at the other
-  TLC, then the connection should be terminated. The purpose is to
-  reduce the risk of establishing a connection to the wrong TLC.
-  This means that the primary TLC and the secondary TLC must know
-  siteId of the other TLC.
-- ComponentId which is used in all messages is the component-id of
-  the secondary TLC. This means that the primary TLC must know the
-  component-id of the secondary TLC in advance.
-- Watchdog
-  -  Watchdog messages does not adjust time
-  - Sent once per minute from each TLC, timeout after 30 seconds
-- Alarm messages are not sent
--  No communication buffer exists
-
-Initialization progess for local coordination
----------------------------------------------
+Initialization sequence for local coordination
+----------------------------------------------
 1. Primary verifies that local coordination is possible through a
    subscription on Output (S0004) (Output:” Coordination is
    possible”) at all secondaries, thus indicating whether
