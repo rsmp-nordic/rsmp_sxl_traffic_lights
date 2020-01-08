@@ -1,0 +1,36 @@
+# MSC for establish local coordination
+
+msc {
+  hscale = "1.5", arcgradient = "0";
+
+  a [label="Site (follower)"], b [label="Site (leader)"];
+
+  b abox b [ label = "1. Coordination is possible?" ];
+  |||;
+  a<=b [ label = "StatusSubscribe S0004" ];
+  |||;
+  a=>b [ label = "StatusUpdate S0004" ];
+  |||;
+  b abox b [ label = "2. Change timeplan" ];
+  |||;
+  b abox b [ label = "3. Change timeplan of all followers" ];
+  |||;
+  a<=b [ label = "CommandRequest M0002" ];
+  |||;
+  a=>b [ label = "CommandResponse M0002" ];
+  |||;
+  b abox b [ label = "4. Wait until synchronisation step is reached in all followers" ];
+  |||;
+  a<=b [ label = "StatusSubscribe S0004" ];
+  |||;
+  a=>b [ label = "StatusUpdate S0004" ];
+  |||;
+  b abox b [ label = "5. Set 'coordination can continue' in all followers" ];
+  |||;
+  a<=b [ label = "CommandRequest S0013" ];
+  |||;
+  a=>b [ label = "CommandResponse S0013" ];
+  |||;
+  a abox b [ label = "6. Coordination active. Terminate if 'coordination is possible' turns false in any follower" ];
+  |||;
+}
