@@ -27,9 +27,9 @@ msc {
   |||;
   b abox b [ label = "5. Set 'coordination can continue' in all followers" ];
   |||;
-  a<=b [ label = "CommandRequest S0013" ];
+  a<=b [ label = "CommandRequest M0013" ];
   |||;
-  a=>b [ label = "CommandResponse S0013" ];
+  a=>b [ label = "CommandResponse M0013" ];
   |||;
   a abox b [ label = "6. Coordination active. Terminate if 'coordination is possible' turns false in any follower" ];
   |||;
