@@ -223,7 +223,7 @@ Initialization sequence for local coordination
    possible” in all secondary TLC:S (see step 1). If not all
    secondaries is indicating this, coordination is terminated. 
 
-![Figure 3: Sequence at local coordination](appendix_coordination_img/figure3.png)
+![Figure 3: Sequence at local coordination](appendix_coordination_img/figure2.png)
 
 Initialization sequence for coordination with synchronized cycle counter
 ------------------------------------------------------------------------
@@ -247,7 +247,7 @@ Initialization sequence for coordination with synchronized cycle counter
    subscription on output ”Coordination is possible”. Coordination is
    terminated if the condition is not fulfilled.
 
-![Figure 4: Sequence at coordination with synchronized cycle timer](appendix_coordination_img/figure4.png)
+![Figure 4: Sequence at coordination with synchronized cycle timer](appendix_coordination_img/figure3.png)
 
 Termination sequence
 --------------------
@@ -278,7 +278,7 @@ principle is used:
 4. Primary TLC sends message acknowledgment on received command
    response (MessageAck)
 
-![Figure 5: Acknowledgement of executed command](appendix_coordination_img/figure5.png)
+![Figure 5: Acknowledgement of executed command](appendix_coordination_img/figure4.png)
 
 Note:
 - Messages can be sent asynchronously, i.e. as primary waits for
