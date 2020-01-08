@@ -21,9 +21,9 @@ msc {
   |||;
   b abox b [ label = "4. Wait until base cycle counter reaches zero. The leader sets 'synchronisation pulse' of all followers, which resets their base cycle counter." ];
   |||;
-  a<=b [ label = "CommandRequest S0013" ];
+  a<=b [ label = "CommandRequest M0013" ];
   |||;
-  a=>b [ label = "CommandResponse S0013" ];
+  a=>b [ label = "CommandResponse M0013" ];
   |||;
   a abox b [ label = "5. Coordination active. If configured, terminate if 'coordination is possible' turns false in any follower" ];
   |||;
