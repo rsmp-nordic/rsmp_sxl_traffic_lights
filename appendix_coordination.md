@@ -139,14 +139,14 @@ Command types       | Description
 --------------------|------------
 M0002               | Time plan
 M0006/M0013 (Input) | Coordination can continue (local coordination) (true/false)
-M0006/M0013 (Input) | Synchronization pulse (coordination with continue) (true/false)
+M0006/M0013 (Input) | Synchronization pulse (coordination with synchronized cycle counter) (true/false)
 M0006/M0013 (Input) | START/STOP bit (true/false)
 
 
 Status types   | Description
 ---------------|------------
 S0004 (Output) | Coordination is possible (true/false)
-S0004 (Output) | Synchronization step (local coordnation) (true/false)
+S0004 (Output) | Synchronization step (local coordination) (true/false)
 M0004 (Output) | START/STOP bit (true/false)
 
 Please note:
