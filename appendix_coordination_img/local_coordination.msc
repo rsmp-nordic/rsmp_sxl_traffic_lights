@@ -38,7 +38,7 @@ msc {
   |||;
   b abox b [ label = "5. Set 'coordination can continue' in all followers" ];
   |||;
-  a<=b [ label = "CommandRequest M0013 (coordination can continue = true" ];
+  a<=b [ label = "CommandRequest M0013 (coordination can continue = true)" ];
   |||;
   a=>b [ label = "CommandResponse M0013" ];
   |||;
