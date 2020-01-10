@@ -315,14 +315,3 @@ Error code (Content of "Reason") | Description
 0009 | Plan cannot be changed due to higher priority command
 0010 | CPU error
 0011 | Invalid message
-
-Changelog
----------
-
-Version | Date       | Change        | Name (initials) |
---------|------------|---------------|-----------------|
-0.9     | 2012-10-04 | First version | DO
-0.9.5   | 2014-04-30 | Clarifications and adjustments | DO
-0.9.6   | 2014-04-30 | Fix S0004 (was S006) | DO
-0.9.7   | 2015-01-14 | Clarifications partly about change of time plan at initialization of synchronized coordination and that cycle timer isn´t used in local coordination | DO
-
