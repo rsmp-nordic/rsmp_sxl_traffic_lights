@@ -129,9 +129,9 @@ Functional requirements of the TLC
 To establish coordination, it is required that both TLC:s use suitable
 time plan/traffic situation and synchronize their cycle timers.
 
-- It must be possible to configure TLC:s as primary/secondary
-- TLC:s should be able to communicate with up to 20 other TLC:s.
-  (One primary with 20 secondary TLC:s).
+- It must be possible to configure TLC:s as leader/follower
+- One leader TLC should be able to communicate with up to 20 follower
+  TLC:s.
 
 The following input/output is needed
 
@@ -192,11 +192,11 @@ field is empty for this reason.
 
 Communication establishment
 ---------------------------
-Secondary TLC acts server and waits for a primary TLC to connect.
-Should communication fail, it is the responsibility of the primary
+Follower TLC's acts server and waits for a leader TLC to connect.
+Should communication fail, it is the responsibility of the leader
 TLC to connect again.
 
-When the primary TLC has connected, messages between the TLC's are
+When the leader TLC has connected, messages between the TLC's are
 sent according the initialization sequence.
 
 Communication is continuously established even if coordination is not
@@ -206,54 +206,51 @@ The handshake sequence is defined in the RSMP specification, section [Communicat
 
 Initialization sequence for local coordination
 ----------------------------------------------
-1. Primary verifies that local coordination is possible through a
-   subscription on Output (S0004) (Output:” Coordination is
-   possible”) at all secondaries, thus indicating whether
-   coordination is possible or not. If coordination isn´t possible,
-   coordination is terminated. 
-2. Primary switches to coordinated time plan in own installation.
-3. Primary sends command to all secondaries about switching to
-   coordinated time plan.
-4. Primary waits at own synchronisation steps until synchronisation
-   steps (Output: ”Synchronization step”) is active in all secondary
-   TLC:S. Primary must subscribe to synchronisation steps in all
-   secondaries.
-5. Primary activates Input at all secondaries about continued
-   coordination (Input: ”Coordination can continue”)
-6. Primary continuously checks that local coordination is still
-   possible through subscription on output ”Coordination is
-   possible” in all secondary TLC:S (see step 1). If not all
-   secondaries is indicating this, coordination is terminated. 
+1. Leader verifies that coordination is possible through subscription
+   on output (S0004) _coordination is possible_ in all followers. If
+   coordination isn't possible, coordination is terminated.
+2. Leader switches to coordinated time plan in its own TLC.
+3. Leader sends command to all followers to switch to coordinated time
+   plan.
+4. Leader waits at own synchronisation step until synchronisation
+   step is active in all followers. Leader must subscribe to
+   S0004 _Synchronisation step_ in all followers to verify this.
+5. Leader activates input (S0013) _coordination can continue_
+   in all followers about continued coordination.
+6. Leader continuously checks that local coordination is still
+   possible through subscription on output (S0004) _coordination is
+   possible_ in all followers (see step 1). If not all
+   followers are indicating this, coordination is terminated.
 
 ![Figure 3: Sequence at local coordination](appendix_coordination_img/local_coordination.png)
 
 Initialization sequence for coordination with synchronized cycle counter
 ------------------------------------------------------------------------
-1. Primary verifies that coordination is possible through a
-   subscription on Output (S0004) (Output: ”Coordination is
-   possible”) at all secondaries. There needs to be an individual
-   configuration possibility for each secondary whether coordination
-   should proceed regardless if a single secondary can’t activate
-   coordination. 
-2. Primary switches to coordinated time plan in own TLC.
-3. Primary sends command to all secondaries about switching to
-   coordinated time plan. Secondary TLC:s switch time plan when their
-   cycle counters are at 0.
-4. Primary sends synchronization pulse when base-cycle counter is 0.
-   Synchronization pulse means that the cycle counter should be set
-   to 0. Secondaries adds eventual offset-time on their own. 
-5. If external control bits are used: Primary sends START/STOP-order
-   (M0006 / M0013) to secondaries during the cycle. Primary
-   continuously checks that coordination is possible in the secondary
-   that must be a part of the coordination (see step 1) through
-   subscription on output ”Coordination is possible”. Coordination is
-   terminated if the condition is not fulfilled.
+1. Leader verifies that coordination is possible through subscription
+   on output (S0004) _coordination is possible_ in all followers. There
+   needs to be an per site configuration possibility for each follower
+   whether coordination should proceed regardless if a single follower
+   can’t activate coordination.
+2. Leader switches to coordinated time plan in its own TLC.
+3. Leader sends command to all followers to switch to coordinated time
+   plan. Followers switch time plan when their cycle counters reaches
+   zero.
+4. Leader sends synchronization pulse when its base cycle counter
+   reaches zero. Synchronization pulse means that the cycle counter
+   should be set to zero. Followers adds any configured offset time on
+   their own.
+5. Coordination active. If external control bits are used: Leader sends
+   START/STOP order using M0006 or M0013 to followers during the cycle.
+   Leader continuously checks that coordination is possible in all
+   followers (see step 1) through subscription on output (S0094)
+   _Coordination is possible_. Coordination is terminated if it turns false
+   is any follower.
 
 ![Figure 4: Sequence at coordination with synchronized cycle timer](appendix_coordination_img/central_coordination.png)
 
 Termination sequence
 --------------------
-Primary TLC sends a command to secondary TLC:s to change time plan
+The leader TLC sends a command to followers to change time plan
 according to own programming, this command could also come from a
 supervision system.
 
@@ -271,7 +268,7 @@ StatusResponse) needs to be sent because no command is executed.
 
 A command should be acknowledged when received using CommandResponse,
 but for certain commands this is no guarantee that the command really
-is executed. To confirm command execution, Primary TLC:s needs to
+is executed. To confirm command execution, Leader TLC needs to
 subscribe to corresponding statuses and check whether expected statues
 changes according to command.
 
