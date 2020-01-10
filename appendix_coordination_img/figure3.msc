@@ -5,26 +5,38 @@ msc {
 
   a [label="Site (follower)"], b [label="Site (leader)"];
 
-  b abox b [ label = "1. Coordination is possible? (if configured)" ];
+  |||;
+  --- [ label = "Start of coordination" ];
   |||;
   a<=b [ label = "StatusSubscribe S0004" ];
   |||;
-  a=>b [ label = "StatusUpdate S0004" ];
+  b abox b [ label = "1. Wait until coordination is possible in all followers (if configured)" ];
   |||;
-  b abox b [ label = "2. Change timeplan" ];
+  ...;
   |||;
-  b abox b [ label = "3. Change timeplan of all followers" ];
+  a>>b [ label = "StatusUpdate S0004 (Coordination is possible=true)" ];
   |||;
-  a<=b [ label = "CommandRequest M0002" ];
+  b abox b [ label = "2. Change time plan in own TLC" ];
+  |||;
+  b abox b [ label = "3. Change time plan of all followers" ];
+  |||;
+  a<=b [ label = "StatusSubscribe S0014 (Current time plan)" ];
+  a<=b [ label = "CommandRequest M0002 (Set time plan" ];
   |||;
   a=>b [ label = "CommandResponse M0002" ];
   |||;
-  b abox b [ label = "4. Wait until base cycle counter reaches zero. The leader sets 'synchronisation pulse' of all followers, which resets their base cycle counter." ];
+  b abox b [ label = "Wait until all followers has switched time plan" ];
   |||;
-  a<=b [ label = "CommandRequest M0013" ];
+  ...;
+  |||;
+  a>>b [ label = "StatusUpdate S0002 (confirmed switch of time plan)" ];
+  |||;
+  b abox b [ label = "4. Wait until base cycle counter reaches zero in own TLC" ];
+  |||;
+  a<=b [ label = "CommandRequest M0013 (synchronisation pulse=true)" ];
   |||;
   a=>b [ label = "CommandResponse M0013" ];
   |||;
-  a abox b [ label = "5. Coordination active. If configured, terminate if 'coordination is possible' turns false in any follower" ];
+  --- [ label = "5. Coordination active. If configured, terminate if 'coordination is possible' turns false in any follower" ];
   |||;
 }
