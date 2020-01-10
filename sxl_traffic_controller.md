@@ -820,10 +820,10 @@ Set clock
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
 |securityCode|setDate|string|[text]|Security code 1|
-|year|setDate|integer|YYYY|Changes internal clock. Note: UTC is used<br>Year according to YYYY|
-|month|setDate|integer|MM|Changes internal clock. Note: UTC is used<br>Month according to MM (01-12)|
-|day|setDate|integer|DD|Changes internal clock. Note: UTC is used<br>Day in month according to DD (01-31)|
-|hour|setDate|integer|HH|Changes internal clock. Note: UTC is used<br>Hour according to HH (00-23)|
-|minute|setDate|integer|MM|Changes internal clock. Note: UTC is used<br>Minute according to MM (00-23)|
-|second|setDate|integer|SS|Changes internal clock. Note: UTC is used<br>Second according to SS (00-59)|
+|year|setDate|integer|[YYYY]|Changes internal clock. Note: UTC is used<br>Year according to YYYY|
+|month|setDate|integer|[MM]|Changes internal clock. Note: UTC is used<br>Month according to MM (01-12)|
+|day|setDate|integer|[DD]|Changes internal clock. Note: UTC is used<br>Day in month according to DD (01-31)|
+|hour|setDate|integer|[HH]|Changes internal clock. Note: UTC is used<br>Hour according to HH (00-23)|
+|minute|setDate|integer|[MM]|Changes internal clock. Note: UTC is used<br>Minute according to MM (00-23)|
+|second|setDate|integer|[SS]|Changes internal clock. Note: UTC is used<br>Second according to SS (00-59)|
 
