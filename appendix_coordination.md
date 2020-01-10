@@ -260,53 +260,40 @@ Message priority
 At simultaneous communication TLC-TLC and TLC-supervision system –
 then TLC-supervision system has higher priority.
 
-Verification of executed command
---------------------------------
-To acknowledge that a command has been executed, the following
-principle is used:
+Error handling
+--------------
+Messages can be sent asynchronously, i.e. as primary waits for
+secondary to send answer on a command, other messages can be sent
+and received by other TLC:s.
 
-1. Primary TLC sends command to a secondary TLC. A new value is
-   attached (CommandRequest)
-2. Secondary TLC answers that a message has been received and that
-   the message is valid JSON (MessageAck)
-3. Then secondary TLC answers again with answer on command and the
-   new value is attached (CommandResponse). If the attached value is
-   the same as sent in the command in step 1 then this is interpreted
-   as that the command is valid and under processing. If it´s not the
-   same, it is interpreted as that the command is not valid. Eg.
-   componentId/alarmCodeId/commandCodeId/statusCodeId not found
-4. Primary TLC sends message acknowledgment on received command
-   response (MessageAck)
+If a command or status request refers to a signal group or detector
+logic which does not exist, then only MessageNotAck will be sent as
+answer. No response on command (CommandResponse / StatusUpdate /
+StatusResponse) needs to be sent because no command is executed.
 
-![Figure 5: Acknowledgement of executed command](appendix_coordination_img/figure4.png)
+A command should be acknowledged when received using CommandResponse,
+but for certain commands this is no guarantee that the command really
+is executed. To confirm command execution, Primary TLC:s needs to
+subscribe to corresponding statuses and check whether expected statues
+changes according to command.
 
-Note:
-- Messages can be sent asynchronously, i.e. as primary waits for
-  secondary to send answer on a command, other messages can be sent
-  and received by other TLC:s.
-- If a command or status request refers to a signal group or
-  detector logic which does not exist, then only MessageNotAck will
-  be sent as answer. No response on command
-  (CommandResponse/StatusUpdate/StatusResponse) needs to be sent
-  because no command is executed.
-- A command should be acknowledged when received using
-  CommandResponse, but for certain commands this is no guarantee
-  that the command really is executed. To confirm command execution,
-  Primary TLC:s needs to subscribe to corresponding statuses and
-  check whether expected statues changes according to command.
-- MessageNotAck terminates coordination, but communication continues
-  to be active. 
-- If an error occurs which causes MessageNotAck to be sent, then
-  alarm A0005 must continuously be activated in the TLC.
-  - Alarm is activated at first received MessageNotAck. The TLC
-    should not try to send the same command multiple times as an
-    effect of MessageNotAck with the intention of later succeeding
-    with the command.
-  - Alarm is activated in both of the TLC:s  sending MessageNotAck
-    as well as the TLC the message.
-  - Alarm A0005 is sent to the supervision system.
-  - The following message which leads to MessageAck deactivates
-    alarm A0005
+MessageNotAck terminates coordination, but communication continues
+to be active. 
+
+If an error occurs which causes MessageNotAck to be sent, then alarm
+A0005 must continuously be activated in the TLC.
+
+- Alarm is activated at first received MessageNotAck. The TLC should not
+  try to send the same command multiple times as an effect of
+  MessageNotAck with the intention of later succeeding with the command.
+
+- Alarm is activated in both of the TLC:s sending MessageNotAck
+  as well as the TLC the message.
+
+- Alarm A0005 is sent to the supervision system.
+
+- The next message which leads to MessageAck deactivates
+  alarm A0005
 
 Error codes for MessageNotAck
 -----------------------------
