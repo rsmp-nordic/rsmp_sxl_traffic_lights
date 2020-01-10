@@ -140,14 +140,14 @@ Command types       | Description
 M0002               | Time plan
 M0006/M0013 (Input) | Coordination can continue (local coordination) (true/false)
 M0006/M0013 (Input) | Synchronization pulse (coordination with continue) (true/false)
-M0006/M0013 (Input) | START bit (true/false)
-M0006/M0013 (Input) | STOP bit (true/false)
+M0006/M0013 (Input) | START/STOP bit (true/false)
 
 
 Status types   | Description
 ---------------|------------
 S0004 (Output) | Coordination is possible (true/false)
 S0004 (Output) | Synchronization step (local coordnation) (true/false)
+M0004 (Output) | START/STOP bit (true/false)
 
 Please note:
 - securityCode is ignored at TLC-TLC-communication. Fields for
@@ -223,6 +223,8 @@ Initialization sequence for local coordination
    terminated if it turns false in any follower.
 7. Leader sends START/STOP order using M0006 or M0013 to followers
    during each cycle.
+8. Leader receives START/STOP order using output (M0004) from followers
+   during each cycle.
 
 ![Figure 3: Sequence at local coordination](appendix_coordination_img/local_coordination.png)
 
@@ -245,8 +247,10 @@ Initialization sequence for coordination with synchronized cycle counter
    still is possible in all followers (see step 1) through subscription
    on output (S0004) _coordination is possible_. Coordination is
    terminated if it turns false is any follower.
-6. If external control bits are used: Leader sends START/STOP order
-   using M0006 or M0013 to followers during each cycle.
+6. If external control bits are used: Leader sends START/STOP order to
+   followers during each cycle
+7. If external control bits are used: Leader receives START/STOP order
+   using output (M0004) from followers during each cycle.
 
 ![Figure 4: Sequence at coordination with synchronized cycle timer](appendix_coordination_img/central_coordination.png)
 

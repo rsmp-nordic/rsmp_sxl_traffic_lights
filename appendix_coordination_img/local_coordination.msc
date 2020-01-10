@@ -47,5 +47,7 @@ msc {
   ...;
   a<=b [ label = "7. CommandRequest M0013 (START/STOP)" ];
   ...;
+  a>>b [ label = "8. StatusUpdate S0004 (START/STOP)" ];
+  ...;
   |||;
 }
