@@ -250,9 +250,11 @@ Initialization sequence for coordination with synchronized cycle counter
 
 Termination sequence
 --------------------
-The leader TLC sends a command to followers to change time plan
-according to own programming, this command could also come from a
-supervision system.
+1. If using local coordination, the leader TLC deactivates input (S0013)
+   _coordination can continue_ in all followers.
+2. The leader TLC sends a command to followers to change time plan
+   according to own programming, this command can also come from a
+   supervision system.
 
 Message priority
 ----------------
