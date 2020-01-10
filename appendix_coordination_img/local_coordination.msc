@@ -6,7 +6,7 @@ msc {
   a [label="Site(s) (follower)"], b [label="Site (leader)"];
 
   |||;
-  --- [ label = "Start of coordination" ];
+  --- [ label = "Initialization of coordination" ];
   |||;
   a<=b [ label = "StatusSubscribe S0004 (Output status)" ];
   |||;
@@ -42,6 +42,10 @@ msc {
   |||;
   a=>b [ label = "CommandResponse M0013" ];
   |||;
-  --- [ label = "6. Coordination active. Terminate if 'coordination is possible' turns false in any follower" ];
+  --- [ label = "6. Coordination active" ];
+  |||;
+  ...;
+  a<=b [ label = "CommandRequest M0013 (START/STOP))" ];
+  ...;
   |||;
 }
