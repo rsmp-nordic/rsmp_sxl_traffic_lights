@@ -27,7 +27,7 @@ hours should e.g. the entire traffic signal area be coordinated at
 central level while a split in locally coordinated sub areas should be
 possible during normal off-peak hours. 
 
-![Figure 1: Types of coordination](appendix_coordination_img/types_of_coordination.png)
+![Figure 1: Types of coordination](img/types_of_coordination.png)
 
 Coordination type "Local coordination"
 --------------------------------------
