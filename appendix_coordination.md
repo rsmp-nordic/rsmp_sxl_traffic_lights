@@ -27,7 +27,7 @@ hours should e.g. the entire traffic signal area be coordinated at
 central level while a split in locally coordinated sub areas should be
 possible during normal off-peak hours. 
 
-![Figure 1: Coordination types](appendix_coordination_img/figure1.png)
+![Figure 1: Types of coordination](appendix_coordination_img/types_of_coordination.png)
 
 Coordination type "Local coordination"
 --------------------------------------
@@ -223,7 +223,7 @@ Initialization sequence for local coordination
    possible” in all secondary TLC:S (see step 1). If not all
    secondaries is indicating this, coordination is terminated. 
 
-![Figure 3: Sequence at local coordination](appendix_coordination_img/figure2.png)
+![Figure 3: Sequence at local coordination](appendix_coordination_img/local_coordination.png)
 
 Initialization sequence for coordination with synchronized cycle counter
 ------------------------------------------------------------------------
@@ -247,7 +247,7 @@ Initialization sequence for coordination with synchronized cycle counter
    subscription on output ”Coordination is possible”. Coordination is
    terminated if the condition is not fulfilled.
 
-![Figure 4: Sequence at coordination with synchronized cycle timer](appendix_coordination_img/figure3.png)
+![Figure 4: Sequence at coordination with synchronized cycle timer](appendix_coordination_img/central_coordination.png)
 
 Termination sequence
 --------------------
