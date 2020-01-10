@@ -217,10 +217,12 @@ Initialization sequence for local coordination
    S0004 _Synchronisation step_ in all followers to verify this.
 5. Leader activates input (S0013) _coordination can continue_
    in all followers about continued coordination.
-6. Coordination active. Leader continuously checks that local
-   coordination is still possible through subscription on output (S0004)
-   _coordination is possible_ in all followers (see step 1). If not all
-   followers are indicating this, coordination is terminated.
+6. Coordination active. Leader continuously checks that coordination
+   still is possible in all followers (see step 1) through subscription
+   on output (S0004) _coordination is possible_. Coordination is
+   terminated if it turns false in any follower.
+7. Leader sends START/STOP order using M0006 or M0013 to followers
+   during each cycle.
 
 ![Figure 3: Sequence at local coordination](appendix_coordination_img/local_coordination.png)
 
@@ -239,12 +241,12 @@ Initialization sequence for coordination with synchronized cycle counter
    reaches zero. Synchronization pulse means that the cycle counter
    should be set to zero. Followers adds any configured offset time on
    their own.
-5. Coordination active. If external control bits are used: Leader sends
-   START/STOP order using M0006 or M0013 to followers during the cycle.
-   Leader continuously checks that coordination is possible in all
-   followers (see step 1) through subscription on output (S0004)
-   _coordination is possible_. Coordination is terminated if it turns false
-   is any follower.
+5. Coordination active. Leader continuously checks that coordination
+   still is possible in all followers (see step 1) through subscription
+   on output (S0004) _coordination is possible_. Coordination is
+   terminated if it turns false is any follower.
+6. If external control bits are used: Leader sends START/STOP order
+   using M0006 or M0013 to followers during each cycle.
 
 ![Figure 4: Sequence at coordination with synchronized cycle timer](appendix_coordination_img/central_coordination.png)
 
