@@ -264,10 +264,6 @@ then TLC-supervision system has higher priority.
 
 Error handling
 --------------
-Messages can be sent asynchronously, i.e. as primary waits for
-secondary to send answer on a command, other messages can be sent
-and received by other TLC:s.
-
 If a command or status request refers to a signal group or detector
 logic which does not exist, then only MessageNotAck will be sent as
 answer. No response on command (CommandResponse / StatusUpdate /
