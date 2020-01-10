@@ -34,7 +34,7 @@ msc {
   b abox b [ label = "4. Wait until synchronisation step is reached in all followers" ];
   ...;
   |||;
-  a>>b [ label = "StatusUpdate S0004 (synchronisation step is true" ];
+  a>>b [ label = "StatusUpdate S0004 (synchronisation step is true)" ];
   |||;
   b abox b [ label = "5. Set 'coordination can continue' in all followers" ];
   |||;
