@@ -45,7 +45,7 @@ msc {
   --- [ label = "6. Coordination active" ];
   |||;
   ...;
-  a<=b [ label = "CommandRequest M0013 (START/STOP))" ];
+  a<=b [ label = "7. CommandRequest M0013 (START/STOP)" ];
   ...;
   |||;
 }
