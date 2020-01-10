@@ -24,12 +24,6 @@ It is true that the RSMP specification doesn't really explain this which bits
 are possible to send and which aren't, but it can theoretically differ depending
 of technical area and implementation of TLC.
 
-The 8 status bits doesn't really contain any unique data - all the information
-are available in alarms and statuses. The 8 status bits are only present to ease
-the integration work with the existing NTS system within Trafikverket. We use
-separate requirement documents for our supervision systems to explain the
-integration work needed for interfacing with our existing NTS system.
-
 <a id="2"></a>
 Statuses with 'intersection'
 ----------------------------
