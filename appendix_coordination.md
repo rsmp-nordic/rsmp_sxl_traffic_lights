@@ -242,7 +242,7 @@ Initialization sequence for coordination with synchronized cycle counter
 5. Coordination active. If external control bits are used: Leader sends
    START/STOP order using M0006 or M0013 to followers during the cycle.
    Leader continuously checks that coordination is possible in all
-   followers (see step 1) through subscription on output (S0094)
+   followers (see step 1) through subscription on output (S0004)
    _Coordination is possible_. Coordination is terminated if it turns false
    is any follower.
 
