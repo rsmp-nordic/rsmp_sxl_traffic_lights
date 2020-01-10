@@ -13,7 +13,7 @@ Local coordination can be applied in minor systems (up to 4
 intersections). Control will in these systems be made with a common and
 variable cycle depending on the traffic.
 
-Central coordination can be applied in major systems (up to some 10
+Central coordination can be applied in major systems (up to some 20
 intersections or more). In central coordination a special master (M),
 a combination of master/controller (M/C) or a system of cableless linking
 is used. Within the system control bits should be sent according to in
