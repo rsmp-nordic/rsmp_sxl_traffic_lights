@@ -196,9 +196,11 @@ Secondary TLC acts server and waits for a primary TLC to connect.
 Should communication fail, it is the responsibility of the primary
 TLC to connect again.
 
-When the primary TLC has connected, messages between the TLC:S are
-sent according to 2.2.2.2. Communication is continuously established
-even if coordination is not active.
+When the primary TLC has connected, messages between the TLC's are
+sent according the initialization sequence.
+
+Communication is continuously established even if coordination is not
+active.
 
 The handshake sequence is defined in the RSMP specification, section [Communication establishment between sites](https://github.com/rsmp-nordic/rsmp_core/blob/master/rst/rsmp.rst#communication-establishment-between-sites)
 
