@@ -226,7 +226,7 @@ Initialization sequence for local coordination
 8. Leader receives START/STOP order using output (M0004) from followers
    during each cycle.
 
-![Figure 3: Sequence at local coordination](appendix_coordination_img/local_coordination.png)
+![Figure 2: Sequence for local coordination](img/local_coordination.png)
 
 Initialization sequence for coordination with synchronized cycle counter
 ------------------------------------------------------------------------
@@ -252,7 +252,7 @@ Initialization sequence for coordination with synchronized cycle counter
 7. If external control bits are used: Leader receives START/STOP order
    using output (M0004) from followers during each cycle.
 
-![Figure 4: Sequence at coordination with synchronized cycle timer](appendix_coordination_img/central_coordination.png)
+![Figure 3: Sequence for coordination with synchronized cycle timer](img/central_coordination.png)
 
 Termination sequence
 --------------------
