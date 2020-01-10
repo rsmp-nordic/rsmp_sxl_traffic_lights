@@ -217,7 +217,7 @@ Initialization sequence for local coordination
    TLC:S. Primary must subscribe to synchronisation steps in all
    secondaries.
 5. Primary activates Input at all secondaries about continued
-   coordination (Input: ”Coordination can proceed”)
+   coordination (Input: ”Coordination can continue”)
 6. Primary continuously checks that local coordination is still
    possible through subscription on output ”Coordination is
    possible” in all secondary TLC:S (see step 1). If not all
