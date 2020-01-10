@@ -21,7 +21,7 @@ msc {
   b abox b [ label = "3. Change time plan of all followers" ];
   |||;
   a<=b [ label = "StatusSubscribe S0014 (Current time plan)" ];
-  a<=b [ label = "CommandRequest M0002 (Set time plan" ];
+  a<=b [ label = "CommandRequest M0002 (Set time plan)" ];
   |||;
   a=>b [ label = "CommandResponse M0002" ];
   |||;
