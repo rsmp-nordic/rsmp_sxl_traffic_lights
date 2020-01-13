@@ -16,8 +16,8 @@ variable cycle depending on the traffic.
 Central coordination can be applied in major systems (up to some 20
 intersections or more). In central coordination a special master (M),
 a combination of master/controller (M/C) or a system of cableless linking
-is used. Within the system control bits should be sent according to in
-advance designed time plans with selected and fixed cycle times for 
+is used. Within the system control bits should be sent according to time
+plans designed in advance with selected and fixed cycle times for 
 different traffic levels. In the individual intersection a certain
 smaller degree of traffic adaption should be allowed, however, only
 within the framework of the fixed and given cycle time.
@@ -64,8 +64,8 @@ increments of one second up to at least 180 seconds.
 
 Signal group(s) should typically be able to have green 2 times per cycle.
 
-Change between time plans should typically be possible to make at
-optional points in the cycle, different in different time plans. Change
+Change between time plans should typically be possible at optional points
+in the cycle, at different points in different time plans. Change
 must not follow so that fixed times such as red/yellow, minimum green,
 pedestrian green and green/yellow will be reduced or excluded.
 Coordination should be achieved by exchanging the normal start bits
