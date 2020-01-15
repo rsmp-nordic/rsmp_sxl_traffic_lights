@@ -147,7 +147,7 @@ Status types   | Description
 ---------------|------------
 S0004 (Output) | Coordination is possible (true/false)
 S0004 (Output) | Synchronization step (local coordination) (true/false)
-M0004 (Output) | START/STOP bit (true/false)
+S0004 (Output) | START/STOP bit (true/false)
 
 Please note:
 - securityCode is ignored at TLC-TLC-communication. Fields for
