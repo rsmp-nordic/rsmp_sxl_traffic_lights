@@ -73,6 +73,9 @@ Aggregated status per grouped object
 |Detector logic|[A0301](#A0301)|Detector error (hardware)|Defined by manufacturer|3|D|
 |Detector logic|[A0302](#A0302)|Detector error (logic error)|Defined by manufacturer|3|D|
 
+A0001
+Serious hardware error. Allvarligt fel
+
 ## Return values
 
 <a id="A0008"></a>
