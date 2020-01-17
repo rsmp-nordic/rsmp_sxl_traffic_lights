@@ -25,9 +25,14 @@ within the framework of the fixed and given cycle time.
 The two coordination levels should be possible to combine. During peak
 hours should e.g. the entire traffic signal area be coordinated at
 central level while a split in locally coordinated sub areas should be
-possible during normal off-peak hours. 
+possible during normal off-peak hours.
 
 ![Figure 1: Types of coordination](img/types_of_coordination.png)
+
+Since there are variants of coordination which are not strictly
+centralized but still uses the same principles of communication, the
+term _coordination with synchronized cycle counter_ is used rather than
+_central coordination_ here on after.
 
 Coordination type "Local coordination"
 --------------------------------------
@@ -53,11 +58,11 @@ Variation in programming to achieve desired functionality according to
 specifications may vary without having any impact on coordination
 communication.
 
-Coordination type "Central coordination"
-----------------------------------------
-Coordination type “Central coordination” should typically be possible to
-operate in multiple time plans with optional signal group sequence split
-and/or cycle time. 
+Coordination with synchronized cycle counter
+--------------------------------------------
+Coordination with synchronized cycle counter should typically be possible
+to operate in multiple time plans with optional signal group sequence
+split and/or cycle time.
 
 The cycle time of the time plans should be possible to select in
 increments of one second up to at least 180 seconds.
@@ -75,7 +80,7 @@ second steps.
 If control bits to the local TLC is missing for 120 seconds, the TLC
 should automatically transfer to predetermined back up or safety mode.
 If/when the control bits returns, the TLC should automatically return to
-central coordination.
+coordination.
 
 The control bits, arranged and time distributed within the framework of
 the cycle of the time plan, should give the coordinated installation a
