@@ -58,6 +58,10 @@ Variation in programming to achieve desired functionality according to
 specifications may vary without having any impact on coordination
 communication.
 
+![Figure 2: Front edge](img/front_edge.png)
+
+![Figure 3: Rear edge](img/rear_edge.png)
+
 Coordination with synchronized cycle counter
 --------------------------------------------
 Coordination with synchronized cycle counter should typically be possible
@@ -231,7 +235,7 @@ Initialization sequence for local coordination
 8. Leader receives START/STOP order using output (M0004) from followers
    during each cycle.
 
-![Figure 2: Sequence for local coordination](img/local_coordination.png)
+![Figure 4: Sequence for local coordination](img/local_coordination.png)
 
 Initialization sequence for coordination with synchronized cycle counter
 ------------------------------------------------------------------------
@@ -258,7 +262,7 @@ Initialization sequence for coordination with synchronized cycle counter
 7. If external control bits are used: Leader receives START/STOP order
    using output (M0004) from followers during each cycle.
 
-![Figure 3: Sequence for coordination with synchronized cycle timer](img/central_coordination.png)
+![Figure 5: Sequence for coordination with synchronized cycle timer](img/central_coordination.png)
 
 Termination sequence
 --------------------
