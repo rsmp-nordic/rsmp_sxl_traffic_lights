@@ -237,7 +237,7 @@ Initialization sequence for coordination with synchronized cycle counter
 ------------------------------------------------------------------------
 1. Leader verifies that coordination is possible through subscription
    on output (S0004) _coordination is possible_ in all followers. There
-   needs to be an per site configuration possibility for each follower
+   needs to be a per site configuration possibility for each follower
    whether coordination should proceed regardless if a single follower
    can’t activate coordination.
 2. Leader switches to coordinated time plan in its own TLC.
@@ -251,7 +251,8 @@ Initialization sequence for coordination with synchronized cycle counter
 5. Coordination active. Leader continuously checks that coordination
    still is possible in all followers (see step 1) through subscription
    on output (S0004) _coordination is possible_. Coordination is
-   terminated if it turns false is any follower.
+   terminated if output (S0004) _coordination is possible_ turns false is
+   any follower TLC.
 6. If external control bits are used: Leader sends START/STOP order to
    followers during each cycle
 7. If external control bits are used: Leader receives START/STOP order
@@ -310,11 +311,11 @@ common error code list
 
 Error code (Content of "Reason") | Description
 ---------------------------------|------------
-0001 | SXL missmatch. Command does not exist
-0002 | SXL missmatch. Status does not exist
-0003 | SXL missmatch. Wrong number of arguments
-0004 | SXL missmatch. Argument out of range
-0005 | SXL missmatch. Argument improperly formatted
+0001 | SXL mismatch. Command does not exist
+0002 | SXL mismatch. Status does not exist
+0003 | SXL mismatch. Wrong number of arguments
+0004 | SXL mismatch. Argument out of range
+0005 | SXL mismatch. Argument improperly formatted
 0006 | I/O out of range or not found
 0007 | I/O cannot be modified
 0008 | Plan does not exist
