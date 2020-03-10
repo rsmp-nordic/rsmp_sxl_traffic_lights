@@ -40,7 +40,7 @@ Local coordination is achieved by supplementing the TLC:s control bits
 of the signal groups with special control bits from signal group(s) in
 another intersection.
 
-This can be achieved with the following the following status modes:
+This can be achieved with the following status modes:
 - “Front edge of green wave”, which is normally sent when conflicting
   signal group in downstream traffic lights turns yellow
 - “Rear edge of green wave”, which is normally sent when demand for
