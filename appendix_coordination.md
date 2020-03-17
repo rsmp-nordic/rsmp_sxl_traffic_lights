@@ -82,7 +82,7 @@ against special control bits which should be possible to send per one
 second steps.
 
 If control bits to the local TLC is missing for 120 seconds, the TLC
-should automatically transfer to predetermined back up or safety mode.
+should automatically revert to a predetermined back up or safety mode.
 If/when the control bits returns, the TLC should automatically return to
 coordination.
 
@@ -93,8 +93,8 @@ certain signal group sequence, split and offset between TLC'S.
 The control bits should be possible to use internally in a TLC or be
 possible to send externally to another TLC which consequently also
 should be able to receive externally incoming control bits. Together
-with new control bits, the internal intelligence of the TLC should in
-other respects be utilized normally, among other things, for
+with new control bits, the internal logic of the TLC should in
+other aspects proceed normally, among other things, for
 communication between the signal groups.
 
 Coordination with control bits
