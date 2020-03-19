@@ -542,7 +542,7 @@ Traffic Counting: Number of vehicles
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|vehicles|string|[0-65535,...]|Number of vehicles<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|vehicles|string|[0-65535,...]|Number of vehicles<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
 
 <a id="S0206"></a>
 ### S0206
@@ -551,7 +551,7 @@ Traffic Counting: Vehicle speed
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|speed|string|[0-65535,...]|Average speed in km/h (integer)<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|speed|string|[0-65535,...]|Average speed in km/h (integer)<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
 
 <a id="S0207"></a>
 ### S0207
@@ -560,7 +560,7 @@ Traffic Counting: Occupancy
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|occupancy|string|[0-100,...]|Occupancy in percent (%) (0-100)<ul><li>Value expressed as an integer with a range of 0-100.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|occupancy|string|[0-100,...]|Occupancy in percent (%) (0-100)<ul><li>Value expressed as an integer with a range of 0-100.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
 
 <a id="S0208"></a>
 ### S0208
@@ -569,15 +569,15 @@ Traffic Counting: Number of vehicles of given classification
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
 |start|string|[time stamp]|Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
-|P|string|[0-65535,...]|Number of cars<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
-|PS|string|[0-65535,...]|Number of cars with trailers<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
-|L|string|[0-65535,...]|Number of trucks<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
-|LS|string|[0-65535,...]|Number of trucks with trailers<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
-|B|string|[0-65535,...]|Number of busses<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
-|SP|string|[0-65535,...]|Number of trams<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
-|MC|string|[0-65535,...]|Number of motor cycles<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
-|C|string|[0-65535,...]|Number of bicycles<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
-|F|string|[0-65535,...]|Number of pedestrians<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a colon. </li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|P|string|[0-65535,...]|Number of cars<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|PS|string|[0-65535,...]|Number of cars with trailers<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|L|string|[0-65535,...]|Number of trucks<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|LS|string|[0-65535,...]|Number of trucks with trailers<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|B|string|[0-65535,...]|Number of busses<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|SP|string|[0-65535,...]|Number of trams<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|MC|string|[0-65535,...]|Number of motor cycles<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|C|string|[0-65535,...]|Number of bicycles<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
+|F|string|[0-65535,...]|Number of pedestrians<ul><li>Value expressed as an integer with a range of 0-65535.</li><li>Contains data from all detector logics. Each detector logic is separated with a comma.</li><li>The value is set to “-1” if no data could be measured (e.g. detector fault)</li></ul>|
 
 <a id="commands"></a>
 
