@@ -814,12 +814,12 @@ This document contains examples for all message types.
 	"sS":[{
 		"sCI":"S0007",
 		"n":"intersection",
-		"s":"True",
+		"s":"1",
 		"q":"recent"
 	},{
 		"sCI":"S0007",
 		"n":"status",
-		"s":"1",
+		"s":"True",
 		"q":"recent"
 	}]
 }
