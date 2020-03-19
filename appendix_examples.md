@@ -2387,7 +2387,7 @@ This document contains examples for all message types.
 	},{
 		"sCI":"S0205",
 		"n":"vehicles",
-		"s":"32:31:24:41:41:32",
+		"s":"32,31,24,41,41,32",
 		"q":"recent"
 	}]
 }
@@ -2433,7 +2433,7 @@ This document contains examples for all message types.
 	},{
 		"sCI":"S0206",
 		"n":"speed",
-		"s":"32:31:24:41:41:32",
+		"s":"32,31,24,41,41,32",
 		"q":"recent"
 	}]
 }
@@ -2479,7 +2479,7 @@ This document contains examples for all message types.
 	},{
 		"sCI":"S0207",
 		"n":"occupancy",
-		"s":"32:31:24:41:41:32",
+		"s":"32,31,24,41,41,32",
 		"q":"recent"
 	}]
 }
@@ -2549,47 +2549,47 @@ This document contains examples for all message types.
 	},{
 		"sCI":"S0208",
 		"n":"P",
-		"s":"2:3:2:1:1:2",
+		"s":"2,3,2,1,1,2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"PS",
-		"s":"9:3:5:1:1:2",
+		"s":"9,3,5,1,1,2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"L",
-		"s":"3:5:2:1:1:2",
+		"s":"3,5,2,1,1,2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"LS",
-		"s":"2:3:2:1:1:2",
+		"s":"2,3,2,1,1,2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"B",
-		"s":"8:3:2:1:1:2",
+		"s":"8,3,2,1,1,2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"SP",
-		"s":"1:1:2:1:1:2",
+		"s":"1,1,2,1,1,2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"MC",
-		"s":"4:3:3:1:1:2",
+		"s":"4,3,3,1,1,2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"C",
-		"s":"8:3:2:1:1:2",
+		"s":"8,3,2,1,1,2",
 		"q":"recent"
 	},{
 		"sCI":"S0208",
 		"n":"F",
-		"s":"5:3:2:1:1:2",
+		"s":"5,3,2,1,1,2",
 		"q":"recent"
 	}]
 }
