@@ -25,7 +25,7 @@ Grouped objects
 ---------------
 |ObjectType|Description|
 |----------|-----------|
-|Traffic Controller||
+|Traffic Light Controller||
 
 Single objects
 --------------
@@ -39,33 +39,33 @@ Aggregated status per grouped object
 ====================================
 |ObjectType|Status|functionalPosition|functionalState|Description|
 |----------|------|------------------|---------------|-----------|
-|Traffic Controller|See state-bit definitions below||||
+|Traffic Light Controller|See state-bit definitions below||||
 
 |State- Bit nr (12345678)|Description|Comment|
 |------------------------|-----------|-------|
-|1|Local mode|Traffic Controller is in local mode. NTS has no control.|
+|1|Local mode|Traffic Light Controller is in local mode. NTS has no control.|
 |2|No communications||
-|3|High priority fault|Traffic Controller is in fail safe mode<br> e.g. yellow flash or dark mode|
-|4|Medium priority fault|Traffic Controller has a medium priority fault, but not in fail safe mode.<br>E.g. several lamp faults or detector fault|
-|5|Low priority fault|Traffic Controller has a low priority fault. E.g. Detector fault|
+|3|High priority fault|Traffic Light Controller is in fail safe mode<br> e.g. yellow flash or dark mode|
+|4|Medium priority fault|Traffic Light Controller has a medium priority fault, but not in fail safe mode.<br>E.g. several lamp faults or detector fault|
+|5|Low priority fault|Traffic Light Controller has a low priority fault. E.g. Detector fault|
 |6|Connected / Normal - In Use||
-|7|Connected / Normal - Idle|Traffic Controller dark according to configuration.<br>NOTE! When dark according to configuration the controller is considered to be in use|
+|7|Connected / Normal - Idle|Traffic Light Controller dark according to configuration.<br>NOTE! When dark according to configuration the controller is considered to be in use|
 |8|Not Connected||
 
 <a id="alarms"></a>
 # Alarms
 | ObjectType | alarmCodeId | Description | externalAlarmCodeId | Priority | Category |
 | ---------- |:-----------:| ----------- | ------------------- |:--------:|:--------:|
-|Traffic Controller|A0001|Serious hardware error|Defined by manufacturer|2|D|
-|Traffic Controller|A0002|Less serious hardware error|Defined by manufacturer|3|D|
-|Traffic Controller|A0003|Serious configuration error|Defined by manufacturer|2|D|
-|Traffic Controller|A0004|Less serious configuration error|Defined by manufacturer|3|D|
-|Traffic Controller|A0005|Communication error between traffic controllers / synchronisation error|Defined by manufacturer|3|D|
-|Traffic Controller|A0006|Safety error|Defined by manufacturer|2|D|
-|Traffic Controller|A0007|Communication error between one or multiple traffic controllers and central control system|Defined by manufacturer|3|D|
+|Traffic Light Controller|A0001|Serious hardware error|Defined by manufacturer|2|D|
+|Traffic Light Controller|A0002|Less serious hardware error|Defined by manufacturer|3|D|
+|Traffic Light Controller|A0003|Serious configuration error|Defined by manufacturer|2|D|
+|Traffic Light Controller|A0004|Less serious configuration error|Defined by manufacturer|3|D|
+|Traffic Light Controller|A0005|Communication error between traffic light controllers / synchronisation error|Defined by manufacturer|3|D|
+|Traffic Light Controller|A0006|Safety error|Defined by manufacturer|2|D|
+|Traffic Light Controller|A0007|Communication error between one or multiple traffic light controllers and central control system|Defined by manufacturer|3|D|
 |Signal group|[A0008](#A0008)|Dead lock error|Defined by manufacturer|2|D|
-|Traffic Controller|A0009|Other error|Defined by manufacturer|3|D|
-|Traffic Controller|A0010|Door open|Defined by manufacturer|3|D|
+|Traffic Light Controller|A0009|Other error|Defined by manufacturer|3|D|
+|Traffic Light Controller|A0010|Door open|Defined by manufacturer|3|D|
 |Signal group|A0101|Pushbutton error|Defined by manufacturer|3|D|
 |Signal group|[A0201](#A0201)|Serious lamp error|Defined by manufacturer|2|D|
 |Signal group|[A0202](#A0202)|Less serious lamp error|Defined by manufacturer|3|D|
@@ -126,50 +126,50 @@ Detector error (logic error)
 # Status
 | ObjectType | statusCodeId | Description |
 | ---------- |:------------:| ----------- |
-|Traffic Controller|[S0001](#S0001)|Signal group status|
-|Traffic Controller|[S0002](#S0002)|Detector logic status|
-|Traffic Controller|[S0003](#S0003)|Input status|
-|Traffic Controller|[S0004](#S0004)|Output status|
-|Traffic Controller|[S0005](#S0005)|Traffic Controller starting|
-|Traffic Controller|[S0006](#S0006)|Emergency stage|
-|Traffic Controller|[S0007](#S0007)|Controller switched on|
-|Traffic Controller|[S0008](#S0008)|Manual control|
-|Traffic Controller|[S0009](#S0009)|Fixed time control|
-|Traffic Controller|[S0010](#S0010)|Isolated control|
-|Traffic Controller|[S0011](#S0011)|Yellow flash|
-|Traffic Controller|[S0012](#S0012)|All red|
-|Traffic Controller|[S0013](#S0013)|Police key|
-|Traffic Controller|[S0014](#S0014)|Current time plan|
-|Traffic Controller|[S0015](#S0015)|Current traffic situation|
-|Traffic Controller|[S0016](#S0016)|Number of detector logics|
-|Traffic Controller|[S0017](#S0017)|Number of signal groups|
-|Traffic Controller|[S0018](#S0018)|Number of time plans|
-|Traffic Controller|[S0019](#S0019)|Number of traffic situations|
-|Traffic Controller|[S0020](#S0020)|Control mode|
-|Traffic Controller|[S0021](#S0021)|Manually set detector logic|
-|Traffic Controller|[S0022](#S0022)|List of time plans|
-|Traffic Controller|[S0023](#S0023)|Command table|
-|Traffic Controller|[S0024](#S0024)|Offset time|
+|Traffic Light Controller|[S0001](#S0001)|Signal group status|
+|Traffic Light Controller|[S0002](#S0002)|Detector logic status|
+|Traffic Light Controller|[S0003](#S0003)|Input status|
+|Traffic Light Controller|[S0004](#S0004)|Output status|
+|Traffic Light Controller|[S0005](#S0005)|Traffic Light Controller starting|
+|Traffic Light Controller|[S0006](#S0006)|Emergency stage|
+|Traffic Light Controller|[S0007](#S0007)|Controller switched on|
+|Traffic Light Controller|[S0008](#S0008)|Manual control|
+|Traffic Light Controller|[S0009](#S0009)|Fixed time control|
+|Traffic Light Controller|[S0010](#S0010)|Isolated control|
+|Traffic Light Controller|[S0011](#S0011)|Yellow flash|
+|Traffic Light Controller|[S0012](#S0012)|All red|
+|Traffic Light Controller|[S0013](#S0013)|Police key|
+|Traffic Light Controller|[S0014](#S0014)|Current time plan|
+|Traffic Light Controller|[S0015](#S0015)|Current traffic situation|
+|Traffic Light Controller|[S0016](#S0016)|Number of detector logics|
+|Traffic Light Controller|[S0017](#S0017)|Number of signal groups|
+|Traffic Light Controller|[S0018](#S0018)|Number of time plans|
+|Traffic Light Controller|[S0019](#S0019)|Number of traffic situations|
+|Traffic Light Controller|[S0020](#S0020)|Control mode|
+|Traffic Light Controller|[S0021](#S0021)|Manually set detector logic|
+|Traffic Light Controller|[S0022](#S0022)|List of time plans|
+|Traffic Light Controller|[S0023](#S0023)|Command table|
+|Traffic Light Controller|[S0024](#S0024)|Offset time|
 |Signal Group|[S0025](#S0025)|Time-of-Green / Time-of-Red|
-|Traffic Controller|[S0026](#S0026)|Week time table|
-|Traffic Controller|[S0027](#S0027)|Time tables|
-|Traffic Controller|[S0028](#S0028)|Cycle time|
-|Traffic Controller|[S0029](#S0029)|Forced input status|
-|Traffic Controller|[S0030](#S0030)|Forced output status|
-|Traffic Controller|[S0031](#S0031)|Trigger level sensitivity for loop detector|
-|Traffic Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
-|Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
-|Traffic Controller|[S0095](#S0095)|Version of Traffic Controller|
-|Traffic Controller|[S0096](#S0096)|Current date and time|
-|Traffic Controller|[S0097](#S0097)|Traffic parameter checksum|
+|Traffic Light Controller|[S0026](#S0026)|Week time table|
+|Traffic Light Controller|[S0027](#S0027)|Time tables|
+|Traffic Light Controller|[S0028](#S0028)|Cycle time|
+|Traffic Light Controller|[S0029](#S0029)|Forced input status|
+|Traffic Light Controller|[S0030](#S0030)|Forced output status|
+|Traffic Light Controller|[S0031](#S0031)|Trigger level sensitivity for loop detector|
+|Traffic Light Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
+|Traffic Light Controller|[S0092](#S0092)|Operator logged in/out web-interface|
+|Traffic Light Controller|[S0095](#S0095)|Version of Traffic Controller|
+|Traffic Light Controller|[S0096](#S0096)|Current date and time|
+|Traffic Light Controller|[S0097](#S0097)|Traffic parameter checksum|
 |Detector logic|[S0201](#S0201)|Traffic Counting: Number of vehicles|
 |Detector logic|[S0202](#S0202)|Traffic Counting: Vehicle speed|
 |Detector logic|[S0203](#S0203)|Traffic Counting: Occupancy|
 |Detector logic|[S0204](#S0204)|Traffic Counting: Number of vehicles of given classification|
-|Traffic Controller|[S0205](#S0205)|Traffic Counting: Number of vehicles|
-|Traffic Controller|[S0206](#S0206)|Traffic Counting: Vehicle speed|
-|Traffic Controller|[S0207](#S0207)|Traffic Counting: Occupancy|
-|Traffic Controller|[S0208](#S0208)|Traffic Counting: Number of vehicles of given classification|
+|Traffic Light Controller|[S0205](#S0205)|Traffic Counting: Number of vehicles|
+|Traffic Light Controller|[S0206](#S0206)|Traffic Counting: Vehicle speed|
+|Traffic Light Controller|[S0207](#S0207)|Traffic Counting: Occupancy|
+|Traffic Light Controller|[S0208](#S0208)|Traffic Counting: Number of vehicles of given classification|
 
 ## Return values
 
@@ -212,7 +212,7 @@ Output status
 
 <a id="S0005"></a>
 ### S0005
-Traffic Controller starting
+Traffic Light Controller starting
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
@@ -233,8 +233,8 @@ Controller switched on
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
-|status|boolean|<ul><li>False</li><li>True</li></ul>|False: Traffic Controller in dark mode<br>True: Traffic Controller not in dark mode|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)<br>Other value: Intersection number|
+|status|boolean|<ul><li>False</li><li>True</li></ul>|False: Traffic Light Controller in dark mode<br>True: Traffic Light Controller not in dark mode|
 
 <a id="S0008"></a>
 ### S0008
@@ -242,7 +242,7 @@ Manual control
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Manual control inactive<br>True: Manual control active|
 
 <a id="S0009"></a>
@@ -251,7 +251,7 @@ Fixed time control
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False:  Fixed time control inactive<br>True:  Fixed time control active|
 
 <a id="S0010"></a>
@@ -260,7 +260,7 @@ Isolated control
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Isolated control disabled<br>True: Isolated control enabled (Vehicle actuated control or Fixed time control)|
 
 <a id="S0011"></a>
@@ -269,7 +269,7 @@ Yellow flash
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: Yellow flash disabled<br>True: Yellow flash enabled|
 
 <a id="S0012"></a>
@@ -278,7 +278,7 @@ All red
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)<br>Other value: Intersection number|
 |status|boolean|<ul><li>False</li><li>True</li></ul>|False: All red disabled<br>True: All red enabled|
 
 <a id="S0013"></a>
@@ -287,7 +287,7 @@ Police key
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)<br>Other value: Intersection number|
 |status|integer|<ul><li>0</li><li>1</li><li>2</li></ul>|0: disabled<br>1: dark mode<br>2: yellow flash|
 
 <a id="S0014"></a>
@@ -344,7 +344,7 @@ Control mode
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic controller)<br>Other value: Intersection number|
+|intersection|integer|[0-255]|0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)<br>Other value: Intersection number|
 |controlmode|string|<ul><li>startup</li><li>control</li><li>standby</li><li>failure</li><li>test</li></ul>|<ul><li>Startup mode</li><li>Normal control</li><li>Standby mode</li><li>Failure mode</li><li>Test mode</li></ul>|
 
 <a id="S0021"></a>
@@ -462,11 +462,11 @@ Operator logged in/out web-interface
 
 <a id="S0095"></a>
 ### S0095
-Version of Traffic Controller
+Version of Traffic Light Controller
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|status|string|[text]|Manufacturer, product name and version of traffic controller|
+|status|string|[text]|Manufacturer, product name and version of traffic light controller|
 
 <a id="S0096"></a>
 ### S0096
@@ -583,28 +583,28 @@ Traffic Counting: Number of vehicles of given classification
 # Commands
 | ObjectType | commandCodeId | Description |
 | ---------- |:-------------:| ----------- |
-|Traffic Controller|[M0001](#M0001)|Sets functional position<br>Requires security code 2|
-|Traffic Controller|[M0002](#M0002)|Sets current time plan<br>Requires security code 2|
-|Traffic Controller|[M0003](#M0003)|Sets traffic situation the controller uses.<br>Requires security code 2|
-|Traffic Controller|[M0004](#M0004)|Restarts Traffic Controller<br>Requires security code 2|
-|Traffic Controller|[M0005](#M0005)|Activate emergency route<br>Requires security code 2|
-|Traffic Controller|[M0006](#M0006)|Activate input<br>Requires security code 2|
-|Traffic Controller|[M0007](#M0007)|Activate fixed time control<br>Requires security code 2|
+|Traffic Light Controller|[M0001](#M0001)|Sets functional position<br>Requires security code 2|
+|Traffic Light Controller|[M0002](#M0002)|Sets current time plan<br>Requires security code 2|
+|Traffic Light Controller|[M0003](#M0003)|Sets traffic situation the controller uses.<br>Requires security code 2|
+|Traffic Light Controller|[M0004](#M0004)|Restarts Traffic Light Controller<br>Requires security code 2|
+|Traffic Light Controller|[M0005](#M0005)|Activate emergency route<br>Requires security code 2|
+|Traffic Light Controller|[M0006](#M0006)|Activate input<br>Requires security code 2|
+|Traffic Light Controller|[M0007](#M0007)|Activate fixed time control<br>Requires security code 2|
 |Detector logic|[M0008](#M0008)|Sets manual activation of detector logic.<br>Requires security code 2|
 |Signal group|[M0010](#M0010)|Start of signal group. Orders a signal group to green. Requires security code 2|
 |Signal group|[M0011](#M0011)|Stop of signal group. Orders a signal group to red. Requires security code 2|
-|Traffic Controller|[M0012](#M0012)|Request start or stop of a series of signal groups. Requires security code 2|
-|Traffic Controller|[M0013](#M0013)|Activate a series of inputs<br>Requires security code 2|
-|Traffic Controller|[M0014](#M0014)|Set command table|
-|Traffic Controller|[M0015](#M0015)|Set Offset time|
-|Traffic Controller|[M0016](#M0016)|Set week time table|
-|Traffic Controller|[M0017](#M0017)|Set time tables|
-|Traffic Controller|[M0018](#M0018)|Set Cycle time|
-|Traffic Controller|[M0019](#M0019)|Force input<br>Requires security code 2|
-|Traffic Controller|[M0020](#M0020)|Force output<br>Requires security code 2|
-|Traffic Controller|[M0021](#M0021)|Set trigger level sensitivity for loop detector<br>Requires security code 2|
-|Traffic Controller|[M0103](#M0103)|Set security code|
-|Traffic Controller|[M0104](#M0104)|Set clock|
+|Traffic Light Controller|[M0012](#M0012)|Request start or stop of a series of signal groups. Requires security code 2|
+|Traffic Light Controller|[M0013](#M0013)|Activate a series of inputs<br>Requires security code 2|
+|Traffic Light Controller|[M0014](#M0014)|Set command table|
+|Traffic Light Controller|[M0015](#M0015)|Set Offset time|
+|Traffic Light Controller|[M0016](#M0016)|Set week time table|
+|Traffic Light Controller|[M0017](#M0017)|Set time tables|
+|Traffic Light Controller|[M0018](#M0018)|Set Cycle time|
+|Traffic Light Controller|[M0019](#M0019)|Force input<br>Requires security code 2|
+|Traffic Light Controller|[M0020](#M0020)|Force output<br>Requires security code 2|
+|Traffic Light Controller|[M0021](#M0021)|Set trigger level sensitivity for loop detector<br>Requires security code 2|
+|Traffic Light Controller|[M0103](#M0103)|Set security code|
+|Traffic Light Controller|[M0104](#M0104)|Set clock|
 
 ## Arguments
 
@@ -641,7 +641,7 @@ Sets traffic situation the controller uses.<br>Requires security code 2
 
 <a id="M0004"></a>
 ### M0004
-Restarts Traffic Controller<br>Requires security code 2
+Restarts Traffic Light Controller<br>Requires security code 2
 
 |Name|Command|Type|Value|Comment|
 |----|-------|----|-----|-------|
