@@ -161,7 +161,7 @@ Detector error (logic error)
 |Traffic Controller|[S0092](#S0092)|Operator logged in/out web-interface|
 |Traffic Controller|[S0095](#S0095)|Version of Traffic Controller|
 |Traffic Controller|[S0096](#S0096)|Current date and time|
-|Traffic Controller|[S0097](#S0097)|Version and checksum of traffic parameters|
+|Traffic Controller|[S0097](#S0097)|Traffic parameter checksum|
 |Detector logic|[S0201](#S0201)|Traffic Counting: Number of vehicles|
 |Detector logic|[S0202](#S0202)|Traffic Counting: Vehicle speed|
 |Detector logic|[S0203](#S0203)|Traffic Counting: Occupancy|
@@ -483,13 +483,12 @@ Current date and time
 
 <a id="S0097"></a>
 ### S0097
-Version and checksum of traffic parameters
+Traffic parameter checksum
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|version|string|[text]|Version of the traffic parameters<br>Includes<ul><li>all signal programs, including program versions</li><li>time plans</li><li>safety matrix</li><li>intergreen times</li><li>detector settings</li></ul>|
-|hash|string|[text]|Checksum or cryptographic hash of the traffic parameters|
-|timestamp|string|[time stamp]|Time stamp for traffic parameters. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
+|checksum|string|[text]|Checksum of the traffic parameters<br>Uses SHA-1 as hashing algorithm<br>Includes<ul><li>all signal programs, including program versions</li><li>time plans</li><li>safety matrix</li><li>intergreen times</li><li>detector settings</li></ul>|
+|timestamp|string|[time stamp]|Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
 
 <a id="S0201"></a>
 ### S0201
