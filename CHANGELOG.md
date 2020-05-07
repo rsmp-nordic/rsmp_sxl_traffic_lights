@@ -15,7 +15,7 @@ coordination between TLCs
 Extensions for coordination support
 
 - M0012 The object type  was incorrectly set to "Signal group". It should have
-  been "Traffic controller"
+  been "Traffic light controller"
 
 1.0.10 (2013-09-24)
 ==================

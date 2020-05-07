@@ -9,9 +9,9 @@ This document contains examples for all message types.
 + [A0002](#A0002) - Less serious hardware error
 + [A0003](#A0003) - Serious configuration error
 + [A0004](#A0004) - Less serious configuration error
-+ [A0005](#A0005) - Communication error between traffic controllers / synchronisation error
++ [A0005](#A0005) - Communication error between traffic light controllers / synchronisation error
 + [A0006](#A0006) - Safety error
-+ [A0007](#A0007) - Communication error between one or multiple traffic controllers and central control system
++ [A0007](#A0007) - Communication error between one or multiple traffic light controllers and central control system
 + [A0008](#A0008) - Dead lock error
 + [A0009](#A0009) - Other error
 + [A0010](#A0010) - Door open
@@ -27,7 +27,7 @@ This document contains examples for all message types.
 + [S0002](#S0002) - Detector logic status
 + [S0003](#S0003) - Input status
 + [S0004](#S0004) - Output status
-+ [S0005](#S0005) - Traffic Controller starting
++ [S0005](#S0005) - Traffic Light Controller starting
 + [S0006](#S0006) - Emergency stage
 + [S0007](#S0007) - Controller switched on
 + [S0008](#S0008) - Manual control
@@ -56,7 +56,7 @@ This document contains examples for all message types.
 + [S0031](#S0031) - Trigger level sensitivity for loop detector
 + [S0091](#S0091) - Operator logged in/out OP-panel
 + [S0092](#S0092) - Operator logged web-interface
-+ [S0095](#S0095) - Version of Traffic Controller
++ [S0095](#S0095) - Version of Traffic Light Controller
 + [S0096](#S0096) - Current date and time
 + [S0097](#S0097) - Version of Traffic Program
 + [S0201](#S0201) - Traffic Counting: Number of vehicles
@@ -73,7 +73,7 @@ This document contains examples for all message types.
 + [M0001](#M0001) - Sets functional position
 + [M0002](#M0002) - Sets current time plan
 + [M0003](#M0003) - Sets traffic situation the controller uses
-+ [M0004](#M0004) - Restarts Traffic Controller
++ [M0004](#M0004) - Restarts Traffic Light Controller
 + [M0005](#M0005) - Activate emergency route
 + [M0006](#M0006) - Activate input
 + [M0007](#M0007) - Activate fixed time control
@@ -194,7 +194,7 @@ This document contains examples for all message types.
 ```
 
 <a id="A0005"></a>
-## A0005 Communication error between traffic controllers / synchronisation error
+## A0005 Communication error between traffic light controllers / synchronisation error
 
 ``` json
 {
@@ -244,7 +244,7 @@ This document contains examples for all message types.
 ```
 
 <a id="A0007"></a>
-## A0007 Communication error between one or multiple traffic controllers and central control system
+## A0007 Communication error between one or multiple traffic light controllers and central control system
 
 ``` json
 {
@@ -696,7 +696,7 @@ This document contains examples for all message types.
 ```
 
 <a id="S0005"></a>
-## S0005 Traffic Controller starting
+## S0005 Traffic Light Controller starting
 
 **Status Request**
 ``` json
@@ -1938,7 +1938,7 @@ This document contains examples for all message types.
 ```
 
 <a id="S0095"></a>
-## S0095 Version of Traffic Controller
+## S0095 Version of Traffic Light Controller
 
 **Status Request**
 ``` json
@@ -2786,7 +2786,7 @@ This document contains examples for all message types.
 ```
 
 <a id="M0004"></a>
-## M0004 Restarts Traffic Controller
+## M0004 Restarts Traffic Light Controller
 
 **Command Request**
 ``` json

@@ -35,7 +35,7 @@ A: 'intersection' contain the individual intersections of the TLC returned
 as a comma separated list, e.g. "1,2,3". This applies to the corresponding
 'status' as well, e.g. "True,True,False".
 
-E.g. if a Traffic controller is controlling two intersections and both of
+E.g. if a Traffic light controller is controlling two intersections and both of
 the intersections are using fixed time control the following is returned for
 S0009: intersection="1,2", status="True,True".
 
