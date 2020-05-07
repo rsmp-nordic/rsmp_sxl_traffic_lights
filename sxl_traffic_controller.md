@@ -487,7 +487,7 @@ Traffic parameter checksum
 
 |Name|Type|Value|Comment|
 |----|----|-----|-------|
-|checksum|string|[text]|Checksum of the traffic parameters<br>Uses SHA-1 as hashing algorithm<br>Includes<ul><li>all signal programs, including program versions</li><li>time plans</li><li>safety matrix</li><li>intergreen times</li><li>detector settings</li></ul>|
+|checksum|string|[text]|Checksum of the traffic parameters<br>Uses SHA-2 as hashing algorithm<br>Includes<ul><li>all signal programs, including program versions</li><li>time plans</li><li>safety matrix</li><li>intergreen times</li><li>detector settings</li></ul>|
 |timestamp|string|[time stamp]|Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z|
 
 <a id="S0201"></a>
