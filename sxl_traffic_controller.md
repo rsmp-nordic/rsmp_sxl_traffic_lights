@@ -159,7 +159,7 @@ Detector error (logic error)
 |Traffic Light Controller|[S0031](#S0031)|Trigger level sensitivity for loop detector|
 |Traffic Light Controller|[S0091](#S0091)|Operator logged in/out OP-panel|
 |Traffic Light Controller|[S0092](#S0092)|Operator logged in/out web-interface|
-|Traffic Light Controller|[S0095](#S0095)|Version of Traffic Controller|
+|Traffic Light Controller|[S0095](#S0095)|Version of Traffic Light Controller|
 |Traffic Light Controller|[S0096](#S0096)|Current date and time|
 |Traffic Light Controller|[S0097](#S0097)|Traffic parameter checksum|
 |Detector logic|[S0201](#S0201)|Traffic Counting: Number of vehicles|
