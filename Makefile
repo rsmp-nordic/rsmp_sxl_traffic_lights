@@ -13,6 +13,10 @@ BUILDDIR      = build
 MSC_DIR          = source/img/msc
 MSC_DIAGRAMS     = $(wildcard $(MSC_DIR)/*.msc)
 GEN_MSC_DIAGRAMS = $(MSC_DIAGRAMS:.msc=.png)
+# .svg images converted to .png
+SVG_DIR          = source/img/svg
+SVG_IMGS         = $(wildcard $(SVG_DIR)/*.svg)
+GEN_PNG_IMGS     = $(SVG_IMGS:.svg=.png)
 
 .PHONY: help clean all html Makefile generated-images
 
@@ -28,12 +32,17 @@ clean:
 	rm -f source/extensions/*.pyc
 	rm -f source/extensions/__pycache__/*.pyc
 	rm -f $(MSC_DIR)/*.png
+	rm -f $(SVG_DIR)/*.png
 
 $(MSC_DIR)/%.png: $(MSC_DIR)/%.msc
 	@mscgen -T png $<
 	@echo MSCGEN: $<
 
-generated-images: $(GEN_MSC_DIAGRAMS)
+$(SVG_DIR)/%.png: $(SVG_DIR)/%.svg
+	@inkscape -z $< -e $@
+	@echo CONVERT: $<
+
+generated-images: $(GEN_MSC_DIAGRAMS) $(GEN_PNG_IMGS)
 
 all:	html latexpdf singlehtml
 

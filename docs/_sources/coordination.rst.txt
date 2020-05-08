@@ -40,7 +40,7 @@ term *coordination with synchronized cycle counter* is used rather than
 
 .. figure:: /img/svg/coordination.png
    :align: center
-   :scale: 60%
+   :scale: 40%
 
    Coordination
 
