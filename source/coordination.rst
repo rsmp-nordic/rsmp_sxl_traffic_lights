@@ -33,10 +33,10 @@ possible during normal off-peak hours.
 
 Since there are variants of coordination which are not strictly
 centralized but still uses the same principles of communication, the
-term _coordination with synchronized cycle counter_ is used rather than
-_central coordination_ here on after.
+term *coordination with synchronized cycle counter* is used rather than
+*central coordination* here on after.
 
-.. image:: /img/coordination.png)
+.. image:: /img/coordination.png
    :align: center
    :alt: Figure 2: Coordination
 
@@ -163,7 +163,7 @@ The following input/output is needed
 
 .. figtable::
    :nofig:
-   :label:table-input
+   :label: table-input
    :caption: Input needed
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.10\linewidth} p{0.90\linewidth}
@@ -181,7 +181,7 @@ The following input/output is needed
 
 .. figtable::
    :nofig:
-   :label:table-output
+   :label: table-output
    :caption: Output needed
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.10\linewidth} p{0.90\linewidth}
@@ -212,9 +212,9 @@ are empty. In the example below ”securityCode” is included in a command
 despite that ”securityCode” is ignored at TLC-TLC communication. The
 field is empty for this reason.
 
-
 .. code-block:: json
    :name: json-basic
+
    {
    	"mType": "rSMsg",
    	"type": "CommandRequest",
@@ -252,36 +252,39 @@ sent according the initialization sequence.
 Communication is continuously established even if coordination is not
 active.
 
-The handshake sequence is defined in the RSMP specification, section [Communication establishment between sites](https://github.com/rsmp-nordic/rsmp_core/blob/master/rst/rsmp.rst#communication-establishment-between-sites)
+The handshake sequence is defined in the RSMP specification, section
+`Communication establishment between sites <https://rsmp-nordic.github.io/rsmp_core/applicability/transport_of_data.html#communication-establishment-between-sites>`_.
 
 Initialization sequence for local coordination
 ----------------------------------------------
 1. Leader verifies that coordination is possible through subscription
-   on output (S0004) _coordination is possible_ in all followers. If
+   on output (S0004) *coordination is possible* in all followers. If
    coordination isn't possible, coordination is terminated.
 2. Leader switches to coordinated time plan in its own TLC.
 3. Leader sends command to all followers to switch to coordinated time
    plan.
 4. Leader waits at own synchronisation step until synchronisation
    step is active in all followers. Leader must subscribe to
-   S0004 _Synchronisation step_ in all followers to verify this.
-5. Leader activates input (S0013) _coordination can continue_
+   S0004 *Synchronisation step* in all followers to verify this.
+5. Leader activates input (S0013) *coordination can continue*
    in all followers about continued coordination.
 6. Coordination active. Leader continuously checks that coordination
    still is possible in all followers (see step 1) through subscription
-   on output (S0004) _coordination is possible_. Coordination is
+   on output (S0004) *coordination is possible*. Coordination is
    terminated if it turns false in any follower.
 7. Leader sends START/STOP order using M0006 or M0013 to followers
    during each cycle.
 8. Leader receives START/STOP order using output (M0004) from followers
    during each cycle.
 
-![Figure 5: Sequence for local coordination](img/local_coordination.png)
+.. image:: /img/local_coordination.png
+   :align: center
+   :alt: Figure 5: Sequence for local coordination
 
 Initialization sequence for coordination with synchronized cycle counter
 ------------------------------------------------------------------------
 1. Leader verifies that coordination is possible through subscription
-   on output (S0004) _coordination is possible_ in all followers. There
+   on output (S0004) *coordination is possible* in all followers. There
    needs to be a per site configuration possibility for each follower
    whether coordination should proceed regardless if a single follower
    can’t activate coordination.
@@ -295,20 +298,22 @@ Initialization sequence for coordination with synchronized cycle counter
    their own.
 5. Coordination active. Leader continuously checks that coordination
    still is possible in all followers (see step 1) through subscription
-   on output (S0004) _coordination is possible_. Coordination is
-   terminated if output (S0004) _coordination is possible_ turns false is
+   on output (S0004) *coordination is possible*. Coordination is
+   terminated if output (S0004) *coordination is possible* turns false is
    any follower TLC.
 6. If external control bits are used: Leader sends START/STOP order to
    followers during each cycle
 7. If external control bits are used: Leader receives START/STOP order
    using output (M0004) from followers during each cycle.
 
-![Figure 6: Sequence for coordination with synchronized cycle timer](img/central_coordination.png)
+.. image:: /img/central_coordination.png
+   :align: center
+   :alt: Figure 6: Sequence for coordination with synchronized cycle timer
 
 Termination sequence
 --------------------
 1. If using local coordination, the leader TLC deactivates input (S0013)
-   _coordination can continue_ in all followers.
+   *coordination can continue* in all followers.
 2. The leader TLC sends a command to followers to change time plan
    according to own programming, this command can also come from a
    supervision system.
@@ -354,16 +359,28 @@ Error codes for MessageNotAck
 In order to standardize contents in MessageNotAck (”reason”), use this
 common error code list
 
-Error code (Content of "Reason") | Description
----------------------------------|------------
-0001 | SXL mismatch. Command does not exist
-0002 | SXL mismatch. Status does not exist
-0003 | SXL mismatch. Wrong number of arguments
-0004 | SXL mismatch. Argument out of range
-0005 | SXL mismatch. Argument improperly formatted
-0006 | I/O out of range or not found
-0007 | I/O cannot be modified
-0008 | Plan does not exist
-0009 | Plan cannot be changed due to higher priority command
-0010 | CPU error
-0011 | Invalid message
+
+.. figtable::
+   :nofig:
+   :label: table-error
+   :caption: Error codes
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.10\linewidth} p{0.90\linewidth}
+
+   ================================ ===========
+   Error code (Content of "Reason") Description
+   ================================ ===========
+   0001                             SXL mismatch. Command does not exist
+   0002                             SXL mismatch. Status does not exist
+   0003                             SXL mismatch. Wrong number of arguments
+   0004                             SXL mismatch. Argument out of range
+   0005                             SXL mismatch. Argument improperly formatted
+   0006                             I/O out of range or not found
+   0007                             I/O cannot be modified
+   0008                             Plan does not exist
+   0009                             Plan cannot be changed due to higher priority command
+   0010                             CPU error
+   0011                             Invalid message
+   ================================ ===========
+
+..
