@@ -3,8 +3,7 @@ Appendix - Examples
 
 This document contains examples for all message types.
 
-Alarms
-------
+`Alarms`_
 
 + `A0001 Serious hardware error`_
 + `A0002 Less serious hardware error`_
@@ -22,8 +21,7 @@ Alarms
 + `A0301 Detector error (hardware)`_
 + `A0302 Detector error (logic error)`_
 
-Statuses
---------
+`Statuses`_
 
 + `S0001 Signal group status`_
 + `S0002 Detector logic status`_
@@ -70,8 +68,7 @@ Statuses
 + `S0207 Traffic Counting: Occupancy`_
 + `S0208 Traffic Counting: Number of vehicles of given classification`_
 
-Commands
---------
+`Commands`_
 
 + `M0001 Sets functional position`_
 + `M0002 Sets current time plan`_
@@ -95,6 +92,9 @@ Commands
 + `M0021 Set trigger level sensitivity for loop detector`_
 + `M0103 Set security code`_
 + `M0104 Set clock`_
+
+Alarms
+------
 
 A0001 Serious hardware error
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -505,6 +505,9 @@ A0302 Detector error (logic error)
    		"v":"always_off"
    	}]
    }
+
+Statuses
+--------
 
 S0001 Signal group status
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2771,6 +2774,9 @@ S0208 Traffic Counting: Number of vehicles of given classification
    	}]
    }
 
+
+Commands
+--------
    
 M0001 Sets functional position
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
