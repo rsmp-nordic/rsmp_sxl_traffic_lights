@@ -1,5 +1,5 @@
-Appendix - traffic data
-=======================
+Traffic data
+============
 
 Traffic data (S0201-S0208) needs additional requirements in order to work
 correctly.
