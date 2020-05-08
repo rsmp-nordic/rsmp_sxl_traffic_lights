@@ -6,37 +6,20 @@
 
    Created 2020-05-07, 1.0.15-draft
 
-RSMP Signal Exchange List for Traffic Light Controllers
-=======================================================
+RSMP Signal Exchange List for Traffic Light Controllers - Appendices
+====================================================================
 
 .. toctree::
    :maxdepth: 3
    :caption: Contens
    :numbered:
 
-.. raw:: latex
-
-   % Skip the contents chapter
-   \refstepcounter{chapter}
-
 .. toctree::
-   :maxdepth: 3
-   :caption: Contens
+   :maxdepth: 2
    :numbered:
 
-   sxl_traffic_controller
-
-.. raw:: latex
-
-   % Set up the appendix mode and modify the LaTex toc behavior
-   \appendix
-   \noappendicestocpagenum
-   \addappheadtotoc
-
-.. toctree::
-   :maxdpeth: 2
-   :numbered:
-
-   appendix/definition_of_signal_group_status
-   appendix/traffic_data
-   appendix/coordination
+   definitions
+   signal_group_status
+   traffic_data
+   coordination
+   examples

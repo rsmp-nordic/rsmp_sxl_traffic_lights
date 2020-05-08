@@ -16,8 +16,8 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   sodipodi:docname="Rear edge - färg.svg"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="rear_edge.svg"
    inkscape:export-filename="/home/i0davla/trv/rsmp/rsmp_sxl_traffic_lights/img/Rear edge - färg.svg.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96">
@@ -263,13 +263,13 @@
      inkscape:pageshadow="2"
      inkscape:zoom="1.32"
      inkscape:cx="162.14522"
-     inkscape:cy="849.83592"
+     inkscape:cy="274.07834"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1366"
-     inkscape:window-height="704"
-     inkscape:window-x="0"
+     inkscape:window-width="2488"
+     inkscape:window-height="1376"
+     inkscape:window-x="72"
      inkscape:window-y="27"
      inkscape:window-maximized="1" />
   <metadata
@@ -476,18 +476,7 @@
            height="40.897659"
            x="36.301079"
            y="1074.8424" /></flowRegion><flowPara
-         id="flowPara1631">EX</flowPara></flowRoot>    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="8.9689264"
-       y="294.20618"
-       id="text1635"><tspan
-         sodipodi:role="line"
-         id="tspan1633"
-         x="8.9689264"
-         y="294.20618"
-         style="font-size:5.29166651px;stroke-width:0.26458332">Example of control of rear edge</tspan></text>
-    <ellipse
+         id="flowPara1631">EX</flowPara></flowRoot>    <ellipse
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.60000002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path16070-7"
        cx="30.045902"
