@@ -1,5 +1,5 @@
-Appendix - coordination between traffic light controllers
-=========================================================
+Coordination between traffic light controllers
+==============================================
 
 General concepts
 ----------------
@@ -40,7 +40,7 @@ term *coordination with synchronized cycle counter* is used rather than
 
 .. figure:: /img/svg/coordination.png
    :align: center
-   :scale: 40%
+   :scale: 60%
 
    Coordination
 

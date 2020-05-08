@@ -1,5 +1,5 @@
-Appendix - Examples
-===================
+JSon Examples
+=============
 
 This document contains examples for all message types.
 
