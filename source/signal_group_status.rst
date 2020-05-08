@@ -1,5 +1,5 @@
 Signal Group status
--------------------
+===================
 
 Signal groups status (S0001) is defined as a text string where each character represents the current status for each signal group.
 Each character has the following definition:
