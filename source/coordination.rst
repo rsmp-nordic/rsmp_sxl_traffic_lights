@@ -166,7 +166,7 @@ The following input/output is needed
    :label: table-input
    :caption: Input needed
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.10\linewidth} p{0.90\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.25\linewidth} p{0.75\linewidth}
 
    ==================== ============
    Command types        Description
@@ -177,14 +177,14 @@ The following input/output is needed
    M0006/M0013 (Input)  START/STOP bit (true/false)
    ==================== ============
 
- ..
+..
 
 .. figtable::
    :nofig:
    :label: table-output
    :caption: Output needed
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.10\linewidth} p{0.90\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.50\linewidth}
 
    =============== ============
    Status types    Description
