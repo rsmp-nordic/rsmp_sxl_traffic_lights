@@ -46,7 +46,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'RSMP Signal Exchange List for Traffic Light Controllers'
+project = 'RSMP Signal Exchange List for Traffic Light Controllers - Appendices'
 copyright = 'RSMP Nordic'
 author = 'David Otterdahl'
 
@@ -135,7 +135,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sxl-tlc.tex', 'RSMP Signal Exchange List for Traffic Light Controllers',
+    (master_doc, 'sxl-tlc.tex', 'RSMP Signal Exchange List for Traffic Light Controllers - Appendices',
      '', 'manual'),
 ]
 
@@ -144,7 +144,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sxl-tlc', 'RSMP Signal Exchange List for Traffic Light Controllers',
+    (master_doc, 'sxl-tlc', 'RSMP Signal Exchange List for Traffic Light Controllers - Appendices',
      [author], 1)
 ]
 

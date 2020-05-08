@@ -1,5 +1,5 @@
-Appendix - coordination between traffic light controllers
-=========================================================
+Coordination between traffic light controllers
+==============================================
 
 General concepts
 ----------------
