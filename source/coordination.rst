@@ -27,18 +27,22 @@ hours should e.g. the entire traffic signal area be coordinated at
 central level while a split in locally coordinated sub areas should be
 possible during normal off-peak hours.
 
-.. image:: /img/types_of_coordination.png
+.. figure:: /img/types_of_coordination.png
    :align: center
-   :alt: Figure 1: Types of coordination
+   :scale: 60%
+
+   Types of coordination
 
 Since there are variants of coordination which are not strictly
 centralized but still uses the same principles of communication, the
 term *coordination with synchronized cycle counter* is used rather than
 *central coordination* here on after.
 
-.. image:: /img/coordination.png
+.. figure:: /img/coordination.png
    :align: center
-   :alt: Figure 2: Coordination
+   :scale: 40%
+
+   Coordination
 
 Coordination type "Local coordination"
 --------------------------------------
@@ -65,13 +69,12 @@ Variation in programming to achieve desired functionality according to
 specifications may vary without having any impact on coordination
 communication.
 
-.. image:: /img/front_edge.png
-   :align: left
-   :alt: Figure 3: Front edge
-
-.. image:: /img/rear_edge.png
-   :align: right
-   :alt: Figure 4: Rear edge
++---------------------------------+--------------------------------+
+| .. figure:: /img/front_edge.png | .. figure:: /img/rear_edge.png |
+|    :scale: 40%                  |    :scale: 40%                 |
+|                                 |                                |
+|    Control of front edge        |    Control of rear edge        |
++---------------------------------+--------------------------------+
 
 Coordination with synchronized cycle counter
 --------------------------------------------
@@ -277,9 +280,10 @@ Initialization sequence for local coordination
 8. Leader receives START/STOP order using output (M0004) from followers
    during each cycle.
 
-.. image:: /img/local_coordination.png
+.. figure:: /img/local_coordination.png
    :align: center
-   :alt: Figure 5: Sequence for local coordination
+
+   Sequence for local coordination
 
 Initialization sequence for coordination with synchronized cycle counter
 ------------------------------------------------------------------------
@@ -306,9 +310,10 @@ Initialization sequence for coordination with synchronized cycle counter
 7. If external control bits are used: Leader receives START/STOP order
    using output (M0004) from followers during each cycle.
 
-.. image:: /img/central_coordination.png
+.. figure:: /img/central_coordination.png
    :align: center
-   :alt: Figure 6: Sequence for coordination with synchronized cycle timer
+
+   Sequence for coordination with synchronized cycle timer
 
 Termination sequence
 --------------------
@@ -365,7 +370,7 @@ common error code list
    :label: table-error
    :caption: Error codes
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.10\linewidth} p{0.90\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.35\linewidth} p{0.60\linewidth}
 
    ================================ ===========
    Error code (Content of "Reason") Description
