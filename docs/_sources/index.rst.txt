@@ -19,6 +19,7 @@ RSMP Signal Exchange List for Traffic Light Controllers - Appendices
    :numbered:
 
    definitions
+   sxl_traffic_light_controller
    signal_group_status
    traffic_data
    coordination
