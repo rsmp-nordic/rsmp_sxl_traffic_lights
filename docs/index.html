@@ -85,10 +85,16 @@
             
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">2. Signal Group status</a></li>
-<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">3. Traffic data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="coordination.html">4. Coordination between traffic light controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">5. JSon Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html">2. Signal Exchange List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#object-types">3. Object Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#aggregated-status">4. Aggregated status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#alarms">5. Alarms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#status">6. Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#commands">7. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">8. Signal Group status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">9. Traffic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordination.html">10. Coordination between traffic light controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">11. JSon Examples</a></li>
 </ul>
 
             
@@ -160,29 +166,51 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">2. Signal Group status</a></li>
-<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">3. Traffic data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="coordination.html">4. Coordination between traffic light controllers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#general-concepts">4.1. General concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#coordination-type-local-coordination">4.2. Coordination type “Local coordination”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#coordination-with-synchronized-cycle-counter">4.3. Coordination with synchronized cycle counter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#coordination-with-control-bits">4.4. Coordination with control bits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#general-rsmp-requirements">4.5. General RSMP requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#functional-requirements-of-the-tlc">4.6. Functional requirements of the TLC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#notes-about-json">4.7. Notes about JSon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#communication-establishment">4.8. Communication establishment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#initialization-sequence-for-local-coordination">4.9. Initialization sequence for local coordination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#initialization-sequence-for-coordination-with-synchronized-cycle-counter">4.10. Initialization sequence for coordination with synchronized cycle counter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#termination-sequence">4.11. Termination sequence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#message-priority">4.12. Message priority</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#error-handling">4.13. Error handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordination.html#error-codes-for-messagenotack">4.14. Error codes for MessageNotAck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html">2. Signal Exchange List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sxl_traffic_light_controller.html#sections">2.1. Sections</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">5. JSon Examples</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#alarms">5.1. Alarms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#statuses">5.2. Statuses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="examples.html#commands">5.3. Commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#object-types">3. Object Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sxl_traffic_light_controller.html#grouped-objects">3.1. Grouped objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sxl_traffic_light_controller.html#single-objects">3.2. Single objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#aggregated-status">4. Aggregated status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#alarms">5. Alarms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sxl_traffic_light_controller.html#return-values">5.1. Return values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#status">6. Status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sxl_traffic_light_controller.html#id1">6.1. Return values</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#commands">7. Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sxl_traffic_light_controller.html#arguments">7.1. Arguments</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">8. Signal Group status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">9. Traffic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordination.html">10. Coordination between traffic light controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#general-concepts">10.1. General concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#coordination-type-local-coordination">10.2. Coordination type “Local coordination”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#coordination-with-synchronized-cycle-counter">10.3. Coordination with synchronized cycle counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#coordination-with-control-bits">10.4. Coordination with control bits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#general-rsmp-requirements">10.5. General RSMP requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#functional-requirements-of-the-tlc">10.6. Functional requirements of the TLC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#notes-about-json">10.7. Notes about JSon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#communication-establishment">10.8. Communication establishment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#initialization-sequence-for-local-coordination">10.9. Initialization sequence for local coordination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#initialization-sequence-for-coordination-with-synchronized-cycle-counter">10.10. Initialization sequence for coordination with synchronized cycle counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#termination-sequence">10.11. Termination sequence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#message-priority">10.12. Message priority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#error-handling">10.13. Error handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordination.html#error-codes-for-messagenotack">10.14. Error codes for MessageNotAck</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">11. JSon Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#alarms">11.1. Alarms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#statuses">11.2. Statuses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples.html#commands">11.3. Commands</a></li>
 </ul>
 </li>
 </ul>

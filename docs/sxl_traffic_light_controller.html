@@ -1,0 +1,3763 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. Signal Exchange List &mdash; RSMP Signal Exchange List for Traffic Light Controllers - Appendices 1.0.15-draft documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="8. Signal Group status" href="signal_group_status.html" />
+    <link rel="prev" title="1. Definitions" href="definitions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers - Appendices
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.15
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Signal Exchange List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sections">2.1. Sections</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#object-types">3. Object Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#grouped-objects">3.1. Grouped objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#single-objects">3.2. Single objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#aggregated-status">4. Aggregated status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#alarms">5. Alarms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#return-values">5.1. Return values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a0008">5.1.1. A0008</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0201">5.1.2. A0201</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0202">5.1.3. A0202</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0301">5.1.4. A0301</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0302">5.1.5. A0302</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#status">6. Status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">6.1. Return values</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#s0001">6.1.1. S0001</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0002">6.1.2. S0002</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0003">6.1.3. S0003</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0004">6.1.4. S0004</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0005">6.1.5. S0005</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0006">6.1.6. S0006</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0007">6.1.7. S0007</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0008">6.1.8. S0008</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0009">6.1.9. S0009</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0010">6.1.10. S0010</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0011">6.1.11. S0011</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0012">6.1.12. S0012</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0013">6.1.13. S0013</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0014">6.1.14. S0014</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0015">6.1.15. S0015</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0016">6.1.16. S0016</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0017">6.1.17. S0017</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0018">6.1.18. S0018</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0019">6.1.19. S0019</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0020">6.1.20. S0020</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0021">6.1.21. S0021</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0022">6.1.22. S0022</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0023">6.1.23. S0023</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0024">6.1.24. S0024</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0025">6.1.25. S0025</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0026">6.1.26. S0026</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0027">6.1.27. S0027</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0028">6.1.28. S0028</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0029">6.1.29. S0029</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0030">6.1.30. S0030</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0031">6.1.31. S0031</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0091">6.1.32. S0091</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0092">6.1.33. S0092</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0095">6.1.34. S0095</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0096">6.1.35. S0096</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0097">6.1.36. S0097</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0201">6.1.37. S0201</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0202">6.1.38. S0202</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0203">6.1.39. S0203</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0204">6.1.40. S0204</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0205">6.1.41. S0205</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0206">6.1.42. S0206</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0207">6.1.43. S0207</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0208">6.1.44. S0208</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#commands">7. Commands</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#arguments">7.1. Arguments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#m0001">7.1.1. M0001</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0002">7.1.2. M0002</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0003">7.1.3. M0003</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0004">7.1.4. M0004</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0005">7.1.5. M0005</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0006">7.1.6. M0006</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0007">7.1.7. M0007</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0008">7.1.8. M0008</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0010">7.1.9. M0010</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0011">7.1.10. M0011</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0012">7.1.11. M0012</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0013">7.1.12. M0013</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0014">7.1.13. M0014</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0015">7.1.14. M0015</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0016">7.1.15. M0016</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0017">7.1.16. M0017</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0018">7.1.17. M0018</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0019">7.1.18. M0019</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0020">7.1.19. M0020</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0021">7.1.20. M0021</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0103">7.1.21. M0103</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0104">7.1.22. M0104</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">8. Signal Group status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">9. Traffic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordination.html">10. Coordination between traffic light controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">11. JSon Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RSMP Signal Exchange List for Traffic Light Controllers - Appendices</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>2. Signal Exchange List</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sxl_traffic_light_controller.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="signal-exchange-list">
+<h1>2. Signal Exchange List<a class="headerlink" href="#signal-exchange-list" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><strong>Plant Id</strong>: Plant id</li>
+<li><strong>Plant Name</strong>: Plant name</li>
+<li><strong>Constructor</strong>: RSMP Nordic</li>
+<li><strong>Reviewed</strong>:</li>
+<li><strong>Approved</strong>:</li>
+<li><strong>Created date</strong>: 2010-04-20</li>
+<li><strong>SXL revision</strong>: 1.0.15-draft</li>
+<li><strong>Revision date</strong>: 2020-xx-xx</li>
+<li><strong>RSMP version</strong>: 3.1.2</li>
+</ul>
+<div class="section" id="sections">
+<h2>2.1. Sections<a class="headerlink" href="#sections" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference internal" href="#object-types">Object types</a></li>
+<li><a class="reference internal" href="#aggregated-status">Aggregated status</a></li>
+<li><a class="reference internal" href="#alarms">Alarms</a></li>
+<li><a class="reference internal" href="#status">Status</a></li>
+<li><a class="reference internal" href="#commands">Commands</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="object-types">
+<h1>3. Object Types<a class="headerlink" href="#object-types" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="grouped-objects">
+<h2>3.1. Grouped objects<a class="headerlink" href="#grouped-objects" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text">Grouped objects</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ObjectType</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="single-objects">
+<h2>3.2. Single objects<a class="headerlink" href="#single-objects" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils" id="id3">
+<caption><span class="caption-text">Single objects</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>ObjectType</td>
+<td>Description</td>
+</tr>
+<tr class="row-even"><td>Signal group</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>Detector logic</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="aggregated-status">
+<h1>4. Aggregated status<a class="headerlink" href="#aggregated-status" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-given docutils" id="id4">
+<caption><span class="caption-text">Grouped objects</span><a class="headerlink" href="#id4" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="21%" />
+<col width="18%" />
+<col width="18%" />
+<col width="17%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ObjectType</th>
+<th class="head">Status</th>
+<th class="head">functionalPosition</th>
+<th class="head">functionalState</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td>See state-bit definitions below</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="colwidths-given docutils" id="id5">
+<caption><span class="caption-text">State bits</span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="15%" />
+<col width="30%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">State- Bit nr
+(12345678)</th>
+<th class="head">Description</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>Local mode</td>
+<td>Traffic Light Controller is in local mode. NTS has no control.</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>No communications</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>High priority fault</td>
+<td>Traffic Light Controller is in fail safe mode; e.g. yellow flash or dark mode</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>Medium priority fault</td>
+<td>Traffic Light Controller has a medium priority fault, but not in fail safe mode. E.g. several lamp faults or detector fault</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>Low priority fault</td>
+<td>Traffic Light Controller has a low priority fault. E.g. Detector fault</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>Connected / Normal - In Use</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>Connected / Normal - Idle</td>
+<td>Traffic Light Controller dark according to configuration. NOTE! When dark according to configuration the controller is considered to be in use</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>Not Connected</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="alarms">
+<h1>5. Alarms<a class="headerlink" href="#alarms" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-auto docutils" id="id6">
+<caption><span class="caption-text">Alarms</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ObjectType</th>
+<th class="head">alarmCodeId</th>
+<th class="head">Description</th>
+<th class="head">externalAlarmCodeId</th>
+<th class="head">Priority</th>
+<th class="head">Category</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td>A0001</td>
+<td>Serious hardware error</td>
+<td>Defined by manufacturer</td>
+<td>2</td>
+<td>D</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td>A0002</td>
+<td>Less serious hardware error</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td>A0003</td>
+<td>Serious configuration error</td>
+<td>Defined by manufacturer</td>
+<td>2</td>
+<td>D</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td>A0004</td>
+<td>Less serious configuration error</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td>A0005</td>
+<td>Communication error between traffic light controllers / synchronisation error</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td>A0006</td>
+<td>Safety error</td>
+<td>Defined by manufacturer</td>
+<td>2</td>
+<td>D</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td>A0007</td>
+<td>Communication error between one or multiple traffic light controllers and central control system</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+<tr class="row-odd"><td>Signal group</td>
+<td><a class="reference internal" href="#a0008">A0008</a></td>
+<td>Dead lock error</td>
+<td>Defined by manufacturer</td>
+<td>2</td>
+<td>D</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td>A0009</td>
+<td>Other error</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td>A0010</td>
+<td>Door open</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+<tr class="row-even"><td>Signal group</td>
+<td>A0101</td>
+<td>Pushbutton error</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+<tr class="row-odd"><td>Signal group</td>
+<td><a class="reference internal" href="#a0201">A0201</a></td>
+<td>Serious lamp error</td>
+<td>Defined by manufacturer</td>
+<td>2</td>
+<td>D</td>
+</tr>
+<tr class="row-even"><td>Signal group</td>
+<td><a class="reference internal" href="#a0202">A0202</a></td>
+<td>Less serious lamp error</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+<tr class="row-odd"><td>Detector logic</td>
+<td><a class="reference internal" href="#a0301">A0301</a></td>
+<td>Detector error (hardware)</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+<tr class="row-even"><td>Detector logic</td>
+<td><a class="reference internal" href="#a0302">A0302</a></td>
+<td>Detector error (logic error)</td>
+<td>Defined by manufacturer</td>
+<td>3</td>
+<td>D</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="return-values">
+<h2>5.1. Return values<a class="headerlink" href="#return-values" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="a0008">
+<h3>5.1.1. A0008<a class="headerlink" href="#a0008" title="Permalink to this headline">¶</a></h3>
+<p>Dead lock error</p>
+<table border="1" class="colwidths-given docutils" id="id7">
+<caption><span class="caption-text">Return values</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="14%" />
+<col width="23%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>timeplan</td>
+<td>integer</td>
+<td>[designation]</td>
+<td>Current time plan</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="a0201">
+<h3>5.1.2. A0201<a class="headerlink" href="#a0201" title="Permalink to this headline">¶</a></h3>
+<p>Serious lamp error</p>
+<table border="1" class="colwidths-given docutils" id="id8">
+<caption><span class="caption-text">Return values</span><a class="headerlink" href="#id8" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="14%" />
+<col width="23%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>color</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>red</li>
+<li>yellow</li>
+<li>green</li>
+</ul>
+</td>
+<td>Color of lamp</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="a0202">
+<h3>5.1.3. A0202<a class="headerlink" href="#a0202" title="Permalink to this headline">¶</a></h3>
+<p>Less serious lamp error</p>
+<table border="1" class="colwidths-given docutils" id="id9">
+<caption><span class="caption-text">Return values</span><a class="headerlink" href="#id9" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="14%" />
+<col width="23%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>color</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>red</li>
+<li>yellow</li>
+<li>green</li>
+</ul>
+</td>
+<td>Color of lamp</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="a0301">
+<h3>5.1.4. A0301<a class="headerlink" href="#a0301" title="Permalink to this headline">¶</a></h3>
+<p>Detector error (hardware)</p>
+<table border="1" class="colwidths-given docutils" id="id10">
+<caption><span class="caption-text">Return values</span><a class="headerlink" href="#id10" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="14%" />
+<col width="23%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>detector</td>
+<td>string</td>
+<td>[designation]</td>
+<td>Designation of the detector</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>loop</li>
+<li>input</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">Type of detector.</div>
+<div class="line">loop: Inductive detector loop</div>
+<div class="line">input: External input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>errormode</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>on</li>
+<li>off</li>
+</ul>
+</td>
+<td>Dectector forced on/off while detector error</td>
+</tr>
+<tr class="row-odd"><td>manual</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>True</li>
+<li>False</li>
+<li></li>
+</ul>
+</td>
+<td>Manually controlled detector logic (True/False)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="a0302">
+<h3>5.1.5. A0302<a class="headerlink" href="#a0302" title="Permalink to this headline">¶</a></h3>
+<p>Detector error (logic error)</p>
+<table border="1" class="colwidths-given docutils" id="id11">
+<caption><span class="caption-text">Return values</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="18%" />
+<col width="14%" />
+<col width="23%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>detector</td>
+<td>string</td>
+<td>[designation]</td>
+<td>Designation of the detector</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>loop</li>
+<li>input</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">Type of detector.</div>
+<div class="line">loop: Inductive detector loop</div>
+<div class="line">input: External input</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>errormode</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>on</li>
+<li>off</li>
+</ul>
+</td>
+<td>Dectector forced on/off while detector error</td>
+</tr>
+<tr class="row-odd"><td>manual</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>True</li>
+<li>False</li>
+<li></li>
+</ul>
+</td>
+<td>Manually controlled detector logic (True/False)</td>
+</tr>
+<tr class="row-even"><td>logicerror</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>always_off</li>
+<li>always_on</li>
+<li>intermittent</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">Type of logic error</div>
+<div class="line">always_off: no detection during prefined max time</div>
+<div class="line">always on: detection constantly on during predefined max time</div>
+<div class="line">intermittent: intermittent logic fault (flutter)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="status">
+<h1>6. Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-auto docutils" id="id12">
+<caption><span class="caption-text">Status</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ObjectType</th>
+<th class="head">statusCodeId</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0001">S0001</a></td>
+<td>Signal group status</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0002">S0002</a></td>
+<td>Detector logic status</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0003">S0003</a></td>
+<td>Input status</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0004">S0004</a></td>
+<td>Output status</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0005">S0005</a></td>
+<td>Traffic Light Controller starting</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0006">S0006</a></td>
+<td>Emergency stage</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0007">S0007</a></td>
+<td>Controller switched on</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0008">S0008</a></td>
+<td>Manual control</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0009">S0009</a></td>
+<td>Fixed time control</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0010">S0010</a></td>
+<td>Isolated control</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0011">S0011</a></td>
+<td>Yellow flash</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0012">S0012</a></td>
+<td>All red</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0013">S0013</a></td>
+<td>Police key</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0014">S0014</a></td>
+<td>Current time plan</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0015">S0015</a></td>
+<td>Current traffic situation</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0016">S0016</a></td>
+<td>Number of detector logics</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0017">S0017</a></td>
+<td>Number of signal groups</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0018">S0018</a></td>
+<td>Number of time plans</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0019">S0019</a></td>
+<td>Number of traffic situations</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0020">S0020</a></td>
+<td>Control mode</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0021">S0021</a></td>
+<td>Manually set detector logic</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0022">S0022</a></td>
+<td>List of time plans</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0023">S0023</a></td>
+<td>Command table</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0024">S0024</a></td>
+<td>Offset time</td>
+</tr>
+<tr class="row-even"><td>Signal Group</td>
+<td><a class="reference internal" href="#s0025">S0025</a></td>
+<td>Time-of-Green / Time-of-Red</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0026">S0026</a></td>
+<td>Week time table</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0027">S0027</a></td>
+<td>Time tables</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0028">S0028</a></td>
+<td>Cycle time</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0029">S0029</a></td>
+<td>Forced input status</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0030">S0030</a></td>
+<td>Forced output status</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0031">S0031</a></td>
+<td>Trigger level sensitivity for loop detector</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0091">S0091</a></td>
+<td>Operator logged in/out OP-panel</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0092">S0092</a></td>
+<td>Operator logged in/out web-interface</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0095">S0095</a></td>
+<td>Version of Traffic Light Controller</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0096">S0096</a></td>
+<td>Current date and time</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0097">S0097</a></td>
+<td>Traffic parameter checksum</td>
+</tr>
+<tr class="row-even"><td>Detector logic</td>
+<td><a class="reference internal" href="#s0201">S0201</a></td>
+<td>Traffic Counting: Number of vehicles</td>
+</tr>
+<tr class="row-odd"><td>Detector logic</td>
+<td><a class="reference internal" href="#s0202">S0202</a></td>
+<td>Traffic Counting: Vehicle speed</td>
+</tr>
+<tr class="row-even"><td>Detector logic</td>
+<td><a class="reference internal" href="#s0203">S0203</a></td>
+<td>Traffic Counting: Occupancy</td>
+</tr>
+<tr class="row-odd"><td>Detector logic</td>
+<td><a class="reference internal" href="#s0204">S0204</a></td>
+<td>Traffic Counting: Number of vehicles of given classification</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0205">S0205</a></td>
+<td>Traffic Counting: Number of vehicles</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0206">S0206</a></td>
+<td>Traffic Counting: Vehicle speed</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0207">S0207</a></td>
+<td>Traffic Counting: Occupancy</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0208">S0208</a></td>
+<td>Traffic Counting: Number of vehicles of given classification</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h2>6.1. Return values<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="s0001">
+<h3>6.1.1. S0001<a class="headerlink" href="#s0001" title="Permalink to this headline">¶</a></h3>
+<p>Signal group status</p>
+<table border="1" class="colwidths-auto docutils" id="id13">
+<caption><span class="caption-text">Signal group status</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>signalgroupstatus</td>
+<td>string</td>
+<td>[text]</td>
+<td>Signal group status as text field</td>
+</tr>
+<tr class="row-odd"><td>cyclecounter</td>
+<td>integer</td>
+<td>[0-999]</td>
+<td>Cycle counter</td>
+</tr>
+<tr class="row-even"><td>basecyclecounter</td>
+<td>integer</td>
+<td>[0-999]</td>
+<td>Base cycle counter</td>
+</tr>
+<tr class="row-odd"><td>stage</td>
+<td>integer</td>
+<td>[0-999]</td>
+<td>Current stage (isolated)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0002">
+<h3>6.1.2. S0002<a class="headerlink" href="#s0002" title="Permalink to this headline">¶</a></h3>
+<p>Detector logic status</p>
+<table border="1" class="colwidths-auto docutils" id="id14">
+<caption><span class="caption-text">Detector logic status</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>detectorlogicstatus</td>
+<td>string</td>
+<td>[text]</td>
+<td>Detector logic status as text field</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0003">
+<h3>6.1.3. S0003<a class="headerlink" href="#s0003" title="Permalink to this headline">¶</a></h3>
+<p>Input status</p>
+<table border="1" class="colwidths-auto docutils" id="id15">
+<caption><span class="caption-text">Input status</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>inputstatus</td>
+<td>string</td>
+<td>[text]</td>
+<td>Input status as text field</td>
+</tr>
+<tr class="row-odd"><td>extendedinputstatus</td>
+<td>string</td>
+<td>[text]</td>
+<td>Extended input status as text field</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0004">
+<h3>6.1.4. S0004<a class="headerlink" href="#s0004" title="Permalink to this headline">¶</a></h3>
+<p>Output status</p>
+<table border="1" class="colwidths-auto docutils" id="id16">
+<caption><span class="caption-text">Output status</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>outputstatus</td>
+<td>string</td>
+<td>[text]</td>
+<td>Output status as text field</td>
+</tr>
+<tr class="row-odd"><td>extendedoutputstatus</td>
+<td>string</td>
+<td>[text]</td>
+<td>Extended output status as text field</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0005">
+<h3>6.1.5. S0005<a class="headerlink" href="#s0005" title="Permalink to this headline">¶</a></h3>
+<p>Traffic Light Controller starting</p>
+<table border="1" class="colwidths-auto docutils" id="id17">
+<caption><span class="caption-text">Traffic Light Controller starting</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Controller is not in start up mode</div>
+<div class="line">True: Controller is currently in start up mode</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0006">
+<h3>6.1.6. S0006<a class="headerlink" href="#s0006" title="Permalink to this headline">¶</a></h3>
+<p>Emergency stage</p>
+<table border="1" class="colwidths-auto docutils" id="id18">
+<caption><span class="caption-text">Emergency stage</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Emergency stage inactive</div>
+<div class="line">True: Emergency stage active</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>emergencystage</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>Number of emergency stage</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0007">
+<h3>6.1.7. S0007<a class="headerlink" href="#s0007" title="Permalink to this headline">¶</a></h3>
+<p>Controller switched on</p>
+<table border="1" class="colwidths-auto docutils" id="id19">
+<caption><span class="caption-text">Controller switched on</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intersection</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td><div class="first last line-block">
+<div class="line">0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)</div>
+<div class="line">Other value: Intersection number</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Traffic Light Controller in dark mode</div>
+<div class="line">True: Traffic Light Controller not in dark mode</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0008">
+<h3>6.1.8. S0008<a class="headerlink" href="#s0008" title="Permalink to this headline">¶</a></h3>
+<p>Manual control</p>
+<table border="1" class="colwidths-auto docutils" id="id20">
+<caption><span class="caption-text">Manual control</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intersection</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td><div class="first last line-block">
+<div class="line">0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)</div>
+<div class="line">Other value: Intersection number</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Manual control inactive</div>
+<div class="line">True: Manual control active</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0009">
+<h3>6.1.9. S0009<a class="headerlink" href="#s0009" title="Permalink to this headline">¶</a></h3>
+<p>Fixed time control</p>
+<table border="1" class="colwidths-auto docutils" id="id21">
+<caption><span class="caption-text">Fixed time control</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intersection</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td><div class="first last line-block">
+<div class="line">0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)</div>
+<div class="line">Other value: Intersection number</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False:  Fixed time control inactive</div>
+<div class="line">True:  Fixed time control active</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0010">
+<h3>6.1.10. S0010<a class="headerlink" href="#s0010" title="Permalink to this headline">¶</a></h3>
+<p>Isolated control</p>
+<table border="1" class="colwidths-auto docutils" id="id22">
+<caption><span class="caption-text">Isolated control</span><a class="headerlink" href="#id22" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intersection</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td><div class="first last line-block">
+<div class="line">0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)</div>
+<div class="line">Other value: Intersection number</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Isolated control disabled</div>
+<div class="line">True: Isolated control enabled (Vehicle actuated control or Fixed time control)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0011">
+<h3>6.1.11. S0011<a class="headerlink" href="#s0011" title="Permalink to this headline">¶</a></h3>
+<p>Yellow flash</p>
+<table border="1" class="colwidths-auto docutils" id="id23">
+<caption><span class="caption-text">Yellow flash</span><a class="headerlink" href="#id23" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intersection</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td><div class="first last line-block">
+<div class="line">0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)</div>
+<div class="line">Other value: Intersection number</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Yellow flash disabled</div>
+<div class="line">True: Yellow flash enabled</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0012">
+<h3>6.1.12. S0012<a class="headerlink" href="#s0012" title="Permalink to this headline">¶</a></h3>
+<p>All red</p>
+<table border="1" class="colwidths-auto docutils" id="id24">
+<caption><span class="caption-text">All red</span><a class="headerlink" href="#id24" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intersection</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td><div class="first last line-block">
+<div class="line">0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)</div>
+<div class="line">Other value: Intersection number</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: All red disabled</div>
+<div class="line">True: All red enabled</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0013">
+<h3>6.1.13. S0013<a class="headerlink" href="#s0013" title="Permalink to this headline">¶</a></h3>
+<p>Police key</p>
+<table border="1" class="colwidths-auto docutils" id="id25">
+<caption><span class="caption-text">Police key</span><a class="headerlink" href="#id25" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intersection</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td><div class="first last line-block">
+<div class="line">0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)</div>
+<div class="line">Other value: Intersection number</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>integer</td>
+<td><ul class="first last simple">
+<li>0</li>
+<li>1</li>
+<li>2</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">0: disabled</div>
+<div class="line">1: dark mode</div>
+<div class="line">2: yellow flash</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0014">
+<h3>6.1.14. S0014<a class="headerlink" href="#s0014" title="Permalink to this headline">¶</a></h3>
+<p>Current time plan</p>
+<table border="1" class="colwidths-auto docutils" id="id26">
+<caption><span class="caption-text">Current time plan</span><a class="headerlink" href="#id26" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>Current time plan</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0015">
+<h3>6.1.15. S0015<a class="headerlink" href="#s0015" title="Permalink to this headline">¶</a></h3>
+<p>Current traffic situation</p>
+<table border="1" class="colwidths-auto docutils" id="id27">
+<caption><span class="caption-text">Current traffic situation</span><a class="headerlink" href="#id27" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>Current traffic situation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0016">
+<h3>6.1.16. S0016<a class="headerlink" href="#s0016" title="Permalink to this headline">¶</a></h3>
+<p>Number of detector logics</p>
+<table border="1" class="colwidths-auto docutils" id="id28">
+<caption><span class="caption-text">Number of detector logics</span><a class="headerlink" href="#id28" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>number</td>
+<td>long</td>
+<td>[1-65025]</td>
+<td>Number of detector logics</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0017">
+<h3>6.1.17. S0017<a class="headerlink" href="#s0017" title="Permalink to this headline">¶</a></h3>
+<p>Number of signal groups</p>
+<table border="1" class="colwidths-auto docutils" id="id29">
+<caption><span class="caption-text">Number of signal groups</span><a class="headerlink" href="#id29" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>number</td>
+<td>long</td>
+<td>[1-65025]</td>
+<td>Number of signal groups</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0018">
+<h3>6.1.18. S0018<a class="headerlink" href="#s0018" title="Permalink to this headline">¶</a></h3>
+<p>Number of time plans</p>
+<table border="1" class="colwidths-auto docutils" id="id30">
+<caption><span class="caption-text">Number of time plans</span><a class="headerlink" href="#id30" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>number</td>
+<td>long</td>
+<td>[1-65025]</td>
+<td>Number of time plans (depreciated)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0019">
+<h3>6.1.19. S0019<a class="headerlink" href="#s0019" title="Permalink to this headline">¶</a></h3>
+<p>Number of traffic situations</p>
+<table border="1" class="colwidths-auto docutils" id="id31">
+<caption><span class="caption-text">Number of traffic situations</span><a class="headerlink" href="#id31" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>number</td>
+<td>long</td>
+<td>[1-65025]</td>
+<td>Number of traffic situations</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0020">
+<h3>6.1.20. S0020<a class="headerlink" href="#s0020" title="Permalink to this headline">¶</a></h3>
+<p>Control mode</p>
+<table border="1" class="colwidths-auto docutils" id="id32">
+<caption><span class="caption-text">Control mode</span><a class="headerlink" href="#id32" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intersection</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td><div class="first last line-block">
+<div class="line">0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)</div>
+<div class="line">Other value: Intersection number</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>controlmode</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>startup</li>
+<li>control</li>
+<li>standby</li>
+<li>failure</li>
+<li>test</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">Startup mode</div>
+<div class="line">Normal control</div>
+<div class="line">Standby mode</div>
+<div class="line">Failure mode</div>
+<div class="line">Test mode</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0021">
+<h3>6.1.21. S0021<a class="headerlink" href="#s0021" title="Permalink to this headline">¶</a></h3>
+<p>Manually set detector logic</p>
+<table border="1" class="colwidths-auto docutils" id="id33">
+<caption><span class="caption-text">Manually set detector logic</span><a class="headerlink" href="#id33" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>detectorlogics</td>
+<td>string</td>
+<td>[text]</td>
+<td>Manually set detector logics (1/0) as text field</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0022">
+<h3>6.1.22. S0022<a class="headerlink" href="#s0022" title="Permalink to this headline">¶</a></h3>
+<p>List of time plans</p>
+<table border="1" class="colwidths-auto docutils" id="id34">
+<caption><span class="caption-text">List of time plans</span><a class="headerlink" href="#id34" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td>Comma separated list of configured time plans. E.g. “1,2,3,5”</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0023">
+<h3>6.1.23. S0023<a class="headerlink" href="#s0023" title="Permalink to this headline">¶</a></h3>
+<p>Command table</p>
+<table border="1" class="colwidths-auto docutils" id="id35">
+<caption><span class="caption-text">Command table</span><a class="headerlink" href="#id35" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Command table. Defines command,</div>
+<div class="line">Each command are written as pp-dd-ee where:</div>
+<div class="line">pp=Time plan</div>
+<div class="line">dd=Dynamic band number (from 1-10)</div>
+<div class="line">ee=Extension in seconds in this band</div>
+<div class="line"><br /></div>
+<div class="line">Each command is separated with a comma.</div>
+<div class="line"><br /></div>
+<div class="line">E.g.</div>
+<div class="line">pp-dd-ee,pp-dd-ee</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0024">
+<h3>6.1.24. S0024<a class="headerlink" href="#s0024" title="Permalink to this headline">¶</a></h3>
+<p>Offset time</p>
+<table border="1" class="colwidths-auto docutils" id="id36">
+<caption><span class="caption-text">Offset time</span><a class="headerlink" href="#id36" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Offset table</div>
+<div class="line">Each offset time is written as pp-tt where:</div>
+<div class="line">pp=time plan</div>
+<div class="line">tt=offset time in seconds</div>
+<div class="line"><br /></div>
+<div class="line">Each offset time is separated with a comma</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line">E.g.</div>
+<div class="line">pp-tt,pp-tt</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0025">
+<h3>6.1.25. S0025<a class="headerlink" href="#s0025" title="Permalink to this headline">¶</a></h3>
+<p>Time-of-Green / Time-of-Red</p>
+<table border="1" class="colwidths-auto docutils" id="id37">
+<caption><span class="caption-text">Time-of-Green / Time-of-Red</span><a class="headerlink" href="#id37" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>minToGEstimate</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td><div class="first last line-block">
+<div class="line">Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green.</div>
+<div class="line">Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>maxToGEstimate</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td><div class="first last line-block">
+<div class="line">Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green.</div>
+<div class="line">Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>likelyToGEstimate</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td><div class="first last line-block">
+<div class="line">Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green.</div>
+<div class="line">Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>ToGConfidence</td>
+<td>integer</td>
+<td>[0-100]</td>
+<td>Confidence of the likelyToGEstimate. 0-100%</td>
+</tr>
+<tr class="row-even"><td>minToREstimate</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td><div class="first last line-block">
+<div class="line">Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red.</div>
+<div class="line">Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>maxToREstimate</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td><div class="first last line-block">
+<div class="line">Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red.</div>
+<div class="line">Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>likelyToREstimate</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td><div class="first last line-block">
+<div class="line">Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red.</div>
+<div class="line">Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>ToRConfidence</td>
+<td>integer</td>
+<td>[0-100]</td>
+<td>Confidence of the likelyToREstimate. 0-100%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0026">
+<h3>6.1.26. S0026<a class="headerlink" href="#s0026" title="Permalink to this headline">¶</a></h3>
+<p>Week time table</p>
+<table border="1" class="colwidths-auto docutils" id="id38">
+<caption><span class="caption-text">Week time table</span><a class="headerlink" href="#id38" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Week time table. Defines time table to use for each week day</div>
+<div class="line">Each day is written as d-t where:</div>
+<div class="line">d=day of week</div>
+<div class="line">t=time table nr</div>
+<div class="line"><br /></div>
+<div class="line">Day of week legend:</div>
+<div class="line">0=Monday</div>
+<div class="line">1=Tuesday</div>
+<div class="line">2=Wednesday</div>
+<div class="line">3=Thursday</div>
+<div class="line">4=Friday</div>
+<div class="line">5=Saturday</div>
+<div class="line">6=Sunday</div>
+<div class="line"><br /></div>
+<div class="line">Each segment is separated with a comma</div>
+<div class="line">E.g.</div>
+<div class="line">d-t,d-t</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0027">
+<h3>6.1.27. S0027<a class="headerlink" href="#s0027" title="Permalink to this headline">¶</a></h3>
+<p>Time tables</p>
+<table border="1" class="colwidths-auto docutils" id="id39">
+<caption><span class="caption-text">Time tables</span><a class="headerlink" href="#id39" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Time Table. Defines time tables.</div>
+<div class="line">Each time definition is written as t-o-h-m where:</div>
+<div class="line">t=time table nr (1-12)</div>
+<div class="line">o=function</div>
+<div class="line">h=hour - switching time</div>
+<div class="line">m=minute - switching minute</div>
+<div class="line"><br /></div>
+<div class="line">Function legend:</div>
+<div class="line">0=no plan is selected by time table</div>
+<div class="line">1=set plan 1</div>
+<div class="line">…</div>
+<div class="line">16= set plan 16</div>
+<div class="line"><br /></div>
+<div class="line">hour and minute is using local time (not UTC)</div>
+<div class="line"><br /></div>
+<div class="line">Each time definition is separated with a comma</div>
+<div class="line"><br /></div>
+<div class="line">E.g.</div>
+<div class="line">t-o-h-m,t-o-h-m</div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0028">
+<h3>6.1.28. S0028<a class="headerlink" href="#s0028" title="Permalink to this headline">¶</a></h3>
+<p>Cycle time</p>
+<table border="1" class="colwidths-auto docutils" id="id40">
+<caption><span class="caption-text">Cycle time</span><a class="headerlink" href="#id40" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Cycle time table</div>
+<div class="line">Each cycle time is written as pp-tt where:</div>
+<div class="line">pp=time plan</div>
+<div class="line">tt=cycle time in seconds</div>
+<div class="line"><br /></div>
+<div class="line">Each cycle time is separated with a comma</div>
+<div class="line"><br /></div>
+<div class="line"><br /></div>
+<div class="line">E.g.</div>
+<div class="line">pp-tt,pp-tt</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0029">
+<h3>6.1.29. S0029<a class="headerlink" href="#s0029" title="Permalink to this headline">¶</a></h3>
+<p>Forced input status</p>
+<table border="1" class="colwidths-auto docutils" id="id41">
+<caption><span class="caption-text">Forced input status</span><a class="headerlink" href="#id41" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td>Forced input status as text field</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0030">
+<h3>6.1.30. S0030<a class="headerlink" href="#s0030" title="Permalink to this headline">¶</a></h3>
+<p>Forced output status</p>
+<table border="1" class="colwidths-auto docutils" id="id42">
+<caption><span class="caption-text">Forced output status</span><a class="headerlink" href="#id42" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td>Forced output status as text field</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0031">
+<h3>6.1.31. S0031<a class="headerlink" href="#s0031" title="Permalink to this headline">¶</a></h3>
+<p>Trigger level sensitivity for loop detector</p>
+<table border="1" class="colwidths-auto docutils" id="id43">
+<caption><span class="caption-text">Trigger level sensitivity for loop detector</span><a class="headerlink" href="#id43" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Loop detector trigger level sensitivity is written as dd-ss where:</div>
+<div class="line">dd=loop detector number</div>
+<div class="line">ss=sensitivity value</div>
+<div class="line">Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0091">
+<h3>6.1.32. S0091<a class="headerlink" href="#s0091" title="Permalink to this headline">¶</a></h3>
+<p>Operator logged in/out OP-panel</p>
+<table border="1" class="colwidths-auto docutils" id="id44">
+<caption><span class="caption-text">Operator logged in/out OP-panel</span><a class="headerlink" href="#id44" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>user</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>[username]</li>
+<li>[nobody]</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">username: User currently logged in</div>
+<div class="line">nobody: No one logged in</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>login</li>
+<li>logout</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">login: Somebody currently logged in</div>
+<div class="line">logout: Nobody currently logged in</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0092">
+<h3>6.1.33. S0092<a class="headerlink" href="#s0092" title="Permalink to this headline">¶</a></h3>
+<p>Operator logged in/out web-interface</p>
+<table border="1" class="colwidths-auto docutils" id="id45">
+<caption><span class="caption-text">Operator logged in/out web-interface</span><a class="headerlink" href="#id45" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>user</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>[username]</li>
+<li>[nobody]</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">username: User currently logged in</div>
+<div class="line">nobody: No one logged in</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>login</li>
+<li>logout</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">login: Somebody currently logged in</div>
+<div class="line">logout: Nobody currently logged in</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0095">
+<h3>6.1.34. S0095<a class="headerlink" href="#s0095" title="Permalink to this headline">¶</a></h3>
+<p>Version of Traffic Light Controller</p>
+<table border="1" class="colwidths-auto docutils" id="id46">
+<caption><span class="caption-text">Version of Traffic Light Controller</span><a class="headerlink" href="#id46" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>[text]</td>
+<td>Manufacturer, product name and version of traffic light controller</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0096">
+<h3>6.1.35. S0096<a class="headerlink" href="#s0096" title="Permalink to this headline">¶</a></h3>
+<p>Current date and time</p>
+<table border="1" class="colwidths-auto docutils" id="id47">
+<caption><span class="caption-text">Current date and time</span><a class="headerlink" href="#id47" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>year</td>
+<td>integer</td>
+<td>YYYY</td>
+<td>Year according to format YYYY. NOTE: UTC is used</td>
+</tr>
+<tr class="row-odd"><td>month</td>
+<td>integer</td>
+<td>MM</td>
+<td>Month (01-12) according to format MM. Note: UTC is used</td>
+</tr>
+<tr class="row-even"><td>day</td>
+<td>integer</td>
+<td>DD</td>
+<td>Day of month (01-31) according to format DD.  Note: UTC is used</td>
+</tr>
+<tr class="row-odd"><td>hour</td>
+<td>integer</td>
+<td>HH</td>
+<td>Hour of day (00-23) according to format DD. Note: UTC is used</td>
+</tr>
+<tr class="row-even"><td>minute</td>
+<td>integer</td>
+<td>MM</td>
+<td>Minute (00-59) according to format MM. Note: UTC is used</td>
+</tr>
+<tr class="row-odd"><td>second</td>
+<td>integer</td>
+<td>SS</td>
+<td>Second (00-59) according to format SS. Note: UTC is used</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0097">
+<h3>6.1.36. S0097<a class="headerlink" href="#s0097" title="Permalink to this headline">¶</a></h3>
+<p>Traffic parameter checksum</p>
+<table border="1" class="colwidths-auto docutils" id="id48">
+<caption><span class="caption-text">Traffic parameter checksum</span><a class="headerlink" href="#id48" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>checksum</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Checksum of the traffic parameters</div>
+<div class="line">Uses SHA-2 as hashing algorithm</div>
+<div class="line">Includes</div>
+<div class="line-block">
+<div class="line">all signal programs, including program versions</div>
+<div class="line">time plans</div>
+<div class="line">safety matrix</div>
+<div class="line">intergreen times</div>
+<div class="line">detector settings</div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>timestamp</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td>Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0201">
+<h3>6.1.37. S0201<a class="headerlink" href="#s0201" title="Permalink to this headline">¶</a></h3>
+<p>Traffic Counting: Number of vehicles</p>
+<table border="1" class="colwidths-auto docutils" id="id49">
+<caption><span class="caption-text">Traffic Counting: Number of vehicles</span><a class="headerlink" href="#id49" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>starttime</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td>Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+</tr>
+<tr class="row-odd"><td>vehicles</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of vehicles on a given detector logic (since last update)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0202">
+<h3>6.1.38. S0202<a class="headerlink" href="#s0202" title="Permalink to this headline">¶</a></h3>
+<p>Traffic Counting: Vehicle speed</p>
+<table border="1" class="colwidths-auto docutils" id="id50">
+<caption><span class="caption-text">Traffic Counting: Vehicle speed</span><a class="headerlink" href="#id50" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>starttime</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td>Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+</tr>
+<tr class="row-odd"><td>speed</td>
+<td>integer</td>
+<td>[speed]</td>
+<td>Average speed in km/h</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0203">
+<h3>6.1.39. S0203<a class="headerlink" href="#s0203" title="Permalink to this headline">¶</a></h3>
+<p>Traffic Counting: Occupancy</p>
+<table border="1" class="colwidths-auto docutils" id="id51">
+<caption><span class="caption-text">Traffic Counting: Occupancy</span><a class="headerlink" href="#id51" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>starttime</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td>Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+</tr>
+<tr class="row-odd"><td>occupancy</td>
+<td>integer</td>
+<td>[0-100]</td>
+<td>Occupancy in percent (0-100%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0204">
+<h3>6.1.40. S0204<a class="headerlink" href="#s0204" title="Permalink to this headline">¶</a></h3>
+<p>Traffic Counting: Number of vehicles of given classification</p>
+<table border="1" class="colwidths-auto docutils" id="id52">
+<caption><span class="caption-text">Traffic Counting: Number of vehicles of given classification</span><a class="headerlink" href="#id52" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>starttime</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td>Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+</tr>
+<tr class="row-odd"><td>P</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of cars</td>
+</tr>
+<tr class="row-even"><td>PS</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of cars with trailers</td>
+</tr>
+<tr class="row-odd"><td>L</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of trucks</td>
+</tr>
+<tr class="row-even"><td>LS</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of trucks with trailers</td>
+</tr>
+<tr class="row-odd"><td>B</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of busses</td>
+</tr>
+<tr class="row-even"><td>SP</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of trams</td>
+</tr>
+<tr class="row-odd"><td>MC</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of motor cycles</td>
+</tr>
+<tr class="row-even"><td>C</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of bicycles</td>
+</tr>
+<tr class="row-odd"><td>F</td>
+<td>long</td>
+<td>[number]</td>
+<td>Number of pedestrians</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0205">
+<h3>6.1.41. S0205<a class="headerlink" href="#s0205" title="Permalink to this headline">¶</a></h3>
+<p>Traffic Counting: Number of vehicles</p>
+<table border="1" class="colwidths-auto docutils" id="id53">
+<caption><span class="caption-text">Traffic Counting: Number of vehicles</span><a class="headerlink" href="#id53" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>start</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td>Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+</tr>
+<tr class="row-odd"><td>vehicles</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of vehicles</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0206">
+<h3>6.1.42. S0206<a class="headerlink" href="#s0206" title="Permalink to this headline">¶</a></h3>
+<p>Traffic Counting: Vehicle speed</p>
+<table border="1" class="colwidths-auto docutils" id="id54">
+<caption><span class="caption-text">Traffic Counting: Vehicle speed</span><a class="headerlink" href="#id54" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>start</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td>Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+</tr>
+<tr class="row-odd"><td>speed</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Average speed in km/h (integer)</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0207">
+<h3>6.1.43. S0207<a class="headerlink" href="#s0207" title="Permalink to this headline">¶</a></h3>
+<p>Traffic Counting: Occupancy</p>
+<table border="1" class="colwidths-auto docutils" id="id55">
+<caption><span class="caption-text">Traffic Counting: Occupancy</span><a class="headerlink" href="#id55" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>start</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td>Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+</tr>
+<tr class="row-odd"><td>occupancy</td>
+<td>string</td>
+<td>[0-100,…]</td>
+<td><div class="first last line-block">
+<div class="line">Occupancy in percent (%) (0-100)</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-100.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="s0208">
+<h3>6.1.44. S0208<a class="headerlink" href="#s0208" title="Permalink to this headline">¶</a></h3>
+<p>Traffic Counting: Number of vehicles of given classification</p>
+<table border="1" class="colwidths-auto docutils" id="id56">
+<caption><span class="caption-text">Traffic Counting: Number of vehicles of given classification</span><a class="headerlink" href="#id56" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>start</td>
+<td>string</td>
+<td>[time stamp]</td>
+<td>Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+</tr>
+<tr class="row-odd"><td>P</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of cars</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>PS</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of cars with trailers</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>L</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of trucks</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>LS</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of trucks with trailers</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>B</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of busses</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>SP</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of trams</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>MC</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of motor cycles</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>C</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of bicycles</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>F</td>
+<td>string</td>
+<td>[0-65535,…]</td>
+<td><div class="first last line-block">
+<div class="line">Number of pedestrians</div>
+<div class="line-block">
+<div class="line">Value expressed as an integer with a range of 0-65535.</div>
+<div class="line">Contains data from all detector logics. Each detector logic is separated with a comma.</div>
+<div class="line">The value is set to “-1” if no data could be measured (e.g. detector fault)</div>
+<div class="line"><br /></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="commands">
+<h1>7. Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="colwidths-auto docutils" id="id57">
+<caption><span class="caption-text">Commands</span><a class="headerlink" href="#id57" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ObjectType</th>
+<th class="head">commandCodeId</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0001">M0001</a></td>
+<td><div class="first last line-block">
+<div class="line">Sets functional position</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0002">M0002</a></td>
+<td><div class="first last line-block">
+<div class="line">Sets current time plan</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0003">M0003</a></td>
+<td><div class="first last line-block">
+<div class="line">Sets traffic situation the controller uses.</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0004">M0004</a></td>
+<td><div class="first last line-block">
+<div class="line">Restarts Traffic Light Controller</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0005">M0005</a></td>
+<td><div class="first last line-block">
+<div class="line">Activate emergency route</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0006">M0006</a></td>
+<td><div class="first last line-block">
+<div class="line">Activate input</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0007">M0007</a></td>
+<td><div class="first last line-block">
+<div class="line">Activate fixed time control</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Detector logic</td>
+<td><a class="reference internal" href="#m0008">M0008</a></td>
+<td><div class="first last line-block">
+<div class="line">Sets manual activation of detector logic.</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Signal group</td>
+<td><a class="reference internal" href="#m0010">M0010</a></td>
+<td>Start of signal group. Orders a signal group to green. Requires security code 2</td>
+</tr>
+<tr class="row-odd"><td>Signal group</td>
+<td><a class="reference internal" href="#m0011">M0011</a></td>
+<td>Stop of signal group. Orders a signal group to red. Requires security code 2</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0012">M0012</a></td>
+<td>Request start or stop of a series of signal groups. Requires security code 2</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0013">M0013</a></td>
+<td><div class="first last line-block">
+<div class="line">Activate a series of inputs</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0014">M0014</a></td>
+<td>Set command table</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0015">M0015</a></td>
+<td>Set Offset time</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0016">M0016</a></td>
+<td>Set week time table</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0017">M0017</a></td>
+<td>Set time tables</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0018">M0018</a></td>
+<td>Set Cycle time</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0019">M0019</a></td>
+<td><div class="first last line-block">
+<div class="line">Force input</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0020">M0020</a></td>
+<td><div class="first last line-block">
+<div class="line">Force output</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0021">M0021</a></td>
+<td><div class="first last line-block">
+<div class="line">Set trigger level sensitivity for loop detector</div>
+<div class="line">Requires security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0103">M0103</a></td>
+<td>Set security code</td>
+</tr>
+<tr class="row-odd"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#m0104">M0104</a></td>
+<td>Set clock</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="arguments">
+<h2>7.1. Arguments<a class="headerlink" href="#arguments" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="m0001">
+<h3>7.1.1. M0001<a class="headerlink" href="#m0001" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Sets functional position</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id58">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id58" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setValue</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>NormalControl</li>
+<li>YellowFlash</li>
+<li>Dark</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">NormalControl: Normal Control</div>
+<div class="line">YellowFlash: Enables yellow flash</div>
+<div class="line">Dark: Enables dark mode</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setValue</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+<tr class="row-even"><td>timeout</td>
+<td>setValue</td>
+<td>integer</td>
+<td>[0-1440]</td>
+<td><div class="first last line-block">
+<div class="line">Time in minutes until controller automatically reverts to previous functional position.</div>
+<div class="line">0=no automatic return</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>intersection</td>
+<td>setValue</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td>Intersection number</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0002">
+<h3>7.1.2. M0002<a class="headerlink" href="#m0002" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Sets current time plan</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id59">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id59" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setPlan</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Controller uses time plan according to programming</div>
+<div class="line">True: Contoller uses time plan according to command</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setPlan</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+<tr class="row-even"><td>timeplan</td>
+<td>setPlan</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>designation på time plan</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0003">
+<h3>7.1.3. M0003<a class="headerlink" href="#m0003" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Sets traffic situation the controller uses.</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id60">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id60" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setTrafficSituation</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Controller uses traffic situation according to own programming</div>
+<div class="line">True: Contoller uses traffic situation according to command</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setTrafficSituation</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+<tr class="row-even"><td>traficsituation</td>
+<td>setTrafficSituation</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>designation of traficsituation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0004">
+<h3>7.1.4. M0004<a class="headerlink" href="#m0004" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Restarts Traffic Light Controller</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id61">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id61" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setRestart</td>
+<td>boolean</td>
+<td>True</td>
+<td>True: Restart controller</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setRestart</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0005">
+<h3>7.1.5. M0005<a class="headerlink" href="#m0005" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Activate emergency route</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id62">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id62" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setEmergency</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Activate emergency route</div>
+<div class="line">True: Deactivate emergency route</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setEmergency</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+<tr class="row-even"><td>emergencyroute</td>
+<td>setEmergency</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>Number of emergency route</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0006">
+<h3>7.1.6. M0006<a class="headerlink" href="#m0006" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Activate input</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id63">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id63" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setInput</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Deactivate input</div>
+<div class="line">True: Activate input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setInput</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+<tr class="row-even"><td>input</td>
+<td>setInput</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>Number of Input</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0007">
+<h3>7.1.7. M0007<a class="headerlink" href="#m0007" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Activate fixed time control</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id64">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id64" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setFixedTime</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Deactivate fixed time control</div>
+<div class="line">True: Activate fixed time control</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setFixedTime</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0008">
+<h3>7.1.8. M0008<a class="headerlink" href="#m0008" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Sets manual activation of detector logic.</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id65">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id65" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setForceDetectorLogic</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Deactivate manual control of detector logic</div>
+<div class="line">True: Activate manual control of detector logic</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setForceDetectorLogic</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+<tr class="row-even"><td>mode</td>
+<td>setForceDetectorLogic</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Deactivate detector logic</div>
+<div class="line">True: Activate detector logic</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0010">
+<h3>7.1.9. M0010<a class="headerlink" href="#m0010" title="Permalink to this headline">¶</a></h3>
+<p>Start of signal group. Orders a signal group to green. Requires security code 2</p>
+<table border="1" class="colwidths-auto docutils" id="id66">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id66" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setStart</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: No command (default)</div>
+<div class="line">True: Order a signal group to green</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setStart</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0011">
+<h3>7.1.10. M0011<a class="headerlink" href="#m0011" title="Permalink to this headline">¶</a></h3>
+<p>Stop of signal group. Orders a signal group to red. Requires security code 2</p>
+<table border="1" class="colwidths-auto docutils" id="id67">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id67" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setStop</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: No command (default)</div>
+<div class="line">True: Order a signal group to red</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setStop</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0012">
+<h3>7.1.11. M0012<a class="headerlink" href="#m0012" title="Permalink to this headline">¶</a></h3>
+<p>Request start or stop of a series of signal groups. Requires security code 2</p>
+<table border="1" class="colwidths-auto docutils" id="id68">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id68" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setStart</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format, colon is used in example below.</div>
+<div class="line"><br /></div>
+<div class="line">1=Order signal group to green</div>
+<div class="line">0=Order signal group to red</div>
+<div class="line"><br /></div>
+<div class="line">Format: [Offset],[Bits to set],[Bits to unset]:…</div>
+<div class="line"><br /></div>
+<div class="line">Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768.</div>
+<div class="line"><br /></div>
+<div class="line">Example 1:</div>
+<div class="line">“5, 4134, 65” sets input 6,7,10,17 = on and 5,11 = off</div>
+<div class="line">(Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0)</div>
+<div class="line"><br /></div>
+<div class="line">Example 2:</div>
+<div class="line">“22, 1, 4” sets input 22 = on and 24 = off</div>
+<div class="line">(Input starts from no. 22 and bit 0 = 1 and bit 2 = 0)</div>
+<div class="line"><br /></div>
+<div class="line">And both thease examples could be sent in the same message as:</div>
+<div class="line">“5,4143,65:22,1,4”</div>
+<div class="line"><br /></div>
+<div class="line">Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setStart</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0013">
+<h3>7.1.12. M0013<a class="headerlink" href="#m0013" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Activate a series of inputs</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id69">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id69" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setInput</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format,  colon, “:” is used in example below.</div>
+<div class="line"><br /></div>
+<div class="line">Format: [Offset],[Bits to set],[Bits to unset]:…</div>
+<div class="line"><br /></div>
+<div class="line">Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768.</div>
+<div class="line"><br /></div>
+<div class="line">Example 1:</div>
+<div class="line">“5, 4134, 65” sets input 6,7,10,17 = on and 5,11 = off</div>
+<div class="line">(Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0)</div>
+<div class="line"><br /></div>
+<div class="line">Example 2:</div>
+<div class="line">“22, 1, 4” sets input 22 = on and 24 = off</div>
+<div class="line">(Input starts from no. 22 and bit 0 = 1 and bit 2 = 0)</div>
+<div class="line"><br /></div>
+<div class="line">And both thease examples could be sent in the same message as:</div>
+<div class="line">“5,4143:65:22,1,4”</div>
+<div class="line"><br /></div>
+<div class="line">Such a message would activate input 6,7,10,17,22 and deactive input 5,11,24</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setInput</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0014">
+<h3>7.1.13. M0014<a class="headerlink" href="#m0014" title="Permalink to this headline">¶</a></h3>
+<p>Set command table</p>
+<table border="1" class="colwidths-auto docutils" id="id70">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id70" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>plan</td>
+<td>setCommands</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td>Plan to be changed</td>
+</tr>
+<tr class="row-odd"><td>status</td>
+<td>setCommands</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Command table. Defines command,</div>
+<div class="line">Each command are written as dd-ee where:</div>
+<div class="line">dd=Dynamic band number (from 1-10)</div>
+<div class="line">ee=Extension in seconds in this band</div>
+<div class="line"><br /></div>
+<div class="line">Each command is separated with a comma.</div>
+<div class="line"><br /></div>
+<div class="line">E.g.</div>
+<div class="line">dd-ee,dd-ee</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>securityCode</td>
+<td>setCommands</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0015">
+<h3>7.1.14. M0015<a class="headerlink" href="#m0015" title="Permalink to this headline">¶</a></h3>
+<p>Set Offset time</p>
+<table border="1" class="colwidths-auto docutils" id="id71">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id71" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setOffset</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td>Set offset time in seconds</td>
+</tr>
+<tr class="row-odd"><td>plan</td>
+<td>setOffset</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td>Time plan nr</td>
+</tr>
+<tr class="row-even"><td>securityCode</td>
+<td>setOffset</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0016">
+<h3>7.1.15. M0016<a class="headerlink" href="#m0016" title="Permalink to this headline">¶</a></h3>
+<p>Set week time table</p>
+<table border="1" class="colwidths-auto docutils" id="id72">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id72" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setWeekTable</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Week time table. Defines time table to use for each week day</div>
+<div class="line">Each segment is written as d-t where:</div>
+<div class="line">d=day of week</div>
+<div class="line">t=time table nr</div>
+<div class="line"><br /></div>
+<div class="line">Day of week legend:</div>
+<div class="line">0=Monday</div>
+<div class="line">1=Tuesday</div>
+<div class="line">2=Wednesday</div>
+<div class="line">3=Thursday</div>
+<div class="line">4=Friday</div>
+<div class="line">5=Saturday</div>
+<div class="line">6=Sunday</div>
+<div class="line"><br /></div>
+<div class="line">Each segment is separated with a comma</div>
+<div class="line"><br /></div>
+<div class="line">E.g.</div>
+<div class="line">d-t,d-t</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setWeekTable</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0017">
+<h3>7.1.16. M0017<a class="headerlink" href="#m0017" title="Permalink to this headline">¶</a></h3>
+<p>Set time tables</p>
+<table border="1" class="colwidths-auto docutils" id="id73">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id73" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setTimeTable</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Time Table. Defines time tables.</div>
+<div class="line">Each time definition is written as t-o-h-m where:</div>
+<div class="line">t=time table nr (1-12)</div>
+<div class="line">o=function</div>
+<div class="line">h=hour - switching time</div>
+<div class="line">m=minute - switching minute</div>
+<div class="line"><br /></div>
+<div class="line">Function legend:</div>
+<div class="line">0=no plan is selected by time table</div>
+<div class="line">1=set plan 1</div>
+<div class="line">…</div>
+<div class="line">16= set plan 16</div>
+<div class="line"><br /></div>
+<div class="line">hour and minute is using local time (not UTC)</div>
+<div class="line"><br /></div>
+<div class="line">Each time definition is separated with a comma.</div>
+<div class="line"><br /></div>
+<div class="line">E.g.</div>
+<div class="line">t-o-h-m,t-o-h-m</div>
+<div class="line"><br /></div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setTimeTable</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0018">
+<h3>7.1.17. M0018<a class="headerlink" href="#m0018" title="Permalink to this headline">¶</a></h3>
+<p>Set Cycle time</p>
+<table border="1" class="colwidths-auto docutils" id="id74">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id74" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setCycleTime</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>Set cycle time in seconds</td>
+</tr>
+<tr class="row-odd"><td>plan</td>
+<td>setCycleTime</td>
+<td>integer</td>
+<td>[0-255]</td>
+<td>Time plan nr</td>
+</tr>
+<tr class="row-even"><td>securityCode</td>
+<td>setCycleTime</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0019">
+<h3>7.1.18. M0019<a class="headerlink" href="#m0019" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Force input</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id75">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id75" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setInput</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Force input</div>
+<div class="line">True: Release input</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setInput</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+<tr class="row-even"><td>input</td>
+<td>setInput</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>Number of Input</td>
+</tr>
+<tr class="row-odd"><td>inputValue</td>
+<td>setInput</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: input forced to False</div>
+<div class="line">True: input forced to True</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0020">
+<h3>7.1.19. M0020<a class="headerlink" href="#m0020" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Force output</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id76">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id76" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setOutput</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: Force output</div>
+<div class="line">True: Release output</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setInput</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+<tr class="row-even"><td>output</td>
+<td>setOutput</td>
+<td>integer</td>
+<td>[1-255]</td>
+<td>Number of Output</td>
+</tr>
+<tr class="row-odd"><td>outputValue</td>
+<td>setOutput</td>
+<td>boolean</td>
+<td><ul class="first last simple">
+<li>False</li>
+<li>True</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">False: output forced to False</div>
+<div class="line">True: output forced to True</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0021">
+<h3>7.1.20. M0021<a class="headerlink" href="#m0021" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line">Set trigger level sensitivity for loop detector</div>
+<div class="line">Requires security code 2</div>
+</div>
+<table border="1" class="colwidths-auto docutils" id="id77">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id77" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setLevel</td>
+<td>string</td>
+<td>[text]</td>
+<td><div class="first last line-block">
+<div class="line">Loop detector trigger level sensitivity is written as dd-ss where:</div>
+<div class="line">dd=loop detector number</div>
+<div class="line">ss=sensitivity value</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>securityCode</td>
+<td>setInput</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0103">
+<h3>7.1.21. M0103<a class="headerlink" href="#m0103" title="Permalink to this headline">¶</a></h3>
+<p>Set security code</p>
+<table border="1" class="colwidths-auto docutils" id="id78">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id78" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>status</td>
+<td>setSecurityCode</td>
+<td>string</td>
+<td><ul class="first last simple">
+<li>Level1</li>
+<li>Level2</li>
+</ul>
+</td>
+<td><div class="first last line-block">
+<div class="line">Level1: Change security code 1</div>
+<div class="line">Level2: Change security code 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>oldSecurityCode</td>
+<td>setSecurityCode</td>
+<td>string</td>
+<td>[text]</td>
+<td>Previous security code</td>
+</tr>
+<tr class="row-even"><td>newSecurityCode</td>
+<td>setSecurityCode</td>
+<td>string</td>
+<td>[text]</td>
+<td>New security code</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="m0104">
+<h3>7.1.22. M0104<a class="headerlink" href="#m0104" title="Permalink to this headline">¶</a></h3>
+<p>Set clock</p>
+<table border="1" class="colwidths-auto docutils" id="id79">
+<caption><span class="caption-text">Arguments</span><a class="headerlink" href="#id79" title="Permalink to this table">¶</a></caption>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Command</th>
+<th class="head">Type</th>
+<th class="head">Value</th>
+<th class="head">Comment</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>securityCode</td>
+<td>setDate</td>
+<td>string</td>
+<td>[text]</td>
+<td>Security code 1</td>
+</tr>
+<tr class="row-odd"><td>year</td>
+<td>setDate</td>
+<td>integer</td>
+<td>[YYYY]</td>
+<td><div class="first last line-block">
+<div class="line">Changes internal clock. Note: UTC is used</div>
+<div class="line">Year according to YYYY</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>month</td>
+<td>setDate</td>
+<td>integer</td>
+<td>[MM]</td>
+<td><div class="first last line-block">
+<div class="line">Changes internal clock. Note: UTC is used</div>
+<div class="line">Month according to MM (01-12)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>day</td>
+<td>setDate</td>
+<td>integer</td>
+<td>[DD]</td>
+<td><div class="first last line-block">
+<div class="line">Changes internal clock. Note: UTC is used</div>
+<div class="line">Day in month according to DD (01-31)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>hour</td>
+<td>setDate</td>
+<td>integer</td>
+<td>[HH]</td>
+<td><div class="first last line-block">
+<div class="line">Changes internal clock. Note: UTC is used</div>
+<div class="line">Hour according to HH (00-23)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>minute</td>
+<td>setDate</td>
+<td>integer</td>
+<td>[MM]</td>
+<td><div class="first last line-block">
+<div class="line">Changes internal clock. Note: UTC is used</div>
+<div class="line">Minute according to MM (00-23)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>second</td>
+<td>setDate</td>
+<td>integer</td>
+<td>[SS]</td>
+<td><div class="first last line-block">
+<div class="line">Changes internal clock. Note: UTC is used</div>
+<div class="line">Second according to SS (00-59)</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="signal_group_status.html" class="btn btn-neutral float-right" title="8. Signal Group status" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="definitions.html" class="btn btn-neutral float-left" title="1. Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright RSMP Nordic
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
