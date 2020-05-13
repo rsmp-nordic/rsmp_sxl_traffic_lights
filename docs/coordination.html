@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>10. Coordination between traffic light controllers &mdash; RSMP Signal Exchange List for Traffic Light Controllers - Appendices 1.0.15-draft documentation</title>
+  <title>5. Coordination between traffic light controllers &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.0.15-draft documentation</title>
   
 
   
@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. JSon Examples" href="examples.html" />
-    <link rel="prev" title="9. Traffic data" href="traffic_data.html" /> 
+    <link rel="next" title="6. JSon Examples" href="examples.html" />
+    <link rel="prev" title="4. Traffic data" href="traffic_data.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,7 +50,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers - Appendices
+            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers
           
 
           
@@ -87,31 +87,26 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html">2. Signal Exchange List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#object-types">3. Object Types</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#aggregated-status">4. Aggregated status</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#alarms">5. Alarms</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#status">6. Status</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html#commands">7. Commands</a></li>
-<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">8. Signal Group status</a></li>
-<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">9. Traffic data</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">10. Coordination between traffic light controllers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#general-concepts">10.1. General concepts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#coordination-type-local-coordination">10.2. Coordination type “Local coordination”</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#coordination-with-synchronized-cycle-counter">10.3. Coordination with synchronized cycle counter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#coordination-with-control-bits">10.4. Coordination with control bits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#general-rsmp-requirements">10.5. General RSMP requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#functional-requirements-of-the-tlc">10.6. Functional requirements of the TLC</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#notes-about-json">10.7. Notes about JSon</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#communication-establishment">10.8. Communication establishment</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#initialization-sequence-for-local-coordination">10.9. Initialization sequence for local coordination</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#initialization-sequence-for-coordination-with-synchronized-cycle-counter">10.10. Initialization sequence for coordination with synchronized cycle counter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#termination-sequence">10.11. Termination sequence</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#message-priority">10.12. Message priority</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#error-handling">10.13. Error handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#error-codes-for-messagenotack">10.14. Error codes for MessageNotAck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">3. Signal Group status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">4. Traffic data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Coordination between traffic light controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-concepts">5.1. General concepts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coordination-type-local-coordination">5.2. Coordination type “Local coordination”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coordination-with-synchronized-cycle-counter">5.3. Coordination with synchronized cycle counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coordination-with-control-bits">5.4. Coordination with control bits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-rsmp-requirements">5.5. General RSMP requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functional-requirements-of-the-tlc">5.6. Functional requirements of the TLC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes-about-json">5.7. Notes about JSon</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#communication-establishment">5.8. Communication establishment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initialization-sequence-for-local-coordination">5.9. Initialization sequence for local coordination</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initialization-sequence-for-coordination-with-synchronized-cycle-counter">5.10. Initialization sequence for coordination with synchronized cycle counter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#termination-sequence">5.11. Termination sequence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#message-priority">5.12. Message priority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-handling">5.13. Error handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#error-codes-for-messagenotack">5.14. Error codes for MessageNotAck</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">11. JSon Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">6. JSon Examples</a></li>
 </ul>
 
             
@@ -126,7 +121,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">RSMP Signal Exchange List for Traffic Light Controllers - Appendices</a>
+          <a href="index.html">RSMP Signal Exchange List for Traffic Light Controllers</a>
         
       </nav>
 
@@ -157,7 +152,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>10. Coordination between traffic light controllers</li>
+      <li>5. Coordination between traffic light controllers</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -177,9 +172,9 @@
            <div itemprop="articleBody">
             
   <div class="section" id="coordination-between-traffic-light-controllers">
-<h1>10. Coordination between traffic light controllers<a class="headerlink" href="#coordination-between-traffic-light-controllers" title="Permalink to this headline">¶</a></h1>
+<h1>5. Coordination between traffic light controllers<a class="headerlink" href="#coordination-between-traffic-light-controllers" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-concepts">
-<h2>10.1. General concepts<a class="headerlink" href="#general-concepts" title="Permalink to this headline">¶</a></h2>
+<h2>5.1. General concepts<a class="headerlink" href="#general-concepts" title="Permalink to this headline">¶</a></h2>
 <p>Coordination between Traffic Light Controllers (TLC) implies that several
 intersections are controlled together in a coordinated control mode at
 local or central level. Regardless of operational mode, prerequisites
@@ -202,7 +197,7 @@ central level while a split in locally coordinated sub areas should be
 possible during normal off-peak hours.</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="_images/types_of_coordination.png"><img alt="_images/types_of_coordination.png" src="_images/types_of_coordination.png" style="width: 476.4px; height: 169.79999999999998px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Figure 10.1:</strong> Types of coordination</span></p>
+<p class="caption"><span class="caption-text"><strong>Figure 5.1:</strong> Types of coordination</span></p>
 </div>
 <p>Since there are variants of coordination which are not strictly
 centralized but still uses the same principles of communication, the
@@ -210,11 +205,11 @@ term <em>coordination with synchronized cycle counter</em> is used rather than
 <em>central coordination</em> here on after.</p>
 <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="_images/coordination.png"><img alt="_images/coordination.png" src="_images/coordination.png" style="width: 436.8px; height: 325.8px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Figure 10.2:</strong> Coordination</span></p>
+<p class="caption"><span class="caption-text"><strong>Figure 5.2:</strong> Coordination</span></p>
 </div>
 </div>
 <div class="section" id="coordination-type-local-coordination">
-<h2>10.2. Coordination type “Local coordination”<a class="headerlink" href="#coordination-type-local-coordination" title="Permalink to this headline">¶</a></h2>
+<h2>5.2. Coordination type “Local coordination”<a class="headerlink" href="#coordination-type-local-coordination" title="Permalink to this headline">¶</a></h2>
 <p>Local coordination is achieved by supplementing the TLC:s control bits
 of the signal groups with special control bits from signal group(s) in
 another intersection.</p>
@@ -242,12 +237,12 @@ communication.</p>
 <tbody valign="top">
 <tr class="row-odd"><td><div class="first last figure" id="id3">
 <a class="reference internal image-reference" href="_images/front_edge.png"><img alt="_images/front_edge.png" src="_images/front_edge.png" style="width: 317.6px; height: 449.20000000000005px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Figure 10.3:</strong> Control of front edge</span></p>
+<p class="caption"><span class="caption-text"><strong>Figure 5.3:</strong> Control of front edge</span></p>
 </div>
 </td>
 <td><div class="first last figure" id="id4">
 <a class="reference internal image-reference" href="_images/rear_edge.png"><img alt="_images/rear_edge.png" src="_images/rear_edge.png" style="width: 317.6px; height: 449.20000000000005px;" /></a>
-<p class="caption"><span class="caption-text"><strong>Figure 10.4:</strong> Control of rear edge</span></p>
+<p class="caption"><span class="caption-text"><strong>Figure 5.4:</strong> Control of rear edge</span></p>
 </div>
 </td>
 </tr>
@@ -255,7 +250,7 @@ communication.</p>
 </table>
 </div>
 <div class="section" id="coordination-with-synchronized-cycle-counter">
-<h2>10.3. Coordination with synchronized cycle counter<a class="headerlink" href="#coordination-with-synchronized-cycle-counter" title="Permalink to this headline">¶</a></h2>
+<h2>5.3. Coordination with synchronized cycle counter<a class="headerlink" href="#coordination-with-synchronized-cycle-counter" title="Permalink to this headline">¶</a></h2>
 <p>Coordination with synchronized cycle counter should typically be possible
 to operate in multiple time plans with optional signal group sequence
 split and/or cycle time.</p>
@@ -284,7 +279,7 @@ other aspects proceed normally, among other things, for
 communication between the signal groups.</p>
 </div>
 <div class="section" id="coordination-with-control-bits">
-<h2>10.4. Coordination with control bits<a class="headerlink" href="#coordination-with-control-bits" title="Permalink to this headline">¶</a></h2>
+<h2>5.4. Coordination with control bits<a class="headerlink" href="#coordination-with-control-bits" title="Permalink to this headline">¶</a></h2>
 <p><strong>Coordination with internal control bits</strong></p>
 <p>With internal control bits, only information about time plan/traffic
 situation, initialization and clock sync needs to be sent and received.</p>
@@ -297,7 +292,7 @@ to receive subscription/request of e. g traffic data, detector logic
 and signal groups status etc.</p>
 </div>
 <div class="section" id="general-rsmp-requirements">
-<h2>10.5. General RSMP requirements<a class="headerlink" href="#general-rsmp-requirements" title="Permalink to this headline">¶</a></h2>
+<h2>5.5. General RSMP requirements<a class="headerlink" href="#general-rsmp-requirements" title="Permalink to this headline">¶</a></h2>
 <p>Communication must be established directly between TLC:s. This demands
 the following general requirements:</p>
 <ul class="simple">
@@ -318,7 +313,7 @@ same as communicating between TLC:s.</li>
 </ul>
 </div>
 <div class="section" id="functional-requirements-of-the-tlc">
-<h2>10.6. Functional requirements of the TLC<a class="headerlink" href="#functional-requirements-of-the-tlc" title="Permalink to this headline">¶</a></h2>
+<h2>5.6. Functional requirements of the TLC<a class="headerlink" href="#functional-requirements-of-the-tlc" title="Permalink to this headline">¶</a></h2>
 <p>To establish coordination, it is required that both TLC:s use suitable
 time plan/traffic situation and synchronize their cycle timers.</p>
 <ul class="simple">
@@ -353,7 +348,7 @@ TLC:s.</li>
 </tr>
 </tbody>
 </table>
-<p class="caption"><span class="caption-text"><strong>Figure 10.5:</strong> Input needed</span></p>
+<p class="caption"><span class="caption-text"><strong>Figure 5.5:</strong> Input needed</span></p>
 <span class="target" id="table-input"></span></center></div><div class="figure align-center" id="table-output">
 <center><table border="1" class="docutils">
 <colgroup>
@@ -377,7 +372,7 @@ TLC:s.</li>
 </tr>
 </tbody>
 </table>
-<p class="caption"><span class="caption-text"><strong>Figure 10.6:</strong> Output needed</span></p>
+<p class="caption"><span class="caption-text"><strong>Figure 5.6:</strong> Output needed</span></p>
 <span class="target" id="table-output"></span></center></div><p>Please note:</p>
 <ul class="simple">
 <li>securityCode is ignored at TLC-TLC-communication. Fields for
@@ -387,7 +382,7 @@ contents can be empty.</li>
 </ul>
 </div>
 <div class="section" id="notes-about-json">
-<h2>10.7. Notes about JSon<a class="headerlink" href="#notes-about-json" title="Permalink to this headline">¶</a></h2>
+<h2>5.7. Notes about JSon<a class="headerlink" href="#notes-about-json" title="Permalink to this headline">¶</a></h2>
 <p>Every field must be present in every message at communication exchange
 according to the signal exchange list. This applies even if the fields
 are empty. In the example below ”securityCode” is included in a command
@@ -421,7 +416,7 @@ field is empty for this reason.</p>
 </div>
 </div>
 <div class="section" id="communication-establishment">
-<h2>10.8. Communication establishment<a class="headerlink" href="#communication-establishment" title="Permalink to this headline">¶</a></h2>
+<h2>5.8. Communication establishment<a class="headerlink" href="#communication-establishment" title="Permalink to this headline">¶</a></h2>
 <p>Follower TLC’s acts server and waits for a leader TLC to connect.
 Should communication fail, it is the responsibility of the leader
 TLC to connect again.</p>
@@ -433,7 +428,7 @@ active.</p>
 <a class="reference external" href="https://rsmp-nordic.github.io/rsmp_core/applicability/transport_of_data.html#communication-establishment-between-sites">Communication establishment between sites</a>.</p>
 </div>
 <div class="section" id="initialization-sequence-for-local-coordination">
-<h2>10.9. Initialization sequence for local coordination<a class="headerlink" href="#initialization-sequence-for-local-coordination" title="Permalink to this headline">¶</a></h2>
+<h2>5.9. Initialization sequence for local coordination<a class="headerlink" href="#initialization-sequence-for-local-coordination" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Leader verifies that coordination is possible through subscription
 on output (S0004) <em>coordination is possible</em> in all followers. If
@@ -457,11 +452,11 @@ during each cycle.</li>
 </ol>
 <div class="figure align-center" id="id5">
 <img alt="_images/local_coordination.png" src="_images/local_coordination.png" />
-<p class="caption"><span class="caption-text"><strong>Figure 10.7:</strong> Sequence for local coordination</span></p>
+<p class="caption"><span class="caption-text"><strong>Figure 5.7:</strong> Sequence for local coordination</span></p>
 </div>
 </div>
 <div class="section" id="initialization-sequence-for-coordination-with-synchronized-cycle-counter">
-<h2>10.10. Initialization sequence for coordination with synchronized cycle counter<a class="headerlink" href="#initialization-sequence-for-coordination-with-synchronized-cycle-counter" title="Permalink to this headline">¶</a></h2>
+<h2>5.10. Initialization sequence for coordination with synchronized cycle counter<a class="headerlink" href="#initialization-sequence-for-coordination-with-synchronized-cycle-counter" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>Leader verifies that coordination is possible through subscription
 on output (S0004) <em>coordination is possible</em> in all followers. There
@@ -488,11 +483,11 @@ using output (M0004) from followers during each cycle.</li>
 </ol>
 <div class="figure align-center" id="id6">
 <img alt="_images/central_coordination.png" src="_images/central_coordination.png" />
-<p class="caption"><span class="caption-text"><strong>Figure 10.8:</strong> Sequence for coordination with synchronized cycle timer</span></p>
+<p class="caption"><span class="caption-text"><strong>Figure 5.8:</strong> Sequence for coordination with synchronized cycle timer</span></p>
 </div>
 </div>
 <div class="section" id="termination-sequence">
-<h2>10.11. Termination sequence<a class="headerlink" href="#termination-sequence" title="Permalink to this headline">¶</a></h2>
+<h2>5.11. Termination sequence<a class="headerlink" href="#termination-sequence" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>If using local coordination, the leader TLC deactivates input (S0013)
 <em>coordination can continue</em> in all followers.</li>
@@ -502,12 +497,12 @@ supervision system.</li>
 </ol>
 </div>
 <div class="section" id="message-priority">
-<h2>10.12. Message priority<a class="headerlink" href="#message-priority" title="Permalink to this headline">¶</a></h2>
+<h2>5.12. Message priority<a class="headerlink" href="#message-priority" title="Permalink to this headline">¶</a></h2>
 <p>At simultaneous communication TLC-TLC and TLC-supervision system –
 then TLC-supervision system has higher priority.</p>
 </div>
 <div class="section" id="error-handling">
-<h2>10.13. Error handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h2>
+<h2>5.13. Error handling<a class="headerlink" href="#error-handling" title="Permalink to this headline">¶</a></h2>
 <p>If a command or status request refers to a signal group or detector
 logic which does not exist, then only MessageNotAck will be sent as
 answer. No response on command (CommandResponse / StatusUpdate /
@@ -533,7 +528,7 @@ alarm A0005</li>
 </ul>
 </div>
 <div class="section" id="error-codes-for-messagenotack">
-<h2>10.14. Error codes for MessageNotAck<a class="headerlink" href="#error-codes-for-messagenotack" title="Permalink to this headline">¶</a></h2>
+<h2>5.14. Error codes for MessageNotAck<a class="headerlink" href="#error-codes-for-messagenotack" title="Permalink to this headline">¶</a></h2>
 <p>In order to standardize contents in MessageNotAck (”reason”), use this
 common error code list</p>
 <div class="figure align-center" id="table-error">
@@ -583,7 +578,7 @@ common error code list</p>
 </tr>
 </tbody>
 </table>
-<p class="caption"><span class="caption-text"><strong>Figure 10.9:</strong> Error codes</span></p>
+<p class="caption"><span class="caption-text"><strong>Figure 5.9:</strong> Error codes</span></p>
 <span class="target" id="table-error"></span></center></div></div>
 </div>
 
@@ -595,10 +590,10 @@ common error code list</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="examples.html" class="btn btn-neutral float-right" title="11. JSon Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="6. JSon Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="traffic_data.html" class="btn btn-neutral float-left" title="9. Traffic data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="traffic_data.html" class="btn btn-neutral float-left" title="4. Traffic data" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
