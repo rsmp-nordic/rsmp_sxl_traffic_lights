@@ -1299,8 +1299,8 @@ Sets functional position |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0001
+   :caption: M0001
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1322,8 +1322,8 @@ Sets current time plan |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0002
+   :caption: M0002
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1344,8 +1344,8 @@ Sets traffic situation the controller uses. |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0003
+   :caption: M0003
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1366,8 +1366,8 @@ Restarts Traffic Light Controller |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0004
+   :caption: M0004
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1387,8 +1387,8 @@ Activate emergency route |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0005
+   :caption: M0005
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1409,8 +1409,8 @@ Activate input |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0006
+   :caption: M0006
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1431,8 +1431,8 @@ Activate fixed time control |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0007
+   :caption: M0007
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1452,8 +1452,8 @@ Sets manual activation of detector logic. |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0008
+   :caption: M0008
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1474,8 +1474,8 @@ Start of signal group. Orders a signal group to green. Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0010
+   :caption: M0010
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1495,8 +1495,8 @@ Stop of signal group. Orders a signal group to red. Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0011
+   :caption: M0011
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1516,8 +1516,8 @@ Request start or stop of a series of signal groups. Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0012
+   :caption: M0012
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1537,8 +1537,8 @@ Activate a series of inputs |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0013
+   :caption: M0013
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1558,8 +1558,8 @@ Set command table
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0014
+   :caption: M0014
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1580,8 +1580,8 @@ Set Offset time
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0015
+   :caption: M0015
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1602,8 +1602,8 @@ Set week time table
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0016
+   :caption: M0016
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1623,8 +1623,8 @@ Set time tables
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0017
+   :caption: M0017
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1644,8 +1644,8 @@ Set Cycle time
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0018
+   :caption: M0018
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1666,8 +1666,8 @@ Force input |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0019
+   :caption: M0019
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1689,8 +1689,8 @@ Force output |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0020
+   :caption: M0020
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1712,8 +1712,8 @@ Set trigger level sensitivity for loop detector |br| Requires security code 2
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0021
+   :caption: M0021
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1733,8 +1733,8 @@ Set security code
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0103
+   :caption: M0103
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
@@ -1755,8 +1755,8 @@ Set clock
 
 .. figtable::
    :nofig:
-   :label: Arguments
-   :caption: Arguments
+   :label: M0104
+   :caption: M0104
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
