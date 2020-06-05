@@ -4,6 +4,15 @@ Traffic data
 Traffic data (S0201-S0208) needs additional requirements in order to work
 correctly.
 
+- The supervision system uses **StatusSubscribe** and **StatusUpdate** to
+  continuously receive traffic data from the TLC using subscriptions.
+
+- **starttime** is the time stamp of start of measuring.
+  E.g. if a subscription update is sent at 15:05 using a subscription update
+  rate of 300 (5 minutes), **starttime** would be set to 15.00
+  and **vehicles** (S0201) would contain the number of vehicles between
+  15:00 and 15:05.
+
 - Traffic counting must be made at even time intervals.
   For instance; if **updateRate=300** (every 5 minutes) is set at the
   status subscription, the traffic counter must start at 15:00:00,
