@@ -1,12 +1,12 @@
 # 1.0.15-draft (2020-10-30)
 
-- Ability to force outputs (#36)
-- Ability to change trigger level sensitivity for loop detectors (#39)
-- Ability to read signal program version and checksum (#19)
-- Door/cabinet alarm (#20)
+- Ability to force outputs [#36](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/36)
+- Ability to change trigger level sensitivity for loop detectors [#39](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/39)
+- Ability to read signal program version and checksum [#19](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/19)
+- Door/cabinet alarm [#20](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/20)
 - Change *ordinal*, *unit* and *scale* data types to *integer* or *string*
   This change is made to avoid assumptions of data types which may not be
-  true. Needed to comply with RSMP 3.1.3 and later. (#23)
+  true. Needed to comply with RSMP 3.1.3 and later. [#23](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/23)
 
 The following commands/statuses/alarms has been added:
 - M0020 Force output
@@ -16,8 +16,7 @@ The following commands/statuses/alarms has been added:
 - S0097 Signal Program Version
 - A0010 Door alarm
 
-The full list can be shown here:
-https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues?q=is%3Aissue+milestone%3A1.0.15
+The full list can be [shown here](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues?q=is%3Aissue+milestone%3A1.0.15).
 
 # 1.0.14 (2017-10-30)
 
