@@ -1,12 +1,12 @@
 # 1.0.15-draft (2020-10-30)
 
-- Ability to force outputs
-- Ability to change trigger level sensitivity for loop detectors
-- Ability to read signal program version and checksum
-- Door/cabinet alarm
+- Ability to force outputs (#36)
+- Ability to change trigger level sensitivity for loop detectors (#39)
+- Ability to read signal program version and checksum (#19)
+- Door/cabinet alarm (#20)
 - Change *ordinal*, *unit* and *scale* data types to *integer* or *string*
   This change is made to avoid assumptions of data types which may not be
-  true. Needed to comply with RSMP 3.1.3 and later.
+  true. Needed to comply with RSMP 3.1.3 and later. (#23)
 
 The following commands/statuses/alarms has been added:
 - M0020 Force output
@@ -15,6 +15,9 @@ The following commands/statuses/alarms has been added:
 - S0031 Trigger level sensitivity for loop detector
 - S0097 Signal Program Version
 - A0010 Door alarm
+
+The full list can be shown here:
+https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues?q=is%3Aissue+milestone%3A1.0.15
 
 # 1.0.14 (2017-10-30)
 
@@ -106,7 +109,7 @@ coordination between TLCs
   and therefore is "detector logic" removed as a return value.
   - A0301
   - A0302
-  The following statuses changes object type to "detector logic"
+- The following statuses changes object type to "detector logic"
    and therefore is "detector logic" removed as argument.
   - S0201
   - S0202
