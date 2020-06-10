@@ -295,7 +295,7 @@ Status
    Traffic Light Controller  `S0020`_        Control mode
    Traffic Light Controller  `S0021`_        Manually set detector logic
    Traffic Light Controller  `S0022`_        List of time plans
-   Traffic Light Controller  `S0023`_        Command table
+   Traffic Light Controller  `S0023`_        Dynamic bands
    Traffic Light Controller  `S0024`_        Offset time
    Signal Group              `S0025`_        Time-of-Green / Time-of-Red
    Traffic Light Controller  `S0026`_        Week time table
@@ -777,7 +777,7 @@ List of time plans
 S0023
 ^^^^^^^^
 
-Command table
+Dynamic bands
 
 
 .. figtable::
@@ -787,11 +787,11 @@ Command table
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
 
-   ======  ======  =======  ================================================================================================================================================================================================================================================================================
+   ======  ======  =======  =========================================================================================================================================================================================================================================================================
    Name    Type    Value    Comment
-   ======  ======  =======  ================================================================================================================================================================================================================================================================================
-   status  string  [text]   Command table. Defines command,  |br| Each command are written as pp-dd-ee where: |br| pp=Time plan |br| dd=Dynamic band number (from 1-10) |br| ee=Extension in seconds in this band |br|  |br| Each command is separated with a comma. |br|  |br| E.g.  |br| pp-dd-ee,pp-dd-ee
-   ======  ======  =======  ================================================================================================================================================================================================================================================================================
+   ======  ======  =======  =========================================================================================================================================================================================================================================================================
+   status  string  [text]   Dynamic bands.  |br| Each dynamic band are written as pp-dd-ee where: |br| pp=Time plan |br| dd=Dynamic band number (from 1-10) |br| ee=Extension in seconds in this band |br|  |br| Each dynamic band is separated with a comma. |br|  |br| E.g.  |br| pp-dd-ee,pp-dd-ee
+   ======  ======  =======  =========================================================================================================================================================================================================================================================================
 ..
 
 S0024
@@ -1278,7 +1278,7 @@ Commands
    Signal group              `M0011`_         Stop of signal group. Orders a signal group to red. Requires security code 2
    Traffic Light Controller  `M0012`_         Request start or stop of a series of signal groups. Requires security code 2
    Traffic Light Controller  `M0013`_         Activate a series of inputs |br| Requires security code 2
-   Traffic Light Controller  `M0014`_         Set command table
+   Traffic Light Controller  `M0014`_         Set dynamic bands
    Traffic Light Controller  `M0015`_         Set Offset time
    Traffic Light Controller  `M0016`_         Set week time table
    Traffic Light Controller  `M0017`_         Set time tables
@@ -1553,7 +1553,7 @@ Activate a series of inputs |br| Requires security code 2
 M0014
 ^^^^^
 
-Set command table
+Set dynamic bands
 
 
 .. figtable::
@@ -1563,13 +1563,13 @@ Set command table
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
 
-   ============  ===========  =======  =======  =====================================================================================================================================================================================================================================================
+   ============  ===========  =======  =======  =============================================================================================================================================================================================================================================
    Name          Command      Type     Value    Comment
-   ============  ===========  =======  =======  =====================================================================================================================================================================================================================================================
+   ============  ===========  =======  =======  =============================================================================================================================================================================================================================================
    plan          setCommands  integer  [0-255]  Plan to be changed
-   status        setCommands  string   [text]   Command table. Defines command,  |br| Each command are written as dd-ee where: |br| dd=Dynamic band number (from 1-10) |br| ee=Extension in seconds in this band |br|  |br| Each command is separated with a comma. |br|  |br| E.g.  |br| dd-ee,dd-ee
+   status        setCommands  string   [text]   Dynamic bands. |br| Each dynamic band are written as dd-ee where: |br| dd=Dynamic band number (from 1-10) |br| ee=Extension in seconds in this band |br|  |br| Each dynamic band is separated with a comma. |br|  |br| E.g.  |br| dd-ee,dd-ee
    securityCode  setCommands  string   [text]   Security code 2
-   ============  ===========  =======  =======  =====================================================================================================================================================================================================================================================
+   ============  ===========  =======  =======  =============================================================================================================================================================================================================================================
 ..
 
 M0015
