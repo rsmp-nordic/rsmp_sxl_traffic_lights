@@ -778,7 +778,7 @@
 </tr>
 <tr class="row-even"><td>Traffic Light Controller</td>
 <td><a class="reference internal" href="#s0023">S0023</a></td>
-<td>Command table</td>
+<td>Dynamic bands</td>
 </tr>
 <tr class="row-odd"><td>Traffic Light Controller</td>
 <td><a class="reference internal" href="#s0024">S0024</a></td>
@@ -1555,7 +1555,7 @@
 <span class="target" id="S0022"></span></center></div></div>
 <div class="section" id="s0023">
 <h3>2.4.23. S0023<a class="headerlink" href="#s0023" title="Permalink to this headline">¶</a></h3>
-<p>Command table</p>
+<p>Dynamic bands</p>
 <div class="figure align-center" id="S0023">
 <center><table border="1" class="docutils">
 <colgroup>
@@ -1575,7 +1575,7 @@
 <tr class="row-even"><td>status</td>
 <td>string</td>
 <td>[text]</td>
-<td>Command table. Defines command,  <br>  Each command are written as pp-dd-ee where: <br>  pp=Time plan <br>  dd=Dynamic band number (from 1-10) <br>  ee=Extension in seconds in this band <br>   <br>  Each command is separated with a comma. <br>   <br>  E.g.  <br>  pp-dd-ee,pp-dd-ee</td>
+<td>Dynamic bands.  <br>  Each dynamic band are written as pp-dd-ee where: <br>  pp=Time plan <br>  dd=Dynamic band number (from 1-10) <br>  ee=Extension in seconds in this band <br>   <br>  Each dynamic band is separated with a comma. <br>   <br>  E.g.  <br>  pp-dd-ee,pp-dd-ee</td>
 </tr>
 </tbody>
 </table>
@@ -2431,7 +2431,7 @@
 </tr>
 <tr class="row-even"><td>Traffic Light Controller</td>
 <td><a class="reference internal" href="#m0014">M0014</a></td>
-<td>Set command table</td>
+<td>Set dynamic bands</td>
 </tr>
 <tr class="row-odd"><td>Traffic Light Controller</td>
 <td><a class="reference internal" href="#m0015">M0015</a></td>
@@ -2960,15 +2960,15 @@
 <span class="target" id="M0013"></span></center></div></div>
 <div class="section" id="m0014">
 <h3>2.5.13. M0014<a class="headerlink" href="#m0014" title="Permalink to this headline">¶</a></h3>
-<p>Set command table</p>
+<p>Set dynamic bands</p>
 <div class="figure align-center" id="M0014">
 <center><table border="1" class="docutils">
 <colgroup>
 <col width="4%" />
 <col width="4%" />
-<col width="2%" />
-<col width="2%" />
-<col width="87%" />
+<col width="3%" />
+<col width="3%" />
+<col width="86%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Name</th>
@@ -2989,7 +2989,7 @@
 <td>setCommands</td>
 <td>string</td>
 <td>[text]</td>
-<td>Command table. Defines command,  <br>  Each command are written as dd-ee where: <br>  dd=Dynamic band number (from 1-10) <br>  ee=Extension in seconds in this band <br>   <br>  Each command is separated with a comma. <br>   <br>  E.g.  <br>  dd-ee,dd-ee</td>
+<td>Dynamic bands. <br>  Each dynamic band are written as dd-ee where: <br>  dd=Dynamic band number (from 1-10) <br>  ee=Extension in seconds in this band <br>   <br>  Each dynamic band is separated with a comma. <br>   <br>  E.g.  <br>  dd-ee,dd-ee</td>
 </tr>
 <tr class="row-even"><td>securityCode</td>
 <td>setCommands</td>
