@@ -1332,7 +1332,7 @@ Sets current time plan |br| Requires security code 2
    ============  =========  =======  =================  ==================================================================================================================
    status        setPlan    boolean  -False |br| -True  False: Controller uses time plan according to programming |br| True: Contoller uses time plan according to command
    securityCode  setPlan    string   [text]             Security code 2
-   timeplan      setPlan    integer  [1-255]            designation på time plan
+   timeplan      setPlan    integer  [1-255]            designation of time plan
    ============  =========  =======  =================  ==================================================================================================================
 ..
 
