@@ -125,7 +125,7 @@ Alarms
    :label: Alarms
    :caption: Alarms
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.10\linewidth} p{0.45\linewidth} p{0.07\linewidth} p{0.07\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.10\linewidth} p{0.45\linewidth} p{0.07\linewidth} p{0.07\linewidth}
 
    ========================  =============  ================================================================================================  ==========  ==========
    ObjectType                alarmCodeId    Description                                                                                         Priority  Category
@@ -159,7 +159,7 @@ Dead lock error
    :label: A0008
    :caption: A0008
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
    ========  =======  =============  =================
    Name      Type     Value          Comment
@@ -179,7 +179,7 @@ Serious lamp error
    :label: A0201
    :caption: A0201
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
    ======  ======  =============================  =============
    Name    Type    Value                          Comment
@@ -199,7 +199,7 @@ Less serious lamp error
    :label: A0202
    :caption: A0202
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
    ======  ======  =============================  =============
    Name    Type    Value                          Comment
@@ -219,7 +219,7 @@ Detector error (hardware)
    :label: A0301
    :caption: A0301
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
    =========  =======  =================  ===============================================================================
    Name       Type     Value              Comment
@@ -242,7 +242,7 @@ Detector error (logic error)
    :label: A0302
    :caption: A0302
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
    ==========  =======  ==============================================  ===================================================================================================================================================================================================
    Name        Type     Value                                           Comment
@@ -268,7 +268,7 @@ Status
    :label: Status
    :caption: Status
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.24\linewidth} p{0.10\linewidth} p{0.55\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.24\linewidth} p{0.10\linewidth} p{0.55\linewidth}
 
    ========================  ==============  ============================================================
    ObjectType                statusCodeId    Description
@@ -297,7 +297,7 @@ Status
    Traffic Light Controller  `S0022`_        List of time plans
    Traffic Light Controller  `S0023`_        Dynamic bands
    Traffic Light Controller  `S0024`_        Offset time
-   Signal Group              `S0025`_        Time-of-Green / Time-of-Red
+   Signal group              `S0025`_        Time-of-Green / Time-of-Red
    Traffic Light Controller  `S0026`_        Week time table
    Traffic Light Controller  `S0027`_        Time tables
    Traffic Light Controller  `S0028`_        Cycle time
@@ -331,7 +331,7 @@ Signal group status
    :label: S0001
    :caption: S0001
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    =================  =======  =======  =================================
    Name               Type     Value    Comment
@@ -354,7 +354,7 @@ Detector logic status
    :label: S0002
    :caption: S0002
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ===================  ======  =======  ===================================
    Name                 Type    Value    Comment
@@ -374,7 +374,7 @@ Input status
    :label: S0003
    :caption: S0003
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ===================  ======  =======  ===================================
    Name                 Type    Value    Comment
@@ -395,7 +395,7 @@ Output status
    :label: S0004
    :caption: S0004
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ====================  ======  =======  ====================================
    Name                  Type    Value    Comment
@@ -416,7 +416,7 @@ Traffic Light Controller starting
    :label: S0005
    :caption: S0005
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  =======  =================  =============================================================================================
    Name    Type     Value              Comment
@@ -436,7 +436,7 @@ Emergency stage
    :label: S0006
    :caption: S0006
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ==============  =======  =================  =================================================================
    Name            Type     Value              Comment
@@ -457,7 +457,7 @@ Controller switched on
    :label: S0007
    :caption: S0007
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ============  =======  =================  =========================================================================================================================================================
    Name          Type     Value              Comment
@@ -478,7 +478,7 @@ Manual control
    :label: S0008
    :caption: S0008
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ============  =======  =================  =========================================================================================================================================================
    Name          Type     Value              Comment
@@ -499,7 +499,7 @@ Fixed time control
    :label: S0009
    :caption: S0009
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ============  =======  =================  =========================================================================================================================================================
    Name          Type     Value              Comment
@@ -520,7 +520,7 @@ Isolated control
    :label: S0010
    :caption: S0010
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ============  =======  =================  =========================================================================================================================================================
    Name          Type     Value              Comment
@@ -541,7 +541,7 @@ Yellow flash
    :label: S0011
    :caption: S0011
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ============  =======  =================  =========================================================================================================================================================
    Name          Type     Value              Comment
@@ -562,7 +562,7 @@ All red
    :label: S0012
    :caption: S0012
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ============  =======  =================  =========================================================================================================================================================
    Name          Type     Value              Comment
@@ -583,7 +583,7 @@ Police key
    :label: S0013
    :caption: S0013
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ============  =======  ==================  =========================================================================================================================================================
    Name          Type     Value               Comment
@@ -604,7 +604,7 @@ Current time plan
    :label: S0014
    :caption: S0014
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  =======  =======  =================
    Name    Type     Value    Comment
@@ -624,7 +624,7 @@ Current traffic situation
    :label: S0015
    :caption: S0015
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  =======  =======  =========================
    Name    Type     Value    Comment
@@ -644,7 +644,7 @@ Number of detector logics
    :label: S0016
    :caption: S0016
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =========  =========================
    Name    Type    Value      Comment
@@ -664,7 +664,7 @@ Number of signal groups
    :label: S0017
    :caption: S0017
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =========  =======================
    Name    Type    Value      Comment
@@ -684,7 +684,7 @@ Number of time plans
    :label: S0018
    :caption: S0018
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =========  ==================================
    Name    Type    Value      Comment
@@ -704,7 +704,7 @@ Number of traffic situations
    :label: S0019
    :caption: S0019
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =========  ============================
    Name    Type    Value      Comment
@@ -724,7 +724,7 @@ Control mode
    :label: S0020
    :caption: S0020
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ============  =======  =============================================================  =========================================================================================================================================================
    Name          Type     Value                                                          Comment
@@ -745,7 +745,7 @@ Manually set detector logic
    :label: S0021
    :caption: S0021
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ==============  ======  =======  ================================================
    Name            Type    Value    Comment
@@ -765,7 +765,7 @@ List of time plans
    :label: S0022
    :caption: S0022
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  =============================================================
    Name    Type    Value    Comment
@@ -785,7 +785,7 @@ Dynamic bands
    :label: S0023
    :caption: S0023
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  =========================================================================================================================================================================================================================================================================
    Name    Type    Value    Comment
@@ -805,7 +805,7 @@ Offset time
    :label: S0024
    :caption: S0024
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  ===========================================================================================================================================================================================================
    Name    Type    Value    Comment
@@ -825,7 +825,7 @@ Time-of-Green / Time-of-Red
    :label: S0025
    :caption: S0025
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    =================  =======  ============  ============================================================================================================================================================================================================================================================================================
    Name               Type     Value         Comment
@@ -852,7 +852,7 @@ Week time table
    :label: S0026
    :caption: S0026
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================
    Name    Type    Value    Comment
@@ -872,7 +872,7 @@ Time tables
    :label: S0027
    :caption: S0027
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
    Name    Type    Value    Comment
@@ -892,7 +892,7 @@ Cycle time
    :label: S0028
    :caption: S0028
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  ============================================================================================================================================================================================================
    Name    Type    Value    Comment
@@ -912,7 +912,7 @@ Forced input status
    :label: S0029
    :caption: S0029
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  =================================
    Name    Type    Value    Comment
@@ -932,7 +932,7 @@ Forced output status
    :label: S0030
    :caption: S0030
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  ==================================
    Name    Type    Value    Comment
@@ -952,7 +952,7 @@ Trigger level sensitivity for loop detector
    :label: S0031
    :caption: S0031
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  =============================================================================================================================================================================================
    Name    Type    Value    Comment
@@ -972,7 +972,7 @@ Operator logged in/out OP-panel
    :label: S0091
    :caption: S0091
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  ==========================  =============================================================================
    Name    Type    Value                       Comment
@@ -993,7 +993,7 @@ Operator logged in/out web-interface
    :label: S0092
    :caption: S0092
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  ==========================  =============================================================================
    Name    Type    Value                       Comment
@@ -1014,7 +1014,7 @@ Version of Traffic Light Controller
    :label: S0095
    :caption: S0095
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =======  ==================================================================
    Name    Type    Value    Comment
@@ -1034,7 +1034,7 @@ Current date and time
    :label: S0096
    :caption: S0096
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  =======  =======  ===============================================================
    Name    Type     Value    Comment
@@ -1059,7 +1059,7 @@ Traffic parameter checksum
    :label: S0097
    :caption: S0097
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    =========  ======  ============  ====================================================================================================================================================================================================================================
    Name       Type    Value         Comment
@@ -1080,7 +1080,7 @@ Traffic Counting: Number of vehicles
    :label: S0201
    :caption: S0201
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    =========  ======  ============  ====================================================================================================================================================================
    Name       Type    Value         Comment
@@ -1101,7 +1101,7 @@ Traffic Counting: Vehicle speed
    :label: S0202
    :caption: S0202
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    =========  =======  ============  ====================================================================================================================================================================
    Name       Type     Value         Comment
@@ -1122,7 +1122,7 @@ Traffic Counting: Occupancy
    :label: S0203
    :caption: S0203
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    =========  =======  ============  ====================================================================================================================================================================
    Name       Type     Value         Comment
@@ -1143,7 +1143,7 @@ Traffic Counting: Number of vehicles of given classification
    :label: S0204
    :caption: S0204
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    =========  ======  ============  ====================================================================================================================================================================
    Name       Type    Value         Comment
@@ -1172,7 +1172,7 @@ Traffic Counting: Number of vehicles
    :label: S0205
    :caption: S0205
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ========  ======  =============  =================================================================================================================================================================================================================================================================
    Name      Type    Value          Comment
@@ -1193,7 +1193,7 @@ Traffic Counting: Vehicle speed
    :label: S0206
    :caption: S0206
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =============  ==============================================================================================================================================================================================================================================================================
    Name    Type    Value          Comment
@@ -1214,7 +1214,7 @@ Traffic Counting: Occupancy
    :label: S0207
    :caption: S0207
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    =========  ======  ============  ==============================================================================================================================================================================================================================================================================
    Name       Type    Value         Comment
@@ -1235,7 +1235,7 @@ Traffic Counting: Number of vehicles of given classification
    :label: S0208
    :caption: S0208
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ======  ======  =============  =============================================================================================================================================================================================================================================================================
    Name    Type    Value          Comment
@@ -1261,7 +1261,7 @@ Commands
    :label: Commands
    :caption: Commands
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.24\linewidth} p{0.15\linewidth} p{0.40\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.24\linewidth} p{0.15\linewidth} p{0.40\linewidth}
 
    ========================  ===============  ===============================================================================
    ObjectType                commandCodeId    Description
@@ -1302,7 +1302,7 @@ Sets functional position |br| Requires security code 2
    :label: M0001
    :caption: M0001
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  =======  ===========================================  ==================================================================================================================
    Name          Command    Type     Value                                        Comment
@@ -1325,7 +1325,7 @@ Sets current time plan |br| Requires security code 2
    :label: M0002
    :caption: M0002
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  =======  =================  ==================================================================================================================
    Name          Command    Type     Value              Comment
@@ -1347,7 +1347,7 @@ Sets traffic situation the controller uses. |br| Requires security code 2
    :label: M0003
    :caption: M0003
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ===============  ===================  =======  =================  ======================================================================================================================================
    Name             Command              Type     Value              Comment
@@ -1369,7 +1369,7 @@ Restarts Traffic Light Controller |br| Requires security code 2
    :label: M0004
    :caption: M0004
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  ==========  =======  =======  ========================
    Name          Command     Type     Value    Comment
@@ -1390,7 +1390,7 @@ Activate emergency route |br| Requires security code 2
    :label: M0005
    :caption: M0005
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ==============  ============  =======  =================  =====================================================================
    Name            Command       Type     Value              Comment
@@ -1412,7 +1412,7 @@ Activate input |br| Requires security code 2
    :label: M0006
    :caption: M0006
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  =======  =================  =================================================
    Name          Command    Type     Value              Comment
@@ -1434,7 +1434,7 @@ Activate fixed time control |br| Requires security code 2
    :label: M0007
    :caption: M0007
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  ============  =======  =================  ===========================================================================
    Name          Command       Type     Value              Comment
@@ -1455,7 +1455,7 @@ Sets manual activation of detector logic. |br| Requires security code 2
    :label: M0008
    :caption: M0008
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =====================  =======  =================  =======================================================================================================
    Name          Command                Type     Value              Comment
@@ -1477,7 +1477,7 @@ Start of signal group. Orders a signal group to green. Requires security code 2
    :label: M0010
    :caption: M0010
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  =======  =================  ====================================================================
    Name          Command    Type     Value              Comment
@@ -1498,7 +1498,7 @@ Stop of signal group. Orders a signal group to red. Requires security code 2
    :label: M0011
    :caption: M0011
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  =======  =================  ==================================================================
    Name          Command    Type     Value              Comment
@@ -1519,7 +1519,7 @@ Request start or stop of a series of signal groups. Requires security code 2
    :label: M0012
    :caption: M0012
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  ======  =======  ================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
    Name          Command    Type    Value    Comment
@@ -1540,7 +1540,7 @@ Activate a series of inputs |br| Requires security code 2
    :label: M0013
    :caption: M0013
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
    Name          Command    Type    Value    Comment
@@ -1561,7 +1561,7 @@ Set dynamic bands
    :label: M0014
    :caption: M0014
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  ===========  =======  =======  =============================================================================================================================================================================================================================================
    Name          Command      Type     Value    Comment
@@ -1583,7 +1583,7 @@ Set Offset time
    :label: M0015
    :caption: M0015
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  =======  =======  ==========================
    Name          Command    Type     Value    Comment
@@ -1605,7 +1605,7 @@ Set week time table
    :label: M0016
    :caption: M0016
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  ============  ======  =======  =======================================================================================================================================================================================================================================================================================================================================================================
    Name          Command       Type    Value    Comment
@@ -1626,7 +1626,7 @@ Set time tables
    :label: M0017
    :caption: M0017
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  ============  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
    Name          Command       Type    Value    Comment
@@ -1647,7 +1647,7 @@ Set Cycle time
    :label: M0018
    :caption: M0018
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  ============  =======  =======  =========================
    Name          Command       Type     Value    Comment
@@ -1669,7 +1669,7 @@ Force input |br| Requires security code 2
    :label: M0019
    :caption: M0019
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  =======  =================  ============================================================
    Name          Command    Type     Value              Comment
@@ -1692,7 +1692,7 @@ Force output |br| Requires security code 2
    :label: M0020
    :caption: M0020
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  =======  =================  ==============================================================
    Name          Command    Type     Value              Comment
@@ -1715,7 +1715,7 @@ Set trigger level sensitivity for loop detector |br| Requires security code 2
    :label: M0021
    :caption: M0021
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  ======  =======  =========================================================================================================================
    Name          Command    Type    Value    Comment
@@ -1736,7 +1736,7 @@ Set security code
    :label: M0103
    :caption: M0103
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ===============  ===============  ======  ====================  ==================================================================
    Name             Command          Type    Value                 Comment
@@ -1758,7 +1758,7 @@ Set clock
    :label: M0104
    :caption: M0104
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth} 
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
    ============  =========  =======  =======  ===================================================================================
    Name          Command    Type     Value    Comment
