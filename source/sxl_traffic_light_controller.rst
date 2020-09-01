@@ -1698,7 +1698,7 @@ Force output |br| Requires security code 2
    Name          Command    Type     Value              Comment
    ============  =========  =======  =================  ==============================================================
    status        setOutput  boolean  -False |br| -True  False: Force output |br| True: Release output
-   securityCode  setInput   string   [text]             Security code 2
+   securityCode  setOutput  string   [text]             Security code 2
    output        setOutput  integer  [1-255]            Number of Output
    outputValue   setOutput  boolean  -False |br| -True  False: output forced to False |br| True: output forced to True
    ============  =========  =======  =================  ==============================================================
@@ -1721,7 +1721,7 @@ Set trigger level sensitivity for loop detector |br| Requires security code 2
    Name          Command    Type    Value    Comment
    ============  =========  ======  =======  =========================================================================================================================
    status        setLevel   string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br| dd=loop detector number |br| ss=sensitivity value
-   securityCode  setInput   string  [text]   Security code 2
+   securityCode  setLevel   string  [text]   Security code 2
    ============  =========  ======  =======  =========================================================================================================================
 ..
 
