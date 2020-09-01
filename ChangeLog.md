@@ -2,7 +2,7 @@
 
 - The coordination specification has been added. [#79](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/pull/79)
   Coordination with RSMP were tested already back in 2013-2014 together with
-  Swarco, Dynniq and the former TTS (now Swarco). All the neccecary commands
+  Swarco, Dynniq and the former TTS (now Swarco). All the necessary commands
   and statuses has already been added in previous versions of the SXL.
 - Ability to force outputs [#36](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/36)
 - Ability to change trigger level sensitivity for loop detectors [#39](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/39)
