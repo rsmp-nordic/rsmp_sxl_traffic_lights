@@ -3892,7 +3892,7 @@ M0020 Force output
    	},{
    		"cCI":"M0020",
    		"n":"securityCode",
-   		"cO":"setInput",
+   		"cO":"setOutput",
    		"v":"1234"
    	},{
    		"cCI":"M0020",
@@ -3966,7 +3966,7 @@ M0021 Set trigger level sensitivity for loop detector
    	},{
    		"cCI":"M0021",
    		"n":"securityCode",
-   		"cO":"setInput",
+   		"cO":"setLevel",
    		"v":"1234"
    	}]
    }
