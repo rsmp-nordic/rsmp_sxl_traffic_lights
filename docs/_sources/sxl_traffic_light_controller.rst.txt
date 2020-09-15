@@ -1,14 +1,5 @@
 Signal Exchange List
 ====================
-+ **Plant Id**: Plant id
-+ **Plant Name**: Plant name
-+ **Constructor**: RSMP Nordic
-+ **Reviewed**:
-+ **Approved**:
-+ **Created date**: 2010-04-20
-+ **SXL revision**: 1.0.15-draft
-+ **Revision date**: 2020-xx-xx
-+ **RSMP version**: 3.1.2
 
 Object Types
 ------------
@@ -23,18 +14,12 @@ Grouped objects
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.30\linewidth} p{0.50\linewidth}
 
-   ==========     ===========
-   ObjectType     Description
-   ==========     ===========
-   |go-o006|      |go-d006|
-   ==========     ===========
-
+   ========================  =============
+   ObjectType                Description
+   ========================  =============
+   Traffic Light Controller
+   ========================  =============
 ..
-
-.. |go-o006| replace:: Traffic Light Controller
-
-.. |go-d006| replace:: --
-
 
 Single objects
 ^^^^^^^^^^^^^^
@@ -46,23 +31,13 @@ Single objects
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.30\linewidth} p{0.50\linewidth}
 
-   ==========     ===========
-   ObjectType     Description
-   ==========     ===========
-   |so-o018|      |so-d018|
-   |so-o019|      |so-d019|
-   ==========     ===========
-
+   ==============  =============
+   ObjectType      Description
+   ==============  =============
+   Signal group
+   Detector logic
+   ==============  =============
 ..
-
-.. |so-o018| replace:: Signal group
-
-.. |so-d018| replace:: --
-
-.. |so-o019| replace:: Detector logic
-
-.. |so-d019| replace:: --
-
 
 Aggregated status
 -----------------
@@ -72,50 +47,35 @@ Aggregated status
    :label: Aggregated status
    :caption: Aggregated status
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.20\linewidth}  p{0.18\linewidth}  p{0.18\linewidth}  p{0.15\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.20\linewidth} p{0.18\linewidth} p{0.18\linewidth} p{0.15\linewidth}
 
-   ==========     ===========  ==================  =============== ===========
-   ObjectType     Status       functionalPosition  functionalState Description
-   ==========     ===========  ==================  =============== ===========
-   |ag-1006|      |ag-2006|    |ag-3006|           |ag-4006|       |ag-5006|
-   ==========     ===========  ==================  =============== ===========
-
+   ========================  ===============================  ====================  =================  =============
+   ObjectType                Status                           functionalPosition    functionalState    Description
+   ========================  ===============================  ====================  =================  =============
+   Traffic Light Controller  See state-bit definitions below
+   ========================  ===============================  ====================  =================  =============
 ..
-
-.. |ag-1006| replace:: Traffic Light Controller
-
-.. |ag-2006| replace:: See state-bit definitions below
-
-.. |ag-3006| replace:: --
-
-.. |ag-4006| replace:: --
-
-.. |ag-5006| replace:: --
-
 
 .. figtable::
    :nofig:
    :label: State bits
    :caption: State bits
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.30\linewidth}  p{0.45\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.30\linewidth} p{0.45\linewidth}
 
-   =============  ===========================  ========
-   |statebit|     Description                  Comment
-   =============  ===========================  ========
-   1              Local mode                   Traffic Light Controller is in local mode. NTS has no control.
-   2              No communications            --
-   3              High priority fault          Traffic Light Controller is in fail safe mode; e.g. yellow flash or dark mode
-   4              Medium priority fault        Traffic Light Controller has a medium priority fault, but not in fail safe mode. E.g. several lamp faults or detector fault
-   5              Low priority fault           Traffic Light Controller has a low priority fault. E.g. Detector fault
-   6              Connected / Normal - In Use  --
-   7              Connected / Normal - Idle    Traffic Light Controller dark according to configuration. NOTE! When dark according to configuration the controller is considered to be in use
-   8              Not Connected                --
-   =============  ===========================  ========
+   =========================  ===========================  ==============================================================================================================================================
+     State- Bit nr (1234567)  Description                  Comment
+   =========================  ===========================  ==============================================================================================================================================
+                           1  Local mode                   Traffic Light Controller is in local mode. NTS has no control.
+                           2  No Communications
+                           3  High Priority Fault          Traffic Light Controller is in fail safe mode; e.g. yellow flash or dark mode
+                           4  Medium Priority Fault        Traffic Light Controller has a medium priority fault, but not in fail safe mode. E.g. several lamp faults or detector fault
+                           5  Low Priority Fault           Traffic Light Controller has a low priority fault. E.g. Detector fault
+                           6  Connected / Normal - In Use
+                           7  Connected / Normal - Idle    Traffic Light Controller dark according to configuration. NOTE! When dark according to configuration the controller is considered to be in use
+                           8  Not Connected
+   =========================  ===========================  ==============================================================================================================================================
 ..
-
-.. |statebit| replace:: State- Bit nr (1234567)
-
 
 Alarms
 ------

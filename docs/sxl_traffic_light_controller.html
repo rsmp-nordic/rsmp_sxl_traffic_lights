@@ -245,17 +245,6 @@
             
   <div class="section" id="signal-exchange-list">
 <h1>2. Signal Exchange List<a class="headerlink" href="#signal-exchange-list" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><strong>Plant Id</strong>: Plant id</li>
-<li><strong>Plant Name</strong>: Plant name</li>
-<li><strong>Constructor</strong>: RSMP Nordic</li>
-<li><strong>Reviewed</strong>:</li>
-<li><strong>Approved</strong>:</li>
-<li><strong>Created date</strong>: 2010-04-20</li>
-<li><strong>SXL revision</strong>: 1.0.15-draft</li>
-<li><strong>Revision date</strong>: 2020-xx-xx</li>
-<li><strong>RSMP version</strong>: 3.1.2</li>
-</ul>
 <div class="section" id="object-types">
 <h2>2.1. Object Types<a class="headerlink" href="#object-types" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="grouped-objects">
@@ -263,8 +252,8 @@
 <div class="figure align-center" id="Groupedobjects">
 <center><table border="1" class="docutils">
 <colgroup>
-<col width="48%" />
-<col width="52%" />
+<col width="65%" />
+<col width="35%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">ObjectType</th>
@@ -273,7 +262,7 @@
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Traffic Light Controller</td>
-<td>–</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -284,8 +273,8 @@
 <div class="figure align-center" id="Singleobjects">
 <center><table border="1" class="docutils">
 <colgroup>
-<col width="48%" />
 <col width="52%" />
+<col width="48%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">ObjectType</th>
@@ -294,10 +283,10 @@
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>Signal group</td>
-<td>–</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-odd"><td>Detector logic</td>
-<td>–</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -309,11 +298,11 @@
 <div class="figure align-center" id="Aggregatedstatus">
 <center><table border="1" class="docutils">
 <colgroup>
-<col width="15%" />
-<col width="17%" />
-<col width="28%" />
 <col width="23%" />
-<col width="17%" />
+<col width="30%" />
+<col width="19%" />
+<col width="16%" />
+<col width="12%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">ObjectType</th>
@@ -326,9 +315,9 @@
 <tbody valign="top">
 <tr class="row-even"><td>Traffic Light Controller</td>
 <td>See state-bit definitions below</td>
-<td>–</td>
-<td>–</td>
-<td>–</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
@@ -336,9 +325,9 @@
 <span class="target" id="Aggregatedstatus"></span></center></div><div class="figure align-center" id="Statebits">
 <center><table border="1" class="docutils">
 <colgroup>
-<col width="7%" />
-<col width="15%" />
-<col width="78%" />
+<col width="13%" />
+<col width="14%" />
+<col width="73%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">State- Bit nr (1234567)</th>
@@ -352,24 +341,24 @@
 <td>Traffic Light Controller is in local mode. NTS has no control.</td>
 </tr>
 <tr class="row-odd"><td>2</td>
-<td>No communications</td>
-<td>–</td>
+<td>No Communications</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><td>3</td>
-<td>High priority fault</td>
+<td>High Priority Fault</td>
 <td>Traffic Light Controller is in fail safe mode; e.g. yellow flash or dark mode</td>
 </tr>
 <tr class="row-odd"><td>4</td>
-<td>Medium priority fault</td>
+<td>Medium Priority Fault</td>
 <td>Traffic Light Controller has a medium priority fault, but not in fail safe mode. E.g. several lamp faults or detector fault</td>
 </tr>
 <tr class="row-even"><td>5</td>
-<td>Low priority fault</td>
+<td>Low Priority Fault</td>
 <td>Traffic Light Controller has a low priority fault. E.g. Detector fault</td>
 </tr>
 <tr class="row-odd"><td>6</td>
 <td>Connected / Normal - In Use</td>
-<td>–</td>
+<td>&#160;</td>
 </tr>
 <tr class="row-even"><td>7</td>
 <td>Connected / Normal - Idle</td>
@@ -377,7 +366,7 @@
 </tr>
 <tr class="row-odd"><td>8</td>
 <td>Not Connected</td>
-<td>–</td>
+<td>&#160;</td>
 </tr>
 </tbody>
 </table>
