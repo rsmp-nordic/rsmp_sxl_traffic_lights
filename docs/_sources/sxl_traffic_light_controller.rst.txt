@@ -87,25 +87,25 @@ Alarms
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.10\linewidth} p{0.45\linewidth} p{0.07\linewidth} p{0.07\linewidth}
 
-   ========================  =============  ================================================================================================  ==========  ==========
-   ObjectType                alarmCodeId    Description                                                                                         Priority  Category
-   ========================  =============  ================================================================================================  ==========  ==========
-   Traffic Light Controller  A0001          Serious hardware error                                                                                     2  D
-   Traffic Light Controller  A0002          Less serious hardware error                                                                                3  D
-   Traffic Light Controller  A0003          Serious configuration error                                                                                2  D
-   Traffic Light Controller  A0004          Less serious configuration error                                                                           3  D
-   Traffic Light Controller  A0005          Communication error between traffic light controllers / synchronisation error                              3  D
-   Traffic Light Controller  A0006          Safety error                                                                                               2  D
-   Traffic Light Controller  A0007          Communication error between one or multiple traffic light controllers and central control system           3  D
-   Signal group              `A0008`_       Dead lock error                                                                                            2  D
-   Traffic Light Controller  A0009          Other error                                                                                                3  D
-   Traffic Light Controller  A0010          Door open                                                                                                  3  D
-   Signal group              A0101          Pushbutton error                                                                                           3  D
-   Signal group              `A0201`_       Serious lamp error                                                                                         2  D
-   Signal group              `A0202`_       Less serious lamp error                                                                                    3  D
-   Detector logic            `A0301`_       Detector error (hardware)                                                                                  3  D
-   Detector logic            `A0302`_       Detector error (logic error)                                                                               3  D
-   ========================  =============  ================================================================================================  ==========  ==========
+   ========================  =============  ==================================================================================================================================================================  ==========  ==========
+   ObjectType                alarmCodeId    Description                                                                                                                                                           Priority  Category
+   ========================  =============  ==================================================================================================================================================================  ==========  ==========
+   Traffic Light Controller  A0001          Serious hardware error                                                                                                                                                       2  D
+   Traffic Light Controller  A0002          Less serious hardware error                                                                                                                                                  3  D
+   Traffic Light Controller  A0003          Serious configuration error                                                                                                                                                  2  D
+   Traffic Light Controller  A0004          Less serious configuration error                                                                                                                                             3  D
+   Traffic Light Controller  A0005          Communication error between traffic light controllers / synchronisation error                                                                                                3  D
+   Traffic Light Controller  A0006          Safety error                                                                                                                                                                 2  D
+   Traffic Light Controller  A0007          Communication error between one or multiple traffic light controllers and central control system. Includes NTP connection loss if the TLC is configured to use NTP           3  D
+   Signal group              `A0008`_       Dead lock error                                                                                                                                                              2  D
+   Traffic Light Controller  A0009          Other error                                                                                                                                                                  3  D
+   Traffic Light Controller  A0010          Door open                                                                                                                                                                    3  D
+   Signal group              A0101          Pushbutton error                                                                                                                                                             3  D
+   Signal group              `A0201`_       Serious lamp error                                                                                                                                                           2  D
+   Signal group              `A0202`_       Less serious lamp error                                                                                                                                                      3  D
+   Detector logic            `A0301`_       Detector error (hardware)                                                                                                                                                    3  D
+   Detector logic            `A0302`_       Detector error (logic error)                                                                                                                                                 3  D
+   ========================  =============  ==================================================================================================================================================================  ==========  ==========
 ..
 
 A0008
@@ -268,8 +268,8 @@ Status
    Traffic Light Controller  `S0092`_        Operator logged in/out web-interface
    Traffic Light Controller  `S0095`_        Version of Traffic Light Controller
    Traffic Light Controller  `S0096`_        Current date and time
-   Traffic Light Controller  `S0097`_        Traffic parameter checksum
-   Detector logic            `S0201`_        Traffic Counting: Number of vehicles
+   Traffic Light Controller  `S0097`_        Checksum of traffic parameters
+   Traffic Light Controller  `S0098`_        Configuration of traffic parameters
    Detector logic            `S0202`_        Traffic Counting: Vehicle speed
    Detector logic            `S0203`_        Traffic Counting: Occupancy
    Detector logic            `S0204`_        Traffic Counting: Number of vehicles of given classification
@@ -1011,7 +1011,7 @@ Current date and time
 S0097
 ^^^^^^^^
 
-Traffic parameter checksum
+Checksum of traffic parameters
 
 
 .. figtable::
@@ -1021,33 +1021,34 @@ Traffic parameter checksum
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =========  ======  ============  =================================================================================================================================================================================================================================================================
+   =========  ======  ============  ================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
    Name       Type    Value         Comment
-   =========  ======  ============  =================================================================================================================================================================================================================================================================
-   checksum   string  [text]        Checksum of the traffic parameters |br| Uses SHA-2 as hashing algorithm |br| Includes |br| - all signal programs, including program versions |br| - signal group settings |br| - time plans |br| - safety matrix |br| - intergreen times |br| - detector settings
+   =========  ======  ============  ================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   checksum   string  [text]        Checksum of the traffic parameters |br| Uses SHA-2 as hashing algorithm |br| Includes |br| - all signal programs, including program versions |br| - signal group settings |br| - time plans |br| - safety matrix |br| - intergreen times |br| - detector settings |br|  |br| It should NOT include: |br| - network settings |br| - log files |br| - software |br| - other device settings that are not part of the signal program |br|  |br| Note: |br| - The checksum should be calculated using the same data as used in S0098
    timestamp  string  [time stamp]  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   =========  ======  ============  =================================================================================================================================================================================================================================================================
+   =========  ======  ============  ================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 ..
 
-S0201
+S0098
 ^^^^^^^^
 
-Traffic Counting: Number of vehicles
+Configuration of traffic parameters
 
 
 .. figtable::
    :nofig:
-   :label: S0201
-   :caption: S0201
+   :label: S0098
+   :caption: S0098
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =========  ======  ============  ====================================================================================================================================================================
+   =========  ======  ============  =================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
    Name       Type    Value         Comment
-   =========  ======  ============  ====================================================================================================================================================================
-   starttime  string  [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   vehicles   long    [number]      Number of vehicles on a given detector logic (since last update)
-   =========  ======  ============  ====================================================================================================================================================================
+   =========  ======  ============  =================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   config     base64  [binary]      Traffic parameters |br| Includes |br| - all signal programs, including program versions |br| - signal group settings |br| - time plans |br| - safety matrix |br| - intergreen times |br| - detector setting |br|  |br| It should NOT include: |br| - network settings |br| - log files |br| - software |br| - other device settings that are not part of the signal program |br|  |br| Note: |br| - There is no way to upload this binary file to the TLC using RSMP |br| - The format of the binary file is not specified and is not expected to be compatible between suppliers
+   timestamp  string  [time stamp]  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   version    string  [text]        Version information of the configuration. Contains basic information such as controller id, changes to config and other information. The format is not specified in detail.
+   =========  ======  ============  =================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 ..
 
 S0202
