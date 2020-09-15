@@ -6,7 +6,7 @@
   and statuses has already been added in previous versions of the SXL.
 - Ability to force outputs [#36](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/36)
 - Ability to change trigger level sensitivity for loop detectors [#39](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/39)
-- Ability to read signal program version and checksum [#19](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/19)
+- Ability to read signal program and checksum [#19](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/19) and [#38](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/38)
 - Door/cabinet alarm [#20](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/20)
 - Change *ordinal*, *unit* and *scale* data types to *integer* or *string*
   This change is made to avoid assumptions of data types which may not be
