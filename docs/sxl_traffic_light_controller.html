@@ -138,7 +138,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#s0095">2.4.34. S0095</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#s0096">2.4.35. S0096</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#s0097">2.4.36. S0097</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0201">2.4.37. S0201</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0098">2.4.37. S0098</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#s0202">2.4.38. S0202</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#s0203">2.4.39. S0203</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#s0204">2.4.40. S0204</a></li>
@@ -377,11 +377,11 @@
 <div class="figure align-center" id="Alarms">
 <center><table border="1" class="docutils">
 <colgroup>
-<col width="16%" />
-<col width="8%" />
-<col width="63%" />
-<col width="7%" />
-<col width="7%" />
+<col width="11%" />
+<col width="6%" />
+<col width="74%" />
+<col width="5%" />
+<col width="5%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">ObjectType</th>
@@ -430,7 +430,7 @@
 </tr>
 <tr class="row-even"><td>Traffic Light Controller</td>
 <td>A0007</td>
-<td>Communication error between one or multiple traffic light controllers and central control system</td>
+<td>Communication error between one or multiple traffic light controllers and central control system. Includes NTP connection loss if the TLC is configured to use NTP</td>
 <td>3</td>
 <td>D</td>
 </tr>
@@ -819,11 +819,11 @@
 </tr>
 <tr class="row-odd"><td>Traffic Light Controller</td>
 <td><a class="reference internal" href="#s0097">S0097</a></td>
-<td>Traffic parameter checksum</td>
+<td>Checksum of traffic parameters</td>
 </tr>
-<tr class="row-even"><td>Detector logic</td>
-<td><a class="reference internal" href="#s0201">S0201</a></td>
-<td>Traffic Counting: Number of vehicles</td>
+<tr class="row-even"><td>Traffic Light Controller</td>
+<td><a class="reference internal" href="#s0098">S0098</a></td>
+<td>Configuration of traffic parameters</td>
 </tr>
 <tr class="row-odd"><td>Detector logic</td>
 <td><a class="reference internal" href="#s0202">S0202</a></td>
@@ -1978,14 +1978,14 @@
 <span class="target" id="S0096"></span></center></div></div>
 <div class="section" id="s0097">
 <h3>2.4.36. S0097<a class="headerlink" href="#s0097" title="Permalink to this headline">¶</a></h3>
-<p>Traffic parameter checksum</p>
+<p>Checksum of traffic parameters</p>
 <div class="figure align-center" id="S0097">
 <center><table border="1" class="docutils">
 <colgroup>
-<col width="3%" />
 <col width="2%" />
-<col width="4%" />
-<col width="90%" />
+<col width="1%" />
+<col width="2%" />
+<col width="95%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Name</th>
@@ -1998,7 +1998,7 @@
 <tr class="row-even"><td>checksum</td>
 <td>string</td>
 <td>[text]</td>
-<td>Checksum of the traffic parameters <br>  Uses SHA-2 as hashing algorithm <br>  Includes <br>  - all signal programs, including program versions <br>  - signal group settings <br>  - time plans <br>  - safety matrix <br>  - intergreen times <br>  - detector settings</td>
+<td>Checksum of the traffic parameters <br>  Uses SHA-2 as hashing algorithm <br>  Includes <br>  - all signal programs, including program versions <br>  - signal group settings <br>  - time plans <br>  - safety matrix <br>  - intergreen times <br>  - detector settings <br>   <br>  It should NOT include: <br>  - network settings <br>  - log files <br>  - software <br>  - other device settings that are not part of the signal program <br>   <br>  Note: <br>  - The checksum should be calculated using the same data as used in S0098</td>
 </tr>
 <tr class="row-odd"><td>timestamp</td>
 <td>string</td>
@@ -2009,16 +2009,16 @@
 </table>
 <p class="caption"><span class="caption-text"><strong>Figure 2.47:</strong> S0097</span></p>
 <span class="target" id="S0097"></span></center></div></div>
-<div class="section" id="s0201">
-<h3>2.4.37. S0201<a class="headerlink" href="#s0201" title="Permalink to this headline">¶</a></h3>
-<p>Traffic Counting: Number of vehicles</p>
-<div class="figure align-center" id="S0201">
+<div class="section" id="s0098">
+<h3>2.4.37. S0098<a class="headerlink" href="#s0098" title="Permalink to this headline">¶</a></h3>
+<p>Configuration of traffic parameters</p>
+<div class="figure align-center" id="S0098">
 <center><table border="1" class="docutils">
 <colgroup>
-<col width="5%" />
-<col width="3%" />
-<col width="6%" />
-<col width="86%" />
+<col width="2%" />
+<col width="1%" />
+<col width="2%" />
+<col width="95%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Name</th>
@@ -2028,20 +2028,25 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>starttime</td>
+<tr class="row-even"><td>config</td>
+<td>base64</td>
+<td>[binary]</td>
+<td>Traffic parameters <br>  Includes <br>  - all signal programs, including program versions <br>  - signal group settings <br>  - time plans <br>  - safety matrix <br>  - intergreen times <br>  - detector setting <br>   <br>  It should NOT include: <br>  - network settings <br>  - log files <br>  - software <br>  - other device settings that are not part of the signal program <br>   <br>  Note: <br>  - There is no way to upload this binary file to the TLC using RSMP <br>  - The format of the binary file is not specified and is not expected to be compatible between suppliers</td>
+</tr>
+<tr class="row-odd"><td>timestamp</td>
 <td>string</td>
 <td>[time stamp]</td>
-<td>Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
+<td>Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z</td>
 </tr>
-<tr class="row-odd"><td>vehicles</td>
-<td>long</td>
-<td>[number]</td>
-<td>Number of vehicles on a given detector logic (since last update)</td>
+<tr class="row-even"><td>version</td>
+<td>string</td>
+<td>[text]</td>
+<td>Version information of the configuration. Contains basic information such as controller id, changes to config and other information. The format is not specified in detail.</td>
 </tr>
 </tbody>
 </table>
-<p class="caption"><span class="caption-text"><strong>Figure 2.48:</strong> S0201</span></p>
-<span class="target" id="S0201"></span></center></div></div>
+<p class="caption"><span class="caption-text"><strong>Figure 2.48:</strong> S0098</span></p>
+<span class="target" id="S0098"></span></center></div></div>
 <div class="section" id="s0202">
 <h3>2.4.38. S0202<a class="headerlink" href="#s0202" title="Permalink to this headline">¶</a></h3>
 <p>Traffic Counting: Vehicle speed</p>
