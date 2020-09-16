@@ -58,7 +58,8 @@ This document contains examples for all message types.
 + `S0092 Operator logged web-interface`_
 + `S0095 Version of Traffic Light Controller`_
 + `S0096 Current date and time`_
-+ `S0097 Version of Traffic Program`_
++ `S0097 Checksum of traffic parameters`_
++ `S0098 Configuration of traffic parameters`_
 + `S0201 Traffic Counting: Number of vehicles`_
 + `S0202 Traffic Counting: Vehicle speed`_
 + `S0203 Traffic Counting: Occupancy`_
@@ -2198,27 +2199,27 @@ S0096 Current date and time
    }
 
    
-S0097 Version of Traffic Program
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   
+S0097 Checksum of traffic parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 **Status Request**
 
 .. code-block:: json
 
    {
-   	"mType":"rSMsg",
-   	"type":"StatusRequest",
-   	"mId":"b4e70a7e-12ca-4619-98af-419ecf2a74da",
-   	"ntsOId":"KK+AG0503=001TC000",
-   	"xNId":"",
-   	"cId":"KK+AG0503=001TC000",
-   	"sS":[{
-   		"sCI":"S0097",
-   		"n":"version"
-   	},{
-   		"sCI":"S0097",
-   		"n":"hash"
-   	}]
+        "mType":"rSMsg",
+        "type":"StatusRequest",
+        "mId":"b4e70a7e-12ca-4619-98af-419ecf2a74da",
+        "ntsOId":"KK+AG0503=001TC000",
+        "xNId":"",
+        "cId":"KK+AG0503=001TC000",
+        "sS":[{
+                "sCI":"S0097",
+                "n":"timestamp"
+        },{
+                "sCI":"S0097",
+                "n":"checksum"
+        }]
    }
 
    
@@ -2236,17 +2237,73 @@ S0097 Version of Traffic Program
    	"sTs":"2019-09-30T12:21:30.640Z",
    	"sS":[{
    		"sCI":"S0097",
-   		"n":"version",
-   		"s":"96",
+   		"n":"timestamp",
+   		"s":"2019-09-29T10:00:00.510Z",
    		"q":"recent"
    	},{
    		"sCI":"S0097",
-   		"n":"hash",
+   		"n":"checksum",
    		"s":"63b417a713575c7838e4a915b92c617e7b5957bf",
    		"q":"recent"
    	}]
    }
 
+S0098 Configuration of traffic parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+**Status Request**
+
+.. code-block:: json
+
+   {
+   	"mType":"rSMsg",
+   	"type":"StatusRequest",
+   	"mId":"b4e70a7e-12ca-4619-98af-419ecf2a74da",
+   	"ntsOId":"KK+AG0503=001TC000",
+   	"xNId":"",
+   	"cId":"KK+AG0503=001TC000",
+   	"sS":[{
+   		"sCI":"S0098",
+   		"n":"config"
+   	},{
+   		"sCI":"S0098",
+   		"n":"timestamp"
+   	},{
+   		"sCI":"S0098",
+   		"n":"version"
+   	}]
+   }
+
+   
+**Status Response**
+
+.. code-block:: json
+
+   {
+   	"mType":"rSMsg",
+   	"type":"StatusResponse",
+   	"mId":"f18f2032-39e8-4397-bc82-d5355c76caf4",
+   	"ntsOId":"KK+AG0503=001TC000",
+   	"xNId":"",
+   	"cId":"KK+AG0503=001TC000",
+   	"sTs":"2019-09-30T12:21:30.640Z",
+   	"sS":[{
+   		"sCI":"S0098",
+   		"n":"config",
+   		"s":"63b417a713575c7838e4a915b92c617e7b5957bf",
+   		"q":"recent"
+   	},{
+   		"sCI":"S0098",
+   		"n":"timestamp",
+   		"s":"2019-09-29T10:00:00.510Z",
+   		"q":"recent"
+   	},{
+   		"sCI":"S0098",
+   		"n":"version",
+   		"s":"Controller 1234. Version 5. Added SG3",
+   		"q":"recent"
+   	}]
+   }
    
 S0201 Traffic Counting: Number of vehicles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
