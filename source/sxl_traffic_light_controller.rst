@@ -1239,16 +1239,16 @@ Commands
    Signal group              `M0011`_         Stop of signal group. Orders a signal group to red. Requires security code 2
    Traffic Light Controller  `M0012`_         Request start or stop of a series of signal groups. Requires security code 2
    Traffic Light Controller  `M0013`_         Activate a series of inputs |br| Requires security code 2
-   Traffic Light Controller  `M0014`_         Set dynamic bands
-   Traffic Light Controller  `M0015`_         Set Offset time
-   Traffic Light Controller  `M0016`_         Set week time table
-   Traffic Light Controller  `M0017`_         Set time tables
-   Traffic Light Controller  `M0018`_         Set Cycle time
+   Traffic Light Controller  `M0014`_         Set dynamic bands |br| Requires security code 2
+   Traffic Light Controller  `M0015`_         Set Offset time |br| Requires security code 2
+   Traffic Light Controller  `M0016`_         Set week time table |br| Requires security code 2
+   Traffic Light Controller  `M0017`_         Set time tables |br| Requires security code 2
+   Traffic Light Controller  `M0018`_         Set Cycle time |br| Requires security code 2
    Traffic Light Controller  `M0019`_         Force input |br| Requires security code 2
    Traffic Light Controller  `M0020`_         Force output |br| Requires security code 2
    Traffic Light Controller  `M0021`_         Set trigger level sensitivity for loop detector |br| Requires security code 2
    Traffic Light Controller  `M0103`_         Set security code
-   Traffic Light Controller  `M0104`_         Set clock
+   Traffic Light Controller  `M0104`_         Set clock |br| Requires security code 1
    ========================  ===============  ===============================================================================
 ..
 
@@ -1514,7 +1514,7 @@ Activate a series of inputs |br| Requires security code 2
 M0014
 ^^^^^
 
-Set dynamic bands
+Set dynamic bands |br| Requires security code 2
 
 
 .. figtable::
@@ -1536,7 +1536,7 @@ Set dynamic bands
 M0015
 ^^^^^
 
-Set Offset time
+Set Offset time |br| Requires security code 2
 
 
 .. figtable::
@@ -1558,7 +1558,7 @@ Set Offset time
 M0016
 ^^^^^
 
-Set week time table
+Set week time table |br| Requires security code 2
 
 
 .. figtable::
@@ -1579,7 +1579,7 @@ Set week time table
 M0017
 ^^^^^
 
-Set time tables
+Set time tables |br| Requires security code 2
 
 
 .. figtable::
@@ -1600,7 +1600,7 @@ Set time tables
 M0018
 ^^^^^
 
-Set Cycle time
+Set Cycle time |br| Requires security code 2
 
 
 .. figtable::
@@ -1711,7 +1711,7 @@ Set security code
 M0104
 ^^^^^
 
-Set clock
+Set clock |br| Requires security code 1
 
 
 .. figtable::
