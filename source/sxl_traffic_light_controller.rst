@@ -184,7 +184,7 @@ Detector error (hardware)
    =========  =======  =================  ===============================================================================
    Name       Type     Value              Comment
    =========  =======  =================  ===============================================================================
-   detector   string   [designation]      Designation of the detector
+   detector   string   [designation]      Designation of the detector (hardware)
    type       string   -loop |br| -input  Type of detector. |br| loop: Inductive detector loop |br| input: External input
    errormode  string   -on |br| -off      Dectector forced on/off while detector error
    manual     boolean  -True |br| -False  Manually controlled detector logic (True/False)
@@ -207,7 +207,7 @@ Detector error (logic error)
    ==========  =======  ==============================================  ===================================================================================================================================================================================================
    Name        Type     Value                                           Comment
    ==========  =======  ==============================================  ===================================================================================================================================================================================================
-   detector    string   [designation]                                   Designation of the detector
+   detector    string   [designation]                                   Designation of the detector (hardware)
    type        string   -loop |br| -input                               Type of detector. |br| loop: Inductive detector loop |br| input: External input
    errormode   string   -on |br| -off                                   Dectector forced on/off while detector error
    manual      boolean  -True |br| -False                               Manually controlled detector logic (True/False)
