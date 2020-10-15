@@ -270,6 +270,7 @@ Status
    Traffic Light Controller  `S0096`_        Current date and time
    Traffic Light Controller  `S0097`_        Checksum of traffic parameters
    Traffic Light Controller  `S0098`_        Configuration of traffic parameters
+   Detector logic            `S0201`_        Traffic Counting: Number of vehicles
    Detector logic            `S0202`_        Traffic Counting: Vehicle speed
    Detector logic            `S0203`_        Traffic Counting: Occupancy
    Detector logic            `S0204`_        Traffic Counting: Number of vehicles of given classification
@@ -1051,6 +1052,27 @@ Configuration of traffic parameters
    =========  ======  ============  =================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
 ..
 
+S0201
+^^^^^^^^
+
+Traffic Counting: Number of vehicles
+
+
+.. figtable::
+   :nofig:
+   :label: S0201
+   :caption: S0201
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+
+   =========  ======  ============  ====================================================================================================================================================================
+   Name       Type    Value         Comment
+   =========  ======  ============  ====================================================================================================================================================================
+   starttime  string  [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   vehicles   long    [number]      Number of vehicles on a given detector logic (since last update)
+   =========  ======  ============  ====================================================================================================================================================================
+..
+
 S0202
 ^^^^^^^^
 
@@ -1332,12 +1354,12 @@ Restarts Traffic Light Controller |br| Requires security code 2
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  ==========  =======  =======  ========================
-   Name          Command     Type     Value    Comment
-   ============  ==========  =======  =======  ========================
-   status        setRestart  boolean  -True    True: Restart controller
-   securityCode  setRestart  string   [text]   Security code 2
-   ============  ==========  =======  =======  ========================
+   ============  ==========  =======  =================  ========================
+   Name          Command     Type     Value              Comment
+   ============  ==========  =======  =================  ========================
+   status        setRestart  boolean  -False |br| -True  True: Restart controller
+   securityCode  setRestart  string   [text]             Security code 2
+   ============  ==========  =======  =================  ========================
 ..
 
 M0005
