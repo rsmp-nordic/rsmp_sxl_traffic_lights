@@ -331,7 +331,7 @@
 <col width="73%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">State- Bit nr (1234567)</th>
+<tr class="row-odd"><th class="head">State- Bit nr (12345678)</th>
 <th class="head">Description</th>
 <th class="head">Comment</th>
 </tr>
@@ -1569,7 +1569,7 @@
 <tr class="row-even"><td>status</td>
 <td>string</td>
 <td>[text]</td>
-<td>Dynamic bands.  <br>  Each dynamic band are written as pp-dd-ee where: <br>  pp=Time plan <br>  dd=Dynamic band number (from 1-10) <br>  ee=Extension in seconds in this band <br>   <br>  Each dynamic band is separated with a comma. <br>   <br>  E.g.  <br>  pp-dd-ee,pp-dd-ee</td>
+<td>Dynamic bands. <br>  Each dynamic band are written as pp-dd-ee where: <br>  pp=Time plan <br>  dd=Dynamic band number (from 1-10) <br>  ee=Extension in seconds in this band <br>   <br>  Each dynamic band is separated with a comma. <br>   <br>  E.g. <br>  pp-dd-ee,pp-dd-ee</td>
 </tr>
 </tbody>
 </table>
@@ -1716,7 +1716,7 @@
 <tr class="row-even"><td>status</td>
 <td>string</td>
 <td>[text]</td>
-<td>Time Table. Defines time tables. <br>  Each time definition is written as t-o-h-m where: <br>  t=time table nr (1-12) <br>  o=function <br>  h=hour - switching time <br>  m=minute - switching minute <br>   <br>  Function legend: <br>  0=no plan is selected by time table <br>  1=set plan 1 <br>  … <br>  16= set plan 16 <br>   <br>  hour and minute is using local time (not UTC) <br>   <br>  Each time definition is separated with a comma  <br>   <br>  E.g. <br>  t-o-h-m,t-o-h-m</td>
+<td>Time Table. Defines time tables. <br>  Each time definition is written as t-o-h-m where: <br>  t=time table nr (1-12) <br>  o=function <br>  h=hour - switching time <br>  m=minute - switching minute <br>   <br>  Function legend: <br>  0=no plan is selected by time table <br>  1=set plan 1 <br>  … <br>  16= set plan 16 <br>   <br>  hour and minute is using local time (not UTC) <br>   <br>  Each time definition is separated with a comma <br>   <br>  E.g. <br>  t-o-h-m,t-o-h-m</td>
 </tr>
 </tbody>
 </table>
@@ -2941,7 +2941,7 @@
 <td>setStart</td>
 <td>string</td>
 <td>[text]</td>
-<td>Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format, colon is used in example below. <br>   <br>  1=Order signal group to green <br>  0=Order signal group to red <br>   <br>  Format: [Offset],[Bits to set],[Bits to unset]:… <br>    <br>  Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768.  <br>    <br>  Example 1: <br>  “5, 4134, 65” sets input 6,7,10,17 = on and 5,11 = off <br>  (Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0) <br>    <br>  Example 2: <br>  “22, 1, 4” sets input 22 = on and 24 = off <br>  (Input starts from no. 22 and bit 0 = 1 and bit 2 = 0) <br>    <br>  And both thease examples could be sent in the same message as: <br>  “5,4143,65:22,1,4” <br>   <br>  Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red</td>
+<td>Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format, colon is used in example below. <br>   <br>  1=Order signal group to green <br>  0=Order signal group to red <br>   <br>  Format: [Offset],[Bits to set],[Bits to unset]:… <br>   <br>  Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. <br>   <br>  Example 1: <br>  “5, 4134, 65” sets input 6,7,10,17 = on and 5,11 = off <br>  (Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0) <br>   <br>  Example 2: <br>  “22, 1, 4” sets input 22 = on and 24 = off <br>  (Input starts from no. 22 and bit 0 = 1 and bit 2 = 0) <br>   <br>  And both thease examples could be sent in the same message as: <br>  “5,4143,65:22,1,4” <br>   <br>  Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red</td>
 </tr>
 <tr class="row-odd"><td>securityCode</td>
 <td>setStart</td>
@@ -2978,7 +2978,7 @@
 <td>setInput</td>
 <td>string</td>
 <td>[text]</td>
-<td>Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format,  colon, “:” is used in example below. <br>   <br>  Format: [Offset],[Bits to set],[Bits to unset]:… <br>    <br>  Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768.  <br>    <br>  Example 1: <br>  “5, 4134, 65” sets input 6,7,10,17 = on and 5,11 = off <br>  (Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0) <br>    <br>  Example 2: <br>  “22, 1, 4” sets input 22 = on and 24 = off <br>  (Input starts from no. 22 and bit 0 = 1 and bit 2 = 0) <br>    <br>  And both thease examples could be sent in the same message as: <br>  “5,4143:65:22,1,4” <br>   <br>  Such a message would activate input 6,7,10,17,22 and deactive input 5,11,24</td>
+<td>Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format,  colon, “:” is used in example below. <br>   <br>  Format: [Offset],[Bits to set],[Bits to unset]:… <br>   <br>  Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. <br>   <br>  Example 1: <br>  “5, 4134, 65” sets input 6,7,10,17 = on and 5,11 = off <br>  (Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0) <br>   <br>  Example 2: <br>  “22, 1, 4” sets input 22 = on and 24 = off <br>  (Input starts from no. 22 and bit 0 = 1 and bit 2 = 0) <br>   <br>  And both thease examples could be sent in the same message as: <br>  “5,4143:65:22,1,4” <br>   <br>  Such a message would activate input 6,7,10,17,22 and deactive input 5,11,24</td>
 </tr>
 <tr class="row-odd"><td>securityCode</td>
 <td>setInput</td>
@@ -3021,7 +3021,7 @@
 <td>setCommands</td>
 <td>string</td>
 <td>[text]</td>
-<td>Dynamic bands. <br>  Each dynamic band are written as dd-ee where: <br>  dd=Dynamic band number (from 1-10) <br>  ee=Extension in seconds in this band <br>   <br>  Each dynamic band is separated with a comma. <br>   <br>  E.g.  <br>  dd-ee,dd-ee</td>
+<td>Dynamic bands. <br>  Each dynamic band are written as dd-ee where: <br>  dd=Dynamic band number (from 1-10) <br>  ee=Extension in seconds in this band <br>   <br>  Each dynamic band is separated with a comma. <br>   <br>  E.g. <br>  dd-ee,dd-ee</td>
 </tr>
 <tr class="row-even"><td>securityCode</td>
 <td>setCommands</td>
