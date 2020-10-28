@@ -1,4 +1,4 @@
-# 1.0.15-draft (2020-10-30)
+# 1.0.15 (2020-10-30)
 
 - The coordination specification has been added. [#79](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/pull/79)
   Coordination with RSMP were tested already back in 2013-2014 together with
