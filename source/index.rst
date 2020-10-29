@@ -4,7 +4,7 @@
 
 .. footer::
 
-   Created 2020-05-07, 1.0.15-draft
+   Created 2020-10-30, 1.0.15
 
 RSMP Signal Exchange List for Traffic Light Controllers
 =======================================================
