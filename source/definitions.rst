@@ -1,6 +1,11 @@
 Definitions
 -----------
 
+The following definitions is provided as information for use in RSMP and
+may be simplified from their original meanings.
+
+RSMP Nordic takes no responsibility for the correctness of the definitions.
+
 .. glossary::
 
    Red rest
@@ -29,8 +34,8 @@ Definitions
       conflicting signal groups to end.
 
    Minimum green
-      The shortest time which can be shown for each respective signal group,
-      this time can´t be shortened.
+      The shortest time which can be shown green for each respective signal
+      group, this time can´t be shortened.
 
    Max. minimum green
       The signal groups status ”minimum green” should be able to be extended
