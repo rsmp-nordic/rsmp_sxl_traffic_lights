@@ -6,7 +6,7 @@ The repository is maintained by [RSMP Nordic](https://rsmp-nordic.org)
 ## SXL
 
 * [View the SXL online](http://rsmp-nordic.github.io/rsmp_sxl_traffic_lights)
-* [View the SXL as a PDF](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/releases/download/1.0.15/rsmp-spec-1.0.15.pdf)
+* [View the SXL as a PDF](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/releases/download/1.0.15/sxl-tlc-1.0.15.pdf)
 
 ## Appendices
 
