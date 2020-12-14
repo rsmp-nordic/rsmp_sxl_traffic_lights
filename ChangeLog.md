@@ -19,6 +19,7 @@ The following commands/statuses/alarms has been added:
 - M0021 Set trigger level sensitivity for loop detector
 - S0031 Trigger level sensitivity for loop detector
 - S0097 Signal Program Version
+- S0098 Configuration of traffic parameters
 - A0010 Door alarm
 
 The full list can be [shown here](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues?q=is%3Aissue+milestone%3A1.0.15).
