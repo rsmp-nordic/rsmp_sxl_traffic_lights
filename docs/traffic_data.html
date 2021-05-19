@@ -1,38 +1,39 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>4. Traffic data &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.0.15-draft documentation</title>
+  <title>4. Traffic data &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.0.15 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="5. Coordination between traffic light controllers" href="coordination.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> RSMP Signal Exchange List for Traffic Light Controllers
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -96,6 +98,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -134,9 +137,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>4. Traffic data</li>
+      <li><span class="section-number">4. </span>Traffic data</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -156,33 +159,33 @@
            <div itemprop="articleBody">
             
   <div class="section" id="traffic-data">
-<h1>4. Traffic data<a class="headerlink" href="#traffic-data" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>Traffic data<a class="headerlink" href="#traffic-data" title="Permalink to this headline">¶</a></h1>
 <p>Traffic data (S0201-S0208) needs additional requirements in order to work
 correctly.</p>
 <ul class="simple">
-<li>The supervision system uses <strong>StatusSubscribe</strong> and <strong>StatusUpdate</strong> to
-continuously receive traffic data from the TLC using subscriptions.</li>
-<li><strong>starttime</strong> is the time stamp of start of measuring.
+<li><p>The supervision system uses <strong>StatusSubscribe</strong> and <strong>StatusUpdate</strong> to
+continuously receive traffic data from the TLC using subscriptions.</p></li>
+<li><p><strong>starttime</strong> is the time stamp of start of measuring.
 E.g. if a subscription update is sent at 15:05 using a subscription update
 rate of 300 (5 minutes), <strong>starttime</strong> would be set to 15.00
 and <strong>vehicles</strong> (S0201) would contain the number of vehicles between
-15:00 and 15:05.</li>
-<li>Traffic counting must be made at even time intervals.
+15:00 and 15:05.</p></li>
+<li><p>Traffic counting must be made at even time intervals.
 For instance; if <strong>updateRate=300</strong> (every 5 minutes) is set at the
 status subscription, the traffic counter must start at 15:00:00,
-15:05:00, 15:10:00 and so on.</li>
-<li>No initial status update should be sent directly after receiving status
+15:05:00, 15:10:00 and so on.</p></li>
+<li><p>No initial status update should be sent directly after receiving status
 subscription. Status updates should only be sent at even time intervals
-and not contain partial counting, e.g. 15:01-15:03 if updateRate=300</li>
-<li>The traffic counter must not reset its traffic counter after receiving
+and not contain partial counting, e.g. 15:01-15:03 if updateRate=300</p></li>
+<li><p>The traffic counter must not reset its traffic counter after receiving
 a new subscription request. The traffic counter may only reset its
-traffic counter at even time intervals.</li>
-<li>Buffering of traffic data during connection interruptions should be
+traffic counter at even time intervals.</p></li>
+<li><p>Buffering of traffic data during connection interruptions should be
 possible to enable/disable in the equipment. If buffering is enabled it
 means that active subscriptions of traffic data (S0201-S0208) should remain
-active and not be canceled at connection interruption or at reestablishment.</li>
-<li>The traffic data must be buffered according to the time interval as
-determined by the status subscription if buffering is enabled.</li>
+active and not be canceled at connection interruption or at reestablishment.</p></li>
+<li><p>The traffic data must be buffered according to the time interval as
+determined by the status subscription if buffering is enabled.</p></li>
 </ul>
 </div>
 
@@ -206,11 +209,19 @@ determined by the status subscription if buffering is enabled.</li>
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright RSMP Nordic
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -221,7 +232,6 @@ determined by the status subscription if buffering is enabled.</li>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

@@ -2858,7 +2858,7 @@ M0001 Sets functional position
    		"cCI":"M0001",
    		"n":"securityCode",
    		"cO":"setValue",
-   		"v":"1234"
+   		"v":"0000"
    	},{
    		"cCI":"M0001",
    		"n":"timeout",
@@ -2893,7 +2893,7 @@ M0001 Sets functional position
    	},{
    		"cCI":"M0001",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	},{
    		"cCI":"M0001",
@@ -2932,7 +2932,7 @@ M0002 Sets current time plan
    		"cCI":"M0002",
    		"n":"securityCode",
    		"cO":"setPlan",
-   		"v":"1234"
+   		"v":"0000"
    	},{
    		"cCI":"M0002",
    		"n":"timeplan",
@@ -2962,7 +2962,7 @@ M0002 Sets current time plan
    	},{
    		"cCI":"M0002",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	},{
    		"cCI":"M0002",
@@ -2996,7 +2996,7 @@ M0003 Sets traffic situation the controller uses
    		"cCI":"M0003",
    		"n":"securityCode",
    		"cO":"setTrafficSituation",
-   		"v":"1234"
+   		"v":"0000"
    	},{
    		"cCI":"M0003",
    		"n":"trafficsituation",
@@ -3026,7 +3026,7 @@ M0003 Sets traffic situation the controller uses
    	},{
    		"cCI":"M0003",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	},{
    		"cCI":"M0003",
@@ -3060,7 +3060,7 @@ M0004 Restarts Traffic Light Controller
    		"cCI":"M0004",
    		"n":"securityCode",
    		"cO":"setRestart",
-   		"v":"1234"
+   		"v":"0000"
    	}]
    }
 
@@ -3085,7 +3085,7 @@ M0004 Restarts Traffic Light Controller
    	},{
    		"cCI":"M0004",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	}]
    }
@@ -3114,7 +3114,7 @@ M0005 Activate emergency route
    		"cCI":"M0005",
    		"n":"securityCode",
    		"cO":"setEmergency",
-   		"v":"1234"
+   		"v":"0000"
    	},{
    		"cCI":"M0005",
    		"n":"emergencyroute",
@@ -3144,7 +3144,7 @@ M0005 Activate emergency route
    	},{
    		"cCI":"M0005",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	},{
    		"cCI":"M0005",
@@ -3178,7 +3178,7 @@ M0006 Activate input
    		"cCI":"M0006",
    		"n":"securityCode",
    		"cO":"setInput",
-   		"v":"1234"
+   		"v":"0000"
    	},{
    		"cCI":"M0006",
    		"n":"input",
@@ -3208,7 +3208,7 @@ M0006 Activate input
    	},{
    		"cCI":"M0006",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	},{
    		"cCI":"M0006",
@@ -3242,7 +3242,7 @@ M0007 Activate fixed time control
    		"cCI":"M0007",
    		"n":"securityCode",
    		"cO":"setFixedTime",
-   		"v":"1234"
+   		"v":"0000"
    	}]
    }
 
@@ -3267,7 +3267,7 @@ M0007 Activate fixed time control
    	},{
    		"cCI":"M0007",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	}]
    }
@@ -3296,7 +3296,7 @@ M0008 Sets manual activation of detector logic
    		"cCI":"M0008",
    		"n":"securityCode",
    		"cO":"setForceDetectorLogic",
-   		"v":"1234"
+   		"v":"0000"
    	},{
    		"cCI":"M0008",
    		"n":"mode",
@@ -3326,7 +3326,7 @@ M0008 Sets manual activation of detector logic
    	},{
    		"cCI":"M0008",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	},{
    		"cCI":"M0008",
@@ -3360,7 +3360,7 @@ M0010 Start of signal group
    		"cCI":"M0010",
    		"n":"securityCode",
    		"cO":"setStart",
-   		"v":"1234"
+   		"v":"0000"
    	}]
    }
 
@@ -3385,7 +3385,7 @@ M0010 Start of signal group
    	},{
    		"cCI":"M0010",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	}]
    }
@@ -3414,7 +3414,7 @@ M0011 Stop of signal group
    		"cCI":"M0011",
    		"n":"securityCode",
    		"cO":"setStop",
-   		"v":"1234"
+   		"v":"0000"
    	}]
    }
 
@@ -3439,7 +3439,7 @@ M0011 Stop of signal group
    	},{
    		"cCI":"M0011",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	}]
    }
@@ -3468,7 +3468,7 @@ M0012 Request start or stop of a series of signal groups
    		"cCI":"M0012",
    		"n":"securityCode",
    		"cO":"setStart",
-   		"v":"1234"
+   		"v":"0000"
    	}]
    }
 
@@ -3493,7 +3493,7 @@ M0012 Request start or stop of a series of signal groups
    	},{
    		"cCI":"M0012",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	}]
    }
@@ -3522,7 +3522,7 @@ M0013 Activate a series of inputs
    		"cCI":"M0013",
    		"n":"securityCode",
    		"cO":"setInput",
-   		"v":"1234"
+   		"v":"0000"
    	}]
    }
 
@@ -3547,7 +3547,7 @@ M0013 Activate a series of inputs
    	},{
    		"cCI":"M0013",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	}]
    }
@@ -3950,7 +3950,7 @@ M0020 Force output
    		"cCI":"M0020",
    		"n":"securityCode",
    		"cO":"setOutput",
-   		"v":"1234"
+   		"v":"0000"
    	},{
    		"cCI":"M0020",
    		"n":"output",
@@ -3985,7 +3985,7 @@ M0020 Force output
    	},{
    		"cCI":"M0020",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	},{
    		"cCI":"M0020",
@@ -4024,7 +4024,7 @@ M0021 Set trigger level sensitivity for loop detector
    		"cCI":"M0021",
    		"n":"securityCode",
    		"cO":"setLevel",
-   		"v":"1234"
+   		"v":"0000"
    	}]
    }
 
@@ -4049,7 +4049,7 @@ M0021 Set trigger level sensitivity for loop detector
    	},{
    		"cCI":"M0021",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	}]
    }
@@ -4078,7 +4078,7 @@ M0103 Set security code
    		"cCI":"M0103",
    		"n":"oldSecurityCode",
    		"cO":"setSecurityCode",
-   		"v":"1234"
+   		"v":"0000"
    	},{
    		"cCI":"M0103",
    		"n":"newSecurityCode",
@@ -4108,12 +4108,12 @@ M0103 Set security code
    	},{
    		"cCI":"M0103",
    		"n":"oldSecurityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	},{
    		"cCI":"M0103",
    		"n":"newSecurityCode",
-   		"v":"5678",
+   		"v":"0000",
    		"age":"recent"
    	}]
    }
@@ -4137,7 +4137,7 @@ M0104 Set clock
    		"cCI":"M0104",
    		"n":"securityCode",
    		"cO":"setDate",
-   		"v":"1234"
+   		"v":"0000"
    	},{
    		"cCI":"M0104",
    		"n":"year",
@@ -4187,7 +4187,7 @@ M0104 Set clock
    	"rvs":[{
    		"cCI":"M0104",
    		"n":"securityCode",
-   		"v":"1234",
+   		"v":"0000",
    		"age":"recent"
    	},{
    		"cCI":"M0104",

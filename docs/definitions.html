@@ -1,38 +1,39 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>1. Definitions &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.0.15-draft documentation</title>
+  <title>1. Definitions &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.0.15 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2. Signal Exchange List" href="sxl_traffic_light_controller.html" />
@@ -50,7 +51,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> RSMP Signal Exchange List for Traffic Light Controllers
           
 
           
@@ -77,6 +78,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -96,6 +98,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -134,9 +137,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>1. Definitions</li>
+      <li><span class="section-number">1. </span>Definitions</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -156,79 +159,79 @@
            <div itemprop="articleBody">
             
   <div class="section" id="definitions">
-<h1>1. Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline">¶</a></h1>
 <p>The following definitions is provided as information for use in RSMP and
 may be simplified from their original meanings.</p>
 <p>RSMP Nordic takes no responsibility for the correctness of the definitions.</p>
-<dl class="glossary docutils">
-<dt id="term-red-rest">Red rest</dt>
-<dd>The signal group has no green demand.</dd>
-<dt id="term-red-rest-without-start-order">Red rest without start order</dt>
-<dd>The signal group isn’t allowed to demand green (green demand held back)
-without a start order.</dd>
-<dt id="term-red-rest-with-privilege-measurement">Red rest with privilege measurement</dt>
-<dd>The signal group has no green demand but can turn green when other
+<dl class="glossary simple">
+<dt id="term-Red-rest">Red rest</dt><dd><p>The signal group has no green demand.</p>
+</dd>
+<dt id="term-Red-rest-without-start-order">Red rest without start order</dt><dd><p>The signal group isn’t allowed to demand green (green demand held back)
+without a start order.</p>
+</dd>
+<dt id="term-Red-rest-with-privilege-measurement">Red rest with privilege measurement</dt><dd><p>The signal group has no green demand but can turn green when other
 signal groups in the same phase are turning green (signal group status
 G/0) or are green (signal groups status 1/2/3/4/5). A green demand which
 arrives late when other signal groups are green according to the above,
-results in a change to green.</dd>
-<dt id="term-red-with-reservation">Red with reservation</dt>
-<dd>The signal group is red due to other priority.</dd>
-<dt id="term-red-with-request">Red with request</dt>
-<dd>The signal group waits for signal group status 1/2/3/4/5 of conflicting
-signal groups to end.</dd>
-<dt id="term-red-with-start-in-own-stage">Red with start in own stage</dt>
-<dd>The signal group waits for signal group status 6/7/8/9/N/O/P of
-conflicting signal groups to end.</dd>
-<dt id="term-minimum-green">Minimum green</dt>
-<dd>The shortest time which can be shown green for each respective signal
-group, this time can´t be shortened.</dd>
-<dt id="term-max-minimum-green">Max. minimum green</dt>
-<dd>The signal groups status ”minimum green” should be able to be extended
+results in a change to green.</p>
+</dd>
+<dt id="term-Red-with-reservation">Red with reservation</dt><dd><p>The signal group is red due to other priority.</p>
+</dd>
+<dt id="term-Red-with-request">Red with request</dt><dd><p>The signal group waits for signal group status 1/2/3/4/5 of conflicting
+signal groups to end.</p>
+</dd>
+<dt id="term-Red-with-start-in-own-stage">Red with start in own stage</dt><dd><p>The signal group waits for signal group status 6/7/8/9/N/O/P of
+conflicting signal groups to end.</p>
+</dd>
+<dt id="term-Minimum-green">Minimum green</dt><dd><p>The shortest time which can be shown green for each respective signal
+group, this time can´t be shortened.</p>
+</dd>
+<dt id="term-Max.-minimum-green">Max. minimum green</dt><dd><p>The signal groups status ”minimum green” should be able to be extended
 with a traffic controlled variable part up to a maximum “Max.
 minimum-green”. If one or multiple detector logics are programmed to
 extend signal group status “Max. minimum-green”, then the detector
 logics will extend the minimum green time if they are active during red
 signal picture. Signal group status “Max. minimum-green” should
-optionally be able to be shortened or not at prioritization.</dd>
-<dt id="term-maximum-green-extension">Maximum green (extension)</dt>
-<dd>The signal group should be able to extend its showing of green through
+optionally be able to be shortened or not at prioritization.</p>
+</dd>
+<dt id="term-Maximum-green-extension">Maximum green (extension)</dt><dd><p>The signal group should be able to extend its showing of green through
 extension, e.g. from detector logics. When the signal group has green
 demand and status minimum green has ended, the signal group should
 continue its display of  green in status maximum green. Maximum green
 should be measured in parallel with minimum green up to a maximum
 “maximum green”. Signal group status “maximum green” should optionally
-be able to be shortened or not at prioritization.</dd>
-<dt id="term-green-rest">Green rest</dt>
-<dd>A signal group continues its display of green due to one or multiple
+be able to be shortened or not at prioritization.</p>
+</dd>
+<dt id="term-Green-rest">Green rest</dt><dd><p>A signal group continues its display of green due to one or multiple
 signal group/s in the same traffic pattern has more demand for green
 (signal group status 1/2/3), The signal group has no conflict. It waits
-to be changed, by the rest mode.</dd>
-<dt id="term-green-passive">Green passive</dt>
-<dd>A signal group continues its display of green due to other signal groups
+to be changed, by the rest mode.</p>
+</dd>
+<dt id="term-Green-passive">Green passive</dt><dd><p>A signal group continues its display of green due to other signal groups
 in the same traffic pattern has more demand for green (signal group
 status 1/2/3). The signal group has conflict. It waits to change, by
-conflicting signal group(s).</dd>
-<dt id="term-fixed-past-end-green">Fixed past-end-green</dt>
-<dd>When the signal group is ordered to change to red it should be able to
-continue to be green with a configurable fixed time.</dd>
-<dt id="term-extra-green-according-to-intergreen-times">Extra green according to intergreen times</dt>
-<dd>Signal groups remains green if possible, according to the conflicting
-signal groups</dd>
-<dt id="term-variable-past-end-green">Variable past-end-green</dt>
-<dd>When the signal group is ordered to change to  red it should be able to
+conflicting signal group(s).</p>
+</dd>
+<dt id="term-Fixed-past-end-green">Fixed past-end-green</dt><dd><p>When the signal group is ordered to change to red it should be able to
+continue to be green with a configurable fixed time.</p>
+</dd>
+<dt id="term-Extra-green-according-to-intergreen-times">Extra green according to intergreen times</dt><dd><p>Signal groups remains green if possible, according to the conflicting
+signal groups</p>
+</dd>
+<dt id="term-Variable-past-end-green">Variable past-end-green</dt><dd><p>When the signal group is ordered to change to  red it should be able to
 continue to be green during a traffic controlled variable time
 (O function). Signal group status “Past end green” should optionally be
-shortened or not at prioritization.</dd>
-<dt id="term-variable-yellow-or-yellow-green">Variable yellow or yellow green</dt>
-<dd>Signal group status ”fixed yellow” can be extended with a traffic
+shortened or not at prioritization.</p>
+</dd>
+<dt id="term-Variable-yellow-or-yellow-green">Variable yellow or yellow green</dt><dd><p>Signal group status ”fixed yellow” can be extended with a traffic
 controlled variable part “Variable yellow”, the signal group status is
-usually extended by detector logics. (V function).</dd>
-<dt id="term-variable-red">Variable red</dt>
-<dd>The fixed red time/intergreen time should be able to be extended with a
+usually extended by detector logics. (V function).</p>
+</dd>
+<dt id="term-Variable-red">Variable red</dt><dd><p>The fixed red time/intergreen time should be able to be extended with a
 traffic controlled variable part. It is usually measured in parallel
 with the fixed time whereby it must be longer to have any effect.
-(R function)</dd>
+(R function)</p>
+</dd>
 </dl>
 </div>
 
@@ -252,11 +255,19 @@ with the fixed time whereby it must be longer to have any effect.
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright RSMP Nordic
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -267,7 +278,6 @@ with the fixed time whereby it must be longer to have any effect.
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

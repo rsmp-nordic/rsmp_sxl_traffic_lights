@@ -1,38 +1,39 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>6. JSon Examples &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.0.15-draft documentation</title>
+  <title>6. JSon Examples &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.0.15 documentation</title>
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="5. Coordination between traffic light controllers" href="coordination.html" /> 
@@ -49,7 +50,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> RSMP Signal Exchange List for Traffic Light Controllers
           
 
           
@@ -76,6 +77,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -188,6 +190,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -226,9 +229,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>6. JSon Examples</li>
+      <li><span class="section-number">6. </span>JSon Examples</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -248,103 +251,103 @@
            <div itemprop="articleBody">
             
   <div class="section" id="json-examples">
-<h1>6. JSon Examples<a class="headerlink" href="#json-examples" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">6. </span>JSon Examples<a class="headerlink" href="#json-examples" title="Permalink to this headline">¶</a></h1>
 <p>This document contains examples for all message types.</p>
 <p><a class="reference internal" href="#alarms">Alarms</a></p>
 <ul class="simple">
-<li><a class="reference internal" href="#a0001-serious-hardware-error">A0001 Serious hardware error</a></li>
-<li><a class="reference internal" href="#a0002-less-serious-hardware-error">A0002 Less serious hardware error</a></li>
-<li><a class="reference internal" href="#a0003-serious-configuration-error">A0003 Serious configuration error</a></li>
-<li><a class="reference internal" href="#a0004-less-serious-configuration-error">A0004 Less serious configuration error</a></li>
-<li><a class="reference internal" href="#a0005-communication-error-between-traffic-light-controllers-synchronisation-error">A0005 Communication error between traffic light controllers / synchronisation error</a></li>
-<li><a class="reference internal" href="#a0006-safety-error">A0006 Safety error</a></li>
-<li><a class="reference internal" href="#a0007-communication-error-between-one-or-multiple-traffic-light-controllers-and-central-control-system">A0007 Communication error between one or multiple traffic light controllers and central control system</a></li>
-<li><a class="reference internal" href="#a0008-dead-lock-error">A0008 Dead lock error</a></li>
-<li><a class="reference internal" href="#a0009-other-error">A0009 Other error</a></li>
-<li><a class="reference internal" href="#a0010-door-open">A0010 Door open</a></li>
-<li><a class="reference internal" href="#a0101-pushbutton-error">A0101 Pushbutton error</a></li>
-<li><a class="reference internal" href="#a0201-serious-lamp-error">A0201 Serious lamp error</a></li>
-<li><a class="reference internal" href="#a0202-less-serious-lamp-error">A0202 Less serious lamp error</a></li>
-<li><a class="reference internal" href="#a0301-detector-error-hardware">A0301 Detector error (hardware)</a></li>
-<li><a class="reference internal" href="#a0302-detector-error-logic-error">A0302 Detector error (logic error)</a></li>
+<li><p><a class="reference internal" href="#a0001-serious-hardware-error">A0001 Serious hardware error</a></p></li>
+<li><p><a class="reference internal" href="#a0002-less-serious-hardware-error">A0002 Less serious hardware error</a></p></li>
+<li><p><a class="reference internal" href="#a0003-serious-configuration-error">A0003 Serious configuration error</a></p></li>
+<li><p><a class="reference internal" href="#a0004-less-serious-configuration-error">A0004 Less serious configuration error</a></p></li>
+<li><p><a class="reference internal" href="#a0005-communication-error-between-traffic-light-controllers-synchronisation-error">A0005 Communication error between traffic light controllers / synchronisation error</a></p></li>
+<li><p><a class="reference internal" href="#a0006-safety-error">A0006 Safety error</a></p></li>
+<li><p><a class="reference internal" href="#a0007-communication-error-between-one-or-multiple-traffic-light-controllers-and-central-control-system">A0007 Communication error between one or multiple traffic light controllers and central control system</a></p></li>
+<li><p><a class="reference internal" href="#a0008-dead-lock-error">A0008 Dead lock error</a></p></li>
+<li><p><a class="reference internal" href="#a0009-other-error">A0009 Other error</a></p></li>
+<li><p><a class="reference internal" href="#a0010-door-open">A0010 Door open</a></p></li>
+<li><p><a class="reference internal" href="#a0101-pushbutton-error">A0101 Pushbutton error</a></p></li>
+<li><p><a class="reference internal" href="#a0201-serious-lamp-error">A0201 Serious lamp error</a></p></li>
+<li><p><a class="reference internal" href="#a0202-less-serious-lamp-error">A0202 Less serious lamp error</a></p></li>
+<li><p><a class="reference internal" href="#a0301-detector-error-hardware">A0301 Detector error (hardware)</a></p></li>
+<li><p><a class="reference internal" href="#a0302-detector-error-logic-error">A0302 Detector error (logic error)</a></p></li>
 </ul>
 <p><a class="reference internal" href="#statuses">Statuses</a></p>
 <ul class="simple">
-<li><a class="reference internal" href="#s0001-signal-group-status">S0001 Signal group status</a></li>
-<li><a class="reference internal" href="#s0002-detector-logic-status">S0002 Detector logic status</a></li>
-<li><a class="reference internal" href="#s0003-input-status">S0003 Input status</a></li>
-<li><a class="reference internal" href="#s0004-output-status">S0004 Output status</a></li>
-<li><a class="reference internal" href="#s0005-traffic-light-controller-starting">S0005 Traffic Light Controller starting</a></li>
-<li><a class="reference internal" href="#s0006-emergency-stage">S0006 Emergency stage</a></li>
-<li><a class="reference internal" href="#s0007-controller-switched-on">S0007 Controller switched on</a></li>
-<li><a class="reference internal" href="#s0008-manual-control">S0008 Manual control</a></li>
-<li><a class="reference internal" href="#s0009-fixed-time-control">S0009 Fixed time control</a></li>
-<li><a class="reference internal" href="#s0010-isolated-control">S0010 Isolated control</a></li>
-<li><a class="reference internal" href="#s0011-yellow-flash">S0011 Yellow flash</a></li>
-<li><a class="reference internal" href="#s0012-all-red">S0012 All red</a></li>
-<li><a class="reference internal" href="#s0013-police-key">S0013 Police key</a></li>
-<li><a class="reference internal" href="#s0014-current-time-plan">S0014 Current time plan</a></li>
-<li><a class="reference internal" href="#s0015-current-traffic-situation">S0015 Current traffic situation</a></li>
-<li><a class="reference internal" href="#s0016-number-of-detector-logics">S0016 Number of detector logics</a></li>
-<li><a class="reference internal" href="#s0017-number-of-signal-groups">S0017 Number of signal groups</a></li>
-<li><a class="reference internal" href="#s0018-number-of-time-plans">S0018 Number of time plans</a></li>
-<li><a class="reference internal" href="#s0019-number-of-traffic-situations">S0019 Number of traffic situations</a></li>
-<li><a class="reference internal" href="#s0020-control-mode">S0020 Control mode</a></li>
-<li><a class="reference internal" href="#s0021-manually-set-detector-logic">S0021 Manually set detector logic</a></li>
-<li><a class="reference internal" href="#s0022-list-of-time-plans">S0022 List of time plans</a></li>
-<li><a class="reference internal" href="#s0023-command-table">S0023 Command table</a></li>
-<li><a class="reference internal" href="#s0024-offset-time">S0024 Offset time</a></li>
-<li><a class="reference internal" href="#s0025-time-to-green">S0025 Time-to-green</a></li>
-<li><a class="reference internal" href="#s0026-week-time-table">S0026 Week time table</a></li>
-<li><a class="reference internal" href="#s0027-time-tables">S0027 Time tables</a></li>
-<li><a class="reference internal" href="#s0028-cycle-time">S0028 Cycle time</a></li>
-<li><a class="reference internal" href="#s0029-forced-input-status">S0029 Forced input status</a></li>
-<li><a class="reference internal" href="#s0030-forced-output-status">S0030 Forced output status</a></li>
-<li><a class="reference internal" href="#s0031-trigger-level-sensitivity-for-loop-detector">S0031 Trigger level sensitivity for loop detector</a></li>
-<li><a class="reference internal" href="#s0091-operator-logged-in-out-op-panel">S0091 Operator logged in/out OP-panel</a></li>
-<li><a class="reference internal" href="#s0092-operator-logged-web-interface">S0092 Operator logged web-interface</a></li>
-<li><a class="reference internal" href="#s0095-version-of-traffic-light-controller">S0095 Version of Traffic Light Controller</a></li>
-<li><a class="reference internal" href="#s0096-current-date-and-time">S0096 Current date and time</a></li>
-<li><a class="reference internal" href="#s0097-checksum-of-traffic-parameters">S0097 Checksum of traffic parameters</a></li>
-<li><a class="reference internal" href="#s0098-configuration-of-traffic-parameters">S0098 Configuration of traffic parameters</a></li>
-<li><a class="reference internal" href="#s0201-traffic-counting-number-of-vehicles">S0201 Traffic Counting: Number of vehicles</a></li>
-<li><a class="reference internal" href="#s0202-traffic-counting-vehicle-speed">S0202 Traffic Counting: Vehicle speed</a></li>
-<li><a class="reference internal" href="#s0203-traffic-counting-occupancy">S0203 Traffic Counting: Occupancy</a></li>
-<li><a class="reference internal" href="#s0204-traffic-counting-number-of-vehicles-of-given-classification">S0204 Traffic Counting: Number of vehicles of given classification</a></li>
-<li><a class="reference internal" href="#s0205-traffic-counting-number-of-vehicles">S0205 Traffic Counting: Number of vehicles</a></li>
-<li><a class="reference internal" href="#s0206-traffic-counting-vehicle-speed">S0206 Traffic Counting: Vehicle speed</a></li>
-<li><a class="reference internal" href="#s0207-traffic-counting-occupancy">S0207 Traffic Counting: Occupancy</a></li>
-<li><a class="reference internal" href="#s0208-traffic-counting-number-of-vehicles-of-given-classification">S0208 Traffic Counting: Number of vehicles of given classification</a></li>
+<li><p><a class="reference internal" href="#s0001-signal-group-status">S0001 Signal group status</a></p></li>
+<li><p><a class="reference internal" href="#s0002-detector-logic-status">S0002 Detector logic status</a></p></li>
+<li><p><a class="reference internal" href="#s0003-input-status">S0003 Input status</a></p></li>
+<li><p><a class="reference internal" href="#s0004-output-status">S0004 Output status</a></p></li>
+<li><p><a class="reference internal" href="#s0005-traffic-light-controller-starting">S0005 Traffic Light Controller starting</a></p></li>
+<li><p><a class="reference internal" href="#s0006-emergency-stage">S0006 Emergency stage</a></p></li>
+<li><p><a class="reference internal" href="#s0007-controller-switched-on">S0007 Controller switched on</a></p></li>
+<li><p><a class="reference internal" href="#s0008-manual-control">S0008 Manual control</a></p></li>
+<li><p><a class="reference internal" href="#s0009-fixed-time-control">S0009 Fixed time control</a></p></li>
+<li><p><a class="reference internal" href="#s0010-isolated-control">S0010 Isolated control</a></p></li>
+<li><p><a class="reference internal" href="#s0011-yellow-flash">S0011 Yellow flash</a></p></li>
+<li><p><a class="reference internal" href="#s0012-all-red">S0012 All red</a></p></li>
+<li><p><a class="reference internal" href="#s0013-police-key">S0013 Police key</a></p></li>
+<li><p><a class="reference internal" href="#s0014-current-time-plan">S0014 Current time plan</a></p></li>
+<li><p><a class="reference internal" href="#s0015-current-traffic-situation">S0015 Current traffic situation</a></p></li>
+<li><p><a class="reference internal" href="#s0016-number-of-detector-logics">S0016 Number of detector logics</a></p></li>
+<li><p><a class="reference internal" href="#s0017-number-of-signal-groups">S0017 Number of signal groups</a></p></li>
+<li><p><a class="reference internal" href="#s0018-number-of-time-plans">S0018 Number of time plans</a></p></li>
+<li><p><a class="reference internal" href="#s0019-number-of-traffic-situations">S0019 Number of traffic situations</a></p></li>
+<li><p><a class="reference internal" href="#s0020-control-mode">S0020 Control mode</a></p></li>
+<li><p><a class="reference internal" href="#s0021-manually-set-detector-logic">S0021 Manually set detector logic</a></p></li>
+<li><p><a class="reference internal" href="#s0022-list-of-time-plans">S0022 List of time plans</a></p></li>
+<li><p><a class="reference internal" href="#s0023-command-table">S0023 Command table</a></p></li>
+<li><p><a class="reference internal" href="#s0024-offset-time">S0024 Offset time</a></p></li>
+<li><p><a class="reference internal" href="#s0025-time-to-green">S0025 Time-to-green</a></p></li>
+<li><p><a class="reference internal" href="#s0026-week-time-table">S0026 Week time table</a></p></li>
+<li><p><a class="reference internal" href="#s0027-time-tables">S0027 Time tables</a></p></li>
+<li><p><a class="reference internal" href="#s0028-cycle-time">S0028 Cycle time</a></p></li>
+<li><p><a class="reference internal" href="#s0029-forced-input-status">S0029 Forced input status</a></p></li>
+<li><p><a class="reference internal" href="#s0030-forced-output-status">S0030 Forced output status</a></p></li>
+<li><p><a class="reference internal" href="#s0031-trigger-level-sensitivity-for-loop-detector">S0031 Trigger level sensitivity for loop detector</a></p></li>
+<li><p><a class="reference internal" href="#s0091-operator-logged-in-out-op-panel">S0091 Operator logged in/out OP-panel</a></p></li>
+<li><p><a class="reference internal" href="#s0092-operator-logged-web-interface">S0092 Operator logged web-interface</a></p></li>
+<li><p><a class="reference internal" href="#s0095-version-of-traffic-light-controller">S0095 Version of Traffic Light Controller</a></p></li>
+<li><p><a class="reference internal" href="#s0096-current-date-and-time">S0096 Current date and time</a></p></li>
+<li><p><a class="reference internal" href="#s0097-checksum-of-traffic-parameters">S0097 Checksum of traffic parameters</a></p></li>
+<li><p><a class="reference internal" href="#s0098-configuration-of-traffic-parameters">S0098 Configuration of traffic parameters</a></p></li>
+<li><p><a class="reference internal" href="#s0201-traffic-counting-number-of-vehicles">S0201 Traffic Counting: Number of vehicles</a></p></li>
+<li><p><a class="reference internal" href="#s0202-traffic-counting-vehicle-speed">S0202 Traffic Counting: Vehicle speed</a></p></li>
+<li><p><a class="reference internal" href="#s0203-traffic-counting-occupancy">S0203 Traffic Counting: Occupancy</a></p></li>
+<li><p><a class="reference internal" href="#s0204-traffic-counting-number-of-vehicles-of-given-classification">S0204 Traffic Counting: Number of vehicles of given classification</a></p></li>
+<li><p><a class="reference internal" href="#s0205-traffic-counting-number-of-vehicles">S0205 Traffic Counting: Number of vehicles</a></p></li>
+<li><p><a class="reference internal" href="#s0206-traffic-counting-vehicle-speed">S0206 Traffic Counting: Vehicle speed</a></p></li>
+<li><p><a class="reference internal" href="#s0207-traffic-counting-occupancy">S0207 Traffic Counting: Occupancy</a></p></li>
+<li><p><a class="reference internal" href="#s0208-traffic-counting-number-of-vehicles-of-given-classification">S0208 Traffic Counting: Number of vehicles of given classification</a></p></li>
 </ul>
 <p><a class="reference internal" href="#commands">Commands</a></p>
 <ul class="simple">
-<li><a class="reference internal" href="#m0001-sets-functional-position">M0001 Sets functional position</a></li>
-<li><a class="reference internal" href="#m0002-sets-current-time-plan">M0002 Sets current time plan</a></li>
-<li><a class="reference internal" href="#m0003-sets-traffic-situation-the-controller-uses">M0003 Sets traffic situation the controller uses</a></li>
-<li><a class="reference internal" href="#m0004-restarts-traffic-light-controller">M0004 Restarts Traffic Light Controller</a></li>
-<li><a class="reference internal" href="#m0005-activate-emergency-route">M0005 Activate emergency route</a></li>
-<li><a class="reference internal" href="#m0006-activate-input">M0006 Activate input</a></li>
-<li><a class="reference internal" href="#m0007-activate-fixed-time-control">M0007 Activate fixed time control</a></li>
-<li><a class="reference internal" href="#m0008-sets-manual-activation-of-detector-logic">M0008 Sets manual activation of detector logic</a></li>
-<li><a class="reference internal" href="#m0010-start-of-signal-group">M0010 Start of signal group</a></li>
-<li><a class="reference internal" href="#m0011-stop-of-signal-group">M0011 Stop of signal group</a></li>
-<li><a class="reference internal" href="#m0012-request-start-or-stop-of-a-series-of-signal-groups">M0012 Request start or stop of a series of signal groups</a></li>
-<li><a class="reference internal" href="#m0013-activate-a-series-of-inputs">M0013 Activate a series of inputs</a></li>
-<li><a class="reference internal" href="#m0014-set-command-table">M0014 Set command table</a></li>
-<li><a class="reference internal" href="#m0015-set-offset-time">M0015 Set offset time</a></li>
-<li><a class="reference internal" href="#m0016-set-week-time-table">M0016 Set week time table</a></li>
-<li><a class="reference internal" href="#m0017-set-time-tables">M0017 Set time tables</a></li>
-<li><a class="reference internal" href="#m0018-set-cycle-time">M0018 Set cycle time</a></li>
-<li><a class="reference internal" href="#m0019-force-input">M0019 Force input</a></li>
-<li><a class="reference internal" href="#m0020-force-output">M0020 Force output</a></li>
-<li><a class="reference internal" href="#m0021-set-trigger-level-sensitivity-for-loop-detector">M0021 Set trigger level sensitivity for loop detector</a></li>
-<li><a class="reference internal" href="#m0103-set-security-code">M0103 Set security code</a></li>
-<li><a class="reference internal" href="#m0104-set-clock">M0104 Set clock</a></li>
+<li><p><a class="reference internal" href="#m0001-sets-functional-position">M0001 Sets functional position</a></p></li>
+<li><p><a class="reference internal" href="#m0002-sets-current-time-plan">M0002 Sets current time plan</a></p></li>
+<li><p><a class="reference internal" href="#m0003-sets-traffic-situation-the-controller-uses">M0003 Sets traffic situation the controller uses</a></p></li>
+<li><p><a class="reference internal" href="#m0004-restarts-traffic-light-controller">M0004 Restarts Traffic Light Controller</a></p></li>
+<li><p><a class="reference internal" href="#m0005-activate-emergency-route">M0005 Activate emergency route</a></p></li>
+<li><p><a class="reference internal" href="#m0006-activate-input">M0006 Activate input</a></p></li>
+<li><p><a class="reference internal" href="#m0007-activate-fixed-time-control">M0007 Activate fixed time control</a></p></li>
+<li><p><a class="reference internal" href="#m0008-sets-manual-activation-of-detector-logic">M0008 Sets manual activation of detector logic</a></p></li>
+<li><p><a class="reference internal" href="#m0010-start-of-signal-group">M0010 Start of signal group</a></p></li>
+<li><p><a class="reference internal" href="#m0011-stop-of-signal-group">M0011 Stop of signal group</a></p></li>
+<li><p><a class="reference internal" href="#m0012-request-start-or-stop-of-a-series-of-signal-groups">M0012 Request start or stop of a series of signal groups</a></p></li>
+<li><p><a class="reference internal" href="#m0013-activate-a-series-of-inputs">M0013 Activate a series of inputs</a></p></li>
+<li><p><a class="reference internal" href="#m0014-set-command-table">M0014 Set command table</a></p></li>
+<li><p><a class="reference internal" href="#m0015-set-offset-time">M0015 Set offset time</a></p></li>
+<li><p><a class="reference internal" href="#m0016-set-week-time-table">M0016 Set week time table</a></p></li>
+<li><p><a class="reference internal" href="#m0017-set-time-tables">M0017 Set time tables</a></p></li>
+<li><p><a class="reference internal" href="#m0018-set-cycle-time">M0018 Set cycle time</a></p></li>
+<li><p><a class="reference internal" href="#m0019-force-input">M0019 Force input</a></p></li>
+<li><p><a class="reference internal" href="#m0020-force-output">M0020 Force output</a></p></li>
+<li><p><a class="reference internal" href="#m0021-set-trigger-level-sensitivity-for-loop-detector">M0021 Set trigger level sensitivity for loop detector</a></p></li>
+<li><p><a class="reference internal" href="#m0103-set-security-code">M0103 Set security code</a></p></li>
+<li><p><a class="reference internal" href="#m0104-set-clock">M0104 Set clock</a></p></li>
 </ul>
 <div class="section" id="alarms">
-<h2>6.1. Alarms<a class="headerlink" href="#alarms" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1. </span>Alarms<a class="headerlink" href="#alarms" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="a0001-serious-hardware-error">
-<h3>6.1.1. A0001 Serious hardware error<a class="headerlink" href="#a0001-serious-hardware-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.1. </span>A0001 Serious hardware error<a class="headerlink" href="#a0001-serious-hardware-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -368,7 +371,7 @@
 </div>
 </div>
 <div class="section" id="a0002-less-serious-hardware-error">
-<h3>6.1.2. A0002 Less serious hardware error<a class="headerlink" href="#a0002-less-serious-hardware-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.2. </span>A0002 Less serious hardware error<a class="headerlink" href="#a0002-less-serious-hardware-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -392,7 +395,7 @@
 </div>
 </div>
 <div class="section" id="a0003-serious-configuration-error">
-<h3>6.1.3. A0003 Serious configuration error<a class="headerlink" href="#a0003-serious-configuration-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.3. </span>A0003 Serious configuration error<a class="headerlink" href="#a0003-serious-configuration-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -415,7 +418,7 @@
 </div>
 </div>
 <div class="section" id="a0004-less-serious-configuration-error">
-<h3>6.1.4. A0004 Less serious configuration error<a class="headerlink" href="#a0004-less-serious-configuration-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.4. </span>A0004 Less serious configuration error<a class="headerlink" href="#a0004-less-serious-configuration-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -439,7 +442,7 @@
 </div>
 </div>
 <div class="section" id="a0005-communication-error-between-traffic-light-controllers-synchronisation-error">
-<h3>6.1.5. A0005 Communication error between traffic light controllers / synchronisation error<a class="headerlink" href="#a0005-communication-error-between-traffic-light-controllers-synchronisation-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.5. </span>A0005 Communication error between traffic light controllers / synchronisation error<a class="headerlink" href="#a0005-communication-error-between-traffic-light-controllers-synchronisation-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -463,7 +466,7 @@
 </div>
 </div>
 <div class="section" id="a0006-safety-error">
-<h3>6.1.6. A0006 Safety error<a class="headerlink" href="#a0006-safety-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.6. </span>A0006 Safety error<a class="headerlink" href="#a0006-safety-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -487,7 +490,7 @@
 </div>
 </div>
 <div class="section" id="a0007-communication-error-between-one-or-multiple-traffic-light-controllers-and-central-control-system">
-<h3>6.1.7. A0007 Communication error between one or multiple traffic light controllers and central control system<a class="headerlink" href="#a0007-communication-error-between-one-or-multiple-traffic-light-controllers-and-central-control-system" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.7. </span>A0007 Communication error between one or multiple traffic light controllers and central control system<a class="headerlink" href="#a0007-communication-error-between-one-or-multiple-traffic-light-controllers-and-central-control-system" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -511,7 +514,7 @@
 </div>
 </div>
 <div class="section" id="a0008-dead-lock-error">
-<h3>6.1.8. A0008 Dead lock error<a class="headerlink" href="#a0008-dead-lock-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.8. </span>A0008 Dead lock error<a class="headerlink" href="#a0008-dead-lock-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -538,7 +541,7 @@
 </div>
 </div>
 <div class="section" id="a0009-other-error">
-<h3>6.1.9. A0009 Other error<a class="headerlink" href="#a0009-other-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.9. </span>A0009 Other error<a class="headerlink" href="#a0009-other-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -562,7 +565,7 @@
 </div>
 </div>
 <div class="section" id="a0010-door-open">
-<h3>6.1.10. A0010 Door open<a class="headerlink" href="#a0010-door-open" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.10. </span>A0010 Door open<a class="headerlink" href="#a0010-door-open" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -586,7 +589,7 @@
 </div>
 </div>
 <div class="section" id="a0101-pushbutton-error">
-<h3>6.1.11. A0101 Pushbutton error<a class="headerlink" href="#a0101-pushbutton-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.11. </span>A0101 Pushbutton error<a class="headerlink" href="#a0101-pushbutton-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -610,7 +613,7 @@
 </div>
 </div>
 <div class="section" id="a0201-serious-lamp-error">
-<h3>6.1.12. A0201 Serious lamp error<a class="headerlink" href="#a0201-serious-lamp-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.12. </span>A0201 Serious lamp error<a class="headerlink" href="#a0201-serious-lamp-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -637,7 +640,7 @@
 </div>
 </div>
 <div class="section" id="a0202-less-serious-lamp-error">
-<h3>6.1.13. A0202 Less serious lamp error<a class="headerlink" href="#a0202-less-serious-lamp-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.13. </span>A0202 Less serious lamp error<a class="headerlink" href="#a0202-less-serious-lamp-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -664,7 +667,7 @@
 </div>
 </div>
 <div class="section" id="a0301-detector-error-hardware">
-<h3>6.1.14. A0301 Detector error (hardware)<a class="headerlink" href="#a0301-detector-error-hardware" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.14. </span>A0301 Detector error (hardware)<a class="headerlink" href="#a0301-detector-error-hardware" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -700,7 +703,7 @@
 </div>
 </div>
 <div class="section" id="a0302-detector-error-logic-error">
-<h3>6.1.15. A0302 Detector error (logic error)<a class="headerlink" href="#a0302-detector-error-logic-error" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.1.15. </span>A0302 Detector error (logic error)<a class="headerlink" href="#a0302-detector-error-logic-error" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
      <span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Alarm&quot;</span><span class="p">,</span>
@@ -740,9 +743,9 @@
 </div>
 </div>
 <div class="section" id="statuses">
-<h2>6.2. Statuses<a class="headerlink" href="#statuses" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.2. </span>Statuses<a class="headerlink" href="#statuses" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="s0001-signal-group-status">
-<h3>6.2.1. S0001 Signal group status<a class="headerlink" href="#s0001-signal-group-status" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.1. </span>S0001 Signal group status<a class="headerlink" href="#s0001-signal-group-status" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -802,7 +805,7 @@
 </div>
 </div>
 <div class="section" id="s0002-detector-logic-status">
-<h3>6.2.2. S0002 Detector logic status<a class="headerlink" href="#s0002-detector-logic-status" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.2. </span>S0002 Detector logic status<a class="headerlink" href="#s0002-detector-logic-status" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -838,7 +841,7 @@
 </div>
 </div>
 <div class="section" id="s0003-input-status">
-<h3>6.2.3. S0003 Input status<a class="headerlink" href="#s0003-input-status" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.3. </span>S0003 Input status<a class="headerlink" href="#s0003-input-status" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -882,7 +885,7 @@
 </div>
 </div>
 <div class="section" id="s0004-output-status">
-<h3>6.2.4. S0004 Output status<a class="headerlink" href="#s0004-output-status" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.4. </span>S0004 Output status<a class="headerlink" href="#s0004-output-status" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -926,7 +929,7 @@
 </div>
 </div>
 <div class="section" id="s0005-traffic-light-controller-starting">
-<h3>6.2.5. S0005 Traffic Light Controller starting<a class="headerlink" href="#s0005-traffic-light-controller-starting" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.5. </span>S0005 Traffic Light Controller starting<a class="headerlink" href="#s0005-traffic-light-controller-starting" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -962,7 +965,7 @@
 </div>
 </div>
 <div class="section" id="s0006-emergency-stage">
-<h3>6.2.6. S0006 Emergency stage<a class="headerlink" href="#s0006-emergency-stage" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.6. </span>S0006 Emergency stage<a class="headerlink" href="#s0006-emergency-stage" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1006,7 +1009,7 @@
 </div>
 </div>
 <div class="section" id="s0007-controller-switched-on">
-<h3>6.2.7. S0007 Controller switched on<a class="headerlink" href="#s0007-controller-switched-on" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.7. </span>S0007 Controller switched on<a class="headerlink" href="#s0007-controller-switched-on" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1050,7 +1053,7 @@
 </div>
 </div>
 <div class="section" id="s0008-manual-control">
-<h3>6.2.8. S0008 Manual control<a class="headerlink" href="#s0008-manual-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.8. </span>S0008 Manual control<a class="headerlink" href="#s0008-manual-control" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1094,7 +1097,7 @@
 </div>
 </div>
 <div class="section" id="s0009-fixed-time-control">
-<h3>6.2.9. S0009 Fixed time control<a class="headerlink" href="#s0009-fixed-time-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.9. </span>S0009 Fixed time control<a class="headerlink" href="#s0009-fixed-time-control" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1138,7 +1141,7 @@
 </div>
 </div>
 <div class="section" id="s0010-isolated-control">
-<h3>6.2.10. S0010 Isolated control<a class="headerlink" href="#s0010-isolated-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.10. </span>S0010 Isolated control<a class="headerlink" href="#s0010-isolated-control" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1182,7 +1185,7 @@
 </div>
 </div>
 <div class="section" id="s0011-yellow-flash">
-<h3>6.2.11. S0011 Yellow flash<a class="headerlink" href="#s0011-yellow-flash" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.11. </span>S0011 Yellow flash<a class="headerlink" href="#s0011-yellow-flash" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1226,7 +1229,7 @@
 </div>
 </div>
 <div class="section" id="s0012-all-red">
-<h3>6.2.12. S0012 All red<a class="headerlink" href="#s0012-all-red" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.12. </span>S0012 All red<a class="headerlink" href="#s0012-all-red" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1270,7 +1273,7 @@
 </div>
 </div>
 <div class="section" id="s0013-police-key">
-<h3>6.2.13. S0013 Police key<a class="headerlink" href="#s0013-police-key" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.13. </span>S0013 Police key<a class="headerlink" href="#s0013-police-key" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1314,7 +1317,7 @@
 </div>
 </div>
 <div class="section" id="s0014-current-time-plan">
-<h3>6.2.14. S0014 Current time plan<a class="headerlink" href="#s0014-current-time-plan" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.14. </span>S0014 Current time plan<a class="headerlink" href="#s0014-current-time-plan" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1350,7 +1353,7 @@
 </div>
 </div>
 <div class="section" id="s0015-current-traffic-situation">
-<h3>6.2.15. S0015 Current traffic situation<a class="headerlink" href="#s0015-current-traffic-situation" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.15. </span>S0015 Current traffic situation<a class="headerlink" href="#s0015-current-traffic-situation" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1386,7 +1389,7 @@
 </div>
 </div>
 <div class="section" id="s0016-number-of-detector-logics">
-<h3>6.2.16. S0016 Number of detector logics<a class="headerlink" href="#s0016-number-of-detector-logics" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.16. </span>S0016 Number of detector logics<a class="headerlink" href="#s0016-number-of-detector-logics" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1422,7 +1425,7 @@
 </div>
 </div>
 <div class="section" id="s0017-number-of-signal-groups">
-<h3>6.2.17. S0017 Number of signal groups<a class="headerlink" href="#s0017-number-of-signal-groups" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.17. </span>S0017 Number of signal groups<a class="headerlink" href="#s0017-number-of-signal-groups" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1458,7 +1461,7 @@
 </div>
 </div>
 <div class="section" id="s0018-number-of-time-plans">
-<h3>6.2.18. S0018 Number of time plans<a class="headerlink" href="#s0018-number-of-time-plans" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.18. </span>S0018 Number of time plans<a class="headerlink" href="#s0018-number-of-time-plans" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1494,7 +1497,7 @@
 </div>
 </div>
 <div class="section" id="s0019-number-of-traffic-situations">
-<h3>6.2.19. S0019 Number of traffic situations<a class="headerlink" href="#s0019-number-of-traffic-situations" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.19. </span>S0019 Number of traffic situations<a class="headerlink" href="#s0019-number-of-traffic-situations" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1530,7 +1533,7 @@
 </div>
 </div>
 <div class="section" id="s0020-control-mode">
-<h3>6.2.20. S0020 Control mode<a class="headerlink" href="#s0020-control-mode" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.20. </span>S0020 Control mode<a class="headerlink" href="#s0020-control-mode" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1574,7 +1577,7 @@
 </div>
 </div>
 <div class="section" id="s0021-manually-set-detector-logic">
-<h3>6.2.21. S0021 Manually set detector logic<a class="headerlink" href="#s0021-manually-set-detector-logic" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.21. </span>S0021 Manually set detector logic<a class="headerlink" href="#s0021-manually-set-detector-logic" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1610,7 +1613,7 @@
 </div>
 </div>
 <div class="section" id="s0022-list-of-time-plans">
-<h3>6.2.22. S0022 List of time plans<a class="headerlink" href="#s0022-list-of-time-plans" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.22. </span>S0022 List of time plans<a class="headerlink" href="#s0022-list-of-time-plans" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1646,7 +1649,7 @@
 </div>
 </div>
 <div class="section" id="s0023-command-table">
-<h3>6.2.23. S0023 Command table<a class="headerlink" href="#s0023-command-table" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.23. </span>S0023 Command table<a class="headerlink" href="#s0023-command-table" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1682,7 +1685,7 @@
 </div>
 </div>
 <div class="section" id="s0024-offset-time">
-<h3>6.2.24. S0024 Offset time<a class="headerlink" href="#s0024-offset-time" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.24. </span>S0024 Offset time<a class="headerlink" href="#s0024-offset-time" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1718,7 +1721,7 @@
 </div>
 </div>
 <div class="section" id="s0025-time-to-green">
-<h3>6.2.25. S0025 Time-to-green<a class="headerlink" href="#s0025-time-to-green" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.25. </span>S0025 Time-to-green<a class="headerlink" href="#s0025-time-to-green" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1810,7 +1813,7 @@
 </div>
 </div>
 <div class="section" id="s0026-week-time-table">
-<h3>6.2.26. S0026 Week time table<a class="headerlink" href="#s0026-week-time-table" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.26. </span>S0026 Week time table<a class="headerlink" href="#s0026-week-time-table" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1846,7 +1849,7 @@
 </div>
 </div>
 <div class="section" id="s0027-time-tables">
-<h3>6.2.27. S0027 Time tables<a class="headerlink" href="#s0027-time-tables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.27. </span>S0027 Time tables<a class="headerlink" href="#s0027-time-tables" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1882,7 +1885,7 @@
 </div>
 </div>
 <div class="section" id="s0028-cycle-time">
-<h3>6.2.28. S0028 Cycle time<a class="headerlink" href="#s0028-cycle-time" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.28. </span>S0028 Cycle time<a class="headerlink" href="#s0028-cycle-time" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1918,7 +1921,7 @@
 </div>
 </div>
 <div class="section" id="s0029-forced-input-status">
-<h3>6.2.29. S0029 Forced input status<a class="headerlink" href="#s0029-forced-input-status" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.29. </span>S0029 Forced input status<a class="headerlink" href="#s0029-forced-input-status" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1954,7 +1957,7 @@
 </div>
 </div>
 <div class="section" id="s0030-forced-output-status">
-<h3>6.2.30. S0030 Forced output status<a class="headerlink" href="#s0030-forced-output-status" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.30. </span>S0030 Forced output status<a class="headerlink" href="#s0030-forced-output-status" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -1990,7 +1993,7 @@
 </div>
 </div>
 <div class="section" id="s0031-trigger-level-sensitivity-for-loop-detector">
-<h3>6.2.31. S0031 Trigger level sensitivity for loop detector<a class="headerlink" href="#s0031-trigger-level-sensitivity-for-loop-detector" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.31. </span>S0031 Trigger level sensitivity for loop detector<a class="headerlink" href="#s0031-trigger-level-sensitivity-for-loop-detector" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2026,7 +2029,7 @@
 </div>
 </div>
 <div class="section" id="s0091-operator-logged-in-out-op-panel">
-<h3>6.2.32. S0091 Operator logged in/out OP-panel<a class="headerlink" href="#s0091-operator-logged-in-out-op-panel" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.32. </span>S0091 Operator logged in/out OP-panel<a class="headerlink" href="#s0091-operator-logged-in-out-op-panel" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2070,7 +2073,7 @@
 </div>
 </div>
 <div class="section" id="s0092-operator-logged-web-interface">
-<h3>6.2.33. S0092 Operator logged web-interface<a class="headerlink" href="#s0092-operator-logged-web-interface" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.33. </span>S0092 Operator logged web-interface<a class="headerlink" href="#s0092-operator-logged-web-interface" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2114,7 +2117,7 @@
 </div>
 </div>
 <div class="section" id="s0095-version-of-traffic-light-controller">
-<h3>6.2.34. S0095 Version of Traffic Light Controller<a class="headerlink" href="#s0095-version-of-traffic-light-controller" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.34. </span>S0095 Version of Traffic Light Controller<a class="headerlink" href="#s0095-version-of-traffic-light-controller" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2150,7 +2153,7 @@
 </div>
 </div>
 <div class="section" id="s0096-current-date-and-time">
-<h3>6.2.35. S0096 Current date and time<a class="headerlink" href="#s0096-current-date-and-time" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.35. </span>S0096 Current date and time<a class="headerlink" href="#s0096-current-date-and-time" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2226,7 +2229,7 @@
 </div>
 </div>
 <div class="section" id="s0097-checksum-of-traffic-parameters">
-<h3>6.2.36. S0097 Checksum of traffic parameters<a class="headerlink" href="#s0097-checksum-of-traffic-parameters" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.36. </span>S0097 Checksum of traffic parameters<a class="headerlink" href="#s0097-checksum-of-traffic-parameters" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2270,7 +2273,7 @@
 </div>
 </div>
 <div class="section" id="s0098-configuration-of-traffic-parameters">
-<h3>6.2.37. S0098 Configuration of traffic parameters<a class="headerlink" href="#s0098-configuration-of-traffic-parameters" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.37. </span>S0098 Configuration of traffic parameters<a class="headerlink" href="#s0098-configuration-of-traffic-parameters" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2322,7 +2325,7 @@
 </div>
 </div>
 <div class="section" id="s0201-traffic-counting-number-of-vehicles">
-<h3>6.2.38. S0201 Traffic Counting: Number of vehicles<a class="headerlink" href="#s0201-traffic-counting-number-of-vehicles" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.38. </span>S0201 Traffic Counting: Number of vehicles<a class="headerlink" href="#s0201-traffic-counting-number-of-vehicles" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2366,7 +2369,7 @@
 </div>
 </div>
 <div class="section" id="s0202-traffic-counting-vehicle-speed">
-<h3>6.2.39. S0202 Traffic Counting: Vehicle speed<a class="headerlink" href="#s0202-traffic-counting-vehicle-speed" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.39. </span>S0202 Traffic Counting: Vehicle speed<a class="headerlink" href="#s0202-traffic-counting-vehicle-speed" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2410,7 +2413,7 @@
 </div>
 </div>
 <div class="section" id="s0203-traffic-counting-occupancy">
-<h3>6.2.40. S0203 Traffic Counting: Occupancy<a class="headerlink" href="#s0203-traffic-counting-occupancy" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.40. </span>S0203 Traffic Counting: Occupancy<a class="headerlink" href="#s0203-traffic-counting-occupancy" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2454,7 +2457,7 @@
 </div>
 </div>
 <div class="section" id="s0204-traffic-counting-number-of-vehicles-of-given-classification">
-<h3>6.2.41. S0204 Traffic Counting: Number of vehicles of given classification<a class="headerlink" href="#s0204-traffic-counting-number-of-vehicles-of-given-classification" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.41. </span>S0204 Traffic Counting: Number of vehicles of given classification<a class="headerlink" href="#s0204-traffic-counting-number-of-vehicles-of-given-classification" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2562,7 +2565,7 @@
 </div>
 </div>
 <div class="section" id="s0205-traffic-counting-number-of-vehicles">
-<h3>6.2.42. S0205 Traffic Counting: Number of vehicles<a class="headerlink" href="#s0205-traffic-counting-number-of-vehicles" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.42. </span>S0205 Traffic Counting: Number of vehicles<a class="headerlink" href="#s0205-traffic-counting-number-of-vehicles" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2606,7 +2609,7 @@
 </div>
 </div>
 <div class="section" id="s0206-traffic-counting-vehicle-speed">
-<h3>6.2.43. S0206 Traffic Counting: Vehicle speed<a class="headerlink" href="#s0206-traffic-counting-vehicle-speed" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.43. </span>S0206 Traffic Counting: Vehicle speed<a class="headerlink" href="#s0206-traffic-counting-vehicle-speed" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2650,7 +2653,7 @@
 </div>
 </div>
 <div class="section" id="s0207-traffic-counting-occupancy">
-<h3>6.2.44. S0207 Traffic Counting: Occupancy<a class="headerlink" href="#s0207-traffic-counting-occupancy" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.44. </span>S0207 Traffic Counting: Occupancy<a class="headerlink" href="#s0207-traffic-counting-occupancy" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2694,7 +2697,7 @@
 </div>
 </div>
 <div class="section" id="s0208-traffic-counting-number-of-vehicles-of-given-classification">
-<h3>6.2.45. S0208 Traffic Counting: Number of vehicles of given classification<a class="headerlink" href="#s0208-traffic-counting-number-of-vehicles-of-given-classification" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.2.45. </span>S0208 Traffic Counting: Number of vehicles of given classification<a class="headerlink" href="#s0208-traffic-counting-number-of-vehicles-of-given-classification" title="Permalink to this headline">¶</a></h3>
 <p><strong>Status Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2803,9 +2806,9 @@
 </div>
 </div>
 <div class="section" id="commands">
-<h2>6.3. Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.3. </span>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="m0001-sets-functional-position">
-<h3>6.3.1. M0001 Sets functional position<a class="headerlink" href="#m0001-sets-functional-position" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.1. </span>M0001 Sets functional position<a class="headerlink" href="#m0001-sets-functional-position" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2823,7 +2826,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0001&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setValue&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0001&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;timeout&quot;</span><span class="p">,</span>
@@ -2855,7 +2858,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0001&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0001&quot;</span><span class="p">,</span>
@@ -2873,7 +2876,7 @@
 </div>
 </div>
 <div class="section" id="m0002-sets-current-time-plan">
-<h3>6.3.2. M0002 Sets current time plan<a class="headerlink" href="#m0002-sets-current-time-plan" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.2. </span>M0002 Sets current time plan<a class="headerlink" href="#m0002-sets-current-time-plan" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2891,7 +2894,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0002&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setPlan&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0002&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;timeplan&quot;</span><span class="p">,</span>
@@ -2918,7 +2921,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0002&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0002&quot;</span><span class="p">,</span>
@@ -2931,7 +2934,7 @@
 </div>
 </div>
 <div class="section" id="m0003-sets-traffic-situation-the-controller-uses">
-<h3>6.3.3. M0003 Sets traffic situation the controller uses<a class="headerlink" href="#m0003-sets-traffic-situation-the-controller-uses" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.3. </span>M0003 Sets traffic situation the controller uses<a class="headerlink" href="#m0003-sets-traffic-situation-the-controller-uses" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -2949,7 +2952,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0003&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setTrafficSituation&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0003&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;trafficsituation&quot;</span><span class="p">,</span>
@@ -2976,7 +2979,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0003&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0003&quot;</span><span class="p">,</span>
@@ -2989,7 +2992,7 @@
 </div>
 </div>
 <div class="section" id="m0004-restarts-traffic-light-controller">
-<h3>6.3.4. M0004 Restarts Traffic Light Controller<a class="headerlink" href="#m0004-restarts-traffic-light-controller" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.4. </span>M0004 Restarts Traffic Light Controller<a class="headerlink" href="#m0004-restarts-traffic-light-controller" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3007,7 +3010,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0004&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setRestart&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -3029,7 +3032,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0004&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
@@ -3037,7 +3040,7 @@
 </div>
 </div>
 <div class="section" id="m0005-activate-emergency-route">
-<h3>6.3.5. M0005 Activate emergency route<a class="headerlink" href="#m0005-activate-emergency-route" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.5. </span>M0005 Activate emergency route<a class="headerlink" href="#m0005-activate-emergency-route" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3055,7 +3058,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0005&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setEmergency&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0005&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;emergencyroute&quot;</span><span class="p">,</span>
@@ -3082,7 +3085,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0005&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0005&quot;</span><span class="p">,</span>
@@ -3095,7 +3098,7 @@
 </div>
 </div>
 <div class="section" id="m0006-activate-input">
-<h3>6.3.6. M0006 Activate input<a class="headerlink" href="#m0006-activate-input" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.6. </span>M0006 Activate input<a class="headerlink" href="#m0006-activate-input" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3113,7 +3116,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0006&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setInput&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0006&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;input&quot;</span><span class="p">,</span>
@@ -3140,7 +3143,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0006&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0006&quot;</span><span class="p">,</span>
@@ -3153,7 +3156,7 @@
 </div>
 </div>
 <div class="section" id="m0007-activate-fixed-time-control">
-<h3>6.3.7. M0007 Activate fixed time control<a class="headerlink" href="#m0007-activate-fixed-time-control" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.7. </span>M0007 Activate fixed time control<a class="headerlink" href="#m0007-activate-fixed-time-control" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3171,7 +3174,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0007&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setFixedTime&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -3193,7 +3196,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0007&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
@@ -3201,7 +3204,7 @@
 </div>
 </div>
 <div class="section" id="m0008-sets-manual-activation-of-detector-logic">
-<h3>6.3.8. M0008 Sets manual activation of detector logic<a class="headerlink" href="#m0008-sets-manual-activation-of-detector-logic" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.8. </span>M0008 Sets manual activation of detector logic<a class="headerlink" href="#m0008-sets-manual-activation-of-detector-logic" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3219,7 +3222,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0008&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setForceDetectorLogic&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0008&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;mode&quot;</span><span class="p">,</span>
@@ -3246,7 +3249,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0008&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0008&quot;</span><span class="p">,</span>
@@ -3259,7 +3262,7 @@
 </div>
 </div>
 <div class="section" id="m0010-start-of-signal-group">
-<h3>6.3.9. M0010 Start of signal group<a class="headerlink" href="#m0010-start-of-signal-group" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.9. </span>M0010 Start of signal group<a class="headerlink" href="#m0010-start-of-signal-group" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3277,7 +3280,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0010&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setStart&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -3299,7 +3302,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0010&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
@@ -3307,7 +3310,7 @@
 </div>
 </div>
 <div class="section" id="m0011-stop-of-signal-group">
-<h3>6.3.10. M0011 Stop of signal group<a class="headerlink" href="#m0011-stop-of-signal-group" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.10. </span>M0011 Stop of signal group<a class="headerlink" href="#m0011-stop-of-signal-group" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3325,7 +3328,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0011&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setStop&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -3347,7 +3350,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0011&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
@@ -3355,7 +3358,7 @@
 </div>
 </div>
 <div class="section" id="m0012-request-start-or-stop-of-a-series-of-signal-groups">
-<h3>6.3.11. M0012 Request start or stop of a series of signal groups<a class="headerlink" href="#m0012-request-start-or-stop-of-a-series-of-signal-groups" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.11. </span>M0012 Request start or stop of a series of signal groups<a class="headerlink" href="#m0012-request-start-or-stop-of-a-series-of-signal-groups" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3373,7 +3376,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0012&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setStart&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -3395,7 +3398,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0012&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
@@ -3403,7 +3406,7 @@
 </div>
 </div>
 <div class="section" id="m0013-activate-a-series-of-inputs">
-<h3>6.3.12. M0013 Activate a series of inputs<a class="headerlink" href="#m0013-activate-a-series-of-inputs" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.12. </span>M0013 Activate a series of inputs<a class="headerlink" href="#m0013-activate-a-series-of-inputs" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3421,7 +3424,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0013&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setInput&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -3443,7 +3446,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0013&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
@@ -3451,7 +3454,7 @@
 </div>
 </div>
 <div class="section" id="m0014-set-command-table">
-<h3>6.3.13. M0014 Set command table<a class="headerlink" href="#m0014-set-command-table" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.13. </span>M0014 Set command table<a class="headerlink" href="#m0014-set-command-table" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3509,7 +3512,7 @@
 </div>
 </div>
 <div class="section" id="m0015-set-offset-time">
-<h3>6.3.14. M0015 Set Offset time<a class="headerlink" href="#m0015-set-offset-time" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.14. </span>M0015 Set Offset time<a class="headerlink" href="#m0015-set-offset-time" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3567,7 +3570,7 @@
 </div>
 </div>
 <div class="section" id="m0016-set-week-time-table">
-<h3>6.3.15. M0016 Set week time table<a class="headerlink" href="#m0016-set-week-time-table" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.15. </span>M0016 Set week time table<a class="headerlink" href="#m0016-set-week-time-table" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3615,7 +3618,7 @@
 </div>
 </div>
 <div class="section" id="m0017-set-time-tables">
-<h3>6.3.16. M0017 Set time tables<a class="headerlink" href="#m0017-set-time-tables" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.16. </span>M0017 Set time tables<a class="headerlink" href="#m0017-set-time-tables" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3663,7 +3666,7 @@
 </div>
 </div>
 <div class="section" id="m0018-set-cycle-time">
-<h3>6.3.17. M0018 Set cycle time<a class="headerlink" href="#m0018-set-cycle-time" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.17. </span>M0018 Set cycle time<a class="headerlink" href="#m0018-set-cycle-time" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3721,7 +3724,7 @@
 </div>
 </div>
 <div class="section" id="m0019-force-input">
-<h3>6.3.18. M0019 Force input<a class="headerlink" href="#m0019-force-input" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.18. </span>M0019 Force input<a class="headerlink" href="#m0019-force-input" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3789,7 +3792,7 @@
 </div>
 </div>
 <div class="section" id="m0020-force-output">
-<h3>6.3.19. M0020 Force output<a class="headerlink" href="#m0020-force-output" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.19. </span>M0020 Force output<a class="headerlink" href="#m0020-force-output" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3807,7 +3810,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0020&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setOutput&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0020&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;output&quot;</span><span class="p">,</span>
@@ -3839,7 +3842,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0020&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0020&quot;</span><span class="p">,</span>
@@ -3857,7 +3860,7 @@
 </div>
 </div>
 <div class="section" id="m0021-set-trigger-level-sensitivity-for-loop-detector">
-<h3>6.3.20. M0021 Set trigger level sensitivity for loop detector<a class="headerlink" href="#m0021-set-trigger-level-sensitivity-for-loop-detector" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.20. </span>M0021 Set trigger level sensitivity for loop detector<a class="headerlink" href="#m0021-set-trigger-level-sensitivity-for-loop-detector" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3875,7 +3878,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0021&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setLevel&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
 </pre></div>
@@ -3897,7 +3900,7 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0021&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
@@ -3905,7 +3908,7 @@
 </div>
 </div>
 <div class="section" id="m0103-set-security-code">
-<h3>6.3.21. M0103 Set security code<a class="headerlink" href="#m0103-set-security-code" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.21. </span>M0103 Set security code<a class="headerlink" href="#m0103-set-security-code" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3923,7 +3926,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0103&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;oldSecurityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setSecurityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0103&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;newSecurityCode&quot;</span><span class="p">,</span>
@@ -3950,12 +3953,12 @@
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0103&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;oldSecurityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0103&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;newSecurityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;5678&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">}]</span>
 <span class="p">}</span>
@@ -3963,7 +3966,7 @@
 </div>
 </div>
 <div class="section" id="m0104-set-clock">
-<h3>6.3.22. M0104 Set clock<a class="headerlink" href="#m0104-set-clock" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">6.3.22. </span>M0104 Set clock<a class="headerlink" href="#m0104-set-clock" title="Permalink to this headline">¶</a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
      <span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3976,7 +3979,7 @@
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0104&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
              <span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setDate&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0104&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;year&quot;</span><span class="p">,</span>
@@ -4023,7 +4026,7 @@
      <span class="nt">&quot;rvs&quot;</span><span class="p">:[{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0104&quot;</span><span class="p">,</span>
              <span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
-             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1234&quot;</span><span class="p">,</span>
+             <span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;0000&quot;</span><span class="p">,</span>
              <span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="s2">&quot;recent&quot;</span>
      <span class="p">},{</span>
              <span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0104&quot;</span><span class="p">,</span>
@@ -4081,11 +4084,19 @@
 
   <div role="contentinfo">
     <p>
+        
         &copy; Copyright RSMP Nordic
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -4096,7 +4107,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
