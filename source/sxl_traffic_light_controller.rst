@@ -163,11 +163,11 @@ Dead lock error |br|  |br| Used for dead lock errors. |br|  |br| For instance; a
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
-   ========  =======  =============  =================
-   Name      Type     Value          Comment
-   ========  =======  =============  =================
-   timeplan  integer  [designation]  Current time plan
-   ========  =======  =============  =================
+   ========  =======  =======  =================
+   Name      Type     Value    Comment
+   ========  =======  =======  =================
+   timeplan  integer  [1-255]  Current time plan
+   ========  =======  =======  =================
 ..
 
 A0009
@@ -1057,16 +1057,16 @@ Current date and time |br|  |br| Provides diagnostic information about the curre
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  =======  ===============================================================
-   Name    Type     Value    Comment
-   ======  =======  =======  ===============================================================
-   year    integer  YYYY     Year according to format YYYY. NOTE: UTC is used
-   month   integer  MM       Month (01-12) according to format MM. Note: UTC is used
-   day     integer  DD       Day of month (01-31) according to format DD.  Note: UTC is used
-   hour    integer  HH       Hour of day (00-23) according to format DD. Note: UTC is used
-   minute  integer  MM       Minute (00-59) according to format MM. Note: UTC is used
-   second  integer  SS       Second (00-59) according to format SS. Note: UTC is used
-   ======  =======  =======  ===============================================================
+   ======  =======  ========  ================================
+   Name    Type     Value     Comment
+   ======  =======  ========  ================================
+   year    integer  [0-9999]  Year. Note: UTC is used
+   month   integer  [1-12]    Month. Note: UTC is used
+   day     integer  [1-31]    Day of month.  Note: UTC is used
+   hour    integer  [0-23]    Hour of day. Note: UTC is used
+   minute  integer  [0-59]    Minute. Note: UTC is used
+   second  integer  [0-59]    Second. Note: UTC is used
+   ======  =======  ========  ================================
 ..
 
 S0097
@@ -1129,7 +1129,7 @@ Traffic Counting: Number of vehicles |br|  |br| Used for Traffic counting.
    Name       Type    Value         Comment
    =========  ======  ============  ====================================================================================================================================================================
    starttime  string  [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   vehicles   long    [number]      Number of vehicles on a given detector logic (since last update)
+   vehicles   long    [0-65535]     Number of vehicles on a given detector logic (since last update)
    =========  ======  ============  ====================================================================================================================================================================
 ..
 
@@ -1150,7 +1150,7 @@ Traffic Counting: Vehicle speed |br|  |br| Used for Traffic counting.
    Name       Type     Value         Comment
    =========  =======  ============  ====================================================================================================================================================================
    starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   speed      integer  [speed]       Average speed in km/h
+   speed      integer  [0-65535]     Average speed in km/h
    =========  =======  ============  ====================================================================================================================================================================
 ..
 
@@ -1192,15 +1192,15 @@ Traffic Counting: Number of vehicles of given classification |br|  |br| Used for
    Name       Type    Value         Comment
    =========  ======  ============  ====================================================================================================================================================================
    starttime  string  [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   P          long    [number]      Number of cars
-   PS         long    [number]      Number of cars with trailers
-   L          long    [number]      Number of trucks
-   LS         long    [number]      Number of trucks with trailers
-   B          long    [number]      Number of busses
-   SP         long    [number]      Number of trams
-   MC         long    [number]      Number of motor cycles
-   C          long    [number]      Number of bicycles
-   F          long    [number]      Number of pedestrians
+   P          long    [0-65535]     Number of cars
+   PS         long    [0-65535]     Number of cars with trailers
+   L          long    [0-65535]     Number of trucks
+   LS         long    [0-65535]     Number of trucks with trailers
+   B          long    [0-65535]     Number of busses
+   SP         long    [0-65535]     Number of trams
+   MC         long    [0-65535]     Number of motor cycles
+   C          long    [0-65535]     Number of bicycles
+   F          long    [0-65535]     Number of pedestrians
    =========  ======  ============  ====================================================================================================================================================================
 ..
 
@@ -1803,17 +1803,17 @@ Set clock |br|  |br| Can be used to manually set the clock of the traffic light 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  =======  =======  ===================================================================================
-   Name          Command    Type     Value    Comment
-   ============  =========  =======  =======  ===================================================================================
-   securityCode  setDate    string   [text]   Security code 1
-   year          setDate    integer  [YYYY]   Changes internal clock. Note: UTC is used |br| Year according to YYYY
-   month         setDate    integer  [MM]     Changes internal clock. Note: UTC is used |br| Month according to MM (01-12)
-   day           setDate    integer  [DD]     Changes internal clock. Note: UTC is used |br| Day in month according to DD (01-31)
-   hour          setDate    integer  [HH]     Changes internal clock. Note: UTC is used |br| Hour according to HH (00-23)
-   minute        setDate    integer  [MM]     Changes internal clock. Note: UTC is used |br| Minute according to MM (00-23)
-   second        setDate    integer  [SS]     Changes internal clock. Note: UTC is used |br| Second according to SS (00-59)
-   ============  =========  =======  =======  ===================================================================================
+   ============  =========  =======  ========  ===========================================================
+   Name          Command    Type     Value     Comment
+   ============  =========  =======  ========  ===========================================================
+   securityCode  setDate    string   [text]    Security code 1
+   year          setDate    integer  [0-9999]  Changes internal clock. Note: UTC is used |br| Year
+   month         setDate    integer  [1-12]    Changes internal clock. Note: UTC is used |br| Month
+   day           setDate    integer  [1-31]    Changes internal clock. Note: UTC is used |br| Day in month
+   hour          setDate    integer  [0-23]    Changes internal clock. Note: UTC is used |br| Hour
+   minute        setDate    integer  [0-59]    Changes internal clock. Note: UTC is used |br| Minute
+   second        setDate    integer  [0-59]    Changes internal clock. Note: UTC is used |br| Second
+   ============  =========  =======  ========  ===========================================================
 ..
 
 .. |br| replace:: |br_html| |br_latex|
