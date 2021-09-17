@@ -3517,7 +3517,7 @@ M0013 Activate a series of inputs
    		"cCI":"M0013",
    		"n":"status",
    		"cO":"setInput",
-   		"v":"5,4134,65;511"
+   		"v":"5,4134,65"
    	},{
    		"cCI":"M0013",
    		"n":"securityCode",
@@ -3542,7 +3542,7 @@ M0013 Activate a series of inputs
    	"rvs":[{
    		"cCI":"M0013",
    		"n":"status",
-   		"v":"5,4134,65;511",
+   		"v":"5,4134,65",
    		"age":"recent"
    	},{
    		"cCI":"M0013",
