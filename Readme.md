@@ -37,8 +37,9 @@ On Ubuntu:
 
 ```
 # apt-get install python-sphinx texlive texlive-latex-extra \
-  texlive-humanities mscgen inkscape librsvg2-bin latexmk sphinx \
+  texlive-humanities mscgen librsvg2-bin latexmk sphinx \
   python-sphinx-rtd-theme
+# snap install inkscape
 ```
 
 On Arch:
