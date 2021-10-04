@@ -606,12 +606,12 @@ Police key |br|  |br| The controller is forced to dark mode or yellow flash. |br
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ==================  =========================================================================================================================================================
-   Name          Type     Value               Comment
-   ============  =======  ==================  =========================================================================================================================================================
-   intersection  integer  [0-255]             0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
-   status        integer  -0 |br| -1 |br| -2  0: disabled |br| 1: dark mode |br| 2: yellow flash
-   ============  =======  ==================  =========================================================================================================================================================
+   ============  =======  ==========================  =========================================================================================================================================================
+   Name          Type     Value                       Comment
+   ============  =======  ==========================  =========================================================================================================================================================
+   intersection  integer  [0-255]                     0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
+   status        integer  -0 |br| -1 |br| -2 |br| -3  0: disabled |br| 1: dark mode |br| 2: yellow flash |br| 3: all red
+   ============  =======  ==========================  =========================================================================================================================================================
 ..
 
 S0014
