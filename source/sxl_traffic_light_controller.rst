@@ -995,12 +995,11 @@ Operator logged in/out OP-panel |br|  |br| Provides information if maintenance p
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  ==========================  ===========================================================================
-   Name    Type    Value                       Comment
-   ======  ======  ==========================  ===========================================================================
-   user    string  -[username] |br| -[nobody]  [username]: User currently logged in |br| [nobody]: No one logged in
-   status  string  -login |br| -logout         login: Somebody currently logged in |br| logout: Nobody currently logged in
-   ======  ======  ==========================  ===========================================================================
+   ======  =======  ==================  ======================================================================================================
+   Name    Type     Value               Comment
+   ======  =======  ==================  ======================================================================================================
+   user    integer  -0 |br| -1 |br| -2  |br| -1: Operator logged in at level 1 |br| -2: Operator logged in at level 2 |br| 0: Nobody logged in
+   ======  =======  ==================  ======================================================================================================
 ..
 
 S0092
@@ -1016,12 +1015,11 @@ Operator logged in/out web-interface |br|  |br| Provides information if maintena
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  ==========================  ===========================================================================
-   Name    Type    Value                       Comment
-   ======  ======  ==========================  ===========================================================================
-   user    string  -[username] |br| -[nobody]  [username]: User currently logged in |br| [nobody]: No one logged in
-   status  string  -login |br| -logout         login: Somebody currently logged in |br| logout: Nobody currently logged in
-   ======  ======  ==========================  ===========================================================================
+   ======  =======  ==================  ======================================================================================================
+   Name    Type     Value               Comment
+   ======  =======  ==================  ======================================================================================================
+   user    integer  -0 |br| -1 |br| -2  |br| -1: Operator logged in at level 1 |br| -2: Operator logged in at level 2 |br| 0: Nobody logged in
+   ======  =======  ==================  ======================================================================================================
 ..
 
 S0095
