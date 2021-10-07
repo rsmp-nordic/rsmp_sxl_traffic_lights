@@ -51,7 +51,6 @@ singlehtml: Makefile generated-images
 
 html: Makefile generated-images
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	@cp -a build/html/. docs
 
 latexpdf: Makefile generated-images
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
