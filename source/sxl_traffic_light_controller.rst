@@ -554,7 +554,7 @@ Isolated control |br|  |br| Isolated control mode indicates that the controller 
 S0011
 ^^^^^^^^
 
-Yellow flash |br|  |br| The controller shows yellow flash. |br|  |br| Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. It can also be manually set using M0001.
+Yellow flash |br|  |br| The controller shows yellow flash. |br|  |br| Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. However, some countries may use yellow flash as an normal operating mode, and not necessarily during fault. This status can also be manually set using M0001.
 
 
 .. figtable::
