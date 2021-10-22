@@ -667,11 +667,11 @@ Number of detector logics |br|  |br| Can be used by the management system to che
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =========  =========================
-   Name    Type    Value      Comment
-   ======  ======  =========  =========================
-   number  long    [1-65025]  Number of detector logics
-   ======  ======  =========  =========================
+   ======  =======  =========  =========================
+   Name    Type     Value      Comment
+   ======  =======  =========  =========================
+   number  integer  [1-65025]  Number of detector logics
+   ======  =======  =========  =========================
 ..
 
 S0017
@@ -687,11 +687,11 @@ Number of signal groups |br|  |br| Can be used for the management system to chec
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =========  =======================
-   Name    Type    Value      Comment
-   ======  ======  =========  =======================
-   number  long    [1-65025]  Number of signal groups
-   ======  ======  =========  =======================
+   ======  =======  =========  =======================
+   Name    Type     Value      Comment
+   ======  =======  =========  =======================
+   number  integer  [1-65025]  Number of signal groups
+   ======  =======  =========  =======================
 ..
 
 S0018
@@ -707,11 +707,11 @@ Number of time plans |br|  |br| Can be used for the management system to check t
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =========  ==================================
-   Name    Type    Value      Comment
-   ======  ======  =========  ==================================
-   number  long    [1-65025]  Number of time plans (depreciated)
-   ======  ======  =========  ==================================
+   ======  =======  =========  ==================================
+   Name    Type     Value      Comment
+   ======  =======  =========  ==================================
+   number  integer  [1-65025]  Number of time plans (depreciated)
+   ======  =======  =========  ==================================
 ..
 
 S0019
@@ -727,11 +727,11 @@ Number of traffic situations |br|  |br| Can be used for the management system to
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =========  ============================
-   Name    Type    Value      Comment
-   ======  ======  =========  ============================
-   number  long    [1-65025]  Number of traffic situations
-   ======  ======  =========  ============================
+   ======  =======  =========  ============================
+   Name    Type     Value      Comment
+   ======  =======  =========  ============================
+   number  integer  [1-65025]  Number of traffic situations
+   ======  =======  =========  ============================
 ..
 
 S0020
@@ -1123,12 +1123,12 @@ Traffic Counting: Number of vehicles |br|  |br| Used for Traffic counting.
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =========  ======  ============  ====================================================================================================================================================================
-   Name       Type    Value         Comment
-   =========  ======  ============  ====================================================================================================================================================================
-   starttime  string  [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   vehicles   long    [0-65535]     Number of vehicles on a given detector logic (since last update)
-   =========  ======  ============  ====================================================================================================================================================================
+   =========  =======  ============  ====================================================================================================================================================================
+   Name       Type     Value         Comment
+   =========  =======  ============  ====================================================================================================================================================================
+   starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   vehicles   integer  [0-65535]     Number of vehicles on a given detector logic (since last update)
+   =========  =======  ============  ====================================================================================================================================================================
 ..
 
 S0202
@@ -1186,20 +1186,20 @@ Traffic Counting: Number of vehicles of given classification |br|  |br| Used for
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =========  ======  ============  ====================================================================================================================================================================
-   Name       Type    Value         Comment
-   =========  ======  ============  ====================================================================================================================================================================
-   starttime  string  [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   P          long    [0-65535]     Number of cars
-   PS         long    [0-65535]     Number of cars with trailers
-   L          long    [0-65535]     Number of trucks
-   LS         long    [0-65535]     Number of trucks with trailers
-   B          long    [0-65535]     Number of busses
-   SP         long    [0-65535]     Number of trams
-   MC         long    [0-65535]     Number of motor cycles
-   C          long    [0-65535]     Number of bicycles
-   F          long    [0-65535]     Number of pedestrians
-   =========  ======  ============  ====================================================================================================================================================================
+   =========  =======  ============  ====================================================================================================================================================================
+   Name       Type     Value         Comment
+   =========  =======  ============  ====================================================================================================================================================================
+   starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   P          integer  [0-65535]     Number of cars
+   PS         integer  [0-65535]     Number of cars with trailers
+   L          integer  [0-65535]     Number of trucks
+   LS         integer  [0-65535]     Number of trucks with trailers
+   B          integer  [0-65535]     Number of busses
+   SP         integer  [0-65535]     Number of trams
+   MC         integer  [0-65535]     Number of motor cycles
+   C          integer  [0-65535]     Number of bicycles
+   F          integer  [0-65535]     Number of pedestrians
+   =========  =======  ============  ====================================================================================================================================================================
 ..
 
 S0205
