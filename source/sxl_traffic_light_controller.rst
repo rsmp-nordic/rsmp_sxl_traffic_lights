@@ -157,11 +157,11 @@ Communication error |br|  |br| Used for communication errors with the central sy
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
-   ======  ======  ===============  =============================================
-   Name    Type    Value            Comment
-   ======  ======  ===============  =============================================
-   type    string  -rsmp |br| -ntp  Type of communication error, e.g. NTP or RSMP
-   ======  ======  ===============  =============================================
+   ========  ======  ===============  =============================================
+   Name      Type    Value            Comment
+   ========  ======  ===============  =============================================
+   protocol  string  -rsmp |br| -ntp  Type of communication error, e.g. NTP or RSMP
+   ========  ======  ===============  =============================================
 ..
 
 A0008
