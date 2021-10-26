@@ -87,25 +87,25 @@ Alarms
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.10\linewidth} p{0.45\linewidth} p{0.07\linewidth} p{0.07\linewidth}
 
-   ========================  =============  =================================================================================================  ==========  ==========
-   ObjectType                alarmCodeId    Description                                                                                          Priority  Category
-   ========================  =============  =================================================================================================  ==========  ==========
-   Traffic Light Controller  `A0001`_       Serious hardware error                                                                                      2  D
-   Traffic Light Controller  `A0002`_       Less serious hardware error                                                                                 3  D
-   Traffic Light Controller  `A0003`_       Serious configuration error                                                                                 2  D
-   Traffic Light Controller  `A0004`_       Less serious configuration error                                                                            3  D
-   Traffic Light Controller  `A0005`_       Communication error between traffic light controllers / synchronisation error                               3  D
-   Traffic Light Controller  `A0006`_       Safety error                                                                                                2  D
-   Traffic Light Controller  `A0007`_       Communication error between one or multiple traffic light controllers and central control system.           3  D
-   Signal group              `A0008`_       Dead lock error                                                                                             2  D
-   Traffic Light Controller  `A0009`_       Other error                                                                                                 3  D
-   Traffic Light Controller  `A0010`_       Door open                                                                                                   3  D
-   Signal group              `A0101`_       Pushbutton error                                                                                            3  D
-   Signal group              `A0201`_       Serious lamp error                                                                                          2  D
-   Signal group              `A0202`_       Less serious lamp error                                                                                     3  D
-   Detector logic            `A0301`_       Detector error (hardware)                                                                                   3  D
-   Detector logic            `A0302`_       Detector error (logic error)                                                                                3  D
-   ========================  =============  =================================================================================================  ==========  ==========
+   ========================  =============  ====================================  ==========  ==========
+   ObjectType                alarmCodeId    Description                             Priority  Category
+   ========================  =============  ====================================  ==========  ==========
+   Traffic Light Controller  `A0001`_       Serious hardware error                         2  D
+   Traffic Light Controller  `A0002`_       Less serious hardware error                    3  D
+   Traffic Light Controller  `A0003`_       Serious configuration error                    2  D
+   Traffic Light Controller  `A0004`_       Less serious configuration error               3  D
+   Traffic Light Controller  `A0005`_       Synchronisation error (coordination)           3  D
+   Traffic Light Controller  `A0006`_       Safety error                                   2  D
+   Traffic Light Controller  `A0007`_       Communication error                            3  D
+   Signal group              `A0008`_       Dead lock error                                2  D
+   Traffic Light Controller  `A0009`_       Other error                                    3  D
+   Traffic Light Controller  `A0010`_       Door open                                      3  D
+   Signal group              `A0101`_       Pushbutton error                               3  D
+   Signal group              `A0201`_       Serious lamp error                             2  D
+   Signal group              `A0202`_       Less serious lamp error                        3  D
+   Detector logic            `A0301`_       Detector error (hardware)                      3  D
+   Detector logic            `A0302`_       Detector error (logic error)                   3  D
+   ========================  =============  ====================================  ==========  ==========
 ..
 
 A0001
@@ -135,7 +135,7 @@ Less serious configuration error |br|  |br| Is a "minor fault" defined according
 A0005
 ^^^^^
 
-Communication error between traffic light controllers / synchronisation error |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Synchronisation error (coordination) |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
 
 
 A0006
@@ -147,8 +147,22 @@ Safety error |br|  |br| Is a "major fault" defined according to 3.8 in EN12675 w
 A0007
 ^^^^^
 
-Communication error between one or multiple traffic light controllers and central control system. |br|  |br| Used for communication errors with the central system. Includes NTP connection loss if the TLC is configured to use NTP. |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Communication error |br|  |br| Used for communication errors with the central system. Includes NTP connection loss if the TLC is configured to use NTP. |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
 
+
+.. figtable::
+   :nofig:
+   :label: A0007
+   :caption: A0007
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+
+   ======  ======  ===============  =============================================
+   Name    Type    Value            Comment
+   ======  ======  ===============  =============================================
+   type    string  -rsmp |br| -ntp  Type of communication error, e.g. NTP or RSMP
+   ======  ======  ===============  =============================================
+..
 
 A0008
 ^^^^^
