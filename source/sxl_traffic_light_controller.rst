@@ -47,13 +47,13 @@ Aggregated status
    :label: Aggregated status
    :caption: Aggregated status
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.20\linewidth} p{0.18\linewidth} p{0.18\linewidth} p{0.15\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.16\linewidth} p{0.16\linewidth} p{0.40\linewidth}
 
-   ========================  ===============================  ====================  =================  ================================================================
-   ObjectType                Status                           functionalPosition    functionalState    Description
-   ========================  ===============================  ====================  =================  ================================================================
-   Traffic Light Controller  See state-bit definitions below                                           functionalPosition and functionalState is not used (set to null)
-   ========================  ===============================  ====================  =================  ================================================================
+   ========================  ====================  =================  =============================================================
+   ObjectType                functionalPosition    functionalState    Description
+   ========================  ====================  =================  =============================================================
+   Traffic Light Controller                                           functionalPosition and functionalState not used (set to null)
+   ========================  ====================  =================  =============================================================
 ..
 
 .. figtable::
@@ -61,20 +61,20 @@ Aggregated status
    :label: State bits
    :caption: State bits
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.30\linewidth} p{0.45\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.10\linewidth} p{0.30\linewidth} p{0.50\linewidth}
 
-   ==========================  ===========================  ==============================================================================================================================================
-     State- Bit nr (12345678)  Description                  Comment
-   ==========================  ===========================  ==============================================================================================================================================
-                            1  Local mode                   Traffic Light Controller is in local mode. NTS has no control.
-                            2  No Communications
-                            3  High Priority Fault          Traffic Light Controller is in fail safe mode; e.g. yellow flash or dark mode
-                            4  Medium Priority Fault        Traffic Light Controller has a medium priority fault, but not in fail safe mode. E.g. several lamp faults or detector fault
-                            5  Low Priority Fault           Traffic Light Controller has a low priority fault. E.g. Detector fault
-                            6  Connected / Normal - In Use
-                            7  Connected / Normal - Idle    Traffic Light Controller dark according to configuration. NOTE! When dark according to configuration the controller is considered to be in use
-                            8  Not Connected
-   ==========================  ===========================  ==============================================================================================================================================
+   ===========  ===========================  ==============================================================================================================================================
+     State-Bit  Description                  Comment
+   ===========  ===========================  ==============================================================================================================================================
+             1  Local mode                   Traffic Light Controller is in local mode. NTS has no control.
+             2  No Communications
+             3  High Priority Fault          Traffic Light Controller is in fail safe mode; e.g. yellow flash or dark mode
+             4  Medium Priority Fault        Traffic Light Controller has a medium priority fault, but not in fail safe mode. E.g. several lamp faults or detector fault
+             5  Low Priority Fault           Traffic Light Controller has a low priority fault. E.g. Detector fault
+             6  Connected / Normal - In Use
+             7  Connected / Normal - Idle    Traffic Light Controller dark according to configuration. NOTE! When dark according to configuration the controller is considered to be in use
+             8  Not Connected
+   ===========  ===========================  ==============================================================================================================================================
 ..
 
 Alarms
