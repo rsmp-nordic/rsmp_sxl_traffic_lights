@@ -40,12 +40,12 @@ The corresponding ASCII character used for signal group status (S0001) is writte
       group, this time can´t be shortened.
 
    Max. minimum green
-      (``2``) The signal groups status ”minimum green” should be able to be extended
-      with a traffic controlled variable part up to a maximum “Max.
-      minimum-green”. If one or multiple detector logics are programmed to
-      extend signal group status “Max. minimum-green”, then the detector
-      logics will extend the minimum green time if they are active during red
-      signal picture. Signal group status “Max. minimum-green” should
+      (``2``) The signal group status :term:`Minimum green` should be able to
+      be extended with a traffic controlled variable part up to a maximum
+      “Max. minimum-green”. If one or multiple detector logics are programmed
+      to extend signal group status “Max. minimum-green”, then the detector
+      logics will extend the minimum green time if they are active when the
+      signal group is red. Signal group status “Max. minimum-green” should
       optionally be able to be shortened or not at prioritization.
 
    Maximum green (extension)
