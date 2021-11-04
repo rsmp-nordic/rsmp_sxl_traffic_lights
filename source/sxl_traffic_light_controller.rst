@@ -484,7 +484,7 @@ Emergency stage |br|  |br| The status is active during emergency prioritization.
 S0007
 ^^^^^^^^
 
-Controller switched on |br|  |br| The controller is active and is not in dark mode. |br|  |br| Used to determine if the controller is operating, e.g. it shows red, green or yellow to the vehicles. |br|  |br| During maintenance work the controller might be using dark mode (no output to the signal heads). |br| 
+Controller switched on |br|  |br| The controller is active and is not in dark mode. |br|  |br| Used to determine if the controller is operating, e.g. it shows red, green or yellow to the vehicles. |br|  |br| During maintenance work the controller might be using dark mode (no output to the signal heads). |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False" |br| 
 
 
 .. figtable::
@@ -494,18 +494,18 @@ Controller switched on |br|  |br| The controller is active and is not in dark mo
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
    Name          Type     Value              Comment
-   ============  =======  =================  =========================================================================================================================================================
-   intersection  integer  [0-255]            0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
+   ============  =======  =================  ============================================================================================================================
+   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br| -True  False: Traffic Light Controller in dark mode |br| True: Traffic Light Controller not in dark mode
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
 ..
 
 S0008
 ^^^^^^^^
 
-Manual control |br|  |br| Traffic control deactivated in controller |br|  |br| Signal timings is controlled manually by service personnel using the operating panel of the controller.
+Manual control |br|  |br| Traffic control deactivated in controller |br|  |br| Signal timings is controlled manually by service personnel using the operating panel of the controller. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -515,18 +515,18 @@ Manual control |br|  |br| Traffic control deactivated in controller |br|  |br| S
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
    Name          Type     Value              Comment
-   ============  =======  =================  =========================================================================================================================================================
-   intersection  integer  [0-255]            0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
+   ============  =======  =================  ============================================================================================================================
+   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br| -True  False: Manual control inactive |br| True: Manual control active
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
 ..
 
 S0009
 ^^^^^^^^
 
-Fixed time control |br|  |br| Traffic actuated control deactivated and a pre-timed control is used. |br|  |br| Usually only used in case normal detectors can't be used, e.g. during maintenance work.
+Fixed time control |br|  |br| Traffic actuated control deactivated and a pre-timed control is used. |br|  |br| Usually only used in case normal detectors can't be used, e.g. during maintenance work. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -536,18 +536,18 @@ Fixed time control |br|  |br| Traffic actuated control deactivated and a pre-tim
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
    Name          Type     Value              Comment
-   ============  =======  =================  =========================================================================================================================================================
-   intersection  integer  [0-255]            0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
+   ============  =======  =================  ============================================================================================================================
+   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br| -True  False:  Fixed time control inactive |br| True:  Fixed time control active
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
 ..
 
 S0010
 ^^^^^^^^
 
-Isolated control |br|  |br| Isolated control mode indicates that the controller operates independently of any other traffic light controllers. This may different depending on traffic program (time plan). |br|  |br| Used to determine if the controller is operating independently or operating with other controllers (coordination).
+Isolated control |br|  |br| Isolated control mode indicates that the controller operates independently of any other traffic light controllers. This may different depending on traffic program (time plan). |br|  |br| Used to determine if the controller is operating independently or operating with other controllers (coordination). |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -557,18 +557,18 @@ Isolated control |br|  |br| Isolated control mode indicates that the controller 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
    Name          Type     Value              Comment
-   ============  =======  =================  =========================================================================================================================================================
-   intersection  integer  [0-255]            0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
+   ============  =======  =================  ============================================================================================================================
+   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br| -True  False: Isolated control disabled |br| True: Isolated control enabled (Vehicle actuated control or Fixed time control)
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
 ..
 
 S0011
 ^^^^^^^^
 
-Yellow flash |br|  |br| The controller shows yellow flash. |br|  |br| Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. However, some countries may use yellow flash as an normal operating mode, and not necessarily during fault. This status can also be manually set using M0001.
+Yellow flash |br|  |br| The controller shows yellow flash. |br|  |br| Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. However, some countries may use yellow flash as an normal operating mode, and not necessarily during fault. This status can also be manually set using M0001. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -578,18 +578,18 @@ Yellow flash |br|  |br| The controller shows yellow flash. |br|  |br| Yellow fla
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
    Name          Type     Value              Comment
-   ============  =======  =================  =========================================================================================================================================================
-   intersection  integer  [0-255]            0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
+   ============  =======  =================  ============================================================================================================================
+   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br| -True  False: Yellow flash disabled |br| True: Yellow flash enabled
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
 ..
 
 S0012
 ^^^^^^^^
 
-All red |br|  |br| The controller show all red |br|  |br| All red can be manually set using the controllers operating panel during maintenance work.
+All red |br|  |br| The controller show all red |br|  |br| All red can be manually set using the controllers operating panel during maintenance work. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -599,18 +599,18 @@ All red |br|  |br| The controller show all red |br|  |br| All red can be manuall
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
    Name          Type     Value              Comment
-   ============  =======  =================  =========================================================================================================================================================
-   intersection  integer  [0-255]            0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
+   ============  =======  =================  ============================================================================================================================
+   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br| -True  False: All red disabled |br| True: All red enabled
-   ============  =======  =================  =========================================================================================================================================================
+   ============  =======  =================  ============================================================================================================================
 ..
 
 S0013
 ^^^^^^^^
 
-Police key |br|  |br| The controller is forced to dark mode or yellow flash. |br|  |br| The "police key" is a external control switch present in some controllers that manually switches the controller to either dark mode or yellow flash.
+Police key |br|  |br| The controller is forced to dark mode or yellow flash. |br|  |br| The "police key" is a external control switch present in some controllers that manually switches the controller to either dark mode or yellow flash. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "0,1"
 
 
 .. figtable::
@@ -620,12 +620,12 @@ Police key |br|  |br| The controller is forced to dark mode or yellow flash. |br
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ==========================  =========================================================================================================================================================
+   ============  =======  ==========================  ============================================================================================================================
    Name          Type     Value                       Comment
-   ============  =======  ==========================  =========================================================================================================================================================
-   intersection  integer  [0-255]                     0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
+   ============  =======  ==========================  ============================================================================================================================
+   intersection  integer  [0-255]                     Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
    status        integer  -0 |br| -1 |br| -2 |br| -3  0: disabled |br| 1: dark mode |br| 2: yellow flash |br| 3: all red
-   ============  =======  ==========================  =========================================================================================================================================================
+   ============  =======  ==========================  ============================================================================================================================
 ..
 
 S0014
@@ -751,7 +751,7 @@ Number of traffic situations |br|  |br| Can be used for the management system to
 S0020
 ^^^^^^^^
 
-Control mode |br|  |br| Can be used for the management system to check the current control mode (startup, normal, standby, failure, test).
+Control mode |br|  |br| Can be used for the management system to check the current control mode (startup, normal, standby, failure, test). |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "startup,control"
 
 
 .. figtable::
@@ -761,12 +761,12 @@ Control mode |br|  |br| Can be used for the management system to check the curre
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =============================================================  =========================================================================================================================================================
+   ============  =======  =============================================================  =============================================================================================================================
    Name          Type     Value                                                          Comment
-   ============  =======  =============================================================  =========================================================================================================================================================
-   intersection  integer  [0-255]                                                        0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller) |br| Other value: Intersection number
+   ============  =======  =============================================================  =============================================================================================================================
+   intersection  integer  [0-255]                                                        Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
    controlmode   string   -startup |br| -control |br| -standby |br| -failure |br| -test  startup: Startup mode |br| control: Normal control |br| standby: Standby mode |br| failure: Failure mode |br| test: Test mode
-   ============  =======  =============================================================  =========================================================================================================================================================
+   ============  =======  =============================================================  =============================================================================================================================
 ..
 
 S0021
