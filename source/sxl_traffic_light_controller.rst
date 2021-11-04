@@ -494,12 +494,13 @@ Controller switched on |br|  |br| The controller is active and is not in dark mo
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  ============================================================================================================================
-   Name          Type     Value              Comment
-   ============  =======  =================  ============================================================================================================================
-   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True  False: Traffic Light Controller in dark mode |br| True: Traffic Light Controller not in dark mode
-   ============  =======  =================  ============================================================================================================================
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   Name          Type     Value                                                                              Comment
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   intersection  integer  [0-255]                                                                            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br| -True                                                                  False: Traffic Light Controller in dark mode |br| True: Traffic Light Controller not in dark mode
+   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| other: TLC switched status due other reason
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
 ..
 
 S0008
@@ -515,12 +516,13 @@ Manual control |br|  |br| Traffic control deactivated in controller |br|  |br| S
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  ============================================================================================================================
-   Name          Type     Value              Comment
-   ============  =======  =================  ============================================================================================================================
-   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True  False: Manual control inactive |br| True: Manual control active
-   ============  =======  =================  ============================================================================================================================
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   Name          Type     Value                                                                              Comment
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   intersection  integer  [0-255]                                                                            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br| -True                                                                  False: Manual control inactive |br| True: Manual control active
+   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| other: TLC switched status due other reason
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
 ..
 
 S0009
@@ -536,12 +538,13 @@ Fixed time control |br|  |br| Traffic actuated control deactivated and a pre-tim
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  ============================================================================================================================
-   Name          Type     Value              Comment
-   ============  =======  =================  ============================================================================================================================
-   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True  False:  Fixed time control inactive |br| True:  Fixed time control active
-   ============  =======  =================  ============================================================================================================================
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   Name          Type     Value                                                                              Comment
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   intersection  integer  [0-255]                                                                            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br| -True                                                                  False:  Fixed time control inactive |br| True:  Fixed time control active
+   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| other: TLC switched status due other reason
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
 ..
 
 S0010
@@ -557,12 +560,13 @@ Isolated control |br|  |br| Isolated control mode indicates that the controller 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  ============================================================================================================================
-   Name          Type     Value              Comment
-   ============  =======  =================  ============================================================================================================================
-   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True  False: Isolated control disabled |br| True: Isolated control enabled (Vehicle actuated control or Fixed time control)
-   ============  =======  =================  ============================================================================================================================
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   Name          Type     Value                                                                              Comment
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   intersection  integer  [0-255]                                                                            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br| -True                                                                  False: Isolated control disabled |br| True: Isolated control enabled (Vehicle actuated control or Fixed time control)
+   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| other: TLC switched status due other reason
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
 ..
 
 S0011
@@ -578,12 +582,13 @@ Yellow flash |br|  |br| The controller shows yellow flash. |br|  |br| Yellow fla
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  ============================================================================================================================
-   Name          Type     Value              Comment
-   ============  =======  =================  ============================================================================================================================
-   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True  False: Yellow flash disabled |br| True: Yellow flash enabled
-   ============  =======  =================  ============================================================================================================================
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   Name          Type     Value                                                                              Comment
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   intersection  integer  [0-255]                                                                            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br| -True                                                                  False: Yellow flash disabled |br| True: Yellow flash enabled
+   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| other: TLC switched status due other reason
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
 ..
 
 S0012
@@ -599,12 +604,13 @@ All red |br|  |br| The controller show all red |br|  |br| All red can be manuall
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =================  ============================================================================================================================
-   Name          Type     Value              Comment
-   ============  =======  =================  ============================================================================================================================
-   intersection  integer  [0-255]            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True  False: All red disabled |br| True: All red enabled
-   ============  =======  =================  ============================================================================================================================
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   Name          Type     Value                                                                              Comment
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   intersection  integer  [0-255]                                                                            Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br| -True                                                                  False: All red disabled |br| True: All red enabled
+   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| other: TLC switched status due other reason
+   ============  =======  =================================================================================  =================================================================================================================================================================================================================================================
 ..
 
 S0013
@@ -641,11 +647,12 @@ Current time plan |br|  |br| The current time plan (signal program) used in the 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  =======  =================
-   Name    Type     Value    Comment
-   ======  =======  =======  =================
-   status  integer  [1-255]  Current time plan
-   ======  =======  =======  =================
+   ======  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   Name    Type     Value                                                                              Comment
+   ======  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   status  integer  [1-255]                                                                            Current time plan
+   source  string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| other: TLC switched status due other reason
+   ======  =======  =================================================================================  =================================================================================================================================================================================================================================================
 ..
 
 S0015
@@ -661,11 +668,12 @@ Current traffic situation |br|  |br| The current traffic situation used in the c
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  =======  =========================
-   Name    Type     Value    Comment
-   ======  =======  =======  =========================
-   status  integer  [1-255]  Current traffic situation
-   ======  =======  =======  =========================
+   ======  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   Name    Type     Value                                                                              Comment
+   ======  =======  =================================================================================  =================================================================================================================================================================================================================================================
+   status  integer  [1-255]                                                                            Current traffic situation
+   source  string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| other: TLC switched status due other reason
+   ======  =======  =================================================================================  =================================================================================================================================================================================================================================================
 ..
 
 S0016
