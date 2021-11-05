@@ -441,11 +441,11 @@ Detector logic status |br|  |br| Provides the status of all detector logics of t
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ===================  ======  =======  ===================================
+   ===================  ======  =======  ==========================================================================================================================================================================================================================================================
    Name                 Type    Value    Comment
-   ===================  ======  =======  ===================================
-   detectorlogicstatus  string  [text]   Detector logic status as text field
-   ===================  ======  =======  ===================================
+   ===================  ======  =======  ==========================================================================================================================================================================================================================================================
+   detectorlogicstatus  string  [text]   Detector logic status as text field. |br|  |br| Each character represent the state of the detector logic in consecutive order. |br| 0 = Detector logic is not active |br| 1 = Detector logic is active |br| - = Detector logic is undefined/does not exist
+   ===================  ======  =======  ==========================================================================================================================================================================================================================================================
 ..
 
 S0003
@@ -461,12 +461,12 @@ Input status |br|  |br| Input (1-255) of the controllers general purpose I/O. |b
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ===================  ======  =======  ===================================
+   ===================  ======  =======  =====================================================================================================================================================================================================================================
    Name                 Type    Value    Comment
-   ===================  ======  =======  ===================================
-   inputstatus          string  [text]   Input status as text field
-   extendedinputstatus  string  [text]   Extended input status as text field
-   ===================  ======  =======  ===================================
+   ===================  ======  =======  =====================================================================================================================================================================================================================================
+   inputstatus          string  [text]   Input status as text field |br|  |br| Each character represent the state of the input in consecutive order. |br| 0 = Input is not active |br| 1 = Input is active |br| - = Input is undefined/does not exist
+   extendedinputstatus  string  [text]   Extended input status as text field |br|  |br| Each character represent the state of the extended input status in consecutive order. |br| 0 = Input is not active |br| 1 = Input is active |br| - = Input is undefined/does not exist
+   ===================  ======  =======  =====================================================================================================================================================================================================================================
 ..
 
 S0004
@@ -482,12 +482,12 @@ Output status |br|  |br| Output (1-255) of the controllers general purpose I/O. 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ====================  ======  =======  ====================================
+   ====================  ======  =======  ================================================================================================================================================================================================================================
    Name                  Type    Value    Comment
-   ====================  ======  =======  ====================================
-   outputstatus          string  [text]   Output status as text field
-   extendedoutputstatus  string  [text]   Extended output status as text field
-   ====================  ======  =======  ====================================
+   ====================  ======  =======  ================================================================================================================================================================================================================================
+   outputstatus          string  [text]   Output status as text field |br|  |br| Each character represent the state of the output status in consecutive order. |br| 0 = Output is not active |br| 1 = Output is active |br| - = Output is undefined/does not exist
+   extendedoutputstatus  string  [text]   Output status as text field |br|  |br| Each character represent the state of the exteded output status in consecutive order. |br| 0 = Output is not active |br| 1 = Output is active |br| - = Output is undefined/does not exist
+   ====================  ======  =======  ================================================================================================================================================================================================================================
 ..
 
 S0005
