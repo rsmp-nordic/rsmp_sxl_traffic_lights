@@ -418,14 +418,14 @@ Signal group status |br|  |br| Provides the status of each signal group, includi
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =================  =======  =======  =========================================================================================================================================================================================================================================================
+   =================  =======  =======  ======================================================================================================================================================================================================================================================================================
    Name               Type     Value    Comment
-   =================  =======  =======  =========================================================================================================================================================================================================================================================
+   =================  =======  =======  ======================================================================================================================================================================================================================================================================================
    signalgroupstatus  string   [text]   Signal group status as text field. |br|  |br| Each character represent the state of the signal group in consecutive order. |br| Signal group status is described in detail in the corresponding section |br| - = Signal group is undefined/does not exist
-   cyclecounter       integer  [0-999]  Cycle counter
-   basecyclecounter   integer  [0-999]  Base cycle counter
+   cyclecounter       integer  [0-999]  Cycle counter |br|  |br| Used for handling of coordination between TLC's. |br| Is counted from 0 until it reaches the cycle time (See S0028). |br| Cycle counter is the "base cycle counter" + "offset time" (See S0024) |br|  |br| See the coordination section for more information.
+   basecyclecounter   integer  [0-999]  Base cycle counter |br|  |br| Used for handling of coordination between TLC's. |br| Synchronized between all TLC's in an active coordination. |br|  |br| See the coordination section for more information.
    stage              integer  [0-999]  Current stage (isolated)
-   =================  =======  =======  =========================================================================================================================================================================================================================================================
+   =================  =======  =======  ======================================================================================================================================================================================================================================================================================
 ..
 
 S0002
