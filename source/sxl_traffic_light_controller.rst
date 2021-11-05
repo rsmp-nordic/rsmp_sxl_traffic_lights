@@ -338,6 +338,7 @@ Status
    Traffic Light Controller  `S0029`_        Forced input status
    Traffic Light Controller  `S0030`_        Forced output status
    Traffic Light Controller  `S0031`_        Trigger level sensitivity for loop detector
+   Traffic Light Controller  `S0032`_        Coordinated control
    Traffic Light Controller  `S0091`_        Operator logged in/out OP-panel
    Traffic Light Controller  `S0092`_        Operator logged in/out web-interface
    Traffic Light Controller  `S0095`_        Version of Traffic Light Controller
@@ -1002,6 +1003,28 @@ Trigger level sensitivity for loop detector |br|  |br| The trigger level sensiti
    ======  ======  =======  =============================================================================================================================================================================================
    status  string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br| dd=loop detector number |br| ss=sensitivity value |br| Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
    ======  ======  =======  =============================================================================================================================================================================================
+..
+
+S0032
+^^^^^^^^
+
+Coordinated control |br|  |br| This status is used when coordination between traffic light controllers is active. |br| Coordination is described in detail in the corresponding section |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "centralized,off"
+
+
+.. figtable::
+   :nofig:
+   :label: S0032
+   :caption: S0032
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+
+   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   Name          Type     Value                                                                                            Comment
+   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
+   status        string   -local |br| -centralized |br| -False                                                             local: Local coordination |br| centralized: Coordination with synchronized clock |br| False: Coordination not active
+   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
+   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
 ..
 
 S0091
