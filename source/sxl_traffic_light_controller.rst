@@ -105,6 +105,8 @@ Alarms
    Signal group              `A0202`_       Less serious lamp error                        3  D
    Detector logic            `A0301`_       Detector error (hardware)                      3  D
    Detector logic            `A0302`_       Detector error (logic error)                   3  D
+   Detector logic            `A0303`_       Serious detector error (hardware)              2  D
+   Detector logic            `A0304`_       Serious detector error (logic error)           2  D
    ========================  =============  ====================================  ==========  ==========
 ..
 
@@ -275,6 +277,53 @@ Detector error (logic error) |br|  |br| For instance; detector continuously on o
    :nofig:
    :label: A0302
    :caption: A0302
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+
+   ==========  =======  ==============================================  =====================================================================================================================================================================================================
+   Name        Type     Value                                           Comment
+   ==========  =======  ==============================================  =====================================================================================================================================================================================================
+   detector    string   [designation]                                   Designation of the detector (hardware)
+   type        string   -loop |br| -input                               Type of detector. |br| loop: Inductive detector loop |br| input: External input
+   errormode   string   -on |br| -off                                   Detector forced on/off while detector error
+   manual      boolean  -True |br| -False                               Manually controlled detector logic (True/False)
+   logicerror  string   -always_off |br| -always_on |br| -intermittent  Type of logic error |br| always_off: no detection during predefined max time |br| always_on: detection constantly on during predefined max time |br| intermittent: intermittent logic fault (flutter)
+   ==========  =======  ==============================================  =====================================================================================================================================================================================================
+..
+
+A0303
+^^^^^
+
+Serious detector error (hardware) |br|  |br| Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+
+
+.. figtable::
+   :nofig:
+   :label: A0303
+   :caption: A0303
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+
+   =========  =======  =================  ==============================================================================
+   Name       Type     Value              Comment
+   =========  =======  =================  ==============================================================================
+   detector   string   [designation]      Designation of the detector (hardware)
+   type       string   -loop |br| -input  Type of detector |br| loop: Inductive detector loop |br| input: External input
+   errormode  string   -on |br| -off      Detector forced on/off while detector error
+   manual     boolean  -True |br| -False  Manually controlled detector logic (True/False)
+   =========  =======  =================  ==============================================================================
+..
+
+A0304
+^^^^^
+
+Serious detector error (logic error) |br|  |br| For instance; detector continuously on or off during an extended time. |br|  |br| Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+
+
+.. figtable::
+   :nofig:
+   :label: A0304
+   :caption: A0304
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
