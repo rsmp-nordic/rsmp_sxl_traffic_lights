@@ -418,14 +418,14 @@ Signal group status |br|  |br| Provides the status of each signal group, includi
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =================  =======  =======  =================================
+   =================  =======  =======  ===========================================================================================================================================================================================================================================================================
    Name               Type     Value    Comment
-   =================  =======  =======  =================================
-   signalgroupstatus  string   [text]   Signal group status as text field
+   =================  =======  =======  ===========================================================================================================================================================================================================================================================================
+   signalgroupstatus  string   [text]   Signal group status as text field Signal group status as text field. |br| Each character represent the state of the signal group in consecutive order. Signal group status is described in detail in the corresponding section - = Signal group is undefined/does not exist
    cyclecounter       integer  [0-999]  Cycle counter
    basecyclecounter   integer  [0-999]  Base cycle counter
    stage              integer  [0-999]  Current stage (isolated)
-   =================  =======  =======  =================================
+   =================  =======  =======  ===========================================================================================================================================================================================================================================================================
 ..
 
 S0002
