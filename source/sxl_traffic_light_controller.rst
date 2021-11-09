@@ -1055,24 +1055,33 @@ Trigger level sensitivity for loop detector |br|  |br| The trigger level sensiti
    ======  ======  =======  =============================================================================================================================================================================================
 ..
 
+S0032
+^^^^^^^^
+
+Coordinated control |br|  |br| This status is used when coordination between traffic light controllers is active. |br| Coordination is described in detail in the corresponding section |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "centralized,off"
+
+
+.. figtable::
+   :nofig:
+   :label: S0032
+   :caption: S0032
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+
+   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   Name          Type     Value                                                                                            Comment
+   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
+   status        string   -local |br| -centralized |br| -False                                                             local: Local coordination |br| centralized: Coordination with synchronized clock |br| False: Coordination not active
+   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
+   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+..
+
 S0033
 ^^^^^^^^
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-Coordinated control |br|  |br| This status is used when coordination between traffic light controllers is active. |br| Coordination is described in detail in the corresponding section |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "centralized,off"
+Signal Priority Status |br|  |br| The status can only describe the status of a single priority request, |br| and you can therefore only subscribe to this status with update rate set to 0, |br| so you get each individual status change as it happens.
 
-=======
-Signal Priority Status
->>>>>>> 5e09fc7 (new priority messages)
-=======
-Signal Priority Status.
-
-The status can only describe the status of a single priority request,
-and you can therefore only subscribe to this status with update rate set to 0,
-so you get each individual status change as it happens.
-
->>>>>>> fc04a27 (use S0033 instead of S0032)
 
 .. figtable::
    :nofig:
@@ -1081,25 +1090,15 @@ so you get each individual status change as it happens.
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-<<<<<<< HEAD
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name          Type     Value                                                                                            Comment
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        string   -local |br| -centralized |br| -False                                                             local: Local coordination |br| centralized: Coordination with synchronized clock |br| False: Coordination not active
-   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-=======
-   ==========  ======  ====================================================  =============================================================================================================================================================================================
-   Name        Type    Value                                                 Comment
-   ==========  ======  ====================================================  =============================================================================================================================================================================================
-   requestId   string  [text]                                                Id of the request you want the status for.  
-   status      string  [queued, activated, rejected, cancelled, overridden]  Current status of the priority request.  
-   reason      string  [text]                                                Reason in case the priorty was not given, otherwise empty.  
-   overrideId  string  [text]                                                Id of the overriding request, if overriden, otherwise empty.
-   gained      float                                                         Seconds of extra green time gained by the priority, or 0 if no priority given.
-   ==========  ======  ====================================================  =============================================================================================================================================================================================
->>>>>>> 5e09fc7 (new priority messages)
+   ==========  =======  =======================================================================  ======================================================================================================================================================================================================================
+   Name        Type     Value                                                                    Comment
+   ==========  =======  =======================================================================  ======================================================================================================================================================================================================================
+   requestId   string   [text]                                                                   Id of the request you want the status for.
+   status      string   -queued |br| -activated |br| -rejected |br| -cancelled |br| -overridden  Id of the request you want the status for. |br| queued: Priority is queued |br| activated: Priority is active |br| rejected: Priority rejected |br| cancelled: Priority cancelled |br| overridden: Priority overridden
+   reason      string   [text]                                                                   Reason in case the priority was not given, otherwise empty.
+   overrideId  string   [text]                                                                   Id of the overriding request, if overridden, otherwise empty.
+   gained      integer  [0-255]                                                                  Seconds of extra green time gained by the priority, or 0 if no priority given
+   ==========  =======  =======================================================================  ======================================================================================================================================================================================================================
 ..
 
 S0091
@@ -1890,12 +1889,8 @@ Set trigger level sensitivity for loop detector |br|  |br| The trigger level sen
 M0022
 ^^^^^
 
-Request signal priority for a specific signal group.
+Request Signal Priority |br|  |br| The message can be used for bus priority or other type of priority. |br| The benefit over activating IO inputs or detector logics is that you  specify a priority level. |br| You can also can update or cancel the request, or use the corresponding status request or |br| subscription to track the status of the request, including how much priority was actually given.
 
-The message can be used for bus priority or other type of priority.
-The benefit over activating IO inputs or detector logics is that you  specify a priority level.
-You can also can update or cancel the request, or use the corresponding status request or 
-subscription to track the status of the request, including how much priority was actually given.
 
 .. figtable::
    :nofig:
@@ -1904,13 +1899,13 @@ subscription to track the status of the request, including how much priority was
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   =========  ===============  ======  ==============================  =========================================================================================================================
-   Name       Command          Type    Value                           Comment
-   =========  ===============  ======  ==============================  =========================================================================================================================
-   requestId  requestPriority  string  [text]                          A string that unique identifies the request on this controller. 
-   type       requestPriority  string  -new |br| -update |br| -cancel  
-   level      requestPriority  integer [0-14]                          0: lowest, 14: highest  
-   =========  ===============  ======  ==============================  =========================================================================================================================
+   =========  ===============  =======  ==============================  =============================================================================================================================
+   Name       Command          Type     Value                           Comment
+   =========  ===============  =======  ==============================  =============================================================================================================================
+   requestId  requestPriority  string   [text]                          A string that unique identifies the request on this controller.
+   type       requestPriority  string   -new |br| -update |br| -cancel  Type |br| new: New priority request |br| update: Update to existing priority request |br| cancel: Cancel an existing priority
+   level      requestPriority  integer  [0-14]                          0: lowest, 14: highest
+   =========  ===============  =======  ==============================  =============================================================================================================================
 ..
 
 M0103
