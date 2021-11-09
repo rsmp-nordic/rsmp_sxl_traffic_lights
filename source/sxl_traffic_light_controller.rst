@@ -1055,20 +1055,29 @@ Trigger level sensitivity for loop detector |br|  |br| The trigger level sensiti
    ======  ======  =======  =============================================================================================================================================================================================
 ..
 
-S0032
+S0033
 ^^^^^^^^
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 Coordinated control |br|  |br| This status is used when coordination between traffic light controllers is active. |br| Coordination is described in detail in the corresponding section |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "centralized,off"
 
 =======
 Signal Priority Status
 >>>>>>> 5e09fc7 (new priority messages)
+=======
+Signal Priority Status.
+
+The status can only describe the status of a single priority request,
+and you can therefore only subscribe to this status with update rate set to 0,
+so you get each individual status change as it happens.
+
+>>>>>>> fc04a27 (use S0033 instead of S0032)
 
 .. figtable::
    :nofig:
-   :label: S0032
-   :caption: S0032
+   :label: S0033
+   :caption: S0033
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
