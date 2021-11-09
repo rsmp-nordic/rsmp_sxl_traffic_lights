@@ -1093,11 +1093,11 @@ Signal Priority Status |br|  |br| The status can only describe the status of a s
    ==========  =======  =======================================================================  ======================================================================================================================================================================================================================
    Name        Type     Value                                                                    Comment
    ==========  =======  =======================================================================  ======================================================================================================================================================================================================================
-   requestId   string   [text]                                                                   Id of the request you want the status for.
-   status      string   -queued |br| -activated |br| -rejected |br| -cancelled |br| -overridden  Id of the request you want the status for. |br| queued: Priority is queued |br| activated: Priority is active |br| rejected: Priority rejected |br| cancelled: Priority cancelled |br| overridden: Priority overridden
+   requestId   string   [id]                                                                     Id of the request.
+   status      string   -queued |br| -activated |br| -rejected |br| -cancelled |br| -overridden  Current status of the request.
    reason      string   [text]                                                                   Reason in case the priority was not given, otherwise empty.
-   overrideId  string   [text]                                                                   Id of the overriding request, if overridden, otherwise empty.
-   gained      integer  [0-255]                                                                  Seconds of extra green time gained by the priority, or 0 if no priority given
+   overrideId  string   [id]                                                                     Id of the overriding request if overridden, otherwise empty.
+   gained      integer  [0-255]                                                                  Seconds of extra green time gained by the priority, or 0 if no priority given.
    ==========  =======  =======================================================================  ======================================================================================================================================================================================================================
 ..
 
@@ -1902,7 +1902,7 @@ Request Signal Priority |br|  |br| The message can be used for bus priority or o
    =========  ===============  =======  ==============================  =============================================================================================================================
    Name       Command          Type     Value                           Comment
    =========  ===============  =======  ==============================  =============================================================================================================================
-   requestId  requestPriority  string   [text]                          A string that unique identifies the request on this controller.
+   requestId  requestPriority  string   [id]                            A string that unique identifies the request on this controller.
    type       requestPriority  string   -new |br| -update |br| -cancel  Type |br| new: New priority request |br| update: Update to existing priority request |br| cancel: Cancel an existing priority
    level      requestPriority  integer  [0-14]                          0: lowest, 14: highest
    =========  ===============  =======  ==============================  =============================================================================================================================
