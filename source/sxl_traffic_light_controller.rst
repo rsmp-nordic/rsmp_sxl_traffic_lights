@@ -1918,8 +1918,8 @@ in the controller, and in the system that sends priority requests. Either:
 - Reference an ingoing lane by setting 'laneInId', and
   optionally also reference an outgoing lane by setting 'laneOutId'.
 - Reference a particular priority by setting 'priorityId'. This is a generic referencing method
-  that does not require configuration of lanes, approaches or connections, but of course
-  the neded priorities must be configured with corresponding ids in the controller. 
+  that does not require configuration of lanes, approaches or connections, but 
+  the priorities must be configured with corresponding ids in the controller.
 
 Referencing attributes that are not used must be left out, rather than set to null or empty strings:
 
