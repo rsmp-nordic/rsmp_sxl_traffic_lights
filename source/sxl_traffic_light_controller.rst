@@ -1908,15 +1908,14 @@ of ways, depending on what is configured in the controller, and in the system th
 requests:
 
 - Reference a signal group by setting 'componentId'.
-  This method is simpl, but
-  will not allow you to have different priority mechanism for the same signal group unless
-  they can be distringuished by the vehicle type. For example, if you need to trigger
-  different priorities depending on whether a bus goes straight or or makes a turn for the same
-  signal group, you must use of the other referencing methods.
-- Reference a detector logic setting 'componentId'. This can be useful if our previously used
-  activation of a detector logic to activate priority.
+  This method is simple, but will not allow you to have different priority mechanism for the
+  same signal group unless they can be distringuished by the vehicle type. For example, if you
+  need to trigger different priorities depending on whether a bus goes straight or or makes a turn
+  for the same signal group, you must use of the other referencing methods.
+- Reference a detector logic setting 'componentId'. This can be useful if you previously used
+  detector logics to activate priority. The detector logic will not be acticated, only the priority.
 - Reference an input by setting 'inputId'. This can be useful if our previously used
-  activation of a input to activate priority.
+  inputs to activate priority. The input will not be acticated, only the priority.
 - Reference a connection by setting 'connectionId'. A connection is a movement from a specific
   ingoing lane to a specific outgoing lane.
 - Reference an intersection approach by setting 'approachId'.
@@ -1981,20 +1980,20 @@ at some point, but until then it might block requests in other direction.
    laneInId      integer  [0-255]                         ID of an ingoing lane
    laneOutId     integer  [0-255]                         ID of an outgoing lane
    priorityId    integer  [0-255]                         ID of a predefined priority
-   type          enum     -new                            new: Initiate a new priority request
-                          -update                         update: Update an existing priority request
-                          -cancel                         cancel: Cancel an existing priority request
+   type          enum     | new                           | new: Initiate a new priority request
+                          | update                        | update: Update an existing priority request
+                          | cancel                        | cancel: Cancel an existing priority request
    level         integer  [0-14]                          0: lowest, 14: highest
    eta           integer  [0-255]                         (Optional) Estimated time of arrival to the intersection, in seconds
-   vehicleType   enum     -car                            (Optional) Vehicle type.
-                          -bus
-                          -bicycle
-                          -twoWheeler
-                          -lightTruck
-                          -heaveTruck
-                          -tram
-                          -emergencyVehicle
-                          -other
+   vehicleType   enum     | car                           (Optional) Vehicle type.
+                          | bus
+                          | bicycle
+                          | twoWheeler
+                          | lightTruck
+                          | heaveTruck
+                          | tram
+                          | emergencyVehicle
+                          | other
    ============  =======  ==============================  ===============================================================
 ..
 
