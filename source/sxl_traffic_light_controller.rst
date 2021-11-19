@@ -1889,41 +1889,37 @@ Set trigger level sensitivity for loop detector |br|  |br| The trigger level sen
 M0022
 ^^^^^
 
-Request Signal Priority.
-
-Request signal priority, useful for bus priority or other type of priorities like emergency
+Request Signal Priority. Useful for bus priority or other type of priorities like emergency
 vehicles or groups of cyclists.
 
-The benefit of using this message over activating IO inputs or detector logics is that you
+The benefit of using this message over activating inputs or detector logics is that you
 can specify a priority level, vehicle type and estimated time of arrival.
-You can also can update or cancel the request, or use the corresponding status request or
+You can also update or cancel the request, or use the corresponding status request or
 subscription to track the status of the request, including how much priority was actually given.
 
-Activating signal priority is expected to provide more green time for a particular movement,
-but the exact mechanism typically depends on the signal programs in the controller, and must
-typically be predefined in the controller.
+Activating signal priority is expected to provide more green time for a particular movement
+through the intersection, but the exact mechanism must typically be configured in the controller.
 
-The movement though the intersection which should be priorities can be referenced in a number
-of ways, depending on what is configured in the controller, and in the system that sends priority
-requests:
+The movement to prioritize can be referenced in a number of ways, depending on what is configured
+in the controller, and in the system that sends priority requests. Either:
 
 - Reference a signal group by setting 'componentId'.
   This method is simple, but will not allow you to have different priority mechanism for the
-  same signal group unless they can be distringuished by the vehicle type. For example, if you
-  need to trigger different priorities depending on whether a bus goes straight or or makes a turn
+  same signal group, unless they can be distringuished by the vehicle type. For example, if you
+  need to trigger different priorities depending on whether a bus goes straight or makes a turn
   for the same signal group, you must use of the other referencing methods.
 - Reference a detector logic setting 'componentId'. This can be useful if you previously used
   detector logics to activate priority. The detector logic will not be acticated, only the priority.
-- Reference an input by setting 'inputId'. This can be useful if our previously used
+- Reference an input by setting 'inputId'. This can be useful if you previously used
   inputs to activate priority. The input will not be acticated, only the priority.
 - Reference a connection by setting 'connectionId'. A connection is a movement from a specific
   ingoing lane to a specific outgoing lane.
 - Reference an intersection approach by setting 'approachId'.
 - Reference an ingoing lane by setting 'laneInId', and
   optionally also reference an outgoing lane by setting 'laneOutId'.
-  This method can be used in case lanes are defined on the controller, but not connections.
-- Reference a particular priority by setting 'priorityId'. This is generic referencing method
-  that does not require configuration of lanes, connections, etc.
+- Reference a particular priority by setting 'priorityId'. This is a generic referencing method
+  that does not require configuration of lanes, approaches or connections, but of course
+  the neded priorities must be configured with corresponding ids in the controller. 
 
 Referencing attributes that are not used must be left out, rather than set to null or empty strings:
 
@@ -1940,25 +1936,25 @@ uniquely identifies the request on the controller. It can be a randomly generate
 (universally unique identifier), or it can be constructed by combining e.g. a vehicle id
 and some other identifier. When updating or cancelling a request, you must pass the same request id again.
 
-Providing an ETA (estimated time of arrival) when initiating a request is optional,
+Providing ETA (estimated time of arrival) when initiating a request is optional,
 but can help the controller plan ahead in cases where you're able to send the request before
 the vehicle arrives at the intersection. You're allowed the initiate the request without an ETA
 and provide it in a later request update. But providing the ETA when initiating
-the request is recommended, to give the controller more time to plan ahead.
+the request is recommended, since it will give the controller more time to plan ahead.
 
-Like ETA, providing a vehicle type is also optional, but can help the controller decide how
-to best handle the request.
+Like ETA, providing a vehicle type is optional, but can help the controller decide how
+to best handle the request. If not vehicle type is provided.
 
-The level provides a way to indicate the relative importance of the request compared
-to other requests. For example, emergency vehicles or delayed busses could be given a higher level.
-Another request with a higher level can potentially override an existing priority with a lower level.
+The priority level provides a way to indicate the relative importance of the request compared
+to other requests. For example, emergency vehicles or delayed busses could be given a higher priority level.
+Another request with a higher level can override an existing priority with a lower level.
 
 If the ETA changes befere the priority is cancelled, or you want to change the priority level, you send
-a new request message with type set to 'update'. The vehicle type cannot be changed.
+another request message with type set to 'update'. The vehicle type cannot be changed.
 
 A priority request should always be cancelled as soon as there's no need for the priority anymore
-(e.g because the bus has passed the intersection). You cancel a request by sending a new request
-message with type set to 'cancel'. If not cancelled, the TLC is expected to time-out the priority
+(e.g. because the bus has passed the intersection). You cancel a request by sending another request
+message with type set to 'cancel'. If not cancelled, the controller is expected to time-out the priority
 at some point, but until then it might block requests in other direction.
 
 
@@ -1972,18 +1968,18 @@ at some point, but until then it might block requests in other direction.
    ============  =======  ==============================  ===============================================================
    Name          Type     Value                           Comment
    ============  =======  ==============================  ===============================================================
-   requestId     string   [id]                            A string that unique identifies the request on this controller
-   componentId   string   [id]                            ID of an RSMP component, typically a signal group.
-   inputId       integer  [0-255]                         ID (index) on an input
-   connectionId  integer  [0-255]                         ID of a connection (between an ingoing and an outgoing lane)
+   requestId     string   [id]                            A string that uniquely identifies the request on the controller
+   componentId   string   [id]                            ID of an RSMP component in the controller, typically a signal group.
+   inputId       integer  [0-255]                         ID of an input. Uses the same mnumbering scheme as M0006
+   connectionId  integer  [0-255]                         ID of a connection, connecting an ingoing and an outgoing lane
    approachId    integer  [0-16]                          ID of an intersection approach
    laneInId      integer  [0-255]                         ID of an ingoing lane
    laneOutId     integer  [0-255]                         ID of an outgoing lane
-   priorityId    integer  [0-255]                         ID of a predefined priority
+   priorityId    integer  [0-255]                         ID of a priority
    type          enum     | new                           | new: Initiate a new priority request
                           | update                        | update: Update an existing priority request
                           | cancel                        | cancel: Cancel an existing priority request
-   level         integer  [0-14]                          0: lowest, 14: highest
+   level         integer  [0-14]                          0: Lowest, 14: Highest
    eta           integer  [0-255]                         (Optional) Estimated time of arrival to the intersection, in seconds
    vehicleType   enum     | car                           (Optional) Vehicle type.
                           | bus
