@@ -1888,19 +1888,20 @@ Set trigger level sensitivity for loop detector |br|  |br| The trigger level sen
 
 M0022
 ^^^^^
-Request Signal Priority
+
+Request Signal Priority.
 
 Request signal priority, useful for bus priority or other type of priorities like emergency
 vehicles or groups of cyclists.
-
-Activating signal priority is expected to provide more green time for a particular movement,
-but the exact mechanism typically depends on the signal programs in the controller, and must
-typically be predefined in the controller.
 
 The benefit of using this message over activating IO inputs or detector logics is that you
 can specify a priority level, vehicle type and estimated time of arrival.
 You can also can update or cancel the request, or use the corresponding status request or
 subscription to track the status of the request, including how much priority was actually given.
+
+Activating signal priority is expected to provide more green time for a particular movement,
+but the exact mechanism typically depends on the signal programs in the controller, and must
+typically be predefined in the controller.
 
 The movement though the intersection which should be priorities can be referenced in a number
 of ways, depending on what is configured in the controller, and in the system that sends priority
@@ -1961,6 +1962,7 @@ A priority request should always be cancelled as soon as there's no need for the
 message with type set to 'cancel'. If not cancelled, the TLC is expected to time-out the priority
 at some point, but until then it might block requests in other direction.
 
+
 .. figtable::
    :nofig:
    :label: M0022
@@ -1968,9 +1970,9 @@ at some point, but until then it might block requests in other direction.
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   =========     =======  ==============================  ===============================================================
+   ============  =======  ==============================  ===============================================================
    Name          Type     Value                           Comment
-   =========     =======  ==============================  ===============================================================
+   ============  =======  ==============================  ===============================================================
    requestId     string   [id]                            A string that unique identifies the request on this controller
    componentId   string   [id]                            ID of an RSMP component, typically a signal group.
    inputId       integer  [0-255]                         ID (index) on an input
@@ -1993,7 +1995,7 @@ at some point, but until then it might block requests in other direction.
                           -tram
                           -emergencyVehicle
                           -other
-   =========      =======  ==============================  ===============================================================
+   ============  =======  ==============================  ===============================================================
 ..
 
 M0103
