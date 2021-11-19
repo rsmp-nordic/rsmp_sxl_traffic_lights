@@ -1888,9 +1888,78 @@ Set trigger level sensitivity for loop detector |br|  |br| The trigger level sen
 
 M0022
 ^^^^^
+Request Signal Priority
 
-Request Signal Priority |br|  |br| The message can be used for bus priority or other type of priority. |br| The benefit over activating IO inputs or detector logics is that you  specify a priority level. |br| You can also can update or cancel the request, or use the corresponding status request or |br| subscription to track the status of the request, including how much priority was actually given.
+Request signal priority, useful for bus priority or other type of priorities like emergency
+vehicles or groups of cyclists.
 
+Activating signal priority is expected to provide more green time for a particular movement,
+but the exact mechanism typically depends on the signal programs in the controller, and must
+typically be predefined in the controller.
+
+The benefit of using this message over activating IO inputs or detector logics is that you
+can specify a priority level, vehicle type and estimated time of arrival.
+You can also can update or cancel the request, or use the corresponding status request or
+subscription to track the status of the request, including how much priority was actually given.
+
+The movement though the intersection which should be priorities can be referenced in a number
+of ways, depending on what is configured in the controller, and in the system that sends priority
+requests:
+
+- Reference a signal group by setting 'componentId'.
+  This method is simpl, but
+  will not allow you to have different priority mechanism for the same signal group unless
+  they can be distringuished by the vehicle type. For example, if you need to trigger
+  different priorities depending on whether a bus goes straight or or makes a turn for the same
+  signal group, you must use of the other referencing methods.
+- Reference a detector logic setting 'componentId'. This can be useful if our previously used
+  activation of a detector logic to activate priority.
+- Reference an input by setting 'inputId'. This can be useful if our previously used
+  activation of a input to activate priority.
+- Reference a connection by setting 'connectionId'. A connection is a movement from a specific
+  ingoing lane to a specific outgoing lane.
+- Reference an intersection approach by setting 'approachId'.
+- Reference an ingoing lane by setting 'laneInId', and
+  optionally also reference an outgoing lane by setting 'laneOutId'.
+  This method can be used in case lanes are defined on the controller, but not connections.
+- Reference a particular priority by setting 'priorityId'. This is generic referencing method
+  that does not require configuration of lanes, connections, etc.
+
+Referencing attributes that are not used must be left out, rather than set to null or empty strings:
+
+- componentId
+- inputId
+- connectionId
+- approachId
+- laneInId
+- laneOutId
+- priorityId
+
+You initiate a priority request with type set to 'new'. You must provide a request id that
+uniquely identifies the request on the controller. It can be a randomly generated UUID
+(universally unique identifier), or it can be constructed by combining e.g. a vehicle id
+and some other identifier. When updating or cancelling a request, you must pass the same request id again.
+
+Providing an ETA (estimated time of arrival) when initiating a request is optional,
+but can help the controller plan ahead in cases where you're able to send the request before
+the vehicle arrives at the intersection. You're allowed the initiate the request without an ETA
+and provide it in a later request update. But providing the ETA when initiating
+the request is recommended, to give the controller more time to plan ahead.
+
+Like ETA, providing a vehicle type is also optional, but can help the controller decide how
+to best handle the request.
+
+The level provides a way to indicate the relative importance of the request compared
+to other requests. For example, emergency vehicles or delayed busses could be given a higher level.
+Another request with a higher level can potentially override an existing priority with a lower level.
+
+If the ETA changes befere the priority is cancelled, or you want to change the priority level, you send
+a new request message with type set to 'update'. The vehicle type cannot be changed.
+
+A priority request should always be cancelled as soon as there's no need for the priority anymore
+(e.g because the bus has passed the intersection). You cancel a request by sending a new request
+message with type set to 'cancel'. If not cancelled, the TLC is expected to time-out the priority
+at some point, but until then it might block requests in other direction.
 
 .. figtable::
    :nofig:
@@ -1899,13 +1968,32 @@ Request Signal Priority |br|  |br| The message can be used for bus priority or o
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   =========  ===============  =======  ==============================  =============================================================================================================================
-   Name       Command          Type     Value                           Comment
-   =========  ===============  =======  ==============================  =============================================================================================================================
-   requestId  requestPriority  string   [id]                            A string that unique identifies the request on this controller.
-   type       requestPriority  string   -new |br| -update |br| -cancel  Type |br| new: New priority request |br| update: Update to existing priority request |br| cancel: Cancel an existing priority
-   level      requestPriority  integer  [0-14]                          0: lowest, 14: highest
-   =========  ===============  =======  ==============================  =============================================================================================================================
+   =========     =======  ==============================  ===============================================================
+   Name          Type     Value                           Comment
+   =========     =======  ==============================  ===============================================================
+   requestId     string   [id]                            A string that unique identifies the request on this controller
+   componentId   string   [id]                            ID of an RSMP component, typically a signal group.
+   inputId       integer  [0-255]                         ID (index) on an input
+   connectionId  integer  [0-255]                         ID of a connection (between an ingoing and an outgoing lane)
+   approachId    integer  [0-16]                          ID of an intersection approach
+   laneInId      integer  [0-255]                         ID of an ingoing lane
+   laneOutId     integer  [0-255]                         ID of an outgoing lane
+   priorityId    integer  [0-255]                         ID of a predefined priority
+   type          enum     -new                            new: Initiate a new priority request
+                          -update                         update: Update an existing priority request
+                          -cancel                         cancel: Cancel an existing priority request
+   level         integer  [0-14]                          0: lowest, 14: highest
+   eta           integer  [0-255]                         (Optional) Estimated time of arrival to the intersection, in seconds
+   vehicleType   enum     -car                            (Optional) Vehicle type.
+                          -bus
+                          -bicycle
+                          -twoWheeler
+                          -lightTruck
+                          -heaveTruck
+                          -tram
+                          -emergencyVehicle
+                          -other
+   =========      =======  ==============================  ===============================================================
 ..
 
 M0103
