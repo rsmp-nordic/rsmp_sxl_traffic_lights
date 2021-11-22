@@ -1969,8 +1969,8 @@ at some point, but until then it might block requests in other direction.
    Name          Type     Value                           Comment
    ============  =======  ==============================  ===============================================================
    requestId     string   [id]                            A string that uniquely identifies the request on the controller
-   componentId   string   [id]                            ID of an RSMP component in the controller, typically a signal group.
-   inputId       integer  [0-255]                         ID of an input. Uses the same mnumbering scheme as M0006
+   componentId   string   [id]                            ID of an RSMP component in the controller, typically a signal group
+   inputId       integer  [0-255]                         ID of an input, using the same numbering scheme as M0006
    connectionId  integer  [0-255]                         ID of a connection, connecting an ingoing and an outgoing lane
    approachId    integer  [0-16]                          ID of an intersection approach
    laneInId      integer  [0-255]                         ID of an ingoing lane
@@ -1981,7 +1981,7 @@ at some point, but until then it might block requests in other direction.
                           | cancel                        | cancel: Cancel an existing priority request
    level         integer  [0-14]                          0: Lowest, 14: Highest
    eta           integer  [0-255]                         (Optional) Estimated time of arrival to the intersection, in seconds
-   vehicleType   enum     | car                           (Optional) Vehicle type.
+   vehicleType   enum     | car                           (Optional) Vehicle type
                           | bus
                           | bicycle
                           | twoWheeler
