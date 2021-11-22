@@ -1986,7 +1986,7 @@ at some point, but until then it might block requests in other direction.
                           | bicycle
                           | twoWheeler
                           | lightTruck
-                          | heaveTruck
+                          | heavyTruck
                           | tram
                           | emergencyVehicle
                           | other
