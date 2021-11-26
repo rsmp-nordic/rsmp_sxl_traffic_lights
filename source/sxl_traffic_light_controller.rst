@@ -1706,35 +1706,35 @@ Commands
    :label: Commands
    :caption: Commands
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.24\linewidth} p{0.15\linewidth} p{0.40\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.24\linewidth} p{0.15\linewidth} p{0.21\linewidth} p{0.21\linewidth}
 
-   ========================  ===============  ======================================================
-   ObjectType                commandCodeId    Description
-   ========================  ===============  ======================================================
-   Traffic Light Controller  `M0001`_         Sets functional position
-   Traffic Light Controller  `M0002`_         Sets current time plan
-   Traffic Light Controller  `M0003`_         Sets traffic situation the controller uses.
-   Traffic Light Controller  `M0004`_         Restarts Traffic Light Controller
-   Traffic Light Controller  `M0005`_         Activate emergency route
-   Traffic Light Controller  `M0006`_         Activate input
-   Traffic Light Controller  `M0007`_         Activate fixed time control
-   Detector logic            `M0008`_         Sets manual activation of detector logic
-   Signal group              `M0010`_         Start of signal group. Orders a signal group to green.
-   Signal group              `M0011`_         Stop of signal group. Orders a signal group to red.
-   Traffic Light Controller  `M0012`_         Request start or stop of a series of signal groups.
-   Traffic Light Controller  `M0013`_         Activate a series of inputs
-   Traffic Light Controller  `M0014`_         Set dynamic bands
-   Traffic Light Controller  `M0015`_         Set Offset time
-   Traffic Light Controller  `M0016`_         Set week time table
-   Traffic Light Controller  `M0017`_         Set time tables
-   Traffic Light Controller  `M0018`_         Set Cycle time
-   Traffic Light Controller  `M0019`_         Force input
-   Traffic Light Controller  `M0020`_         Force output
-   Traffic Light Controller  `M0021`_         Set trigger level sensitivity for loop detector
-   Signal group              `M0022`_         Request Signal Priority
-   Traffic Light Controller  `M0103`_         Set security code
-   Traffic Light Controller  `M0104`_         Set clock
-   ========================  ===============  ======================================================
+   ========================  ===============  =====================  ======================================================
+   ObjectType                commandCodeId    Command                Description
+   ========================  ===============  =====================  ======================================================
+   Traffic Light Controller  `M0001`_         setValue               Sets functional position
+   Traffic Light Controller  `M0002`_         setPlan                Sets current time plan
+   Traffic Light Controller  `M0003`_         setTrafficSituation    Sets traffic situation the controller uses.
+   Traffic Light Controller  `M0004`_         setRestart             Restarts Traffic Light Controller
+   Traffic Light Controller  `M0005`_         setEmergency           Activate emergency route
+   Traffic Light Controller  `M0006`_         setInput               Activate input
+   Traffic Light Controller  `M0007`_         setFixedTime           Activate fixed time control
+   Detector logic            `M0008`_         setForceDetectorLogic  Sets manual activation of detector logic
+   Signal group              `M0010`_         setStart               Start of signal group. Orders a signal group to green.
+   Signal group              `M0011`_         setStop                Stop of signal group. Orders a signal group to red.
+   Traffic Light Controller  `M0012`_         setStart               Request start or stop of a series of signal groups.
+   Traffic Light Controller  `M0013`_         setInput               Activate a series of inputs
+   Traffic Light Controller  `M0014`_         setCommands            Set dynamic bands
+   Traffic Light Controller  `M0015`_         setOffset              Set Offset time
+   Traffic Light Controller  `M0016`_         setWeekTable           Set week time table
+   Traffic Light Controller  `M0017`_         setTimeTable           Set time tables
+   Traffic Light Controller  `M0018`_         setCycleTime           Set Cycle time
+   Traffic Light Controller  `M0019`_         setInput               Force input
+   Traffic Light Controller  `M0020`_         setOutput              Force output
+   Traffic Light Controller  `M0021`_         setLevel               Set trigger level sensitivity for loop detector
+   Signal group              `M0022`_         requestPriority        Request Signal Priority
+   Traffic Light Controller  `M0103`_         setSecurityCode        Set security code
+   Traffic Light Controller  `M0104`_         setDate                Set clock
+   ========================  ===============  =====================  ======================================================
 ..
 
 M0001
@@ -1748,19 +1748,19 @@ Sets functional position |br|  |br| Sets the controller to yellow flash, dark mo
    :label: M0001
    :caption: M0001
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  =======  ===================  ============================================================================================
-   Name          Command    Type     Value                Comment
-   ============  =========  =======  ===================  ============================================================================================
-   status        setValue   string   -NormalControl |br|  NormalControl: Normal Control|br|
-                                     -YellowFlash |br|    YellowFlash: Enables yellow flash|br|
-                                     -Dark                Dark: Enables dark mode
-   securityCode  setValue   string   [text]               Security code 2
-   timeout       setValue   integer  [0-1440]             Time in minutes until controller automatically reverts to previous functional position. |br|
-                                                          0=no automatic return
-   intersection  setValue   integer  [0-255]              Intersection number
-   ============  =========  =======  ===================  ============================================================================================
+   ============  =======  ===================  ============================================================================================
+   Name          Type     Value                Comment
+   ============  =======  ===================  ============================================================================================
+   status        string   -NormalControl |br|  NormalControl: Normal Control |br|
+                          -YellowFlash |br|    YellowFlash: Enables yellow flash |br|
+                          -Dark                Dark: Enables dark mode
+   securityCode  string   [text]               Security code 2
+   timeout       integer  [0-1440]             Time in minutes until controller automatically reverts to previous functional position. |br|
+                                               0=no automatic return
+   intersection  integer  [0-255]              Intersection number
+   ============  =======  ===================  ============================================================================================
 ..
 
 M0002
@@ -1774,16 +1774,16 @@ Sets current time plan |br|  |br| Change of traffic program of the traffic light
    :label: M0002
    :caption: M0002
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  =======  ===========  ==============================================================
-   Name          Command    Type     Value        Comment
-   ============  =========  =======  ===========  ==============================================================
-   status        setPlan    boolean  -False |br|  False: Controller uses time plan according to programming |br|
-                                     -True        True: Controller uses time plan according to command
-   securityCode  setPlan    string   [text]       Security code 2
-   timeplan      setPlan    integer  [1-255]      designation of time plan
-   ============  =========  =======  ===========  ==============================================================
+   ============  =======  ===========  ==============================================================
+   Name          Type     Value        Comment
+   ============  =======  ===========  ==============================================================
+   status        boolean  -False |br|  False: Controller uses time plan according to programming |br|
+                          -True        True: Controller uses time plan according to command
+   securityCode  string   [text]       Security code 2
+   timeplan      integer  [1-255]      designation of time plan
+   ============  =======  ===========  ==============================================================
 ..
 
 M0003
@@ -1797,16 +1797,16 @@ Sets traffic situation the controller uses. |br|  |br| Used for area-based contr
    :label: M0003
    :caption: M0003
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ===============  ===================  =======  ===========  ==========================================================================
-   Name             Command              Type     Value        Comment
-   ===============  ===================  =======  ===========  ==========================================================================
-   status           setTrafficSituation  boolean  -False |br|  False: Controller uses traffic situation according to own programming |br|
-                                                  -True        True: Controller uses traffic situation according to command
-   securityCode     setTrafficSituation  string   [text]       Security code 2
-   traficsituation  setTrafficSituation  integer  [1-255]      designation of traficsituation
-   ===============  ===================  =======  ===========  ==========================================================================
+   ===============  =======  ===========  ==========================================================================
+   Name             Type     Value        Comment
+   ===============  =======  ===========  ==========================================================================
+   status           boolean  -False |br|  False: Controller uses traffic situation according to own programming |br|
+                             -True        True: Controller uses traffic situation according to command
+   securityCode     string   [text]       Security code 2
+   traficsituation  integer  [1-255]      designation of traficsituation
+   ===============  =======  ===========  ==========================================================================
 ..
 
 M0004
@@ -1820,15 +1820,15 @@ Restarts Traffic Light Controller |br|  |br| Used in the event of serious faults
    :label: M0004
    :caption: M0004
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  ==========  =======  ===========  ========================
-   Name          Command     Type     Value        Comment
-   ============  ==========  =======  ===========  ========================
-   status        setRestart  boolean  -False |br|  True: Restart controller
-                                      -True
-   securityCode  setRestart  string   [text]       Security code 2
-   ============  ==========  =======  ===========  ========================
+   ============  =======  ===========  ========================
+   Name          Type     Value        Comment
+   ============  =======  ===========  ========================
+   status        boolean  -False |br|  True: Restart controller
+                          -True
+   securityCode  string   [text]       Security code 2
+   ============  =======  ===========  ========================
 ..
 
 M0005
@@ -1842,16 +1842,16 @@ Activate emergency route |br|  |br| The function is made for emergency prioritiz
    :label: M0005
    :caption: M0005
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ==============  ============  =======  ===========  ====================================
-   Name            Command       Type     Value        Comment
-   ==============  ============  =======  ===========  ====================================
-   status          setEmergency  boolean  -False |br|  False: Activate emergency route |br|
-                                          -True        True: Deactivate emergency route
-   securityCode    setEmergency  string   [text]       Security code 2
-   emergencyroute  setEmergency  integer  [1-255]      Number of emergency route
-   ==============  ============  =======  ===========  ====================================
+   ==============  =======  ===========  ====================================
+   Name            Type     Value        Comment
+   ==============  =======  ===========  ====================================
+   status          boolean  -False |br|  False: Activate emergency route |br|
+                            -True        True: Deactivate emergency route
+   securityCode    string   [text]       Security code 2
+   emergencyroute  integer  [1-255]      Number of emergency route
+   ==============  =======  ===========  ====================================
 ..
 
 M0006
@@ -1865,16 +1865,16 @@ Activate input |br|  |br| Set given input (1-255) of the controllers general pur
    :label: M0006
    :caption: M0006
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  =======  ===========  ============================
-   Name          Command    Type     Value        Comment
-   ============  =========  =======  ===========  ============================
-   status        setInput   boolean  -False |br|  False: Deactivate input |br|
-                                     -True        True: Activate input
-   securityCode  setInput   string   [text]       Security code 2
-   input         setInput   integer  [1-255]      Number of Input
-   ============  =========  =======  ===========  ============================
+   ============  =======  ===========  ============================
+   Name          Type     Value        Comment
+   ============  =======  ===========  ============================
+   status        boolean  -False |br|  False: Deactivate input |br|
+                          -True        True: Activate input
+   securityCode  string   [text]       Security code 2
+   input         integer  [1-255]      Number of Input
+   ============  =======  ===========  ============================
 ..
 
 M0007
@@ -1888,15 +1888,15 @@ Activate fixed time control |br|  |br| Deactivates the traffic actuated control 
    :label: M0007
    :caption: M0007
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  ============  =======  ===========  =========================================
-   Name          Command       Type     Value        Comment
-   ============  ============  =======  ===========  =========================================
-   status        setFixedTime  boolean  -False |br|  False: Deactivate fixed time control |br|
-                                        -True        True: Activate fixed time control
-   securityCode  setFixedTime  string   [text]       Security code 2
-   ============  ============  =======  ===========  =========================================
+   ============  =======  ===========  =========================================
+   Name          Type     Value        Comment
+   ============  =======  ===========  =========================================
+   status        boolean  -False |br|  False: Deactivate fixed time control |br|
+                          -True        True: Activate fixed time control
+   securityCode  string   [text]       Security code 2
+   ============  =======  ===========  =========================================
 ..
 
 M0008
@@ -1910,17 +1910,17 @@ Sets manual activation of detector logic |br|  |br| Set given detector logic (1-
    :label: M0008
    :caption: M0008
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =====================  =======  ===========  =======================================================
-   Name          Command                Type     Value        Comment
-   ============  =====================  =======  ===========  =======================================================
-   status        setForceDetectorLogic  boolean  -False |br|  False: Deactivate manual control of detector logic |br|
-                                                 -True        True: Activate manual control of detector logic
-   securityCode  setForceDetectorLogic  string   [text]       Security code 2
-   mode          setForceDetectorLogic  boolean  -False |br|  False: Deactivate detector logic |br|
-                                                 -True        True: Activate detector logic
-   ============  =====================  =======  ===========  =======================================================
+   ============  =======  ===========  =======================================================
+   Name          Type     Value        Comment
+   ============  =======  ===========  =======================================================
+   status        boolean  -False |br|  False: Deactivate manual control of detector logic |br|
+                          -True        True: Activate manual control of detector logic
+   securityCode  string   [text]       Security code 2
+   mode          boolean  -False |br|  False: Deactivate detector logic |br|
+                          -True        True: Activate detector logic
+   ============  =======  ===========  =======================================================
 ..
 
 M0010
@@ -1934,15 +1934,15 @@ Start of signal group. Orders a signal group to green. |br|  |br| Although this 
    :label: M0010
    :caption: M0010
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  =======  ===========  ===================================
-   Name          Command    Type     Value        Comment
-   ============  =========  =======  ===========  ===================================
-   status        setStart   boolean  -False |br|  False: No command (default) |br|
-                                     -True        True: Order a signal group to green
-   securityCode  setStart   string   [text]       Security code 2
-   ============  =========  =======  ===========  ===================================
+   ============  =======  ===========  ===================================
+   Name          Type     Value        Comment
+   ============  =======  ===========  ===================================
+   status        boolean  -False |br|  False: No command (default) |br|
+                          -True        True: Order a signal group to green
+   securityCode  string   [text]       Security code 2
+   ============  =======  ===========  ===================================
 ..
 
 M0011
@@ -1956,15 +1956,15 @@ Stop of signal group. Orders a signal group to red. |br|  |br| Although this com
    :label: M0011
    :caption: M0011
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  =======  ===========  =================================
-   Name          Command    Type     Value        Comment
-   ============  =========  =======  ===========  =================================
-   status        setStop    boolean  -False |br|  False: No command (default) |br|
-                                     -True        True: Order a signal group to red
-   securityCode  setStop    string   [text]       Security code 2
-   ============  =========  =======  ===========  =================================
+   ============  =======  ===========  =================================
+   Name          Type     Value        Comment
+   ============  =======  ===========  =================================
+   status        boolean  -False |br|  False: No command (default) |br|
+                          -True        True: Order a signal group to red
+   securityCode  string   [text]       Security code 2
+   ============  =======  ===========  =================================
 ..
 
 M0012
@@ -1978,34 +1978,34 @@ Request start or stop of a series of signal groups. |br|  |br| Starts or stops s
    :label: M0012
    :caption: M0012
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  ======  =======  =======================================================================================================================================================================================================================
-   Name          Command    Type    Value    Comment
-   ============  =========  ======  =======  =======================================================================================================================================================================================================================
-   status        setStart   string  [text]   Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. |br|
-                                             |br|
-                                             1=Order signal group to green |br|
-                                             0=Order signal group to red |br|
-                                             |br|
-                                             Format: [Offset],[Bits to set],[Bits to unset]:… |br|
-                                             |br|
-                                             Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. |br|
-                                             |br|
-                                             Example 1: |br|
-                                             "5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off |br|
-                                             (Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0) |br|
-                                             |br|
-                                             Example 2: |br|
-                                             "22, 1, 4" sets input 22 = on and 24 = off |br|
-                                             (Input starts from no. 22 and bit 0 = 1 and bit 2 = 0) |br|
-                                             |br|
-                                             And both these examples could be sent in the same message as: |br|
-                                             "5,4143,65;22,1,4" |br|
-                                             |br|
-                                             Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red
-   securityCode  setStart   string  [text]   Security code 2
-   ============  =========  ======  =======  =======================================================================================================================================================================================================================
+   ============  ======  =======  =======================================================================================================================================================================================================================
+   Name          Type    Value    Comment
+   ============  ======  =======  =======================================================================================================================================================================================================================
+   status        string  [text]   Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. |br|
+                                  |br|
+                                  1=Order signal group to green |br|
+                                  0=Order signal group to red |br|
+                                  |br|
+                                  Format: [Offset],[Bits to set],[Bits to unset]:… |br|
+                                  |br|
+                                  Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. |br|
+                                  |br|
+                                  Example 1: |br|
+                                  "5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off |br|
+                                  (Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0) |br|
+                                  |br|
+                                  Example 2: |br|
+                                  "22, 1, 4" sets input 22 = on and 24 = off |br|
+                                  (Input starts from no. 22 and bit 0 = 1 and bit 2 = 0) |br|
+                                  |br|
+                                  And both these examples could be sent in the same message as: |br|
+                                  "5,4143,65;22,1,4" |br|
+                                  |br|
+                                  Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red
+   securityCode  string  [text]   Security code 2
+   ============  ======  =======  =======================================================================================================================================================================================================================
 ..
 
 M0013
@@ -2019,15 +2019,15 @@ Activate a series of inputs |br|  |br| Set given inputs (1-255) of the controlle
    :label: M0013
    :caption: M0013
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  ======  =======  ==========================================================================================================================================================================
-   Name          Command    Type    Value    Comment
-   ============  =========  ======  =======  ==========================================================================================================================================================================
-   status        setInput   string  [text]   Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. |br|
-                                             Format: [Offset];[Bits to set];[Bits to unset];…
-   securityCode  setInput   string  [text]   Security code 2
-   ============  =========  ======  =======  ==========================================================================================================================================================================
+   ============  ======  =======  ==========================================================================================================================================================================
+   Name          Type    Value    Comment
+   ============  ======  =======  ==========================================================================================================================================================================
+   status        string  [text]   Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. |br|
+                                  Format: [Offset];[Bits to set];[Bits to unset];…
+   securityCode  string  [text]   Security code 2
+   ============  ======  =======  ==========================================================================================================================================================================
 ..
 
 M0014
@@ -2041,23 +2041,23 @@ Set dynamic bands |br|  |br| Can be used to change between predefined signal tim
    :label: M0014
    :caption: M0014
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  ===========  =======  =======  ==================================================
-   Name          Command      Type     Value    Comment
-   ============  ===========  =======  =======  ==================================================
-   plan          setCommands  integer  [0-255]  Plan to be changed
-   status        setCommands  string   [text]   Dynamic bands. |br|
-                                                Each dynamic band are written as dd-ee where: |br|
-                                                dd=Dynamic band number (from 1-10) |br|
-                                                ee=Extension in seconds in this band |br|
-                                                |br|
-                                                Each dynamic band is separated with a comma. |br|
-                                                |br|
-                                                E.g. |br|
-                                                dd-ee,dd-ee
-   securityCode  setCommands  string   [text]   Security code 2
-   ============  ===========  =======  =======  ==================================================
+   ============  =======  =======  ==================================================
+   Name          Type     Value    Comment
+   ============  =======  =======  ==================================================
+   plan          integer  [0-255]  Plan to be changed
+   status        string   [text]   Dynamic bands. |br|
+                                   Each dynamic band are written as dd-ee where: |br|
+                                   dd=Dynamic band number (from 1-10) |br|
+                                   ee=Extension in seconds in this band |br|
+                                   |br|
+                                   Each dynamic band is separated with a comma. |br|
+                                   |br|
+                                   E.g. |br|
+                                   dd-ee,dd-ee
+   securityCode  string   [text]   Security code 2
+   ============  =======  =======  ==================================================
 ..
 
 M0015
@@ -2071,15 +2071,15 @@ Set Offset time |br|  |br| Offset time is used to define an offset between inter
    :label: M0015
    :caption: M0015
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  =======  =======  ==========================
-   Name          Command    Type     Value    Comment
-   ============  =========  =======  =======  ==========================
-   status        setOffset  integer  [0-255]  Set offset time in seconds
-   plan          setOffset  integer  [0-255]  Time plan nr
-   securityCode  setOffset  string   [text]   Security code 2
-   ============  =========  =======  =======  ==========================
+   ============  =======  =======  ==========================
+   Name          Type     Value    Comment
+   ============  =======  =======  ==========================
+   status        integer  [0-255]  Set offset time in seconds
+   plan          integer  [0-255]  Time plan nr
+   securityCode  string   [text]   Security code 2
+   ============  =======  =======  ==========================
 ..
 
 M0016
@@ -2093,31 +2093,31 @@ Set week time table |br|  |br| Set which time table for signal programs to use f
    :label: M0016
    :caption: M0016
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  ============  ======  =======  =================================================================
-   Name          Command       Type    Value    Comment
-   ============  ============  ======  =======  =================================================================
-   status        setWeekTable  string  [text]   Week time table. Defines time table to use for each week day |br|
-                                                Each segment is written as d-t where: |br|
-                                                d=day of week |br|
-                                                t=time table nr |br|
-                                                |br|
-                                                Day of week legend: |br|
-                                                0=Monday |br|
-                                                1=Tuesday |br|
-                                                2=Wednesday |br|
-                                                3=Thursday |br|
-                                                4=Friday |br|
-                                                5=Saturday |br|
-                                                6=Sunday |br|
-                                                |br|
-                                                Each segment is separated with a comma |br|
-                                                |br|
-                                                E.g. |br|
-                                                d-t,d-t
-   securityCode  setWeekTable  string  [text]   Security code 2
-   ============  ============  ======  =======  =================================================================
+   ============  ======  =======  =================================================================
+   Name          Type    Value    Comment
+   ============  ======  =======  =================================================================
+   status        string  [text]   Week time table. Defines time table to use for each week day |br|
+                                  Each segment is written as d-t where: |br|
+                                  d=day of week |br|
+                                  t=time table nr |br|
+                                  |br|
+                                  Day of week legend: |br|
+                                  0=Monday |br|
+                                  1=Tuesday |br|
+                                  2=Wednesday |br|
+                                  3=Thursday |br|
+                                  4=Friday |br|
+                                  5=Saturday |br|
+                                  6=Sunday |br|
+                                  |br|
+                                  Each segment is separated with a comma |br|
+                                  |br|
+                                  E.g. |br|
+                                  d-t,d-t
+   securityCode  string  [text]   Security code 2
+   ============  ======  =======  =================================================================
 ..
 
 M0017
@@ -2131,32 +2131,32 @@ Set time tables |br|  |br| Set time of day for when to automatically switch sign
    :label: M0017
    :caption: M0017
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  ============  ======  =======  ======================================================
-   Name          Command       Type    Value    Comment
-   ============  ============  ======  =======  ======================================================
-   status        setTimeTable  string  [text]   Time Table. Defines time tables. |br|
-                                                Each time definition is written as t-o-h-m where: |br|
-                                                t=time table nr (1-12) |br|
-                                                o=function |br|
-                                                h=hour - switching time |br|
-                                                m=minute - switching minute |br|
-                                                |br|
-                                                Function legend: |br|
-                                                0=no plan is selected by time table |br|
-                                                1=set plan 1 |br|
-                                                … |br|
-                                                16= set plan 16 |br|
-                                                |br|
-                                                hour and minute is using local time (not UTC) |br|
-                                                |br|
-                                                Each time definition is separated with a comma. |br|
-                                                |br|
-                                                E.g. |br|
-                                                t-o-h-m,t-o-h-m
-   securityCode  setTimeTable  string  [text]   Security code 2
-   ============  ============  ======  =======  ======================================================
+   ============  ======  =======  ======================================================
+   Name          Type    Value    Comment
+   ============  ======  =======  ======================================================
+   status        string  [text]   Time Table. Defines time tables. |br|
+                                  Each time definition is written as t-o-h-m where: |br|
+                                  t=time table nr (1-12) |br|
+                                  o=function |br|
+                                  h=hour - switching time |br|
+                                  m=minute - switching minute |br|
+                                  |br|
+                                  Function legend: |br|
+                                  0=no plan is selected by time table |br|
+                                  1=set plan 1 |br|
+                                  … |br|
+                                  16= set plan 16 |br|
+                                  |br|
+                                  hour and minute is using local time (not UTC) |br|
+                                  |br|
+                                  Each time definition is separated with a comma. |br|
+                                  |br|
+                                  E.g. |br|
+                                  t-o-h-m,t-o-h-m
+   securityCode  string  [text]   Security code 2
+   ============  ======  =======  ======================================================
 ..
 
 M0018
@@ -2170,15 +2170,15 @@ Set Cycle time |br|  |br| Cycle time (or cycle length) is the sum of all phases 
    :label: M0018
    :caption: M0018
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  ============  =======  =======  =========================
-   Name          Command       Type     Value    Comment
-   ============  ============  =======  =======  =========================
-   status        setCycleTime  integer  [1-255]  Set cycle time in seconds
-   plan          setCycleTime  integer  [0-255]  Time plan nr
-   securityCode  setCycleTime  string   [text]   Security code 2
-   ============  ============  =======  =======  =========================
+   ============  =======  =======  =========================
+   Name          Type     Value    Comment
+   ============  =======  =======  =========================
+   status        integer  [1-255]  Set cycle time in seconds
+   plan          integer  [0-255]  Time plan nr
+   securityCode  string   [text]   Security code 2
+   ============  =======  =======  =========================
 ..
 
 M0019
@@ -2192,18 +2192,18 @@ Force input |br|  |br| Force a given input (1-255) of the controllers general pu
    :label: M0019
    :caption: M0019
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  =======  ===========  =================================
-   Name          Command    Type     Value        Comment
-   ============  =========  =======  ===========  =================================
-   status        setInput   boolean  -False |br|  False: Force input |br|
-                                     -True        True: Release input
-   securityCode  setInput   string   [text]       Security code 2
-   input         setInput   integer  [1-255]      Number of Input
-   inputValue    setInput   boolean  -False |br|  False: input forced to False |br|
-                                     -True        True: input forced to True
-   ============  =========  =======  ===========  =================================
+   ============  =======  ===========  =================================
+   Name          Type     Value        Comment
+   ============  =======  ===========  =================================
+   status        boolean  -False |br|  False: Force input |br|
+                          -True        True: Release input
+   securityCode  string   [text]       Security code 2
+   input         integer  [1-255]      Number of Input
+   inputValue    boolean  -False |br|  False: input forced to False |br|
+                          -True        True: input forced to True
+   ============  =======  ===========  =================================
 ..
 
 M0020
@@ -2217,18 +2217,18 @@ Force output |br|  |br| Force a given output (1-255) of the controllers general 
    :label: M0020
    :caption: M0020
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  =======  ===========  ==================================
-   Name          Command    Type     Value        Comment
-   ============  =========  =======  ===========  ==================================
-   status        setOutput  boolean  -False |br|  False: Force output |br|
-                                     -True        True: Release output
-   securityCode  setOutput  string   [text]       Security code 2
-   output        setOutput  integer  [1-255]      Number of Output
-   outputValue   setOutput  boolean  -False |br|  False: output forced to False |br|
-                                     -True        True: output forced to True
-   ============  =========  =======  ===========  ==================================
+   ============  =======  ===========  ==================================
+   Name          Type     Value        Comment
+   ============  =======  ===========  ==================================
+   status        boolean  -False |br|  False: Force output |br|
+                          -True        True: Release output
+   securityCode  string   [text]       Security code 2
+   output        integer  [1-255]      Number of Output
+   outputValue   boolean  -False |br|  False: output forced to False |br|
+                          -True        True: output forced to True
+   ============  =======  ===========  ==================================
 ..
 
 M0021
@@ -2242,16 +2242,16 @@ Set trigger level sensitivity for loop detector |br|  |br| The trigger level sen
    :label: M0021
    :caption: M0021
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  ======  =======  =======================================================================
-   Name          Command    Type    Value    Comment
-   ============  =========  ======  =======  =======================================================================
-   status        setLevel   string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br|
-                                             dd=loop detector number |br|
-                                             ss=sensitivity value
-   securityCode  setLevel   string  [text]   Security code 2
-   ============  =========  ======  =======  =======================================================================
+   ============  ======  =======  =======================================================================
+   Name          Type    Value    Comment
+   ============  ======  =======  =======================================================================
+   status        string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br|
+                                  dd=loop detector number |br|
+                                  ss=sensitivity value
+   securityCode  string  [text]   Security code 2
+   ============  ======  =======  =======================================================================
 ..
 
 M0022
@@ -2332,7 +2332,7 @@ at some point, but until then it might block requests in other direction.
    :label: M0022
    :caption: M0022
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
    ============  =======  ======================  ====================================================================
    Name          Type     Value                   Comment
@@ -2345,8 +2345,8 @@ at some point, but until then it might block requests in other direction.
    laneInId      integer  [0-255]                 ID of an ingoing lane
    laneOutId     integer  [0-255]                 ID of an outgoing lane
    priorityId    integer  [0-255]                 ID of a priority
-   type          string   -new |br|               new: New priority request|br|
-                          -update |br|            update: Update to existing priority request|br|
+   type          string   -new |br|               new: New priority request |br|
+                          -update |br|            update: Update to existing priority request |br|
                           -cancel                 cancel: Cancel an existing priority
    level         integer  [0-14]                  0: Lowest, 14: Highest
    eta           integer  [0-255]                 (Optional) Estimated time of arrival to the intersection, in seconds
@@ -2373,16 +2373,16 @@ Set security code |br|  |br| Change the security code to use when sending comman
    :label: M0103
    :caption: M0103
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ===============  ===============  ======  ============  ==================================
-   Name             Command          Type    Value         Comment
-   ===============  ===============  ======  ============  ==================================
-   status           setSecurityCode  string  -Level1 |br|  Level1: Change security code 1|br|
-                                             -Level2       Level2: Change security code 2
-   oldSecurityCode  setSecurityCode  string  [text]        Previous security code
-   newSecurityCode  setSecurityCode  string  [text]        New security code
-   ===============  ===============  ======  ============  ==================================
+   ===============  ======  ============  ===================================
+   Name             Type    Value         Comment
+   ===============  ======  ============  ===================================
+   status           string  -Level1 |br|  Level1: Change security code 1 |br|
+                            -Level2       Level2: Change security code 2
+   oldSecurityCode  string  [text]        Previous security code
+   newSecurityCode  string  [text]        New security code
+   ===============  ======  ============  ===================================
 ..
 
 M0104
@@ -2396,25 +2396,25 @@ Set clock |br|  |br| Can be used to manually set the clock of the traffic light 
    :label: M0104
    :caption: M0104
    :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =========  =======  ========  ==============================================
-   Name          Command    Type     Value     Comment
-   ============  =========  =======  ========  ==============================================
-   securityCode  setDate    string   [text]    Security code 1
-   year          setDate    integer  [0-9999]  Changes internal clock. Note: UTC is used |br|
-                                               Year
-   month         setDate    integer  [1-12]    Changes internal clock. Note: UTC is used |br|
-                                               Month
-   day           setDate    integer  [1-31]    Changes internal clock. Note: UTC is used |br|
-                                               Day in month
-   hour          setDate    integer  [0-23]    Changes internal clock. Note: UTC is used |br|
-                                               Hour
-   minute        setDate    integer  [0-59]    Changes internal clock. Note: UTC is used |br|
-                                               Minute
-   second        setDate    integer  [0-59]    Changes internal clock. Note: UTC is used |br|
-                                               Second
-   ============  =========  =======  ========  ==============================================
+   ============  =======  ========  ==============================================
+   Name          Type     Value     Comment
+   ============  =======  ========  ==============================================
+   securityCode  string   [text]    Security code 1
+   year          integer  [0-9999]  Changes internal clock. Note: UTC is used |br|
+                                    Year
+   month         integer  [1-12]    Changes internal clock. Note: UTC is used |br|
+                                    Month
+   day           integer  [1-31]    Changes internal clock. Note: UTC is used |br|
+                                    Day in month
+   hour          integer  [0-23]    Changes internal clock. Note: UTC is used |br|
+                                    Hour
+   minute        integer  [0-59]    Changes internal clock. Note: UTC is used |br|
+                                    Minute
+   second        integer  [0-59]    Changes internal clock. Note: UTC is used |br|
+                                    Second
+   ============  =======  ========  ==============================================
 ..
 
 .. |br| replace:: |br_html| |br_latex|
