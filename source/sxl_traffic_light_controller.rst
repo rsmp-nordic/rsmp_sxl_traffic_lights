@@ -1889,8 +1889,9 @@ Set trigger level sensitivity for loop detector |br|  |br| The trigger level sen
 M0022
 ^^^^^
 
-Request Signal Priority. Useful for bus priority or other type of priorities like emergency
-vehicles or groups of cyclists.
+Request Signal Priority.
+
+Useful for bus priority or other type of priorities like emergency vehicles or groups of cyclists.
 
 The benefit of using this message over activating inputs or detector logics is that you
 can specify a priority level, vehicle type and estimated time of arrival.
