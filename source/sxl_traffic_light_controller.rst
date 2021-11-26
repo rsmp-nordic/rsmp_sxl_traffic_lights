@@ -113,43 +113,59 @@ Alarms
 A0001
 ^^^^^
 
-Serious hardware error |br|  |br| Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Serious hardware error
+
+Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
 A0002
 ^^^^^
 
-Less serious hardware error |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Less serious hardware error
+
+Is a "minor fault" defined according to 3.11 in EN12675.
 
 
 A0003
 ^^^^^
 
-Serious configuration error |br|  |br| Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Serious configuration error
+
+Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
 A0004
 ^^^^^
 
-Less serious configuration error |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Less serious configuration error
+
+Is a "minor fault" defined according to 3.11 in EN12675.
 
 
 A0005
 ^^^^^
 
-Synchronisation error (coordination) |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Synchronisation error (coordination)
+
+Is a "minor fault" defined according to 3.11 in EN12675.
 
 
 A0006
 ^^^^^
 
-Safety error |br|  |br| Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Safety error
+
+Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
 A0007
 ^^^^^
 
-Communication error |br|  |br| Used for communication errors with the central system. Includes NTP connection loss if the TLC is configured to use NTP. |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Communication error
+
+Used for communication errors with the central system. Includes NTP connection loss if the TLC is configured to use NTP.
+
+Is a "minor fault" defined according to 3.11 in EN12675.
 
 
 .. figtable::
@@ -170,7 +186,14 @@ Communication error |br|  |br| Used for communication errors with the central sy
 A0008
 ^^^^^
 
-Dead lock error |br|  |br| Used for dead lock errors. |br|  |br| For instance; a signal group has requested green but is unable to switch due to a conflicting signal group for an extended period of time. At some point the request times out and the controller goes failure mode. The cause for this error is due to configuration errors or external sources. |br|  |br| Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675. |br| 
+Dead lock error
+
+Used for dead lock errors.
+
+For instance; a signal group has requested green but is unable to switch due to a conflicting signal group for an extended period of time. At some point the request times out and the controller goes failure mode. The cause for this error is due to configuration errors or external sources.
+
+Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+
 
 
 .. figtable::
@@ -190,25 +213,37 @@ Dead lock error |br|  |br| Used for dead lock errors. |br|  |br| For instance; a
 A0009
 ^^^^^
 
-Other error |br|  |br| Used for other errors not covered by any other alarm type |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Other error
+
+Used for other errors not covered by any other alarm type
+
+Is a "minor fault" defined according to 3.11 in EN12675.
 
 
 A0010
 ^^^^^
 
-Door open |br|  |br| Used for open door (room or cabinet).
+Door open
+
+Used for open door (room or cabinet).
 
 
 A0101
 ^^^^^
 
-Pushbutton error |br|  |br| Used for push buttons
+Pushbutton error
+
+Used for push buttons
 
 
 A0201
 ^^^^^
 
-Serious lamp error |br|  |br| Used for lamp errors |br|  |br| Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Serious lamp error
+
+Used for lamp errors
+
+Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
 .. figtable::
@@ -230,7 +265,11 @@ Serious lamp error |br|  |br| Used for lamp errors |br|  |br| Is a "major fault"
 A0202
 ^^^^^
 
-Less serious lamp error |br|  |br| Used for lamp errors |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Less serious lamp error
+
+Used for lamp errors
+
+Is a "minor fault" defined according to 3.11 in EN12675.
 
 
 .. figtable::
@@ -252,7 +291,9 @@ Less serious lamp error |br|  |br| Used for lamp errors |br|  |br| Is a "minor f
 A0301
 ^^^^^
 
-Detector error (hardware) |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Detector error (hardware)
+
+Is a "minor fault" defined according to 3.11 in EN12675.
 
 
 .. figtable::
@@ -279,7 +320,11 @@ Detector error (hardware) |br|  |br| Is a "minor fault" defined according to 3.1
 A0302
 ^^^^^
 
-Detector error (logic error) |br|  |br| For instance; detector continuously on or off during an extended time. |br|  |br| Is a "minor fault" defined according to 3.11 in EN12675.
+Detector error (logic error)
+
+For instance; detector continuously on or off during an extended time.
+
+Is a "minor fault" defined according to 3.11 in EN12675.
 
 
 .. figtable::
@@ -310,7 +355,9 @@ Detector error (logic error) |br|  |br| For instance; detector continuously on o
 A0303
 ^^^^^
 
-Serious detector error (hardware) |br|  |br| Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Serious detector error (hardware)
+
+Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
 .. figtable::
@@ -337,7 +384,11 @@ Serious detector error (hardware) |br|  |br| Is a "major fault" defined accordin
 A0304
 ^^^^^
 
-Serious detector error (logic error) |br|  |br| For instance; detector continuously on or off during an extended time. |br|  |br| Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Serious detector error (logic error)
+
+For instance; detector continuously on or off during an extended time.
+
+Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
 .. figtable::
@@ -436,7 +487,11 @@ Status
 S0001
 ^^^^^^^^
 
-Signal group status |br|  |br| Provides the status of each signal group, including basic information such as green, yellow and red. But also detailed technical information. |br|  |br| Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller.
+Signal group status
+
+Provides the status of each signal group, including basic information such as green, yellow and red. But also detailed technical information.
+
+Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller.
 
 
 .. figtable::
@@ -474,7 +529,11 @@ Signal group status |br|  |br| Provides the status of each signal group, includi
 S0002
 ^^^^^^^^
 
-Detector logic status |br|  |br| Provides the status of all detector logics of the controller. |br|  |br| Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller. Can also be used for bus priority, external control systems, and much more.
+Detector logic status
+
+Provides the status of all detector logics of the controller.
+
+Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller. Can also be used for bus priority, external control systems, and much more.
 
 
 .. figtable::
@@ -499,7 +558,11 @@ Detector logic status |br|  |br| Provides the status of all detector logics of t
 S0003
 ^^^^^^^^
 
-Input status |br|  |br| Input (1-255) of the controllers general purpose I/O. |br|  |br| Input is used where the traffic light controller must react to external control. It could be external detectors, bus priority, and much more.
+Input status
+
+Input (1-255) of the controllers general purpose I/O.
+
+Input is used where the traffic light controller must react to external control. It could be external detectors, bus priority, and much more.
 
 
 .. figtable::
@@ -530,7 +593,11 @@ Input status |br|  |br| Input (1-255) of the controllers general purpose I/O. |b
 S0004
 ^^^^^^^^
 
-Output status |br|  |br| Output (1-255) of the controllers general purpose I/O. |br|  |br| Can be used for all types of output where the traffic light controller needs to control other equipment. Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
+Output status
+
+Output (1-255) of the controllers general purpose I/O.
+
+Can be used for all types of output where the traffic light controller needs to control other equipment. Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
 .. figtable::
@@ -561,7 +628,11 @@ Output status |br|  |br| Output (1-255) of the controllers general purpose I/O. 
 S0005
 ^^^^^^^^
 
-Traffic Light Controller starting |br|  |br| The traffic signal is starting, e.g. it is in startup mode and has not begun working normally yet. |br|  |br| During startup mode the traffic controller shows dark, red, yellow flash or using the predetermined start cycle (minimum times).
+Traffic Light Controller starting
+
+The traffic signal is starting, e.g. it is in startup mode and has not begun working normally yet.
+
+During startup mode the traffic controller shows dark, red, yellow flash or using the predetermined start cycle (minimum times).
 
 
 .. figtable::
@@ -582,7 +653,11 @@ Traffic Light Controller starting |br|  |br| The traffic signal is starting, e.g
 S0006
 ^^^^^^^^
 
-Emergency stage |br|  |br| The status is active during emergency prioritization. |br|  |br| Used in situations where full priority is given in the emergency vehicle program.
+Emergency stage
+
+The status is active during emergency prioritization.
+
+Used in situations where full priority is given in the emergency vehicle program.
 
 
 .. figtable::
@@ -604,7 +679,17 @@ Emergency stage |br|  |br| The status is active during emergency prioritization.
 S0007
 ^^^^^^^^
 
-Controller switched on |br|  |br| The controller is active and is not in dark mode. |br|  |br| Used to determine if the controller is operating, e.g. it shows red, green or yellow to the vehicles. |br|  |br| During maintenance work the controller might be using dark mode (no output to the signal heads). |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False" |br| 
+Controller switched on
+
+The controller is active and is not in dark mode.
+
+Used to determine if the controller is operating, e.g. it shows red, green or yellow to the vehicles.
+
+During maintenance work the controller might be using dark mode (no output to the signal heads).
+
+Please note that all values in this status uses comma-separated lists
+- one value for each intersection, e.g. "1,2" and "True,False"
+
 
 
 .. figtable::
@@ -633,7 +718,14 @@ Controller switched on |br|  |br| The controller is active and is not in dark mo
 S0008
 ^^^^^^^^
 
-Manual control |br|  |br| Traffic control deactivated in controller |br|  |br| Signal timings is controlled manually by service personnel using the operating panel of the controller. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
+Manual control
+
+Traffic control deactivated in controller
+
+Signal timings is controlled manually by service personnel using the operating panel of the controller.
+
+Please note that all values in this status uses comma-separated lists
+- one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -662,7 +754,14 @@ Manual control |br|  |br| Traffic control deactivated in controller |br|  |br| S
 S0009
 ^^^^^^^^
 
-Fixed time control |br|  |br| Traffic actuated control deactivated and a pre-timed control is used. |br|  |br| Usually only used in case normal detectors can't be used, e.g. during maintenance work. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
+Fixed time control
+
+Traffic actuated control deactivated and a pre-timed control is used.
+
+Usually only used in case normal detectors can't be used, e.g. during maintenance work.
+
+Please note that all values in this status uses comma-separated lists
+- one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -691,7 +790,14 @@ Fixed time control |br|  |br| Traffic actuated control deactivated and a pre-tim
 S0010
 ^^^^^^^^
 
-Isolated control |br|  |br| Isolated control mode indicates that the controller operates independently of any other traffic light controllers. This may different depending on traffic program (time plan). |br|  |br| Used to determine if the controller is operating independently or operating with other controllers (coordination). |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
+Isolated control
+
+Isolated control mode indicates that the controller operates independently of any other traffic light controllers. This may different depending on traffic program (time plan).
+
+Used to determine if the controller is operating independently or operating with other controllers (coordination).
+
+Please note that all values in this status uses comma-separated lists
+- one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -720,7 +826,14 @@ Isolated control |br|  |br| Isolated control mode indicates that the controller 
 S0011
 ^^^^^^^^
 
-Yellow flash |br|  |br| The controller shows yellow flash. |br|  |br| Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. However, some countries may use yellow flash as an normal operating mode, and not necessarily during fault. This status can also be manually set using M0001. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
+Yellow flash
+
+The controller shows yellow flash.
+
+Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. However, some countries may use yellow flash as an normal operating mode, and not necessarily during fault. This status can also be manually set using M0001.
+
+Please note that all values in this status uses comma-separated lists
+- one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -749,7 +862,14 @@ Yellow flash |br|  |br| The controller shows yellow flash. |br|  |br| Yellow fla
 S0012
 ^^^^^^^^
 
-All red |br|  |br| The controller show all red |br|  |br| All red can be manually set using the controllers operating panel during maintenance work. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "True,False"
+All red
+
+The controller show all red
+
+All red can be manually set using the controllers operating panel during maintenance work.
+
+Please note that all values in this status uses comma-separated lists
+- one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. figtable::
@@ -778,7 +898,14 @@ All red |br|  |br| The controller show all red |br|  |br| All red can be manuall
 S0013
 ^^^^^^^^
 
-Police key |br|  |br| The controller is forced to dark mode or yellow flash. |br|  |br| The "police key" is a external control switch present in some controllers that manually switches the controller to either dark mode or yellow flash. |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "0,1"
+Police key
+
+The controller is forced to dark mode or yellow flash.
+
+The "police key" is a external control switch present in some controllers that manually switches the controller to either dark mode or yellow flash.
+
+Please note that all values in this status uses comma-separated lists
+- one value for each intersection, e.g. "1,2" and "0,1"
 
 
 .. figtable::
@@ -803,7 +930,11 @@ Police key |br|  |br| The controller is forced to dark mode or yellow flash. |br
 S0014
 ^^^^^^^^
 
-Current time plan |br|  |br| The current time plan (signal program) used in the controller. There may be 1-255 predefined time plans. |br|  |br| The time plan (signal program) may change signal timings, cycle time, control strategy and much more. Typical usage is is scenario based control where change of program is used to change priority etc.
+Current time plan
+
+The current time plan (signal program) used in the controller. There may be 1-255 predefined time plans.
+
+The time plan (signal program) may change signal timings, cycle time, control strategy and much more. Typical usage is is scenario based control where change of program is used to change priority etc.
 
 
 .. figtable::
@@ -829,7 +960,13 @@ Current time plan |br|  |br| The current time plan (signal program) used in the 
 S0015
 ^^^^^^^^
 
-Current traffic situation |br|  |br| The current traffic situation used in the controller. |br|  |br| Used for area-based control where a command can be sent to a master traffic light controller about which predefined traffic situation to use (1-255). |br|  |br| Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
+Current traffic situation
+
+The current traffic situation used in the controller.
+
+Used for area-based control where a command can be sent to a master traffic light controller about which predefined traffic situation to use (1-255).
+
+Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
 
 
 .. figtable::
@@ -855,7 +992,9 @@ Current traffic situation |br|  |br| The current traffic situation used in the c
 S0016
 ^^^^^^^^
 
-Number of detector logics |br|  |br| Can be used by the management system to check the number of detector logics configured in the controller.
+Number of detector logics
+
+Can be used by the management system to check the number of detector logics configured in the controller.
 
 
 .. figtable::
@@ -875,7 +1014,9 @@ Number of detector logics |br|  |br| Can be used by the management system to che
 S0017
 ^^^^^^^^
 
-Number of signal groups |br|  |br| Can be used for the management system to check the number of signal groups configured in the controller.
+Number of signal groups
+
+Can be used for the management system to check the number of signal groups configured in the controller.
 
 
 .. figtable::
@@ -895,7 +1036,9 @@ Number of signal groups |br|  |br| Can be used for the management system to chec
 S0018
 ^^^^^^^^
 
-Number of time plans |br|  |br| Can be used for the management system to check the number of time plans configured in the controller.
+Number of time plans
+
+Can be used for the management system to check the number of time plans configured in the controller.
 
 
 .. figtable::
@@ -915,7 +1058,9 @@ Number of time plans |br|  |br| Can be used for the management system to check t
 S0019
 ^^^^^^^^
 
-Number of traffic situations |br|  |br| Can be used for the management system to check the number of traffic situations configured in the controller.
+Number of traffic situations
+
+Can be used for the management system to check the number of traffic situations configured in the controller.
 
 
 .. figtable::
@@ -935,7 +1080,12 @@ Number of traffic situations |br|  |br| Can be used for the management system to
 S0020
 ^^^^^^^^
 
-Control mode |br|  |br| Can be used for the management system to check the current control mode (startup, normal, standby, failure, test). |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "startup,control"
+Control mode
+
+Can be used for the management system to check the current control mode (startup, normal, standby, failure, test).
+
+Please note that all values in this status uses comma-separated lists
+- one value for each intersection, e.g. "1,2" and "startup,control"
 
 
 .. figtable::
@@ -961,7 +1111,11 @@ Control mode |br|  |br| Can be used for the management system to check the curre
 S0021
 ^^^^^^^^
 
-Manually set detector logic |br|  |br| Provides status of detector logic (1-255) regarding if they are either forced to true or false. |br|  |br| Can be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
+Manually set detector logic
+
+Provides status of detector logic (1-255) regarding if they are either forced to true or false.
+
+Can be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
 
 
 .. figtable::
@@ -981,7 +1135,11 @@ Manually set detector logic |br|  |br| Provides status of detector logic (1-255)
 S0022
 ^^^^^^^^
 
-List of time plans |br|  |br| Provides a list of the configured time plans which is possible to use. This status was added due to status S0018 only provides the total number of time plans and not which were possible to use with M0002. |br|  |br| Can be used for the management system to check the number of time plans configured in the controller.
+List of time plans
+
+Provides a list of the configured time plans which is possible to use. This status was added due to status S0018 only provides the total number of time plans and not which were possible to use with M0002.
+
+Can be used for the management system to check the number of time plans configured in the controller.
 
 
 .. figtable::
@@ -1001,7 +1159,11 @@ List of time plans |br|  |br| Provides a list of the configured time plans which
 S0023
 ^^^^^^^^
 
-Dynamic bands |br|  |br| Provides a list of all defined dynamic bands. Dynamic bands moves start of signal groups in the cycle and changes the signal timings. |br|  |br| A typical usage of dynamic bands is scenario based control where changing of signal timings is used for optimal traffic flow.
+Dynamic bands
+
+Provides a list of all defined dynamic bands. Dynamic bands moves start of signal groups in the cycle and changes the signal timings.
+
+A typical usage of dynamic bands is scenario based control where changing of signal timings is used for optimal traffic flow.
 
 
 .. figtable::
@@ -1030,7 +1192,11 @@ Dynamic bands |br|  |br| Provides a list of all defined dynamic bands. Dynamic b
 S0024
 ^^^^^^^^
 
-Offset time |br|  |br| Offset time is used to define an offset between intersections in coordinated control. It is based on the expected travel time between intersections. |br|  |br| Can be used by the management system to check to fine tune the coordination for optimal traffic flow.
+Offset time
+
+Offset time is used to define an offset between intersections in coordinated control. It is based on the expected travel time between intersections.
+
+Can be used by the management system to check to fine tune the coordination for optimal traffic flow.
 
 
 .. figtable::
@@ -1058,7 +1224,9 @@ Offset time |br|  |br| Offset time is used to define an offset between intersect
 S0025
 ^^^^^^^^
 
-Time-of-Green / Time-of-Red |br|  |br| Provides predicted signal timings of green and red for each signal group. Max, min and likely time to green and red.
+Time-of-Green / Time-of-Red
+
+Provides predicted signal timings of green and red for each signal group. Max, min and likely time to green and red.
 
 
 .. figtable::
@@ -1091,7 +1259,11 @@ Time-of-Green / Time-of-Red |br|  |br| Provides predicted signal timings of gree
 S0026
 ^^^^^^^^
 
-Week time table |br|  |br| Week time table for signal programs (time plan) to use for each day during a week. |br|  |br| The week time table determine which predefined signal timings (time plan) to use during the week for optimal traffic flow.
+Week time table
+
+Week time table for signal programs (time plan) to use for each day during a week.
+
+The week time table determine which predefined signal timings (time plan) to use during the week for optimal traffic flow.
 
 
 .. figtable::
@@ -1127,7 +1299,11 @@ Week time table |br|  |br| Week time table for signal programs (time plan) to us
 S0027
 ^^^^^^^^
 
-Time tables |br|  |br| Time of day for when to switch signal program (time plan). |br|  |br| The signal timings (time plan) to use during time of day for optimal traffic flow.
+Time tables
+
+Time of day for when to switch signal program (time plan).
+
+The signal timings (time plan) to use during time of day for optimal traffic flow.
 
 
 .. figtable::
@@ -1165,7 +1341,11 @@ Time tables |br|  |br| Time of day for when to switch signal program (time plan)
 S0028
 ^^^^^^^^
 
-Cycle time |br|  |br| Cycle time (or cycle length) is the sum of all phases in a time plan (traffic program). This time is fixed when using fixed time control or coordination (except "local coordination"). When the cycle counter reaches this length it is reset back to zero. |br|  |br| Changing the cycle time can be used as part of scenario based control.
+Cycle time
+
+Cycle time (or cycle length) is the sum of all phases in a time plan (traffic program). This time is fixed when using fixed time control or coordination (except "local coordination"). When the cycle counter reaches this length it is reset back to zero.
+
+Changing the cycle time can be used as part of scenario based control.
 
 
 .. figtable::
@@ -1194,7 +1374,11 @@ Cycle time |br|  |br| Cycle time (or cycle length) is the sum of all phases in a
 S0029
 ^^^^^^^^
 
-Forced input status |br|  |br| Provide status of input (1-255) regarding if they are forced or not. Can be used for all types of input where the traffic light controller must react to external control. |br|  |br| Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
+Forced input status
+
+Provide status of input (1-255) regarding if they are forced or not. Can be used for all types of input where the traffic light controller must react to external control.
+
+Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
 .. figtable::
@@ -1214,7 +1398,11 @@ Forced input status |br|  |br| Provide status of input (1-255) regarding if they
 S0030
 ^^^^^^^^
 
-Forced output status |br|  |br| Provide status of output (1-255) regarding if they are forced or not. Can be used for all types of output where the traffic light controller needs to control other equipment. |br|  |br| Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
+Forced output status
+
+Provide status of output (1-255) regarding if they are forced or not. Can be used for all types of output where the traffic light controller needs to control other equipment.
+
+Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
 .. figtable::
@@ -1234,7 +1422,11 @@ Forced output status |br|  |br| Provide status of output (1-255) regarding if th
 S0031
 ^^^^^^^^
 
-Trigger level sensitivity for loop detector |br|  |br| The trigger level sensitivity determines at what level the loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives. |br|  |br| Can be used to make sure that the detectors detect traffic as intended.
+Trigger level sensitivity for loop detector
+
+The trigger level sensitivity determines at what level the loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives.
+
+Can be used to make sure that the detectors detect traffic as intended.
 
 
 .. figtable::
@@ -1257,7 +1449,13 @@ Trigger level sensitivity for loop detector |br|  |br| The trigger level sensiti
 S0032
 ^^^^^^^^
 
-Coordinated control |br|  |br| This status is used when coordination between traffic light controllers is active. |br| Coordination is described in detail in the corresponding section |br|  |br| Please note that all values in this status uses comma-separated lists |br| - one value for each intersection, e.g. "1,2" and "centralized,off"
+Coordinated control
+
+This status is used when coordination between traffic light controllers is active.
+Coordination is described in detail in the corresponding section
+
+Please note that all values in this status uses comma-separated lists
+- one value for each intersection, e.g. "1,2" and "centralized,off"
 
 
 .. figtable::
@@ -1287,7 +1485,11 @@ Coordinated control |br|  |br| This status is used when coordination between tra
 S0033
 ^^^^^^^^
 
-Signal Priority Status |br|  |br| The status can only describe the status of a single priority request, |br| and you can therefore only subscribe to this status with update rate set to 0, |br| so you get each individual status change as it happens.
+Signal Priority Status
+
+The status can only describe the status of a single priority request,
+and you can therefore only subscribe to this status with update rate set to 0,
+so you get each individual status change as it happens.
 
 
 .. figtable::
@@ -1315,7 +1517,9 @@ Signal Priority Status |br|  |br| The status can only describe the status of a s
 S0091
 ^^^^^^^^
 
-Operator logged in/out OP-panel |br|  |br| Provides information if maintenance personnel is currently working on site.
+Operator logged in/out OP-panel
+
+Provides information if maintenance personnel is currently working on site.
 
 
 .. figtable::
@@ -1337,7 +1541,9 @@ Operator logged in/out OP-panel |br|  |br| Provides information if maintenance p
 S0092
 ^^^^^^^^
 
-Operator logged in/out web-interface |br|  |br| Provides information if maintenance personnel is currently working with the controller.
+Operator logged in/out web-interface
+
+Provides information if maintenance personnel is currently working with the controller.
 
 
 .. figtable::
@@ -1359,7 +1565,9 @@ Operator logged in/out web-interface |br|  |br| Provides information if maintena
 S0095
 ^^^^^^^^
 
-Version of Traffic Light Controller |br|  |br| Provides diagnostic version information.
+Version of Traffic Light Controller
+
+Provides diagnostic version information.
 
 
 .. figtable::
@@ -1379,7 +1587,9 @@ Version of Traffic Light Controller |br|  |br| Provides diagnostic version infor
 S0096
 ^^^^^^^^
 
-Current date and time |br|  |br| Provides diagnostic information about the current date and time set in the controller.
+Current date and time
+
+Provides diagnostic information about the current date and time set in the controller.
 
 
 .. figtable::
@@ -1404,7 +1614,11 @@ Current date and time |br|  |br| Provides diagnostic information about the curre
 S0097
 ^^^^^^^^
 
-Checksum of traffic parameters |br|  |br| Can be used to check if any traffic parameter has been changed. |br|  |br| For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to monitor if any traffic parameter has been changed. The traffic parameters may be downloaded with S0098.
+Checksum of traffic parameters
+
+Can be used to check if any traffic parameter has been changed.
+
+For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to monitor if any traffic parameter has been changed. The traffic parameters may be downloaded with S0098.
 
 
 .. figtable::
@@ -1442,7 +1656,11 @@ Checksum of traffic parameters |br|  |br| Can be used to check if any traffic pa
 S0098
 ^^^^^^^^
 
-Configuration of traffic parameters |br|  |br| Can be used to download all traffic parameters from the controller. |br|  |br| For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to downloaded them.
+Configuration of traffic parameters
+
+Can be used to download all traffic parameters from the controller.
+
+For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to downloaded them.
 
 
 .. figtable::
@@ -1481,7 +1699,9 @@ Configuration of traffic parameters |br|  |br| Can be used to download all traff
 S0201
 ^^^^^^^^
 
-Traffic Counting: Number of vehicles |br|  |br| Used for Traffic counting.
+Traffic Counting: Number of vehicles
+
+Used for Traffic counting.
 
 
 .. figtable::
@@ -1502,7 +1722,9 @@ Traffic Counting: Number of vehicles |br|  |br| Used for Traffic counting.
 S0202
 ^^^^^^^^
 
-Traffic Counting: Vehicle speed |br|  |br| Used for Traffic counting.
+Traffic Counting: Vehicle speed
+
+Used for Traffic counting.
 
 
 .. figtable::
@@ -1523,7 +1745,9 @@ Traffic Counting: Vehicle speed |br|  |br| Used for Traffic counting.
 S0203
 ^^^^^^^^
 
-Traffic Counting: Occupancy |br|  |br| Used for Traffic counting.
+Traffic Counting: Occupancy
+
+Used for Traffic counting.
 
 
 .. figtable::
@@ -1544,7 +1768,9 @@ Traffic Counting: Occupancy |br|  |br| Used for Traffic counting.
 S0204
 ^^^^^^^^
 
-Traffic Counting: Number of vehicles of given classification |br|  |br| Used for Traffic counting.
+Traffic Counting: Number of vehicles of given classification
+
+Used for Traffic counting.
 
 
 .. figtable::
@@ -1573,7 +1799,9 @@ Traffic Counting: Number of vehicles of given classification |br|  |br| Used for
 S0205
 ^^^^^^^^
 
-Traffic Counting: Number of vehicles |br|  |br| This status was introduced to improve performance in case traffic counting is done on all all detectors.
+Traffic Counting: Number of vehicles
+
+This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
 .. figtable::
@@ -1597,7 +1825,9 @@ Traffic Counting: Number of vehicles |br|  |br| This status was introduced to im
 S0206
 ^^^^^^^^
 
-Traffic Counting: Vehicle speed |br|  |br| This status was introduced to improve performance in case traffic counting is done on all all detectors.
+Traffic Counting: Vehicle speed
+
+This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
 .. figtable::
@@ -1621,7 +1851,9 @@ Traffic Counting: Vehicle speed |br|  |br| This status was introduced to improve
 S0207
 ^^^^^^^^
 
-Traffic Counting: Occupancy |br|  |br| This status was introduced to improve performance in case traffic counting is done on all all detectors.
+Traffic Counting: Occupancy
+
+This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
 .. figtable::
@@ -1645,7 +1877,9 @@ Traffic Counting: Occupancy |br|  |br| This status was introduced to improve per
 S0208
 ^^^^^^^^
 
-Traffic Counting: Number of vehicles of given classification |br|  |br| This status was introduced to improve performance in case traffic counting is done on all all detectors.
+Traffic Counting: Number of vehicles of given classification
+
+This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
 .. figtable::
@@ -1740,7 +1974,11 @@ Commands
 M0001
 ^^^^^
 
-Sets functional position |br|  |br| Sets the controller to yellow flash, dark mode or normal control. |br|  |br| Requires security code 2
+Sets functional position
+
+Sets the controller to yellow flash, dark mode or normal control.
+
+Requires security code 2
 
 
 .. figtable::
@@ -1766,7 +2004,15 @@ Sets functional position |br|  |br| Sets the controller to yellow flash, dark mo
 M0002
 ^^^^^
 
-Sets current time plan |br|  |br| Change of traffic program of the traffic light controller. |br|  |br| Typical usages is scenario based control where change of program is used to change signal timings etc. |br|  |br| This command changes the signal timings for optimal traffic flow. |br|  |br| Requires security code 2
+Sets current time plan
+
+Change of traffic program of the traffic light controller.
+
+Typical usages is scenario based control where change of program is used to change signal timings etc.
+
+This command changes the signal timings for optimal traffic flow.
+
+Requires security code 2
 
 
 .. figtable::
@@ -1789,7 +2035,13 @@ Sets current time plan |br|  |br| Change of traffic program of the traffic light
 M0003
 ^^^^^
 
-Sets traffic situation the controller uses. |br|  |br| Used for area-based control where a command can be sent to a master traffic light controller about which predefined traffic situation to use (1-255). |br|  |br| Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically. |br|  |br| Requires security code 2
+Sets traffic situation the controller uses.
+
+Used for area-based control where a command can be sent to a master traffic light controller about which predefined traffic situation to use (1-255).
+
+Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
+
+Requires security code 2
 
 
 .. figtable::
@@ -1812,7 +2064,11 @@ Sets traffic situation the controller uses. |br|  |br| Used for area-based contr
 M0004
 ^^^^^
 
-Restarts Traffic Light Controller |br|  |br| Used in the event of serious faults in the device where a restart is considered to be able to remedy a problem. |br|  |br| Requires security code 2
+Restarts Traffic Light Controller
+
+Used in the event of serious faults in the device where a restart is considered to be able to remedy a problem.
+
+Requires security code 2
 
 
 .. figtable::
@@ -1834,7 +2090,13 @@ Restarts Traffic Light Controller |br|  |br| Used in the event of serious faults
 M0005
 ^^^^^
 
-Activate emergency route |br|  |br| The function is made for emergency prioritization. Works in the same way as the M0006 and M0008 where the traffic light controller responds to an input. |br|  |br| Should be used in situations where full priority is given in the emergency vehicle program. |br|  |br| Requires security code 2.
+Activate emergency route
+
+The function is made for emergency prioritization. Works in the same way as the M0006 and M0008 where the traffic light controller responds to an input.
+
+Should be used in situations where full priority is given in the emergency vehicle program.
+
+Requires security code 2.
 
 
 .. figtable::
@@ -1857,7 +2119,17 @@ Activate emergency route |br|  |br| The function is made for emergency prioritiz
 M0006
 ^^^^^
 
-Activate input |br|  |br| Set given input (1-255) of the controllers general purpose I/O to either true or false. |br|  |br| The function can provide an input to the traffic light controller on which a predefined action can be taken. |br|  |br| Can be used for all types of input where the traffic light controller must react to external control. |br|  |br| Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more. |br|  |br| Requires security code 2
+Activate input
+
+Set given input (1-255) of the controllers general purpose I/O to either true or false.
+
+The function can provide an input to the traffic light controller on which a predefined action can be taken.
+
+Can be used for all types of input where the traffic light controller must react to external control.
+
+Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more.
+
+Requires security code 2
 
 
 .. figtable::
@@ -1880,7 +2152,13 @@ Activate input |br|  |br| Set given input (1-255) of the controllers general pur
 M0007
 ^^^^^
 
-Activate fixed time control |br|  |br| Deactivates the traffic actuated control using detectors and activates pre-timed control. |br|  |br| Can be used in case normal detectors can't be used, e.g. during maintenance work. |br|  |br| Requires security code 2.
+Activate fixed time control
+
+Deactivates the traffic actuated control using detectors and activates pre-timed control.
+
+Can be used in case normal detectors can't be used, e.g. during maintenance work.
+
+Requires security code 2.
 
 
 .. figtable::
@@ -1902,7 +2180,13 @@ Activate fixed time control |br|  |br| Deactivates the traffic actuated control 
 M0008
 ^^^^^
 
-Sets manual activation of detector logic |br|  |br| Set given detector logic (1-255) to either true or false. |br|  |br| Can e.g. be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization. |br|  |br| Requires security code 2
+Sets manual activation of detector logic
+
+Set given detector logic (1-255) to either true or false.
+
+Can e.g. be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
+
+Requires security code 2
 
 
 .. figtable::
@@ -1926,7 +2210,13 @@ Sets manual activation of detector logic |br|  |br| Set given detector logic (1-
 M0010
 ^^^^^
 
-Start of signal group. Orders a signal group to green. |br|  |br| Although this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use. |br|  |br| Intended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers. Only used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits). |br|  |br| Requires security code 2
+Start of signal group. Orders a signal group to green.
+
+Although this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use.
+
+Intended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers. Only used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits).
+
+Requires security code 2
 
 
 .. figtable::
@@ -1948,7 +2238,13 @@ Start of signal group. Orders a signal group to green. |br|  |br| Although this 
 M0011
 ^^^^^
 
-Stop of signal group. Orders a signal group to red. |br|  |br| Although this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use. |br|  |br| Intended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers. Only used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits). |br|  |br| Requires security code 2
+Stop of signal group. Orders a signal group to red.
+
+Although this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use.
+
+Intended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers. Only used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits).
+
+Requires security code 2
 
 
 .. figtable::
@@ -1970,7 +2266,21 @@ Stop of signal group. Orders a signal group to red. |br|  |br| Although this com
 M0012
 ^^^^^
 
-Request start or stop of a series of signal groups. |br|  |br| Starts or stops several signal groups. |br|  |br| This command was introduced due to coordination requirements needing to set many signal groups to green and red at the same time and M0010 and M0012 being to slow to send a message for each signal group individually. |br|  |br| Although this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use. |br|  |br| Intended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers. |br|  |br| Only used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits). |br|  |br| May also include purposes for adaptive control where a UTC system or a local traffic light controller takes over the phase control (stage control). |br|  |br| Requires security code 2.
+Request start or stop of a series of signal groups.
+
+Starts or stops several signal groups.
+
+This command was introduced due to coordination requirements needing to set many signal groups to green and red at the same time and M0010 and M0012 being to slow to send a message for each signal group individually.
+
+Although this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use.
+
+Intended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers.
+
+Only used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits).
+
+May also include purposes for adaptive control where a UTC system or a local traffic light controller takes over the phase control (stage control).
+
+Requires security code 2.
 
 
 .. figtable::
@@ -2011,7 +2321,40 @@ Request start or stop of a series of signal groups. |br|  |br| Starts or stops s
 M0013
 ^^^^^
 
-Activate a series of inputs |br|  |br| Set given inputs (1-255) of the controllers general purpose I/O to either true or false. This command was introduced due to coordination requirements needing to set many inputs to true/false at the same time and M0006 being to slow to send a message for each input individually. With this command many inputs can be set to true/false at the same time using a single command message. It can be used for all types of input where the traffic light controller must react to external control. Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more. Requires security code 2 |br|  |br| The parameter 'status' sets/unsets a block of 16 inputs at a time. It can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. |br| Format: [Offset];[Bits to set];[Bits to unset];… |br|  |br| - 'Offset' defines where the 16 inputs starts from |br| - 'Bits to set' defines which bit(s) to set. '0' if unsed |br| - 'Bits to unset' defines which bit(s) to unset. '0' if unused |br|  |br| Example 1: |br| "3,4134,65" sets input 4,5,8,15  and unsets 3,9 |br| - Input starts from no. 5 |br| - "4134" is 1 0000 0010 0110 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 1000 0001 0011 0000 which are bits 4,5,8,15 |br| - "65" is 100 0001 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 10 0000 1000 which are bits 3,9 |br|  |br| Example 2: |br| "12,1,4" sets input 12 and unsets 14 |br| - Input starts from no. 12 |br| - "1" is 1 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 1 0000 0000 0000, which is bit 12 |br| - "4" is 100 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 100 0000 0000 0000, which is bit 14 |br|  |br| And both these examples could be sent in the same message as: |br| "3,4143,65;12,1,4" |br|  |br| Such a message would set input 4,5,8,12,15 and unset input 3,9,14 |br|  |br| Example 3: |br| "0,1,2" sets input 0 and unsets 1 |br| - Input starts from 0 |br| - "1" is 1 in binary, which is bit 0 |br| - "2" is 10 in binary, which is bit 1 |br| 
+Activate a series of inputs
+
+Set given inputs (1-255) of the controllers general purpose I/O to either true or false. This command was introduced due to coordination requirements needing to set many inputs to true/false at the same time and M0006 being to slow to send a message for each input individually. With this command many inputs can be set to true/false at the same time using a single command message. It can be used for all types of input where the traffic light controller must react to external control. Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more. Requires security code 2
+
+The parameter 'status' sets/unsets a block of 16 inputs at a time. It can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon.
+Format: [Offset];[Bits to set];[Bits to unset];…
+
+- 'Offset' defines where the 16 inputs starts from
+- 'Bits to set' defines which bit(s) to set. '0' if unsed
+- 'Bits to unset' defines which bit(s) to unset. '0' if unused
+
+Example 1:
+"3,4134,65" sets input 4,5,8,15  and unsets 3,9
+- Input starts from no. 5
+- "4134" is 1 0000 0010 0110 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 1000 0001 0011 0000 which are bits 4,5,8,15
+- "65" is 100 0001 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 10 0000 1000 which are bits 3,9
+
+Example 2:
+"12,1,4" sets input 12 and unsets 14
+- Input starts from no. 12
+- "1" is 1 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 1 0000 0000 0000, which is bit 12
+- "4" is 100 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 100 0000 0000 0000, which is bit 14
+
+And both these examples could be sent in the same message as:
+"3,4143,65;12,1,4"
+
+Such a message would set input 4,5,8,12,15 and unset input 3,9,14
+
+Example 3:
+"0,1,2" sets input 0 and unsets 1
+- Input starts from 0
+- "1" is 1 in binary, which is bit 0
+- "2" is 10 in binary, which is bit 1
+
 
 
 .. figtable::
@@ -2033,7 +2376,13 @@ Activate a series of inputs |br|  |br| Set given inputs (1-255) of the controlle
 M0014
 ^^^^^
 
-Set dynamic bands |br|  |br| Can be used to change between predefined signal timings. Moves the start of signal groups in the cycle. |br|  |br| This command can be used to change the split of green time during the cycle. A typical usage is scenario based control where changing of signal timings is used for optimal traffic flow. |br|  |br| Requires security code 2
+Set dynamic bands
+
+Can be used to change between predefined signal timings. Moves the start of signal groups in the cycle.
+
+This command can be used to change the split of green time during the cycle. A typical usage is scenario based control where changing of signal timings is used for optimal traffic flow.
+
+Requires security code 2
 
 
 .. figtable::
@@ -2063,7 +2412,13 @@ Set dynamic bands |br|  |br| Can be used to change between predefined signal tim
 M0015
 ^^^^^
 
-Set Offset time |br|  |br| Offset time is used to define an offset between intersections in coordinated control. It is based on the expected travel time between intersections. |br|  |br| This command can be used to fine tune the coordination for optimal traffic flow. |br|  |br| Requires security code 2.
+Set Offset time
+
+Offset time is used to define an offset between intersections in coordinated control. It is based on the expected travel time between intersections.
+
+This command can be used to fine tune the coordination for optimal traffic flow.
+
+Requires security code 2.
 
 
 .. figtable::
@@ -2085,7 +2440,13 @@ Set Offset time |br|  |br| Offset time is used to define an offset between inter
 M0016
 ^^^^^
 
-Set week time table |br|  |br| Set which time table for signal programs to use for each day during a week. |br|  |br| This command changes the signal timings during the week for optimal traffic flow. |br|  |br| Requires security code 2.
+Set week time table
+
+Set which time table for signal programs to use for each day during a week.
+
+This command changes the signal timings during the week for optimal traffic flow.
+
+Requires security code 2.
 
 
 .. figtable::
@@ -2123,7 +2484,13 @@ Set week time table |br|  |br| Set which time table for signal programs to use f
 M0017
 ^^^^^
 
-Set time tables |br|  |br| Set time of day for when to automatically switch signal program (time plan). |br|  |br| This command changes the signal timings according to time of day for optimal traffic flow. |br|  |br| Requires security code 2.
+Set time tables
+
+Set time of day for when to automatically switch signal program (time plan).
+
+This command changes the signal timings according to time of day for optimal traffic flow.
+
+Requires security code 2.
 
 
 .. figtable::
@@ -2162,7 +2529,13 @@ Set time tables |br|  |br| Set time of day for when to automatically switch sign
 M0018
 ^^^^^
 
-Set Cycle time |br|  |br| Cycle time (or cycle length) is the sum of all phases in a time plan (traffic program). This time is fixed when using fixed time control or coordination (except "local coordination"). When the cycle counter reaches this length it is reset back to zero. |br|  |br| This command provides the ability to change the cycle time when using coordinated or fixed time control. It changes the timings for optimal traffic flow. Can be used with scenario based control. |br|  |br| Requires security code 2.
+Set Cycle time
+
+Cycle time (or cycle length) is the sum of all phases in a time plan (traffic program). This time is fixed when using fixed time control or coordination (except "local coordination"). When the cycle counter reaches this length it is reset back to zero.
+
+This command provides the ability to change the cycle time when using coordinated or fixed time control. It changes the timings for optimal traffic flow. Can be used with scenario based control.
+
+Requires security code 2.
 
 
 .. figtable::
@@ -2184,7 +2557,13 @@ Set Cycle time |br|  |br| Cycle time (or cycle length) is the sum of all phases 
 M0019
 ^^^^^
 
-Force input |br|  |br| Force a given input (1-255) of the controllers general purpose I/O to either True or False. Can be used for all types of input where the traffic light controller must react to external control. |br|  |br| Can be used for bus priority, coordination between traffic controllers, external control systems, and much more. |br|  |br| Requires security code 2.
+Force input
+
+Force a given input (1-255) of the controllers general purpose I/O to either True or False. Can be used for all types of input where the traffic light controller must react to external control.
+
+Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
+
+Requires security code 2.
 
 
 .. figtable::
@@ -2209,7 +2588,13 @@ Force input |br|  |br| Force a given input (1-255) of the controllers general pu
 M0020
 ^^^^^
 
-Force output |br|  |br| Force a given output (1-255) of the controllers general purpose I/O to either True of False. Can be used for all types of output where the traffic light controller needs to control other equipment. |br|  |br| Can be used for bus priority, coordination between traffic controllers, external control systems, and much more. |br|  |br| Requires security code 2.
+Force output
+
+Force a given output (1-255) of the controllers general purpose I/O to either True of False. Can be used for all types of output where the traffic light controller needs to control other equipment.
+
+Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
+
+Requires security code 2.
 
 
 .. figtable::
@@ -2234,7 +2619,13 @@ Force output |br|  |br| Force a given output (1-255) of the controllers general 
 M0021
 ^^^^^
 
-Set trigger level sensitivity for loop detector |br|  |br| The trigger level sensitivity determines at what level a loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives. |br|  |br| This command provides the ability to fine tune loop detectors to make sure they detect traffic as intended. |br|  |br| Requires security code 2
+Set trigger level sensitivity for loop detector
+
+The trigger level sensitivity determines at what level a loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives.
+
+This command provides the ability to fine tune loop detectors to make sure they detect traffic as intended.
+
+Requires security code 2
 
 
 .. figtable::
@@ -2365,7 +2756,11 @@ at some point, but until then it might block requests in other direction.
 M0103
 ^^^^^
 
-Set security code |br|  |br| Change the security code to use when sending commands |br|  |br| Security codes are used as an extra layer of security in many commands. They need to match between the supervision system and the traffic light controller in order for the commands to be executed.
+Set security code
+
+Change the security code to use when sending commands
+
+Security codes are used as an extra layer of security in many commands. They need to match between the supervision system and the traffic light controller in order for the commands to be executed.
 
 
 .. figtable::
@@ -2388,7 +2783,11 @@ Set security code |br|  |br| Change the security code to use when sending comman
 M0104
 ^^^^^
 
-Set clock |br|  |br| Can be used to manually set the clock of the traffic light controller if automatic  time synchronization (NTP or watchdog sync) is not available. For instance, during maintenance work. |br|  |br| Requires security code 1
+Set clock
+
+Can be used to manually set the clock of the traffic light controller if automatic  time synchronization (NTP or watchdog sync) is not available. For instance, during maintenance work.
+
+Requires security code 1
 
 
 .. figtable::
