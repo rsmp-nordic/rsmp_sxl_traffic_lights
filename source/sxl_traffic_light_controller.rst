@@ -1977,20 +1977,20 @@ at some point, but until then it might block requests in other direction.
    laneInId      integer  [0-255]                         ID of an ingoing lane
    laneOutId     integer  [0-255]                         ID of an outgoing lane
    priorityId    integer  [0-255]                         ID of a priority
-   type          enum     | new                           | new: Initiate a new priority request
-                          | update                        | update: Update an existing priority request
-                          | cancel                        | cancel: Cancel an existing priority request
+   type          string   | -new                          | new: Initiate a new priority request
+                          | -update                       | update: Update an existing priority request
+                          | -cancel                       | cancel: Cancel an existing priority request
    level         integer  [0-14]                          0: Lowest, 14: Highest
    eta           integer  [0-255]                         (Optional) Estimated time of arrival to the intersection, in seconds
-   vehicleType   enum     | car                           (Optional) Vehicle type
-                          | bus
-                          | bicycle
-                          | twoWheeler
-                          | lightTruck
-                          | heavyTruck
-                          | tram
-                          | emergencyVehicle
-                          | other
+   vehicleType   string   | -car                          (Optional) Vehicle type
+                          | -bus
+                          | -bicycle
+                          | -twoWheeler
+                          | -lightTruck
+                          | -heavyTruck
+                          | -tram
+                          | -emergencyVehicle
+                          | -other
    ============  =======  ==============================  ===============================================================
 ..
 
