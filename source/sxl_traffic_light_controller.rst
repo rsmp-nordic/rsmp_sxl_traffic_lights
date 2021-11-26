@@ -1906,13 +1906,13 @@ in the controller, and in the system that sends priority requests. Either:
 
 - Reference a signal group by setting 'componentId'.
   This method is simple, but will not allow you to have different priority mechanism for the
-  same signal group, unless they can be distringuished by the vehicle type. For example, if you
+  same signal group, unless they can be distinguished by the vehicle type. For example, if you
   need to trigger different priorities depending on whether a bus goes straight or makes a turn
   for the same signal group, you must use of the other referencing methods.
 - Reference a detector logic setting 'componentId'. This can be useful if you previously used
-  detector logics to activate priority. The detector logic will not be acticated, only the priority.
+  detector logics to activate priority. The detector logic will not be activated, only the priority.
 - Reference an input by setting 'inputId'. This can be useful if you previously used
-  inputs to activate priority. The input will not be acticated, only the priority.
+  inputs to activate priority. The input will not be activated, only the priority.
 - Reference a connection by setting 'connectionId'. A connection is a movement from a specific
   ingoing lane to a specific outgoing lane.
 - Reference an intersection approach by setting 'approachId'.
@@ -1947,10 +1947,10 @@ Like ETA, providing a vehicle type is optional, but can help the controller deci
 to best handle the request. If not vehicle type is provided.
 
 The priority level provides a way to indicate the relative importance of the request compared
-to other requests. For example, emergency vehicles or delayed busses could be given a higher priority level.
+to other requests. For example, emergency vehicles or delayed buses could be given a higher priority level.
 Another request with a higher level can override an existing priority with a lower level.
 
-If the ETA changes befere the priority is cancelled, or you want to change the priority level, you send
+If the ETA changes before the priority is cancelled, or you want to change the priority level, you send
 another request message with type set to 'update'. The vehicle type cannot be changed.
 
 A priority request should always be cancelled as soon as there's no need for the priority anymore
