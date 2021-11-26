@@ -159,11 +159,12 @@ Communication error |br|  |br| Used for communication errors with the central sy
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
-   ========  ======  ===============  =============================================
-   Name      Type    Value            Comment
-   ========  ======  ===============  =============================================
-   protocol  string  -rsmp |br| -ntp  Type of communication error, e.g. NTP or RSMP
-   ========  ======  ===============  =============================================
+   ========  ======  ==========  =============================================
+   Name      Type    Value       Comment
+   ========  ======  ==========  =============================================
+   protocol  string  -rsmp |br|  Type of communication error, e.g. NTP or RSMP
+                     -ntp
+   ========  ======  ==========  =============================================
 ..
 
 A0008
@@ -217,11 +218,13 @@ Serious lamp error |br|  |br| Used for lamp errors |br|  |br| Is a "major fault"
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
-   ======  ======  =============================  =============
-   Name    Type    Value                          Comment
-   ======  ======  =============================  =============
-   color   string  -red |br| -yellow |br| -green  Color of lamp
-   ======  ======  =============================  =============
+   ======  ======  ============  =============
+   Name    Type    Value         Comment
+   ======  ======  ============  =============
+   color   string  -red |br|     Color of lamp
+                   -yellow |br|
+                   -green
+   ======  ======  ============  =============
 ..
 
 A0202
@@ -237,11 +240,13 @@ Less serious lamp error |br|  |br| Used for lamp errors |br|  |br| Is a "minor f
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
-   ======  ======  =============================  =============
-   Name    Type    Value                          Comment
-   ======  ======  =============================  =============
-   color   string  -red |br| -yellow |br| -green  Color of lamp
-   ======  ======  =============================  =============
+   ======  ======  ============  =============
+   Name    Type    Value         Comment
+   ======  ======  ============  =============
+   color   string  -red |br|     Color of lamp
+                   -yellow |br|
+                   -green
+   ======  ======  ============  =============
 ..
 
 A0301
@@ -257,14 +262,18 @@ Detector error (hardware) |br|  |br| Is a "minor fault" defined according to 3.1
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
-   =========  =======  =================  ==============================================================================
-   Name       Type     Value              Comment
-   =========  =======  =================  ==============================================================================
-   detector   string   [designation]      Designation of the detector (hardware)
-   type       string   -loop |br| -input  Type of detector |br| loop: Inductive detector loop |br| input: External input
-   errormode  string   -on |br| -off      Detector forced on/off while detector error
-   manual     boolean  -True |br| -False  Manually controlled detector logic (True/False)
-   =========  =======  =================  ==============================================================================
+   =========  =======  =============  ===============================================
+   Name       Type     Value          Comment
+   =========  =======  =============  ===============================================
+   detector   string   [designation]  Designation of the detector (hardware)
+   type       string   -loop |br|     Type of detector |br|
+                       -input         loop: Inductive detector loop |br|
+                                      input: External input
+   errormode  string   -on |br|       Detector forced on/off while detector error
+                       -off
+   manual     boolean  -True |br|     Manually controlled detector logic (True/False)
+                       -False
+   =========  =======  =============  ===============================================
 ..
 
 A0302
@@ -280,15 +289,22 @@ Detector error (logic error) |br|  |br| For instance; detector continuously on o
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
-   ==========  =======  ==============================================  =====================================================================================================================================================================================================
-   Name        Type     Value                                           Comment
-   ==========  =======  ==============================================  =====================================================================================================================================================================================================
-   detector    string   [designation]                                   Designation of the detector (hardware)
-   type        string   -loop |br| -input                               Type of detector. |br| loop: Inductive detector loop |br| input: External input
-   errormode   string   -on |br| -off                                   Detector forced on/off while detector error
-   manual      boolean  -True |br| -False                               Manually controlled detector logic (True/False)
-   logicerror  string   -always_off |br| -always_on |br| -intermittent  Type of logic error |br| always_off: no detection during predefined max time |br| always_on: detection constantly on during predefined max time |br| intermittent: intermittent logic fault (flutter)
-   ==========  =======  ==============================================  =====================================================================================================================================================================================================
+   ==========  =======  ================  ==================================================================
+   Name        Type     Value             Comment
+   ==========  =======  ================  ==================================================================
+   detector    string   [designation]     Designation of the detector (hardware)
+   type        string   -loop |br|        Type of detector. |br|
+                        -input            loop: Inductive detector loop |br|
+                                          input: External input
+   errormode   string   -on |br|          Detector forced on/off while detector error
+                        -off
+   manual      boolean  -True |br|        Manually controlled detector logic (True/False)
+                        -False
+   logicerror  string   -always_off |br|  Type of logic error |br|
+                        -always_on |br|   always_off: no detection during predefined max time |br|
+                        -intermittent     always_on: detection constantly on during predefined max time |br|
+                                          intermittent: intermittent logic fault (flutter)
+   ==========  =======  ================  ==================================================================
 ..
 
 A0303
@@ -304,14 +320,18 @@ Serious detector error (hardware) |br|  |br| Is a "major fault" defined accordin
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
-   =========  =======  =================  ==============================================================================
-   Name       Type     Value              Comment
-   =========  =======  =================  ==============================================================================
-   detector   string   [designation]      Designation of the detector (hardware)
-   type       string   -loop |br| -input  Type of detector |br| loop: Inductive detector loop |br| input: External input
-   errormode  string   -on |br| -off      Detector forced on/off while detector error
-   manual     boolean  -True |br| -False  Manually controlled detector logic (True/False)
-   =========  =======  =================  ==============================================================================
+   =========  =======  =============  ===============================================
+   Name       Type     Value          Comment
+   =========  =======  =============  ===============================================
+   detector   string   [designation]  Designation of the detector (hardware)
+   type       string   -loop |br|     Type of detector |br|
+                       -input         loop: Inductive detector loop |br|
+                                      input: External input
+   errormode  string   -on |br|       Detector forced on/off while detector error
+                       -off
+   manual     boolean  -True |br|     Manually controlled detector logic (True/False)
+                       -False
+   =========  =======  =============  ===============================================
 ..
 
 A0304
@@ -327,15 +347,22 @@ Serious detector error (logic error) |br|  |br| For instance; detector continuou
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
 
-   ==========  =======  ==============================================  =====================================================================================================================================================================================================
-   Name        Type     Value                                           Comment
-   ==========  =======  ==============================================  =====================================================================================================================================================================================================
-   detector    string   [designation]                                   Designation of the detector (hardware)
-   type        string   -loop |br| -input                               Type of detector. |br| loop: Inductive detector loop |br| input: External input
-   errormode   string   -on |br| -off                                   Detector forced on/off while detector error
-   manual      boolean  -True |br| -False                               Manually controlled detector logic (True/False)
-   logicerror  string   -always_off |br| -always_on |br| -intermittent  Type of logic error |br| always_off: no detection during predefined max time |br| always_on: detection constantly on during predefined max time |br| intermittent: intermittent logic fault (flutter)
-   ==========  =======  ==============================================  =====================================================================================================================================================================================================
+   ==========  =======  ================  ==================================================================
+   Name        Type     Value             Comment
+   ==========  =======  ================  ==================================================================
+   detector    string   [designation]     Designation of the detector (hardware)
+   type        string   -loop |br|        Type of detector. |br|
+                        -input            loop: Inductive detector loop |br|
+                                          input: External input
+   errormode   string   -on |br|          Detector forced on/off while detector error
+                        -off
+   manual      boolean  -True |br|        Manually controlled detector logic (True/False)
+                        -False
+   logicerror  string   -always_off |br|  Type of logic error |br|
+                        -always_on |br|   always_off: no detection during predefined max time |br|
+                        -intermittent     always_on: detection constantly on during predefined max time |br|
+                                          intermittent: intermittent logic fault (flutter)
+   ==========  =======  ================  ==================================================================
 ..
 
 Status
@@ -419,14 +446,29 @@ Signal group status |br|  |br| Provides the status of each signal group, includi
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =================  =======  =======  ======================================================================================================================================================================================================================================================================================
+   =================  =======  =======  =================================================================================
    Name               Type     Value    Comment
-   =================  =======  =======  ======================================================================================================================================================================================================================================================================================
-   signalgroupstatus  string   [text]   Signal group status as text field. |br|  |br| Each character represent the state of the signal group in consecutive order. |br| Signal group status is described in detail in the corresponding section |br| - = Signal group is undefined/does not exist
-   cyclecounter       integer  [0-999]  Cycle counter |br|  |br| Used for handling of coordination between TLC's. |br| Is counted from 0 until it reaches the cycle time (See S0028). |br| Cycle counter is the "base cycle counter" + "offset time" (See S0024) |br|  |br| See the coordination section for more information.
-   basecyclecounter   integer  [0-999]  Base cycle counter |br|  |br| Used for handling of coordination between TLC's. |br| Synchronized between all TLC's in an active coordination. |br|  |br| See the coordination section for more information.
+   =================  =======  =======  =================================================================================
+   signalgroupstatus  string   [text]   Signal group status as text field. |br|
+                                        |br|
+                                        Each character represent the state of the signal group in consecutive order. |br|
+                                        Signal group status is described in detail in the corresponding section |br|
+                                        - = Signal group is undefined/does not exist
+   cyclecounter       integer  [0-999]  Cycle counter |br|
+                                        |br|
+                                        Used for handling of coordination between TLC's. |br|
+                                        Is counted from 0 until it reaches the cycle time (See S0028). |br|
+                                        Cycle counter is the "base cycle counter" + "offset time" (See S0024) |br|
+                                        |br|
+                                        See the coordination section for more information.
+   basecyclecounter   integer  [0-999]  Base cycle counter |br|
+                                        |br|
+                                        Used for handling of coordination between TLC's. |br|
+                                        Synchronized between all TLC's in an active coordination. |br|
+                                        |br|
+                                        See the coordination section for more information.
    stage              integer  [0-999]  Current stage (isolated)
-   =================  =======  =======  ======================================================================================================================================================================================================================================================================================
+   =================  =======  =======  =================================================================================
 ..
 
 S0002
@@ -442,11 +484,16 @@ Detector logic status |br|  |br| Provides the status of all detector logics of t
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ===================  ======  =======  ==========================================================================================================================================================================================================================================================
+   ===================  ======  =======  ===================================================================================
    Name                 Type    Value    Comment
-   ===================  ======  =======  ==========================================================================================================================================================================================================================================================
-   detectorlogicstatus  string  [text]   Detector logic status as text field. |br|  |br| Each character represent the state of the detector logic in consecutive order. |br| 0 = Detector logic is not active |br| 1 = Detector logic is active |br| - = Detector logic is undefined/does not exist
-   ===================  ======  =======  ==========================================================================================================================================================================================================================================================
+   ===================  ======  =======  ===================================================================================
+   detectorlogicstatus  string  [text]   Detector logic status as text field. |br|
+                                         |br|
+                                         Each character represent the state of the detector logic in consecutive order. |br|
+                                         0 = Detector logic is not active |br|
+                                         1 = Detector logic is active |br|
+                                         - = Detector logic is undefined/does not exist
+   ===================  ======  =======  ===================================================================================
 ..
 
 S0003
@@ -462,12 +509,22 @@ Input status |br|  |br| Input (1-255) of the controllers general purpose I/O. |b
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ===================  ======  =======  =====================================================================================================================================================================================================================================
+   ===================  ======  =======  ==========================================================================================
    Name                 Type    Value    Comment
-   ===================  ======  =======  =====================================================================================================================================================================================================================================
-   inputstatus          string  [text]   Input status as text field |br|  |br| Each character represent the state of the input in consecutive order. |br| 0 = Input is not active |br| 1 = Input is active |br| - = Input is undefined/does not exist
-   extendedinputstatus  string  [text]   Extended input status as text field |br|  |br| Each character represent the state of the extended input status in consecutive order. |br| 0 = Input is not active |br| 1 = Input is active |br| - = Input is undefined/does not exist
-   ===================  ======  =======  =====================================================================================================================================================================================================================================
+   ===================  ======  =======  ==========================================================================================
+   inputstatus          string  [text]   Input status as text field |br|
+                                         |br|
+                                         Each character represent the state of the input in consecutive order. |br|
+                                         0 = Input is not active |br|
+                                         1 = Input is active |br|
+                                         - = Input is undefined/does not exist
+   extendedinputstatus  string  [text]   Extended input status as text field |br|
+                                         |br|
+                                         Each character represent the state of the extended input status in consecutive order. |br|
+                                         0 = Input is not active |br|
+                                         1 = Input is active |br|
+                                         - = Input is undefined/does not exist
+   ===================  ======  =======  ==========================================================================================
 ..
 
 S0004
@@ -483,12 +540,22 @@ Output status |br|  |br| Output (1-255) of the controllers general purpose I/O. 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ====================  ======  =======  ================================================================================================================================================================================================================================
+   ====================  ======  =======  ==========================================================================================
    Name                  Type    Value    Comment
-   ====================  ======  =======  ================================================================================================================================================================================================================================
-   outputstatus          string  [text]   Output status as text field |br|  |br| Each character represent the state of the output status in consecutive order. |br| 0 = Output is not active |br| 1 = Output is active |br| - = Output is undefined/does not exist
-   extendedoutputstatus  string  [text]   Output status as text field |br|  |br| Each character represent the state of the exteded output status in consecutive order. |br| 0 = Output is not active |br| 1 = Output is active |br| - = Output is undefined/does not exist
-   ====================  ======  =======  ================================================================================================================================================================================================================================
+   ====================  ======  =======  ==========================================================================================
+   outputstatus          string  [text]   Output status as text field |br|
+                                          |br|
+                                          Each character represent the state of the output status in consecutive order. |br|
+                                          0 = Output is not active |br|
+                                          1 = Output is active |br|
+                                          - = Output is undefined/does not exist
+   extendedoutputstatus  string  [text]   Output status as text field |br|
+                                          |br|
+                                          Each character represent the state of the exteded output status in consecutive order. |br|
+                                          0 = Output is not active |br|
+                                          1 = Output is active |br|
+                                          - = Output is undefined/does not exist
+   ====================  ======  =======  ==========================================================================================
 ..
 
 S0005
@@ -504,11 +571,12 @@ Traffic Light Controller starting |br|  |br| The traffic signal is starting, e.g
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  =================  =============================================================================================
-   Name    Type     Value              Comment
-   ======  =======  =================  =============================================================================================
-   status  boolean  -False |br| -True  False: Controller is not in start up mode |br| True: Controller is currently in start up mode
-   ======  =======  =================  =============================================================================================
+   ======  =======  ===========  ==============================================
+   Name    Type     Value        Comment
+   ======  =======  ===========  ==============================================
+   status  boolean  -False |br|  False: Controller is not in start up mode |br|
+                    -True        True: Controller is currently in start up mode
+   ======  =======  ===========  ==============================================
 ..
 
 S0006
@@ -524,12 +592,13 @@ Emergency stage |br|  |br| The status is active during emergency prioritization.
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ==============  =======  =================  =================================================================
-   Name            Type     Value              Comment
-   ==============  =======  =================  =================================================================
-   status          boolean  -False |br| -True  False: Emergency stage inactive |br| True: Emergency stage active
-   emergencystage  integer  [1-255]            Number of emergency stage
-   ==============  =======  =================  =================================================================
+   ==============  =======  ===========  ====================================
+   Name            Type     Value        Comment
+   ==============  =======  ===========  ====================================
+   status          boolean  -False |br|  False: Emergency stage inactive |br|
+                            -True        True: Emergency stage active
+   emergencystage  integer  [1-255]      Number of emergency stage
+   ==============  =======  ===========  ====================================
 ..
 
 S0007
@@ -545,13 +614,20 @@ Controller switched on |br|  |br| The controller is active and is not in dark mo
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name          Type     Value                                                                                            Comment
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True                                                                                False: Traffic Light Controller in dark mode |br| True: Traffic Light Controller not in dark mode
-   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   ============  =======  ====================  =======================================================================
+   Name          Type     Value                 Comment
+   ============  =======  ====================  =======================================================================
+   intersection  integer  [0-255]               Comma separated list of intersections which the status relates to, |br|
+                                                e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br|           False: Traffic Light Controller in dark mode |br|
+                          -True                 True: Traffic Light Controller not in dark mode
+   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
+                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
+                          -control_block |br|   control_block: Control block is the source |br|
+                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
+                          -startup |br|         startup: Set after startup mode |br|
+                          -other                other: TLC switched status due other reason
+   ============  =======  ====================  =======================================================================
 ..
 
 S0008
@@ -567,13 +643,20 @@ Manual control |br|  |br| Traffic control deactivated in controller |br|  |br| S
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name          Type     Value                                                                                            Comment
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True                                                                                False: Manual control inactive |br| True: Manual control active
-   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   ============  =======  ====================  =======================================================================
+   Name          Type     Value                 Comment
+   ============  =======  ====================  =======================================================================
+   intersection  integer  [0-255]               Comma separated list of intersections which the status relates to, |br|
+                                                e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br|           False: Manual control inactive |br|
+                          -True                 True: Manual control active
+   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
+                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
+                          -control_block |br|   control_block: Control block is the source |br|
+                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
+                          -startup |br|         startup: Set after startup mode |br|
+                          -other                other: TLC switched status due other reason
+   ============  =======  ====================  =======================================================================
 ..
 
 S0009
@@ -589,13 +672,20 @@ Fixed time control |br|  |br| Traffic actuated control deactivated and a pre-tim
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name          Type     Value                                                                                            Comment
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True                                                                                False:  Fixed time control inactive |br| True:  Fixed time control active
-   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   ============  =======  ====================  =======================================================================
+   Name          Type     Value                 Comment
+   ============  =======  ====================  =======================================================================
+   intersection  integer  [0-255]               Comma separated list of intersections which the status relates to, |br|
+                                                e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br|           False:  Fixed time control inactive |br|
+                          -True                 True:  Fixed time control active
+   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
+                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
+                          -control_block |br|   control_block: Control block is the source |br|
+                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
+                          -startup |br|         startup: Set after startup mode |br|
+                          -other                other: TLC switched status due other reason
+   ============  =======  ====================  =======================================================================
 ..
 
 S0010
@@ -611,13 +701,20 @@ Isolated control |br|  |br| Isolated control mode indicates that the controller 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name          Type     Value                                                                                            Comment
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True                                                                                False: Isolated control disabled |br| True: Isolated control enabled (Vehicle actuated control or Fixed time control)
-   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   ============  =======  ====================  ===============================================================================
+   Name          Type     Value                 Comment
+   ============  =======  ====================  ===============================================================================
+   intersection  integer  [0-255]               Comma separated list of intersections which the status relates to, |br|
+                                                e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br|           False: Isolated control disabled |br|
+                          -True                 True: Isolated control enabled (Vehicle actuated control or Fixed time control)
+   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
+                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
+                          -control_block |br|   control_block: Control block is the source |br|
+                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
+                          -startup |br|         startup: Set after startup mode |br|
+                          -other                other: TLC switched status due other reason
+   ============  =======  ====================  ===============================================================================
 ..
 
 S0011
@@ -633,13 +730,20 @@ Yellow flash |br|  |br| The controller shows yellow flash. |br|  |br| Yellow fla
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name          Type     Value                                                                                            Comment
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True                                                                                False: Yellow flash disabled |br| True: Yellow flash enabled
-   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   ============  =======  ====================  =======================================================================
+   Name          Type     Value                 Comment
+   ============  =======  ====================  =======================================================================
+   intersection  integer  [0-255]               Comma separated list of intersections which the status relates to, |br|
+                                                e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br|           False: Yellow flash disabled |br|
+                          -True                 True: Yellow flash enabled
+   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
+                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
+                          -control_block |br|   control_block: Control block is the source |br|
+                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
+                          -startup |br|         startup: Set after startup mode |br|
+                          -other                other: TLC switched status due other reason
+   ============  =======  ====================  =======================================================================
 ..
 
 S0012
@@ -655,13 +759,20 @@ All red |br|  |br| The controller show all red |br|  |br| All red can be manuall
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name          Type     Value                                                                                            Comment
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean  -False |br| -True                                                                                False: All red disabled |br| True: All red enabled
-   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   ============  =======  ====================  =======================================================================
+   Name          Type     Value                 Comment
+   ============  =======  ====================  =======================================================================
+   intersection  integer  [0-255]               Comma separated list of intersections which the status relates to, |br|
+                                                e.g. "1,2". Use "0" for all intersections of the TLC
+   status        boolean  -False |br|           False: All red disabled |br|
+                          -True                 True: All red enabled
+   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
+                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
+                          -control_block |br|   control_block: Control block is the source |br|
+                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
+                          -startup |br|         startup: Set after startup mode |br|
+                          -other                other: TLC switched status due other reason
+   ============  =======  ====================  =======================================================================
 ..
 
 S0013
@@ -677,12 +788,16 @@ Police key |br|  |br| The controller is forced to dark mode or yellow flash. |br
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ==========================  ============================================================================================================================
-   Name          Type     Value                       Comment
-   ============  =======  ==========================  ============================================================================================================================
-   intersection  integer  [0-255]                     Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        integer  -0 |br| -1 |br| -2 |br| -3  0: disabled |br| 1: dark mode |br| 2: yellow flash |br| 3: all red
-   ============  =======  ==========================  ============================================================================================================================
+   ============  =======  =======  =======================================================================
+   Name          Type     Value    Comment
+   ============  =======  =======  =======================================================================
+   intersection  integer  [0-255]  Comma separated list of intersections which the status relates to, |br|
+                                   e.g. "1,2". Use "0" for all intersections of the TLC
+   status        integer  -0 |br|  0: disabled |br|
+                          -1 |br|  1: dark mode |br|
+                          -2 |br|  2: yellow flash |br|
+                          -3       3: all red
+   ============  =======  =======  =======================================================================
 ..
 
 S0014
@@ -698,12 +813,17 @@ Current time plan |br|  |br| The current time plan (signal program) used in the 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name    Type     Value                                                                                            Comment
-   ======  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   status  integer  [1-255]                                                                                          Current time plan
-   source  string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ======  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   ======  =======  ====================  =================================================
+   Name    Type     Value                 Comment
+   ======  =======  ====================  =================================================
+   status  integer  [1-255]               Current time plan
+   source  string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
+                    -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
+                    -control_block |br|   control_block: Control block is the source |br|
+                    -forced |br|          forced: Forced due to command from e.g. RSMP |br|
+                    -startup |br|         startup: Set after startup mode |br|
+                    -other                other: TLC switched status due other reason
+   ======  =======  ====================  =================================================
 ..
 
 S0015
@@ -719,12 +839,17 @@ Current traffic situation |br|  |br| The current traffic situation used in the c
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name    Type     Value                                                                                            Comment
-   ======  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   status  integer  [1-255]                                                                                          Current traffic situation
-   source  string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ======  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   ======  =======  ====================  =================================================
+   Name    Type     Value                 Comment
+   ======  =======  ====================  =================================================
+   status  integer  [1-255]               Current traffic situation
+   source  string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
+                    -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
+                    -control_block |br|   control_block: Control block is the source |br|
+                    -forced |br|          forced: Forced due to command from e.g. RSMP |br|
+                    -startup |br|         startup: Set after startup mode |br|
+                    -other                other: TLC switched status due other reason
+   ======  =======  ====================  =================================================
 ..
 
 S0016
@@ -820,12 +945,17 @@ Control mode |br|  |br| Can be used for the management system to check the curre
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  =============================================================  =============================================================================================================================
-   Name          Type     Value                                                          Comment
-   ============  =======  =============================================================  =============================================================================================================================
-   intersection  integer  [0-255]                                                        Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   controlmode   string   -startup |br| -control |br| -standby |br| -failure |br| -test  startup: Startup mode |br| control: Normal control |br| standby: Standby mode |br| failure: Failure mode |br| test: Test mode
-   ============  =======  =============================================================  =============================================================================================================================
+   ============  =======  =============  =======================================================================
+   Name          Type     Value          Comment
+   ============  =======  =============  =======================================================================
+   intersection  integer  [0-255]        Comma separated list of intersections which the status relates to, |br|
+                                         e.g. "1,2". Use "0" for all intersections of the TLC
+   controlmode   string   -startup |br|  startup: Startup mode |br|
+                          -control |br|  control: Normal control |br|
+                          -standby |br|  standby: Standby mode |br|
+                          -failure |br|  failure: Failure mode |br|
+                          -test          test: Test mode
+   ============  =======  =============  =======================================================================
 ..
 
 S0021
@@ -881,11 +1011,20 @@ Dynamic bands |br|  |br| Provides a list of all defined dynamic bands. Dynamic b
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =======  =======================================================================================================================================================================================================================================================================
+   ======  ======  =======  =====================================================
    Name    Type    Value    Comment
-   ======  ======  =======  =======================================================================================================================================================================================================================================================================
-   status  string  [text]   Dynamic bands. |br| Each dynamic band are written as pp-dd-ee where: |br| pp=Time plan |br| dd=Dynamic band number (from 1-10) |br| ee=Extension in seconds in this band |br|  |br| Each dynamic band is separated with a comma. |br|  |br| E.g. |br| pp-dd-ee,pp-dd-ee
-   ======  ======  =======  =======================================================================================================================================================================================================================================================================
+   ======  ======  =======  =====================================================
+   status  string  [text]   Dynamic bands. |br|
+                            Each dynamic band are written as pp-dd-ee where: |br|
+                            pp=Time plan |br|
+                            dd=Dynamic band number (from 1-10) |br|
+                            ee=Extension in seconds in this band |br|
+                            |br|
+                            Each dynamic band is separated with a comma. |br|
+                            |br|
+                            E.g. |br|
+                            pp-dd-ee,pp-dd-ee
+   ======  ======  =======  =====================================================
 ..
 
 S0024
@@ -901,11 +1040,19 @@ Offset time |br|  |br| Offset time is used to define an offset between intersect
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =======  =====================================================================================================================================================================================================
+   ======  ======  =======  ================================================
    Name    Type    Value    Comment
-   ======  ======  =======  =====================================================================================================================================================================================================
-   status  string  [text]   Offset table |br| Each offset time is written as pp-tt where: |br| pp=time plan |br| tt=offset time in seconds |br|  |br| Each offset time is separated with a comma |br|  |br| E.g. |br| pp-tt,pp-tt
-   ======  ======  =======  =====================================================================================================================================================================================================
+   ======  ======  =======  ================================================
+   status  string  [text]   Offset table |br|
+                            Each offset time is written as pp-tt where: |br|
+                            pp=time plan |br|
+                            tt=offset time in seconds |br|
+                            |br|
+                            Each offset time is separated with a comma |br|
+                            |br|
+                            E.g. |br|
+                            pp-tt,pp-tt
+   ======  ======  =======  ================================================
 ..
 
 S0025
@@ -921,18 +1068,24 @@ Time-of-Green / Time-of-Red |br|  |br| Provides predicted signal timings of gree
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =================  =======  ============  ============================================================================================================================================================================================================================================================================================
+   =================  =======  ============  ==========================================================================================================================================================
    Name               Type     Value         Comment
-   =================  =======  ============  ============================================================================================================================================================================================================================================================================================
-   minToGEstimate     string   [time stamp]  Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |br| Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToGEstimate     string   [time stamp]  Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green. |br| Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToGEstimate  string   [time stamp]  Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green. |br| Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =================  =======  ============  ==========================================================================================================================================================
+   minToGEstimate     string   [time stamp]  Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |br|
+                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   maxToGEstimate     string   [time stamp]  Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green. |br|
+                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   likelyToGEstimate  string   [time stamp]  Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green. |br|
+                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    ToGConfidence      integer  [0-100]       Confidence of the likelyToGEstimate. 0-100%
-   minToREstimate     string   [time stamp]  Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |br| Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToREstimate     string   [time stamp]  Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |br| Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToREstimate  string   [time stamp]  Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red. |br| Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   minToREstimate     string   [time stamp]  Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |br|
+                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   maxToREstimate     string   [time stamp]  Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |br|
+                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   likelyToREstimate  string   [time stamp]  Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red. |br|
+                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    ToRConfidence      integer  [0-100]       Confidence of the likelyToREstimate. 0-100%
-   =================  =======  ============  ============================================================================================================================================================================================================================================================================================
+   =================  =======  ============  ==========================================================================================================================================================
 ..
 
 S0026
@@ -948,11 +1101,27 @@ Week time table |br|  |br| Week time table for signal programs (time plan) to us
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================
+   ======  ======  =======  =================================================================
    Name    Type    Value    Comment
-   ======  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================
-   status  string  [text]   Week time table. Defines time table to use for each week day |br| Each day is written as d-t where: |br| d=day of week |br| t=time table nr |br|  |br| Day of week legend: |br| 0=Monday |br| 1=Tuesday |br| 2=Wednesday |br| 3=Thursday |br| 4=Friday |br| 5=Saturday |br| 6=Sunday |br|  |br| Each segment is separated with a comma |br| E.g. |br| d-t,d-t
-   ======  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================
+   ======  ======  =======  =================================================================
+   status  string  [text]   Week time table. Defines time table to use for each week day |br|
+                            Each day is written as d-t where: |br|
+                            d=day of week |br|
+                            t=time table nr |br|
+                            |br|
+                            Day of week legend: |br|
+                            0=Monday |br|
+                            1=Tuesday |br|
+                            2=Wednesday |br|
+                            3=Thursday |br|
+                            4=Friday |br|
+                            5=Saturday |br|
+                            6=Sunday |br|
+                            |br|
+                            Each segment is separated with a comma |br|
+                            E.g. |br|
+                            d-t,d-t
+   ======  ======  =======  =================================================================
 ..
 
 S0027
@@ -968,11 +1137,29 @@ Time tables |br|  |br| Time of day for when to switch signal program (time plan)
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =======  ============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   ======  ======  =======  ======================================================
    Name    Type    Value    Comment
-   ======  ======  =======  ============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
-   status  string  [text]   Time Table. Defines time tables. |br| Each time definition is written as t-o-h-m where: |br| t=time table nr (1-12) |br| o=function |br| h=hour - switching time |br| m=minute - switching minute |br|  |br| Function legend: |br| 0=no plan is selected by time table |br| 1=set plan 1 |br| … |br| 16= set plan 16 |br|  |br| hour and minute is using local time (not UTC) |br|  |br| Each time definition is separated with a comma |br|  |br| E.g. |br| t-o-h-m,t-o-h-m
-   ======  ======  =======  ============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   ======  ======  =======  ======================================================
+   status  string  [text]   Time Table. Defines time tables. |br|
+                            Each time definition is written as t-o-h-m where: |br|
+                            t=time table nr (1-12) |br|
+                            o=function |br|
+                            h=hour - switching time |br|
+                            m=minute - switching minute |br|
+                            |br|
+                            Function legend: |br|
+                            0=no plan is selected by time table |br|
+                            1=set plan 1 |br|
+                            … |br|
+                            16= set plan 16 |br|
+                            |br|
+                            hour and minute is using local time (not UTC) |br|
+                            |br|
+                            Each time definition is separated with a comma |br|
+                            |br|
+                            E.g. |br|
+                            t-o-h-m,t-o-h-m
+   ======  ======  =======  ======================================================
 ..
 
 S0028
@@ -988,11 +1175,20 @@ Cycle time |br|  |br| Cycle time (or cycle length) is the sum of all phases in a
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =======  ============================================================================================================================================================================================================
+   ======  ======  =======  ===============================================
    Name    Type    Value    Comment
-   ======  ======  =======  ============================================================================================================================================================================================================
-   status  string  [text]   Cycle time table |br| Each cycle time is written as pp-tt where: |br| pp=time plan |br| tt=cycle time in seconds |br|  |br| Each cycle time is separated with a comma |br|  |br|  |br| E.g. |br| pp-tt,pp-tt
-   ======  ======  =======  ============================================================================================================================================================================================================
+   ======  ======  =======  ===============================================
+   status  string  [text]   Cycle time table |br|
+                            Each cycle time is written as pp-tt where: |br|
+                            pp=time plan |br|
+                            tt=cycle time in seconds |br|
+                            |br|
+                            Each cycle time is separated with a comma |br|
+                            |br|
+                            |br|
+                            E.g. |br|
+                            pp-tt,pp-tt
+   ======  ======  =======  ===============================================
 ..
 
 S0029
@@ -1048,11 +1244,14 @@ Trigger level sensitivity for loop detector |br|  |br| The trigger level sensiti
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =======  =============================================================================================================================================================================================
+   ======  ======  =======  =======================================================================
    Name    Type    Value    Comment
-   ======  ======  =======  =============================================================================================================================================================================================
-   status  string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br| dd=loop detector number |br| ss=sensitivity value |br| Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
-   ======  ======  =======  =============================================================================================================================================================================================
+   ======  ======  =======  =======================================================================
+   status  string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br|
+                            dd=loop detector number |br|
+                            ss=sensitivity value |br|
+                            Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
+   ======  ======  =======  =======================================================================
 ..
 
 S0032
@@ -1068,13 +1267,21 @@ Coordinated control |br|  |br| This status is used when coordination between tra
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   Name          Type     Value                                                                                            Comment
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
-   intersection  integer  [0-255]                                                                                          Comma separated list of intersections which the status relates to, |br| e.g. "1,2". Use "0" for all intersections of the TLC
-   status        string   -local |br| -centralized |br| -False                                                             local: Local coordination |br| centralized: Coordination with synchronized clock |br| False: Coordination not active
-   source        string   -operator_panel |br| -calendar_clock |br| -control_block |br| -forced |br| -startup |br| -other  operator_panel: Operator panel is the source |br| calendar_clock: Calendar/clock is the source |br| control_block: Control block is the source |br| forced: Forced due to command from e.g. RSMP |br| startup: Set after startup mode |br| other: TLC switched status due other reason
-   ============  =======  ===============================================================================================  ======================================================================================================================================================================================================================================================================================
+   ============  =======  ====================  =======================================================================
+   Name          Type     Value                 Comment
+   ============  =======  ====================  =======================================================================
+   intersection  integer  [0-255]               Comma separated list of intersections which the status relates to, |br|
+                                                e.g. "1,2". Use "0" for all intersections of the TLC
+   status        string   -local |br|           local: Local coordination |br|
+                          -centralized |br|     centralized: Coordination with synchronized clock |br|
+                          -False                False: Coordination not active
+   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
+                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
+                          -control_block |br|   control_block: Control block is the source |br|
+                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
+                          -startup |br|         startup: Set after startup mode |br|
+                          -other                other: TLC switched status due other reason
+   ============  =======  ====================  =======================================================================
 ..
 
 S0033
@@ -1090,15 +1297,19 @@ Signal Priority Status |br|  |br| The status can only describe the status of a s
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ==========  =======  =======================================================================  ==============================================================================
-   Name        Type     Value                                                                    Comment
-   ==========  =======  =======================================================================  ==============================================================================
-   requestId   string   [id]                                                                     Id of the request.
-   status      string   -queued |br| -activated |br| -rejected |br| -cancelled |br| -overridden  Current status of the request.
-   reason      string   [text]                                                                   Reason in case the priority was not given, otherwise empty.
-   overrideId  string   [id]                                                                     Id of the overriding request if overridden, otherwise empty.
-   gained      integer  [0-255]                                                                  Seconds of extra green time gained by the priority, or 0 if no priority given.
-   ==========  =======  =======================================================================  ==============================================================================
+   ==========  =======  ===============  ==============================================================================
+   Name        Type     Value            Comment
+   ==========  =======  ===============  ==============================================================================
+   requestId   string   [id]             Id of the request.
+   status      string   -queued |br|     Current status of the request.
+                        -activated |br|
+                        -rejected |br|
+                        -cancelled |br|
+                        -overridden
+   reason      string   [text]           Reason in case the priority was not given, otherwise empty.
+   overrideId  string   [id]             Id of the overriding request if overridden, otherwise empty.
+   gained      integer  [0-255]          Seconds of extra green time gained by the priority, or 0 if no priority given.
+   ==========  =======  ===============  ==============================================================================
 ..
 
 S0091
@@ -1114,11 +1325,13 @@ Operator logged in/out OP-panel |br|  |br| Provides information if maintenance p
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ==================  ========================================================================================================================
-   Name    Type     Value               Comment
-   ======  =======  ==================  ========================================================================================================================
-   user    integer  -0 |br| -1 |br| -2  0: Nobody logged in |br| 1: Operator logged in at level 1 (read only) |br| 2: Operator logged in at level 2 (read/write)
-   ======  =======  ==================  ========================================================================================================================
+   ======  =======  =======  =================================================
+   Name    Type     Value    Comment
+   ======  =======  =======  =================================================
+   user    integer  -0 |br|  0: Nobody logged in |br|
+                    -1 |br|  1: Operator logged in at level 1 (read only) |br|
+                    -2       2: Operator logged in at level 2 (read/write)
+   ======  =======  =======  =================================================
 ..
 
 S0092
@@ -1134,11 +1347,13 @@ Operator logged in/out web-interface |br|  |br| Provides information if maintena
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ==================  ========================================================================================================================
-   Name    Type     Value               Comment
-   ======  =======  ==================  ========================================================================================================================
-   user    integer  -0 |br| -1 |br| -2  0: Nobody logged in |br| 1: Operator logged in at level 1 (read only) |br| 2: Operator logged in at level 2 (read/write)
-   ======  =======  ==================  ========================================================================================================================
+   ======  =======  =======  =================================================
+   Name    Type     Value    Comment
+   ======  =======  =======  =================================================
+   user    integer  -0 |br|  0: Nobody logged in |br|
+                    -1 |br|  1: Operator logged in at level 1 (read only) |br|
+                    -2       2: Operator logged in at level 2 (read/write)
+   ======  =======  =======  =================================================
 ..
 
 S0095
@@ -1199,12 +1414,29 @@ Checksum of traffic parameters |br|  |br| Can be used to check if any traffic pa
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =========  ======  ============  ================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   =========  ======  ============  =============================================================================================================================================================
    Name       Type    Value         Comment
-   =========  ======  ============  ================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
-   checksum   string  [text]        Checksum of the traffic parameters |br| Uses SHA-2 as hashing algorithm |br| Includes |br| - all signal programs, including program versions |br| - signal group settings |br| - time plans |br| - safety matrix |br| - intergreen times |br| - detector settings |br|  |br| It should NOT include: |br| - network settings |br| - log files |br| - software |br| - other device settings that are not part of the signal program |br|  |br| Note: |br| - The checksum should be calculated using the same data as used in S0098
+   =========  ======  ============  =============================================================================================================================================================
+   checksum   string  [text]        Checksum of the traffic parameters |br|
+                                    Uses SHA-2 as hashing algorithm |br|
+                                    Includes |br|
+                                    - all signal programs, including program versions |br|
+                                    - signal group settings |br|
+                                    - time plans |br|
+                                    - safety matrix |br|
+                                    - intergreen times |br|
+                                    - detector settings |br|
+                                    |br|
+                                    It should NOT include: |br|
+                                    - network settings |br|
+                                    - log files |br|
+                                    - software |br|
+                                    - other device settings that are not part of the signal program |br|
+                                    |br|
+                                    Note: |br|
+                                    - The checksum should be calculated using the same data as used in S0098
    timestamp  string  [time stamp]  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   =========  ======  ============  ================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   =========  ======  ============  =============================================================================================================================================================
 ..
 
 S0098
@@ -1220,13 +1452,30 @@ Configuration of traffic parameters |br|  |br| Can be used to download all traff
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =========  ======  ============  =================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   =========  ======  ============  ==========================================================================================================================================================================
    Name       Type    Value         Comment
-   =========  ======  ============  =================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
-   config     base64  [binary]      Traffic parameters |br| Includes |br| - all signal programs, including program versions |br| - signal group settings |br| - time plans |br| - safety matrix |br| - intergreen times |br| - detector setting |br|  |br| It should NOT include: |br| - network settings |br| - log files |br| - software |br| - other device settings that are not part of the signal program |br|  |br| Note: |br| - There is no way to upload this binary file to the TLC using RSMP |br| - The format of the binary file is not specified and is not expected to be compatible between suppliers
+   =========  ======  ============  ==========================================================================================================================================================================
+   config     base64  [binary]      Traffic parameters |br|
+                                    Includes |br|
+                                    - all signal programs, including program versions |br|
+                                    - signal group settings |br|
+                                    - time plans |br|
+                                    - safety matrix |br|
+                                    - intergreen times |br|
+                                    - detector setting |br|
+                                    |br|
+                                    It should NOT include: |br|
+                                    - network settings |br|
+                                    - log files |br|
+                                    - software |br|
+                                    - other device settings that are not part of the signal program |br|
+                                    |br|
+                                    Note: |br|
+                                    - There is no way to upload this binary file to the TLC using RSMP |br|
+                                    - The format of the binary file is not specified and is not expected to be compatible between suppliers
    timestamp  string  [time stamp]  Time stamp of the config. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    version    string  [text]        Version information of the configuration. Contains basic information such as controller id, changes to config and other information. The format is not specified in detail
-   =========  ======  ============  =================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   =========  ======  ============  ==========================================================================================================================================================================
 ..
 
 S0201
@@ -1334,12 +1583,15 @@ Traffic Counting: Number of vehicles |br|  |br| This status was introduced to im
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ========  ======  =============  =================================================================================================================================================================================================================================================================
+   ========  ======  =============  ====================================================================================================================================================================
    Name      Type    Value          Comment
-   ========  ======  =============  =================================================================================================================================================================================================================================================================
+   ========  ======  =============  ====================================================================================================================================================================
    start     string  [time stamp]   Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   vehicles  string  [0-65535,...]  Number of vehicles |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ========  ======  =============  =================================================================================================================================================================================================================================================================
+   vehicles  string  [0-65535,...]  Number of vehicles |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ========  ======  =============  ====================================================================================================================================================================
 ..
 
 S0206
@@ -1355,12 +1607,15 @@ Traffic Counting: Vehicle speed |br|  |br| This status was introduced to improve
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =============  ==============================================================================================================================================================================================================================================================================
+   ======  ======  =============  ====================================================================================================================================================================
    Name    Type    Value          Comment
-   ======  ======  =============  ==============================================================================================================================================================================================================================================================================
+   ======  ======  =============  ====================================================================================================================================================================
    start   string  [time stamp]   Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   speed   string  [0-65535,...]  Average speed in km/h (integer) |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  ======  =============  ==============================================================================================================================================================================================================================================================================
+   speed   string  [0-65535,...]  Average speed in km/h (integer) |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ======  ======  =============  ====================================================================================================================================================================
 ..
 
 S0207
@@ -1376,12 +1631,15 @@ Traffic Counting: Occupancy |br|  |br| This status was introduced to improve per
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =========  ======  ============  =============================================================================================================================================================================================================================================================================
+   =========  ======  ============  ====================================================================================================================================================================
    Name       Type    Value         Comment
-   =========  ======  ============  =============================================================================================================================================================================================================================================================================
+   =========  ======  ============  ====================================================================================================================================================================
    start      string  [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   occupancy  string  [0-100,...]   Occupancy in percent (%) (0-100) |br| - Value expressed as an integer with a range of 0-100. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   =========  ======  ============  =============================================================================================================================================================================================================================================================================
+   occupancy  string  [0-100,...]   Occupancy in percent (%) (0-100) |br|
+                                    - Value expressed as an integer with a range of 0-100. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   =========  ======  ============  ====================================================================================================================================================================
 ..
 
 S0208
@@ -1397,20 +1655,47 @@ Traffic Counting: Number of vehicles of given classification |br|  |br| This sta
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  ======  =============  =============================================================================================================================================================================================================================================================================
+   ======  ======  =============  ====================================================================================================================================================================
    Name    Type    Value          Comment
-   ======  ======  =============  =============================================================================================================================================================================================================================================================================
+   ======  ======  =============  ====================================================================================================================================================================
    start   string  [time stamp]   Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   P       string  [0-65535,...]  Number of cars |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   PS      string  [0-65535,...]  Number of cars with trailers |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   L       string  [0-65535,...]  Number of trucks |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   LS      string  [0-65535,...]  Number of trucks with trailers |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   B       string  [0-65535,...]  Number of busses |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   SP      string  [0-65535,...]  Number of trams |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   MC      string  [0-65535,...]  Number of motor cycles |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   C       string  [0-65535,...]  Number of bicycles |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   F       string  [0-65535,...]  Number of pedestrians |br| - Value expressed as an integer with a range of 0-65535. |br| - Contains data from all detector logics. Each detector logic is separated with a comma. |br| - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  ======  =============  =============================================================================================================================================================================================================================================================================
+   P       string  [0-65535,...]  Number of cars |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   PS      string  [0-65535,...]  Number of cars with trailers |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   L       string  [0-65535,...]  Number of trucks |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   LS      string  [0-65535,...]  Number of trucks with trailers |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   B       string  [0-65535,...]  Number of busses |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   SP      string  [0-65535,...]  Number of trams |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   MC      string  [0-65535,...]  Number of motor cycles |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   C       string  [0-65535,...]  Number of bicycles |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   F       string  [0-65535,...]  Number of pedestrians |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ======  ======  =============  ====================================================================================================================================================================
 ..
 
 Commands
@@ -1465,14 +1750,17 @@ Sets functional position |br|  |br| Sets the controller to yellow flash, dark mo
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  =======  ===========================================  ==================================================================================================================
-   Name          Command    Type     Value                                        Comment
-   ============  =========  =======  ===========================================  ==================================================================================================================
-   status        setValue   string   -NormalControl |br| -YellowFlash |br| -Dark  NormalControl: Normal Control |br| YellowFlash: Enables yellow flash |br| Dark: Enables dark mode
-   securityCode  setValue   string   [text]                                       Security code 2
-   timeout       setValue   integer  [0-1440]                                     Time in minutes until controller automatically reverts to previous functional position. |br| 0=no automatic return
-   intersection  setValue   integer  [0-255]                                      Intersection number
-   ============  =========  =======  ===========================================  ==================================================================================================================
+   ============  =========  =======  ===================  ============================================================================================
+   Name          Command    Type     Value                Comment
+   ============  =========  =======  ===================  ============================================================================================
+   status        setValue   string   -NormalControl |br|  NormalControl: Normal Control|br|
+                                     -YellowFlash |br|    YellowFlash: Enables yellow flash|br|
+                                     -Dark                Dark: Enables dark mode
+   securityCode  setValue   string   [text]               Security code 2
+   timeout       setValue   integer  [0-1440]             Time in minutes until controller automatically reverts to previous functional position. |br|
+                                                          0=no automatic return
+   intersection  setValue   integer  [0-255]              Intersection number
+   ============  =========  =======  ===================  ============================================================================================
 ..
 
 M0002
@@ -1488,13 +1776,14 @@ Sets current time plan |br|  |br| Change of traffic program of the traffic light
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  =======  =================  ===================================================================================================================
-   Name          Command    Type     Value              Comment
-   ============  =========  =======  =================  ===================================================================================================================
-   status        setPlan    boolean  -False |br| -True  False: Controller uses time plan according to programming |br| True: Controller uses time plan according to command
-   securityCode  setPlan    string   [text]             Security code 2
-   timeplan      setPlan    integer  [1-255]            designation of time plan
-   ============  =========  =======  =================  ===================================================================================================================
+   ============  =========  =======  ===========  ==============================================================
+   Name          Command    Type     Value        Comment
+   ============  =========  =======  ===========  ==============================================================
+   status        setPlan    boolean  -False |br|  False: Controller uses time plan according to programming |br|
+                                     -True        True: Controller uses time plan according to command
+   securityCode  setPlan    string   [text]       Security code 2
+   timeplan      setPlan    integer  [1-255]      designation of time plan
+   ============  =========  =======  ===========  ==============================================================
 ..
 
 M0003
@@ -1510,13 +1799,14 @@ Sets traffic situation the controller uses. |br|  |br| Used for area-based contr
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ===============  ===================  =======  =================  =======================================================================================================================================
-   Name             Command              Type     Value              Comment
-   ===============  ===================  =======  =================  =======================================================================================================================================
-   status           setTrafficSituation  boolean  -False |br| -True  False: Controller uses traffic situation according to own programming |br| True: Controller uses traffic situation according to command
-   securityCode     setTrafficSituation  string   [text]             Security code 2
-   traficsituation  setTrafficSituation  integer  [1-255]            designation of traficsituation
-   ===============  ===================  =======  =================  =======================================================================================================================================
+   ===============  ===================  =======  ===========  ==========================================================================
+   Name             Command              Type     Value        Comment
+   ===============  ===================  =======  ===========  ==========================================================================
+   status           setTrafficSituation  boolean  -False |br|  False: Controller uses traffic situation according to own programming |br|
+                                                  -True        True: Controller uses traffic situation according to command
+   securityCode     setTrafficSituation  string   [text]       Security code 2
+   traficsituation  setTrafficSituation  integer  [1-255]      designation of traficsituation
+   ===============  ===================  =======  ===========  ==========================================================================
 ..
 
 M0004
@@ -1532,12 +1822,13 @@ Restarts Traffic Light Controller |br|  |br| Used in the event of serious faults
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  ==========  =======  =================  ========================
-   Name          Command     Type     Value              Comment
-   ============  ==========  =======  =================  ========================
-   status        setRestart  boolean  -False |br| -True  True: Restart controller
-   securityCode  setRestart  string   [text]             Security code 2
-   ============  ==========  =======  =================  ========================
+   ============  ==========  =======  ===========  ========================
+   Name          Command     Type     Value        Comment
+   ============  ==========  =======  ===========  ========================
+   status        setRestart  boolean  -False |br|  True: Restart controller
+                                      -True
+   securityCode  setRestart  string   [text]       Security code 2
+   ============  ==========  =======  ===========  ========================
 ..
 
 M0005
@@ -1553,13 +1844,14 @@ Activate emergency route |br|  |br| The function is made for emergency prioritiz
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ==============  ============  =======  =================  =====================================================================
-   Name            Command       Type     Value              Comment
-   ==============  ============  =======  =================  =====================================================================
-   status          setEmergency  boolean  -False |br| -True  False: Activate emergency route |br| True: Deactivate emergency route
-   securityCode    setEmergency  string   [text]             Security code 2
-   emergencyroute  setEmergency  integer  [1-255]            Number of emergency route
-   ==============  ============  =======  =================  =====================================================================
+   ==============  ============  =======  ===========  ====================================
+   Name            Command       Type     Value        Comment
+   ==============  ============  =======  ===========  ====================================
+   status          setEmergency  boolean  -False |br|  False: Activate emergency route |br|
+                                          -True        True: Deactivate emergency route
+   securityCode    setEmergency  string   [text]       Security code 2
+   emergencyroute  setEmergency  integer  [1-255]      Number of emergency route
+   ==============  ============  =======  ===========  ====================================
 ..
 
 M0006
@@ -1575,13 +1867,14 @@ Activate input |br|  |br| Set given input (1-255) of the controllers general pur
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  =======  =================  =================================================
-   Name          Command    Type     Value              Comment
-   ============  =========  =======  =================  =================================================
-   status        setInput   boolean  -False |br| -True  False: Deactivate input |br| True: Activate input
-   securityCode  setInput   string   [text]             Security code 2
-   input         setInput   integer  [1-255]            Number of Input
-   ============  =========  =======  =================  =================================================
+   ============  =========  =======  ===========  ============================
+   Name          Command    Type     Value        Comment
+   ============  =========  =======  ===========  ============================
+   status        setInput   boolean  -False |br|  False: Deactivate input |br|
+                                     -True        True: Activate input
+   securityCode  setInput   string   [text]       Security code 2
+   input         setInput   integer  [1-255]      Number of Input
+   ============  =========  =======  ===========  ============================
 ..
 
 M0007
@@ -1597,12 +1890,13 @@ Activate fixed time control |br|  |br| Deactivates the traffic actuated control 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  ============  =======  =================  ===========================================================================
-   Name          Command       Type     Value              Comment
-   ============  ============  =======  =================  ===========================================================================
-   status        setFixedTime  boolean  -False |br| -True  False: Deactivate fixed time control |br| True: Activate fixed time control
-   securityCode  setFixedTime  string   [text]             Security code 2
-   ============  ============  =======  =================  ===========================================================================
+   ============  ============  =======  ===========  =========================================
+   Name          Command       Type     Value        Comment
+   ============  ============  =======  ===========  =========================================
+   status        setFixedTime  boolean  -False |br|  False: Deactivate fixed time control |br|
+                                        -True        True: Activate fixed time control
+   securityCode  setFixedTime  string   [text]       Security code 2
+   ============  ============  =======  ===========  =========================================
 ..
 
 M0008
@@ -1618,13 +1912,15 @@ Sets manual activation of detector logic |br|  |br| Set given detector logic (1-
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =====================  =======  =================  =======================================================================================================
-   Name          Command                Type     Value              Comment
-   ============  =====================  =======  =================  =======================================================================================================
-   status        setForceDetectorLogic  boolean  -False |br| -True  False: Deactivate manual control of detector logic |br| True: Activate manual control of detector logic
-   securityCode  setForceDetectorLogic  string   [text]             Security code 2
-   mode          setForceDetectorLogic  boolean  -False |br| -True  False: Deactivate detector logic |br| True: Activate detector logic
-   ============  =====================  =======  =================  =======================================================================================================
+   ============  =====================  =======  ===========  =======================================================
+   Name          Command                Type     Value        Comment
+   ============  =====================  =======  ===========  =======================================================
+   status        setForceDetectorLogic  boolean  -False |br|  False: Deactivate manual control of detector logic |br|
+                                                 -True        True: Activate manual control of detector logic
+   securityCode  setForceDetectorLogic  string   [text]       Security code 2
+   mode          setForceDetectorLogic  boolean  -False |br|  False: Deactivate detector logic |br|
+                                                 -True        True: Activate detector logic
+   ============  =====================  =======  ===========  =======================================================
 ..
 
 M0010
@@ -1640,12 +1936,13 @@ Start of signal group. Orders a signal group to green. |br|  |br| Although this 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  =======  =================  ====================================================================
-   Name          Command    Type     Value              Comment
-   ============  =========  =======  =================  ====================================================================
-   status        setStart   boolean  -False |br| -True  False: No command (default) |br| True: Order a signal group to green
-   securityCode  setStart   string   [text]             Security code 2
-   ============  =========  =======  =================  ====================================================================
+   ============  =========  =======  ===========  ===================================
+   Name          Command    Type     Value        Comment
+   ============  =========  =======  ===========  ===================================
+   status        setStart   boolean  -False |br|  False: No command (default) |br|
+                                     -True        True: Order a signal group to green
+   securityCode  setStart   string   [text]       Security code 2
+   ============  =========  =======  ===========  ===================================
 ..
 
 M0011
@@ -1661,12 +1958,13 @@ Stop of signal group. Orders a signal group to red. |br|  |br| Although this com
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  =======  =================  ==================================================================
-   Name          Command    Type     Value              Comment
-   ============  =========  =======  =================  ==================================================================
-   status        setStop    boolean  -False |br| -True  False: No command (default) |br| True: Order a signal group to red
-   securityCode  setStop    string   [text]             Security code 2
-   ============  =========  =======  =================  ==================================================================
+   ============  =========  =======  ===========  =================================
+   Name          Command    Type     Value        Comment
+   ============  =========  =======  ===========  =================================
+   status        setStop    boolean  -False |br|  False: No command (default) |br|
+                                     -True        True: Order a signal group to red
+   securityCode  setStop    string   [text]       Security code 2
+   ============  =========  =======  ===========  =================================
 ..
 
 M0012
@@ -1682,12 +1980,32 @@ Request start or stop of a series of signal groups. |br|  |br| Starts or stops s
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  ======  =======  ===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   ============  =========  ======  =======  =======================================================================================================================================================================================================================
    Name          Command    Type    Value    Comment
-   ============  =========  ======  =======  ===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
-   status        setStart   string  [text]   Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. |br|  |br| 1=Order signal group to green |br| 0=Order signal group to red |br|  |br| Format: [Offset],[Bits to set],[Bits to unset]:… |br|  |br| Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. |br|  |br| Example 1: |br| "5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off |br| (Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0) |br|  |br| Example 2: |br| "22, 1, 4" sets input 22 = on and 24 = off |br| (Input starts from no. 22 and bit 0 = 1 and bit 2 = 0) |br|  |br| And both these examples could be sent in the same message as: |br| "5,4143,65;22,1,4" |br|  |br| Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red
+   ============  =========  ======  =======  =======================================================================================================================================================================================================================
+   status        setStart   string  [text]   Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. |br|
+                                             |br|
+                                             1=Order signal group to green |br|
+                                             0=Order signal group to red |br|
+                                             |br|
+                                             Format: [Offset],[Bits to set],[Bits to unset]:… |br|
+                                             |br|
+                                             Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. |br|
+                                             |br|
+                                             Example 1: |br|
+                                             "5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off |br|
+                                             (Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0) |br|
+                                             |br|
+                                             Example 2: |br|
+                                             "22, 1, 4" sets input 22 = on and 24 = off |br|
+                                             (Input starts from no. 22 and bit 0 = 1 and bit 2 = 0) |br|
+                                             |br|
+                                             And both these examples could be sent in the same message as: |br|
+                                             "5,4143,65;22,1,4" |br|
+                                             |br|
+                                             Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red
    securityCode  setStart   string  [text]   Security code 2
-   ============  =========  ======  =======  ===============================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   ============  =========  ======  =======  =======================================================================================================================================================================================================================
 ..
 
 M0013
@@ -1703,12 +2021,13 @@ Activate a series of inputs |br|  |br| Set given inputs (1-255) of the controlle
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  ======  =======  ===========================================================================================================================================================================================================================
+   ============  =========  ======  =======  ==========================================================================================================================================================================
    Name          Command    Type    Value    Comment
-   ============  =========  ======  =======  ===========================================================================================================================================================================================================================
-   status        setInput   string  [text]   Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. |br| Format: [Offset];[Bits to set];[Bits to unset];…
+   ============  =========  ======  =======  ==========================================================================================================================================================================
+   status        setInput   string  [text]   Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. |br|
+                                             Format: [Offset];[Bits to set];[Bits to unset];…
    securityCode  setInput   string  [text]   Security code 2
-   ============  =========  ======  =======  ===========================================================================================================================================================================================================================
+   ============  =========  ======  =======  ==========================================================================================================================================================================
 ..
 
 M0014
@@ -1724,13 +2043,21 @@ Set dynamic bands |br|  |br| Can be used to change between predefined signal tim
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  ===========  =======  =======  ============================================================================================================================================================================================================================================
+   ============  ===========  =======  =======  ==================================================
    Name          Command      Type     Value    Comment
-   ============  ===========  =======  =======  ============================================================================================================================================================================================================================================
+   ============  ===========  =======  =======  ==================================================
    plan          setCommands  integer  [0-255]  Plan to be changed
-   status        setCommands  string   [text]   Dynamic bands. |br| Each dynamic band are written as dd-ee where: |br| dd=Dynamic band number (from 1-10) |br| ee=Extension in seconds in this band |br|  |br| Each dynamic band is separated with a comma. |br|  |br| E.g. |br| dd-ee,dd-ee
+   status        setCommands  string   [text]   Dynamic bands. |br|
+                                                Each dynamic band are written as dd-ee where: |br|
+                                                dd=Dynamic band number (from 1-10) |br|
+                                                ee=Extension in seconds in this band |br|
+                                                |br|
+                                                Each dynamic band is separated with a comma. |br|
+                                                |br|
+                                                E.g. |br|
+                                                dd-ee,dd-ee
    securityCode  setCommands  string   [text]   Security code 2
-   ============  ===========  =======  =======  ============================================================================================================================================================================================================================================
+   ============  ===========  =======  =======  ==================================================
 ..
 
 M0015
@@ -1768,12 +2095,29 @@ Set week time table |br|  |br| Set which time table for signal programs to use f
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  ============  ======  =======  =======================================================================================================================================================================================================================================================================================================================================================================
+   ============  ============  ======  =======  =================================================================
    Name          Command       Type    Value    Comment
-   ============  ============  ======  =======  =======================================================================================================================================================================================================================================================================================================================================================================
-   status        setWeekTable  string  [text]   Week time table. Defines time table to use for each week day |br| Each segment is written as d-t where: |br| d=day of week |br| t=time table nr |br|  |br| Day of week legend: |br| 0=Monday |br| 1=Tuesday |br| 2=Wednesday |br| 3=Thursday |br| 4=Friday |br| 5=Saturday |br| 6=Sunday |br|  |br| Each segment is separated with a comma |br|  |br| E.g. |br| d-t,d-t
+   ============  ============  ======  =======  =================================================================
+   status        setWeekTable  string  [text]   Week time table. Defines time table to use for each week day |br|
+                                                Each segment is written as d-t where: |br|
+                                                d=day of week |br|
+                                                t=time table nr |br|
+                                                |br|
+                                                Day of week legend: |br|
+                                                0=Monday |br|
+                                                1=Tuesday |br|
+                                                2=Wednesday |br|
+                                                3=Thursday |br|
+                                                4=Friday |br|
+                                                5=Saturday |br|
+                                                6=Sunday |br|
+                                                |br|
+                                                Each segment is separated with a comma |br|
+                                                |br|
+                                                E.g. |br|
+                                                d-t,d-t
    securityCode  setWeekTable  string  [text]   Security code 2
-   ============  ============  ======  =======  =======================================================================================================================================================================================================================================================================================================================================================================
+   ============  ============  ======  =======  =================================================================
 ..
 
 M0017
@@ -1789,12 +2133,30 @@ Set time tables |br|  |br| Set time of day for when to automatically switch sign
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  ============  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   ============  ============  ======  =======  ======================================================
    Name          Command       Type    Value    Comment
-   ============  ============  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
-   status        setTimeTable  string  [text]   Time Table. Defines time tables. |br| Each time definition is written as t-o-h-m where: |br| t=time table nr (1-12) |br| o=function |br| h=hour - switching time |br| m=minute - switching minute |br|  |br| Function legend: |br| 0=no plan is selected by time table |br| 1=set plan 1 |br| … |br| 16= set plan 16 |br|  |br| hour and minute is using local time (not UTC) |br|  |br| Each time definition is separated with a comma. |br|  |br| E.g. |br| t-o-h-m,t-o-h-m
+   ============  ============  ======  =======  ======================================================
+   status        setTimeTable  string  [text]   Time Table. Defines time tables. |br|
+                                                Each time definition is written as t-o-h-m where: |br|
+                                                t=time table nr (1-12) |br|
+                                                o=function |br|
+                                                h=hour - switching time |br|
+                                                m=minute - switching minute |br|
+                                                |br|
+                                                Function legend: |br|
+                                                0=no plan is selected by time table |br|
+                                                1=set plan 1 |br|
+                                                … |br|
+                                                16= set plan 16 |br|
+                                                |br|
+                                                hour and minute is using local time (not UTC) |br|
+                                                |br|
+                                                Each time definition is separated with a comma. |br|
+                                                |br|
+                                                E.g. |br|
+                                                t-o-h-m,t-o-h-m
    securityCode  setTimeTable  string  [text]   Security code 2
-   ============  ============  ======  =======  =============================================================================================================================================================================================================================================================================================================================================================================================================================================================================
+   ============  ============  ======  =======  ======================================================
 ..
 
 M0018
@@ -1832,14 +2194,16 @@ Force input |br|  |br| Force a given input (1-255) of the controllers general pu
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  =======  =================  ============================================================
-   Name          Command    Type     Value              Comment
-   ============  =========  =======  =================  ============================================================
-   status        setInput   boolean  -False |br| -True  False: Force input |br| True: Release input
-   securityCode  setInput   string   [text]             Security code 2
-   input         setInput   integer  [1-255]            Number of Input
-   inputValue    setInput   boolean  -False |br| -True  False: input forced to False |br| True: input forced to True
-   ============  =========  =======  =================  ============================================================
+   ============  =========  =======  ===========  =================================
+   Name          Command    Type     Value        Comment
+   ============  =========  =======  ===========  =================================
+   status        setInput   boolean  -False |br|  False: Force input |br|
+                                     -True        True: Release input
+   securityCode  setInput   string   [text]       Security code 2
+   input         setInput   integer  [1-255]      Number of Input
+   inputValue    setInput   boolean  -False |br|  False: input forced to False |br|
+                                     -True        True: input forced to True
+   ============  =========  =======  ===========  =================================
 ..
 
 M0020
@@ -1855,14 +2219,16 @@ Force output |br|  |br| Force a given output (1-255) of the controllers general 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  =======  =================  ==============================================================
-   Name          Command    Type     Value              Comment
-   ============  =========  =======  =================  ==============================================================
-   status        setOutput  boolean  -False |br| -True  False: Force output |br| True: Release output
-   securityCode  setOutput  string   [text]             Security code 2
-   output        setOutput  integer  [1-255]            Number of Output
-   outputValue   setOutput  boolean  -False |br| -True  False: output forced to False |br| True: output forced to True
-   ============  =========  =======  =================  ==============================================================
+   ============  =========  =======  ===========  ==================================
+   Name          Command    Type     Value        Comment
+   ============  =========  =======  ===========  ==================================
+   status        setOutput  boolean  -False |br|  False: Force output |br|
+                                     -True        True: Release output
+   securityCode  setOutput  string   [text]       Security code 2
+   output        setOutput  integer  [1-255]      Number of Output
+   outputValue   setOutput  boolean  -False |br|  False: output forced to False |br|
+                                     -True        True: output forced to True
+   ============  =========  =======  ===========  ==================================
 ..
 
 M0021
@@ -1878,12 +2244,14 @@ Set trigger level sensitivity for loop detector |br|  |br| The trigger level sen
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  ======  =======  =========================================================================================================================
+   ============  =========  ======  =======  =======================================================================
    Name          Command    Type    Value    Comment
-   ============  =========  ======  =======  =========================================================================================================================
-   status        setLevel   string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br| dd=loop detector number |br| ss=sensitivity value
+   ============  =========  ======  =======  =======================================================================
+   status        setLevel   string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br|
+                                             dd=loop detector number |br|
+                                             ss=sensitivity value
    securityCode  setLevel   string  [text]   Security code 2
-   ============  =========  ======  =======  =========================================================================================================================
+   ============  =========  ======  =======  =======================================================================
 ..
 
 M0022
@@ -1977,8 +2345,8 @@ at some point, but until then it might block requests in other direction.
    laneInId      integer  [0-255]                 ID of an ingoing lane
    laneOutId     integer  [0-255]                 ID of an outgoing lane
    priorityId    integer  [0-255]                 ID of a priority
-   type          string   -new |br|               new: New priority request |br|
-                          -update |br|            update: Update to existing priority request |br|
+   type          string   -new |br|               new: New priority request|br|
+                          -update |br|            update: Update to existing priority request|br|
                           -cancel                 cancel: Cancel an existing priority
    level         integer  [0-14]                  0: Lowest, 14: Highest
    eta           integer  [0-255]                 (Optional) Estimated time of arrival to the intersection, in seconds
@@ -2007,13 +2375,14 @@ Set security code |br|  |br| Change the security code to use when sending comman
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ===============  ===============  ======  ====================  ==================================================================
-   Name             Command          Type    Value                 Comment
-   ===============  ===============  ======  ====================  ==================================================================
-   status           setSecurityCode  string  -Level1 |br| -Level2  Level1: Change security code 1 |br| Level2: Change security code 2
-   oldSecurityCode  setSecurityCode  string  [text]                Previous security code
-   newSecurityCode  setSecurityCode  string  [text]                New security code
-   ===============  ===============  ======  ====================  ==================================================================
+   ===============  ===============  ======  ============  ==================================
+   Name             Command          Type    Value         Comment
+   ===============  ===============  ======  ============  ==================================
+   status           setSecurityCode  string  -Level1 |br|  Level1: Change security code 1|br|
+                                             -Level2       Level2: Change security code 2
+   oldSecurityCode  setSecurityCode  string  [text]        Previous security code
+   newSecurityCode  setSecurityCode  string  [text]        New security code
+   ===============  ===============  ======  ============  ==================================
 ..
 
 M0104
@@ -2029,17 +2398,23 @@ Set clock |br|  |br| Can be used to manually set the clock of the traffic light 
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.20\linewidth} p{0.07\linewidth} p{0.15\linewidth} p{0.30\linewidth}
 
-   ============  =========  =======  ========  ===========================================================
+   ============  =========  =======  ========  ==============================================
    Name          Command    Type     Value     Comment
-   ============  =========  =======  ========  ===========================================================
+   ============  =========  =======  ========  ==============================================
    securityCode  setDate    string   [text]    Security code 1
-   year          setDate    integer  [0-9999]  Changes internal clock. Note: UTC is used |br| Year
-   month         setDate    integer  [1-12]    Changes internal clock. Note: UTC is used |br| Month
-   day           setDate    integer  [1-31]    Changes internal clock. Note: UTC is used |br| Day in month
-   hour          setDate    integer  [0-23]    Changes internal clock. Note: UTC is used |br| Hour
-   minute        setDate    integer  [0-59]    Changes internal clock. Note: UTC is used |br| Minute
-   second        setDate    integer  [0-59]    Changes internal clock. Note: UTC is used |br| Second
-   ============  =========  =======  ========  ===========================================================
+   year          setDate    integer  [0-9999]  Changes internal clock. Note: UTC is used |br|
+                                               Year
+   month         setDate    integer  [1-12]    Changes internal clock. Note: UTC is used |br|
+                                               Month
+   day           setDate    integer  [1-31]    Changes internal clock. Note: UTC is used |br|
+                                               Day in month
+   hour          setDate    integer  [0-23]    Changes internal clock. Note: UTC is used |br|
+                                               Hour
+   minute        setDate    integer  [0-59]    Changes internal clock. Note: UTC is used |br|
+                                               Minute
+   second        setDate    integer  [0-59]    Changes internal clock. Note: UTC is used |br|
+                                               Second
+   ============  =========  =======  ========  ==============================================
 ..
 
 .. |br| replace:: |br_html| |br_latex|
