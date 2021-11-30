@@ -1487,9 +1487,11 @@ S0033
 
 Signal Priority Status
 
-The status can only describe the status of a single priority request,
-and you can therefore only subscribe to this status with update rate set to 0,
-so you get each individual status change as it happens.
+This status can be used to get updates about priority requests. For example, you can use it to know when
+priority request are activated or cancelled.
+
+A list of priority events is returned. Each event refer to a request using it's requestId.
+Note that several events can refer to the same request.
 
 
 .. figtable::
@@ -1502,17 +1504,34 @@ so you get each individual status change as it happens.
    ==========  =======  ===============  ==============================================================================
    Name        Type     Value            Comment
    ==========  =======  ===============  ==============================================================================
-   requestId   string   [id]             Id of the request.
-   status      string   -queued |br|     Current status of the request.
-                        -activated |br|
-                        -rejected |br|
-                        -cancelled |br|
-                        -overridden
-   reason      string   [text]           Reason in case the priority was not given, otherwise empty.
-   overrideId  string   [id]             Id of the overriding request if overridden, otherwise empty.
-   gained      integer  [0-255]          Seconds of extra green time gained by the priority, or 0 if no priority given.
+   status      array    [events]         List of events. See the table below for details.
    ==========  =======  ===============  ==============================================================================
 ..
+
+
+Each event is passed a hash. The attributes of an event is:
+
+.. figtable::
+   :nofig:
+   :label: S0033 event 
+   :caption: S0033 event
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+
+   ==========  =======  ===============  ==============================================================================
+   Name        Type     Value            Comment
+   ==========  =======  ===============  ==============================================================================
+   requestId   string   [id]             ID of the priority request
+   timestamp   string   [timestamp]      When the event happened
+   status      string   enqueue |br|     A new priority request was received and has been queued
+                        activate |br|    The priority was activated
+                        complete |br|    The priority was cancelled (as expected)
+                        override |br|    The priority was overridden by another request with a higher priority
+                        timeout |br|     The priority has timed out because it was never cancelled
+   override    string   [id]             (Optional) ID of the overriding priority request. Only used if status is set to override
+   ==========  =======  ===============  ==============================================================================
+..
+
 
 S0091
 ^^^^^^^^
@@ -2677,9 +2696,6 @@ in the controller, and in the system that sends priority requests. Either:
 - Reference an intersection approach by setting 'approachId'.
 - Reference an ingoing lane by setting 'laneInId', and
   optionally also reference an outgoing lane by setting 'laneOutId'.
-- Reference a particular priority by setting 'priorityId'. This is a generic referencing method
-  that does not require configuration of lanes, approaches or connections, but 
-  the priorities must be configured with corresponding ids in the controller.
 
 Referencing attributes that are not used must be left out, rather than set to null or empty strings:
 
@@ -2689,7 +2705,9 @@ Referencing attributes that are not used must be left out, rather than set to nu
 - approachId
 - laneInId
 - laneOutId
-- priorityId
+
+Referencing attributes are only used when initiating a request. When updating or cancelling the request,
+the request is identified by it's requestId, and no referencing attributes are allowed.
 
 You initiate a priority request with type set to 'new'. You must provide a request id that
 uniquely identifies the request on the controller. It can be a randomly generated UUID
@@ -2725,32 +2743,33 @@ at some point, but until then it might block requests in other direction.
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =======  ======================  ====================================================================
-   Name          Type     Value                   Comment
-   ============  =======  ======================  ====================================================================
-   requestId     string   [id]                    A string that uniquely identifies the request on the controller
-   componentId   string   [id]                    ID of an RSMP component in the controller, typically a signal group
-   inputId       integer  [0-255]                 ID of an input, using the same numbering scheme as M0006
-   connectionId  integer  [0-255]                 ID of a connection, connecting an ingoing and an outgoing lane
-   approachId    integer  [0-16]                  ID of an intersection approach
-   laneInId      integer  [0-255]                 ID of an ingoing lane
-   laneOutId     integer  [0-255]                 ID of an outgoing lane
-   priorityId    integer  [0-255]                 ID of a priority
-   type          string   -new |br|               new: New priority request |br|
-                          -update |br|            update: Update to existing priority request |br|
-                          -cancel                 cancel: Cancel an existing priority
-   level         integer  [0-14]                  0: Lowest, 14: Highest
-   eta           integer  [0-255]                 (Optional) Estimated time of arrival to the intersection, in seconds
-   vehicleType   string   -car |br|               (Optional) Vehicle type
-                          -bus |br|
-                          -bicycle |br|
-                          -twoWheeler |br|
-                          -lightTruck |br|
-                          -heavyTruck |br|
-                          -tram |br|
-                          -emergencyVehicle |br|
-                          -other
-   ============  =======  ======================  ====================================================================
+   =============  =======  ======================  ====================================================================
+   Name           Type     Value                   Comment
+   =============  =======  ======================  ====================================================================
+   requestId      string   [id]                    A string that uniquely identifies the request on the controller
+   signalGroupId  string   [id]                    (Optional) ID of a signal group component.
+   inputId        integer  [0-255]                 (Optional) ID of an input, using the same numbering scheme as M0006
+   connectionId   integer  [0-255]                 (Optional) ID of a connection, connecting an ingoing and an outgoing lane
+   approachId     integer  [0-16]                  (Optional) ID of an intersection approach
+   laneInId       integer  [0-255]                 (Optional) ID of an ingoing lane
+   laneOutId      integer  [0-255]                 (Optional) ID of an outgoing lane
+   priorityId     integer  [0-255]                 (Optional) ID of a priority
+   type           string   -new |br|               new: New priority request |br|
+                           -update |br|            update: Update to existing priority request |br|
+                           -cancel                 cancel: Cancel an existing priority
+   level          integer  [0-14]                  0: Lowest, 14: Highest
+   eta            integer  [0-255]                 (Optional) Estimated time of arrival to the intersection, in seconds
+   vehicleType    string   -car |br|               (Optional) Vehicle type
+                           -bus |br|
+                           -bicycle |br|
+                           -pedestrian |br|
+                           -twoWheeler |br|
+                           -lightTruck |br|
+                           -heavyTruck |br|
+                           -tram |br|
+                           -emergencyVehicle |br|
+                           -other
+   =============  =======  ======================  ====================================================================
 ..
 
 M0103
