@@ -1490,8 +1490,8 @@ Signal Priority Status
 This status can be used to get updates about priority requests. For example, you can use it to know when
 priority request are activated or cancelled.
 
-A list of priority events is returned. Each event refer to a request using it's requestId.
-Note that several events can refer to the same request.
+A list of priority events is returned. Each event refer to a particular request, using a requestId.
+Several events can refer to the same request, for example if the request was first enqueued, then activated.
 
 
 .. figtable::
@@ -1509,7 +1509,7 @@ Note that several events can refer to the same request.
 ..
 
 
-Each event is passed a hash. The attributes of an event is:
+Each event is passed as a hash with the followinmg attributes:
 
 .. figtable::
    :nofig:
@@ -1529,6 +1529,8 @@ Each event is passed a hash. The attributes of an event is:
                         override |br|    The priority was overridden by another request with a higher priority
                         timeout |br|     The priority has timed out because it was never cancelled
    override    string   [id]             (Optional) ID of the overriding priority request. Only used if status is set to override
+   gain        integer  [integer]        (Optional) Actual number of seconds gained by the priority.
+                                         Only used when status is complete, override or timeout.
    ==========  =======  ===============  ==============================================================================
 ..
 
