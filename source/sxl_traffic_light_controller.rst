@@ -1523,10 +1523,10 @@ Each event is passed as a hash with the followinmg attributes:
    ==========  =======  ===============  ==============================================================================
    requestId   string   [id]             ID of the priority request
    timestamp   string   [timestamp]      When the event happened
-   status      string   enqueue |br|     A new priority request was received and has been queued
-                        activate |br|    The priority was activated
-                        complete |br|    The priority was cancelled (as expected)
-                        override |br|    The priority was overridden by another request with a higher priority
+   status      string   queued |br|      A new priority request was received and has been queued
+                        activated |br|   The priority was activated
+                        completed |br|   The priority was cancelled (as expected)
+                        overriden |br|   The priority was overridden by another request with a higher priority
                         timeout |br|     The priority has timed out because it was never cancelled
    override    string   [id]             (Optional) ID of the overriding priority request. Only used if status is set to override
    gain        integer  [integer]        (Optional) Actual number of seconds gained by the priority.
