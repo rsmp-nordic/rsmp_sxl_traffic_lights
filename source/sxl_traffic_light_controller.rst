@@ -2684,13 +2684,11 @@ through the intersection, but the exact mechanism must typically be configured i
 The movement to prioritize can be referenced in a number of ways, depending on what is configured
 in the controller, and in the system that sends priority requests. Either:
 
-- Reference a signal group by setting 'componentId'.
+- Reference a signal group by setting 'signalGroupId'.
   This method is simple, but will not allow you to have different priority mechanism for the
   same signal group, unless they can be distinguished by the vehicle type. For example, if you
   need to trigger different priorities depending on whether a bus goes straight or makes a turn
   for the same signal group, you must use of the other referencing methods.
-- Reference a detector logic setting 'componentId'. This can be useful if you previously used
-  detector logics to activate priority. The detector logic will not be activated, only the priority.
 - Reference an input by setting 'inputId'. This can be useful if you previously used
   inputs to activate priority. The input will not be activated, only the priority.
 - Reference a connection by setting 'connectionId'. A connection is a movement from a specific
@@ -2701,7 +2699,7 @@ in the controller, and in the system that sends priority requests. Either:
 
 Referencing attributes that are not used must be left out, rather than set to null or empty strings:
 
-- componentId
+- signalGroupId
 - inputId
 - connectionId
 - approachId
