@@ -1511,29 +1511,29 @@ Several events can refer to the same request, for example if the request was fir
 
 Each event is passed as a hash with the following attributes:
 
+
 .. figtable::
    :nofig:
-   :label: S0033 event 
-   :caption: S0033 event
+   :label: S0033
+   :caption: S0033
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ==========  =======  ===============  ==============================================================================
-   Name        Type     Value            Comment
-   ==========  =======  ===============  ==============================================================================
-   requestId   string   [id]             ID of the priority request
-   timestamp   string   [timestamp]      When the event happened
-   status      string   -queued |br|     queued: A new priority request was received and has been queued |br|
-                        -activated |br|  activated: The priority was activated |br|
-                        -completed |br|  completed: The priority was cancelled (as expected) |br|
-                        -overriden |br|  overriden: The priority was overridden by another request with a higher priority |br|
-                        -timeout         timeout: The priority has timed out because it was never cancelled
-   override    string   [id]             (Optional) ID of the overriding priority request. Only used if status is set to override
-   gain        integer  [integer]        (Optional) Actual number of seconds gained by the priority.
+   =========  =======  ================  ========================================================================================
+   Name       Type     Value             Comment
+   =========  =======  ================  ========================================================================================
+   requestId  string   [id]              ID of the priority request
+   timestamp  string   [timestamp]       When the event happened
+   status     string   -queued |br|      queued: A new priority request was received and has been queued |br|
+                       -activated |br|   activated: The priority was activated |br|
+                       -completed |br|   completed: The priority was cancelled (as expected) |br|
+                       -overridden |br|  overridden: The priority was overridden by another request with a higher priority |br|
+                       -timeout          timeout: The priority has timed out because it was never cancelled
+   override   string   [id]              (Optional) ID of the overriding priority request. Only used if status is set to override
+   gain       integer  [0-255]           (Optional) Actual number of seconds gained by the priority |br|
                                          Only used when status is complete, override or timeout.
-   ==========  =======  ===============  ==============================================================================
+   =========  =======  ================  ========================================================================================
 ..
-
 
 S0091
 ^^^^^^^^
@@ -2743,9 +2743,9 @@ at some point, but until then it might block requests in other direction.
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   =============  =======  ======================  ====================================================================
+   =============  =======  ======================  =========================================================================
    Name           Type     Value                   Comment
-   =============  =======  ======================  ====================================================================
+   =============  =======  ======================  =========================================================================
    requestId      string   [id]                    A string that uniquely identifies the request on the controller
    signalGroupId  string   [id]                    (Optional) ID of a signal group component.
    inputId        integer  [0-255]                 (Optional) ID of an input, using the same numbering scheme as M0006
@@ -2769,7 +2769,7 @@ at some point, but until then it might block requests in other direction.
                            -tram |br|
                            -emergencyVehicle |br|
                            -other
-   =============  =======  ======================  ====================================================================
+   =============  =======  ======================  =========================================================================
 ..
 
 M0103
