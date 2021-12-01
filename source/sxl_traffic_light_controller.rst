@@ -1488,7 +1488,7 @@ S0033
 Signal Priority Status
 
 This status can be used to get updates about priority requests. For example, you can use it to know when
-priority request are activated or cancelled.
+priority requests are activated or cancelled.
 
 A list of priority events is returned. Each event refer to a particular request, using a requestId.
 Several events can refer to the same request, for example if the request was first enqueued, then activated.
@@ -1509,7 +1509,7 @@ Several events can refer to the same request, for example if the request was fir
 ..
 
 
-Each event is passed as a hash with the followinmg attributes:
+Each event is passed as a hash with the following attributes:
 
 .. figtable::
    :nofig:
