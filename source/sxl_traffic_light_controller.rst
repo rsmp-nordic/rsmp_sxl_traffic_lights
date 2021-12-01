@@ -1523,7 +1523,7 @@ Each event is passed as a hash with the followinmg attributes:
    ==========  =======  ===============  ==============================================================================
    requestId   string   [id]             ID of the priority request
    timestamp   string   [timestamp]      When the event happened
-   status      string   -queued |br|     queued: A new priority request was received and has been queued
+   status      string   -queued |br|     queued: A new priority request was received and has been queued |br|
                         -activated |br|  activated: The priority was activated |br|
                         -completed |br|  completed: The priority was cancelled (as expected) |br|
                         -overriden |br|  overriden: The priority was overridden by another request with a higher priority |br|
