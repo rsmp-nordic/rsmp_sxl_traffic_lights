@@ -706,12 +706,13 @@ Please note that all values in this status uses comma-separated lists
                                                 e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br|           False: Traffic Light Controller in dark mode |br|
                           -True                 True: Traffic Light Controller not in dark mode
-   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
-                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
-                          -control_block |br|   control_block: Control block is the source |br|
-                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
-                          -startup |br|         startup: Set after startup mode |br|
-                          -other                other: TLC switched status due other reason
+   source        string   -operator_panel |br|  Source of the status change |br|
+                          -calendar_clock |br|  operator_panel: Operator panel |br|
+                          -control_block |br|   calendar_clock: Calendar/clock |br|
+                          -forced |br|          control_block: Control block |br|
+                          -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                          -other                startup: Set after startup mode |br|
+                                                other: Other reason
    ============  =======  ====================  =======================================================================
 ..
 
@@ -742,12 +743,13 @@ Please note that all values in this status uses comma-separated lists
                                                 e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br|           False: Manual control inactive |br|
                           -True                 True: Manual control active
-   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
-                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
-                          -control_block |br|   control_block: Control block is the source |br|
-                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
-                          -startup |br|         startup: Set after startup mode |br|
-                          -other                other: TLC switched status due other reason
+   source        string   -operator_panel |br|  Source of the status change |br|
+                          -calendar_clock |br|  operator_panel: Operator panel |br|
+                          -control_block |br|   calendar_clock: Calendar/clock |br|
+                          -forced |br|          control_block: Control block |br|
+                          -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                          -other                startup: Set after startup mode |br|
+                                                other: Other reason
    ============  =======  ====================  =======================================================================
 ..
 
@@ -778,12 +780,13 @@ Please note that all values in this status uses comma-separated lists
                                                 e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br|           False:  Fixed time control inactive |br|
                           -True                 True:  Fixed time control active
-   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
-                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
-                          -control_block |br|   control_block: Control block is the source |br|
-                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
-                          -startup |br|         startup: Set after startup mode |br|
-                          -other                other: TLC switched status due other reason
+   source        string   -operator_panel |br|  Source of the status change |br|
+                          -calendar_clock |br|  operator_panel: Operator panel |br|
+                          -control_block |br|   calendar_clock: Calendar/clock |br|
+                          -forced |br|          control_block: Control block |br|
+                          -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                          -other                startup: Set after startup mode |br|
+                                                other: Other reason
    ============  =======  ====================  =======================================================================
 ..
 
@@ -814,12 +817,13 @@ Please note that all values in this status uses comma-separated lists
                                                 e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br|           False: Isolated control disabled |br|
                           -True                 True: Isolated control enabled (Vehicle actuated control or Fixed time control)
-   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
-                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
-                          -control_block |br|   control_block: Control block is the source |br|
-                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
-                          -startup |br|         startup: Set after startup mode |br|
-                          -other                other: TLC switched status due other reason
+   source        string   -operator_panel |br|  Source of the status change |br|
+                          -calendar_clock |br|  operator_panel: Operator panel |br|
+                          -control_block |br|   calendar_clock: Calendar/clock |br|
+                          -forced |br|          control_block: Control block |br|
+                          -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                          -other                startup: Set after startup mode |br|
+                                                other: Other reason
    ============  =======  ====================  ===============================================================================
 ..
 
@@ -850,12 +854,13 @@ Please note that all values in this status uses comma-separated lists
                                                 e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br|           False: Yellow flash disabled |br|
                           -True                 True: Yellow flash enabled
-   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
-                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
-                          -control_block |br|   control_block: Control block is the source |br|
-                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
-                          -startup |br|         startup: Set after startup mode |br|
-                          -other                other: TLC switched status due other reason
+   source        string   -operator_panel |br|  Source of the status change |br|
+                          -calendar_clock |br|  operator_panel: Operator panel |br|
+                          -control_block |br|   calendar_clock: Calendar/clock |br|
+                          -forced |br|          control_block: Control block |br|
+                          -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                          -other                startup: Set after startup mode |br|
+                                                other: Other reason
    ============  =======  ====================  =======================================================================
 ..
 
@@ -886,12 +891,13 @@ Please note that all values in this status uses comma-separated lists
                                                 e.g. "1,2". Use "0" for all intersections of the TLC
    status        boolean  -False |br|           False: All red disabled |br|
                           -True                 True: All red enabled
-   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
-                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
-                          -control_block |br|   control_block: Control block is the source |br|
-                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
-                          -startup |br|         startup: Set after startup mode |br|
-                          -other                other: TLC switched status due other reason
+   source        string   -operator_panel |br|  Source of the status change |br|
+                          -calendar_clock |br|  operator_panel: Operator panel |br|
+                          -control_block |br|   calendar_clock: Calendar/clock |br|
+                          -forced |br|          control_block: Control block |br|
+                          -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                          -other                startup: Set after startup mode |br|
+                                                other: Other reason
    ============  =======  ====================  =======================================================================
 ..
 
@@ -944,17 +950,18 @@ The time plan (signal program) may change signal timings, cycle time, control st
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ====================  =================================================
+   ======  =======  ====================  ===========================================================
    Name    Type     Value                 Comment
-   ======  =======  ====================  =================================================
+   ======  =======  ====================  ===========================================================
    status  integer  [1-255]               Current time plan
-   source  string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
-                    -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
-                    -control_block |br|   control_block: Control block is the source |br|
-                    -forced |br|          forced: Forced due to command from e.g. RSMP |br|
-                    -startup |br|         startup: Set after startup mode |br|
-                    -other                other: TLC switched status due other reason
-   ======  =======  ====================  =================================================
+   source  string   -operator_panel |br|  Source of the status change |br|
+                    -calendar_clock |br|  operator_panel: Operator panel |br|
+                    -control_block |br|   calendar_clock: Calendar/clock |br|
+                    -forced |br|          control_block: Control block |br|
+                    -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                    -other                startup: Set after startup mode |br|
+                                          other: Other reason
+   ======  =======  ====================  ===========================================================
 ..
 
 S0015
@@ -976,17 +983,18 @@ Traffic situation is a concept used to divide multiple TLC's into areas and sub-
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ====================  =================================================
+   ======  =======  ====================  ===========================================================
    Name    Type     Value                 Comment
-   ======  =======  ====================  =================================================
+   ======  =======  ====================  ===========================================================
    status  integer  [1-255]               Current traffic situation
-   source  string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
-                    -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
-                    -control_block |br|   control_block: Control block is the source |br|
-                    -forced |br|          forced: Forced due to command from e.g. RSMP |br|
-                    -startup |br|         startup: Set after startup mode |br|
-                    -other                other: TLC switched status due other reason
-   ======  =======  ====================  =================================================
+   source  string   -operator_panel |br|  Source of the status change |br|
+                    -calendar_clock |br|  operator_panel: Operator panel |br|
+                    -control_block |br|   calendar_clock: Calendar/clock |br|
+                    -forced |br|          control_block: Control block |br|
+                    -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                    -other                startup: Set after startup mode |br|
+                                          other: Other reason
+   ======  =======  ====================  ===========================================================
 ..
 
 S0016
@@ -1473,12 +1481,13 @@ Please note that all values in this status uses comma-separated lists
    status        string   -local |br|           local: Local coordination |br|
                           -centralized |br|     centralized: Coordination with synchronized clock |br|
                           -False                False: Coordination not active
-   source        string   -operator_panel |br|  operator_panel: Operator panel is the source |br|
-                          -calendar_clock |br|  calendar_clock: Calendar/clock is the source |br|
-                          -control_block |br|   control_block: Control block is the source |br|
-                          -forced |br|          forced: Forced due to command from e.g. RSMP |br|
-                          -startup |br|         startup: Set after startup mode |br|
-                          -other                other: TLC switched status due other reason
+   source        string   -operator_panel |br|  Source of the status change |br|
+                          -calendar_clock |br|  operator_panel: Operator panel |br|
+                          -control_block |br|   calendar_clock: Calendar/clock |br|
+                          -forced |br|          control_block: Control block |br|
+                          -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                          -other                startup: Set after startup mode |br|
+                                                other: Other reason
    ============  =======  ====================  =======================================================================
 ..
 
