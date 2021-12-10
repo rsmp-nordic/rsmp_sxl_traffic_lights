@@ -2132,14 +2132,14 @@ If the incorrect security code is used then the TLC replies with ``MessageNotAck
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ==============  =======  ===========  ====================================
+   ==============  =======  ===========  ======================================
    Name            Type     Value        Comment
-   ==============  =======  ===========  ====================================
-   status          boolean  -False |br|  False: Activate emergency route |br|
-                            -True        True: Deactivate emergency route
+   ==============  =======  ===========  ======================================
+   status          boolean  -False |br|  False: Deactivate emergency route |br|
+                            -True        True: Activate emergency route
    securityCode    string   [text]       Security code 2
    emergencyroute  integer  [1-255]      Number of emergency route
-   ==============  =======  ===========  ====================================
+   ==============  =======  ===========  ======================================
 ..
 
 M0006
