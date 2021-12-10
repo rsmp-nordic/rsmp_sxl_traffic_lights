@@ -1480,7 +1480,7 @@ Please note that all values in this status uses comma-separated lists
                                                 e.g. "1,2". Use "0" for all intersections of the TLC
    status        string   -local |br|           local: Local coordination |br|
                           -centralized |br|     centralized: Coordination with synchronized clock |br|
-                          -False                False: Coordination not active
+                          -off                  off: Coordination not active
    source        string   -operator_panel |br|  Source of the status change |br|
                           -calendar_clock |br|  operator_panel: Operator panel |br|
                           -control_block |br|   calendar_clock: Calendar/clock |br|
