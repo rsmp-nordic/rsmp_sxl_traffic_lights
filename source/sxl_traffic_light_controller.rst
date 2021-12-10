@@ -2617,8 +2617,8 @@ If the incorrect security code is used then the TLC replies with ``MessageNotAck
    ============  =======  ===========  =================================
    Name          Type     Value        Comment
    ============  =======  ===========  =================================
-   status        boolean  -False |br|  False: Force input |br|
-                          -True        True: Release input
+   status        boolean  -False |br|  False: Release input |br|
+                          -True        True: Force input
    securityCode  string   [text]       Security code 2
    input         integer  [1-255]      Number of Input
    inputValue    boolean  -False |br|  False: input forced to False |br|
