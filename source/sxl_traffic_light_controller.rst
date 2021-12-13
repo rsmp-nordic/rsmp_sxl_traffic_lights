@@ -1995,7 +1995,7 @@ Commands
    Traffic Light Controller  `M0019`_         setInput               Force input
    Traffic Light Controller  `M0020`_         setOutput              Force output
    Traffic Light Controller  `M0021`_         setLevel               Set trigger level sensitivity for loop detector
-   Signal group              `M0022`_         requestPriority        Request Signal Priority
+   Traffic Light Controller  `M0022`_         requestPriority        Request Signal Priority
    Traffic Light Controller  `M0103`_         setSecurityCode        Set security code
    Traffic Light Controller  `M0104`_         setDate                Set clock
    ========================  ===============  =====================  ======================================================
