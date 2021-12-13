@@ -2841,6 +2841,9 @@ Disable by setting timeout to '0'.
 
 Used in conjunction with dynamic bands, M0014
 
+Requires security code 2.
+If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
+
 
 .. figtable::
    :nofig:
