@@ -467,6 +467,7 @@ Status
    Traffic Light Controller  `S0031`_        Trigger level sensitivity for loop detector
    Traffic Light Controller  `S0032`_        Coordinated control
    Traffic Light Controller  `S0033`_        Signal Priority Status
+   Traffic Light Controller  `S0034`_        Timeout for dynamic bands
    Traffic Light Controller  `S0091`_        Operator logged in/out OP-panel
    Traffic Light Controller  `S0092`_        Operator logged in/out web-interface
    Traffic Light Controller  `S0095`_        Version of Traffic Light Controller
@@ -1545,6 +1546,31 @@ Each event is passed as a hash with the following attributes:
    =========  =======  ================  =================================================================================================================================
 ..
 
+S0034
+^^^^^^^^
+
+Timeout for dynamic bands
+
+Time until a designated time plan is entered due to lost connection with the supervisor.
+Disabled if set to '0'.
+
+Used in conjunction with dynamic bands, M0014
+
+
+.. figtable::
+   :nofig:
+   :label: S0034
+   :caption: S0034
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+
+   ======  =======  =========  ===================
+   Name    Type     Value      Comment
+   ======  =======  =========  ===================
+   status  integer  [0-65535]  Timeout, in minutes
+   ======  =======  =========  ===================
+..
+
 S0091
 ^^^^^^^^
 
@@ -1997,6 +2023,7 @@ Commands
    Traffic Light Controller  `M0020`_         setOutput              Force output
    Traffic Light Controller  `M0021`_         setLevel               Set trigger level sensitivity for loop detector
    Traffic Light Controller  `M0022`_         requestPriority        Request Signal Priority
+   Traffic Light Controller  `M0023`_         setTimeout             Set timeout for dynamic bands
    Traffic Light Controller  `M0103`_         setSecurityCode        Set security code
    Traffic Light Controller  `M0104`_         setDate                Set clock
    ========================  ===============  =====================  ======================================================
@@ -2802,6 +2829,32 @@ at some point, but until then it might block requests in other direction.
                            -emergencyVehicle |br|
                            -other
    =============  =======  ======================  =========================================================================
+..
+
+M0023
+^^^^^
+
+Set timeout for dynamic bands
+
+Switch to a designated time plan if this timeout is reached due to lost connection with the supervisor.
+Disable by setting timeout to '0'.
+
+Used in conjunction with dynamic bands, M0014
+
+
+.. figtable::
+   :nofig:
+   :label: M0023
+   :caption: M0023
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+
+   ============  =======  =========  ===================
+   Name          Type     Value      Comment
+   ============  =======  =========  ===================
+   status        integer  [0-65535]  Timeout, in minutes
+   securityCode  string   [text]     Security code 2
+   ============  =======  =========  ===================
 ..
 
 M0103
