@@ -1528,20 +1528,21 @@ Each event is passed as a hash with the following attributes:
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   =========  =======  ================  ========================================================================================
+   =========  =======  ================  =================================================================================================================================
    Name       Type     Value             Comment
-   =========  =======  ================  ========================================================================================
+   =========  =======  ================  =================================================================================================================================
    requestId  string   [id]              ID of the priority request
-   timestamp  string   [timestamp]       When the event happened
+   timestamp  string   [timestamp]       When the event happened. |br|
+                                         Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    status     string   -queued |br|      queued: A new priority request was received and has been queued |br|
                        -activated |br|   activated: The priority was activated |br|
                        -completed |br|   completed: The priority was cancelled (as expected) |br|
                        -overridden |br|  overridden: The priority was overridden by another request with a higher priority |br|
                        -timeout          timeout: The priority has timed out because it was never cancelled
-   override   string   [id]              (Optional) ID of the overriding priority request. Only used if status is set to override
+   override   string   [id]              (Optional) ID of the overriding priority request. Only used if status is set to overridden
    gain       integer  [0-255]           (Optional) Actual number of seconds gained by the priority |br|
                                          Only used when status is complete, override or timeout.
-   =========  =======  ================  ========================================================================================
+   =========  =======  ================  =================================================================================================================================
 ..
 
 S0091
