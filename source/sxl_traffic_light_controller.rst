@@ -1500,11 +1500,11 @@ Signal Priority Status
 This status can be used to get updates about priority requests. For example, you can use it to know when
 priority requests are activated or cancelled.
 
-A list of priorities is returned, refered to by their request ids. The same request id can appear only once.
+A list of priorities is returned, referred to by their request ids. The same request id can appear only once.
 
 All priorities are included in the list (not only the ones that have changed state since the last update).
 This is done regardless of whether the status is send in respond to a status request, or due to a
-status subscription, and also regardlesss of whether a status subscription uses an update interval,
+status subscription, and also regardless of whether a status subscription uses an update interval,
 or send-on-change, or both.
 
 When a priority reached on of the end states 'completed', 'timeout', 'rejected', 'cooldown' or 'removed',
@@ -1516,6 +1516,30 @@ To guarantee that, send-on-change must be used when subscribing.
 All events are send on every status update, regardless of whether an interval, or sendOnChange (or both) is used.
 Events that complete or timeout are send once, then removed from the list of events.
 
+A request always starts in the 'received' state. The following table shows the possible state transitions:
+
+.. figtable::
+   :nofig:
+   :label: S0033 request transitions
+   :caption: S0033 request transitions
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.50\linewidth}
+   
+   ==========  =====================================
+   State       Possible next states
+   ==========  =====================================
+   received    queued, activated, rejected, cooldown
+   queued      activated, timeout
+   activated   completed, removed
+   completed   (end state)
+   timeout     (end state)
+   rejected    (end state)
+   cooldown    (end state)
+   removed     (end state)
+   ==========  =====================================
+..
+
+The priorities is passed as an array:
 
 .. figtable::
    :nofig:
@@ -1534,6 +1558,7 @@ Events that complete or timeout are send once, then removed from the list of eve
 
 Each priority is passed as a hash with the following attributes:
 
+
 .. figtable::
    :nofig:
    :label: S0033
@@ -1541,51 +1566,25 @@ Each priority is passed as a hash with the following attributes:
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ================  =========================================================================================
-   Name    Type     Value             Comment
-   ======  =======  ================  =========================================================================================
-   r       string   [id]              ID of the priority request
-   t       string   [timestamp]       Timestamp. When the priority last changed state. |br|
-                                      Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
-                                      All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   s       string   -received |br|    received: A new priority request was received but has not yet been processed |br|
-                    -queued |br|      queued: The priority request has been queued for later activation |br|
-                    -activated |br|   activated: The priority was activated |br|
-                    -completed |br|   completed: The priority was cancelled as expected |br|
-                    -timeout |br|     timeout: The priority has been queued for too long |br|
-                    -rejected |br|    rejected: The priority request cannot be granted |br|
-                    -cooldown |br|    cooldown: A similar prior request means the priority request cannot be activated now |br|
-                    -removed |br|     removed: A prior was not cancelled within a reasonable time and was therefore removed|br|
-   g       integer  [0-255]           (Optional) Estimated number of seconds actually gained by the priority |br|
-                                      Only used when state is 'completed'.
-   ======  =======  ================  =========================================================================================
+   ======  =======  ===============  =============================================================================================
+   Name    Type     Value            Comment
+   ======  =======  ===============  =============================================================================================
+   r       string   [id]             ID of the priority request
+   t       string   [timestamp]      Timestamp. When the priority last changed state. |br|
+                                     Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
+                                     All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   s       string   -received |br|   received: A new priority request was received but has not yet been processed |br|
+                    -queued |br|     queued: The priority request has been queued for later activation |br|
+                    -activated |br|  activated: The priority was activated |br|
+                    -completed |br|  completed: The priority was cancelled as expected |br|
+                    -timeout |br|    timeout: The priority has been queued for too long |br|
+                    -rejected |br|   rejected: The priority request cannot be granted |br|
+                    -cooldown |br|   cooldown: A similar priority request means the priority request cannot be activated now |br|
+                    -removed         removed: A prior request was not cancelled within a reasonable time and was therefore removed
+   g       integer  [0-255]          (Optional) Estimated number of seconds actually gained by the priority |br|
+                                     Only used when state is 'completed'.
+   ======  =======  ===============  =============================================================================================
 ..
-
-A request always starts in the 'received' state. The following table shows the possible state transitions:
-
-.. figtable::
-   :nofig:
-   :label: S0033 request transitions
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
-
-   ==========  =====================================
-   State       Possible next states
-   ==========  =====================================
-   received    queued, activated, rejected, cooldown
-   queued      activated, timeout
-   activated   completed, removed
-   completed   (end state)
-   timeout     (end state)
-   rejected    (end state)
-   cooldown    (end state)
-   removed     (end state)
-   ==========  =====================================
-..
-
-Request status start out as 'received'. It can then change to 
-'rejected', or 'cooldown', indicate
-
 
 S0034
 ^^^^^^^^
