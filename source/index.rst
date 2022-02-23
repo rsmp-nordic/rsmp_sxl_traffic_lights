@@ -23,4 +23,5 @@ RSMP Signal Exchange List for Traffic Light Controllers
    signal_group_status
    traffic_data
    coordination
+   multiple_supervisors
    examples
