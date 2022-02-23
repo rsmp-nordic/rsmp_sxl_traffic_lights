@@ -20,8 +20,8 @@ This document contains examples for all message types.
 + `A0202 Less serious lamp error`_
 + `A0301 Detector error (hardware)`_
 + `A0302 Detector error (logic error)`_
-+ `A0303 Serious detector error (hardware)`
-+ `A0304 Serious detector error (logic error)`
++ `A0303 Serious detector error (hardware)`_
++ `A0304 Serious detector error (logic error)`_
 
 `Statuses`_
 
