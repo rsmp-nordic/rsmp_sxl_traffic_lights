@@ -9,9 +9,9 @@ This document contains examples for all message types.
 + `A0002 Less serious hardware error`_
 + `A0003 Serious configuration error`_
 + `A0004 Less serious configuration error`_
-+ `A0005 Communication error between traffic light controllers / synchronisation error`_
++ `A0005 Synchronisation error (coordination)`_
 + `A0006 Safety error`_
-+ `A0007 Communication error between one or multiple traffic light controllers and central control system`_
++ `A0007 Communication error`_
 + `A0008 Dead lock error`_
 + `A0009 Other error`_
 + `A0010 Door open`_
@@ -20,6 +20,8 @@ This document contains examples for all message types.
 + `A0202 Less serious lamp error`_
 + `A0301 Detector error (hardware)`_
 + `A0302 Detector error (logic error)`_
++ `A0303 Serious detector error (hardware)`
++ `A0304 Serious detector error (logic error)`
 
 `Statuses`_
 
@@ -54,6 +56,9 @@ This document contains examples for all message types.
 + `S0029 Forced input status`_
 + `S0030 Forced output status`_
 + `S0031 Trigger level sensitivity for loop detector`_
++ `S0032 Coordinated control`_
++ `S0033 Signal Priority Status`_
++ `S0034 Timeout for dynamic bands`_
 + `S0091 Operator logged in/out OP-panel`_
 + `S0092 Operator logged web-interface`_
 + `S0095 Version of Traffic Light Controller`_
@@ -91,6 +96,8 @@ This document contains examples for all message types.
 + `M0019 Force input`_
 + `M0020 Force output`_
 + `M0021 Set trigger level sensitivity for loop detector`_
++ `M0022 Request Signal Priority`_
++ `M0023 Set timeout for dynamic bands`_
 + `M0103 Set security code`_
 + `M0104 Set clock`_
 
@@ -196,8 +203,8 @@ A0004 Less serious configuration error
    	"rvs":[]
    }
    
-A0005 Communication error between traffic light controllers / synchronisation error
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A0005 Synchronisation error (coordination)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
 .. code-block:: json
 
@@ -209,7 +216,7 @@ A0005 Communication error between traffic light controllers / synchronisation er
    	"xNId":"",
    	"cId":"KK+AG0503=001TC000",
    	"aCId":"A0005",
-   	"xACId":"ERROR: COMM ERROR 4",
+   	"xACId":"ERROR: SYNC ERROR 4",
    	"xNACId":"",
    	"aSp":"Issue",
    	"ack":"notAcknowledged",
@@ -246,8 +253,8 @@ A0006 Safety error
    	"rvs":[]
    }
 
-A0007 Communication error between one or multiple traffic light controllers and central control system
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A0007 Communication error
+~~~~~~~~~~~~~~~~~~~~~~~~~
    
 .. code-block:: json
 
@@ -259,7 +266,7 @@ A0007 Communication error between one or multiple traffic light controllers and 
    	"xNId":"",
    	"cId":"KK+AG0503=001TC000",
    	"aCId":"A0007",
-   	"xACId":"ERROR COMM ERROR #9",
+   	"xACId":"ERROR NTP ERROR #9",
    	"xNACId":"",
    	"aSp":"Issue",
    	"ack":"notAcknowledged",
@@ -268,7 +275,10 @@ A0007 Communication error between one or multiple traffic light controllers and 
    	"aTs":"2019-09-26T12:50:12.402Z",
    	"cat":"D",
    	"pri":"3",
-   	"rvs":[]
+   	"rvs":[{
+                "n":"protocol",
+                "v":"ntp"
+        }]
    }
 
 A0008 Dead lock error
@@ -506,6 +516,83 @@ A0302 Detector error (logic error)
    		"v":"always_off"
    	}]
    }
+
+A0303 Serious detector error (hardware)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: json
+
+    {
+        "mType":"rSMsg",
+        "type":"Alarm",
+        "mId":"efb6a4c5-f2ea-4947-9deb-667756926203",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001DL001",
+        "aCId":"A0303",
+        "xACId":"ERROR DETECTOR LOGIC OPEN #1",
+        "xNACId":"",
+        "aSp":"Issue",
+        "ack":"notAcknowledged",
+        "aS":"Active",
+        "sS":"notSuspended",
+        "aTs":"2021-12-13T09:35:25.602Z",
+        "cat":"D",
+        "pri":"2",
+        "rvs":[{
+                "n":"detector",
+                "v":"1"
+        },{
+                "n":"type",
+                "v":"loop"
+        },{
+                "n":"errormode",
+                "v":"on"
+        },{
+                "n":"manual",
+                "v":"True"
+        }]
+    }
+
+A0304 Serious detector error (logic error)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: json
+
+    {
+        "mType":"rSMsg",
+        "type":"Alarm",
+        "mId":"efb6a4c5-f2ea-4947-9deb-667756926203",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001DL001",
+        "aCId":"A0304",
+        "xACId":"ERROR DETECTOR LOGIC OPEN #1",
+        "xNACId":"",
+        "aSp":"Issue",
+        "ack":"notAcknowledged",
+        "aS":"Active",
+        "sS":"notSuspended",
+        "aTs":"2021-12-13T09:35:25.602Z",
+        "cat":"D",
+        "pri":"2",
+        "rvs":[{
+                "n":"detector",
+                "v":"1"
+        },{
+                "n":"type",
+                "v":"loop"
+        },{
+                "n":"errormode",
+                "v":"on"
+        },{
+                "n":"manual",
+                "v":"True"
+        },{
+                "n":"logicerror",
+                "v":"always_off"
+        }]
+    }
 
 Statuses
 --------
@@ -829,6 +916,9 @@ S0007 Controller switched on
    	},{
    		"sCI":"S0007",
    		"n":"status"
+   	},{
+                "sCI":"S0007",
+                "n":"source"
    	}]
    }
 
@@ -855,6 +945,11 @@ S0007 Controller switched on
    		"n":"status",
    		"s":"True",
    		"q":"recent"
+   	},{
+   		"sCI":"S0007",
+   		"n":"source",
+   		"s":"forced",
+   		"q":"recent"
    	}]
    }
 
@@ -879,6 +974,9 @@ S0008 Manual control
    	},{
    		"sCI":"S0008",
    		"n":"status"
+   	},{
+                "sCI":"S0008",
+                "n":"source"
    	}]
    }
 
@@ -905,6 +1003,11 @@ S0008 Manual control
    		"n":"status",
    		"s":"True",
    		"q":"recent"
+   	},{
+   		"sCI":"S0008",
+   		"n":"source",
+   		"s":"forced",
+   		"q":"recent"
    	}]
    }
 
@@ -929,6 +1032,9 @@ S0009 Fixed time control
    	},{
    		"sCI":"S0009",
    		"n":"status"
+   	},{
+   		"sCI":"S0009",
+   		"n":"source"
    	}]
    }
 
@@ -955,6 +1061,11 @@ S0009 Fixed time control
    		"n":"status",
    		"s":"True",
    		"q":"recent"
+   	},{
+   		"sCI":"S0009",
+   		"n":"source",
+   		"s":"forced",
+   		"q":"recent"
    	}]
    }
 
@@ -979,6 +1090,9 @@ S0010 Isolated control
    	},{
    		"sCI":"S0010",
    		"n":"status"
+   	},{
+   		"sCI":"S0010",
+   		"n":"source"
    	}]
    }
 
@@ -1005,6 +1119,11 @@ S0010 Isolated control
    		"n":"status",
    		"s":"True",
    		"q":"recent"
+   	},{
+   		"sCI":"S0010",
+   		"n":"source",
+   		"s":"forced",
+   		"q":"recent"
    	}]
    }
 
@@ -1029,6 +1148,9 @@ S0011 Yellow flash
    	},{
    		"sCI":"S0011",
    		"n":"status"
+   	},{
+   		"sCI":"S0011",
+   		"n":"source"
    	}]
    }
 
@@ -1055,6 +1177,11 @@ S0011 Yellow flash
    		"n":"status",
    		"s":"True",
    		"q":"recent"
+   	},{
+   		"sCI":"S0011",
+   		"n":"source",
+   		"s":"forced",
+   		"q":"recent"
    	}]
    }
 
@@ -1079,6 +1206,9 @@ S0012 All red
    	},{
    		"sCI":"S0012",
    		"n":"status"
+   	},{
+   		"sCI":"S0012",
+   		"n":"source"
    	}]
    }
 
@@ -1104,6 +1234,11 @@ S0012 All red
    		"sCI":"S0012",
    		"n":"status",
    		"s":"True",
+   		"q":"recent"
+   	},{
+   		"sCI":"S0012",
+   		"n":"source",
+   		"s":"forced",
    		"q":"recent"
    	}]
    }
@@ -1176,6 +1311,9 @@ S0014 Current time plan
    	"sS":[{
    		"sCI":"S0014",
    		"n":"status"
+   	},{
+   		"sCI":"S0014",
+   		"n":"source"
    	}]
    }
 
@@ -1196,6 +1334,11 @@ S0014 Current time plan
    		"sCI":"S0014",
    		"n":"status",
    		"s":"9",
+   		"q":"recent"
+   	},{
+   		"sCI":"S0014",
+   		"n":"source",
+   		"s":"forced",
    		"q":"recent"
    	}]
    }
@@ -1218,6 +1361,9 @@ S0015 Current traffic situation
    	"sS":[{
    		"sCI":"S0015",
    		"n":"status"
+   	},{
+   		"sCI":"S0015",
+   		"n":"source"
    	}]
    }
 
@@ -1238,6 +1384,11 @@ S0015 Current traffic situation
    		"sCI":"S0015",
    		"n":"status",
    		"s":"2",
+   		"q":"recent"
+   	},{
+   		"sCI":"S0015",
+   		"n":"status",
+   		"s":"forced",
    		"q":"recent"
    	}]
    }
@@ -1974,6 +2125,164 @@ S0031 Trigger level sensitivity for loop detector
    	}]
    }
 
+S0032 Coordinated control
+~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+**Status Request**
+
+.. code-block:: json
+
+   {
+        "mType":"rSMsg",
+        "type":"StatusRequest",
+        "mId":"c764a831-e3c9-4b01-a938-2171fb3d9bbd",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "sS":[{
+                "sCI":"S0032",
+                "n":"intersection"
+        },{
+                "sCI":"S0032",
+                "n":"status"
+        },{
+                "sCI":"S0032",
+                "n":"source"
+        ]}
+   }
+
+
+**Status Response**
+
+.. code-block:: json
+
+   {
+        "mType":"rSMsg",
+        "type":"StatusResponse",
+        "mId":"56fcfe6b-a07e-4a87-bf9f-4ecd76a805a7",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "sTs":"2021-12-13T11:11:07.317Z",
+        "sS":[{
+                "sCI":"S0032",
+                "n":"intersection",
+                "s":"0",
+                "q":"recent"
+        },{
+                "sCI":"S0032",
+                "n":"status",
+                "s":"local",
+                "q":"recent"
+        },{
+                "sCI":"S0032",
+                "n":"source",
+                "s":"calendar_clock",
+                "q":"recent"
+        ]}
+    }
+
+S0033 Signal Priority Status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+**Status Request**
+
+.. code-block:: json
+
+    {
+        "mType": "rSMsg",
+        "type": "StatusRequest",
+        "mId": "f1a13213-b90a-4abc-8953-2b8142923c55",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "sS": [{
+                "sCI": "S0033",
+                "n": "events"
+        }]
+    }
+
+**Status Response**
+
+.. code-block:: json
+
+    {
+        "mType": "rSMsg",
+        "type": "StatusResponse",
+        "mId": "f1a13213-b90a-4abc-8953-2b8142923c55",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "sTs":"2021-12-13T11:11:07.317Z",
+        "sS": [{
+                "sCI": "S0033",
+                "n": "events",
+                "q": "recent",
+                "s": [{
+                        "r": "f90c",
+                        "t": "2021-11-09T15:06:38.796Z",
+                        "s": "queued"
+                },{
+                        "r": "f90c",
+                        "t": "2021-11-09T15:06:38.796Z",
+                        "s": "activated"
+                },{
+                        "r": "f90c",
+                        "t": "2021-11-09T15:06:39.796Z",
+                        "s": "completed"
+                },{
+                        "r": "e33a2",
+                        "t": "2021-11-09T15:06:48.796Z",
+                        "s": "overridden",
+                        "o": "ff30"
+                },{
+                        "r": "58c0",
+                        "t": "2021-11-09T15:06:48.796Z",
+                        "s": "timeout"
+                }]
+        }]
+    }
+
+S0034 Timeout for dynamic bands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+**Status Request**
+
+.. code-block:: json
+
+    {
+        "mType": "rSMsg",
+        "type": "StatusRequest",
+        "mId": "f1a13213-b90a-4abc-8953-2b8142923c55",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "sS": [{
+                "sCI": "S0034",
+                "n": "status"
+        }]
+    }
+
+**Status Response**
+
+.. code-block:: json
+
+    {
+        "mType":"rSMsg",
+        "type":"StatusResponse",
+        "mId":"c4064647-65c8-4ebd-aa41-e52576329d8e",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "sTs":"2021-12-13T11:55:13.399Z",
+        "sS":[{
+                "sCI":"S0034",
+                "n":"status",
+                "s":"30",
+                "q":"recent"
+        }]
+    }
+
    
 S0091 Operator logged in/out OP-panel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1992,9 +2301,6 @@ S0091 Operator logged in/out OP-panel
    	"sS":[{
    		"sCI":"S0091",
    		"n":"user"
-   	},{
-   		"sCI":"S0091",
-   		"n":"status"
    	}]
    }
 
@@ -2014,12 +2320,7 @@ S0091 Operator logged in/out OP-panel
    	"sS":[{
    		"sCI":"S0091",
    		"n":"user",
-   		"s":"admin",
-   		"q":"recent"
-   	},{
-   		"sCI":"S0091",
-   		"n":"status",
-   		"s":"login",
+   		"s":"2",
    		"q":"recent"
    	}]
    }
@@ -2042,9 +2343,6 @@ S0092 Operator logged web-interface
    	"sS":[{
    		"sCI":"S0092",
    		"n":"user"
-   	},{
-   		"sCI":"S0092",
-   		"n":"status"
    	}]
    }
 
@@ -2064,12 +2362,7 @@ S0092 Operator logged web-interface
    	"sS":[{
    		"sCI":"S0092",
    		"n":"user",
-   		"s":"admin",
-   		"q":"recent"
-   	},{
-   		"sCI":"S0092",
-   		"n":"status",
-   		"s":"login",
+   		"s":"2",
    		"q":"recent"
    	}]
    }
@@ -4054,7 +4347,130 @@ M0021 Set trigger level sensitivity for loop detector
    	}]
    }
 
+M0022 Request Signal Priority
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
+**Command Request**
+
+.. code-block:: json
+
+   {
+        "mType":"rSMsg",
+        "type":"CommandRequest",
+        "mId":"e4e9668a-b562-4fbe-9c1e-d4a30733ddea",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "arg":[{
+                "cCI":"M0022",
+                "n":"requestId",
+                "cO":"requestPriority",
+                "v":"f90c"
+        },{
+                "cCI":"M0022",
+                "n":"connectionId",
+                "cO":"requestPriority",
+                "v":"5"
+        },{
+                "cCI":"M0022",
+                "n":"type",
+                "cO":"requestPriority",
+                "v":"new"
+        },{
+                "cCI":"M0022",
+                "n":"vehicleType",
+                "cO":"requestPriority",
+                "v":"bus"
+        }]
+   }
+
+**Command Response**
+
+.. code-block:: json
+
+   {
+        "mType":"rSMsg",
+        "type":"CommandResponse",
+        "mId":"092418fe-e79a-44f7-91b2-13413bab7910",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "cTS":"2021-12-13T11:44:45.461Z",
+        "rvs":[{
+                "cCI":"M0022",
+                "n":"requestId",
+                "v":"f90c",
+                "age":"recent"
+        },{
+                "cCI":"M0022",
+                "n":"connectionId",
+                "v":"5",
+                "age":"recent"
+        },{
+                "cCI":"M0022",
+                "n":"type",
+                "v":"new",
+                "age":"recent"
+        },{
+                "cCI":"M0022",
+                "n":"vehicleType",
+                "v":"bus",
+                "age":"recent"
+        }]
+   }
+
+M0023 Set timeout for dynamic bands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+**Command Request**
+
+.. code-block:: json
+
+   {
+        "mType":"rSMsg",
+        "type":"CommandRequest",
+        "mId":"0052a94b-3678-483e-9ee8-4e4f52771051",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "arg":[{
+                "cCI":"M0023",
+                "n":"securityCode",
+                "cO":"setTimeout",
+                "v":"0000"
+        },{
+                "cCI":"M0023",
+                "n":"status",
+                "cO":"setTimeout",
+                "v":"30"
+        }]
+   }
+
+**Command Response**
+
+.. code-block:: json
+
+   {
+        "mType":"rSMsg",
+        "type":"CommandResponse",
+        "mId":"20615c0c-d9d0-412e-836a-749c85cb5d13",
+        "ntsOId":"KK+AG9998=001TC000",
+        "xNId":"",
+        "cId":"KK+AG9998=001TC000",
+        "cTS":"2021-12-13T11:57:21.586Z",
+        "rvs":[{
+                "cCI":"M0023",
+                "n":"securityCode",
+                "v":"0000",
+                "age":"recent"
+        },{
+                "cCI":"M0023",
+                "n":"status",
+                "v":"30",
+                "age":"recent"
+        }]
+   }
+
 M0103 Set security code
 ~~~~~~~~~~~~~~~~~~~~~~~
    

@@ -1,4 +1,48 @@
-# 1.0.15 (2020-10-30)
+# Version 1.1
+
+## Designated command/status for priority #129
+Add a specific command and status for requesting priority for designated vehicles
+
+## S0091, S0092: "Operator logged in" updated #94
+User name removed and login levels updated
+
+## A0005/A0007. Updated definitions #77
+- A0005 is used for communication error in coordination mode
+- A0007 is used for communication error with supervision system and NTP
+
+## Source of status changes #67
+Ability to se the reason for switching status, e.g. source of plan change, dark mode, etc.
+
+## Coordination local/centralized #83
+Ability to see if TLC is using local or centralized coordination
+
+## Add serious detector hardware and logic errors #108
+Only low priority detector errors were defined. There is a need to be able to use detector error with a higher priority (serious error).
+
+## Timeout for dynamic bands. #95 and #96
+Time until a designated time plan is entered due to lost connection with the supervisor
+
+## M0019 and M0005. True/False mixed up. #121 and #144
+Both M0019 (force input) and M0005 (emergency route) had typos where True and False were mixed up in the description.
+
+## Minor changes
+- M0013: Add "All read" as possible option for Police Key #119
+- Use only JSON data types. Replace "long" with "integer" #133
+- S0001: Use '-' if there are gaps in the numbering #125
+
+## Minor clarifications
+- S0096, M0104, S0204, S0201, S0202: Define min, max correctly when using integers and long #131
+- A0008: Add list (1-255) instead of "designation" (time plan) #130
+- M0013: Fix error in example and description #134
+- Signal group status: Ascii character after each definition #103
+- S0011: Yellow flash. Clarification in description #112
+- M0019: Typo in example for "Force Input" #136
+- Aggregated Status, functionalPosition  and functionalState (fS and fP) is unused #90
+- Definition of max. minimum green #102
+- Clarify that a number of statuses uses comma separated lists of intersections #122
+- Clarify meaning of "cycle counter" and "base cycle counter" #118 
+
+# Version 1.0.15 (2020-10-30)
 
 - The coordination specification has been added. [#79](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/pull/79)
   Coordination with RSMP were tested already back in 2013-2014 together with
@@ -24,7 +68,7 @@ The following commands/statuses/alarms has been added:
 
 The full list can be [shown here](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues?q=is%3Aissue+milestone%3A1.0.15).
 
-# 1.0.14 (2017-10-30)
+# Version 1.0.14 (2017-10-30)
 
 Improved traffic counting (S0205-S0208)
 
@@ -33,7 +77,7 @@ network traffic if subscriptions are established for each detector logic. The
 new traffic data statuses contains data from all detector logics in the same
 status message.
 
-# 1.0.13 (2017-06-26)
+# Version 1.0.13 (2017-06-26)
 
 "RSMP++", extensions by the City of Copenhagen.
 
@@ -50,26 +94,26 @@ The extension focuses on these elements:
 - Ability to get predicted time-to-green / time-to-red
 - Ability to force input
 
-# 1.0.11-1.0.12 (draft)
+# Version 1.0.11-1.0.12 (draft)
 
 Not released. Improved traffic counting. Moved to separate branch
 "improved_traffic_counting".
 
-# 1.0.10 (2013-09-24)
+# Version 1.0.10 (2013-09-24)
 
 Extensions for coordination support
 
 - M0013 Fix separator between command chunks
 
 
-# 1.0.9 (2013-10-07)
+# Version 1.0.9 (2013-10-07)
 
 Extensions for coordination support
 
 - M0012 The object type  was incorrectly set to "Signal group". It should have
   been "Traffic light controller"
 
-# 1.0.8 (2013-09-24)
+# Version 1.0.8 (2013-09-24)
 
 Extensions for coordination support. Adds commands/statuses needed for
 coordination between TLCs
@@ -77,11 +121,11 @@ coordination between TLCs
 - M0012 Activate/Deactivate many inputs
 - M0013 Request many signals groups to green/red
 
-# 1.0.7 (2012-10-04)
+# Version 1.0.7 (2012-10-04)
 
 - Used for traffic light controllers from 2012.
 
-# 1.0.6 (2012-02-29)
+# Version 1.0.6 (2012-02-29)
 
 - New format of the SXL (signal exchange list), which makes it easier to
   import the SXL to the RSMP simulators. This means that description of
@@ -123,7 +167,7 @@ coordination between TLCs
 - The commands M0008 changes object type to "detector logic"
   so that it's clear which detector logic that will be set.
   
-# 1.0.5 (2011-11-11)
+# Version 1.0.5 (2011-11-11)
 
 - Adjustments to RSMP 3.0
 - Since event messages are removed from the RSMP spec, the following
@@ -169,7 +213,7 @@ coordination between TLCs
   The following command and statuses are affected:
   M0104, S0001, S0013, S0016, S0017, S0018, S0019, S0096, S0201, S0204
 
-# 1.0.4 (2001-10-26)
+# Version 1.0.4 (2001-10-26)
 
 - AL301 and AL302. Manually controlled detector logic added
 - AL302: Intermittent logic error instead of other logic error
