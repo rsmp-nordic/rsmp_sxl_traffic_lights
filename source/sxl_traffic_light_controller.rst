@@ -1503,6 +1503,9 @@ priority requests are activated or cancelled.
 A list of priority events is returned. Each event refer to a particular request, using a requestId.
 Several events can refer to the same request, for example if the request was first enqueued, then activated.
 
+All events are send on every status update, regardless of whether an interval, or sendOnChange (or both) is used.
+Events that complete or timeout are send once, then removed from the list of events.
+
 
 .. figtable::
    :nofig:
