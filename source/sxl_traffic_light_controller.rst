@@ -1539,7 +1539,7 @@ A request always starts in the 'received' state. The following table shows the p
    ==========  =====================================
 ..
 
-The priorities is passed as an array:
+The priorities are passed as an array:
 
 .. figtable::
    :nofig:
