@@ -1544,10 +1544,35 @@ Each event is passed as a hash with the following attributes:
                     -timeout |br|     timeout: The priority has been queued for too long |br|
                     -rejected |br|    rejected: The priority request cannot be granted |br|
                     -cooldown |br|    cooldown: A similar prior request means the priority request cannot be activated now |br|
-   g       integer  [0-255]           (Optional) Actual number of seconds gained by the priority |br|
+   g       integer  [0-255]           (Optional) Estimated number of seconds actually gained by the priority |br|
                                       Only used when status is 'completed'.
    ======  =======  ================  =================================================================================================================================
 ..
+
+A request always starts in the 'received' state. The following table shows the possible state transitions:
+
+.. figtable::
+   :nofig:
+   :label: S0033 request transitions
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+
+   ==========  ==============================================================================
+   State       Possible next states
+   ==========  ==============================================================================
+   received    queued, activated, rejected, cooldown
+   queued      activated, timeout
+   activated   completed
+   completed
+   timeout
+   rejected
+   cooldown   
+   ==========  ==============================================================================
+..
+
+Request status start out as 'received'. It can then change to 
+'rejected', or 'cooldown', indicate
+
 
 S0034
 ^^^^^^^^
