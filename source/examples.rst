@@ -2148,7 +2148,7 @@ S0032 Coordinated control
         },{
                 "sCI":"S0032",
                 "n":"source"
-        ]}
+        }]
    }
 
 
@@ -2179,7 +2179,7 @@ S0032 Coordinated control
                 "n":"source",
                 "s":"calendar_clock",
                 "q":"recent"
-        ]}
+        }]
     }
 
 S0033 Signal Priority Status
