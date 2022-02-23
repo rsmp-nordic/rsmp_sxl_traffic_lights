@@ -1529,21 +1529,23 @@ Each event is passed as a hash with the following attributes:
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ================  =================================================================================================================================
-   Name    Type     Value             Comment
-   ======  =======  ================  =================================================================================================================================
-   r       string   [id]              ID of the priority request
-   t       string   [timestamp]       Timestamp. When the event happened. |br|
-                                      Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   s       string   -queued |br|      queued: A new priority request was received and has been queued |br|
-                    -activated |br|   activated: The priority was activated |br|
-                    -completed |br|   completed: The priority was cancelled (as expected) |br|
-                    -overridden |br|  overridden: The priority was overridden by another request with a higher priority |br|
-                    -timeout          timeout: The priority has timed out because it was never cancelled
-   o       string   [id]              (Optional) ID of the overriding priority request. Only used if status is set to overridden
-   g       integer  [0-255]           (Optional) Actual number of seconds gained by the priority |br|
-                                      Only used when status is complete, override or timeout.
-   ======  =======  ================  =================================================================================================================================
+   ======  =======  ===============  =================================================================================================================================
+   Name    Type     Value            Comment
+   ======  =======  ===============  =================================================================================================================================
+   r       string   [id]             ID of the priority request
+   t       string   [timestamp]      Timestamp. When the event happened. |br|
+                                     Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   s       string   -received |br|   received: A new priority request was received |br|
+                    -rejected |br|   rejected: The priority request was rejected |br|
+                    -cooldown |br|   cooldown: The priority request was rejected because maximum number of requests reached within time frame |br|
+                    -queued |br|     queued: The priority request has been queued |br|
+                    -activated |br|  activated: The priority was activated |br|
+                    -completed |br|  completed: The priority was cancelled (as expected) |br|
+                    -timeout         timeout: The priority has timed out because it was never cancelled
+   o       string   [id]             (Optional) ID of the overriding priority request. Only used if status is set to overridden
+   g       integer  [0-255]          (Optional) Actual number of seconds gained by the priority |br|
+                                     Only used when status is complete, override or timeout.
+   ======  =======  ===============  =================================================================================================================================
 ..
 
 S0034
