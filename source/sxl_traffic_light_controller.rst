@@ -1500,8 +1500,18 @@ Signal Priority Status
 This status can be used to get updates about priority requests. For example, you can use it to know when
 priority requests are activated or cancelled.
 
-A list of priority events is returned. Each event refer to a particular request, using a requestId.
-Several events can refer to the same request, for example if the request was first enqueued, then activated.
+A list of priorities is returned, refered to by their request ids. The same request id can appear only once.
+
+All priorities are included in the list (not only the ones that have changed state since the last update).
+This is done regardless of whether the status is send in respond to a status request, or due to a
+status subscription, and also regardlesss of whether a status subscription uses an update interval,
+or send-on-change, or both.
+
+When a priority reached on of the end states 'completed', 'timeout', 'rejected', 'cooldown' or 'removed',
+it should be included once in the next status update, and then not anymore.
+
+If you subscribe using an update interval, you're not guaranteed to get all intermediate states.
+To guarantee that, send-on-change must be used when subscribing.
 
 All events are send on every status update, regardless of whether an interval, or sendOnChange (or both) is used.
 Events that complete or timeout are send once, then removed from the list of events.
@@ -1509,21 +1519,20 @@ Events that complete or timeout are send once, then removed from the list of eve
 
 .. figtable::
    :nofig:
-   :label: S0033 event array
-   :caption: S0033 event array
+   :label: S0033 priority array
+   :caption: S0033 priority array
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
    ==========  =======  ===============  ==============================================================================
    Name        Type     Value            Comment
    ==========  =======  ===============  ==============================================================================
-   status      array    [events]         List of events. See the table below for details.
+   status      array    [priorities]     List of priorities. See the table below for details.
    ==========  =======  ===============  ==============================================================================
 ..
 
 
-Each event is passed as a hash with the following attributes:
-
+Each priority is passed as a hash with the following attributes:
 
 .. figtable::
    :nofig:
@@ -1532,24 +1541,51 @@ Each event is passed as a hash with the following attributes:
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ===============  =================================================================================================================================
-   Name    Type     Value            Comment
-   ======  =======  ===============  =================================================================================================================================
-   r       string   [id]             ID of the priority request
-   t       string   [timestamp]      Timestamp. When the event happened. |br|
-                                     Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   s       string   -received |br|   received: A new priority request was received |br|
-                    -rejected |br|   rejected: The priority request was rejected |br|
-                    -cooldown |br|   cooldown: The priority request was rejected because maximum number of requests reached within time frame |br|
-                    -queued |br|     queued: The priority request has been queued |br|
-                    -activated |br|  activated: The priority was activated |br|
-                    -completed |br|  completed: The priority was cancelled (as expected) |br|
-                    -timeout         timeout: The priority has timed out because it was never cancelled
-   o       string   [id]             (Optional) ID of the overriding priority request. Only used if status is set to overridden
-   g       integer  [0-255]          (Optional) Actual number of seconds gained by the priority |br|
-                                     Only used when status is complete, override or timeout.
-   ======  =======  ===============  =================================================================================================================================
+   ======  =======  ================  =========================================================================================
+   Name    Type     Value             Comment
+   ======  =======  ================  =========================================================================================
+   r       string   [id]              ID of the priority request
+   t       string   [timestamp]       Timestamp. When the priority last changed state. |br|
+                                      Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
+                                      All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   s       string   -received |br|    received: A new priority request was received but has not yet been processed |br|
+                    -queued |br|      queued: The priority request has been queued for later activation |br|
+                    -activated |br|   activated: The priority was activated |br|
+                    -completed |br|   completed: The priority was cancelled as expected |br|
+                    -timeout |br|     timeout: The priority has been queued for too long |br|
+                    -rejected |br|    rejected: The priority request cannot be granted |br|
+                    -cooldown |br|    cooldown: A similar prior request means the priority request cannot be activated now |br|
+                    -removed |br|     removed: A prior was not cancelled within a reasonable time and was therefore removed|br|
+   g       integer  [0-255]           (Optional) Estimated number of seconds actually gained by the priority |br|
+                                      Only used when state is 'completed'.
+   ======  =======  ================  =========================================================================================
 ..
+
+A request always starts in the 'received' state. The following table shows the possible state transitions:
+
+.. figtable::
+   :nofig:
+   :label: S0033 request transitions
+   :loc: H
+   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+
+   ==========  =====================================
+   State       Possible next states
+   ==========  =====================================
+   received    queued, activated, rejected, cooldown
+   queued      activated, timeout
+   activated   completed, removed
+   completed   (end state)
+   timeout     (end state)
+   rejected    (end state)
+   cooldown    (end state)
+   removed     (end state)
+   ==========  =====================================
+..
+
+Request status start out as 'received'. It can then change to 
+'rejected', or 'cooldown', indicate
+
 
 S0034
 ^^^^^^^^
@@ -2739,8 +2775,8 @@ Useful for bus priority or other type of priorities like emergency vehicles or g
 
 The benefit of using this message over activating inputs or detector logics is that you
 can specify a priority level, vehicle type and estimated time of arrival.
-You can also update or cancel the request, or use the corresponding status request or
-subscription to track the status of the request, including how much priority was actually given.
+You can also update or cancel the request, and use the corresponding status message
+to track the status of the request, including how much priority was actually given.
 
 Activating signal priority is expected to provide more green time for a particular movement
 through the intersection, but the exact mechanism must typically be configured in the controller.
@@ -2752,7 +2788,7 @@ in the controller, and in the system that sends priority requests. Either:
   This method is simple, but will not allow you to have different priority mechanism for the
   same signal group, unless they can be distinguished by the vehicle type. For example, if you
   need to trigger different priorities depending on whether a bus goes straight or makes a turn
-  for the same signal group, you must use of the other referencing methods.
+  for the same signal group, you need to use of the other referencing methods.
 - Reference an input by setting 'inputId'. This can be useful if you previously used
   inputs to activate priority. The input will not be activated, only the priority.
 - Reference a connection by setting 'connectionId'. A connection is a movement from a specific
@@ -2761,7 +2797,8 @@ in the controller, and in the system that sends priority requests. Either:
 - Reference an ingoing lane by setting 'laneInId', and
   optionally also reference an outgoing lane by setting 'laneOutId'.
 
-Referencing attributes that are not used must be left out, rather than set to null or empty strings:
+Referencing attributes that are not used must be left out, rather than set to null or empty strings.
+This includes:
 
 - signalGroupId
 - inputId
@@ -2771,7 +2808,7 @@ Referencing attributes that are not used must be left out, rather than set to nu
 - laneOutId
 
 Referencing attributes are only used when initiating a request. When updating or cancelling the request,
-the request is identified by it's requestId, and no referencing attributes are allowed.
+the request is identified by its requestId, and no referencing attributes are allowed.
 
 You initiate a priority request with type set to 'new'. You must provide a request id that
 uniquely identifies the request on the controller. It can be a randomly generated UUID
@@ -2780,24 +2817,40 @@ and some other identifier. When updating or cancelling a request, you must pass 
 
 Providing ETA (estimated time of arrival) when initiating a request is optional,
 but can help the controller plan ahead in cases where you're able to send the request before
-the vehicle arrives at the intersection. You're allowed the initiate the request without an ETA
+the vehicle arrives at the intersection. You're allowed to initiate the request without an ETA
 and provide it in a later request update. But providing the ETA when initiating
 the request is recommended, since it will give the controller more time to plan ahead.
 
 Like ETA, providing a vehicle type is optional, but can help the controller decide how
-to best handle the request. If not vehicle type is provided.
+to best handle the request.
 
 The priority level provides a way to indicate the relative importance of the request compared
 to other requests. For example, emergency vehicles or delayed buses could be given a higher priority level.
-Another request with a higher level can override an existing priority with a lower level.
 
-If the ETA changes before the priority is cancelled, or you want to change the priority level, you send
+A request with a higher level can override existing priorities with lower levels.
+
+If the ETA changes before the priority is cancelled, or you want to change the priority level, you can send
 another request message with type set to 'update'. The vehicle type cannot be changed.
 
-A priority request should always be cancelled as soon as there's no need for the priority anymore
-(e.g. because the bus has passed the intersection). You cancel a request by sending another request
-message with type set to 'cancel'. If not cancelled, the controller is expected to time-out the priority
-at some point, but until then it might block requests in other direction.
+
+When you send a priority request, it will be processed to decide if it's possible to activate the requested priority.
+
+If the request is accepted, the priority can either be activated immediately, or if another priority is
+currently active, it can be queued for later activation.
+
+If the priority cannot be accepted the request is rejected. Cooldown is a specific type of rejection, which means that
+s similar request has just completed, and some time needs to pass before a similar request can be activated.
+
+When a request is queued, it is expected to become activated later, but in case too long passes without
+activation, the controller is expected to time out the request.
+
+Once a priority is activated, you're excepted to cancel it as soon as there's no need it anymore, typically
+when the vehicle has passed the intersection. You cancel a request by sending a request passing the
+existing request id setting the type to 'cancel'.
+
+If a request is never cancelled, the controller is expected to remove the priority at some point,
+but until then the priority might block requests in other direction which is why you should always cancel a priority
+when it's not needed anymore.
 
 
 .. figtable::
