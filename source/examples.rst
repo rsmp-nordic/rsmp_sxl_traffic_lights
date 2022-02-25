@@ -2198,7 +2198,7 @@ S0033 Signal Priority Status
         "cId":"KK+AG9998=001TC000",
         "sS": [{
                 "sCI": "S0033",
-                "n": "events"
+                "n": "list"
         }]
     }
 
@@ -2216,7 +2216,7 @@ S0033 Signal Priority Status
         "sTs":"2021-12-13T11:11:07.317Z",
         "sS": [{
                 "sCI": "S0033",
-                "n": "events",
+                "n": "list",
                 "q": "recent",
                 "s": [{
                         "r": "f90c",

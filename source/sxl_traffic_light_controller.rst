@@ -1507,14 +1507,13 @@ This is done regardless of whether the status is send in respond to a status req
 status subscription, and also regardless of whether a status subscription uses an update interval,
 or send-on-change, or both.
 
-When a priority reached on of the end states 'completed', 'timeout', 'rejected', 'cooldown' or 'removed',
-it should be included once in the next status update, and then not anymore.
-
 If you subscribe using an update interval, you're not guaranteed to get all intermediate states.
 To guarantee that, send-on-change must be used when subscribing.
 
-All events are send on every status update, regardless of whether an interval, or sendOnChange (or both) is used.
-Events that complete or timeout are send once, then removed from the list of events.
+All priorities are send on every status update, regardless of whether an interval, or sendOnChange (or both) is used.
+
+When a priority reaches an end states (completed, timeout, rejected, cooldown or stale), it must be
+sent once on the next status update, then removed from the list.
 
 A request always starts in the 'received' state. The following table shows the possible state transitions:
 
@@ -1530,12 +1529,12 @@ A request always starts in the 'received' state. The following table shows the p
    ==========  =====================================
    received    queued, activated, rejected, cooldown
    queued      activated, timeout
-   activated   completed, removed
-   completed   (end state)
-   timeout     (end state)
-   rejected    (end state)
-   cooldown    (end state)
-   removed     (end state)
+   activated   completed, stale
+   completed
+   timeout
+   rejected
+   cooldown
+   stale
    ==========  =====================================
 ..
 
@@ -1551,7 +1550,7 @@ The priorities are passed as an array:
    ==========  =======  ===============  ==============================================================================
    Name        Type     Value            Comment
    ==========  =======  ===============  ==============================================================================
-   status      array    [priorities]     List of priorities. See the table below for details.
+   status      array    [list]           List of priorities. See the table below for details.
    ==========  =======  ===============  ==============================================================================
 ..
 
@@ -1570,7 +1569,7 @@ Each priority is passed as a hash with the following attributes:
    Name    Type     Value            Comment
    ======  =======  ===============  =============================================================================================
    r       string   [id]             ID of the priority request
-   t       string   [timestamp]      Timestamp. When the priority last changed state. |br|
+   t       string   [timestamp]      Timestamp, indicating when the priority last changed state. |br|
                                      Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
                                      All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    s       string   -received |br|   received: A new priority request was received but has not yet been processed |br|
@@ -1580,8 +1579,8 @@ Each priority is passed as a hash with the following attributes:
                     -timeout |br|    timeout: The priority has been queued for too long |br|
                     -rejected |br|   rejected: The priority request cannot be granted |br|
                     -cooldown |br|   cooldown: A similar priority request means the priority request cannot be activated now |br|
-                    -removed         removed: A prior request was not cancelled within a reasonable time and was therefore removed
-   g       integer  [0-255]          (Optional) Estimated number of seconds actually gained by the priority |br|
+                    -stale           stale: The priority has been active too long without cancellation, and was therefore removed
+   g       integer  [0-255]          (Optional) Estimated number of seconds of green time gained by the priority. |br|
                                      Only used when state is 'completed'.
    ======  =======  ===============  =============================================================================================
 ..
