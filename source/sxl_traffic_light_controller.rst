@@ -1580,10 +1580,13 @@ Each priority is passed as a hash with the following attributes:
                     -rejected |br|   rejected: The priority request cannot be granted |br|
                     -cooldown |br|   cooldown: A similar priority request means the priority request cannot be activated now |br|
                     -stale           stale: The priority has been active too long without cancellation, and was therefore removed
-   g       integer  [0-255]          (Optional) Estimated number of seconds of green time gained by the priority. |br|
+   e       integer  [0-255]          (Optional) Estimated green extension provided by the priority, in seconds |br|
+                                     Only used when state is 'completed'.
+   d       integer  [0-255]          (Optional) Estimated red reduction provided by the priority, in seconds |br|
                                      Only used when state is 'completed'.
    ======  =======  ===============  =============================================================================================
 ..
+
 
 S0034
 ^^^^^^^^
@@ -2874,15 +2877,17 @@ when it's not needed anymore.
                            -cancel                 cancel: Cancel an existing priority
    level          integer  [0-14]                  0: Lowest, 14: Highest
    eta            integer  [0-255]                 (Optional) Estimated time of arrival to the intersection, in seconds
-   vehicleType    string   -car |br|               (Optional) Vehicle type
-                           -bus |br|
+   vehicleType    string   -pedestrian |br|        (Optional) Vehicle type
                            -bicycle |br|
-                           -pedestrian |br|
-                           -twoWheeler |br|
+                           -motorcycle |br|
+                           -car |br|
+                           -bus |br|
                            -lightTruck |br|
                            -heavyTruck |br|
                            -tram |br|
                            -emergencyVehicle |br|
+                           -safetyCar |br|
+                           -specialTransport |br|
                            -other
    =============  =======  ======================  =========================================================================
 ..
