@@ -1565,9 +1565,9 @@ Each priority is passed as a hash with the following attributes:
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
 
-   ======  =======  ===============  =============================================================================================
+   ======  =======  ===============  ============================================================================================
    Name    Type     Value            Comment
-   ======  =======  ===============  =============================================================================================
+   ======  =======  ===============  ============================================================================================
    r       string   [id]             ID of the priority request
    t       string   [timestamp]      Timestamp, indicating when the priority last changed state. |br|
                                      Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
@@ -1584,9 +1584,8 @@ Each priority is passed as a hash with the following attributes:
                                      Only used when state is 'completed'.
    d       integer  [0-255]          (Optional) Estimated red reduction provided by the priority, in seconds |br|
                                      Only used when state is 'completed'.
-   ======  =======  ===============  =============================================================================================
+   ======  =======  ===============  ============================================================================================
 ..
-
 
 S0034
 ^^^^^^^^
@@ -2877,18 +2876,18 @@ when it's not needed anymore.
                            -cancel                 cancel: Cancel an existing priority
    level          integer  [0-14]                  0: Lowest, 14: Highest
    eta            integer  [0-255]                 (Optional) Estimated time of arrival to the intersection, in seconds
-   vehicleType    string   -pedestrian |br|        (Optional) Vehicle type
-                           -bicycle |br|
-                           -motorcycle |br|
-                           -car |br|
-                           -bus |br|
-                           -lightTruck |br|
-                           -heavyTruck |br|
-                           -tram |br|
-                           -emergencyVehicle |br|
-                           -safetyCar |br|
-                           -specialTransport |br|
-                           -other
+   vehicleType    string   -pedestrian |br|        (Optional) Vehicle type |br|
+                           -bicycle |br|           pedestrian: Pedestrians |br|
+                           -motorcycle |br|        bicycle: Bicycles |br|
+                           -car |br|               motorcycle: Motorcycles |br|
+                           -bus |br|               car: Passenger vehicle |br|
+                           -lightTruck |br|        bus: Bus used for public transport |br|
+                           -heavyTruck |br|        lightTruck: Light truck |br|
+                           -tram |br|              heavyTruck: Heavy truck |br|
+                           -emergency |br|         tram: Trams used for Public transport |br|
+                           -safetyCar |br|         emergency: Police, fire or ambulance |br|
+                           -specialTransport |br|  safetyCar: For e.g. escort vehicles |br|
+                           -other                  specialTransport: For e.g. heavy load
    =============  =======  ======================  =========================================================================
 ..
 
