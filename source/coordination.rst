@@ -133,6 +133,9 @@ General RSMP requirements
 Communication must be established directly between TLC:s. This demands
 the following general requirements:
 
+- The TLC needs to support communication between sites according to section
+  `4.3 Transport of data`_ in the RSMP specification
+
 - In every TLC, it must be possible to connect to other TLC:s and to
   receive connections from other TLC:s (client-server).
 
@@ -151,6 +154,8 @@ the following general requirements:
 
 - The TLC must be able to communicate with the supervision system at the
   same as communicating between TLC:s.
+
+..  _4.3 Transport of data:  https://rsmp-nordic.org/rsmp_specifications/core/3.2/applicability/transport_of_data.html
 
 Functional requirements of the TLC
 ----------------------------------
