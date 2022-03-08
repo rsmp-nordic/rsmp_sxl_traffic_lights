@@ -2763,8 +2763,6 @@ to best handle the request.
 The priority level provides a way to indicate the relative importance of the request compared
 to other requests. For example, emergency vehicles or delayed buses could be given a higher priority level.
 
-A request with a higher level can override existing priorities with lower levels.
-
 If the ETA changes before the priority is cancelled, or you want to change the priority level, you can send
 another request message with type set to 'update'. The vehicle type cannot be changed.
 
