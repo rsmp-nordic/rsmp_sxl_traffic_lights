@@ -2053,8 +2053,8 @@ Commands
    Traffic Light Controller  `M0006`_         setInput               Activate input
    Traffic Light Controller  `M0007`_         setFixedTime           Activate fixed time control
    Detector logic            `M0008`_         setForceDetectorLogic  Sets manual activation of detector logic
-   Signal group              `M0010`_         setStart               Start of signal group. Orders a signal group to green.
-   Signal group              `M0011`_         setStop                Stop of signal group. Orders a signal group to red.
+   Signal group              `M0010`_         setStart               ``Reserved``
+   Signal group              `M0011`_         setStop                ``Reserved``
    Traffic Light Controller  `M0012`_         setStart               Request start or stop of a series of signal groups.
    Traffic Light Controller  `M0013`_         setInput               Activate a series of inputs
    Traffic Light Controller  `M0014`_         setCommands            Set dynamic bands
@@ -2319,14 +2319,7 @@ If the incorrect security code is used then the TLC replies with ``MessageNotAck
 M0010
 ^^^^^
 
-Start of signal group. Orders a signal group to green.
-
-Although this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use.
-
-Intended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers. Only used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits).
-
-Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
+``Reserved``
 
 
 .. figtable::
@@ -2336,26 +2329,19 @@ If the incorrect security code is used then the TLC replies with ``MessageNotAck
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =======  ===========  ===================================
+   ============  =======  ===========  ===============
    Name          Type     Value        Comment
-   ============  =======  ===========  ===================================
-   status        boolean  -False |br|  False: No command (default) |br|
-                          -True        True: Order a signal group to green
+   ============  =======  ===========  ===============
+   status        boolean  -False |br|  ``Reserved``
+                          -True        
    securityCode  string   [text]       Security code 2
-   ============  =======  ===========  ===================================
+   ============  =======  ===========  ===============
 ..
 
 M0011
 ^^^^^
 
-Stop of signal group. Orders a signal group to red.
-
-Although this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use.
-
-Intended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers. Only used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits).
-
-Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
+``Reserved``
 
 
 .. figtable::
@@ -2365,34 +2351,19 @@ If the incorrect security code is used then the TLC replies with ``MessageNotAck
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  =======  ===========  =================================
+   ============  =======  ===========  ===============
    Name          Type     Value        Comment
-   ============  =======  ===========  =================================
-   status        boolean  -False |br|  False: No command (default) |br|
-                          -True        True: Order a signal group to red
+   ============  =======  ===========  ===============
+   status        boolean  -False |br|  ``Reserved``
+                          -True
    securityCode  string   [text]       Security code 2
-   ============  =======  ===========  =================================
+   ============  =======  ===========  ===============
 ..
 
 M0012
 ^^^^^
 
-Request start or stop of a series of signal groups.
-
-Starts or stops several signal groups.
-
-This command was introduced due to coordination requirements needing to set many signal groups to green and red at the same time and M0010 and M0012 being to slow to send a message for each signal group individually.
-
-Although this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use.
-
-Intended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers.
-
-Only used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits).
-
-May also include purposes for adaptive control where a UTC system or a local traffic light controller takes over the phase control (stage control).
-
-Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
+``Reserved``
 
 
 .. figtable::
@@ -2402,32 +2373,12 @@ If the incorrect security code is used then the TLC replies with ``MessageNotAck
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
 
-   ============  ======  =======  =======================================================================================================================================================================================================================
+   ============  ======  =======  ===============
    Name          Type    Value    Comment
-   ============  ======  =======  =======================================================================================================================================================================================================================
-   status        string  [text]   Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. |br|
-                                  |br|
-                                  1=Order signal group to green |br|
-                                  0=Order signal group to red |br|
-                                  |br|
-                                  Format: [Offset],[Bits to set],[Bits to unset]:… |br|
-                                  |br|
-                                  Offset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768. |br|
-                                  |br|
-                                  Example 1: |br|
-                                  "5, 4134, 65" sets input 6,7,10,17 = on and 5,11 = off |br|
-                                  (Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0) |br|
-                                  |br|
-                                  Example 2: |br|
-                                  "22, 1, 4" sets input 22 = on and 24 = off |br|
-                                  (Input starts from no. 22 and bit 0 = 1 and bit 2 = 0) |br|
-                                  |br|
-                                  And both these examples could be sent in the same message as: |br|
-                                  "5,4143,65;22,1,4" |br|
-                                  |br|
-                                  Such a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red
+   ============  ======  =======  ===============
+   status        string  [text]   ``Reserved``
    securityCode  string  [text]   Security code 2
-   ============  ======  =======  =======================================================================================================================================================================================================================
+   ============  ======  =======  ===============
 ..
 
 M0013
