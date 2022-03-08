@@ -2823,7 +2823,8 @@ when it's not needed anymore.
                            -emergency |br|         tram: Trams used for Public transport |br|
                            -safetyCar |br|         emergency: Police, fire or ambulance |br|
                            -specialTransport |br|  safetyCar: For e.g. escort vehicles |br|
-                           -other                  specialTransport: For e.g. heavy load
+                           -other                  specialTransport: For e.g. heavy load |br|
+                                                   other: Other type of vehicle
    =============  =======  ======================  =========================================================================
 ..
 
