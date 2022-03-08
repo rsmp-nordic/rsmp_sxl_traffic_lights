@@ -2055,7 +2055,7 @@ Commands
    Detector logic            `M0008`_         setForceDetectorLogic  Sets manual activation of detector logic
    Signal group              `M0010`_         setStart               ``Reserved``
    Signal group              `M0011`_         setStop                ``Reserved``
-   Traffic Light Controller  `M0012`_         setStart               Request start or stop of a series of signal groups.
+   Traffic Light Controller  `M0012`_         setStart               ``Reserved``
    Traffic Light Controller  `M0013`_         setInput               Activate a series of inputs
    Traffic Light Controller  `M0014`_         setCommands            Set dynamic bands
    Traffic Light Controller  `M0015`_         setOffset              Set Offset time
