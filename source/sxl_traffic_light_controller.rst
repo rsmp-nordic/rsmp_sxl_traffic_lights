@@ -2780,7 +2780,7 @@ s similar request has just completed, and some time needs to pass before a simil
 When a request is queued, it is expected to become activated later, but in case too long passes without
 activation, the controller is expected to time out the request.
 
-Once a priority is activated, you're excepted to cancel it as soon as there's no need it anymore, typically
+Once a priority is activated, you're excepted to cancel it as soon as there's no need for it anymore, typically
 when the vehicle has passed the intersection. You cancel a request by sending a request passing the
 existing request id setting the type to 'cancel'.
 
