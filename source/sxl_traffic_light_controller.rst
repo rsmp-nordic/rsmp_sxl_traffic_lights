@@ -1642,7 +1642,7 @@ S0092
 
 Operator logged in/out web-interface
 
-Provides information if maintenance personnel is currently working with the controller.
+Provides information about whether maintenance personnel is currently working with the controller.
 
 
 .. figtable::
