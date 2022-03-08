@@ -514,7 +514,9 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
                                         |br|
                                         Used for handling of coordination between TLC's. |br|
                                         Is counted from 0 until it reaches the cycle time (See S0028). |br|
-                                        Cycle counter is the "base cycle counter" + "offset time" (See S0024) |br|
+                                        :math:`{c=(b+o)\mod t}`
+                                        where c = cycle counter, b = base cycle counter, o = offset, t = cycle time |br|
+                                        mod = modulo |br|
                                         |br|
                                         See the coordination section for more information.
    basecyclecounter   integer  [0-999]  Base cycle counter |br|
