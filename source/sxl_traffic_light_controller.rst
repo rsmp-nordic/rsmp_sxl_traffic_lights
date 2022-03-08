@@ -587,7 +587,7 @@ Input is used where the traffic light controller must react to external control.
                                          0 = Input is not active |br|
                                          1 = Input is active |br|
                                          - = Input is undefined/does not exist
-   extendedinputstatus  string  [text]   Extended input status as text field |br|
+   extendedinputstatus  string  [text]   ``Deprecated`` Extended input status as text field |br|
                                          |br|
                                          Each character represent the state of the extended input status in consecutive order. |br|
                                          0 = Input is not active |br|
@@ -622,7 +622,7 @@ Can be used for all types of output where the traffic light controller needs to 
                                           0 = Output is not active |br|
                                           1 = Output is active |br|
                                           - = Output is undefined/does not exist
-   extendedoutputstatus  string  [text]   Output status as text field |br|
+   extendedoutputstatus  string  [text]   ``Deprecated`` Output status as text field |br|
                                           |br|
                                           Each character represent the state of the exteded output status in consecutive order. |br|
                                           0 = Output is not active |br|
