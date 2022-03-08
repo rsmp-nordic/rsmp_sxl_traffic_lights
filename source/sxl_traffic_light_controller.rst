@@ -1747,7 +1747,8 @@ For instance, depending on controller, maintenance personnel can modify traffic 
                                     - other device settings that are not part of the signal program |br|
                                     |br|
                                     Note: |br|
-                                    - The checksum should be calculated using the same data as used in S0098
+                                    The checksum should be calculated using the same data as used in S0098 |br|
+                                    Downloaded data with S0098, hashed with SHA-2, should match this value.
    timestamp  string  [time stamp]  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    =========  ======  ============  =============================================================================================================================================================
 ..
