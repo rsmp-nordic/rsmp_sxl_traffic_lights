@@ -2080,7 +2080,6 @@ Sets functional position
 Sets the controller to yellow flash, dark mode or normal control.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2115,7 +2114,6 @@ Typical usages is scenario based control where change of program is used to chan
 This command changes the signal timings for optimal traffic flow.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2145,7 +2143,6 @@ Used for area-based control where a command can be sent to a master traffic ligh
 Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2173,7 +2170,6 @@ Restarts Traffic Light Controller
 Used in the event of serious faults in the device where a restart is considered to be able to remedy a problem.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2202,7 +2198,6 @@ The function is made for emergency prioritization. Works in the same way as the 
 Should be used in situations where full priority is given in the emergency vehicle program.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2236,7 +2231,6 @@ Can be used for all types of input where the traffic light controller must react
 Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2266,7 +2260,6 @@ Deactivates the traffic actuated control using detectors and activates pre-timed
 Can be used in case normal detectors can't be used, e.g. during maintenance work.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2295,7 +2288,6 @@ Set given detector logic (1-255) to either true or false.
 Can e.g. be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2389,7 +2381,6 @@ Activate a series of inputs
 Set given inputs (1-255) of the controllers general purpose I/O to either true or false. This command was introduced due to coordination requirements needing to set many inputs to true/false at the same time and M0006 being to slow to send a message for each input individually. With this command many inputs can be set to true/false at the same time using a single command message. It can be used for all types of input where the traffic light controller must react to external control. Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 The parameter 'status' sets/unsets a block of 16 inputs at a time. It can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon.
 Format: [Offset];[Bits to set];[Bits to unset];…
@@ -2449,7 +2440,6 @@ Can be used to change between predefined signal timings. Moves the start of sign
 This command can be used to change the split of green time during the cycle. A typical usage is scenario based control where changing of signal timings is used for optimal traffic flow.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2486,7 +2476,6 @@ Offset time is used to define an offset between intersections in coordinated con
 This command can be used to fine tune the coordination for optimal traffic flow.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2515,7 +2504,6 @@ Set which time table for signal programs to use for each day during a week.
 This command changes the signal timings during the week for optimal traffic flow.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2560,7 +2548,6 @@ Set time of day for when to automatically switch signal program (time plan).
 This command changes the signal timings according to time of day for optimal traffic flow.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2606,7 +2593,6 @@ Cycle time (or cycle length) is the sum of all phases in a time plan (traffic pr
 This command provides the ability to change the cycle time when using coordinated or fixed time control. It changes the timings for optimal traffic flow. Can be used with scenario based control.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2635,7 +2621,6 @@ Force a given input (1-255) of the controllers general purpose I/O to either Tru
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2667,7 +2652,6 @@ Force a given output (1-255) of the controllers general purpose I/O to either Tr
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2699,7 +2683,6 @@ The trigger level sensitivity determines at what level a loop detector should tr
 This command provides the ability to fine tune loop detectors to make sure they detect traffic as intended.
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2855,7 +2838,6 @@ Disable by setting timeout to '0'.
 Used in conjunction with dynamic bands, M0014
 
 Requires security code 2.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
@@ -2908,7 +2890,6 @@ Set clock
 Can be used to manually set the clock of the traffic light controller if automatic  time synchronization (NTP or watchdog sync) is not available. For instance, during maintenance work.
 
 Requires security code 1.
-If the incorrect security code is used then the TLC replies with ``MessageNotAck`` where ``rea`` is set to ``Incorrect security code``.
 
 
 .. figtable::
