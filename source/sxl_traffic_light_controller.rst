@@ -693,10 +693,8 @@ Used to determine if the controller is operating, e.g. it shows red, green or ye
 
 During maintenance work the controller might be using dark mode (no output to the signal heads).
 
-Please note that all values in this status uses comma-separated lists
-- one value for each intersection, e.g. "1,2" and "True,False"
-
-
+Please note that all values in this status uses comma-separated lists - one value for each intersection,
+e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 .. figtable::
    :nofig:
@@ -731,8 +729,8 @@ Traffic control deactivated in controller
 
 Signal timings is controlled manually by service personnel using the operating panel of the controller.
 
-Please note that all values in this status uses comma-separated lists
-- one value for each intersection, e.g. "1,2" and "True,False"
+Please note that all values in this status uses comma-separated lists - one value for each intersection,
+e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
 .. figtable::
@@ -768,9 +766,8 @@ Traffic actuated control deactivated and a pre-timed control is used.
 
 Usually only used in case normal detectors can't be used, e.g. during maintenance work.
 
-Please note that all values in this status uses comma-separated lists
-- one value for each intersection, e.g. "1,2" and "True,False"
-
+Please note that all values in this status uses comma-separated lists - one value for each intersection,
+e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 .. figtable::
    :nofig:
@@ -804,8 +801,8 @@ Isolated control
 Isolated control mode indicates that the controller operates independently of any other traffic light controller.
 This control mode may be active or not depending on the currecnt traffic program (time plan).
 
-Please note that all values in this status uses comma-separated lists
-- one value for each intersection, e.g. "1,2" and "True,False"
+Please note that all values in this status uses comma-separated lists - one value for each intersection,
+e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
 .. figtable::
