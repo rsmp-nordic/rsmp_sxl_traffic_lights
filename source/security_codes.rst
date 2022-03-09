@@ -1,6 +1,6 @@
 Security codes
 ==============
-The SXL for TLC's are frequently using security codes as part of commands.
+The SXL for TLC's are using security codes as part of most commands.
 
 Incorrect security codes
 ------------------------
