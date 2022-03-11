@@ -11,4 +11,4 @@ For example, a traffic light controller might connect to both a traffic
 management system and a bus priority system. Or it might connect to both a
 traffic management system and a secondary monitoring system.
 
-.. _4.3.1 Multiple supervisors: https://rsmp-nordic.org/rsmp_specifications/core/3.2-draft/applicability/transport_of_data.html#multiple-supervisors
+.. _4.3.1 Multiple supervisors: https://rsmp-nordic.org/rsmp_specifications/core/3.2/applicability/transport_of_data.html#multiple-supervisors
