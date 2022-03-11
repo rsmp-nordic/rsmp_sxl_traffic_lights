@@ -4383,6 +4383,16 @@ M0022 Request Signal Priority
                 "v":"new"
         },{
                 "cCI":"M0022",
+                "n":"level",
+                "cO":"requestPriority",
+                "v":"14"
+        },{
+                "cCI":"M0022",
+                "n":"eta",
+                "cO":"requestPriority",
+                "v":"20"
+        },{
+                "cCI":"M0022",
                 "n":"vehicleType",
                 "cO":"requestPriority",
                 "v":"bus"
@@ -4415,6 +4425,16 @@ M0022 Request Signal Priority
                 "cCI":"M0022",
                 "n":"type",
                 "v":"new",
+                "age":"recent"
+        },{
+                "cCI":"M0022",
+                "n":"level",
+                "v":"14",
+                "age":"recent"
+        },{
+                "cCI":"M0022",
+                "n":"eta",
+                "v":"20",
                 "age":"recent"
         },{
                 "cCI":"M0022",
