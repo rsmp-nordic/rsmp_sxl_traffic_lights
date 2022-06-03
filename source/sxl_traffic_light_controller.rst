@@ -2720,7 +2720,7 @@ can specify a priority level, vehicle type and estimated time of arrival.
 You can also update or cancel the request, and use the corresponding status message
 to track the status of the request, including how much priority was actually given.
 
-To understand how this status relates to ETSI/J2735, please see the
+To understand how this command relates to ETSI/J2735, please see the
 `wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`_.
 
 Activating signal priority is expected to provide more green time for a particular movement
