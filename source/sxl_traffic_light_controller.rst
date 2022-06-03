@@ -696,6 +696,8 @@ During maintenance work the controller might be using dark mode (no output to th
 Please note that all values in this status uses comma-separated lists - one value for each intersection,
 e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
+
+
 .. figtable::
    :nofig:
    :label: S0007
@@ -768,6 +770,7 @@ Usually only used in case normal detectors can't be used, e.g. during maintenanc
 
 Please note that all values in this status uses comma-separated lists - one value for each intersection,
 e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
+
 
 .. figtable::
    :nofig:
@@ -1511,6 +1514,9 @@ or send-on-change, or both.
 If you subscribe using an update interval, you're not guaranteed to get all intermediate states.
 To guarantee that, send-on-change must be used when subscribing.
 
+To understand how this status relates to ETSI/J2735, please see the
+`wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`_.
+
 All priorities are send on every status update, regardless of whether an interval, or sendOnChange (or both) is used.
 
 When a priority reaches an end states (completed, timeout, rejected, cooldown or stale), it must be
@@ -2042,9 +2048,9 @@ Commands
    :loc: H
    :spec: >{\raggedright\arraybackslash}p{0.24\linewidth} p{0.15\linewidth} p{0.21\linewidth} p{0.21\linewidth}
 
-   ========================  ===============  =====================  ======================================================
+   ========================  ===============  =====================  ===============================================
    ObjectType                commandCodeId    Command                Description
-   ========================  ===============  =====================  ======================================================
+   ========================  ===============  =====================  ===============================================
    Traffic Light Controller  `M0001`_         setValue               Sets functional position
    Traffic Light Controller  `M0002`_         setPlan                Sets current time plan
    Traffic Light Controller  `M0003`_         setTrafficSituation    Sets traffic situation the controller uses.
@@ -2069,7 +2075,7 @@ Commands
    Traffic Light Controller  `M0023`_         setTimeout             Set timeout for dynamic bands
    Traffic Light Controller  `M0103`_         setSecurityCode        Set security code
    Traffic Light Controller  `M0104`_         setDate                Set clock
-   ========================  ===============  =====================  ======================================================
+   ========================  ===============  =====================  ===============================================
 ..
 
 M0001
@@ -2325,7 +2331,7 @@ M0010
    Name          Type     Value        Comment
    ============  =======  ===========  ===============
    status        boolean  -False |br|  ``Reserved``
-                          -True        
+                          -True
    securityCode  string   [text]       Security code 2
    ============  =======  ===========  ===============
 ..
@@ -2713,6 +2719,9 @@ The benefit of using this message over activating inputs or detector logics is t
 can specify a priority level, vehicle type and estimated time of arrival.
 You can also update or cancel the request, and use the corresponding status message
 to track the status of the request, including how much priority was actually given.
+
+To understand how this status relates to ETSI/J2735, please see the
+`wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`_.
 
 Activating signal priority is expected to provide more green time for a particular movement
 through the intersection, but the exact mechanism must typically be configured in the controller.
