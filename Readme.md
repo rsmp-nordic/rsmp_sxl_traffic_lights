@@ -16,7 +16,9 @@ Including:
 - Chapter 3: Definition of signal groups status (S0001)
 - Chapter 4: Traffic counting requirements (S0201-S0208)
 - Chapter 5: Coordination between traffic light controllers
-- Chapter 6: Examples of all alarms, statuses and commands:
+- Chapter 6: Multiple supervisors
+- Chapter 7: Security codes
+- Chapter 8: Examples of all alarms, statuses and commands:
 
 ## FAQ
 
