@@ -38,17 +38,7 @@ On Ubuntu:
 ```
 # apt-get install python3-sphinx texlive texlive-latex-extra \
   texlive-humanities mscgen librsvg2-bin latexmk sphinx \
-  python3-sphinx-rtd-theme
-# snap install inkscape
-```
-
-On Arch:
-
-```
-# pacman -S python-sphinx texlive-most texlive-latexextra texlive-humanities \
-  inkscape librsvg python-sphinx_rtd_theme
-$ git clone https://aur.archlinux.org/mscgen.git
-$ cd mscgen; makepkg -sri
+  python3-sphinx-rtd-theme inkscape
 ```
 
 Then:
