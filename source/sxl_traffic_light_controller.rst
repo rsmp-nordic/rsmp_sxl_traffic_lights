@@ -7,29 +7,25 @@ Object Types
 Grouped objects
 ^^^^^^^^^^^^^^^
 
-.. figtable::
-   :nofig:
-   :label: Grouped objects
-   :caption: Grouped objects
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.30\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.30}|\Yl{0.50}|
+
+.. table:: Grouped objects
+
 
    ========================  =============
    ObjectType                Description
    ========================  =============
    Traffic Light Controller
    ========================  =============
-..
+
 
 Single objects
 ^^^^^^^^^^^^^^
 
-.. figtable::
-   :nofig:
-   :label: Single objects
-   :caption: Single objects
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.30\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.30}|\Yl{0.50}|
+
+.. table:: Single objects
+
 
    ==============  =============
    ObjectType      Description
@@ -37,31 +33,27 @@ Single objects
    Signal group
    Detector logic
    ==============  =============
-..
+
 
 Aggregated status
 -----------------
 
-.. figtable::
-   :nofig:
-   :label: Aggregated status
-   :caption: Aggregated status
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.16\linewidth} p{0.16\linewidth} p{0.40\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.16}|\Yl{0.16}|\Yl{0.40}|
+
+.. table:: Aggregated status
+
 
    ========================  ====================  =================  =============================================================
    ObjectType                functionalPosition    functionalState    Description
    ========================  ====================  =================  =============================================================
    Traffic Light Controller                                           functionalPosition and functionalState not used (set to null)
    ========================  ====================  =================  =============================================================
-..
 
-.. figtable::
-   :nofig:
-   :label: State bits
-   :caption: State bits
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.10\linewidth} p{0.30\linewidth} p{0.50\linewidth}
+
+.. tabularcolumns:: |\Yl{0.10}|\Yl{0.30}|\Yl{0.50}|
+
+.. table:: State bits
+
 
    ===========  ===========================  ==============================================================================================================================================
      State-Bit  Description                  Comment
@@ -75,17 +67,15 @@ Aggregated status
              7  Connected / Normal - Idle    Traffic Light Controller dark according to configuration. NOTE! When dark according to configuration the controller is considered to be in use
              8  Not Connected
    ===========  ===========================  ==============================================================================================================================================
-..
+
 
 Alarms
 ------
 
-.. figtable::
-   :nofig:
-   :label: Alarms
-   :caption: Alarms
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.10\linewidth} p{0.45\linewidth} p{0.07\linewidth} p{0.07\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.45}|\Yl{0.07}|\Yl{0.07}|
+
+.. table:: Alarms
+
 
    ========================  =============  ====================================  ==========  ==========
    ObjectType                alarmCodeId    Description                             Priority  Category
@@ -108,7 +98,7 @@ Alarms
    Detector logic            `A0303`_       Serious detector error (hardware)              2  D
    Detector logic            `A0304`_       Serious detector error (logic error)           2  D
    ========================  =============  ====================================  ==========  ==========
-..
+
 
 A0001
 ^^^^^
@@ -168,12 +158,10 @@ Used for communication errors with the central system. Includes NTP connection l
 Is a "minor fault" defined according to 3.11 in EN12675.
 
 
-.. figtable::
-   :nofig:
-   :label: A0007
-   :caption: A0007
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: A0007
+
 
    ========  ======  ==========  =============================================
    Name      Type    Value       Comment
@@ -181,7 +169,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
    protocol  string  -rsmp |br|  Type of communication error, e.g. NTP or RSMP
                      -ntp
    ========  ======  ==========  =============================================
-..
+
 
 A0008
 ^^^^^
@@ -196,19 +184,17 @@ Is a "major fault" defined according to 3.8 in EN12675 which causes the controll
 
 
 
-.. figtable::
-   :nofig:
-   :label: A0008
-   :caption: A0008
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: A0008
+
 
    ========  =======  =======  =================
    Name      Type     Value    Comment
    ========  =======  =======  =================
    timeplan  integer  [1-255]  Current time plan
    ========  =======  =======  =================
-..
+
 
 A0009
 ^^^^^
@@ -246,12 +232,10 @@ Used for lamp errors
 Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
-.. figtable::
-   :nofig:
-   :label: A0201
-   :caption: A0201
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: A0201
+
 
    ======  ======  ============  =============
    Name    Type    Value         Comment
@@ -260,7 +244,7 @@ Is a "major fault" defined according to 3.8 in EN12675 which causes the controll
                    -yellow |br|
                    -green
    ======  ======  ============  =============
-..
+
 
 A0202
 ^^^^^
@@ -272,12 +256,10 @@ Used for lamp errors
 Is a "minor fault" defined according to 3.11 in EN12675.
 
 
-.. figtable::
-   :nofig:
-   :label: A0202
-   :caption: A0202
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: A0202
+
 
    ======  ======  ============  =============
    Name    Type    Value         Comment
@@ -286,7 +268,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
                    -yellow |br|
                    -green
    ======  ======  ============  =============
-..
+
 
 A0301
 ^^^^^
@@ -296,12 +278,10 @@ Detector error (hardware)
 Is a "minor fault" defined according to 3.11 in EN12675.
 
 
-.. figtable::
-   :nofig:
-   :label: A0301
-   :caption: A0301
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: A0301
+
 
    =========  =======  =============  ===============================================
    Name       Type     Value          Comment
@@ -315,7 +295,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
    manual     boolean  -True |br|     Manually controlled detector logic (True/False)
                        -False
    =========  =======  =============  ===============================================
-..
+
 
 A0302
 ^^^^^
@@ -327,12 +307,10 @@ For instance; detector continuously on or off during an extended time.
 Is a "minor fault" defined according to 3.11 in EN12675.
 
 
-.. figtable::
-   :nofig:
-   :label: A0302
-   :caption: A0302
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: A0302
+
 
    ==========  =======  ================  ==================================================================
    Name        Type     Value             Comment
@@ -350,7 +328,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
                         -intermittent     always_on: detection constantly on during predefined max time |br|
                                           intermittent: intermittent logic fault (flutter)
    ==========  =======  ================  ==================================================================
-..
+
 
 A0303
 ^^^^^
@@ -360,12 +338,10 @@ Serious detector error (hardware)
 Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
-.. figtable::
-   :nofig:
-   :label: A0303
-   :caption: A0303
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: A0303
+
 
    =========  =======  =============  ===============================================
    Name       Type     Value          Comment
@@ -379,7 +355,7 @@ Is a "major fault" defined according to 3.8 i EN12675 which causes the controlle
    manual     boolean  -True |br|     Manually controlled detector logic (True/False)
                        -False
    =========  =======  =============  ===============================================
-..
+
 
 A0304
 ^^^^^
@@ -391,12 +367,10 @@ For instance; detector continuously on or off during an extended time.
 Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
-.. figtable::
-   :nofig:
-   :label: A0304
-   :caption: A0304
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.35\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: A0304
+
 
    ==========  =======  ================  ==================================================================
    Name        Type     Value             Comment
@@ -414,7 +388,7 @@ Is a "major fault" defined according to 3.8 i EN12675 which causes the controlle
                         -intermittent     always_on: detection constantly on during predefined max time |br|
                                           intermittent: intermittent logic fault (flutter)
    ==========  =======  ================  ==================================================================
-..
+
 
 Status
 ------
@@ -424,12 +398,10 @@ Status
     \newpage
 
 
-.. figtable::
-   :nofig:
-   :label: Status
-   :caption: Status
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.24\linewidth} p{0.10\linewidth} p{0.55\linewidth}
+.. tabularcolumns:: |\Yl{0.24}|\Yl{0.10}|\Yl{0.55}|
+
+.. table:: Status
+
 
    ========================  ==============  ============================================================
    ObjectType                statusCodeId    Description
@@ -483,7 +455,7 @@ Status
    Traffic Light Controller  `S0207`_        Traffic Counting: Occupancy
    Traffic Light Controller  `S0208`_        Traffic Counting: Number of vehicles of given classification
    ========================  ==============  ============================================================
-..
+
 
 S0001
 ^^^^^^^^
@@ -495,12 +467,10 @@ Provides the status of each signal group, including basic information such as gr
 Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller.
 
 
-.. figtable::
-   :nofig:
-   :label: S0001
-   :caption: S0001
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0001
+
 
    =================  =======  =======  =================================================================================
    Name               Type     Value    Comment
@@ -530,7 +500,7 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
                                         See the coordination section for more information.
    stage              integer  [0-999]  Current stage (isolated)
    =================  =======  =======  =================================================================================
-..
+
 
 S0002
 ^^^^^^^^
@@ -542,12 +512,10 @@ Provides the status of all detector logics of the controller.
 Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller. Can also be used for bus priority, external control systems, and much more.
 
 
-.. figtable::
-   :nofig:
-   :label: S0002
-   :caption: S0002
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0002
+
 
    ===================  ======  =======  ===================================================================================
    Name                 Type    Value    Comment
@@ -559,7 +527,7 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
                                          1 = Detector logic is active |br|
                                          - = Detector logic is undefined/does not exist
    ===================  ======  =======  ===================================================================================
-..
+
 
 S0003
 ^^^^^^^^
@@ -571,12 +539,10 @@ Input (1-255) of the controllers general purpose I/O.
 Input is used where the traffic light controller must react to external control. It could be external detectors, bus priority, and much more.
 
 
-.. figtable::
-   :nofig:
-   :label: S0003
-   :caption: S0003
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0003
+
 
    ===================  ======  =======  ==========================================================================================
    Name                 Type    Value    Comment
@@ -594,7 +560,7 @@ Input is used where the traffic light controller must react to external control.
                                          1 = Input is active |br|
                                          - = Input is undefined/does not exist
    ===================  ======  =======  ==========================================================================================
-..
+
 
 S0004
 ^^^^^^^^
@@ -606,12 +572,10 @@ Output (1-255) of the controllers general purpose I/O.
 Can be used for all types of output where the traffic light controller needs to control other equipment. Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
-.. figtable::
-   :nofig:
-   :label: S0004
-   :caption: S0004
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0004
+
 
    ====================  ======  =======  ==========================================================================================
    Name                  Type    Value    Comment
@@ -629,7 +593,7 @@ Can be used for all types of output where the traffic light controller needs to 
                                           1 = Output is active |br|
                                           - = Output is undefined/does not exist
    ====================  ======  =======  ==========================================================================================
-..
+
 
 S0005
 ^^^^^^^^
@@ -641,12 +605,10 @@ The traffic signal is starting, e.g. it is in startup mode and has not begun wor
 During startup mode the traffic controller shows dark, red, yellow flash or using the predetermined start cycle (minimum times).
 
 
-.. figtable::
-   :nofig:
-   :label: S0005
-   :caption: S0005
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0005
+
 
    ======  =======  ===========  ==============================================
    Name    Type     Value        Comment
@@ -654,7 +616,7 @@ During startup mode the traffic controller shows dark, red, yellow flash or usin
    status  boolean  -False |br|  False: Controller is not in start up mode |br|
                     -True        True: Controller is currently in start up mode
    ======  =======  ===========  ==============================================
-..
+
 
 S0006
 ^^^^^^^^
@@ -666,12 +628,10 @@ The status is active during emergency prioritization.
 Used in situations where full priority is given in the emergency vehicle program.
 
 
-.. figtable::
-   :nofig:
-   :label: S0006
-   :caption: S0006
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0006
+
 
    ==============  =======  ===========  ====================================
    Name            Type     Value        Comment
@@ -680,7 +640,7 @@ Used in situations where full priority is given in the emergency vehicle program
                             -True        True: Emergency stage active
    emergencystage  integer  [1-255]      Number of emergency stage
    ==============  =======  ===========  ====================================
-..
+
 
 S0007
 ^^^^^^^^
@@ -698,12 +658,10 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
 
 
 
-.. figtable::
-   :nofig:
-   :label: S0007
-   :caption: S0007
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0007
+
 
    ============  =======  ====================  =======================================================================
    Name          Type     Value                 Comment
@@ -720,7 +678,7 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
                           -other                startup: Set after startup mode |br|
                                                 other: Other reason
    ============  =======  ====================  =======================================================================
-..
+
 
 S0008
 ^^^^^^^^
@@ -735,12 +693,10 @@ Please note that all values in this status uses comma-separated lists - one valu
 e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
-.. figtable::
-   :nofig:
-   :label: S0008
-   :caption: S0008
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0008
+
 
    ============  =======  ====================  =======================================================================
    Name          Type     Value                 Comment
@@ -757,7 +713,7 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
                           -other                startup: Set after startup mode |br|
                                                 other: Other reason
    ============  =======  ====================  =======================================================================
-..
+
 
 S0009
 ^^^^^^^^
@@ -772,12 +728,10 @@ Please note that all values in this status uses comma-separated lists - one valu
 e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
-.. figtable::
-   :nofig:
-   :label: S0009
-   :caption: S0009
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0009
+
 
    ============  =======  ====================  =======================================================================
    Name          Type     Value                 Comment
@@ -794,7 +748,7 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
                           -other                startup: Set after startup mode |br|
                                                 other: Other reason
    ============  =======  ====================  =======================================================================
-..
+
 
 S0010
 ^^^^^^^^
@@ -808,12 +762,10 @@ Please note that all values in this status uses comma-separated lists - one valu
 e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
-.. figtable::
-   :nofig:
-   :label: S0010
-   :caption: S0010
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0010
+
 
    ============  =======  ====================  ===============================================================================
    Name          Type     Value                 Comment
@@ -830,7 +782,7 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
                           -other                startup: Set after startup mode |br|
                                                 other: Other reason
    ============  =======  ====================  ===============================================================================
-..
+
 
 S0011
 ^^^^^^^^
@@ -845,12 +797,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "True,False"
 
 
-.. figtable::
-   :nofig:
-   :label: S0011
-   :caption: S0011
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0011
+
 
    ============  =======  ====================  =======================================================================
    Name          Type     Value                 Comment
@@ -867,7 +817,7 @@ Please note that all values in this status uses comma-separated lists
                           -other                startup: Set after startup mode |br|
                                                 other: Other reason
    ============  =======  ====================  =======================================================================
-..
+
 
 S0012
 ^^^^^^^^
@@ -882,12 +832,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "True,False"
 
 
-.. figtable::
-   :nofig:
-   :label: S0012
-   :caption: S0012
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0012
+
 
    ============  =======  ====================  =======================================================================
    Name          Type     Value                 Comment
@@ -904,7 +852,7 @@ Please note that all values in this status uses comma-separated lists
                           -other                startup: Set after startup mode |br|
                                                 other: Other reason
    ============  =======  ====================  =======================================================================
-..
+
 
 S0013
 ^^^^^^^^
@@ -919,12 +867,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "0,1"
 
 
-.. figtable::
-   :nofig:
-   :label: S0013
-   :caption: S0013
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0013
+
 
    ============  =======  =======  =======================================================================
    Name          Type     Value    Comment
@@ -936,7 +882,7 @@ Please note that all values in this status uses comma-separated lists
                           -2 |br|  2: yellow flash |br|
                           -3       3: all red
    ============  =======  =======  =======================================================================
-..
+
 
 S0014
 ^^^^^^^^
@@ -948,12 +894,10 @@ The current time plan (signal program) used in the controller. There may be 1-25
 The time plan (signal program) may change signal timings, cycle time, control strategy and much more. Typical usage is is scenario based control where change of program is used to change priority etc.
 
 
-.. figtable::
-   :nofig:
-   :label: S0014
-   :caption: S0014
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0014
+
 
    ======  =======  ====================  ===========================================================
    Name    Type     Value                 Comment
@@ -967,7 +911,7 @@ The time plan (signal program) may change signal timings, cycle time, control st
                     -other                startup: Set after startup mode |br|
                                           other: Other reason
    ======  =======  ====================  ===========================================================
-..
+
 
 S0015
 ^^^^^^^^
@@ -981,12 +925,10 @@ Used for area-based control where a command can be sent to a master traffic ligh
 Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
 
 
-.. figtable::
-   :nofig:
-   :label: S0015
-   :caption: S0015
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0015
+
 
    ======  =======  ====================  ===========================================================
    Name    Type     Value                 Comment
@@ -1000,7 +942,7 @@ Traffic situation is a concept used to divide multiple TLC's into areas and sub-
                     -other                startup: Set after startup mode |br|
                                           other: Other reason
    ======  =======  ====================  ===========================================================
-..
+
 
 S0016
 ^^^^^^^^
@@ -1010,19 +952,17 @@ Number of detector logics
 Can be used by the management system to check the number of detector logics configured in the controller.
 
 
-.. figtable::
-   :nofig:
-   :label: S0016
-   :caption: S0016
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0016
+
 
    ======  =======  =========  =========================
    Name    Type     Value      Comment
    ======  =======  =========  =========================
    number  integer  [1-65025]  Number of detector logics
    ======  =======  =========  =========================
-..
+
 
 S0017
 ^^^^^^^^
@@ -1032,19 +972,17 @@ Number of signal groups
 Can be used for the management system to check the number of signal groups configured in the controller.
 
 
-.. figtable::
-   :nofig:
-   :label: S0017
-   :caption: S0017
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0017
+
 
    ======  =======  =========  =======================
    Name    Type     Value      Comment
    ======  =======  =========  =======================
    number  integer  [1-65025]  Number of signal groups
    ======  =======  =========  =======================
-..
+
 
 S0018
 ^^^^^^^^
@@ -1054,19 +992,17 @@ Number of time plans
 Can be used for the management system to check the number of time plans configured in the controller.
 
 
-.. figtable::
-   :nofig:
-   :label: S0018
-   :caption: S0018
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0018
+
 
    ======  =======  =========  ==================================
    Name    Type     Value      Comment
    ======  =======  =========  ==================================
    number  integer  [1-65025]  Number of time plans (depreciated)
    ======  =======  =========  ==================================
-..
+
 
 S0019
 ^^^^^^^^
@@ -1076,19 +1012,17 @@ Number of traffic situations
 Can be used for the management system to check the number of traffic situations configured in the controller.
 
 
-.. figtable::
-   :nofig:
-   :label: S0019
-   :caption: S0019
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0019
+
 
    ======  =======  =========  ============================
    Name    Type     Value      Comment
    ======  =======  =========  ============================
    number  integer  [1-65025]  Number of traffic situations
    ======  =======  =========  ============================
-..
+
 
 S0020
 ^^^^^^^^
@@ -1101,12 +1035,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "startup,control"
 
 
-.. figtable::
-   :nofig:
-   :label: S0020
-   :caption: S0020
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0020
+
 
    ============  =======  =============  =======================================================================
    Name          Type     Value          Comment
@@ -1119,7 +1051,7 @@ Please note that all values in this status uses comma-separated lists
                           -failure |br|  failure: Failure mode |br|
                           -test          test: Test mode
    ============  =======  =============  =======================================================================
-..
+
 
 S0021
 ^^^^^^^^
@@ -1131,19 +1063,17 @@ Provides status of detector logic (1-255) regarding if they are either forced to
 Can be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
 
 
-.. figtable::
-   :nofig:
-   :label: S0021
-   :caption: S0021
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0021
+
 
    ==============  ======  =======  ================================================
    Name            Type    Value    Comment
    ==============  ======  =======  ================================================
    detectorlogics  string  [text]   Manually set detector logics (1/0) as text field
    ==============  ======  =======  ================================================
-..
+
 
 S0022
 ^^^^^^^^
@@ -1155,19 +1085,17 @@ Provides a list of the configured time plans which is possible to use. This stat
 Can be used for the management system to check the number of time plans configured in the controller.
 
 
-.. figtable::
-   :nofig:
-   :label: S0022
-   :caption: S0022
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0022
+
 
    ======  ======  =======  =============================================================
    Name    Type    Value    Comment
    ======  ======  =======  =============================================================
    status  string  [text]   Comma separated list of configured time plans. E.g. "1,2,3,5"
    ======  ======  =======  =============================================================
-..
+
 
 S0023
 ^^^^^^^^
@@ -1179,12 +1107,10 @@ Provides a list of all defined dynamic bands. Dynamic bands moves start of signa
 A typical usage of dynamic bands is scenario based control where changing of signal timings is used for optimal traffic flow.
 
 
-.. figtable::
-   :nofig:
-   :label: S0023
-   :caption: S0023
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0023
+
 
    ======  ======  =======  =====================================================
    Name    Type    Value    Comment
@@ -1200,7 +1126,7 @@ A typical usage of dynamic bands is scenario based control where changing of sig
                             E.g. |br|
                             pp-dd-ee,pp-dd-ee
    ======  ======  =======  =====================================================
-..
+
 
 S0024
 ^^^^^^^^
@@ -1212,12 +1138,10 @@ Offset time is used to define an offset between intersections in coordinated con
 Can be used by the management system to check to fine tune the coordination for optimal traffic flow.
 
 
-.. figtable::
-   :nofig:
-   :label: S0024
-   :caption: S0024
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0024
+
 
    ======  ======  =======  ================================================
    Name    Type    Value    Comment
@@ -1232,7 +1156,7 @@ Can be used by the management system to check to fine tune the coordination for 
                             E.g. |br|
                             pp-tt,pp-tt
    ======  ======  =======  ================================================
-..
+
 
 S0025
 ^^^^^^^^
@@ -1242,12 +1166,10 @@ Time-of-Green / Time-of-Red
 Provides predicted signal timings of green and red for each signal group. Max, min and likely time to green and red.
 
 
-.. figtable::
-   :nofig:
-   :label: S0025
-   :caption: S0025
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0025
+
 
    =================  =======  ============  ==========================================================================================================================================================
    Name               Type     Value         Comment
@@ -1267,7 +1189,7 @@ Provides predicted signal timings of green and red for each signal group. Max, m
                                              Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    ToRConfidence      integer  [0-100]       Confidence of the likelyToREstimate. 0-100%
    =================  =======  ============  ==========================================================================================================================================================
-..
+
 
 S0026
 ^^^^^^^^
@@ -1279,12 +1201,10 @@ Week time table for signal programs (time plan) to use for each day during a wee
 The week time table determine which predefined signal timings (time plan) to use during the week for optimal traffic flow.
 
 
-.. figtable::
-   :nofig:
-   :label: S0026
-   :caption: S0026
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0026
+
 
    ======  ======  =======  =================================================================
    Name    Type    Value    Comment
@@ -1307,7 +1227,7 @@ The week time table determine which predefined signal timings (time plan) to use
                             E.g. |br|
                             d-t,d-t
    ======  ======  =======  =================================================================
-..
+
 
 S0027
 ^^^^^^^^
@@ -1319,12 +1239,10 @@ Time of day for when to switch signal program (time plan).
 The signal timings (time plan) to use during time of day for optimal traffic flow.
 
 
-.. figtable::
-   :nofig:
-   :label: S0027
-   :caption: S0027
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0027
+
 
    ======  ======  =======  ======================================================
    Name    Type    Value    Comment
@@ -1349,7 +1267,7 @@ The signal timings (time plan) to use during time of day for optimal traffic flo
                             E.g. |br|
                             t-o-h-m,t-o-h-m
    ======  ======  =======  ======================================================
-..
+
 
 S0028
 ^^^^^^^^
@@ -1361,12 +1279,10 @@ Cycle time (or cycle length) is the sum of all phases in a time plan (traffic pr
 Changing the cycle time can be used as part of scenario based control.
 
 
-.. figtable::
-   :nofig:
-   :label: S0028
-   :caption: S0028
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0028
+
 
    ======  ======  =======  ===============================================
    Name    Type    Value    Comment
@@ -1382,7 +1298,7 @@ Changing the cycle time can be used as part of scenario based control.
                             E.g. |br|
                             pp-tt,pp-tt
    ======  ======  =======  ===============================================
-..
+
 
 S0029
 ^^^^^^^^
@@ -1394,19 +1310,17 @@ Provide status of input (1-255) regarding if they are forced or not. Can be used
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
-.. figtable::
-   :nofig:
-   :label: S0029
-   :caption: S0029
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0029
+
 
    ======  ======  =======  =================================
    Name    Type    Value    Comment
    ======  ======  =======  =================================
    status  string  [text]   Forced input status as text field
    ======  ======  =======  =================================
-..
+
 
 S0030
 ^^^^^^^^
@@ -1418,19 +1332,17 @@ Provide status of output (1-255) regarding if they are forced or not. Can be use
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
-.. figtable::
-   :nofig:
-   :label: S0030
-   :caption: S0030
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0030
+
 
    ======  ======  =======  ==================================
    Name    Type    Value    Comment
    ======  ======  =======  ==================================
    status  string  [text]   Forced output status as text field
    ======  ======  =======  ==================================
-..
+
 
 S0031
 ^^^^^^^^
@@ -1442,12 +1354,10 @@ The trigger level sensitivity determines at what level the loop detector should 
 Can be used to make sure that the detectors detect traffic as intended.
 
 
-.. figtable::
-   :nofig:
-   :label: S0031
-   :caption: S0031
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0031
+
 
    ======  ======  =======  =======================================================================
    Name    Type    Value    Comment
@@ -1457,7 +1367,7 @@ Can be used to make sure that the detectors detect traffic as intended.
                             ss=sensitivity value |br|
                             Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
    ======  ======  =======  =======================================================================
-..
+
 
 S0032
 ^^^^^^^^
@@ -1471,12 +1381,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "centralized,off"
 
 
-.. figtable::
-   :nofig:
-   :label: S0032
-   :caption: S0032
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0032
+
 
    ============  =======  ====================  =======================================================================
    Name          Type     Value                 Comment
@@ -1494,7 +1402,7 @@ Please note that all values in this status uses comma-separated lists
                           -other                startup: Set after startup mode |br|
                                                 other: Other reason
    ============  =======  ====================  =======================================================================
-..
+
 
 S0033
 ^^^^^^^^
@@ -1524,12 +1432,9 @@ sent once on the next status update, then removed from the list.
 
 A request always starts in the 'received' state. The following table shows the possible state transitions:
 
-.. figtable::
-   :nofig:
-   :label: S0033 request transitions
-   :caption: S0033 request transitions
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.50}|
+
+.. table:: S0033 request transitions
    
    ==========  =====================================
    State       Possible next states
@@ -1543,34 +1448,26 @@ A request always starts in the 'received' state. The following table shows the p
    cooldown
    stale
    ==========  =====================================
-..
 
 The priorities are passed as an array:
 
-.. figtable::
-   :nofig:
-   :label: S0033 priority array
-   :caption: S0033 priority array
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.08}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0033 priority array
 
    ==========  =======  ===============  ==============================================================================
    Name        Type     Value            Comment
    ==========  =======  ===============  ==============================================================================
    status      array    [list]           List of priorities. See the table below for details.
    ==========  =======  ===============  ==============================================================================
-..
-
 
 Each priority is passed as a hash with the following attributes:
 
 
-.. figtable::
-   :nofig:
-   :label: S0033
-   :caption: S0033
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0033
+
 
    ======  =======  ===============  ============================================================================================
    Name    Type     Value            Comment
@@ -1592,7 +1489,7 @@ Each priority is passed as a hash with the following attributes:
    d       integer  [0-255]          (Optional) Estimated red reduction provided by the priority, in seconds |br|
                                      Only used when state is 'completed'.
    ======  =======  ===============  ============================================================================================
-..
+
 
 S0034
 ^^^^^^^^
@@ -1605,19 +1502,17 @@ Disabled if set to '0'.
 Used in conjunction with dynamic bands, M0014
 
 
-.. figtable::
-   :nofig:
-   :label: S0034
-   :caption: S0034
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0034
+
 
    ======  =======  =========  ===================
    Name    Type     Value      Comment
    ======  =======  =========  ===================
    status  integer  [0-65535]  Timeout, in minutes
    ======  =======  =========  ===================
-..
+
 
 S0091
 ^^^^^^^^
@@ -1627,12 +1522,10 @@ Operator logged in/out OP-panel
 Provides information if maintenance personnel is currently working on site.
 
 
-.. figtable::
-   :nofig:
-   :label: S0091
-   :caption: S0091
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0091
+
 
    ======  =======  =======  =================================================
    Name    Type     Value    Comment
@@ -1641,7 +1534,7 @@ Provides information if maintenance personnel is currently working on site.
                     -1 |br|  1: Operator logged in at level 1 (read only) |br|
                     -2       2: Operator logged in at level 2 (read/write)
    ======  =======  =======  =================================================
-..
+
 
 S0092
 ^^^^^^^^
@@ -1651,12 +1544,10 @@ Operator logged in/out web-interface
 Provides information about whether maintenance personnel is currently working with the controller.
 
 
-.. figtable::
-   :nofig:
-   :label: S0092
-   :caption: S0092
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0092
+
 
    ======  =======  =======  =================================================
    Name    Type     Value    Comment
@@ -1665,7 +1556,7 @@ Provides information about whether maintenance personnel is currently working wi
                     -1 |br|  1: Operator logged in at level 1 (read only) |br|
                     -2       2: Operator logged in at level 2 (read/write)
    ======  =======  =======  =================================================
-..
+
 
 S0095
 ^^^^^^^^
@@ -1675,19 +1566,17 @@ Version of Traffic Light Controller
 Provides diagnostic version information.
 
 
-.. figtable::
-   :nofig:
-   :label: S0095
-   :caption: S0095
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0095
+
 
    ======  ======  =======  ==================================================================
    Name    Type    Value    Comment
    ======  ======  =======  ==================================================================
    status  string  [text]   Manufacturer, product name and version of traffic light controller
    ======  ======  =======  ==================================================================
-..
+
 
 S0096
 ^^^^^^^^
@@ -1697,12 +1586,10 @@ Current date and time
 Provides diagnostic information about the current date and time set in the controller.
 
 
-.. figtable::
-   :nofig:
-   :label: S0096
-   :caption: S0096
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0096
+
 
    ======  =======  ========  ================================
    Name    Type     Value     Comment
@@ -1714,7 +1601,7 @@ Provides diagnostic information about the current date and time set in the contr
    minute  integer  [0-59]    Minute. Note: UTC is used
    second  integer  [0-59]    Second. Note: UTC is used
    ======  =======  ========  ================================
-..
+
 
 S0097
 ^^^^^^^^
@@ -1726,12 +1613,10 @@ Can be used to check if any traffic parameter has been changed.
 For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to monitor if any traffic parameter has been changed. The traffic parameters may be downloaded with S0098.
 
 
-.. figtable::
-   :nofig:
-   :label: S0097
-   :caption: S0097
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0097
+
 
    =========  ======  ============  =============================================================================================================================================================
    Name       Type    Value         Comment
@@ -1757,7 +1642,7 @@ For instance, depending on controller, maintenance personnel can modify traffic 
                                     Downloaded data with S0098, hashed with SHA-2, should match this value.
    timestamp  string  [time stamp]  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    =========  ======  ============  =============================================================================================================================================================
-..
+
 
 S0098
 ^^^^^^^^
@@ -1769,12 +1654,10 @@ Can be used to download all traffic parameters from the controller.
 For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to downloaded them.
 
 
-.. figtable::
-   :nofig:
-   :label: S0098
-   :caption: S0098
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0098
+
 
    =========  ======  ============  ==========================================================================================================================================================================
    Name       Type    Value         Comment
@@ -1800,7 +1683,7 @@ For instance, depending on controller, maintenance personnel can modify traffic 
    timestamp  string  [time stamp]  Time stamp of the config. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    version    string  [text]        Version information of the configuration. Contains basic information such as controller id, changes to config and other information. The format is not specified in detail
    =========  ======  ============  ==========================================================================================================================================================================
-..
+
 
 S0201
 ^^^^^^^^
@@ -1810,12 +1693,10 @@ Traffic Counting: Number of vehicles
 Used for Traffic counting.
 
 
-.. figtable::
-   :nofig:
-   :label: S0201
-   :caption: S0201
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0201
+
 
    =========  =======  ============  ====================================================================================================================================================================
    Name       Type     Value         Comment
@@ -1823,7 +1704,7 @@ Used for Traffic counting.
    starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    vehicles   integer  [0-65535]     Number of vehicles on a given detector logic (since last update)
    =========  =======  ============  ====================================================================================================================================================================
-..
+
 
 S0202
 ^^^^^^^^
@@ -1833,12 +1714,10 @@ Traffic Counting: Vehicle speed
 Used for Traffic counting.
 
 
-.. figtable::
-   :nofig:
-   :label: S0202
-   :caption: S0202
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0202
+
 
    =========  =======  ============  ====================================================================================================================================================================
    Name       Type     Value         Comment
@@ -1846,7 +1725,7 @@ Used for Traffic counting.
    starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    speed      integer  [0-65535]     Average speed in km/h
    =========  =======  ============  ====================================================================================================================================================================
-..
+
 
 S0203
 ^^^^^^^^
@@ -1856,12 +1735,10 @@ Traffic Counting: Occupancy
 Used for Traffic counting.
 
 
-.. figtable::
-   :nofig:
-   :label: S0203
-   :caption: S0203
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0203
+
 
    =========  =======  ============  ====================================================================================================================================================================
    Name       Type     Value         Comment
@@ -1869,7 +1746,7 @@ Used for Traffic counting.
    starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    occupancy  integer  [0-100]       Occupancy in percent (0-100%)
    =========  =======  ============  ====================================================================================================================================================================
-..
+
 
 S0204
 ^^^^^^^^
@@ -1879,12 +1756,10 @@ Traffic Counting: Number of vehicles of given classification
 Used for Traffic counting.
 
 
-.. figtable::
-   :nofig:
-   :label: S0204
-   :caption: S0204
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0204
+
 
    =========  =======  ============  ====================================================================================================================================================================
    Name       Type     Value         Comment
@@ -1900,7 +1775,7 @@ Used for Traffic counting.
    C          integer  [0-65535]     Number of bicycles
    F          integer  [0-65535]     Number of pedestrians
    =========  =======  ============  ====================================================================================================================================================================
-..
+
 
 S0205
 ^^^^^^^^
@@ -1910,12 +1785,10 @@ Traffic Counting: Number of vehicles
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. figtable::
-   :nofig:
-   :label: S0205
-   :caption: S0205
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0205
+
 
    ========  ======  =============  ====================================================================================================================================================================
    Name      Type    Value          Comment
@@ -1926,7 +1799,7 @@ This status was introduced to improve performance in case traffic counting is do
                                     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                                     - The value is set to “-1” if no data could be measured (e.g. detector fault)
    ========  ======  =============  ====================================================================================================================================================================
-..
+
 
 S0206
 ^^^^^^^^
@@ -1936,12 +1809,10 @@ Traffic Counting: Vehicle speed
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. figtable::
-   :nofig:
-   :label: S0206
-   :caption: S0206
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0206
+
 
    ======  ======  =============  ====================================================================================================================================================================
    Name    Type    Value          Comment
@@ -1952,7 +1823,7 @@ This status was introduced to improve performance in case traffic counting is do
                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
    ======  ======  =============  ====================================================================================================================================================================
-..
+
 
 S0207
 ^^^^^^^^
@@ -1962,12 +1833,10 @@ Traffic Counting: Occupancy
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. figtable::
-   :nofig:
-   :label: S0207
-   :caption: S0207
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0207
+
 
    =========  ======  ============  ====================================================================================================================================================================
    Name       Type    Value         Comment
@@ -1978,7 +1847,7 @@ This status was introduced to improve performance in case traffic counting is do
                                     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                                     - The value is set to “-1” if no data could be measured (e.g. detector fault)
    =========  ======  ============  ====================================================================================================================================================================
-..
+
 
 S0208
 ^^^^^^^^
@@ -1988,12 +1857,10 @@ Traffic Counting: Number of vehicles of given classification
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. figtable::
-   :nofig:
-   :label: S0208
-   :caption: S0208
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.08\linewidth} p{0.13\linewidth} p{0.50\linewidth}
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+
+.. table:: S0208
+
 
    ======  ======  =============  ====================================================================================================================================================================
    Name    Type    Value          Comment
@@ -2036,17 +1903,15 @@ This status was introduced to improve performance in case traffic counting is do
                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
    ======  ======  =============  ====================================================================================================================================================================
-..
+
 
 Commands
 --------
 
-.. figtable::
-   :nofig:
-   :label: Commands
-   :caption: Commands
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.24\linewidth} p{0.15\linewidth} p{0.21\linewidth} p{0.21\linewidth}
+.. tabularcolumns:: |\Yl{0.24}|\Yl{0.15}|\Yl{0.21}|\Yl{0.21}|
+
+.. table:: Commands
+
 
    ========================  ===============  =====================  ===============================================
    ObjectType                commandCodeId    Command                Description
@@ -2076,7 +1941,7 @@ Commands
    Traffic Light Controller  `M0103`_         setSecurityCode        Set security code
    Traffic Light Controller  `M0104`_         setDate                Set clock
    ========================  ===============  =====================  ===============================================
-..
+
 
 M0001
 ^^^^^
@@ -2088,12 +1953,10 @@ Sets the controller to yellow flash, dark mode or normal control.
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0001
-   :caption: M0001
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0001
+
 
    ============  =======  ===================  ============================================================================================
    Name          Type     Value                Comment
@@ -2106,7 +1969,7 @@ Requires security code 2.
                                                0=no automatic return
    intersection  integer  [0-255]              Intersection number
    ============  =======  ===================  ============================================================================================
-..
+
 
 M0002
 ^^^^^
@@ -2122,12 +1985,10 @@ This command changes the signal timings for optimal traffic flow.
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0002
-   :caption: M0002
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0002
+
 
    ============  =======  ===========  ==============================================================
    Name          Type     Value        Comment
@@ -2137,7 +1998,7 @@ Requires security code 2.
    securityCode  string   [text]       Security code 2
    timeplan      integer  [1-255]      designation of time plan
    ============  =======  ===========  ==============================================================
-..
+
 
 M0003
 ^^^^^
@@ -2151,12 +2012,10 @@ Traffic situation is a concept used to divide multiple TLC's into areas and sub-
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0003
-   :caption: M0003
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0003
+
 
    ===============  =======  ===========  ==========================================================================
    Name             Type     Value        Comment
@@ -2166,7 +2025,7 @@ Requires security code 2.
    securityCode     string   [text]       Security code 2
    traficsituation  integer  [1-255]      designation of traficsituation
    ===============  =======  ===========  ==========================================================================
-..
+
 
 M0004
 ^^^^^
@@ -2178,12 +2037,10 @@ Used in the event of serious faults in the device where a restart is considered 
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0004
-   :caption: M0004
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0004
+
 
    ============  =======  ===========  ========================
    Name          Type     Value        Comment
@@ -2192,7 +2049,7 @@ Requires security code 2.
                           -True
    securityCode  string   [text]       Security code 2
    ============  =======  ===========  ========================
-..
+
 
 M0005
 ^^^^^
@@ -2206,12 +2063,10 @@ Should be used in situations where full priority is given in the emergency vehic
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0005
-   :caption: M0005
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0005
+
 
    ==============  =======  ===========  ======================================
    Name            Type     Value        Comment
@@ -2221,7 +2076,7 @@ Requires security code 2.
    securityCode    string   [text]       Security code 2
    emergencyroute  integer  [1-255]      Number of emergency route
    ==============  =======  ===========  ======================================
-..
+
 
 M0006
 ^^^^^
@@ -2239,12 +2094,10 @@ Typical usages are bus priority, coordination between traffic controllers, exter
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0006
-   :caption: M0006
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0006
+
 
    ============  =======  ===========  ============================
    Name          Type     Value        Comment
@@ -2254,7 +2107,7 @@ Requires security code 2.
    securityCode  string   [text]       Security code 2
    input         integer  [1-255]      Number of Input
    ============  =======  ===========  ============================
-..
+
 
 M0007
 ^^^^^
@@ -2268,12 +2121,10 @@ Can be used in case normal detectors can't be used, e.g. during maintenance work
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0007
-   :caption: M0007
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0007
+
 
    ============  =======  ===========  =========================================
    Name          Type     Value        Comment
@@ -2282,7 +2133,7 @@ Requires security code 2.
                           -True        True: Activate fixed time control
    securityCode  string   [text]       Security code 2
    ============  =======  ===========  =========================================
-..
+
 
 M0008
 ^^^^^
@@ -2296,12 +2147,10 @@ Can e.g. be used to connect RSMP compatible detection equipment to the traffic l
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0008
-   :caption: M0008
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0008
+
 
    ============  =======  ===========  =======================================================
    Name          Type     Value        Comment
@@ -2312,7 +2161,7 @@ Requires security code 2.
    mode          boolean  -False |br|  False: Deactivate detector logic |br|
                           -True        True: Activate detector logic
    ============  =======  ===========  =======================================================
-..
+
 
 M0010
 ^^^^^
@@ -2320,12 +2169,10 @@ M0010
 ``Reserved``
 
 
-.. figtable::
-   :nofig:
-   :label: M0010
-   :caption: M0010
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0010
+
 
    ============  =======  ===========  ===============
    Name          Type     Value        Comment
@@ -2334,7 +2181,7 @@ M0010
                           -True
    securityCode  string   [text]       Security code 2
    ============  =======  ===========  ===============
-..
+
 
 M0011
 ^^^^^
@@ -2342,12 +2189,10 @@ M0011
 ``Reserved``
 
 
-.. figtable::
-   :nofig:
-   :label: M0011
-   :caption: M0011
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0011
+
 
    ============  =======  ===========  ===============
    Name          Type     Value        Comment
@@ -2356,7 +2201,7 @@ M0011
                           -True
    securityCode  string   [text]       Security code 2
    ============  =======  ===========  ===============
-..
+
 
 M0012
 ^^^^^
@@ -2364,12 +2209,10 @@ M0012
 ``Reserved``
 
 
-.. figtable::
-   :nofig:
-   :label: M0012
-   :caption: M0012
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0012
+
 
    ============  ======  =======  ===============
    Name          Type    Value    Comment
@@ -2377,7 +2220,7 @@ M0012
    status        string  [text]   ``Reserved``
    securityCode  string  [text]   Security code 2
    ============  ======  =======  ===============
-..
+
 
 M0013
 ^^^^^
@@ -2420,12 +2263,10 @@ Example 3:
 
 
 
-.. figtable::
-   :nofig:
-   :label: M0013
-   :caption: M0013
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0013
+
 
    ============  ======  =======  ==========================================================================================================================================================================
    Name          Type    Value    Comment
@@ -2434,7 +2275,7 @@ Example 3:
                                   Format: [Offset];[Bits to set];[Bits to unset];…
    securityCode  string  [text]   Security code 2
    ============  ======  =======  ==========================================================================================================================================================================
-..
+
 
 M0014
 ^^^^^
@@ -2448,12 +2289,10 @@ This command can be used to change the split of green time during the cycle. A t
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0014
-   :caption: M0014
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0014
+
 
    ============  =======  =======  ==================================================
    Name          Type     Value    Comment
@@ -2470,7 +2309,7 @@ Requires security code 2.
                                    dd-ee,dd-ee
    securityCode  string   [text]   Security code 2
    ============  =======  =======  ==================================================
-..
+
 
 M0015
 ^^^^^
@@ -2484,12 +2323,10 @@ This command can be used to fine tune the coordination for optimal traffic flow.
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0015
-   :caption: M0015
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0015
+
 
    ============  =======  =======  ==========================
    Name          Type     Value    Comment
@@ -2498,7 +2335,7 @@ Requires security code 2.
    plan          integer  [0-255]  Time plan nr
    securityCode  string   [text]   Security code 2
    ============  =======  =======  ==========================
-..
+
 
 M0016
 ^^^^^
@@ -2512,12 +2349,10 @@ This command changes the signal timings during the week for optimal traffic flow
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0016
-   :caption: M0016
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0016
+
 
    ============  ======  =======  =================================================================
    Name          Type    Value    Comment
@@ -2542,7 +2377,7 @@ Requires security code 2.
                                   d-t,d-t
    securityCode  string  [text]   Security code 2
    ============  ======  =======  =================================================================
-..
+
 
 M0017
 ^^^^^
@@ -2556,12 +2391,10 @@ This command changes the signal timings according to time of day for optimal tra
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0017
-   :caption: M0017
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0017
+
 
    ============  ======  =======  ======================================================
    Name          Type    Value    Comment
@@ -2587,7 +2420,7 @@ Requires security code 2.
                                   t-o-h-m,t-o-h-m
    securityCode  string  [text]   Security code 2
    ============  ======  =======  ======================================================
-..
+
 
 M0018
 ^^^^^
@@ -2601,12 +2434,10 @@ This command provides the ability to change the cycle time when using coordinate
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0018
-   :caption: M0018
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0018
+
 
    ============  =======  =======  =========================
    Name          Type     Value    Comment
@@ -2615,7 +2446,7 @@ Requires security code 2.
    plan          integer  [0-255]  Time plan nr
    securityCode  string   [text]   Security code 2
    ============  =======  =======  =========================
-..
+
 
 M0019
 ^^^^^
@@ -2629,12 +2460,10 @@ Can be used for bus priority, coordination between traffic controllers, external
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0019
-   :caption: M0019
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0019
+
 
    ============  =======  ===========  =================================
    Name          Type     Value        Comment
@@ -2646,7 +2475,7 @@ Requires security code 2.
    inputValue    boolean  -False |br|  False: input forced to False |br|
                           -True        True: input forced to True
    ============  =======  ===========  =================================
-..
+
 
 M0020
 ^^^^^
@@ -2660,12 +2489,10 @@ Can be used for bus priority, coordination between traffic controllers, external
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0020
-   :caption: M0020
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0020
+
 
    ============  =======  ===========  ==================================
    Name          Type     Value        Comment
@@ -2677,7 +2504,7 @@ Requires security code 2.
    outputValue   boolean  -False |br|  False: output forced to False |br|
                           -True        True: output forced to True
    ============  =======  ===========  ==================================
-..
+
 
 M0021
 ^^^^^
@@ -2691,12 +2518,10 @@ This command provides the ability to fine tune loop detectors to make sure they 
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0021
-   :caption: M0021
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0021
+
 
    ============  ======  =======  =======================================================================
    Name          Type    Value    Comment
@@ -2706,7 +2531,7 @@ Requires security code 2.
                                   ss=sensitivity value
    securityCode  string  [text]   Security code 2
    ============  ======  =======  =======================================================================
-..
+
 
 M0022
 ^^^^^
@@ -2796,12 +2621,10 @@ but until then the priority might block requests in other direction which is why
 when it's not needed anymore.
 
 
-.. figtable::
-   :nofig:
-   :label: M0022
-   :caption: M0022
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0022
+
 
    =============  =======  ======================  =========================================================================
    Name           Type     Value                   Comment
@@ -2833,7 +2656,7 @@ when it's not needed anymore.
                            -other                  specialTransport: For e.g. heavy load |br|
                                                    other: Other type of vehicle
    =============  =======  ======================  =========================================================================
-..
+
 
 M0023
 ^^^^^
@@ -2848,12 +2671,10 @@ Used in conjunction with dynamic bands, M0014
 Requires security code 2.
 
 
-.. figtable::
-   :nofig:
-   :label: M0023
-   :caption: M0023
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0023
+
 
    ============  =======  =========  ===================
    Name          Type     Value      Comment
@@ -2861,7 +2682,7 @@ Requires security code 2.
    status        integer  [0-65535]  Timeout, in minutes
    securityCode  string   [text]     Security code 2
    ============  =======  =========  ===================
-..
+
 
 M0103
 ^^^^^
@@ -2873,12 +2694,10 @@ Change the security code to use when sending commands
 Security codes are used as an extra layer of security in many commands. They need to match between the supervision system and the traffic light controller in order for the commands to be executed.
 
 
-.. figtable::
-   :nofig:
-   :label: M0103
-   :caption: M0103
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0103
+
 
    ===============  ======  ============  ===================================
    Name             Type    Value         Comment
@@ -2888,7 +2707,7 @@ Security codes are used as an extra layer of security in many commands. They nee
    oldSecurityCode  string  [text]        Previous security code
    newSecurityCode  string  [text]        New security code
    ===============  ======  ============  ===================================
-..
+
 
 M0104
 ^^^^^
@@ -2900,12 +2719,10 @@ Can be used to manually set the clock of the traffic light controller if automat
 Requires security code 1.
 
 
-.. figtable::
-   :nofig:
-   :label: M0104
-   :caption: M0104
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.14\linewidth} p{0.07\linewidth} p{0.20\linewidth} p{0.45\linewidth}
+.. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
+
+.. table:: M0104
+
 
    ============  =======  ========  ==============================================
    Name          Type     Value     Comment
@@ -2924,7 +2741,7 @@ Requires security code 1.
    second        integer  [0-59]    Changes internal clock. Note: UTC is used |br|
                                     Second
    ============  =======  ========  ==============================================
-..
+
 
 .. |br| replace:: |br_html| |br_latex|
 

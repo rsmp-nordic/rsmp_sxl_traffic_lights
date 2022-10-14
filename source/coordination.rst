@@ -169,12 +169,9 @@ time plan/traffic situation and synchronize their cycle timers.
 
 The following input/output is needed
 
-.. figtable::
-   :nofig:
-   :label: table-input
-   :caption: Input needed
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.25\linewidth} p{0.75\linewidth}
+.. tabularcolumns:: |\Yl{0.30}|\Yl{0.75}|
+
+.. table:: Input needed
 
    ==================== ============
    Command types        Description
@@ -185,14 +182,9 @@ The following input/output is needed
    M0006/M0013 (Input)  START/STOP bit (true/false)
    ==================== ============
 
-..
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.50}|
 
-.. figtable::
-   :nofig:
-   :label: table-output
-   :caption: Output needed
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.15\linewidth} p{0.50\linewidth}
+.. table:: Output needed
 
    =============== ============
    Status types    Description
@@ -201,8 +193,6 @@ The following input/output is needed
    S0004 (Output)  Synchronization step (local coordination) (true/false)
    S0004 (Output)  START/STOP bit (true/false)
    =============== ============
-
-..
 
 Please note:
 
@@ -369,13 +359,9 @@ Error codes for MessageNotAck
 In order to standardize contents in MessageNotAck (”reason”), use this
 common error code list
 
+.. tabularcolumns:: |\Yl{0.35}|\Yl{0.60}|
 
-.. figtable::
-   :nofig:
-   :label: table-error
-   :caption: Error codes
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.35\linewidth} p{0.60\linewidth}
+.. table:: Error codes
 
    ================================ ===========
    Error code (Content of "Reason") Description
@@ -393,4 +379,3 @@ common error code list
    0011                             Invalid message
    ================================ ===========
 
-..

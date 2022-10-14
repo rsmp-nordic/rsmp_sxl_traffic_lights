@@ -9,6 +9,11 @@
 % \SetWatermarkText{DRAFT}
 % \SetWatermarkScale{3}
 
+% used for width setting for columns in tables when using PDF output
+\newcolumntype{\Yl}[1]{>{\raggedright\arraybackslash}\Y{#1}}
+\newcolumntype{\Yr}[1]{>{\raggedleft\arraybackslash}\Y{#1}}
+\newcolumntype{\Yc}[1]{>{\centering\arraybackslash}\Y{#1}}
+
 \makeatletter
 
 % header and footers, we do this twice, one for the "normal" pages, and one for
