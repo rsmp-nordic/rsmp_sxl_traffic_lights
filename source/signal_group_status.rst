@@ -4,12 +4,9 @@ Signal Group status
 Signal groups status (S0001) is defined as a text string where each character represents the current status for each signal group.
 Each character has the following definition:
 
-.. figtable::
-   :nofig:
-   :label: table-signal-group-status
-   :caption: Signal group status
-   :loc: H
-   :spec: >{\raggedright\arraybackslash}p{0.05\linewidth} p{0.35\linewidth} p{0.35\linewidth} p{0.10\linewidth}
+.. tabularcolumns:: |\Yl{0.05}|\Yl{0.35}|\Yl{0.35}|\Yl{0.10}|
+
+.. table:: Signal group status
 
    ===== ================================================= ================================== =============
    ASCII Definition                                        Output                             Green request
