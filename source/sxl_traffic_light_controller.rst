@@ -10,6 +10,7 @@ Grouped objects
 .. tabularcolumns:: |\Yl{0.30}|\Yl{0.50}|
 
 .. table:: Grouped objects
+   :class: longtable
 
 
    ========================  =============
@@ -25,6 +26,7 @@ Single objects
 .. tabularcolumns:: |\Yl{0.30}|\Yl{0.50}|
 
 .. table:: Single objects
+   :class: longtable
 
 
    ==============  =============
@@ -41,6 +43,7 @@ Aggregated status
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.16}|\Yl{0.16}|\Yl{0.40}|
 
 .. table:: Aggregated status
+   :class: longtable
 
 
    ========================  ====================  =================  =============================================================
@@ -53,6 +56,7 @@ Aggregated status
 .. tabularcolumns:: |\Yl{0.10}|\Yl{0.30}|\Yl{0.50}|
 
 .. table:: State bits
+   :class: longtable
 
 
    ===========  ===========================  ==============================================================================================================================================
@@ -75,6 +79,7 @@ Alarms
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.45}|\Yl{0.07}|\Yl{0.07}|
 
 .. table:: Alarms
+   :class: longtable
 
 
    ========================  =============  ====================================  ==========  ==========
@@ -161,6 +166,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: A0007
+   :class: longtable
 
 
    ========  ======  ==========  =============================================
@@ -187,6 +193,7 @@ Is a "major fault" defined according to 3.8 in EN12675 which causes the controll
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: A0008
+   :class: longtable
 
 
    ========  =======  =======  =================
@@ -235,6 +242,7 @@ Is a "major fault" defined according to 3.8 in EN12675 which causes the controll
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: A0201
+   :class: longtable
 
 
    ======  ======  ============  =============
@@ -259,6 +267,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: A0202
+   :class: longtable
 
 
    ======  ======  ============  =============
@@ -281,6 +290,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: A0301
+   :class: longtable
 
 
    =========  =======  =============  ===============================================
@@ -310,6 +320,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: A0302
+   :class: longtable
 
 
    ==========  =======  ================  ==================================================================
@@ -341,6 +352,7 @@ Is a "major fault" defined according to 3.8 i EN12675 which causes the controlle
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: A0303
+   :class: longtable
 
 
    =========  =======  =============  ===============================================
@@ -370,6 +382,7 @@ Is a "major fault" defined according to 3.8 i EN12675 which causes the controlle
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: A0304
+   :class: longtable
 
 
    ==========  =======  ================  ==================================================================
@@ -401,6 +414,7 @@ Status
 .. tabularcolumns:: |\Yl{0.24}|\Yl{0.10}|\Yl{0.55}|
 
 .. table:: Status
+   :class: longtable
 
 
    ========================  ==============  ============================================================
@@ -467,9 +481,10 @@ Provides the status of each signal group, including basic information such as gr
 Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0001
+   :class: longtable
 
 
    =================  =======  =======  =================================================================================
@@ -512,9 +527,10 @@ Provides the status of all detector logics of the controller.
 Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller. Can also be used for bus priority, external control systems, and much more.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0002
+   :class: longtable
 
 
    ===================  ======  =======  ===================================================================================
@@ -539,9 +555,10 @@ Input (1-255) of the controllers general purpose I/O.
 Input is used where the traffic light controller must react to external control. It could be external detectors, bus priority, and much more.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0003
+   :class: longtable
 
 
    ===================  ======  =======  ==========================================================================================
@@ -572,9 +589,10 @@ Output (1-255) of the controllers general purpose I/O.
 Can be used for all types of output where the traffic light controller needs to control other equipment. Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0004
+   :class: longtable
 
 
    ====================  ======  =======  ==========================================================================================
@@ -605,9 +623,10 @@ The traffic signal is starting, e.g. it is in startup mode and has not begun wor
 During startup mode the traffic controller shows dark, red, yellow flash or using the predetermined start cycle (minimum times).
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0005
+   :class: longtable
 
 
    ======  =======  ===========  ==============================================
@@ -628,9 +647,10 @@ The status is active during emergency prioritization.
 Used in situations where full priority is given in the emergency vehicle program.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0006
+   :class: longtable
 
 
    ==============  =======  ===========  ====================================
@@ -658,9 +678,10 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
 
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0007
+   :class: longtable
 
 
    ============  =======  ====================  =======================================================================
@@ -693,9 +714,10 @@ Please note that all values in this status uses comma-separated lists - one valu
 e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0008
+   :class: longtable
 
 
    ============  =======  ====================  =======================================================================
@@ -728,9 +750,10 @@ Please note that all values in this status uses comma-separated lists - one valu
 e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0009
+   :class: longtable
 
 
    ============  =======  ====================  =======================================================================
@@ -762,9 +785,10 @@ Please note that all values in this status uses comma-separated lists - one valu
 e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0010
+   :class: longtable
 
 
    ============  =======  ====================  ===============================================================================
@@ -797,9 +821,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "True,False"
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0011
+   :class: longtable
 
 
    ============  =======  ====================  =======================================================================
@@ -832,9 +857,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "True,False"
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0012
+   :class: longtable
 
 
    ============  =======  ====================  =======================================================================
@@ -867,9 +893,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "0,1"
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0013
+   :class: longtable
 
 
    ============  =======  =======  =======================================================================
@@ -894,9 +921,10 @@ The current time plan (signal program) used in the controller. There may be 1-25
 The time plan (signal program) may change signal timings, cycle time, control strategy and much more. Typical usage is is scenario based control where change of program is used to change priority etc.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0014
+   :class: longtable
 
 
    ======  =======  ====================  ===========================================================
@@ -925,9 +953,10 @@ Used for area-based control where a command can be sent to a master traffic ligh
 Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0015
+   :class: longtable
 
 
    ======  =======  ====================  ===========================================================
@@ -952,9 +981,10 @@ Number of detector logics
 Can be used by the management system to check the number of detector logics configured in the controller.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0016
+   :class: longtable
 
 
    ======  =======  =========  =========================
@@ -972,9 +1002,10 @@ Number of signal groups
 Can be used for the management system to check the number of signal groups configured in the controller.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0017
+   :class: longtable
 
 
    ======  =======  =========  =======================
@@ -992,9 +1023,10 @@ Number of time plans
 Can be used for the management system to check the number of time plans configured in the controller.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0018
+   :class: longtable
 
 
    ======  =======  =========  ==================================
@@ -1012,9 +1044,10 @@ Number of traffic situations
 Can be used for the management system to check the number of traffic situations configured in the controller.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0019
+   :class: longtable
 
 
    ======  =======  =========  ============================
@@ -1035,9 +1068,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "startup,control"
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0020
+   :class: longtable
 
 
    ============  =======  =============  =======================================================================
@@ -1063,9 +1097,10 @@ Provides status of detector logic (1-255) regarding if they are either forced to
 Can be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0021
+   :class: longtable
 
 
    ==============  ======  =======  ================================================
@@ -1085,9 +1120,10 @@ Provides a list of the configured time plans which is possible to use. This stat
 Can be used for the management system to check the number of time plans configured in the controller.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0022
+   :class: longtable
 
 
    ======  ======  =======  =============================================================
@@ -1107,9 +1143,10 @@ Provides a list of all defined dynamic bands. Dynamic bands moves start of signa
 A typical usage of dynamic bands is scenario based control where changing of signal timings is used for optimal traffic flow.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0023
+   :class: longtable
 
 
    ======  ======  =======  =====================================================
@@ -1138,9 +1175,10 @@ Offset time is used to define an offset between intersections in coordinated con
 Can be used by the management system to check to fine tune the coordination for optimal traffic flow.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0024
+   :class: longtable
 
 
    ======  ======  =======  ================================================
@@ -1166,9 +1204,10 @@ Time-of-Green / Time-of-Red
 Provides predicted signal timings of green and red for each signal group. Max, min and likely time to green and red.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0025
+   :class: longtable
 
 
    =================  =======  ============  ==========================================================================================================================================================
@@ -1201,9 +1240,10 @@ Week time table for signal programs (time plan) to use for each day during a wee
 The week time table determine which predefined signal timings (time plan) to use during the week for optimal traffic flow.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0026
+   :class: longtable
 
 
    ======  ======  =======  =================================================================
@@ -1239,9 +1279,10 @@ Time of day for when to switch signal program (time plan).
 The signal timings (time plan) to use during time of day for optimal traffic flow.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0027
+   :class: longtable
 
 
    ======  ======  =======  ======================================================
@@ -1279,9 +1320,10 @@ Cycle time (or cycle length) is the sum of all phases in a time plan (traffic pr
 Changing the cycle time can be used as part of scenario based control.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0028
+   :class: longtable
 
 
    ======  ======  =======  ===============================================
@@ -1310,9 +1352,10 @@ Provide status of input (1-255) regarding if they are forced or not. Can be used
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0029
+   :class: longtable
 
 
    ======  ======  =======  =================================
@@ -1332,9 +1375,10 @@ Provide status of output (1-255) regarding if they are forced or not. Can be use
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0030
+   :class: longtable
 
 
    ======  ======  =======  ==================================
@@ -1354,9 +1398,10 @@ The trigger level sensitivity determines at what level the loop detector should 
 Can be used to make sure that the detectors detect traffic as intended.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0031
+   :class: longtable
 
 
    ======  ======  =======  =======================================================================
@@ -1381,9 +1426,10 @@ Please note that all values in this status uses comma-separated lists
 - one value for each intersection, e.g. "1,2" and "centralized,off"
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0032
+   :class: longtable
 
 
    ============  =======  ====================  =======================================================================
@@ -1464,9 +1510,10 @@ The priorities are passed as an array:
 Each priority is passed as a hash with the following attributes:
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0033
+   :class: longtable
 
 
    ======  =======  ===============  ============================================================================================
@@ -1502,9 +1549,10 @@ Disabled if set to '0'.
 Used in conjunction with dynamic bands, M0014
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0034
+   :class: longtable
 
 
    ======  =======  =========  ===================
@@ -1522,9 +1570,10 @@ Operator logged in/out OP-panel
 Provides information if maintenance personnel is currently working on site.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0091
+   :class: longtable
 
 
    ======  =======  =======  =================================================
@@ -1544,9 +1593,10 @@ Operator logged in/out web-interface
 Provides information about whether maintenance personnel is currently working with the controller.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0092
+   :class: longtable
 
 
    ======  =======  =======  =================================================
@@ -1566,9 +1616,10 @@ Version of Traffic Light Controller
 Provides diagnostic version information.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0095
+   :class: longtable
 
 
    ======  ======  =======  ==================================================================
@@ -1586,9 +1637,10 @@ Current date and time
 Provides diagnostic information about the current date and time set in the controller.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0096
+   :class: longtable
 
 
    ======  =======  ========  ================================
@@ -1613,9 +1665,10 @@ Can be used to check if any traffic parameter has been changed.
 For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to monitor if any traffic parameter has been changed. The traffic parameters may be downloaded with S0098.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0097
+   :class: longtable
 
 
    =========  ======  ============  =============================================================================================================================================================
@@ -1654,9 +1707,10 @@ Can be used to download all traffic parameters from the controller.
 For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to downloaded them.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0098
+   :class: longtable
 
 
    =========  ======  ============  ==========================================================================================================================================================================
@@ -1693,9 +1747,10 @@ Traffic Counting: Number of vehicles
 Used for Traffic counting.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0201
+   :class: longtable
 
 
    =========  =======  ============  ====================================================================================================================================================================
@@ -1714,9 +1769,10 @@ Traffic Counting: Vehicle speed
 Used for Traffic counting.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0202
+   :class: longtable
 
 
    =========  =======  ============  ====================================================================================================================================================================
@@ -1735,9 +1791,10 @@ Traffic Counting: Occupancy
 Used for Traffic counting.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0203
+   :class: longtable
 
 
    =========  =======  ============  ====================================================================================================================================================================
@@ -1756,9 +1813,10 @@ Traffic Counting: Number of vehicles of given classification
 Used for Traffic counting.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0204
+   :class: longtable
 
 
    =========  =======  ============  ====================================================================================================================================================================
@@ -1785,9 +1843,10 @@ Traffic Counting: Number of vehicles
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0205
+   :class: longtable
 
 
    ========  ======  =============  ====================================================================================================================================================================
@@ -1809,9 +1868,10 @@ Traffic Counting: Vehicle speed
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0206
+   :class: longtable
 
 
    ======  ======  =============  ====================================================================================================================================================================
@@ -1833,9 +1893,10 @@ Traffic Counting: Occupancy
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0207
+   :class: longtable
 
 
    =========  ======  ============  ====================================================================================================================================================================
@@ -1857,9 +1918,10 @@ Traffic Counting: Number of vehicles of given classification
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.13}|\Yl{0.50}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0208
+   :class: longtable
 
 
    ======  ======  =============  ====================================================================================================================================================================
@@ -1911,6 +1973,7 @@ Commands
 .. tabularcolumns:: |\Yl{0.24}|\Yl{0.15}|\Yl{0.21}|\Yl{0.21}|
 
 .. table:: Commands
+   :class: longtable
 
 
    ========================  ===============  =====================  ===============================================
@@ -1956,6 +2019,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0001
+   :class: longtable
 
 
    ============  =======  ===================  ============================================================================================
@@ -1988,6 +2052,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0002
+   :class: longtable
 
 
    ============  =======  ===========  ==============================================================
@@ -2015,6 +2080,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0003
+   :class: longtable
 
 
    ===============  =======  ===========  ==========================================================================
@@ -2040,6 +2106,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0004
+   :class: longtable
 
 
    ============  =======  ===========  ========================
@@ -2066,6 +2133,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0005
+   :class: longtable
 
 
    ==============  =======  ===========  ======================================
@@ -2097,6 +2165,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0006
+   :class: longtable
 
 
    ============  =======  ===========  ============================
@@ -2124,6 +2193,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0007
+   :class: longtable
 
 
    ============  =======  ===========  =========================================
@@ -2150,6 +2220,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0008
+   :class: longtable
 
 
    ============  =======  ===========  =======================================================
@@ -2172,6 +2243,7 @@ M0010
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0010
+   :class: longtable
 
 
    ============  =======  ===========  ===============
@@ -2192,6 +2264,7 @@ M0011
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0011
+   :class: longtable
 
 
    ============  =======  ===========  ===============
@@ -2212,6 +2285,7 @@ M0012
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0012
+   :class: longtable
 
 
    ============  ======  =======  ===============
@@ -2266,6 +2340,7 @@ Example 3:
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0013
+   :class: longtable
 
 
    ============  ======  =======  ==========================================================================================================================================================================
@@ -2292,6 +2367,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0014
+   :class: longtable
 
 
    ============  =======  =======  ==================================================
@@ -2326,6 +2402,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0015
+   :class: longtable
 
 
    ============  =======  =======  ==========================
@@ -2352,6 +2429,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0016
+   :class: longtable
 
 
    ============  ======  =======  =================================================================
@@ -2394,6 +2472,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0017
+   :class: longtable
 
 
    ============  ======  =======  ======================================================
@@ -2437,6 +2516,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0018
+   :class: longtable
 
 
    ============  =======  =======  =========================
@@ -2463,6 +2543,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0019
+   :class: longtable
 
 
    ============  =======  ===========  =================================
@@ -2492,6 +2573,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0020
+   :class: longtable
 
 
    ============  =======  ===========  ==================================
@@ -2521,6 +2603,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0021
+   :class: longtable
 
 
    ============  ======  =======  =======================================================================
@@ -2624,6 +2707,7 @@ when it's not needed anymore.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0022
+   :class: longtable
 
 
    =============  =======  ======================  =========================================================================
@@ -2674,6 +2758,7 @@ Requires security code 2.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0023
+   :class: longtable
 
 
    ============  =======  =========  ===================
@@ -2697,6 +2782,7 @@ Security codes are used as an extra layer of security in many commands. They nee
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0103
+   :class: longtable
 
 
    ===============  ======  ============  ===================================
@@ -2722,6 +2808,7 @@ Requires security code 1.
 .. tabularcolumns:: |\Yl{0.14}|\Yl{0.14}|\Yl{0.20}|\Yl{0.45}|
 
 .. table:: M0104
+   :class: longtable
 
 
    ============  =======  ========  ==============================================
