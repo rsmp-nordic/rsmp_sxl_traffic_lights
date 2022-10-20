@@ -115,18 +115,16 @@ PREAMBLE = f.read();
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
-    'papersize': '',
-    'fontpkg': '',
+    'papersize': 'a4paper',
     'fncychap': '',
 
     # The font size ('10pt', '11pt' or '12pt').
-    'pointsize': '',
+    'pointsize': '10pt',
 
     'preamble': PREAMBLE,
     'releasename': '',
     'babel': '\\usepackage[english]{babel}',
     'printindex': '',
-    'fontenc': '',
     'inputenc': '',
     'classoptions': '',
     'utf8extra': '',
