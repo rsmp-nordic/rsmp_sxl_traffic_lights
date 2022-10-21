@@ -293,18 +293,18 @@ Is a "minor fault" defined according to 3.11 in EN12675.
    :class: longtable
 
 
-   =========  =======  =============  ===============================================
-   Name       Type     Value          Comment
-   =========  =======  =============  ===============================================
-   detector   string   [designation]  Designation of the detector (hardware)
-   type       string   -loop |br|     Type of detector |br|
-                       -input         loop: Inductive detector loop |br|
-                                      input: External input
-   errormode  string   -on |br|       Detector forced on/off while detector error
+   =========  =======  ==========  ===============================================
+   Name       Type     Value       Comment
+   =========  =======  ==========  ===============================================
+   detector   string   [string]    Designation of the detector (hardware)
+   type       string   -loop |br|  Type of detector |br|
+                       -input      loop: Inductive detector loop |br|
+                                   input: External input
+   errormode  string   -on |br|    Detector forced on/off while detector error
                        -off
-   manual     boolean  -True |br|     Manually controlled detector logic (True/False)
+   manual     boolean  -True |br|  Manually controlled detector logic (True/False)
                        -False
-   =========  =======  =============  ===============================================
+   =========  =======  ==========  ===============================================
 
 
 A0302
@@ -326,7 +326,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
    ==========  =======  ================  ==================================================================
    Name        Type     Value             Comment
    ==========  =======  ================  ==================================================================
-   detector    string   [designation]     Designation of the detector (hardware)
+   detector    string   [string]          Designation of the detector (hardware)
    type        string   -loop |br|        Type of detector. |br|
                         -input            loop: Inductive detector loop |br|
                                           input: External input
@@ -355,18 +355,18 @@ Is a "major fault" defined according to 3.8 i EN12675 which causes the controlle
    :class: longtable
 
 
-   =========  =======  =============  ===============================================
-   Name       Type     Value          Comment
-   =========  =======  =============  ===============================================
-   detector   string   [designation]  Designation of the detector (hardware)
-   type       string   -loop |br|     Type of detector |br|
-                       -input         loop: Inductive detector loop |br|
-                                      input: External input
-   errormode  string   -on |br|       Detector forced on/off while detector error
+   =========  =======  ==========  ===============================================
+   Name       Type     Value       Comment
+   =========  =======  ==========  ===============================================
+   detector   string   [string]    Designation of the detector (hardware)
+   type       string   -loop |br|  Type of detector |br|
+                       -input      loop: Inductive detector loop |br|
+                                   input: External input
+   errormode  string   -on |br|    Detector forced on/off while detector error
                        -off
-   manual     boolean  -True |br|     Manually controlled detector logic (True/False)
+   manual     boolean  -True |br|  Manually controlled detector logic (True/False)
                        -False
-   =========  =======  =============  ===============================================
+   =========  =======  ==========  ===============================================
 
 
 A0304
@@ -388,7 +388,7 @@ Is a "major fault" defined according to 3.8 i EN12675 which causes the controlle
    ==========  =======  ================  ==================================================================
    Name        Type     Value             Comment
    ==========  =======  ================  ==================================================================
-   detector    string   [designation]     Designation of the detector (hardware)
+   detector    string   [string]          Designation of the detector (hardware)
    type        string   -loop |br|        Type of detector. |br|
                         -input            loop: Inductive detector loop |br|
                                           input: External input
@@ -487,34 +487,34 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
    :class: longtable
 
 
-   =================  =======  =======  =================================================================================
-   Name               Type     Value    Comment
-   =================  =======  =======  =================================================================================
-   signalgroupstatus  string   [text]   Signal group status as text field. |br|
-                                        |br|
-                                        Each character represent the state of the signal group in consecutive order. |br|
-                                        Signal group status is described in detail in the corresponding section |br|
-                                        - = Signal group is undefined/does not exist
-   cyclecounter       integer  [0-999]  Cycle counter |br|
-                                        |br|
-                                        Used for handling of coordination between TLC's. |br|
-                                        Is counted from 0 until it reaches the cycle time (See S0028). |br|
-                                        :math:`{c=(b+o)\mod t}` |br|
-                                        where c = cycle counter, |br|
-                                        b = base cycle counter, |br|
-                                        o = offset, |br|
-                                        t = cycle time, |br|
-                                        mod = modulo |br|
-                                        |br|
-                                        See the coordination section for more information.
-   basecyclecounter   integer  [0-999]  Base cycle counter |br|
-                                        |br|
-                                        Used for handling of coordination between TLC's. |br|
-                                        Synchronized between all TLC's in an active coordination. |br|
-                                        |br|
-                                        See the coordination section for more information.
-   stage              integer  [0-999]  Current stage (isolated)
-   =================  =======  =======  =================================================================================
+   =================  =======  ========  =================================================================================
+   Name               Type     Value     Comment
+   =================  =======  ========  =================================================================================
+   signalgroupstatus  string   [string]  Signal group status as text field. |br|
+                                         |br|
+                                         Each character represent the state of the signal group in consecutive order. |br|
+                                         Signal group status is described in detail in the corresponding section |br|
+                                         - = Signal group is undefined/does not exist
+   cyclecounter       integer  [0-999]   Cycle counter |br|
+                                         |br|
+                                         Used for handling of coordination between TLC's. |br|
+                                         Is counted from 0 until it reaches the cycle time (See S0028). |br|
+                                         :math:`{c=(b+o)\mod t}` |br|
+                                         where c = cycle counter, |br|
+                                         b = base cycle counter, |br|
+                                         o = offset, |br|
+                                         t = cycle time, |br|
+                                         mod = modulo |br|
+                                         |br|
+                                         See the coordination section for more information.
+   basecyclecounter   integer  [0-999]   Base cycle counter |br|
+                                         |br|
+                                         Used for handling of coordination between TLC's. |br|
+                                         Synchronized between all TLC's in an active coordination. |br|
+                                         |br|
+                                         See the coordination section for more information.
+   stage              integer  [0-999]   Current stage (isolated)
+   =================  =======  ========  =================================================================================
 
 
 S0002
@@ -533,16 +533,16 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
    :class: longtable
 
 
-   ===================  ======  =======  ===================================================================================
-   Name                 Type    Value    Comment
-   ===================  ======  =======  ===================================================================================
-   detectorlogicstatus  string  [text]   Detector logic status as text field. |br|
-                                         |br|
-                                         Each character represent the state of the detector logic in consecutive order. |br|
-                                         0 = Detector logic is not active |br|
-                                         1 = Detector logic is active |br|
-                                         - = Detector logic is undefined/does not exist
-   ===================  ======  =======  ===================================================================================
+   ===================  ======  ========  ===================================================================================
+   Name                 Type    Value     Comment
+   ===================  ======  ========  ===================================================================================
+   detectorlogicstatus  string  [string]  Detector logic status as text field. |br|
+                                          |br|
+                                          Each character represent the state of the detector logic in consecutive order. |br|
+                                          0 = Detector logic is not active |br|
+                                          1 = Detector logic is active |br|
+                                          - = Detector logic is undefined/does not exist
+   ===================  ======  ========  ===================================================================================
 
 
 S0003
@@ -561,22 +561,22 @@ Input is used where the traffic light controller must react to external control.
    :class: longtable
 
 
-   ===================  ======  =======  ==========================================================================================
-   Name                 Type    Value    Comment
-   ===================  ======  =======  ==========================================================================================
-   inputstatus          string  [text]   Input status as text field |br|
-                                         |br|
-                                         Each character represent the state of the input in consecutive order. |br|
-                                         0 = Input is not active |br|
-                                         1 = Input is active |br|
-                                         - = Input is undefined/does not exist
-   extendedinputstatus  string  [text]   ``Deprecated`` Extended input status as text field |br|
-                                         |br|
-                                         Each character represent the state of the extended input status in consecutive order. |br|
-                                         0 = Input is not active |br|
-                                         1 = Input is active |br|
-                                         - = Input is undefined/does not exist
-   ===================  ======  =======  ==========================================================================================
+   ===================  ======  ========  ==========================================================================================
+   Name                 Type    Value     Comment
+   ===================  ======  ========  ==========================================================================================
+   inputstatus          string  [string]  Input status as text field |br|
+                                          |br|
+                                          Each character represent the state of the input in consecutive order. |br|
+                                          0 = Input is not active |br|
+                                          1 = Input is active |br|
+                                          - = Input is undefined/does not exist
+   extendedinputstatus  string  [string]  ``Deprecated`` Extended input status as text field |br|
+                                          |br|
+                                          Each character represent the state of the extended input status in consecutive order. |br|
+                                          0 = Input is not active |br|
+                                          1 = Input is active |br|
+                                          - = Input is undefined/does not exist
+   ===================  ======  ========  ==========================================================================================
 
 
 S0004
@@ -595,22 +595,22 @@ Can be used for all types of output where the traffic light controller needs to 
    :class: longtable
 
 
-   ====================  ======  =======  ==========================================================================================
-   Name                  Type    Value    Comment
-   ====================  ======  =======  ==========================================================================================
-   outputstatus          string  [text]   Output status as text field |br|
-                                          |br|
-                                          Each character represent the state of the output status in consecutive order. |br|
-                                          0 = Output is not active |br|
-                                          1 = Output is active |br|
-                                          - = Output is undefined/does not exist
-   extendedoutputstatus  string  [text]   ``Deprecated`` Output status as text field |br|
-                                          |br|
-                                          Each character represent the state of the exteded output status in consecutive order. |br|
-                                          0 = Output is not active |br|
-                                          1 = Output is active |br|
-                                          - = Output is undefined/does not exist
-   ====================  ======  =======  ==========================================================================================
+   ====================  ======  ========  ==========================================================================================
+   Name                  Type    Value     Comment
+   ====================  ======  ========  ==========================================================================================
+   outputstatus          string  [string]  Output status as text field |br|
+                                           |br|
+                                           Each character represent the state of the output status in consecutive order. |br|
+                                           0 = Output is not active |br|
+                                           1 = Output is active |br|
+                                           - = Output is undefined/does not exist
+   extendedoutputstatus  string  [string]  ``Deprecated`` Output status as text field |br|
+                                           |br|
+                                           Each character represent the state of the exteded output status in consecutive order. |br|
+                                           0 = Output is not active |br|
+                                           1 = Output is active |br|
+                                           - = Output is undefined/does not exist
+   ====================  ======  ========  ==========================================================================================
 
 
 S0005
@@ -1103,11 +1103,11 @@ Can be used to connect RSMP compatible detection equipment to the traffic light 
    :class: longtable
 
 
-   ==============  ======  =======  ================================================
-   Name            Type    Value    Comment
-   ==============  ======  =======  ================================================
-   detectorlogics  string  [text]   Manually set detector logics (1/0) as text field
-   ==============  ======  =======  ================================================
+   ==============  ======  ========  ================================================
+   Name            Type    Value     Comment
+   ==============  ======  ========  ================================================
+   detectorlogics  string  [string]  Manually set detector logics (1/0) as text field
+   ==============  ======  ========  ================================================
 
 
 S0022
@@ -1126,11 +1126,11 @@ Can be used for the management system to check the number of time plans configur
    :class: longtable
 
 
-   ======  ======  =======  =============================================================
-   Name    Type    Value    Comment
-   ======  ======  =======  =============================================================
-   status  string  [text]   Comma separated list of configured time plans. E.g. "1,2,3,5"
-   ======  ======  =======  =============================================================
+   ======  ======  ========  =============================================================
+   Name    Type    Value     Comment
+   ======  ======  ========  =============================================================
+   status  string  [string]  Comma separated list of configured time plans. E.g. "1,2,3,5"
+   ======  ======  ========  =============================================================
 
 
 S0023
@@ -1149,20 +1149,20 @@ A typical usage of dynamic bands is scenario based control where changing of sig
    :class: longtable
 
 
-   ======  ======  =======  =====================================================
-   Name    Type    Value    Comment
-   ======  ======  =======  =====================================================
-   status  string  [text]   Dynamic bands. |br|
-                            Each dynamic band are written as pp-dd-ee where: |br|
-                            pp=Time plan |br|
-                            dd=Dynamic band number (from 1-10) |br|
-                            ee=Extension in seconds in this band |br|
-                            |br|
-                            Each dynamic band is separated with a comma. |br|
-                            |br|
-                            E.g. |br|
-                            pp-dd-ee,pp-dd-ee
-   ======  ======  =======  =====================================================
+   ======  ======  ========  =====================================================
+   Name    Type    Value     Comment
+   ======  ======  ========  =====================================================
+   status  string  [string]  Dynamic bands. |br|
+                             Each dynamic band are written as pp-dd-ee where: |br|
+                             pp=Time plan |br|
+                             dd=Dynamic band number (from 1-10) |br|
+                             ee=Extension in seconds in this band |br|
+                             |br|
+                             Each dynamic band is separated with a comma. |br|
+                             |br|
+                             E.g. |br|
+                             pp-dd-ee,pp-dd-ee
+   ======  ======  ========  =====================================================
 
 
 S0024
@@ -1181,19 +1181,19 @@ Can be used by the management system to check to fine tune the coordination for 
    :class: longtable
 
 
-   ======  ======  =======  ================================================
-   Name    Type    Value    Comment
-   ======  ======  =======  ================================================
-   status  string  [text]   Offset table |br|
-                            Each offset time is written as pp-tt where: |br|
-                            pp=time plan |br|
-                            tt=offset time in seconds |br|
-                            |br|
-                            Each offset time is separated with a comma |br|
-                            |br|
-                            E.g. |br|
-                            pp-tt,pp-tt
-   ======  ======  =======  ================================================
+   ======  ======  ========  ================================================
+   Name    Type    Value     Comment
+   ======  ======  ========  ================================================
+   status  string  [string]  Offset table |br|
+                             Each offset time is written as pp-tt where: |br|
+                             pp=time plan |br|
+                             tt=offset time in seconds |br|
+                             |br|
+                             Each offset time is separated with a comma |br|
+                             |br|
+                             E.g. |br|
+                             pp-tt,pp-tt
+   ======  ======  ========  ================================================
 
 
 S0025
@@ -1210,24 +1210,24 @@ Provides predicted signal timings of green and red for each signal group. Max, m
    :class: longtable
 
 
-   =================  =======  ============  ==========================================================================================================================================================
-   Name               Type     Value         Comment
-   =================  =======  ============  ==========================================================================================================================================================
-   minToGEstimate     string   [time stamp]  Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToGEstimate     string   [time stamp]  Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green. |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToGEstimate  string   [time stamp]  Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green. |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   ToGConfidence      integer  [0-100]       Confidence of the likelyToGEstimate. 0-100%
-   minToREstimate     string   [time stamp]  Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToREstimate     string   [time stamp]  Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToREstimate  string   [time stamp]  Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red. |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   ToRConfidence      integer  [0-100]       Confidence of the likelyToREstimate. 0-100%
-   =================  =======  ============  ==========================================================================================================================================================
+   =================  =======  ========  ==========================================================================================================================================================
+   Name               Type     Value     Comment
+   =================  =======  ========  ==========================================================================================================================================================
+   minToGEstimate     string   [string]  Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |br|
+                                         Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   maxToGEstimate     string   [string]  Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green. |br|
+                                         Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   likelyToGEstimate  string   [string]  Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green. |br|
+                                         Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   ToGConfidence      integer  [0-100]   Confidence of the likelyToGEstimate. 0-100%
+   minToREstimate     string   [string]  Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |br|
+                                         Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   maxToREstimate     string   [string]  Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |br|
+                                         Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   likelyToREstimate  string   [string]  Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red. |br|
+                                         Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   ToRConfidence      integer  [0-100]   Confidence of the likelyToREstimate. 0-100%
+   =================  =======  ========  ==========================================================================================================================================================
 
 
 S0026
@@ -1246,27 +1246,27 @@ The week time table determine which predefined signal timings (time plan) to use
    :class: longtable
 
 
-   ======  ======  =======  =================================================================
-   Name    Type    Value    Comment
-   ======  ======  =======  =================================================================
-   status  string  [text]   Week time table. Defines time table to use for each week day |br|
-                            Each day is written as d-t where: |br|
-                            d=day of week |br|
-                            t=time table nr |br|
-                            |br|
-                            Day of week legend: |br|
-                            0=Monday |br|
-                            1=Tuesday |br|
-                            2=Wednesday |br|
-                            3=Thursday |br|
-                            4=Friday |br|
-                            5=Saturday |br|
-                            6=Sunday |br|
-                            |br|
-                            Each segment is separated with a comma |br|
-                            E.g. |br|
-                            d-t,d-t
-   ======  ======  =======  =================================================================
+   ======  ======  ========  =================================================================
+   Name    Type    Value     Comment
+   ======  ======  ========  =================================================================
+   status  string  [string]  Week time table. Defines time table to use for each week day |br|
+                             Each day is written as d-t where: |br|
+                             d=day of week |br|
+                             t=time table nr |br|
+                             |br|
+                             Day of week legend: |br|
+                             0=Monday |br|
+                             1=Tuesday |br|
+                             2=Wednesday |br|
+                             3=Thursday |br|
+                             4=Friday |br|
+                             5=Saturday |br|
+                             6=Sunday |br|
+                             |br|
+                             Each segment is separated with a comma |br|
+                             E.g. |br|
+                             d-t,d-t
+   ======  ======  ========  =================================================================
 
 
 S0027
@@ -1285,29 +1285,29 @@ The signal timings (time plan) to use during time of day for optimal traffic flo
    :class: longtable
 
 
-   ======  ======  =======  ======================================================
-   Name    Type    Value    Comment
-   ======  ======  =======  ======================================================
-   status  string  [text]   Time Table. Defines time tables. |br|
-                            Each time definition is written as t-o-h-m where: |br|
-                            t=time table nr (1-12) |br|
-                            o=function |br|
-                            h=hour - switching time |br|
-                            m=minute - switching minute |br|
-                            |br|
-                            Function legend: |br|
-                            0=no plan is selected by time table |br|
-                            1=set plan 1 |br|
-                            … |br|
-                            16= set plan 16 |br|
-                            |br|
-                            hour and minute is using local time (not UTC) |br|
-                            |br|
-                            Each time definition is separated with a comma |br|
-                            |br|
-                            E.g. |br|
-                            t-o-h-m,t-o-h-m
-   ======  ======  =======  ======================================================
+   ======  ======  ========  ======================================================
+   Name    Type    Value     Comment
+   ======  ======  ========  ======================================================
+   status  string  [string]  Time Table. Defines time tables. |br|
+                             Each time definition is written as t-o-h-m where: |br|
+                             t=time table nr (1-12) |br|
+                             o=function |br|
+                             h=hour - switching time |br|
+                             m=minute - switching minute |br|
+                             |br|
+                             Function legend: |br|
+                             0=no plan is selected by time table |br|
+                             1=set plan 1 |br|
+                             … |br|
+                             16= set plan 16 |br|
+                             |br|
+                             hour and minute is using local time (not UTC) |br|
+                             |br|
+                             Each time definition is separated with a comma |br|
+                             |br|
+                             E.g. |br|
+                             t-o-h-m,t-o-h-m
+   ======  ======  ========  ======================================================
 
 
 S0028
@@ -1326,20 +1326,20 @@ Changing the cycle time can be used as part of scenario based control.
    :class: longtable
 
 
-   ======  ======  =======  ===============================================
-   Name    Type    Value    Comment
-   ======  ======  =======  ===============================================
-   status  string  [text]   Cycle time table |br|
-                            Each cycle time is written as pp-tt where: |br|
-                            pp=time plan |br|
-                            tt=cycle time in seconds |br|
-                            |br|
-                            Each cycle time is separated with a comma |br|
-                            |br|
-                            |br|
-                            E.g. |br|
-                            pp-tt,pp-tt
-   ======  ======  =======  ===============================================
+   ======  ======  ========  ===============================================
+   Name    Type    Value     Comment
+   ======  ======  ========  ===============================================
+   status  string  [string]  Cycle time table |br|
+                             Each cycle time is written as pp-tt where: |br|
+                             pp=time plan |br|
+                             tt=cycle time in seconds |br|
+                             |br|
+                             Each cycle time is separated with a comma |br|
+                             |br|
+                             |br|
+                             E.g. |br|
+                             pp-tt,pp-tt
+   ======  ======  ========  ===============================================
 
 
 S0029
@@ -1358,11 +1358,11 @@ Can be used for bus priority, coordination between traffic controllers, external
    :class: longtable
 
 
-   ======  ======  =======  =================================
-   Name    Type    Value    Comment
-   ======  ======  =======  =================================
-   status  string  [text]   Forced input status as text field
-   ======  ======  =======  =================================
+   ======  ======  ========  =================================
+   Name    Type    Value     Comment
+   ======  ======  ========  =================================
+   status  string  [string]  Forced input status as text field
+   ======  ======  ========  =================================
 
 
 S0030
@@ -1381,11 +1381,11 @@ Can be used for bus priority, coordination between traffic controllers, external
    :class: longtable
 
 
-   ======  ======  =======  ==================================
-   Name    Type    Value    Comment
-   ======  ======  =======  ==================================
-   status  string  [text]   Forced output status as text field
-   ======  ======  =======  ==================================
+   ======  ======  ========  ==================================
+   Name    Type    Value     Comment
+   ======  ======  ========  ==================================
+   status  string  [string]  Forced output status as text field
+   ======  ======  ========  ==================================
 
 
 S0031
@@ -1404,14 +1404,14 @@ Can be used to make sure that the detectors detect traffic as intended.
    :class: longtable
 
 
-   ======  ======  =======  =======================================================================
-   Name    Type    Value    Comment
-   ======  ======  =======  =======================================================================
-   status  string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br|
-                            dd=loop detector number |br|
-                            ss=sensitivity value |br|
-                            Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
-   ======  ======  =======  =======================================================================
+   ======  ======  ========  =======================================================================
+   Name    Type    Value     Comment
+   ======  ======  ========  =======================================================================
+   status  string  [string]  Loop detector trigger level sensitivity is written as dd-ss where: |br|
+                             dd=loop detector number |br|
+                             ss=sensitivity value |br|
+                             Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
+   ======  ======  ========  =======================================================================
 
 
 S0032
@@ -1519,8 +1519,8 @@ Each priority is passed as a hash with the following attributes:
    ======  =======  ===============  ============================================================================================
    Name    Type     Value            Comment
    ======  =======  ===============  ============================================================================================
-   r       string   [id]             ID of the priority request
-   t       string   [timestamp]      Timestamp, indicating when the priority last changed state. |br|
+   r       string   [string]         ID of the priority request
+   t       string   [string]         Timestamp, indicating when the priority last changed state. |br|
                                      Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
                                      All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    s       string   -received |br|   received: A new priority request was received but has not yet been processed |br|
@@ -1622,11 +1622,11 @@ Provides diagnostic version information.
    :class: longtable
 
 
-   ======  ======  =======  ==================================================================
-   Name    Type    Value    Comment
-   ======  ======  =======  ==================================================================
-   status  string  [text]   Manufacturer, product name and version of traffic light controller
-   ======  ======  =======  ==================================================================
+   ======  ======  ========  ==================================================================
+   Name    Type    Value     Comment
+   ======  ======  ========  ==================================================================
+   status  string  [string]  Manufacturer, product name and version of traffic light controller
+   ======  ======  ========  ==================================================================
 
 
 S0096
@@ -1671,30 +1671,30 @@ For instance, depending on controller, maintenance personnel can modify traffic 
    :class: longtable
 
 
-   =========  ======  ============  =============================================================================================================================================================
-   Name       Type    Value         Comment
-   =========  ======  ============  =============================================================================================================================================================
-   checksum   string  [text]        Checksum of the traffic parameters |br|
-                                    Uses SHA-2 as hashing algorithm |br|
-                                    Includes |br|
-                                    - all signal programs, including program versions |br|
-                                    - signal group settings |br|
-                                    - time plans |br|
-                                    - safety matrix |br|
-                                    - intergreen times |br|
-                                    - detector settings |br|
-                                    |br|
-                                    It should NOT include: |br|
-                                    - network settings |br|
-                                    - log files |br|
-                                    - software |br|
-                                    - other device settings that are not part of the signal program |br|
-                                    |br|
-                                    Note: |br|
-                                    The checksum should be calculated using the same data as used in S0098 |br|
-                                    Downloaded data with S0098, hashed with SHA-2, should match this value.
-   timestamp  string  [time stamp]  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   =========  ======  ============  =============================================================================================================================================================
+   =========  ======  ========  =============================================================================================================================================================
+   Name       Type    Value     Comment
+   =========  ======  ========  =============================================================================================================================================================
+   checksum   string  [string]  Checksum of the traffic parameters |br|
+                                Uses SHA-2 as hashing algorithm |br|
+                                Includes |br|
+                                - all signal programs, including program versions |br|
+                                - signal group settings |br|
+                                - time plans |br|
+                                - safety matrix |br|
+                                - intergreen times |br|
+                                - detector settings |br|
+                                |br|
+                                It should NOT include: |br|
+                                - network settings |br|
+                                - log files |br|
+                                - software |br|
+                                - other device settings that are not part of the signal program |br|
+                                |br|
+                                Note: |br|
+                                The checksum should be calculated using the same data as used in S0098 |br|
+                                Downloaded data with S0098, hashed with SHA-2, should match this value.
+   timestamp  string  [string]  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  ======  ========  =============================================================================================================================================================
 
 
 S0098
@@ -1713,30 +1713,30 @@ For instance, depending on controller, maintenance personnel can modify traffic 
    :class: longtable
 
 
-   =========  ======  ============  ==========================================================================================================================================================================
-   Name       Type    Value         Comment
-   =========  ======  ============  ==========================================================================================================================================================================
-   config     base64  [binary]      Traffic parameters |br|
-                                    Includes |br|
-                                    - all signal programs, including program versions |br|
-                                    - signal group settings |br|
-                                    - time plans |br|
-                                    - safety matrix |br|
-                                    - intergreen times |br|
-                                    - detector setting |br|
-                                    |br|
-                                    It should NOT include: |br|
-                                    - network settings |br|
-                                    - log files |br|
-                                    - software |br|
-                                    - other device settings that are not part of the signal program |br|
-                                    |br|
-                                    Note: |br|
-                                    - There is no way to upload this binary file to the TLC using RSMP |br|
-                                    - The format of the binary file is not specified and is not expected to be compatible between suppliers
-   timestamp  string  [time stamp]  Time stamp of the config. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   version    string  [text]        Version information of the configuration. Contains basic information such as controller id, changes to config and other information. The format is not specified in detail
-   =========  ======  ============  ==========================================================================================================================================================================
+   =========  ======  ========  ==========================================================================================================================================================================
+   Name       Type    Value     Comment
+   =========  ======  ========  ==========================================================================================================================================================================
+   config     base64  [base64]  Traffic parameters |br|
+                                Includes |br|
+                                - all signal programs, including program versions |br|
+                                - signal group settings |br|
+                                - time plans |br|
+                                - safety matrix |br|
+                                - intergreen times |br|
+                                - detector setting |br|
+                                |br|
+                                It should NOT include: |br|
+                                - network settings |br|
+                                - log files |br|
+                                - software |br|
+                                - other device settings that are not part of the signal program |br|
+                                |br|
+                                Note: |br|
+                                - There is no way to upload this binary file to the TLC using RSMP |br|
+                                - The format of the binary file is not specified and is not expected to be compatible between suppliers
+   timestamp  string  [string]  Time stamp of the config. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   version    string  [string]  Version information of the configuration. Contains basic information such as controller id, changes to config and other information. The format is not specified in detail
+   =========  ======  ========  ==========================================================================================================================================================================
 
 
 S0201
@@ -1753,12 +1753,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  ============  ====================================================================================================================================================================
-   Name       Type     Value         Comment
-   =========  =======  ============  ====================================================================================================================================================================
-   starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   vehicles   integer  [0-65535]     Number of vehicles on a given detector logic (since last update)
-   =========  =======  ============  ====================================================================================================================================================================
+   =========  =======  =========  ====================================================================================================================================================================
+   Name       Type     Value      Comment
+   =========  =======  =========  ====================================================================================================================================================================
+   starttime  string   [string]   Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   vehicles   integer  [0-65535]  Number of vehicles on a given detector logic (since last update)
+   =========  =======  =========  ====================================================================================================================================================================
 
 
 S0202
@@ -1775,12 +1775,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  ============  ====================================================================================================================================================================
-   Name       Type     Value         Comment
-   =========  =======  ============  ====================================================================================================================================================================
-   starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   speed      integer  [0-65535]     Average speed in km/h
-   =========  =======  ============  ====================================================================================================================================================================
+   =========  =======  =========  ====================================================================================================================================================================
+   Name       Type     Value      Comment
+   =========  =======  =========  ====================================================================================================================================================================
+   starttime  string   [string]   Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   speed      integer  [0-65535]  Average speed in km/h
+   =========  =======  =========  ====================================================================================================================================================================
 
 
 S0203
@@ -1797,12 +1797,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  ============  ====================================================================================================================================================================
-   Name       Type     Value         Comment
-   =========  =======  ============  ====================================================================================================================================================================
-   starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   occupancy  integer  [0-100]       Occupancy in percent (0-100%)
-   =========  =======  ============  ====================================================================================================================================================================
+   =========  =======  ========  ====================================================================================================================================================================
+   Name       Type     Value     Comment
+   =========  =======  ========  ====================================================================================================================================================================
+   starttime  string   [string]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   occupancy  integer  [0-100]   Occupancy in percent (0-100%)
+   =========  =======  ========  ====================================================================================================================================================================
 
 
 S0204
@@ -1819,20 +1819,20 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  ============  ====================================================================================================================================================================
-   Name       Type     Value         Comment
-   =========  =======  ============  ====================================================================================================================================================================
-   starttime  string   [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   P          integer  [0-65535]     Number of cars
-   PS         integer  [0-65535]     Number of cars with trailers
-   L          integer  [0-65535]     Number of trucks
-   LS         integer  [0-65535]     Number of trucks with trailers
-   B          integer  [0-65535]     Number of busses
-   SP         integer  [0-65535]     Number of trams
-   MC         integer  [0-65535]     Number of motor cycles
-   C          integer  [0-65535]     Number of bicycles
-   F          integer  [0-65535]     Number of pedestrians
-   =========  =======  ============  ====================================================================================================================================================================
+   =========  =======  =========  ====================================================================================================================================================================
+   Name       Type     Value      Comment
+   =========  =======  =========  ====================================================================================================================================================================
+   starttime  string   [string]   Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   P          integer  [0-65535]  Number of cars
+   PS         integer  [0-65535]  Number of cars with trailers
+   L          integer  [0-65535]  Number of trucks
+   LS         integer  [0-65535]  Number of trucks with trailers
+   B          integer  [0-65535]  Number of busses
+   SP         integer  [0-65535]  Number of trams
+   MC         integer  [0-65535]  Number of motor cycles
+   C          integer  [0-65535]  Number of bicycles
+   F          integer  [0-65535]  Number of pedestrians
+   =========  =======  =========  ====================================================================================================================================================================
 
 
 S0205
@@ -1849,15 +1849,15 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   ========  ======  =============  ====================================================================================================================================================================
-   Name      Type    Value          Comment
-   ========  ======  =============  ====================================================================================================================================================================
-   start     string  [time stamp]   Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   vehicles  string  [0-65535,...]  Number of vehicles |br|
-                                    - Value expressed as an integer with a range of 0-65535. |br|
-                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ========  ======  =============  ====================================================================================================================================================================
+   ========  ======  ========  ====================================================================================================================================================================
+   Name      Type    Value     Comment
+   ========  ======  ========  ====================================================================================================================================================================
+   start     string  [string]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   vehicles  string  [string]  Number of vehicles |br|
+                               - Value expressed as an integer with a range of 0-65535. |br|
+                               - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                               - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ========  ======  ========  ====================================================================================================================================================================
 
 
 S0206
@@ -1874,15 +1874,15 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   ======  ======  =============  ====================================================================================================================================================================
-   Name    Type    Value          Comment
-   ======  ======  =============  ====================================================================================================================================================================
-   start   string  [time stamp]   Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   speed   string  [0-65535,...]  Average speed in km/h (integer) |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  ======  =============  ====================================================================================================================================================================
+   ======  ======  ========  ====================================================================================================================================================================
+   Name    Type    Value     Comment
+   ======  ======  ========  ====================================================================================================================================================================
+   start   string  [string]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   speed   string  [string]  Average speed in km/h (integer) |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ======  ======  ========  ====================================================================================================================================================================
 
 
 S0207
@@ -1899,15 +1899,15 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   =========  ======  ============  ====================================================================================================================================================================
-   Name       Type    Value         Comment
-   =========  ======  ============  ====================================================================================================================================================================
-   start      string  [time stamp]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   occupancy  string  [0-100,...]   Occupancy in percent (%) (0-100) |br|
-                                    - Value expressed as an integer with a range of 0-100. |br|
-                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   =========  ======  ============  ====================================================================================================================================================================
+   =========  ======  ========  ====================================================================================================================================================================
+   Name       Type    Value     Comment
+   =========  ======  ========  ====================================================================================================================================================================
+   start      string  [string]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   occupancy  string  [string]  Occupancy in percent (%) (0-100) |br|
+                                - Value expressed as an integer with a range of 0-100. |br|
+                                - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   =========  ======  ========  ====================================================================================================================================================================
 
 
 S0208
@@ -1924,47 +1924,47 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   ======  ======  =============  ====================================================================================================================================================================
-   Name    Type    Value          Comment
-   ======  ======  =============  ====================================================================================================================================================================
-   start   string  [time stamp]   Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   P       string  [0-65535,...]  Number of cars |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   PS      string  [0-65535,...]  Number of cars with trailers |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   L       string  [0-65535,...]  Number of trucks |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   LS      string  [0-65535,...]  Number of trucks with trailers |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   B       string  [0-65535,...]  Number of busses |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   SP      string  [0-65535,...]  Number of trams |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   MC      string  [0-65535,...]  Number of motor cycles |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   C       string  [0-65535,...]  Number of bicycles |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   F       string  [0-65535,...]  Number of pedestrians |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  ======  =============  ====================================================================================================================================================================
+   ======  ======  ========  ====================================================================================================================================================================
+   Name    Type    Value     Comment
+   ======  ======  ========  ====================================================================================================================================================================
+   start   string  [string]  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   P       string  [string]  Number of cars |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   PS      string  [string]  Number of cars with trailers |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   L       string  [string]  Number of trucks |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   LS      string  [string]  Number of trucks with trailers |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   B       string  [string]  Number of busses |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   SP      string  [string]  Number of trams |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   MC      string  [string]  Number of motor cycles |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   C       string  [string]  Number of bicycles |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   F       string  [string]  Number of pedestrians |br|
+                             - Value expressed as an integer with a range of 0-65535. |br|
+                             - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                             - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ======  ======  ========  ====================================================================================================================================================================
 
 
 Commands
@@ -2028,7 +2028,7 @@ Requires security code 2.
    status        string   -NormalControl |br|  NormalControl: Normal Control |br|
                           -YellowFlash |br|    YellowFlash: Enables yellow flash |br|
                           -Dark                Dark: Enables dark mode
-   securityCode  string   [text]               Security code 2
+   securityCode  string   [string]             Security code 2
    timeout       integer  [0-1440]             Time in minutes until controller automatically reverts to previous functional position. |br|
                                                0=no automatic return
    intersection  integer  [0-255]              Intersection number
@@ -2060,7 +2060,7 @@ Requires security code 2.
    ============  =======  ===========  ==============================================================
    status        boolean  -False |br|  False: Controller uses time plan according to programming |br|
                           -True        True: Controller uses time plan according to command
-   securityCode  string   [text]       Security code 2
+   securityCode  string   [string]     Security code 2
    timeplan      integer  [1-255]      designation of time plan
    ============  =======  ===========  ==============================================================
 
@@ -2088,7 +2088,7 @@ Requires security code 2.
    ===============  =======  ===========  ==========================================================================
    status           boolean  -False |br|  False: Controller uses traffic situation according to own programming |br|
                              -True        True: Controller uses traffic situation according to command
-   securityCode     string   [text]       Security code 2
+   securityCode     string   [string]     Security code 2
    traficsituation  integer  [1-255]      designation of traficsituation
    ===============  =======  ===========  ==========================================================================
 
@@ -2114,7 +2114,7 @@ Requires security code 2.
    ============  =======  ===========  ========================
    status        boolean  -False |br|  True: Restart controller
                           -True
-   securityCode  string   [text]       Security code 2
+   securityCode  string   [string]     Security code 2
    ============  =======  ===========  ========================
 
 
@@ -2141,7 +2141,7 @@ Requires security code 2.
    ==============  =======  ===========  ======================================
    status          boolean  -False |br|  False: Deactivate emergency route |br|
                             -True        True: Activate emergency route
-   securityCode    string   [text]       Security code 2
+   securityCode    string   [string]     Security code 2
    emergencyroute  integer  [1-255]      Number of emergency route
    ==============  =======  ===========  ======================================
 
@@ -2173,7 +2173,7 @@ Requires security code 2.
    ============  =======  ===========  ============================
    status        boolean  -False |br|  False: Deactivate input |br|
                           -True        True: Activate input
-   securityCode  string   [text]       Security code 2
+   securityCode  string   [string]     Security code 2
    input         integer  [1-255]      Number of Input
    ============  =======  ===========  ============================
 
@@ -2201,7 +2201,7 @@ Requires security code 2.
    ============  =======  ===========  =========================================
    status        boolean  -False |br|  False: Deactivate fixed time control |br|
                           -True        True: Activate fixed time control
-   securityCode  string   [text]       Security code 2
+   securityCode  string   [string]     Security code 2
    ============  =======  ===========  =========================================
 
 
@@ -2228,7 +2228,7 @@ Requires security code 2.
    ============  =======  ===========  =======================================================
    status        boolean  -False |br|  False: Deactivate manual control of detector logic |br|
                           -True        True: Activate manual control of detector logic
-   securityCode  string   [text]       Security code 2
+   securityCode  string   [string]     Security code 2
    mode          boolean  -False |br|  False: Deactivate detector logic |br|
                           -True        True: Activate detector logic
    ============  =======  ===========  =======================================================
@@ -2251,7 +2251,7 @@ M0010
    ============  =======  ===========  ===============
    status        boolean  -False |br|  ``Reserved``
                           -True
-   securityCode  string   [text]       Security code 2
+   securityCode  string   [string]     Security code 2
    ============  =======  ===========  ===============
 
 
@@ -2272,7 +2272,7 @@ M0011
    ============  =======  ===========  ===============
    status        boolean  -False |br|  ``Reserved``
                           -True
-   securityCode  string   [text]       Security code 2
+   securityCode  string   [string]     Security code 2
    ============  =======  ===========  ===============
 
 
@@ -2288,12 +2288,12 @@ M0012
    :class: longtable
 
 
-   ============  ======  =======  ===============
-   Name          Type    Value    Comment
-   ============  ======  =======  ===============
-   status        string  [text]   ``Reserved``
-   securityCode  string  [text]   Security code 2
-   ============  ======  =======  ===============
+   ============  ======  ========  ===============
+   Name          Type    Value     Comment
+   ============  ======  ========  ===============
+   status        string  [string]  ``Reserved``
+   securityCode  string  [string]  Security code 2
+   ============  ======  ========  ===============
 
 
 M0013
@@ -2343,13 +2343,13 @@ Example 3:
    :class: longtable
 
 
-   ============  ======  =======  ==========================================================================================================================================================================
-   Name          Type    Value    Comment
-   ============  ======  =======  ==========================================================================================================================================================================
-   status        string  [text]   Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. |br|
-                                  Format: [Offset];[Bits to set];[Bits to unset];…
-   securityCode  string  [text]   Security code 2
-   ============  ======  =======  ==========================================================================================================================================================================
+   ============  ======  ========  ==========================================================================================================================================================================
+   Name          Type    Value     Comment
+   ============  ======  ========  ==========================================================================================================================================================================
+   status        string  [string]  Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. |br|
+                                   Format: [Offset];[Bits to set];[Bits to unset];…
+   securityCode  string  [string]  Security code 2
+   ============  ======  ========  ==========================================================================================================================================================================
 
 
 M0014
@@ -2370,21 +2370,21 @@ Requires security code 2.
    :class: longtable
 
 
-   ============  =======  =======  ==================================================
-   Name          Type     Value    Comment
-   ============  =======  =======  ==================================================
-   plan          integer  [0-255]  Plan to be changed
-   status        string   [text]   Dynamic bands. |br|
-                                   Each dynamic band are written as dd-ee where: |br|
-                                   dd=Dynamic band number (from 1-10) |br|
-                                   ee=Extension in seconds in this band |br|
-                                   |br|
-                                   Each dynamic band is separated with a comma. |br|
-                                   |br|
-                                   E.g. |br|
-                                   dd-ee,dd-ee
-   securityCode  string   [text]   Security code 2
-   ============  =======  =======  ==================================================
+   ============  =======  ========  ==================================================
+   Name          Type     Value     Comment
+   ============  =======  ========  ==================================================
+   plan          integer  [0-255]   Plan to be changed
+   status        string   [string]  Dynamic bands. |br|
+                                    Each dynamic band are written as dd-ee where: |br|
+                                    dd=Dynamic band number (from 1-10) |br|
+                                    ee=Extension in seconds in this band |br|
+                                    |br|
+                                    Each dynamic band is separated with a comma. |br|
+                                    |br|
+                                    E.g. |br|
+                                    dd-ee,dd-ee
+   securityCode  string   [string]  Security code 2
+   ============  =======  ========  ==================================================
 
 
 M0015
@@ -2405,13 +2405,13 @@ Requires security code 2.
    :class: longtable
 
 
-   ============  =======  =======  ==========================
-   Name          Type     Value    Comment
-   ============  =======  =======  ==========================
-   status        integer  [0-255]  Set offset time in seconds
-   plan          integer  [0-255]  Time plan nr
-   securityCode  string   [text]   Security code 2
-   ============  =======  =======  ==========================
+   ============  =======  ========  ==========================
+   Name          Type     Value     Comment
+   ============  =======  ========  ==========================
+   status        integer  [0-255]   Set offset time in seconds
+   plan          integer  [0-255]   Time plan nr
+   securityCode  string   [string]  Security code 2
+   ============  =======  ========  ==========================
 
 
 M0016
@@ -2432,29 +2432,29 @@ Requires security code 2.
    :class: longtable
 
 
-   ============  ======  =======  =================================================================
-   Name          Type    Value    Comment
-   ============  ======  =======  =================================================================
-   status        string  [text]   Week time table. Defines time table to use for each week day |br|
-                                  Each segment is written as d-t where: |br|
-                                  d=day of week |br|
-                                  t=time table nr |br|
-                                  |br|
-                                  Day of week legend: |br|
-                                  0=Monday |br|
-                                  1=Tuesday |br|
-                                  2=Wednesday |br|
-                                  3=Thursday |br|
-                                  4=Friday |br|
-                                  5=Saturday |br|
-                                  6=Sunday |br|
-                                  |br|
-                                  Each segment is separated with a comma |br|
-                                  |br|
-                                  E.g. |br|
-                                  d-t,d-t
-   securityCode  string  [text]   Security code 2
-   ============  ======  =======  =================================================================
+   ============  ======  ========  =================================================================
+   Name          Type    Value     Comment
+   ============  ======  ========  =================================================================
+   status        string  [string]  Week time table. Defines time table to use for each week day |br|
+                                   Each segment is written as d-t where: |br|
+                                   d=day of week |br|
+                                   t=time table nr |br|
+                                   |br|
+                                   Day of week legend: |br|
+                                   0=Monday |br|
+                                   1=Tuesday |br|
+                                   2=Wednesday |br|
+                                   3=Thursday |br|
+                                   4=Friday |br|
+                                   5=Saturday |br|
+                                   6=Sunday |br|
+                                   |br|
+                                   Each segment is separated with a comma |br|
+                                   |br|
+                                   E.g. |br|
+                                   d-t,d-t
+   securityCode  string  [string]  Security code 2
+   ============  ======  ========  =================================================================
 
 
 M0017
@@ -2475,30 +2475,30 @@ Requires security code 2.
    :class: longtable
 
 
-   ============  ======  =======  ======================================================
-   Name          Type    Value    Comment
-   ============  ======  =======  ======================================================
-   status        string  [text]   Time Table. Defines time tables. |br|
-                                  Each time definition is written as t-o-h-m where: |br|
-                                  t=time table nr (1-12) |br|
-                                  o=function |br|
-                                  h=hour - switching time |br|
-                                  m=minute - switching minute |br|
-                                  |br|
-                                  Function legend: |br|
-                                  0=no plan is selected by time table |br|
-                                  1=set plan 1 |br|
-                                  … |br|
-                                  16= set plan 16 |br|
-                                  |br|
-                                  hour and minute is using local time (not UTC) |br|
-                                  |br|
-                                  Each time definition is separated with a comma. |br|
-                                  |br|
-                                  E.g. |br|
-                                  t-o-h-m,t-o-h-m
-   securityCode  string  [text]   Security code 2
-   ============  ======  =======  ======================================================
+   ============  ======  ========  ======================================================
+   Name          Type    Value     Comment
+   ============  ======  ========  ======================================================
+   status        string  [string]  Time Table. Defines time tables. |br|
+                                   Each time definition is written as t-o-h-m where: |br|
+                                   t=time table nr (1-12) |br|
+                                   o=function |br|
+                                   h=hour - switching time |br|
+                                   m=minute - switching minute |br|
+                                   |br|
+                                   Function legend: |br|
+                                   0=no plan is selected by time table |br|
+                                   1=set plan 1 |br|
+                                   … |br|
+                                   16= set plan 16 |br|
+                                   |br|
+                                   hour and minute is using local time (not UTC) |br|
+                                   |br|
+                                   Each time definition is separated with a comma. |br|
+                                   |br|
+                                   E.g. |br|
+                                   t-o-h-m,t-o-h-m
+   securityCode  string  [string]  Security code 2
+   ============  ======  ========  ======================================================
 
 
 M0018
@@ -2519,13 +2519,13 @@ Requires security code 2.
    :class: longtable
 
 
-   ============  =======  =======  =========================
-   Name          Type     Value    Comment
-   ============  =======  =======  =========================
-   status        integer  [1-255]  Set cycle time in seconds
-   plan          integer  [0-255]  Time plan nr
-   securityCode  string   [text]   Security code 2
-   ============  =======  =======  =========================
+   ============  =======  ========  =========================
+   Name          Type     Value     Comment
+   ============  =======  ========  =========================
+   status        integer  [1-255]   Set cycle time in seconds
+   plan          integer  [0-255]   Time plan nr
+   securityCode  string   [string]  Security code 2
+   ============  =======  ========  =========================
 
 
 M0019
@@ -2551,7 +2551,7 @@ Requires security code 2.
    ============  =======  ===========  =================================
    status        boolean  -False |br|  False: Release input |br|
                           -True        True: Force input
-   securityCode  string   [text]       Security code 2
+   securityCode  string   [string]     Security code 2
    input         integer  [1-255]      Number of Input
    inputValue    boolean  -False |br|  False: input forced to False |br|
                           -True        True: input forced to True
@@ -2581,7 +2581,7 @@ Requires security code 2.
    ============  =======  ===========  ==================================
    status        boolean  -False |br|  False: Force output |br|
                           -True        True: Release output
-   securityCode  string   [text]       Security code 2
+   securityCode  string   [string]     Security code 2
    output        integer  [1-255]      Number of Output
    outputValue   boolean  -False |br|  False: output forced to False |br|
                           -True        True: output forced to True
@@ -2606,14 +2606,14 @@ Requires security code 2.
    :class: longtable
 
 
-   ============  ======  =======  =======================================================================
-   Name          Type    Value    Comment
-   ============  ======  =======  =======================================================================
-   status        string  [text]   Loop detector trigger level sensitivity is written as dd-ss where: |br|
-                                  dd=loop detector number |br|
-                                  ss=sensitivity value
-   securityCode  string  [text]   Security code 2
-   ============  ======  =======  =======================================================================
+   ============  ======  ========  =======================================================================
+   Name          Type    Value     Comment
+   ============  ======  ========  =======================================================================
+   status        string  [string]  Loop detector trigger level sensitivity is written as dd-ss where: |br|
+                                   dd=loop detector number |br|
+                                   ss=sensitivity value
+   securityCode  string  [string]  Security code 2
+   ============  ======  ========  =======================================================================
 
 
 M0022
@@ -2713,8 +2713,8 @@ when it's not needed anymore.
    =============  =======  ======================  =========================================================================
    Name           Type     Value                   Comment
    =============  =======  ======================  =========================================================================
-   requestId      string   [id]                    A string that uniquely identifies the request on the controller
-   signalGroupId  string   [id]                    (Optional) ID of a signal group component.
+   requestId      string   [string]                A string that uniquely identifies the request on the controller
+   signalGroupId  string   [string]                (Optional) ID of a signal group component.
    inputId        integer  [0-255]                 (Optional) ID of an input, using the same numbering scheme as M0006
    connectionId   integer  [0-255]                 (Optional) ID of a connection, connecting an ingoing and an outgoing lane
    approachId     integer  [0-16]                  (Optional) ID of an intersection approach
@@ -2765,7 +2765,7 @@ Requires security code 2.
    Name          Type     Value      Comment
    ============  =======  =========  ===================
    status        integer  [0-65535]  Timeout, in minutes
-   securityCode  string   [text]     Security code 2
+   securityCode  string   [string]   Security code 2
    ============  =======  =========  ===================
 
 
@@ -2790,8 +2790,8 @@ Security codes are used as an extra layer of security in many commands. They nee
    ===============  ======  ============  ===================================
    status           string  -Level1 |br|  Level1: Change security code 1 |br|
                             -Level2       Level2: Change security code 2
-   oldSecurityCode  string  [text]        Previous security code
-   newSecurityCode  string  [text]        New security code
+   oldSecurityCode  string  [string]      Previous security code
+   newSecurityCode  string  [string]      New security code
    ===============  ======  ============  ===================================
 
 
@@ -2814,7 +2814,7 @@ Requires security code 1.
    ============  =======  ========  ==============================================
    Name          Type     Value     Comment
    ============  =======  ========  ==============================================
-   securityCode  string   [text]    Security code 1
+   securityCode  string   [string]  Security code 1
    year          integer  [0-9999]  Changes internal clock. Note: UTC is used |br|
                                     Year
    month         integer  [1-12]    Changes internal clock. Note: UTC is used |br|
