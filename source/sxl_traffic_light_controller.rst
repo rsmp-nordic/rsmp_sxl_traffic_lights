@@ -293,18 +293,18 @@ Is a "minor fault" defined according to 3.11 in EN12675.
    :class: longtable
 
 
-   =========  =======  ==========  ===============================================
-   Name       Type     Value       Comment
-   =========  =======  ==========  ===============================================
-   detector   string   [string]    Designation of the detector (hardware)
-   type       string   -loop |br|  Type of detector |br|
-                       -input      loop: Inductive detector loop |br|
-                                   input: External input
-   errormode  string   -on |br|    Detector forced on/off while detector error
+   =========  =======  ===========  ===============================================
+   Name       Type     Value        Comment
+   =========  =======  ===========  ===============================================
+   detector   string   [string]     Designation of the detector (hardware)
+   type       string   -loop |br|   Type of detector |br|
+                       -input       loop: Inductive detector loop |br|
+                                    input: External input
+   errormode  string   -on |br|     Detector forced on/off while detector error
                        -off
-   manual     boolean  -True |br|  Manually controlled detector logic (True/False)
-                       -False
-   =========  =======  ==========  ===============================================
+   manual     boolean  -False |br|  Manually controlled detector logic (True/False)
+                       -True
+   =========  =======  ===========  ===============================================
 
 
 A0302
@@ -332,8 +332,8 @@ Is a "minor fault" defined according to 3.11 in EN12675.
                                           input: External input
    errormode   string   -on |br|          Detector forced on/off while detector error
                         -off
-   manual      boolean  -True |br|        Manually controlled detector logic (True/False)
-                        -False
+   manual      boolean  -False |br|       Manually controlled detector logic (True/False)
+                        -True
    logicerror  string   -always_off |br|  Type of logic error |br|
                         -always_on |br|   always_off: no detection during predefined max time |br|
                         -intermittent     always_on: detection constantly on during predefined max time |br|
@@ -355,18 +355,18 @@ Is a "major fault" defined according to 3.8 i EN12675 which causes the controlle
    :class: longtable
 
 
-   =========  =======  ==========  ===============================================
-   Name       Type     Value       Comment
-   =========  =======  ==========  ===============================================
-   detector   string   [string]    Designation of the detector (hardware)
-   type       string   -loop |br|  Type of detector |br|
-                       -input      loop: Inductive detector loop |br|
-                                   input: External input
-   errormode  string   -on |br|    Detector forced on/off while detector error
+   =========  =======  ===========  ===============================================
+   Name       Type     Value        Comment
+   =========  =======  ===========  ===============================================
+   detector   string   [string]     Designation of the detector (hardware)
+   type       string   -loop |br|   Type of detector |br|
+                       -input       loop: Inductive detector loop |br|
+                                    input: External input
+   errormode  string   -on |br|     Detector forced on/off while detector error
                        -off
-   manual     boolean  -True |br|  Manually controlled detector logic (True/False)
-                       -False
-   =========  =======  ==========  ===============================================
+   manual     boolean  -False |br|  Manually controlled detector logic (True/False)
+                       -True
+   =========  =======  ===========  ===============================================
 
 
 A0304
@@ -394,8 +394,8 @@ Is a "major fault" defined according to 3.8 i EN12675 which causes the controlle
                                           input: External input
    errormode   string   -on |br|          Detector forced on/off while detector error
                         -off
-   manual      boolean  -True |br|        Manually controlled detector logic (True/False)
-                        -False
+   manual      boolean  -False |br|       Manually controlled detector logic (True/False)
+                        -True
    logicerror  string   -always_off |br|  Type of logic error |br|
                         -always_on |br|   always_off: no detection during predefined max time |br|
                         -intermittent     always_on: detection constantly on during predefined max time |br|
