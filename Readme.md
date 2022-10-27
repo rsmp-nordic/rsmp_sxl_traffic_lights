@@ -37,8 +37,8 @@ On Ubuntu:
 
 ```
 # apt-get install python3-sphinx texlive texlive-latex-extra \
-  texlive-humanities mscgen librsvg2-bin latexmk sphinx \
-  python3-sphinx-rtd-theme inkscape
+  texlive-humanities texlive-fonts-extra mscgen librsvg2-bin \
+  latexmk sphinx python3-sphinx-rtd-theme inkscape
 ```
 
 Then:
