@@ -14,7 +14,7 @@ MSC_DIR          = source/img/msc
 MSC_DIAGRAMS     = $(wildcard $(MSC_DIR)/*.msc)
 GEN_MSC_DIAGRAMS = $(MSC_DIAGRAMS:.msc=.png)
 # .svg images converted to .png
-SVG_DIR          = source/img/svg
+SVG_DIR          = $(PWD)/source/img/svg
 SVG_IMGS         = $(wildcard $(SVG_DIR)/*.svg)
 GEN_PNG_IMGS     = $(SVG_IMGS:.svg=.png)
 
