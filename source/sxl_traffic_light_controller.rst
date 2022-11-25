@@ -1495,24 +1495,23 @@ A request always starts in the 'received' state. The following table shows the p
    stale
    ==========  =====================================
 
-The priorities are passed as an array:
-
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.08}|\Yl{0.13}|\Yl{0.50}|
-
-.. table:: S0033 priority array
-
-   ==========  =======  ===============  ==============================================================================
-   Name        Type     Value            Comment
-   ==========  =======  ===============  ==============================================================================
-   status      array    [list]           List of priorities. See the table below for details.
-   ==========  =======  ===============  ==============================================================================
-
-Each priority is passed as a hash with the following attributes:
-
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
 
 .. table:: S0033
+   :class: longtable
+
+
+   ======  ======  =======  ===================================
+   Name    Type    Value    Comment
+   ======  ======  =======  ===================================
+   status  array            JSON array of priority status items
+   ======  ======  =======  ===================================
+
+
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.15}|\Yl{0.20}|\Yl{0.50}|
+
+.. table:: S0033 status
    :class: longtable
 
 
