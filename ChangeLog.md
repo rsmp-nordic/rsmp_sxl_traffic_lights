@@ -1,46 +1,64 @@
-# Version 1.1
+# Version 1.1 (2022-06-23)
 
-## Designated command/status for priority #129
-Add a specific command and status for requesting priority for designated vehicles
+## Major changes
 
-## S0091, S0092: "Operator logged in" updated #94
-User name removed and login levels updated
-
-## A0005/A0007. Updated definitions #77
-- A0005 is used for communication error in coordination mode
-- A0007 is used for communication error with supervision system and NTP
-
-## Source of status changes #67
-Ability to se the reason for switching status, e.g. source of plan change, dark mode, etc.
-
-## Coordination local/centralized #83
-Ability to see if TLC is using local or centralized coordination
-
-## Add serious detector hardware and logic errors #108
-Only low priority detector errors were defined. There is a need to be able to use detector error with a higher priority (serious error).
-
-## Timeout for dynamic bands. #95 and #96
-Time until a designated time plan is entered due to lost connection with the supervisor
-
-## M0019 and M0005. True/False mixed up. #121 and #144
-Both M0019 (force input) and M0005 (emergency route) had typos where True and False were mixed up in the description.
+- Designated command/status for priority.
+  Add a specific command and status for requesting priority for designated vehicles.
+  [#129](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/129)
+- S0091, S0092: "Operator logged in" updated.
+  User name removed and login levels updated. [#94](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/94)
+- A0005/A0007. Updated definitions.
+  A0005 is used for communication error in coordination mode.
+  A0007 is used for communication error with supervision system and NTP.
+  [#77](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/77)
+- Source of status changes.
+  Ability to check the reason for switching status, e.g. source of plan change, dark mode, etc.
+  [#67](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/67)
+- Coordination local/centralized.
+  Ability to check if TLC is using local or centralized coordination.
+  [#83](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/83)
+- Add serious detector hardware and logic errors
+  Only low priority detector errors were defined.
+  There is a need to be able to use detector error with a higher priority (serious error).
+  [#108](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/108)
+- Timeout for dynamic bands.
+  Time until a designated time plan is entered due to lost connection with the supervisor.
+  [#95](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/95) and
+  [#96](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/96)
+- M0019 and M0005. True/False mixed up.
+  Both M0019 (force input) and M0005 (emergency route) had typos where True and False were mixed up in the description.
+  [#121](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/121) and
+  [#144](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/144)
 
 ## Minor changes
-- M0013: Add "All read" as possible option for Police Key #119
-- Use only JSON data types. Replace "long" with "integer" #133
-- S0001: Use '-' if there are gaps in the numbering #125
+- M0013: Add "All read" as possible option for Police Key.
+  [#119](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/119)
+- Use only JSON data types. Replace "long" with "integer".
+  [#133](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/133)
+- S0001: Use '-' if there are gaps in the numbering.
+  [#125](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/125)
 
 ## Minor clarifications
-- S0096, M0104, S0204, S0201, S0202: Define min, max correctly when using integers and long #131
-- A0008: Add list (1-255) instead of "designation" (time plan) #130
-- M0013: Fix error in example and description #134
-- Signal group status: Ascii character after each definition #103
-- S0011: Yellow flash. Clarification in description #112
-- M0019: Typo in example for "Force Input" #136
-- Aggregated Status, functionalPosition  and functionalState (fS and fP) is unused #90
-- Definition of max. minimum green #102
-- Clarify that a number of statuses uses comma separated lists of intersections #122
-- Clarify meaning of "cycle counter" and "base cycle counter" #118 
+- S0096, M0104, S0204, S0201, S0202: Define min, max correctly when using integers and long.
+  [#131](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/131)
+- A0008: Add list (1-255) instead of "designation" (time plan).
+  [#130](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/130)
+- M0013: Fix error in example and description.
+  [#134](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/134)
+- Signal group status: Ascii character after each definition.
+  [#103](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/103)
+- S0011: Yellow flash. Clarification in description.
+  [#112](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/112)
+- M0019: Typo in example for "Force Input".
+  [#136](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/136)
+- Aggregated Status, functionalPosition  and functionalState (fS and fP) is unused.
+  [#90](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/90)
+- Definition of max. minimum green.
+  [#102](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/102)
+- Clarify that a number of statuses uses comma separated lists of intersections.
+  [#122](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/122)
+- Clarify meaning of "cycle counter" and "base cycle counter".
+  [#118](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/118)
 
 # Version 1.0.15 (2020-10-30)
 
