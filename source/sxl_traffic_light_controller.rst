@@ -1967,9 +1967,9 @@ Commands
    :class: longtable
 
 
-   ========================  ===============  =====================  ======================================================
+   ========================  ===============  =====================  ===============================================
    ObjectType                commandCodeId    Command                Description
-   ========================  ===============  =====================  ======================================================
+   ========================  ===============  =====================  ===============================================
    Traffic Light Controller  `M0001`_         setValue               Sets functional position
    Traffic Light Controller  `M0002`_         setPlan                Sets current time plan
    Traffic Light Controller  `M0003`_         setTrafficSituation    Sets traffic situation the controller uses.
@@ -1994,7 +1994,7 @@ Commands
    Traffic Light Controller  `M0023`_         setTimeout             Set timeout for dynamic bands
    Traffic Light Controller  `M0103`_         setSecurityCode        Set security code
    Traffic Light Controller  `M0104`_         setDate                Set clock
-   ========================  ===============  =====================  ======================================================
+   ========================  ===============  =====================  ===============================================
 
 
 M0001
@@ -2240,7 +2240,7 @@ M0010
    Name          Type     Comment
    ============  =======  ============
    status        boolean  ``Reserved``
-   securityCode  string   Security code 2
+   securityCode  string   ``Reserved``
    ============  =======  ============
 
 
@@ -2260,7 +2260,7 @@ M0011
    Name          Type     Comment
    ============  =======  ============
    status        boolean  ``Reserved``
-   securityCode  string   Security code 2
+   securityCode  string   ``Reserved``
    ============  =======  ============
 
 
@@ -2280,7 +2280,7 @@ M0012
    Name          Type    Comment
    ============  ======  ============
    status        string  ``Reserved``
-   securityCode  string  Security code 2
+   securityCode  string  ``Reserved``
    ============  ======  ============
 
 
