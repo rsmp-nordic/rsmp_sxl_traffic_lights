@@ -38,6 +38,7 @@
 - S0001: Use '-' if there are gaps in the numbering.
   [#125](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/125)
 - M0010, M0011, M0012 marked as reserved for future use.
+- extendedinputstatus and extendedoutstatus in S0003 and S0004 marked as deprecated.
 
 ## Minor clarifications
 - S0096, M0104, S0204, S0201, S0202: Define min, max correctly when using integers and long.
