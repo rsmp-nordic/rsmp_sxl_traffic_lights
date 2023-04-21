@@ -1514,14 +1514,15 @@ stale
    t       string                                  Timestamp, indicating when the priority last changed state. |br|
                                                    Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
                                                    All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   s       string                 -received |br|   received: A new priority request was received but has not yet been processed |br|
-                                  -queued |br|     queued: The priority request has been queued for later activation |br|
-                                  -activated |br|  activated: The priority was activated |br|
-                                  -completed |br|  completed: The priority was cancelled as expected |br|
-                                  -timeout |br|    timeout: The priority has been queued for too long |br|
-                                  -rejected |br|   rejected: The priority request cannot be granted |br|
-                                  -cooldown |br|   cooldown: A similar priority request means the priority request cannot be activated now |br|
-                                  -stale           stale: The priority has been active too long without cancellation, and was therefore removed
+   s       string                 -received |br|   Current status of the priority request |br|
+                                  -queued |br|     received: A new priority request was received but has not yet been processed |br|
+                                  -activated |br|  queued: The priority request has been queued for later activation |br|
+                                  -completed |br|  activated: The priority was activated |br|
+                                  -timeout |br|    completed: The priority was cancelled as expected |br|
+                                  -rejected |br|   timeout: The priority has been queued for too long |br|
+                                  -cooldown |br|   rejected: The priority request cannot be granted |br|
+                                  -stale           cooldown: A similar priority request means the priority request cannot be activated now |br|
+                                                   stale: The priority has been active too long without cancellation, and was therefore removed
    e       integer  0      255                     (Optional) Estimated green extension provided by the priority, in seconds |br|
                                                    Only used when state is 'completed'.
    d       integer  0      255                     (Optional) Estimated red reduction provided by the priority, in seconds |br|
