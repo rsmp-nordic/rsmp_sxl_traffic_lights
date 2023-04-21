@@ -1474,22 +1474,18 @@ sent once on the next status update, then removed from the list.
 
 A request always starts in the 'received' state. The following table shows the possible state transitions:
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.50}|
-
-.. table:: S0033 request transitions
-
-   ==========  =====================================
-   State       Possible next states
-   ==========  =====================================
-   received    queued, activated, rejected, cooldown
-   queued      activated, timeout
-   activated   completed, stale
-   completed
-   timeout
-   rejected
-   cooldown
-   stale
-   ==========  =====================================
+==========  =====================================
+State       Possible next states
+==========  =====================================
+received    queued, activated, rejected, cooldown
+queued      activated, timeout
+activated   completed, stale
+completed
+timeout
+rejected
+cooldown
+stale
+==========  =====================================
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
