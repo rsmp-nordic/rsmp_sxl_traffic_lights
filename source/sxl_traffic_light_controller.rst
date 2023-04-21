@@ -535,9 +535,9 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
    detectorlogicstatus  string  Detector logic status as text field. |br|
                                 |br|
                                 Each character represent the state of the detector logic in consecutive order. |br|
-                                0 = Detector logic is not active |br|
-                                1 = Detector logic is active |br|
-                                - = Detector logic is undefined/does not exist
+                                0 : Detector logic is not active |br|
+                                1 : Detector logic is active |br|
+                                - : Detector logic is undefined/does not exist
    ===================  ======  ===================================================================================
 
 
@@ -563,15 +563,15 @@ Input is used where the traffic light controller must react to external control.
    inputstatus          string  Input status as text field |br|
                                 |br|
                                 Each character represent the state of the input in consecutive order. |br|
-                                0 = Input is not active |br|
-                                1 = Input is active |br|
-                                - = Input is undefined/does not exist
+                                0 : Input is not active |br|
+                                1 : Input is active |br|
+                                - : Input is undefined/does not exist
    extendedinputstatus  string  ``Deprecated`` Extended input status as text field |br|
                                 |br|
                                 Each character represent the state of the extended input status in consecutive order. |br|
-                                0 = Input is not active |br|
-                                1 = Input is active |br|
-                                - = Input is undefined/does not exist
+                                0 : Input is not active |br|
+                                1 : Input is active |br|
+                                - : Input is undefined/does not exist
    ===================  ======  ==========================================================================================
 
 
@@ -597,15 +597,15 @@ Can be used for all types of output where the traffic light controller needs to 
    outputstatus          string  Output status as text field |br|
                                  |br|
                                  Each character represent the state of the output status in consecutive order. |br|
-                                 0 = Output is not active |br|
-                                 1 = Output is active |br|
-                                 - = Output is undefined/does not exist
+                                 0 : Output is not active |br|
+                                 1 : Output is active |br|
+                                 - : Output is undefined/does not exist
    extendedoutputstatus  string  ``Deprecated`` Output status as text field |br|
                                  |br|
                                  Each character represent the state of the exteded output status in consecutive order. |br|
-                                 0 = Output is not active |br|
-                                 1 = Output is active |br|
-                                 - = Output is undefined/does not exist
+                                 0 : Output is not active |br|
+                                 1 : Output is active |br|
+                                 - : Output is undefined/does not exist
    ====================  ======  ==========================================================================================
 
 
