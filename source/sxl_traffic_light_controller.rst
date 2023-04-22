@@ -600,7 +600,7 @@ Can be used for all types of output where the traffic light controller needs to 
                                  0 : Output is not active |br|
                                  1 : Output is active |br|
                                  - : Output is undefined/does not exist
-   extendedoutputstatus  string  ``Deprecated`` Output status as text field |br|
+   extendedoutputstatus  string  ``Deprecated`` Extended output status as text field |br|
                                  |br|
                                  Each character represent the state of the extended output status in consecutive order. |br|
                                  0 : Output is not active |br|
