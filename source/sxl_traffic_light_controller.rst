@@ -757,8 +757,8 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
    ============  =======  =====  =====  ====================  =======================================================================
    intersection  integer  0      255                          Comma separated list of intersections which the status relates to, |br|
                                                               e.g. "1,2". Use "0" for all intersections of the TLC
-   status        boolean                                      False:  Fixed time control inactive |br|
-                                                              True:  Fixed time control active
+   status        boolean                                      False: Fixed time control inactive |br|
+                                                              True: Fixed time control active
    source        string                 -operator_panel |br|  Source of the status change |br|
                                         -calendar_clock |br|  operator_panel: Operator panel |br|
                                         -control_block |br|   calendar_clock: Calendar/clock |br|
@@ -1625,7 +1625,7 @@ S0096
 ^^^^^^^^
 
 Current date and time
-
+Note: UTC is used
 Provides diagnostic information about the current date and time set in the controller.
 
 
@@ -1635,16 +1635,16 @@ Provides diagnostic information about the current date and time set in the contr
    :class: longtable
 
 
-   ======  =======  =====  =====  ================================
+   ======  =======  =====  =====  ============
    Name    Type       Min    Max  Comment
-   ======  =======  =====  =====  ================================
-   year    integer      0   9999  Year. Note: UTC is used
-   month   integer      1     12  Month. Note: UTC is used
-   day     integer      1     31  Day of month.  Note: UTC is used
-   hour    integer      0     23  Hour of day. Note: UTC is used
-   minute  integer      0     59  Minute. Note: UTC is used
-   second  integer      0     59  Second. Note: UTC is used
-   ======  =======  =====  =====  ================================
+   ======  =======  =====  =====  ============
+   year    integer      0   9999  Year
+   month   integer      1     12  Month
+   day     integer      1     31  Day of month
+   hour    integer      0     23  Hour
+   minute  integer      0     59  Minute
+   second  integer      0     59  Second
+   ======  =======  =====  =====  ============
 
 
 S0097
@@ -2790,7 +2790,7 @@ M0104
 Set clock
 
 Can be used to manually set the clock of the traffic light controller if automatic  time synchronization (NTP or watchdog sync) is not available. For instance, during maintenance work.
-
+Note: UTC is used
 Requires security code 1.
 
 
@@ -2800,23 +2800,17 @@ Requires security code 1.
    :class: longtable
 
 
-   ============  =======  =====  =====  ==============================================
+   ============  =======  =====  =====  ===============
    Name          Type     Min    Max    Comment
-   ============  =======  =====  =====  ==============================================
+   ============  =======  =====  =====  ===============
    securityCode  string                 Security code 1
-   year          integer  0      9999   Changes internal clock. Note: UTC is used |br|
-                                        Year
-   month         integer  1      12     Changes internal clock. Note: UTC is used |br|
-                                        Month
-   day           integer  1      31     Changes internal clock. Note: UTC is used |br|
-                                        Day in month
-   hour          integer  0      23     Changes internal clock. Note: UTC is used |br|
-                                        Hour
-   minute        integer  0      59     Changes internal clock. Note: UTC is used |br|
-                                        Minute
-   second        integer  0      59     Changes internal clock. Note: UTC is used |br|
-                                        Second
-   ============  =======  =====  =====  ==============================================
+   year          integer  0      9999   Year
+   month         integer  1      12     Month
+   day           integer  1      31     Day of month
+   hour          integer  0      23     Hour
+   minute        integer  0      59     Minute
+   second        integer  0      59     Second
+   ============  =======  =====  =====  ===============
 
 
 .. |br| replace:: |br_html| |br_latex|
