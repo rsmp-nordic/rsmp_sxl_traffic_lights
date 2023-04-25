@@ -230,7 +230,7 @@ A0201
 
 Serious lamp error
 
-Used for lamp errors
+Used for lamp errors.
 Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
@@ -741,7 +741,8 @@ S0010
 
 Isolated control
 
-Isolated control mode indicates that the controller operates independently of any other traffic light controllers. This control mode may be active or not depending on the current traffic program (time plan).
+Isolated control mode indicates that the controller operates independently of any other traffic light controller. This may be different depending on traffic program (time plan).
+Used to determine if the controller is operating independently or operating with other controllers (coordination).
 Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
@@ -775,7 +776,7 @@ Yellow flash
 
 The controller shows yellow flash.
 Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. It can also be manually set using M0001.
-However, some countries may use yellow flash as an normal operating mode, and not necessarily during fault.
+Some countries may use yellow flash as an normal operating mode, and not necessarily during fault.
 Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "True,False"
 
 
@@ -1356,7 +1357,7 @@ S0032
 Coordinated control
 
 This status is used when coordination between traffic light controllers is active. Coordination is described in detail in the corresponding section
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "centralized,off"
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. “1,2” and “centralized,off”
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -1454,9 +1455,9 @@ stale
                                   -stale           cooldown: A similar priority request means the priority request cannot be activated now |br|
                                                    stale: The priority has been active too long without cancellation, and was therefore removed
    e       integer  0      255                     (Optional) Estimated green extension provided by the priority, in seconds |br|
-                                                   Only used when state is ‘completed’
+                                                   Only used when state is ‘completed’.
    d       integer  0      255                     (Optional) Estimated red reduction provided by the priority, in seconds |br|
-                                                   Only used when state is ‘completed’
+                                                   Only used when state is ‘completed’.
    ======  =======  =====  =====  ===============  ============================================================================================
 
 
@@ -1612,8 +1613,8 @@ For instance, depending on controller, maintenance personnel can modify traffic 
                       - other device settings that are not part of the signal program |br|
                       |br|
                       Note: |br|
-                      The checksum should be calculated using the same data as used in S0098 |br|
-                      Downloaded data with S0098, hashed with SHA-2, should match this value.
+                      - The checksum should be calculated using the same data as used in S0098 |br|
+                      - Downloaded data with S0098, hashed with SHA-2, should match this value.
    timestamp  string  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    =========  ======  =============================================================================================================================================================
 
@@ -1776,17 +1777,15 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   ========  ======  =============================================================================================
+   ========  ======  ====================================================================================================================================================================
    Name      Type    Comment
-   ========  ======  =============================================================================================
-   start     string  Time stamp for start of measuring. Format according to W3C |br|
-                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                     in UTC. E.g. 2009-10-02T14:34:34.341Z
+   ========  ======  ====================================================================================================================================================================
+   start     string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    vehicles  string  Number of vehicles |br|
                      - Value expressed as an integer with a range of 0-65535. |br|
                      - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                      - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ========  ======  =============================================================================================
+   ========  ======  ====================================================================================================================================================================
 
 
 S0206
@@ -1803,17 +1802,15 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   ======  ======  =============================================================================================
+   ======  ======  ====================================================================================================================================================================
    Name    Type    Comment
-   ======  ======  =============================================================================================
-   start   string  Time stamp for start of measuring. Format according to W3C |br|
-                   XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                   in UTC. E.g. 2009-10-02T14:34:34.341Z
+   ======  ======  ====================================================================================================================================================================
+   start   string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    speed   string  Average speed in km/h (integer) |br|
                    - Value expressed as an integer with a range of 0-65535. |br|
                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  ======  =============================================================================================
+   ======  ======  ====================================================================================================================================================================
 
 
 S0207
@@ -1830,17 +1827,15 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   =========  ======  =============================================================================================
+   =========  ======  ====================================================================================================================================================================
    Name       Type    Comment
-   =========  ======  =============================================================================================
-   start      string  Time stamp for start of measuring. Format according to W3C |br|
-                      XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                      in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  ======  ====================================================================================================================================================================
+   start      string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    occupancy  string  Occupancy in percent (%) (0-100) |br|
                       - Value expressed as an integer with a range of 0-100. |br|
                       - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                       - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   =========  ======  =============================================================================================
+   =========  ======  ====================================================================================================================================================================
 
 
 S0208
@@ -1857,10 +1852,12 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   ======  ======  ====================================================================================================================================================================
+   ======  ======  =============================================================================================
    Name    Type    Comment
-   ======  ======  ====================================================================================================================================================================
-   start   string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   ======  ======  =============================================================================================
+   start   string  Time stamp for start of measuring. Format according to W3C |br|
+                   XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                   in UTC. E.g. 2009-10-02T14:34:34.341Z
    P       string  Number of cars |br|
                    - Value expressed as an integer with a range of 0-65535. |br|
                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
@@ -1897,7 +1894,7 @@ This status was introduced to improve performance in case traffic counting is do
                    - Value expressed as an integer with a range of 0-65535. |br|
                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  ======  ====================================================================================================================================================================
+   ======  ======  =============================================================================================
 
 
 Commands
