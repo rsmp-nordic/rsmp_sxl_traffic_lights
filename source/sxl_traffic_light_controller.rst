@@ -159,7 +159,6 @@ A0007
 Communication error
 
 Used for communication errors with the central system. Includes NTP connection loss if the TLC is configured to use NTP.
-
 Is a "minor fault" defined according to 3.11 in EN12675.
 
 
@@ -183,11 +182,8 @@ A0008
 Dead lock error
 
 Used for dead lock errors.
-
 For instance; a signal group has requested green but is unable to switch due to a conflicting signal group for an extended period of time. At some point the request times out and the controller goes failure mode. The cause for this error is due to configuration errors or external sources.
-
 Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
-
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -208,8 +204,7 @@ A0009
 
 Other error
 
-Used for other errors not covered by any other alarm type
-
+Used for other errors not covered by any other alarm type.
 Is a "minor fault" defined according to 3.11 in EN12675.
 
 
@@ -226,7 +221,7 @@ A0101
 
 Pushbutton error
 
-Used for push buttons
+Used for push buttons.
 
 
 A0201
@@ -235,7 +230,6 @@ A0201
 Serious lamp error
 
 Used for lamp errors
-
 Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
@@ -259,8 +253,7 @@ A0202
 
 Less serious lamp error
 
-Used for lamp errors
-
+Used for lamp errors.
 Is a "minor fault" defined according to 3.11 in EN12675.
 
 
@@ -312,7 +305,6 @@ A0302
 Detector error (logic error)
 
 For instance; detector continuously on or off during an extended time.
-
 Is a "minor fault" defined according to 3.11 in EN12675.
 
 
@@ -326,7 +318,7 @@ Is a "minor fault" defined according to 3.11 in EN12675.
    Name        Type     Enum              Comment
    ==========  =======  ================  ==================================================================
    detector    string                     Designation of the detector (hardware)
-   type        string   -loop |br|        Type of detector. |br|
+   type        string   -loop |br|        Type of detector |br|
                         -input            loop: Inductive detector loop |br|
                                           input: External input
    errormode   string   -on |br|          Detector forced on/off while detector error
@@ -372,7 +364,6 @@ A0304
 Serious detector error (logic error)
 
 For instance; detector continuously on or off during an extended time.
-
 Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
 
 
@@ -386,7 +377,7 @@ Is a "major fault" defined according to 3.8 i EN12675 which causes the controlle
    Name        Type     Enum              Comment
    ==========  =======  ================  ==================================================================
    detector    string                     Designation of the detector (hardware)
-   type        string   -loop |br|        Type of detector. |br|
+   type        string   -loop |br|        Type of detector |br|
                         -input            loop: Inductive detector loop |br|
                                           input: External input
    errormode   string   -on |br|          Detector forced on/off while detector error
@@ -473,7 +464,6 @@ S0001
 Signal group status
 
 Provides the status of each signal group, including basic information such as green, yellow and red. But also detailed technical information.
-
 Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller.
 
 
@@ -486,14 +476,12 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
    =================  =======  =====  =====  =================================================================================
    Name               Type     Min    Max    Comment
    =================  =======  =====  =====  =================================================================================
-   signalgroupstatus  string                 Signal group status as text field. |br|
-                                             |br|
+   signalgroupstatus  string                 Signal group status as text field |br|
                                              Each character represent the state of the signal group in consecutive order. |br|
-                                             Signal group status is described in detail in the corresponding section |br|
+                                             Signal group status is described in detail in the corresponding section. |br|
                                              - = Signal group is undefined/does not exist
    cyclecounter       integer  0      999    Cycle counter |br|
-                                             |br|
-                                             Used for handling of coordination between TLC's. |br|
+                                             Used for handling of coordination between TLC’s. |br|
                                              Is counted from 0 until it reaches the cycle time (See S0028). |br|
                                              :math:`{c=(b+o)\mod t}` |br|
                                              where c = cycle counter, |br|
@@ -504,10 +492,8 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
                                              |br|
                                              See the coordination section for more information.
    basecyclecounter   integer  0      999    Base cycle counter |br|
-                                             |br|
-                                             Used for handling of coordination between TLC's. |br|
-                                             Synchronized between all TLC's in an active coordination. |br|
-                                             |br|
+                                             Used for handling of coordination between TLC’s. |br|
+                                             Synchronized between all TLC’s in an active coordination. |br|
                                              See the coordination section for more information.
    stage              integer  0      999    Current stage (isolated)
    =================  =======  =====  =====  =================================================================================
@@ -519,7 +505,6 @@ S0002
 Detector logic status
 
 Provides the status of all detector logics of the controller.
-
 Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller. Can also be used for bus priority, external control systems, and much more.
 
 
@@ -532,8 +517,7 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
    ===================  ======  ===================================================================================
    Name                 Type    Comment
    ===================  ======  ===================================================================================
-   detectorlogicstatus  string  Detector logic status as text field. |br|
-                                |br|
+   detectorlogicstatus  string  Detector logic status as text field |br|
                                 Each character represent the state of the detector logic in consecutive order. |br|
                                 0 : Detector logic is not active |br|
                                 1 : Detector logic is active |br|
@@ -547,7 +531,6 @@ S0003
 Input status
 
 Input (1-255) of the controllers general purpose I/O.
-
 Input is used where the traffic light controller must react to external control. It could be external detectors, bus priority, and much more.
 
 
@@ -561,13 +544,11 @@ Input is used where the traffic light controller must react to external control.
    Name                 Type    Comment
    ===================  ======  ==========================================================================================
    inputstatus          string  Input status as text field |br|
-                                |br|
                                 Each character represent the state of the input in consecutive order. |br|
                                 0 : Input is not active |br|
                                 1 : Input is active |br|
                                 - : Input is undefined/does not exist
    extendedinputstatus  string  ``Deprecated`` Extended input status as text field |br|
-                                |br|
                                 Each character represent the state of the extended input status in consecutive order. |br|
                                 0 : Input is not active |br|
                                 1 : Input is active |br|
@@ -581,7 +562,6 @@ S0004
 Output status
 
 Output (1-255) of the controllers general purpose I/O.
-
 Can be used for all types of output where the traffic light controller needs to control other equipment. Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
@@ -595,13 +575,11 @@ Can be used for all types of output where the traffic light controller needs to 
    Name                  Type    Comment
    ====================  ======  ===========================================================================================
    outputstatus          string  Output status as text field |br|
-                                 |br|
                                  Each character represent the state of the output status in consecutive order. |br|
                                  0 : Output is not active |br|
                                  1 : Output is active |br|
                                  - : Output is undefined/does not exist
    extendedoutputstatus  string  ``Deprecated`` Extended output status as text field |br|
-                                 |br|
                                  Each character represent the state of the extended output status in consecutive order. |br|
                                  0 : Output is not active |br|
                                  1 : Output is active |br|
@@ -615,7 +593,6 @@ S0005
 Traffic Light Controller starting
 
 The traffic signal is starting, e.g. it is in startup mode and has not begun working normally yet.
-
 During startup mode the traffic controller shows dark, red, yellow flash or using the predetermined start cycle (minimum times).
 
 
@@ -639,7 +616,6 @@ S0006
 Emergency stage
 
 The status is active during emergency prioritization.
-
 Used in situations where full priority is given in the emergency vehicle program.
 
 
@@ -664,14 +640,9 @@ S0007
 Controller switched on
 
 The controller is active and is not in dark mode.
-
 Used to determine if the controller is operating, e.g. it shows red, green or yellow to the vehicles.
-
 During maintenance work the controller might be using dark mode (no output to the signal heads).
-
-Please note that all values in this status uses comma-separated lists - one value for each intersection,
-e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
-
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -680,11 +651,11 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
    :class: longtable
 
 
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
    Name          Type     Min    Max    Enum                  Comment
-   ============  =======  =====  =====  ====================  =======================================================================
-   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, |br|
-                                                              e.g. "1,2". Use "0" for all intersections of the TLC
+   ============  =======  =====  =====  ====================  ==================================================================================
+   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                              Use “0” for all intersections of the TLC.
    status        boolean                                      False: Traffic Light Controller in dark mode |br|
                                                               True: Traffic Light Controller not in dark mode
    source        string                 -operator_panel |br|  Source of the status change |br|
@@ -694,7 +665,7 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
                                         -other                startup: Set after startup mode |br|
                                                               other: Other reason
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
 
 
 S0008
@@ -702,12 +673,9 @@ S0008
 
 Manual control
 
-Traffic control deactivated in controller
-
+Traffic control deactivated in controller.
 Signal timings is controlled manually by service personnel using the operating panel of the controller.
-
-Please note that all values in this status uses comma-separated lists - one value for each intersection,
-e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -716,11 +684,11 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
    :class: longtable
 
 
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
    Name          Type     Min    Max    Enum                  Comment
-   ============  =======  =====  =====  ====================  =======================================================================
-   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, |br|
-                                                              e.g. "1,2". Use "0" for all intersections of the TLC
+   ============  =======  =====  =====  ====================  ==================================================================================
+   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                              Use “0” for all intersections of the TLC.
    status        boolean                                      False: Manual control inactive |br|
                                                               True: Manual control active
    source        string                 -operator_panel |br|  Source of the status change |br|
@@ -730,7 +698,7 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
                                         -other                startup: Set after startup mode |br|
                                                               other: Other reason
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
 
 
 S0009
@@ -739,11 +707,8 @@ S0009
 Fixed time control
 
 Traffic actuated control deactivated and a pre-timed control is used.
-
 Usually only used in case normal detectors can't be used, e.g. during maintenance work.
-
-Please note that all values in this status uses comma-separated lists - one value for each intersection,
-e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -752,11 +717,11 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
    :class: longtable
 
 
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
    Name          Type     Min    Max    Enum                  Comment
-   ============  =======  =====  =====  ====================  =======================================================================
-   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, |br|
-                                                              e.g. "1,2". Use "0" for all intersections of the TLC
+   ============  =======  =====  =====  ====================  ==================================================================================
+   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                              Use “0” for all intersections of the TLC.
    status        boolean                                      False: Fixed time control inactive |br|
                                                               True: Fixed time control active
    source        string                 -operator_panel |br|  Source of the status change |br|
@@ -766,7 +731,7 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
                                         -other                startup: Set after startup mode |br|
                                                               other: Other reason
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
 
 
 S0010
@@ -774,11 +739,8 @@ S0010
 
 Isolated control
 
-Isolated control mode indicates that the controller operates independently of any other traffic light controller.
-This control mode may be active or not depending on the current traffic program (time plan).
-
-Please note that all values in this status uses comma-separated lists - one value for each intersection,
-e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
+Isolated control mode indicates that the controller operates independently of any other traffic light controllers. This control mode may be active or not depending on the current traffic program (time plan).
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -787,11 +749,11 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
    :class: longtable
 
 
-   ============  =======  =====  =====  ====================  ===============================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
    Name          Type     Min    Max    Enum                  Comment
-   ============  =======  =====  =====  ====================  ===============================================================================
-   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, |br|
-                                                              e.g. "1,2". Use "0" for all intersections of the TLC
+   ============  =======  =====  =====  ====================  ==================================================================================
+   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                              Use “0” for all intersections of the TLC.
    status        boolean                                      False: Isolated control disabled |br|
                                                               True: Isolated control enabled (Vehicle actuated control or Fixed time control)
    source        string                 -operator_panel |br|  Source of the status change |br|
@@ -801,7 +763,7 @@ e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersecti
                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
                                         -other                startup: Set after startup mode |br|
                                                               other: Other reason
-   ============  =======  =====  =====  ====================  ===============================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
 
 
 S0011
@@ -810,11 +772,9 @@ S0011
 Yellow flash
 
 The controller shows yellow flash.
-
-Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. However, some countries may use yellow flash as an normal operating mode, and not necessarily during fault. This status can also be manually set using M0001.
-
-Please note that all values in this status uses comma-separated lists
-- one value for each intersection, e.g. "1,2" and "True,False"
+Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. It can also be manually set using M0001.
+However, some countries may use yellow flash as an normal operating mode, and not necessarily during fault.
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -823,11 +783,11 @@ Please note that all values in this status uses comma-separated lists
    :class: longtable
 
 
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
    Name          Type     Min    Max    Enum                  Comment
-   ============  =======  =====  =====  ====================  =======================================================================
-   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, |br|
-                                                              e.g. "1,2". Use "0" for all intersections of the TLC
+   ============  =======  =====  =====  ====================  ==================================================================================
+   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                              Use “0” for all intersections of the TLC.
    status        boolean                                      False: Yellow flash disabled |br|
                                                               True: Yellow flash enabled
    source        string                 -operator_panel |br|  Source of the status change |br|
@@ -837,7 +797,7 @@ Please note that all values in this status uses comma-separated lists
                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
                                         -other                startup: Set after startup mode |br|
                                                               other: Other reason
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
 
 
 S0012
@@ -845,12 +805,9 @@ S0012
 
 All red
 
-The controller show all red
-
+The controller show all red.
 All red can be manually set using the controllers operating panel during maintenance work.
-
-Please note that all values in this status uses comma-separated lists
-- one value for each intersection, e.g. "1,2" and "True,False"
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "True,False"
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -859,11 +816,11 @@ Please note that all values in this status uses comma-separated lists
    :class: longtable
 
 
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
    Name          Type     Min    Max    Enum                  Comment
-   ============  =======  =====  =====  ====================  =======================================================================
-   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, |br|
-                                                              e.g. "1,2". Use "0" for all intersections of the TLC
+   ============  =======  =====  =====  ====================  ==================================================================================
+   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                              Use “0” for all intersections of the TLC.
    status        boolean                                      False: All red disabled |br|
                                                               True: All red enabled
    source        string                 -operator_panel |br|  Source of the status change |br|
@@ -873,7 +830,7 @@ Please note that all values in this status uses comma-separated lists
                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
                                         -other                startup: Set after startup mode |br|
                                                               other: Other reason
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
 
 
 S0013
@@ -882,11 +839,8 @@ S0013
 Police key
 
 The controller is forced to dark mode or yellow flash.
-
 The "police key" is a external control switch present in some controllers that manually switches the controller to either dark mode or yellow flash.
-
-Please note that all values in this status uses comma-separated lists
-- one value for each intersection, e.g. "1,2" and "0,1"
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "0,1"
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -895,16 +849,16 @@ Please note that all values in this status uses comma-separated lists
    :class: longtable
 
 
-   ============  =======  =====  =====  =======  =======================================================================
+   ============  =======  =====  =====  =======  ==================================================================================
    Name          Type     Min    Max    Enum     Comment
-   ============  =======  =====  =====  =======  =======================================================================
-   intersection  integer  0      255             Comma separated list of intersections which the status relates to, |br|
-                                                 e.g. "1,2". Use "0" for all intersections of the TLC
+   ============  =======  =====  =====  =======  ==================================================================================
+   intersection  integer  0      255             Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                 Use “0” for all intersections of the TLC.
    status        integer                -0 |br|  0: disabled |br|
                                         -1 |br|  1: dark mode |br|
                                         -2 |br|  2: yellow flash |br|
                                         -3       3: all red
-   ============  =======  =====  =====  =======  =======================================================================
+   ============  =======  =====  =====  =======  ==================================================================================
 
 
 S0014
@@ -913,7 +867,6 @@ S0014
 Current time plan
 
 The current time plan (signal program) used in the controller. There may be 1-255 predefined time plans.
-
 The time plan (signal program) may change signal timings, cycle time, control strategy and much more. Typical usage is is scenario based control where change of program is used to change priority etc.
 
 
@@ -943,9 +896,7 @@ S0015
 Current traffic situation
 
 The current traffic situation used in the controller.
-
 Used for area-based control where a command can be sent to a master traffic light controller about which predefined traffic situation to use (1-255).
-
 Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
 
 
@@ -1059,9 +1010,7 @@ S0020
 Control mode
 
 Can be used for the management system to check the current control mode (startup, normal, standby, failure, test).
-
-Please note that all values in this status uses comma-separated lists
-- one value for each intersection, e.g. "1,2" and "startup,control"
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "startup,control"
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -1070,17 +1019,17 @@ Please note that all values in this status uses comma-separated lists
    :class: longtable
 
 
-   ============  =======  =====  =====  =============  =======================================================================
+   ============  =======  =====  =====  =============  ==================================================================================
    Name          Type     Min    Max    Enum           Comment
-   ============  =======  =====  =====  =============  =======================================================================
-   intersection  integer  0      255                   Comma separated list of intersections which the status relates to, |br|
-                                                       e.g. "1,2". Use "0" for all intersections of the TLC
+   ============  =======  =====  =====  =============  ==================================================================================
+   intersection  integer  0      255                   Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                       Use “0” for all intersections of the TLC.
    controlmode   string                 -startup |br|  startup: Startup mode |br|
                                         -control |br|  control: Normal control |br|
                                         -standby |br|  standby: Standby mode |br|
                                         -failure |br|  failure: Failure mode |br|
                                         -test          test: Test mode
-   ============  =======  =====  =====  =============  =======================================================================
+   ============  =======  =====  =====  =============  ==================================================================================
 
 
 S0021
@@ -1089,7 +1038,6 @@ S0021
 Manually set detector logic
 
 Provides status of detector logic (1-255) regarding if they are either forced to true or false.
-
 Can be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
 
 
@@ -1112,7 +1060,6 @@ S0022
 List of time plans
 
 Provides a list of the configured time plans which is possible to use. This status was added due to status S0018 only provides the total number of time plans and not which were possible to use with M0002.
-
 Can be used for the management system to check the number of time plans configured in the controller.
 
 
@@ -1135,7 +1082,6 @@ S0023
 Dynamic bands
 
 Provides a list of all defined dynamic bands. Dynamic bands moves start of signal groups in the cycle and changes the signal timings.
-
 A typical usage of dynamic bands is scenario based control where changing of signal timings is used for optimal traffic flow.
 
 
@@ -1148,7 +1094,7 @@ A typical usage of dynamic bands is scenario based control where changing of sig
    ======  ======  =====================================================
    Name    Type    Comment
    ======  ======  =====================================================
-   status  string  Dynamic bands. |br|
+   status  string  Dynamic bands |br|
                    Each dynamic band are written as pp-dd-ee where: |br|
                    pp=Time plan |br|
                    dd=Dynamic band number (from 1-10) |br|
@@ -1167,7 +1113,6 @@ S0024
 Offset time
 
 Offset time is used to define an offset between intersections in coordinated control. It is based on the expected travel time between intersections.
-
 Can be used by the management system to check to fine tune the coordination for optimal traffic flow.
 
 
@@ -1206,24 +1151,24 @@ Provides predicted signal timings of green and red for each signal group. Max, m
    :class: longtable
 
 
-   =================  =======  =====  =====  ==========================================================================================================================================================
+   =================  =======  =====  =====  =========================================================================================================================================================
    Name               Type     Min    Max    Comment
-   =================  =======  =====  =====  ==========================================================================================================================================================
-   minToGEstimate     string                 Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green. |br|
+   =================  =======  =====  =====  =========================================================================================================================================================
+   minToGEstimate     string                 Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green |br|
                                              Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToGEstimate     string                 Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green. |br|
+   maxToGEstimate     string                 Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green |br|
                                              Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToGEstimate  string                 Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green. |br|
+   likelyToGEstimate  string                 Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green |br|
                                              Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    ToGConfidence      integer  0      100    Confidence of the likelyToGEstimate. 0-100%
-   minToREstimate     string                 Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red. |br|
+   minToREstimate     string                 Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red |br|
                                              Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToREstimate     string                 Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red. |br|
+   maxToREstimate     string                 Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red |br|
                                              Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToREstimate  string                 Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red. |br|
+   likelyToREstimate  string                 Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red |br|
                                              Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    ToRConfidence      integer  0      100    Confidence of the likelyToREstimate. 0-100%
-   =================  =======  =====  =====  ==========================================================================================================================================================
+   =================  =======  =====  =====  =========================================================================================================================================================
 
 
 S0026
@@ -1232,7 +1177,6 @@ S0026
 Week time table
 
 Week time table for signal programs (time plan) to use for each day during a week.
-
 The week time table determine which predefined signal timings (time plan) to use during the week for optimal traffic flow.
 
 
@@ -1271,7 +1215,6 @@ S0027
 Time tables
 
 Time of day for when to switch signal program (time plan).
-
 The signal timings (time plan) to use during time of day for optimal traffic flow.
 
 
@@ -1284,7 +1227,7 @@ The signal timings (time plan) to use during time of day for optimal traffic flo
    ======  ======  ======================================================
    Name    Type    Comment
    ======  ======  ======================================================
-   status  string  Time Table. Defines time tables. |br|
+   status  string  Time Table. Defines time tables |br|
                    Each time definition is written as t-o-h-m where: |br|
                    t=time table nr (1-12) |br|
                    o=function |br|
@@ -1312,7 +1255,6 @@ S0028
 Cycle time
 
 Cycle time (or cycle length) is the sum of all phases in a time plan (traffic program). This time is fixed when using fixed time control or coordination (except "local coordination"). When the cycle counter reaches this length it is reset back to zero.
-
 Changing the cycle time can be used as part of scenario based control.
 
 
@@ -1332,7 +1274,6 @@ Changing the cycle time can be used as part of scenario based control.
                    |br|
                    Each cycle time is separated with a comma |br|
                    |br|
-                   |br|
                    E.g. |br|
                    pp-tt,pp-tt
    ======  ======  ===============================================
@@ -1344,7 +1285,6 @@ S0029
 Forced input status
 
 Provide status of input (1-255) regarding if they are forced or not. Can be used for all types of input where the traffic light controller must react to external control.
-
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
@@ -1367,7 +1307,6 @@ S0030
 Forced output status
 
 Provide status of output (1-255) regarding if they are forced or not. Can be used for all types of output where the traffic light controller needs to control other equipment.
-
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
 
 
@@ -1390,7 +1329,6 @@ S0031
 Trigger level sensitivity for loop detector
 
 The trigger level sensitivity determines at what level the loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives.
-
 Can be used to make sure that the detectors detect traffic as intended.
 
 
@@ -1415,11 +1353,8 @@ S0032
 
 Coordinated control
 
-This status is used when coordination between traffic light controllers is active.
-Coordination is described in detail in the corresponding section
-
-Please note that all values in this status uses comma-separated lists
-- one value for each intersection, e.g. "1,2" and "centralized,off"
+This status is used when coordination between traffic light controllers is active. Coordination is described in detail in the corresponding section
+Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "centralized,off"
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -1428,11 +1363,11 @@ Please note that all values in this status uses comma-separated lists
    :class: longtable
 
 
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
    Name          Type     Min    Max    Enum                  Comment
-   ============  =======  =====  =====  ====================  =======================================================================
-   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, |br|
-                                                              e.g. "1,2". Use "0" for all intersections of the TLC
+   ============  =======  =====  =====  ====================  ==================================================================================
+   intersection  integer  0      255                          Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                              Use “0” for all intersections of the TLC.
    status        string                 -local |br|           local: Local coordination |br|
                                         -centralized |br|     centralized: Coordination with synchronized clock |br|
                                         -off                  off: Coordination not active
@@ -1443,7 +1378,7 @@ Please note that all values in this status uses comma-separated lists
                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
                                         -other                startup: Set after startup mode |br|
                                                               other: Other reason
-   ============  =======  =====  =====  ====================  =======================================================================
+   ============  =======  =====  =====  ====================  ==================================================================================
 
 
 S0033
@@ -1451,28 +1386,21 @@ S0033
 
 Signal Priority Status
 
-This status can be used to get updates about priority requests. For example, you can use it to know when
-priority requests are activated or cancelled.
+This status can be used to get updates about priority requests. For example, you can use it to know when priority requests are activated or cancelled.
 
 A list of priorities is returned, referred to by their request ids. The same request id can appear only once.
 
-All priorities are included in the list (not only the ones that have changed state since the last update).
-This is done regardless of whether the status is send in respond to a status request, or due to a
-status subscription, and also regardless of whether a status subscription uses an update interval,
-or send-on-change, or both.
+All priorities are included in the list (not only the ones that have changed state since the last update). This is done regardless of whether the status is send in respond to a status request, or due to a status subscription, and also regardless of whether a status subscription uses an update interval, or send-on-change, or both.
 
-If you subscribe using an update interval, you're not guaranteed to get all intermediate states.
-To guarantee that, send-on-change must be used when subscribing.
+If you subscribe using an update interval, you’re not guaranteed to get all intermediate states. To guarantee that, send-on-change must be used when subscribing.
 
-To understand how this status relates to ETSI/J2735, please see the
-`wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`_.
+To understand how this status relates to ETSI/J2735, please see the `wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`_.
 
 All priorities are send on every status update, regardless of whether an interval, or sendOnChange (or both) is used.
 
-When a priority reaches an end states (completed, timeout, rejected, cooldown or stale), it must be
-sent once on the next status update, then removed from the list.
+When a priority reaches an end states (completed, timeout, rejected, cooldown or stale), it must be sent once on the next status update, then removed from the list.
 
-A request always starts in the 'received' state. The following table shows the possible state transitions:
+A request always starts in the ‘received’ state. The following table shows the possible state transitions:
 
 ==========  =====================================
 State       Possible next states
@@ -1511,7 +1439,7 @@ stale
    Name    Type     Min    Max    Enum             Comment
    ======  =======  =====  =====  ===============  ============================================================================================
    r       string                                  ID of the priority request
-   t       string                                  Timestamp, indicating when the priority last changed state. |br|
+   t       string                                  Timestamp, indicating when the priority last changed state |br|
                                                    Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
                                                    All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    s       string                 -received |br|   Current status of the priority request |br|
@@ -1524,9 +1452,9 @@ stale
                                   -stale           cooldown: A similar priority request means the priority request cannot be activated now |br|
                                                    stale: The priority has been active too long without cancellation, and was therefore removed
    e       integer  0      255                     (Optional) Estimated green extension provided by the priority, in seconds |br|
-                                                   Only used when state is 'completed'.
+                                                   Only used when state is ‘completed’
    d       integer  0      255                     (Optional) Estimated red reduction provided by the priority, in seconds |br|
-                                                   Only used when state is 'completed'.
+                                                   Only used when state is ‘completed’
    ======  =======  =====  =====  ===============  ============================================================================================
 
 
@@ -1537,7 +1465,6 @@ Timeout for dynamic bands
 
 Time until a designated time plan is entered due to lost connection with the supervisor.
 Disabled if set to '0'.
-
 Used in conjunction with dynamic bands, M0014
 
 
@@ -1582,7 +1509,7 @@ S0092
 
 Operator logged in/out web-interface
 
-Provides information about whether maintenance personnel is currently working with the controller.
+Provides information if maintenance personnel is currently working with the controller.
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -1625,7 +1552,8 @@ S0096
 ^^^^^^^^
 
 Current date and time
-Note: UTC is used
+
+Note: UTC is used.
 Provides diagnostic information about the current date and time set in the controller.
 
 
@@ -1653,7 +1581,6 @@ S0097
 Checksum of traffic parameters
 
 Can be used to check if any traffic parameter has been changed.
-
 For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to monitor if any traffic parameter has been changed. The traffic parameters may be downloaded with S0098.
 
 
@@ -1695,7 +1622,6 @@ S0098
 Configuration of traffic parameters
 
 Can be used to download all traffic parameters from the controller.
-
 For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to downloaded them.
 
 
@@ -1705,9 +1631,9 @@ For instance, depending on controller, maintenance personnel can modify traffic 
    :class: longtable
 
 
-   =========  ======  ==========================================================================================================================================================================
+   =========  ======  ===========================================================================================================================================================
    Name       Type    Comment
-   =========  ======  ==========================================================================================================================================================================
+   =========  ======  ===========================================================================================================================================================
    config     base64  Traffic parameters |br|
                       Includes |br|
                       - all signal programs, including program versions |br|
@@ -1727,8 +1653,9 @@ For instance, depending on controller, maintenance personnel can modify traffic 
                       - There is no way to upload this binary file to the TLC using RSMP |br|
                       - The format of the binary file is not specified and is not expected to be compatible between suppliers
    timestamp  string  Time stamp of the config. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   version    string  Version information of the configuration. Contains basic information such as controller id, changes to config and other information. The format is not specified in detail
-   =========  ======  ==========================================================================================================================================================================
+   version    string  Version information of the configuration. Contains basic information such as controller id, changes to config and other information |br|
+                      The format is not specified in detail.
+   =========  ======  ===========================================================================================================================================================
 
 
 S0201
@@ -1745,12 +1672,14 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  =====  =====  ====================================================================================================================================================================
+   =========  =======  =====  =====  ========================================================================
    Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  ====================================================================================================================================================================
-   starttime  string                 Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  =======  =====  =====  ========================================================================
+   starttime  string                 Time stamp for start of measuring. Format according to W3C |br|
+                                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                                     in UTC. E.g. 2009-10-02T14:34:34.341Z
    vehicles   integer  0      65535  Number of vehicles on a given detector logic (since last update)
-   =========  =======  =====  =====  ====================================================================================================================================================================
+   =========  =======  =====  =====  ========================================================================
 
 
 S0202
@@ -1789,12 +1718,14 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  =====  =====  ====================================================================================================================================================================
+   =========  =======  =====  =====  ========================================================================
    Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  ====================================================================================================================================================================
-   starttime  string                 Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  =======  =====  =====  ========================================================================
+   starttime  string                 Time stamp for start of measuring. Format according to W3C |br|
+                                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                                     in UTC. E.g. 2009-10-02T14:34:34.341Z
    occupancy  integer  0      100    Occupancy in percent (0-100%)
-   =========  =======  =====  =====  ====================================================================================================================================================================
+   =========  =======  =====  =====  ========================================================================
 
 
 S0204
@@ -1811,10 +1742,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  =====  =====  ====================================================================================================================================================================
+   =========  =======  =====  =====  ========================================================================
    Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  ====================================================================================================================================================================
-   starttime  string                 Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  =======  =====  =====  ========================================================================
+   starttime  string                 Time stamp for start of measuring. Format according to W3C |br|
+                                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                                     in UTC. E.g. 2009-10-02T14:34:34.341Z
    P          integer  0      65535  Number of cars
    PS         integer  0      65535  Number of cars with trailers
    L          integer  0      65535  Number of trucks
@@ -1824,7 +1757,7 @@ Used for Traffic counting.
    MC         integer  0      65535  Number of motor cycles
    C          integer  0      65535  Number of bicycles
    F          integer  0      65535  Number of pedestrians
-   =========  =======  =====  =====  ====================================================================================================================================================================
+   =========  =======  =====  =====  ========================================================================
 
 
 S0205
@@ -1841,15 +1774,17 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   ========  ======  ====================================================================================================================================================================
+   ========  ======  =============================================================================================
    Name      Type    Comment
-   ========  ======  ====================================================================================================================================================================
-   start     string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   ========  ======  =============================================================================================
+   start     string  Time stamp for start of measuring. Format according to W3C |br|
+                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                     in UTC. E.g. 2009-10-02T14:34:34.341Z
    vehicles  string  Number of vehicles |br|
                      - Value expressed as an integer with a range of 0-65535. |br|
                      - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                      - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ========  ======  ====================================================================================================================================================================
+   ========  ======  =============================================================================================
 
 
 S0206
@@ -1866,15 +1801,17 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   ======  ======  ====================================================================================================================================================================
+   ======  ======  =============================================================================================
    Name    Type    Comment
-   ======  ======  ====================================================================================================================================================================
-   start   string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   ======  ======  =============================================================================================
+   start   string  Time stamp for start of measuring. Format according to W3C |br|
+                   XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                   in UTC. E.g. 2009-10-02T14:34:34.341Z
    speed   string  Average speed in km/h (integer) |br|
                    - Value expressed as an integer with a range of 0-65535. |br|
                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  ======  ====================================================================================================================================================================
+   ======  ======  =============================================================================================
 
 
 S0207
@@ -1891,15 +1828,17 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   =========  ======  ====================================================================================================================================================================
+   =========  ======  =============================================================================================
    Name       Type    Comment
-   =========  ======  ====================================================================================================================================================================
-   start      string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  ======  =============================================================================================
+   start      string  Time stamp for start of measuring. Format according to W3C |br|
+                      XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                      in UTC. E.g. 2009-10-02T14:34:34.341Z
    occupancy  string  Occupancy in percent (%) (0-100) |br|
                       - Value expressed as an integer with a range of 0-100. |br|
                       - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                       - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   =========  ======  ====================================================================================================================================================================
+   =========  ======  =============================================================================================
 
 
 S0208
@@ -1936,7 +1875,7 @@ This status was introduced to improve performance in case traffic counting is do
                    - Value expressed as an integer with a range of 0-65535. |br|
                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   B       string  Number of busses |br|
+   B       string  Number of buses |br|
                    - Value expressed as an integer with a range of 0-65535. |br|
                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -1973,7 +1912,7 @@ Commands
    ========================  ===============  =====================  ===============================================
    Traffic Light Controller  `M0001`_         setValue               Sets functional position
    Traffic Light Controller  `M0002`_         setPlan                Sets current time plan
-   Traffic Light Controller  `M0003`_         setTrafficSituation    Sets traffic situation the controller uses.
+   Traffic Light Controller  `M0003`_         setTrafficSituation    Sets traffic situation the controller uses
    Traffic Light Controller  `M0004`_         setRestart             Restarts Traffic Light Controller
    Traffic Light Controller  `M0005`_         setEmergency           Activate emergency route
    Traffic Light Controller  `M0006`_         setInput               Activate input
@@ -2004,7 +1943,6 @@ M0001
 Sets functional position
 
 Sets the controller to yellow flash, dark mode or normal control.
-
 Requires security code 2.
 
 
@@ -2014,17 +1952,17 @@ Requires security code 2.
    :class: longtable
 
 
-   ============  =======  =====  =====  ===================  ============================================================================================
+   ============  =======  =====  =====  ===================  ===========================================================================================
    Name          Type     Min    Max    Enum                 Comment
-   ============  =======  =====  =====  ===================  ============================================================================================
+   ============  =======  =====  =====  ===================  ===========================================================================================
    status        string                 -NormalControl |br|  NormalControl: Normal Control |br|
                                         -YellowFlash |br|    YellowFlash: Enables yellow flash |br|
                                         -Dark                Dark: Enables dark mode
    securityCode  string                                      Security code 2
-   timeout       integer  0      1440                        Time in minutes until controller automatically reverts to previous functional position. |br|
+   timeout       integer  0      1440                        Time in minutes until controller automatically reverts to previous functional position |br|
                                                              0=no automatic return
    intersection  integer  0      255                         Intersection number
-   ============  =======  =====  =====  ===================  ============================================================================================
+   ============  =======  =====  =====  ===================  ===========================================================================================
 
 
 M0002
@@ -2033,12 +1971,9 @@ M0002
 Sets current time plan
 
 Change of traffic program of the traffic light controller.
-
 Typical usages is scenario based control where change of program is used to change signal timings etc.
-
 This command changes the signal timings for optimal traffic flow.
-
-Requires security code 2.
+Requires security code 2
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2060,13 +1995,11 @@ Requires security code 2.
 M0003
 ^^^^^
 
-Sets traffic situation the controller uses.
+Sets traffic situation the controller uses
 
 Used for area-based control where a command can be sent to a master traffic light controller about which predefined traffic situation to use (1-255).
-
 Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
-
-Requires security code 2.
+Requires security code 2
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2091,8 +2024,7 @@ M0004
 Restarts Traffic Light Controller
 
 Used in the event of serious faults in the device where a restart is considered to be able to remedy a problem.
-
-Requires security code 2.
+Requires security code 2
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2115,9 +2047,7 @@ M0005
 Activate emergency route
 
 The function is made for emergency prioritization. Works in the same way as the M0006 and M0008 where the traffic light controller responds to an input.
-
 Should be used in situations where full priority is given in the emergency vehicle program.
-
 Requires security code 2.
 
 
@@ -2143,13 +2073,9 @@ M0006
 Activate input
 
 Set given input (1-255) of the controllers general purpose I/O to either true or false.
-
 The function can provide an input to the traffic light controller on which a predefined action can be taken.
-
 Can be used for all types of input where the traffic light controller must react to external control.
-
 Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more.
-
 Requires security code 2.
 
 
@@ -2175,9 +2101,7 @@ M0007
 Activate fixed time control
 
 Deactivates the traffic actuated control using detectors and activates pre-timed control.
-
 Can be used in case normal detectors can't be used, e.g. during maintenance work.
-
 Requires security code 2.
 
 
@@ -2202,10 +2126,8 @@ M0008
 Sets manual activation of detector logic
 
 Set given detector logic (1-255) to either true or false.
-
 Can e.g. be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
-
-Requires security code 2.
+Requires security code 2
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2291,9 +2213,7 @@ M0013
 Activate a series of inputs
 
 Set given inputs (1-255) of the controllers general purpose I/O to either true or false. This command was introduced due to coordination requirements needing to set many inputs to true/false at the same time and M0006 being to slow to send a message for each input individually. With this command many inputs can be set to true/false at the same time using a single command message. It can be used for all types of input where the traffic light controller must react to external control. Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more.
-
 Requires security code 2.
-
 The parameter 'status' sets/unsets a block of 16 inputs at a time. It can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon.
 Format: [Offset];[Bits to set];[Bits to unset];…
 
@@ -2325,20 +2245,19 @@ Example 3:
 - "2" is 10 in binary, which is bit 1
 
 
-
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
 
 .. table:: M0013
    :class: longtable
 
 
-   ============  ======  ==========================================================================================================================================================================
+   ============  ======  =========================================================================================================================================================================
    Name          Type    Comment
-   ============  ======  ==========================================================================================================================================================================
-   status        string  Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. |br|
+   ============  ======  =========================================================================================================================================================================
+   status        string  Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon |br|
                          Format: [Offset];[Bits to set];[Bits to unset];…
    securityCode  string  Security code 2
-   ============  ======  ==========================================================================================================================================================================
+   ============  ======  =========================================================================================================================================================================
 
 
 M0014
@@ -2347,10 +2266,8 @@ M0014
 Set dynamic bands
 
 Can be used to change between predefined signal timings. Moves the start of signal groups in the cycle.
-
 This command can be used to change the split of green time during the cycle. A typical usage is scenario based control where changing of signal timings is used for optimal traffic flow.
-
-Requires security code 2.
+Requires security code 2
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2363,7 +2280,7 @@ Requires security code 2.
    Name          Type     Min    Max    Comment
    ============  =======  =====  =====  ==================================================
    plan          integer  0      255    Plan to be changed
-   status        string                 Dynamic bands. |br|
+   status        string                 Dynamic bands |br|
                                         Each dynamic band are written as dd-ee where: |br|
                                         dd=Dynamic band number (from 1-10) |br|
                                         ee=Extension in seconds in this band |br|
@@ -2382,9 +2299,7 @@ M0015
 Set Offset time
 
 Offset time is used to define an offset between intersections in coordinated control. It is based on the expected travel time between intersections.
-
 This command can be used to fine tune the coordination for optimal traffic flow.
-
 Requires security code 2.
 
 
@@ -2409,9 +2324,7 @@ M0016
 Set week time table
 
 Set which time table for signal programs to use for each day during a week.
-
 This command changes the signal timings during the week for optimal traffic flow.
-
 Requires security code 2.
 
 
@@ -2452,9 +2365,7 @@ M0017
 Set time tables
 
 Set time of day for when to automatically switch signal program (time plan).
-
 This command changes the signal timings according to time of day for optimal traffic flow.
-
 Requires security code 2.
 
 
@@ -2467,7 +2378,7 @@ Requires security code 2.
    ============  ======  ======================================================
    Name          Type    Comment
    ============  ======  ======================================================
-   status        string  Time Table. Defines time tables. |br|
+   status        string  Time Table. Defines time tables |br|
                          Each time definition is written as t-o-h-m where: |br|
                          t=time table nr (1-12) |br|
                          o=function |br|
@@ -2496,9 +2407,7 @@ M0018
 Set Cycle time
 
 Cycle time (or cycle length) is the sum of all phases in a time plan (traffic program). This time is fixed when using fixed time control or coordination (except "local coordination"). When the cycle counter reaches this length it is reset back to zero.
-
 This command provides the ability to change the cycle time when using coordinated or fixed time control. It changes the timings for optimal traffic flow. Can be used with scenario based control.
-
 Requires security code 2.
 
 
@@ -2523,9 +2432,7 @@ M0019
 Force input
 
 Force a given input (1-255) of the controllers general purpose I/O to either True or False. Can be used for all types of input where the traffic light controller must react to external control.
-
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
-
 Requires security code 2.
 
 
@@ -2553,9 +2460,7 @@ M0020
 Force output
 
 Force a given output (1-255) of the controllers general purpose I/O to either True of False. Can be used for all types of output where the traffic light controller needs to control other equipment.
-
 Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
-
 Requires security code 2.
 
 
@@ -2583,10 +2488,8 @@ M0021
 Set trigger level sensitivity for loop detector
 
 The trigger level sensitivity determines at what level a loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives.
-
 This command provides the ability to fine tune loop detectors to make sure they detect traffic as intended.
-
-Requires security code 2.
+Requires security code 2
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2612,35 +2515,21 @@ Request Signal Priority
 
 Useful for bus priority or other type of priorities like emergency vehicles or groups of cyclists.
 
-The benefit of using this message over activating inputs or detector logics is that you
-can specify a priority level, vehicle type and estimated time of arrival.
-You can also update or cancel the request, and use the corresponding status message
-to track the status of the request, including how much priority was actually given.
-
+The benefit of using this message over activating inputs or detector logics is that you can specify a priority level, vehicle type and estimated time of arrival. You can also update or cancel the request, and use the corresponding status message to track the status of the request, including how much priority was actually given.
 To understand how this command relates to ETSI/J2735, please see the
 `wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`_.
 
-Activating signal priority is expected to provide more green time for a particular movement
-through the intersection, but the exact mechanism must typically be configured in the controller.
+Activating signal priority is expected to provide more green time for a particular movement through the intersection, but the exact mechanism must typically be configured in the controller.
 
-The movement to prioritize can be referenced in a number of ways, depending on what is configured
-in the controller, and in the system that sends priority requests. Either:
+The movement to prioritize can be referenced in a number of ways, depending on what is configured in the controller, and in the system that sends priority requests. Either:
 
-- Reference a signal group by setting 'signalGroupId'.
-  This method is simple, but will not allow you to have different priority mechanism for the
-  same signal group, unless they can be distinguished by the vehicle type. For example, if you
-  need to trigger different priorities depending on whether a bus goes straight or makes a turn
-  for the same signal group, you need to use of the other referencing methods.
-- Reference an input by setting 'inputId'. This can be useful if you previously used
-  inputs to activate priority. The input will not be activated, only the priority.
-- Reference a connection by setting 'connectionId'. A connection is a movement from a specific
-  ingoing lane to a specific outgoing lane.
+- Reference a signal group by setting 'signalGroupId'. This method is simple, but will not allow you to have different priority mechanism for the same signal group, unless they can be distinguished by the vehicle type. For example, if you need to trigger different priorities depending on whether a bus goes straight or makes a turn for the same signal group, you need to use of the other referencing methods.
+- Reference an input by setting 'inputId'. This can be useful if you previously used inputs to activate priority. The input will not be activated, only the priority.
+- Reference a connection by setting 'connectionId'. A connection is a movement from a specific ingoing lane to a specific outgoing lane.
 - Reference an intersection approach by setting 'approachId'.
-- Reference an ingoing lane by setting 'laneInId', and
-  optionally also reference an outgoing lane by setting 'laneOutId'.
+- Reference an ingoing lane by setting 'laneInId', and optionally also reference an outgoing lane by setting 'laneOutId'.
 
-Referencing attributes that are not used must be left out, rather than set to null or empty strings.
-This includes:
+Referencing attributes that are not used must be left out, rather than set to null or empty strings. This includes:
 
 - signalGroupId
 - inputId
@@ -2649,48 +2538,30 @@ This includes:
 - laneInId
 - laneOutId
 
-Referencing attributes are only used when initiating a request. When updating or cancelling the request,
-the request is identified by its requestId, and no referencing attributes are allowed.
+Referencing attributes are only used when initiating a request. When updating or cancelling the request, the request is identified by its requestId, and no referencing attributes are allowed.
 
-You initiate a priority request with type set to 'new'. You must provide a request id that
-uniquely identifies the request on the controller. It can be a randomly generated UUID
-(universally unique identifier), or it can be constructed by combining e.g. a vehicle id
-and some other identifier. When updating or cancelling a request, you must pass the same request id again.
+You initiate a priority request with type set to 'new'. You must provide a request id that uniquely identifies the request on the controller. It can be a randomly generated UUID (universally unique identifier), or it can be constructed by combining e.g. a vehicle id and some other identifier. When updating or cancelling a request, you must pass the same request id again.
 
-Providing ETA (estimated time of arrival) when initiating a request is optional,
-but can help the controller plan ahead in cases where you're able to send the request before
-the vehicle arrives at the intersection. You're allowed to initiate the request without an ETA
-and provide it in a later request update. But providing the ETA when initiating
-the request is recommended, since it will give the controller more time to plan ahead.
+Providing ETA (estimated time of arrival) when initiating a request is optional, but can help the controller plan ahead in cases where you're able to send the request before the vehicle arrives at the intersection. You're allowed to initiate the request without an ETA and provide it in a later request update. But providing the ETA when initiating the request is recommended, since it will give the controller more time to plan ahead.
 
-Like ETA, providing a vehicle type is optional, but can help the controller decide how
-to best handle the request.
+Like ETA, providing a vehicle type is optional, but can help the controller decide how to best handle the request.
 
-The priority level provides a way to indicate the relative importance of the request compared
-to other requests. For example, emergency vehicles or delayed buses could be given a higher priority level.
+The priority level provides a way to indicate the relative importance of the request compared to other requests. For example, emergency vehicles or delayed buses could be given a higher priority level.
 
-If the ETA changes before the priority is cancelled, or you want to change the priority level, you can send
-another request message with type set to 'update'. The vehicle type cannot be changed.
+If the ETA changes before the priority is cancelled, or you want to change the priority level, you can send another request message with type set to 'update'. The vehicle type cannot be changed.
 
 
 When you send a priority request, it will be processed to decide if it's possible to activate the requested priority.
 
-If the request is accepted, the priority can either be activated immediately, or if another priority is
-currently active, it can be queued for later activation.
+If the request is accepted, the priority can either be activated immediately, or if another priority is currently active, it can be queued for later activation.
 
-If the priority cannot be accepted the request is rejected. Cooldown is a specific type of rejection, which means that
-s similar request has just completed, and some time needs to pass before a similar request can be activated.
+If the priority cannot be accepted the request is rejected. Cooldown is a specific type of rejection, which means that s similar request has just completed, and some time needs to pass before a similar request can be activated.
 
-When a request is queued, it is expected to become activated later, but in case too long passes without
-activation, the controller is expected to time out the request.
+When a request is queued, it is expected to become activated later, but in case too long passes without activation, the controller is expected to time out the request.
 
-Once a priority is activated, you're excepted to cancel it as soon as there's no need for it anymore, typically
-when the vehicle has passed the intersection. You cancel a request by sending a request passing the
-existing request id setting the type to 'cancel'.
+Once a priority is activated, you're excepted to cancel it as soon as there's no need for it anymore, typically when the vehicle has passed the intersection. You cancel a request by sending a request passing the existing request id setting the type to 'cancel'.
 
-If a request is never cancelled, the controller is expected to remove the priority at some point,
-but until then the priority might block requests in other direction which is why you should always cancel a priority
-when it's not needed anymore.
+If a request is never cancelled, the controller is expected to remove the priority at some point, but until then the priority might block requests in other direction which is why you should always cancel a priority when it's not needed anymore.
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -2703,7 +2574,7 @@ when it's not needed anymore.
    Name           Type     Min    Max    Enum                    Comment
    =============  =======  =====  =====  ======================  =========================================================================
    requestId      string                                         A string that uniquely identifies the request on the controller
-   signalGroupId  string                                         (Optional) ID of a signal group component.
+   signalGroupId  string                                         (Optional) ID of a signal group component
    inputId        integer  0      255                            (Optional) ID of an input, using the same numbering scheme as M0006
    connectionId   integer  0      255                            (Optional) ID of a connection, connecting an ingoing and an outgoing lane
    approachId     integer  0      16                             (Optional) ID of an intersection approach
@@ -2738,9 +2609,7 @@ Set timeout for dynamic bands
 
 Switch to a designated time plan if this timeout is reached due to lost connection with the supervisor.
 Disable by setting timeout to '0'.
-
 Used in conjunction with dynamic bands, M0014
-
 Requires security code 2.
 
 
@@ -2764,7 +2633,6 @@ M0103
 Set security code
 
 Change the security code to use when sending commands
-
 Security codes are used as an extra layer of security in many commands. They need to match between the supervision system and the traffic light controller in order for the commands to be executed.
 
 
@@ -2790,8 +2658,8 @@ M0104
 Set clock
 
 Can be used to manually set the clock of the traffic light controller if automatic  time synchronization (NTP or watchdog sync) is not available. For instance, during maintenance work.
-Note: UTC is used
-Requires security code 1.
+Note: UTC is used.
+Requires security code 1
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
