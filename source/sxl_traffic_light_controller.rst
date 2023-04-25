@@ -168,12 +168,13 @@ Is a "minor fault" defined according to 3.11 in EN12675.
    :class: longtable
 
 
-   ========  ======  ==========  =============================================
+   ========  ======  ==========  ==================================================
    Name      Type    Enum        Comment
-   ========  ======  ==========  =============================================
-   protocol  string  -rsmp |br|  Type of communication error, e.g. NTP or RSMP
-                     -ntp
-   ========  ======  ==========  =============================================
+   ========  ======  ==========  ==================================================
+   protocol  string  -rsmp |br|  Type of communication error, e.g. NTP or RSMP |br|
+                     -ntp        rsmp: RSMP |br|
+                                 ntp: NTP
+   ========  ======  ==========  ==================================================
 
 
 A0008
@@ -239,13 +240,14 @@ Is a "major fault" defined according to 3.8 in EN12675 which causes the controll
    :class: longtable
 
 
-   ======  ======  ============  =============
+   ======  ======  ============  ===================
    Name    Type    Enum          Comment
-   ======  ======  ============  =============
-   color   string  -red |br|     Color of lamp
-                   -yellow |br|
-                   -green
-   ======  ======  ============  =============
+   ======  ======  ============  ===================
+   color   string  -red |br|     Color of lamp |br|
+                   -yellow |br|  red: red |br|
+                   -green        yellow: yellow |br|
+                                 green: green
+   ======  ======  ============  ===================
 
 
 A0202
