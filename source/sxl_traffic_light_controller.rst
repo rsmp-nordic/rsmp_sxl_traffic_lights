@@ -265,13 +265,14 @@ Is a "minor fault" defined according to 3.11 in EN12675.
    :class: longtable
 
 
-   ======  ======  ============  =============
+   ======  ======  ============  ===================
    Name    Type    Enum          Comment
-   ======  ======  ============  =============
-   color   string  -red |br|     Color of lamp
-                   -yellow |br|
-                   -green
-   ======  ======  ============  =============
+   ======  ======  ============  ===================
+   color   string  -red |br|     Color of lamp |br|
+                   -yellow |br|  red: red |br|
+                   -green        yellow: yellow |br|
+                                 green: green
+   ======  ======  ============  ===================
 
 
 A0301
