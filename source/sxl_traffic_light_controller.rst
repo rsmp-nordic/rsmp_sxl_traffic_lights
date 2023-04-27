@@ -339,7 +339,7 @@ A0303
 
 Serious detector error (hardware)
 
-Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Is a “major fault” defined according to 3.8 i EN12675 which causes the controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -367,7 +367,7 @@ A0304
 Serious detector error (logic error)
 
 For instance; detector continuously on or off during an extended time.
-Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Is a “major fault” defined according to 3.8 i EN12675 which causes the controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -486,7 +486,9 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
    cyclecounter       integer  0      999    Cycle counter |br|
                                              Used for handling of coordination between TLC’s. |br|
                                              Is counted from 0 until it reaches the cycle time (See S0028). |br|
-                                             :math:`{c=(b+o)\mod t}` |br|
+                                             |br|
+                                             c = (b + o) mod t |br|
+                                               |br|
                                              where c = cycle counter, |br|
                                              b = base cycle counter, |br|
                                              o = offset, |br|
@@ -2213,19 +2215,20 @@ M0013
 Activate a series of inputs
 
 Set given inputs (1-255) of the controllers general purpose I/O to either true or false. This command was introduced due to coordination requirements needing to set many inputs to true/false at the same time and M0006 being to slow to send a message for each input individually. With this command many inputs can be set to true/false at the same time using a single command message. It can be used for all types of input where the traffic light controller must react to external control. Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more.
-Requires security code 2.
-The parameter 'status' sets/unsets a block of 16 inputs at a time. It can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon.
-Format: [Offset];[Bits to set];[Bits to unset];…
 
-- 'Offset' defines where the 16 inputs starts from
-- 'Bits to set' defines which bit(s) to set. '0' if unsed
-- 'Bits to unset' defines which bit(s) to unset. '0' if unused
+Requires security code 2.
+
+The parameter ‘status’ sets/unsets a block of 16 inputs at a time. It can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Format: [Offset];[Bits to set];[Bits to unset];…
+
+- ‘Offset’ defines where the 16 inputs starts from
+- ‘Bits to set’ defines which bit(s) to set. ‘0’ if unsed
+- ‘Bits to unset’ defines which bit(s) to unset. ‘0’ if unused
 
 Example 1:
-"3,4134,65" sets input 4,5,8,15  and unsets 3,9
+“3,4134,65” sets input 4,5,8,15  and unsets 3,9
 - Input starts from no. 5
-- "4134" is 1 0000 0010 0110 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 1000 0001 0011 0000 which are bits 4,5,8,15
-- "65" is 100 0001 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 10 0000 1000 which are bits 3,9
+- “4134” is 1 0000 0010 0110 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 1000 0001 0011 0000 which are bits 4,5,8,15
+- “65” is 100 0001 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 10 0000 1000 which are bits 3,9
 
 Example 2:
 "12,1,4" sets input 12 and unsets 14
@@ -2233,8 +2236,7 @@ Example 2:
 - "1" is 1 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 1 0000 0000 0000, which is bit 12
 - "4" is 100 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 100 0000 0000 0000, which is bit 14
 
-And both these examples could be sent in the same message as:
-"3,4143,65;12,1,4"
+And both these examples could be sent in the same message as: “3,4143,65;12,1,4”
 
 Such a message would set input 4,5,8,12,15 and unset input 3,9,14
 
