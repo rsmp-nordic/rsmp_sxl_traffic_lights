@@ -46,11 +46,12 @@ Aggregated status
    :class: longtable
 
 
-   ========================  ====================  =================  =============================================================
+   ========================  ====================  =================  ==============================================
    ObjectType                functionalPosition    functionalState    Description
-   ========================  ====================  =================  =============================================================
-   Traffic Light Controller                                           functionalPosition and functionalState not used (set to null)
-   ========================  ====================  =================  =============================================================
+   ========================  ====================  =================  ==============================================
+   Traffic Light Controller                                           functionalPosition not used (set to null) |br|
+                                                                      functionalState not used (set to null)
+   ========================  ====================  =================  ==============================================
 
 
 .. tabularcolumns:: |\Yl{0.10}|\Yl{0.30}|\Yl{0.60}|
@@ -367,7 +368,7 @@ A0304
 Serious detector error (logic error)
 
 For instance; detector continuously on or off during an extended time.
-Is a “major fault” defined according to 3.8 i EN12675 which causes the controller to switch to a “failure mode” according to 3.6 in EN12675.
+Is a “major fault” defined according to 3.8 i EN12675 which causes the controller to switch to a “failure mode” according to 3.6 in EN12675
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -488,7 +489,7 @@ Can be used to draw a live signal group diagram as well provide diagnostic infor
                                              Is counted from 0 until it reaches the cycle time (See S0028). |br|
                                              |br|
                                              c = (b + o) mod t |br|
-                                               |br|
+                                             |br|
                                              where c = cycle counter, |br|
                                              b = base cycle counter, |br|
                                              o = offset, |br|
@@ -1617,7 +1618,7 @@ For instance, depending on controller, maintenance personnel can modify traffic 
                       |br|
                       Note: |br|
                       - The checksum should be calculated using the same data as used in S0098 |br|
-                      - Downloaded data with S0098, hashed with SHA-2, should match this value.
+                      - Data Downloaded with S0098 and hashed with SHA-2 should match this value.
    timestamp  string  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    =========  ======  =============================================================================================================================================================
 
@@ -1678,14 +1679,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  =====  =====  ========================================================================
+   =========  =======  =====  =====  ====================================================================================================================================================================
    Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  ========================================================================
-   starttime  string                 Time stamp for start of measuring. Format according to W3C |br|
-                                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                     in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  =======  =====  =====  ====================================================================================================================================================================
+   starttime  string                 Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
    vehicles   integer  0      65535  Number of vehicles on a given detector logic (since last update)
-   =========  =======  =====  =====  ========================================================================
+   =========  =======  =====  =====  ====================================================================================================================================================================
 
 
 S0202
@@ -1830,15 +1829,17 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   =========  ======  ====================================================================================================================================================================
+   =========  ======  =============================================================================================
    Name       Type    Comment
-   =========  ======  ====================================================================================================================================================================
-   start      string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  ======  =============================================================================================
+   start      string  Time stamp for start of measuring. Format according to W3C |br|
+                      XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                      in UTC. E.g. 2009-10-02T14:34:34.341Z
    occupancy  string  Occupancy in percent (%) (0-100) |br|
                       - Value expressed as an integer with a range of 0-100. |br|
                       - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                       - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   =========  ======  ====================================================================================================================================================================
+   =========  ======  =============================================================================================
 
 
 S0208
@@ -2221,30 +2222,30 @@ Requires security code 2.
 The parameter ‘status’ sets/unsets a block of 16 inputs at a time. It can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Format: [Offset];[Bits to set];[Bits to unset];…
 
 - ‘Offset’ defines where the 16 inputs starts from
-- ‘Bits to set’ defines which bit(s) to set. ‘0’ if unsed
+- ‘Bits to set’ defines which bit(s) to set. ‘0’ if unused
 - ‘Bits to unset’ defines which bit(s) to unset. ‘0’ if unused
 
 Example 1:
-“3,4134,65” sets input 4,5,8,15  and unsets 3,9
+“3,4134,65” sets input 4,5,8,15 and unsets 3,9
 - Input starts from no. 5
 - “4134” is 1 0000 0010 0110 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 1000 0001 0011 0000 which are bits 4,5,8,15
 - “65” is 100 0001 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 10 0000 1000 which are bits 3,9
 
 Example 2:
-"12,1,4" sets input 12 and unsets 14
+“12,1,4” sets input 12 and unsets 14
 - Input starts from no. 12
-- "1" is 1 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 1 0000 0000 0000, which is bit 12
-- "4" is 100 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 100 0000 0000 0000, which is bit 14
+- “1” is 1 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 1 0000 0000 0000, which is bit 12
+- “4” is 100 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 100 0000 0000 0000, which is bit 14
 
 And both these examples could be sent in the same message as: “3,4143,65;12,1,4”
 
 Such a message would set input 4,5,8,12,15 and unset input 3,9,14
 
 Example 3:
-"0,1,2" sets input 0 and unsets 1
+“0,1,2” sets input 0 and unsets 1
 - Input starts from 0
-- "1" is 1 in binary, which is bit 0
-- "2" is 10 in binary, which is bit 1
+- “1” is 1 in binary, which is bit 0
+- “2” is 10 in binary, which is bit 1
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2525,11 +2526,11 @@ Activating signal priority is expected to provide more green time for a particul
 
 The movement to prioritize can be referenced in a number of ways, depending on what is configured in the controller, and in the system that sends priority requests. Either:
 
-- Reference a signal group by setting 'signalGroupId'. This method is simple, but will not allow you to have different priority mechanism for the same signal group, unless they can be distinguished by the vehicle type. For example, if you need to trigger different priorities depending on whether a bus goes straight or makes a turn for the same signal group, you need to use of the other referencing methods.
-- Reference an input by setting 'inputId'. This can be useful if you previously used inputs to activate priority. The input will not be activated, only the priority.
-- Reference a connection by setting 'connectionId'. A connection is a movement from a specific ingoing lane to a specific outgoing lane.
-- Reference an intersection approach by setting 'approachId'.
-- Reference an ingoing lane by setting 'laneInId', and optionally also reference an outgoing lane by setting 'laneOutId'.
+- Reference a signal group by setting ‘signalGroupId’. This method is simple, but will not allow you to have different priority mechanism for the same signal group, unless they can be distinguished by the vehicle type. For example, if you need to trigger different priorities depending on whether a bus goes straight or makes a turn for the same signal group, you need to use of the other referencing methods.
+- Reference an input by setting ‘inputId’. This can be useful if you previously used inputs to activate priority. The input will not be activated, only the priority.
+- Reference a connection by setting ‘connectionId’. A connection is a movement from a specific ingoing lane to a specific outgoing lane.
+- Reference an intersection approach by setting ‘approachId’.
+- Reference an ingoing lane by setting ‘laneInId’, and optionally also reference an outgoing lane by setting ‘laneOutId’.
 
 Referencing attributes that are not used must be left out, rather than set to null or empty strings. This includes:
 
@@ -2542,18 +2543,18 @@ Referencing attributes that are not used must be left out, rather than set to nu
 
 Referencing attributes are only used when initiating a request. When updating or cancelling the request, the request is identified by its requestId, and no referencing attributes are allowed.
 
-You initiate a priority request with type set to 'new'. You must provide a request id that uniquely identifies the request on the controller. It can be a randomly generated UUID (universally unique identifier), or it can be constructed by combining e.g. a vehicle id and some other identifier. When updating or cancelling a request, you must pass the same request id again.
+You initiate a priority request with type set to ‘new’. You must provide a request id that uniquely identifies the request on the controller. It can be a randomly generated UUID (universally unique identifier), or it can be constructed by combining e.g. a vehicle id and some other identifier. When updating or cancelling a request, you must pass the same request id again.
 
-Providing ETA (estimated time of arrival) when initiating a request is optional, but can help the controller plan ahead in cases where you're able to send the request before the vehicle arrives at the intersection. You're allowed to initiate the request without an ETA and provide it in a later request update. But providing the ETA when initiating the request is recommended, since it will give the controller more time to plan ahead.
+Providing ETA (estimated time of arrival) when initiating a request is optional, but can help the controller plan ahead in cases where you’re able to send the request before the vehicle arrives at the intersection. You’re allowed to initiate the request without an ETA and provide it in a later request update. But providing the ETA when initiating the request is recommended, since it will give the controller more time to plan ahead.
 
 Like ETA, providing a vehicle type is optional, but can help the controller decide how to best handle the request.
 
 The priority level provides a way to indicate the relative importance of the request compared to other requests. For example, emergency vehicles or delayed buses could be given a higher priority level.
 
-If the ETA changes before the priority is cancelled, or you want to change the priority level, you can send another request message with type set to 'update'. The vehicle type cannot be changed.
+If the ETA changes before the priority is cancelled, or you want to change the priority level, you can send another request message with type set to ‘update’. The vehicle type cannot be changed.
 
 
-When you send a priority request, it will be processed to decide if it's possible to activate the requested priority.
+When you send a priority request, it will be processed to decide if it’s possible to activate the requested priority.
 
 If the request is accepted, the priority can either be activated immediately, or if another priority is currently active, it can be queued for later activation.
 
@@ -2561,9 +2562,9 @@ If the priority cannot be accepted the request is rejected. Cooldown is a specif
 
 When a request is queued, it is expected to become activated later, but in case too long passes without activation, the controller is expected to time out the request.
 
-Once a priority is activated, you're excepted to cancel it as soon as there's no need for it anymore, typically when the vehicle has passed the intersection. You cancel a request by sending a request passing the existing request id setting the type to 'cancel'.
+Once a priority is activated, you’re excepted to cancel it as soon as there’s no need for it anymore, typically when the vehicle has passed the intersection. You cancel a request by sending a request passing the existing request id setting the type to ‘cancel’.
 
-If a request is never cancelled, the controller is expected to remove the priority at some point, but until then the priority might block requests in other direction which is why you should always cancel a priority when it's not needed anymore.
+If a request is never cancelled, the controller is expected to remove the priority at some point, but until then the priority might block requests in other direction which is why you should always cancel a priority when it’s not needed anymore.
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
