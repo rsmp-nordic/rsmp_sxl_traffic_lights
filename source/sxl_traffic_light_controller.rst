@@ -111,7 +111,9 @@ A0001
 
 Serious hardware error
 
-Is a "major fault" defined according to 3.8 i EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Is a “major fault” defined according to 3.8 i EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675.
+
 
 
 A0002
@@ -119,7 +121,8 @@ A0002
 
 Less serious hardware error
 
-Is a "minor fault" defined according to 3.11 in EN12675.
+Is a “minor fault” defined according to 3.11 in EN12675.
+
 
 
 A0003
@@ -127,7 +130,9 @@ A0003
 
 Serious configuration error
 
-Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Is a “major fault” defined according to 3.8 in EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675.
+
 
 
 A0004
@@ -135,7 +140,8 @@ A0004
 
 Less serious configuration error
 
-Is a "minor fault" defined according to 3.11 in EN12675.
+Is a “minor fault” defined according to 3.11 in EN12675.
+
 
 
 A0005
@@ -143,7 +149,8 @@ A0005
 
 Synchronisation error (coordination)
 
-Is a "minor fault" defined according to 3.11 in EN12675.
+Is a “minor fault” defined according to 3.11 in EN12675.
+
 
 
 A0006
@@ -151,7 +158,9 @@ A0006
 
 Safety error
 
-Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Is a “major fault” defined according to 3.8 in EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675.
+
 
 
 A0007
@@ -159,8 +168,10 @@ A0007
 
 Communication error
 
-Used for communication errors with the central system. Includes NTP connection loss if the TLC is configured to use NTP.
-Is a "minor fault" defined according to 3.11 in EN12675.
+Used for communication errors with the central system. Includes NTP
+connection loss if the TLC is configured to use NTP. Is a “minor fault”
+defined according to 3.11 in EN12675.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -183,9 +194,14 @@ A0008
 
 Dead lock error
 
-Used for dead lock errors.
-For instance; a signal group has requested green but is unable to switch due to a conflicting signal group for an extended period of time. At some point the request times out and the controller goes failure mode. The cause for this error is due to configuration errors or external sources.
-Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Used for dead lock errors. For instance; a signal group has requested
+green but is unable to switch due to a conflicting signal group for an
+extended period of time. At some point the request times out and the
+controller goes failure mode. The cause for this error is due to
+configuration errors or external sources. Is a “major fault” defined
+according to 3.8 in EN12675 which causes the controller to switch to a
+“failure mode” according to 3.6 in EN12675.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -206,8 +222,9 @@ A0009
 
 Other error
 
-Used for other errors not covered by any other alarm type.
-Is a "minor fault" defined according to 3.11 in EN12675.
+Used for other errors not covered by any other alarm type. Is a “minor
+fault” defined according to 3.11 in EN12675.
+
 
 
 A0010
@@ -218,6 +235,7 @@ Door open
 Used for open door (room or cabinet).
 
 
+
 A0101
 ^^^^^
 
@@ -226,13 +244,16 @@ Pushbutton error
 Used for push buttons.
 
 
+
 A0201
 ^^^^^
 
 Serious lamp error
 
-Used for lamp errors.
-Is a "major fault" defined according to 3.8 in EN12675 which causes the controller to switch to a "failure mode" according to 3.6 in EN12675.
+Used for lamp errors. Is a “major fault” defined according to 3.8 in
+EN12675 which causes the controller to switch to a “failure mode”
+according to 3.6 in EN12675.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -256,8 +277,9 @@ A0202
 
 Less serious lamp error
 
-Used for lamp errors.
-Is a "minor fault" defined according to 3.11 in EN12675.
+Used for lamp errors. Is a “minor fault” defined according to 3.11 in
+EN12675.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -281,7 +303,8 @@ A0301
 
 Detector error (hardware)
 
-Is a "minor fault" defined according to 3.11 in EN12675.
+Is a “minor fault” defined according to 3.11 in EN12675.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -309,7 +332,8 @@ A0302
 Detector error (logic error)
 
 For instance; detector continuously on or off during an extended time.
-Is a "minor fault" defined according to 3.11 in EN12675.
+Is a “minor fault” defined according to 3.11 in EN12675.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -340,7 +364,9 @@ A0303
 
 Serious detector error (hardware)
 
-Is a “major fault” defined according to 3.8 i EN12675 which causes the controller to switch to a “failure mode” according to 3.6 in EN12675.
+Is a “major fault” defined according to 3.8 i EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -368,7 +394,9 @@ A0304
 Serious detector error (logic error)
 
 For instance; detector continuously on or off during an extended time.
-Is a “major fault” defined according to 3.8 i EN12675 which causes the controller to switch to a “failure mode” according to 3.6 in EN12675
+Is a “major fault” defined according to 3.8 i EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -467,8 +495,11 @@ S0001
 
 Signal group status
 
-Provides the status of each signal group, including basic information such as green, yellow and red. But also detailed technical information.
-Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller.
+Provides the status of each signal group, including basic information
+such as green, yellow and red. But also detailed technical information.
+Can be used to draw a live signal group diagram as well provide
+diagnostic information about the performance of the controller.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -510,8 +541,11 @@ S0002
 
 Detector logic status
 
-Provides the status of all detector logics of the controller.
-Can be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller. Can also be used for bus priority, external control systems, and much more.
+Provides the status of all detector logics of the controller. Can be
+used to draw a live signal group diagram as well provide diagnostic
+information about the performance of the controller. Can also be used
+for bus priority, external control systems, and much more.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -536,8 +570,10 @@ S0003
 
 Input status
 
-Input (1-255) of the controllers general purpose I/O.
-Input is used where the traffic light controller must react to external control. It could be external detectors, bus priority, and much more.
+Input (1-255) of the controllers general purpose I/O. Input is used
+where the traffic light controller must react to external control. It
+could be external detectors, bus priority, and much more.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -567,8 +603,11 @@ S0004
 
 Output status
 
-Output (1-255) of the controllers general purpose I/O.
-Can be used for all types of output where the traffic light controller needs to control other equipment. Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
+Output (1-255) of the controllers general purpose I/O. Can be used for
+all types of output where the traffic light controller needs to control
+other equipment. Can be used for bus priority, coordination between
+traffic controllers, external control systems, and much more.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -598,8 +637,11 @@ S0005
 
 Traffic Light Controller starting
 
-The traffic signal is starting, e.g. it is in startup mode and has not begun working normally yet.
-During startup mode the traffic controller shows dark, red, yellow flash or using the predetermined start cycle (minimum times).
+The traffic signal is starting, e.g. it is in startup mode and has not
+begun working normally yet. During startup mode the traffic controller
+shows dark, red, yellow flash or using the predetermined start cycle
+(minimum times).
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -621,8 +663,9 @@ S0006
 
 Emergency stage
 
-The status is active during emergency prioritization.
-Used in situations where full priority is given in the emergency vehicle program.
+The status is active during emergency prioritization. Used in situations
+where full priority is given in the emergency vehicle program.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -645,10 +688,14 @@ S0007
 
 Controller switched on
 
-The controller is active and is not in dark mode.
-Used to determine if the controller is operating, e.g. it shows red, green or yellow to the vehicles.
-During maintenance work the controller might be using dark mode (no output to the signal heads).
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
+The controller is active and is not in dark mode. Used to determine if
+the controller is operating, e.g. it shows red, green or yellow to the
+vehicles. During maintenance work the controller might be using dark
+mode (no output to the signal heads). Please note that all values in
+this status uses comma-separated lists - one value for each
+intersection, e.g. “0” and “True” (one intersection) or “1,2” and
+“True,False” (two intersections).
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -679,9 +726,12 @@ S0008
 
 Manual control
 
-Traffic control deactivated in controller.
-Signal timings is controlled manually by service personnel using the operating panel of the controller.
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
+Traffic control deactivated in controller. Signal timings is controlled
+manually by service personnel using the operating panel of the
+controller. Please note that all values in this status uses
+comma-separated lists - one value for each intersection, e.g. “0” and
+“True” (one intersection) or “1,2” and “True,False” (two intersections).
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -713,8 +763,11 @@ S0009
 Fixed time control
 
 Traffic actuated control deactivated and a pre-timed control is used.
-Usually only used in case normal detectors can't be used, e.g. during maintenance work.
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
+Usually only used in case normal detectors can’t be used, e.g. during
+maintenance work. Please note that all values in this status uses
+comma-separated lists - one value for each intersection, e.g. “0” and
+“True” (one intersection) or “1,2” and “True,False” (two intersections).
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -745,9 +798,15 @@ S0010
 
 Isolated control
 
-Isolated control mode indicates that the controller operates independently of any other traffic light controller. This may be different depending on traffic program (time plan).
-Used to determine if the controller is operating independently or operating with other controllers (coordination).
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "0" and "True" (one intersection) or "1,2" and "True,False" (two intersections).
+Isolated control mode indicates that the controller operates
+independently of any other traffic light controller. This may be
+different depending on traffic program (time plan). Used to determine if
+the controller is operating independently or operating with other
+controllers (coordination). Please note that all values in this status
+uses comma-separated lists - one value for each intersection, e.g. “0”
+and “True” (one intersection) or “1,2” and “True,False” (two
+intersections).
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -778,10 +837,13 @@ S0011
 
 Yellow flash
 
-The controller shows yellow flash.
-Yellow flash may be used during a serious fault (depending on configuration) or maintenance work. It can also be manually set using M0001.
-Some countries may use yellow flash as an normal operating mode, and not necessarily during fault.
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "True,False"
+The controller shows yellow flash. Yellow flash may be used during a
+serious fault (depending on configuration) or maintenance work. It can
+also be manually set using M0001. Some countries may use yellow flash as
+an normal operating mode, and not necessarily during fault. Please note
+that all values in this status uses comma-separated lists - one value
+for each intersection, e.g. “1,2” and “True,False”
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -812,9 +874,11 @@ S0012
 
 All red
 
-The controller show all red.
-All red can be manually set using the controllers operating panel during maintenance work.
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "True,False"
+The controller show all red. All red can be manually set using the
+controllers operating panel during maintenance work. Please note that
+all values in this status uses comma-separated lists - one value for
+each intersection, e.g. “1,2” and “True,False”
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -845,9 +909,12 @@ S0013
 
 Police key
 
-The controller is forced to dark mode or yellow flash.
-The "police key" is a external control switch present in some controllers that manually switches the controller to either dark mode or yellow flash.
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "0,1"
+The controller is forced to dark mode or yellow flash. The “police key”
+is a external control switch present in some controllers that manually
+switches the controller to either dark mode or yellow flash. Please note
+that all values in this status uses comma-separated lists - one value
+for each intersection, e.g. “1,2” and “0,1”
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -873,8 +940,12 @@ S0014
 
 Current time plan
 
-The current time plan (signal program) used in the controller. There may be 1-255 predefined time plans.
-The time plan (signal program) may change signal timings, cycle time, control strategy and much more. Typical usage is is scenario based control where change of program is used to change priority etc.
+The current time plan (signal program) used in the controller. There may
+be 1-255 predefined time plans. The time plan (signal program) may
+change signal timings, cycle time, control strategy and much more.
+Typical usage is is scenario based control where change of program is
+used to change priority etc.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -902,9 +973,15 @@ S0015
 
 Current traffic situation
 
-The current traffic situation used in the controller.
-Used for area-based control where a command can be sent to a master traffic light controller about which predefined traffic situation to use (1-255).
-Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
+The current traffic situation used in the controller. Used for
+area-based control where a command can be sent to a master traffic light
+controller about which predefined traffic situation to use (1-255).
+Traffic situation is a concept used to divide multiple TLC’s into areas
+and sub-areas. The traffic situation gives the possibility to change the
+TLC sub-area dynamically depending on the time of day and the traffic
+flow. Depending on the traffic situation each TLC selects the time plan
+dynamically.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -932,7 +1009,9 @@ S0016
 
 Number of detector logics
 
-Can be used by the management system to check the number of detector logics configured in the controller.
+Can be used by the management system to check the number of detector
+logics configured in the controller.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -953,7 +1032,9 @@ S0017
 
 Number of signal groups
 
-Can be used for the management system to check the number of signal groups configured in the controller.
+Can be used for the management system to check the number of signal
+groups configured in the controller.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -974,7 +1055,9 @@ S0018
 
 Number of time plans
 
-Can be used for the management system to check the number of time plans configured in the controller.
+Can be used for the management system to check the number of time plans
+configured in the controller.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -995,7 +1078,9 @@ S0019
 
 Number of traffic situations
 
-Can be used for the management system to check the number of traffic situations configured in the controller.
+Can be used for the management system to check the number of traffic
+situations configured in the controller.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1016,8 +1101,11 @@ S0020
 
 Control mode
 
-Can be used for the management system to check the current control mode (startup, normal, standby, failure, test).
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. "1,2" and "startup,control"
+Can be used for the management system to check the current control mode
+(startup, normal, standby, failure, test). Please note that all values
+in this status uses comma-separated lists - one value for each
+intersection, e.g. “1,2” and “startup,control”
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -1044,8 +1132,11 @@ S0021
 
 Manually set detector logic
 
-Provides status of detector logic (1-255) regarding if they are either forced to true or false.
-Can be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
+Provides status of detector logic (1-255) regarding if they are either
+forced to true or false. Can be used to connect RSMP compatible
+detection equipment to the traffic light controller. Can also be used
+for prioritization.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1066,8 +1157,12 @@ S0022
 
 List of time plans
 
-Provides a list of the configured time plans which is possible to use. This status was added due to status S0018 only provides the total number of time plans and not which were possible to use with M0002.
-Can be used for the management system to check the number of time plans configured in the controller.
+Provides a list of the configured time plans which is possible to use.
+This status was added due to status S0018 only provides the total number
+of time plans and not which were possible to use with M0002. Can be used
+for the management system to check the number of time plans configured
+in the controller.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1088,8 +1183,11 @@ S0023
 
 Dynamic bands
 
-Provides a list of all defined dynamic bands. Dynamic bands moves start of signal groups in the cycle and changes the signal timings.
-A typical usage of dynamic bands is scenario based control where changing of signal timings is used for optimal traffic flow.
+Provides a list of all defined dynamic bands. Dynamic bands moves start
+of signal groups in the cycle and changes the signal timings. A typical
+usage of dynamic bands is scenario based control where changing of
+signal timings is used for optimal traffic flow.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1119,8 +1217,11 @@ S0024
 
 Offset time
 
-Offset time is used to define an offset between intersections in coordinated control. It is based on the expected travel time between intersections.
-Can be used by the management system to check to fine tune the coordination for optimal traffic flow.
+Offset time is used to define an offset between intersections in
+coordinated control. It is based on the expected travel time between
+intersections. Can be used by the management system to check to fine
+tune the coordination for optimal traffic flow.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1149,7 +1250,9 @@ S0025
 
 Time-of-Green / Time-of-Red
 
-Provides predicted signal timings of green and red for each signal group. Max, min and likely time to green and red.
+Provides predicted signal timings of green and red for each signal
+group. Max, min and likely time to green and red.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1183,8 +1286,10 @@ S0026
 
 Week time table
 
-Week time table for signal programs (time plan) to use for each day during a week.
-The week time table determine which predefined signal timings (time plan) to use during the week for optimal traffic flow.
+Week time table for signal programs (time plan) to use for each day
+during a week. The week time table determine which predefined signal
+timings (time plan) to use during the week for optimal traffic flow.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1221,8 +1326,9 @@ S0027
 
 Time tables
 
-Time of day for when to switch signal program (time plan).
-The signal timings (time plan) to use during time of day for optimal traffic flow.
+Time of day for when to switch signal program (time plan). The signal
+timings (time plan) to use during time of day for optimal traffic flow.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1261,8 +1367,12 @@ S0028
 
 Cycle time
 
-Cycle time (or cycle length) is the sum of all phases in a time plan (traffic program). This time is fixed when using fixed time control or coordination (except "local coordination"). When the cycle counter reaches this length it is reset back to zero.
-Changing the cycle time can be used as part of scenario based control.
+Cycle time (or cycle length) is the sum of all phases in a time plan
+(traffic program). This time is fixed when using fixed time control or
+coordination (except “local coordination”). When the cycle counter
+reaches this length it is reset back to zero. Changing the cycle time
+can be used as part of scenario based control.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1291,8 +1401,11 @@ S0029
 
 Forced input status
 
-Provide status of input (1-255) regarding if they are forced or not. Can be used for all types of input where the traffic light controller must react to external control.
-Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
+Provide status of input (1-255) regarding if they are forced or not. Can
+be used for all types of input where the traffic light controller must
+react to external control. Can be used for bus priority, coordination
+between traffic controllers, external control systems, and much more.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1313,8 +1426,12 @@ S0030
 
 Forced output status
 
-Provide status of output (1-255) regarding if they are forced or not. Can be used for all types of output where the traffic light controller needs to control other equipment.
-Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
+Provide status of output (1-255) regarding if they are forced or not.
+Can be used for all types of output where the traffic light controller
+needs to control other equipment. Can be used for bus priority,
+coordination between traffic controllers, external control systems, and
+much more.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1335,8 +1452,12 @@ S0031
 
 Trigger level sensitivity for loop detector
 
-The trigger level sensitivity determines at what level the loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives.
-Can be used to make sure that the detectors detect traffic as intended.
+The trigger level sensitivity determines at what level the loop detector
+should trigger. If it set too low then then traffic will not be detected
+as intended. If it is set too high the detector might give false
+positives. Can be used to make sure that the detectors detect traffic as
+intended.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1360,8 +1481,12 @@ S0032
 
 Coordinated control
 
-This status is used when coordination between traffic light controllers is active. Coordination is described in detail in the corresponding section
-Please note that all values in this status uses comma-separated lists - one value for each intersection, e.g. “1,2” and “centralized,off”
+This status is used when coordination between traffic light controllers
+is active. Coordination is described in detail in the corresponding
+section Please note that all values in this status uses comma-separated
+lists - one value for each intersection, e.g. “1,2” and
+“centralized,off”
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -1393,34 +1518,49 @@ S0033
 
 Signal Priority Status
 
-This status can be used to get updates about priority requests. For example, you can use it to know when priority requests are activated or cancelled.
+This status can be used to get updates about priority requests. For
+example, you can use it to know when priority requests are activated or
+cancelled.
 
-A list of priorities is returned, referred to by their request ids. The same request id can appear only once.
+A list of priorities is returned, referred to by their request ids. The
+same request id can appear only once.
 
-All priorities are included in the list (not only the ones that have changed state since the last update). This is done regardless of whether the status is send in respond to a status request, or due to a status subscription, and also regardless of whether a status subscription uses an update interval, or send-on-change, or both.
+All priorities are included in the list (not only the ones that have
+changed state since the last update). This is done regardless of whether
+the status is send in respond to a status request, or due to a status
+subscription, and also regardless of whether a status subscription uses
+an update interval, or send-on-change, or both.
 
-If you subscribe using an update interval, you’re not guaranteed to get all intermediate states. To guarantee that, send-on-change must be used when subscribing.
+If you subscribe using an update interval, you’re not guaranteed to get
+all intermediate states. To guarantee that, send-on-change must be used
+when subscribing.
 
-To understand how this status relates to ETSI/J2735, please see the `wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`_.
+To understand how this status relates to ETSI/J2735, please see the
+`wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`__.
 
-All priorities are send on every status update, regardless of whether an interval, or sendOnChange (or both) is used.
+All priorities are send on every status update, regardless of whether an
+interval, or sendOnChange (or both) is used.
 
-When a priority reaches an end states (completed, timeout, rejected, cooldown or stale), it must be sent once on the next status update, then removed from the list.
+When a priority reaches an end states (completed, timeout, rejected,
+cooldown or stale), it must be sent once on the next status update, then
+removed from the list.
 
-A request always starts in the ‘received’ state. The following table shows the possible state transitions:
+A request always starts in the ‘received’ state. The following table
+shows the possible state transitions:
 
-==========  =====================================
-State       Possible next states
-==========  =====================================
-received    queued, activated, rejected, cooldown
-queued      activated, timeout
-activated   completed, stale
-completed
-timeout
-rejected
-cooldown
-stale
-==========  =====================================
+========= =====================================
+State     Possible next states
+========= =====================================
+received  queued, activated, rejected, cooldown
+queued    activated, timeout
+activated completed, stale
+completed 
+timeout   
+rejected  
+cooldown  
+stale     
+========= =====================================
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1470,9 +1610,10 @@ S0034
 
 Timeout for dynamic bands
 
-Time until a designated time plan is entered due to lost connection with the supervisor.
-Disabled if set to '0'.
-Used in conjunction with dynamic bands, M0014
+Time until a designated time plan is entered due to lost connection with
+the supervisor. Disabled if set to ‘0’. Used in conjunction with dynamic
+bands, M0014
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1493,7 +1634,9 @@ S0091
 
 Operator logged in/out OP-panel
 
-Provides information if maintenance personnel is currently working on site.
+Provides information if maintenance personnel is currently working on
+site.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -1516,7 +1659,9 @@ S0092
 
 Operator logged in/out web-interface
 
-Provides information if maintenance personnel is currently working with the controller.
+Provides information if maintenance personnel is currently working with
+the controller.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -1542,6 +1687,7 @@ Version of Traffic Light Controller
 Provides diagnostic version information.
 
 
+
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
 
 .. table:: S0095
@@ -1560,8 +1706,9 @@ S0096
 
 Current date and time
 
-Note: UTC is used.
-Provides diagnostic information about the current date and time set in the controller.
+Note: UTC is used. Provides diagnostic information about the current
+date and time set in the controller.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1587,8 +1734,12 @@ S0097
 
 Checksum of traffic parameters
 
-Can be used to check if any traffic parameter has been changed.
-For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to monitor if any traffic parameter has been changed. The traffic parameters may be downloaded with S0098.
+Can be used to check if any traffic parameter has been changed. For
+instance, depending on controller, maintenance personnel can modify
+traffic parameters on site to optimize traffic flow. This status
+provides the ability to monitor if any traffic parameter has been
+changed. The traffic parameters may be downloaded with S0098.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1628,8 +1779,11 @@ S0098
 
 Configuration of traffic parameters
 
-Can be used to download all traffic parameters from the controller.
-For instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to downloaded them.
+Can be used to download all traffic parameters from the controller. For
+instance, depending on controller, maintenance personnel can modify
+traffic parameters on site to optimize traffic flow. This status
+provides the ability to downloaded them.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -1673,6 +1827,7 @@ Traffic Counting: Number of vehicles
 Used for Traffic counting.
 
 
+
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0201
@@ -1693,6 +1848,7 @@ S0202
 Traffic Counting: Vehicle speed
 
 Used for Traffic counting.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1719,6 +1875,7 @@ Traffic Counting: Occupancy
 Used for Traffic counting.
 
 
+
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0203
@@ -1741,6 +1898,7 @@ S0204
 Traffic Counting: Number of vehicles of given classification
 
 Used for Traffic counting.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1772,7 +1930,9 @@ S0205
 
 Traffic Counting: Number of vehicles
 
-This status was introduced to improve performance in case traffic counting is done on all all detectors.
+This status was introduced to improve performance in case traffic
+counting is done on all all detectors.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1797,7 +1957,9 @@ S0206
 
 Traffic Counting: Vehicle speed
 
-This status was introduced to improve performance in case traffic counting is done on all all detectors.
+This status was introduced to improve performance in case traffic
+counting is done on all all detectors.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1824,7 +1986,9 @@ S0207
 
 Traffic Counting: Occupancy
 
-This status was introduced to improve performance in case traffic counting is done on all all detectors.
+This status was introduced to improve performance in case traffic
+counting is done on all all detectors.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1851,7 +2015,9 @@ S0208
 
 Traffic Counting: Number of vehicles of given classification
 
-This status was introduced to improve performance in case traffic counting is done on all all detectors.
+This status was introduced to improve performance in case traffic
+counting is done on all all detectors.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -1953,6 +2119,7 @@ Sets the controller to yellow flash, dark mode or normal control.
 Requires security code 2.
 
 
+
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: M0001
@@ -1977,10 +2144,11 @@ M0002
 
 Sets current time plan
 
-Change of traffic program of the traffic light controller.
-Typical usages is scenario based control where change of program is used to change signal timings etc.
-This command changes the signal timings for optimal traffic flow.
-Requires security code 2
+Change of traffic program of the traffic light controller. Typical
+usages is scenario based control where change of program is used to
+change signal timings etc. This command changes the signal timings for
+optimal traffic flow. Requires security code 2
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2004,9 +2172,14 @@ M0003
 
 Sets traffic situation the controller uses
 
-Used for area-based control where a command can be sent to a master traffic light controller about which predefined traffic situation to use (1-255).
-Traffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.
-Requires security code 2
+Used for area-based control where a command can be sent to a master
+traffic light controller about which predefined traffic situation to use
+(1-255). Traffic situation is a concept used to divide multiple TLC’s
+into areas and sub-areas. The traffic situation gives the possibility to
+change the TLC sub-area dynamically depending on the time of day and the
+traffic flow. Depending on the traffic situation each TLC selects the
+time plan dynamically. Requires security code 2
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2030,8 +2203,9 @@ M0004
 
 Restarts Traffic Light Controller
 
-Used in the event of serious faults in the device where a restart is considered to be able to remedy a problem.
-Requires security code 2
+Used in the event of serious faults in the device where a restart is
+considered to be able to remedy a problem. Requires security code 2
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2053,9 +2227,11 @@ M0005
 
 Activate emergency route
 
-The function is made for emergency prioritization. Works in the same way as the M0006 and M0008 where the traffic light controller responds to an input.
-Should be used in situations where full priority is given in the emergency vehicle program.
-Requires security code 2.
+The function is made for emergency prioritization. Works in the same way
+as the M0006 and M0008 where the traffic light controller responds to an
+input. Should be used in situations where full priority is given in the
+emergency vehicle program. Requires security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2079,11 +2255,14 @@ M0006
 
 Activate input
 
-Set given input (1-255) of the controllers general purpose I/O to either true or false.
-The function can provide an input to the traffic light controller on which a predefined action can be taken.
-Can be used for all types of input where the traffic light controller must react to external control.
-Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more.
-Requires security code 2.
+Set given input (1-255) of the controllers general purpose I/O to either
+true or false. The function can provide an input to the traffic light
+controller on which a predefined action can be taken. Can be used for
+all types of input where the traffic light controller must react to
+external control. Typical usages are bus priority, coordination between
+traffic controllers, external control systems, and much more. Requires
+security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2107,9 +2286,10 @@ M0007
 
 Activate fixed time control
 
-Deactivates the traffic actuated control using detectors and activates pre-timed control.
-Can be used in case normal detectors can't be used, e.g. during maintenance work.
-Requires security code 2.
+Deactivates the traffic actuated control using detectors and activates
+pre-timed control. Can be used in case normal detectors can’t be used,
+e.g. during maintenance work. Requires security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2132,9 +2312,11 @@ M0008
 
 Sets manual activation of detector logic
 
-Set given detector logic (1-255) to either true or false.
-Can e.g. be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.
-Requires security code 2
+Set given detector logic (1-255) to either true or false. Can e.g. be
+used to connect RSMP compatible detection equipment to the traffic light
+controller. Can also be used for prioritization. Requires security code
+2
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2219,37 +2401,47 @@ M0013
 
 Activate a series of inputs
 
-Set given inputs (1-255) of the controllers general purpose I/O to either true or false. This command was introduced due to coordination requirements needing to set many inputs to true/false at the same time and M0006 being to slow to send a message for each input individually. With this command many inputs can be set to true/false at the same time using a single command message. It can be used for all types of input where the traffic light controller must react to external control. Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more.
+Set given inputs (1-255) of the controllers general purpose I/O to
+either true or false. This command was introduced due to coordination
+requirements needing to set many inputs to true/false at the same time
+and M0006 being to slow to send a message for each input individually.
+With this command many inputs can be set to true/false at the same time
+using a single command message. It can be used for all types of input
+where the traffic light controller must react to external control.
+Typical usages are bus priority, coordination between traffic
+controllers, external control systems, and much more.
 
 Requires security code 2.
 
-The parameter ‘status’ sets/unsets a block of 16 inputs at a time. It can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Format: [Offset];[Bits to set];[Bits to unset];…
+The parameter ‘status’ sets/unsets a block of 16 inputs at a time. It
+can be repeated to set several blocks of 16 inputs. Values are separated
+with comma. Blocks are separated with semicolon. Format: [Offset];[Bits
+to set];[Bits to unset];…
 
-- ‘Offset’ defines where the 16 inputs starts from
-- ‘Bits to set’ defines which bit(s) to set. ‘0’ if unused
-- ‘Bits to unset’ defines which bit(s) to unset. ‘0’ if unused
+-  ‘Offset’ defines where the 16 inputs starts from
+-  ‘Bits to set’ defines which bit(s) to set. ‘0’ if unused
+-  ‘Bits to unset’ defines which bit(s) to unset. ‘0’ if unused
 
-Example 1:
-“3,4134,65” sets input 4,5,8,15 and unsets 3,9
-- Input starts from no. 5
-- “4134” is 1 0000 0010 0110 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 1000 0001 0011 0000 which are bits 4,5,8,15
-- “65” is 100 0001 in binary, but since input starts from 3, it is shifted 3 bits, e.g. 10 0000 1000 which are bits 3,9
+Example 1: “3,4134,65” sets input 4,5,8,15 and unsets 3,9 - Input starts
+from no. 5 - “4134” is 1 0000 0010 0110 in binary, but since input
+starts from 3, it is shifted 3 bits, e.g. 1000 0001 0011 0000 which are
+bits 4,5,8,15 - “65” is 100 0001 in binary, but since input starts from
+3, it is shifted 3 bits, e.g. 10 0000 1000 which are bits 3,9
 
-Example 2:
-“12,1,4” sets input 12 and unsets 14
-- Input starts from no. 12
-- “1” is 1 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 1 0000 0000 0000, which is bit 12
-- “4” is 100 in binary, but since input starts at 12 it is shifted 12 bits, e.g. 100 0000 0000 0000, which is bit 14
+Example 2: “12,1,4” sets input 12 and unsets 14 - Input starts from no.
+12 - “1” is 1 in binary, but since input starts at 12 it is shifted 12
+bits, e.g. 1 0000 0000 0000, which is bit 12 - “4” is 100 in binary, but
+since input starts at 12 it is shifted 12 bits, e.g. 100 0000 0000 0000,
+which is bit 14
 
-And both these examples could be sent in the same message as: “3,4143,65;12,1,4”
+And both these examples could be sent in the same message as:
+“3,4143,65;12,1,4”
 
 Such a message would set input 4,5,8,12,15 and unset input 3,9,14
 
-Example 3:
-“0,1,2” sets input 0 and unsets 1
-- Input starts from 0
-- “1” is 1 in binary, which is bit 0
-- “2” is 10 in binary, which is bit 1
+Example 3: “0,1,2” sets input 0 and unsets 1 - Input starts from 0 - “1”
+is 1 in binary, which is bit 0 - “2” is 10 in binary, which is bit 1
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2272,9 +2464,12 @@ M0014
 
 Set dynamic bands
 
-Can be used to change between predefined signal timings. Moves the start of signal groups in the cycle.
-This command can be used to change the split of green time during the cycle. A typical usage is scenario based control where changing of signal timings is used for optimal traffic flow.
-Requires security code 2
+Can be used to change between predefined signal timings. Moves the start
+of signal groups in the cycle. This command can be used to change the
+split of green time during the cycle. A typical usage is scenario based
+control where changing of signal timings is used for optimal traffic
+flow. Requires security code 2
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2305,9 +2500,11 @@ M0015
 
 Set Offset time
 
-Offset time is used to define an offset between intersections in coordinated control. It is based on the expected travel time between intersections.
-This command can be used to fine tune the coordination for optimal traffic flow.
-Requires security code 2.
+Offset time is used to define an offset between intersections in
+coordinated control. It is based on the expected travel time between
+intersections. This command can be used to fine tune the coordination
+for optimal traffic flow. Requires security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2330,9 +2527,10 @@ M0016
 
 Set week time table
 
-Set which time table for signal programs to use for each day during a week.
-This command changes the signal timings during the week for optimal traffic flow.
-Requires security code 2.
+Set which time table for signal programs to use for each day during a
+week. This command changes the signal timings during the week for
+optimal traffic flow. Requires security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2371,9 +2569,10 @@ M0017
 
 Set time tables
 
-Set time of day for when to automatically switch signal program (time plan).
-This command changes the signal timings according to time of day for optimal traffic flow.
-Requires security code 2.
+Set time of day for when to automatically switch signal program (time
+plan). This command changes the signal timings according to time of day
+for optimal traffic flow. Requires security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2413,9 +2612,14 @@ M0018
 
 Set Cycle time
 
-Cycle time (or cycle length) is the sum of all phases in a time plan (traffic program). This time is fixed when using fixed time control or coordination (except "local coordination"). When the cycle counter reaches this length it is reset back to zero.
-This command provides the ability to change the cycle time when using coordinated or fixed time control. It changes the timings for optimal traffic flow. Can be used with scenario based control.
-Requires security code 2.
+Cycle time (or cycle length) is the sum of all phases in a time plan
+(traffic program). This time is fixed when using fixed time control or
+coordination (except “local coordination”). When the cycle counter
+reaches this length it is reset back to zero. This command provides the
+ability to change the cycle time when using coordinated or fixed time
+control. It changes the timings for optimal traffic flow. Can be used
+with scenario based control. Requires security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2438,9 +2642,12 @@ M0019
 
 Force input
 
-Force a given input (1-255) of the controllers general purpose I/O to either True or False. Can be used for all types of input where the traffic light controller must react to external control.
-Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
-Requires security code 2.
+Force a given input (1-255) of the controllers general purpose I/O to
+either True or False. Can be used for all types of input where the
+traffic light controller must react to external control. Can be used for
+bus priority, coordination between traffic controllers, external control
+systems, and much more. Requires security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2466,9 +2673,12 @@ M0020
 
 Force output
 
-Force a given output (1-255) of the controllers general purpose I/O to either True of False. Can be used for all types of output where the traffic light controller needs to control other equipment.
-Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.
-Requires security code 2.
+Force a given output (1-255) of the controllers general purpose I/O to
+either True of False. Can be used for all types of output where the
+traffic light controller needs to control other equipment. Can be used
+for bus priority, coordination between traffic controllers, external
+control systems, and much more. Requires security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2494,9 +2704,12 @@ M0021
 
 Set trigger level sensitivity for loop detector
 
-The trigger level sensitivity determines at what level a loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives.
-This command provides the ability to fine tune loop detectors to make sure they detect traffic as intended.
-Requires security code 2
+The trigger level sensitivity determines at what level a loop detector
+should trigger. If it set too low then then traffic will not be detected
+as intended. If it is set too high the detector might give false
+positives. This command provides the ability to fine tune loop detectors
+to make sure they detect traffic as intended. Requires security code 2
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2520,55 +2733,107 @@ M0022
 
 Request Signal Priority
 
-Useful for bus priority or other type of priorities like emergency vehicles or groups of cyclists.
+Useful for bus priority or other type of priorities like emergency
+vehicles or groups of cyclists.
 
-The benefit of using this message over activating inputs or detector logics is that you can specify a priority level, vehicle type and estimated time of arrival. You can also update or cancel the request, and use the corresponding status message to track the status of the request, including how much priority was actually given.
-To understand how this command relates to ETSI/J2735, please see the
-`wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`_.
+The benefit of using this message over activating inputs or detector
+logics is that you can specify a priority level, vehicle type and
+estimated time of arrival. You can also update or cancel the request,
+and use the corresponding status message to track the status of the
+request, including how much priority was actually given. To understand
+how this command relates to ETSI/J2735, please see the
+`wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`__.
 
-Activating signal priority is expected to provide more green time for a particular movement through the intersection, but the exact mechanism must typically be configured in the controller.
+Activating signal priority is expected to provide more green time for a
+particular movement through the intersection, but the exact mechanism
+must typically be configured in the controller.
 
-The movement to prioritize can be referenced in a number of ways, depending on what is configured in the controller, and in the system that sends priority requests. Either:
+The movement to prioritize can be referenced in a number of ways,
+depending on what is configured in the controller, and in the system
+that sends priority requests. Either:
 
-- Reference a signal group by setting ‘signalGroupId’. This method is simple, but will not allow you to have different priority mechanism for the same signal group, unless they can be distinguished by the vehicle type. For example, if you need to trigger different priorities depending on whether a bus goes straight or makes a turn for the same signal group, you need to use of the other referencing methods.
-- Reference an input by setting ‘inputId’. This can be useful if you previously used inputs to activate priority. The input will not be activated, only the priority.
-- Reference a connection by setting ‘connectionId’. A connection is a movement from a specific ingoing lane to a specific outgoing lane.
-- Reference an intersection approach by setting ‘approachId’.
-- Reference an ingoing lane by setting ‘laneInId’, and optionally also reference an outgoing lane by setting ‘laneOutId’.
+-  Reference a signal group by setting ‘signalGroupId’. This method is
+   simple, but will not allow you to have different priority mechanism
+   for the same signal group, unless they can be distinguished by the
+   vehicle type. For example, if you need to trigger different
+   priorities depending on whether a bus goes straight or makes a turn
+   for the same signal group, you need to use of the other referencing
+   methods.
+-  Reference an input by setting ‘inputId’. This can be useful if you
+   previously used inputs to activate priority. The input will not be
+   activated, only the priority.
+-  Reference a connection by setting ‘connectionId’. A connection is a
+   movement from a specific ingoing lane to a specific outgoing lane.
+-  Reference an intersection approach by setting ‘approachId’.
+-  Reference an ingoing lane by setting ‘laneInId’, and optionally also
+   reference an outgoing lane by setting ‘laneOutId’.
 
-Referencing attributes that are not used must be left out, rather than set to null or empty strings. This includes:
+Referencing attributes that are not used must be left out, rather than
+set to null or empty strings. This includes:
 
-- signalGroupId
-- inputId
-- connectionId
-- approachId
-- laneInId
-- laneOutId
+-  signalGroupId
+-  inputId
+-  connectionId
+-  approachId
+-  laneInId
+-  laneOutId
 
-Referencing attributes are only used when initiating a request. When updating or cancelling the request, the request is identified by its requestId, and no referencing attributes are allowed.
+Referencing attributes are only used when initiating a request. When
+updating or cancelling the request, the request is identified by its
+requestId, and no referencing attributes are allowed.
 
-You initiate a priority request with type set to ‘new’. You must provide a request id that uniquely identifies the request on the controller. It can be a randomly generated UUID (universally unique identifier), or it can be constructed by combining e.g. a vehicle id and some other identifier. When updating or cancelling a request, you must pass the same request id again.
+You initiate a priority request with type set to ‘new’. You must provide
+a request id that uniquely identifies the request on the controller. It
+can be a randomly generated UUID (universally unique identifier), or it
+can be constructed by combining e.g. a vehicle id and some other
+identifier. When updating or cancelling a request, you must pass the
+same request id again.
 
-Providing ETA (estimated time of arrival) when initiating a request is optional, but can help the controller plan ahead in cases where you’re able to send the request before the vehicle arrives at the intersection. You’re allowed to initiate the request without an ETA and provide it in a later request update. But providing the ETA when initiating the request is recommended, since it will give the controller more time to plan ahead.
+Providing ETA (estimated time of arrival) when initiating a request is
+optional, but can help the controller plan ahead in cases where you’re
+able to send the request before the vehicle arrives at the intersection.
+You’re allowed to initiate the request without an ETA and provide it in
+a later request update. But providing the ETA when initiating the
+request is recommended, since it will give the controller more time to
+plan ahead.
 
-Like ETA, providing a vehicle type is optional, but can help the controller decide how to best handle the request.
+Like ETA, providing a vehicle type is optional, but can help the
+controller decide how to best handle the request.
 
-The priority level provides a way to indicate the relative importance of the request compared to other requests. For example, emergency vehicles or delayed buses could be given a higher priority level.
+The priority level provides a way to indicate the relative importance of
+the request compared to other requests. For example, emergency vehicles
+or delayed buses could be given a higher priority level.
 
-If the ETA changes before the priority is cancelled, or you want to change the priority level, you can send another request message with type set to ‘update’. The vehicle type cannot be changed.
+If the ETA changes before the priority is cancelled, or you want to
+change the priority level, you can send another request message with
+type set to ‘update’. The vehicle type cannot be changed.
 
+When you send a priority request, it will be processed to decide if it’s
+possible to activate the requested priority.
 
-When you send a priority request, it will be processed to decide if it’s possible to activate the requested priority.
+If the request is accepted, the priority can either be activated
+immediately, or if another priority is currently active, it can be
+queued for later activation.
 
-If the request is accepted, the priority can either be activated immediately, or if another priority is currently active, it can be queued for later activation.
+If the priority cannot be accepted the request is rejected. Cooldown is
+a specific type of rejection, which means that s similar request has
+just completed, and some time needs to pass before a similar request can
+be activated.
 
-If the priority cannot be accepted the request is rejected. Cooldown is a specific type of rejection, which means that s similar request has just completed, and some time needs to pass before a similar request can be activated.
+When a request is queued, it is expected to become activated later, but
+in case too long passes without activation, the controller is expected
+to time out the request.
 
-When a request is queued, it is expected to become activated later, but in case too long passes without activation, the controller is expected to time out the request.
+Once a priority is activated, you’re excepted to cancel it as soon as
+there’s no need for it anymore, typically when the vehicle has passed
+the intersection. You cancel a request by sending a request passing the
+existing request id setting the type to ‘cancel’.
 
-Once a priority is activated, you’re excepted to cancel it as soon as there’s no need for it anymore, typically when the vehicle has passed the intersection. You cancel a request by sending a request passing the existing request id setting the type to ‘cancel’.
+If a request is never cancelled, the controller is expected to remove
+the priority at some point, but until then the priority might block
+requests in other direction which is why you should always cancel a
+priority when it’s not needed anymore.
 
-If a request is never cancelled, the controller is expected to remove the priority at some point, but until then the priority might block requests in other direction which is why you should always cancel a priority when it’s not needed anymore.
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
@@ -2614,10 +2879,10 @@ M0023
 
 Set timeout for dynamic bands
 
-Switch to a designated time plan if this timeout is reached due to lost connection with the supervisor.
-Disable by setting timeout to '0'.
-Used in conjunction with dynamic bands, M0014
-Requires security code 2.
+Switch to a designated time plan if this timeout is reached due to lost
+connection with the supervisor. Disable by setting timeout to ‘0’. Used
+in conjunction with dynamic bands, M0014 Requires security code 2.
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -2639,8 +2904,11 @@ M0103
 
 Set security code
 
-Change the security code to use when sending commands
-Security codes are used as an extra layer of security in many commands. They need to match between the supervision system and the traffic light controller in order for the commands to be executed.
+Change the security code to use when sending commands Security codes are
+used as an extra layer of security in many commands. They need to match
+between the supervision system and the traffic light controller in order
+for the commands to be executed.
+
 
 
 .. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
@@ -2664,9 +2932,11 @@ M0104
 
 Set clock
 
-Can be used to manually set the clock of the traffic light controller if automatic  time synchronization (NTP or watchdog sync) is not available. For instance, during maintenance work.
-Note: UTC is used.
-Requires security code 1
+Can be used to manually set the clock of the traffic light controller if
+automatic time synchronization (NTP or watchdog sync) is not available.
+For instance, during maintenance work. Note: UTC is used. Requires
+security code 1
+
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
