@@ -1775,21 +1775,21 @@ Traffic Counting: Number of vehicles
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0205
    :class: longtable
 
 
-   ========  ======  ====================================================================================================================================================================
-   Name      Type    Comment
-   ========  ======  ====================================================================================================================================================================
-   start     string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   vehicles  string  Number of vehicles |br|
-                     - Value expressed as an integer with a range of 0-65535. |br|
-                     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                     - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ========  ======  ====================================================================================================================================================================
+   ========  =======  =====  =====  ====================================================================================================================================================================
+   Name      Type     Min    Max    Comment
+   ========  =======  =====  =====  ====================================================================================================================================================================
+   start     string                 Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   vehicles  integer  -1     65535  Number of vehicles |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ========  =======  =====  =====  ====================================================================================================================================================================
 
 
 S0206
@@ -1800,23 +1800,23 @@ Traffic Counting: Vehicle speed
 This status was introduced to improve performance in case traffic counting is done on all all detectors.
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0206
    :class: longtable
 
 
-   ======  ======  =============================================================================================
-   Name    Type    Comment
-   ======  ======  =============================================================================================
-   start   string  Time stamp for start of measuring. Format according to W3C |br|
-                   XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                   in UTC. E.g. 2009-10-02T14:34:34.341Z
-   speed   string  Average speed in km/h (integer) |br|
-                   - Value expressed as an integer with a range of 0-65535. |br|
-                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  ======  =============================================================================================
+   ======  =======  =====  =====  =============================================================================================
+   Name    Type     Min    Max    Comment
+   ======  =======  =====  =====  =============================================================================================
+   start   string                 Time stamp for start of measuring. Format according to W3C |br|
+                                  XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                                  in UTC. E.g. 2009-10-02T14:34:34.341Z
+   speed   integer  -1     65535  Average speed in km/h (integer) |br|
+                                  - Value expressed as an integer with a range of 0-65535. |br|
+                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ======  =======  =====  =====  =============================================================================================
 
 
 S0207
