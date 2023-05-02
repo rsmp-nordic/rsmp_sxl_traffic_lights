@@ -1701,12 +1701,14 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  =====  =====  ====================================================================================================================================================================
+   =========  =======  =====  =====  ========================================================================
    Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  ====================================================================================================================================================================
-   starttime  string                 Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  =======  =====  =====  ========================================================================
+   starttime  string                 Time stamp for start of measuring. Format according to W3C |br|
+                                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                                     in UTC. E.g. 2009-10-02T14:34:34.341Z
    speed      integer  0      65535  Average speed in km/h
-   =========  =======  =====  =====  ====================================================================================================================================================================
+   =========  =======  =====  =====  ========================================================================
 
 
 S0203
@@ -1804,15 +1806,17 @@ This status was introduced to improve performance in case traffic counting is do
    :class: longtable
 
 
-   ======  ======  ====================================================================================================================================================================
+   ======  ======  =============================================================================================
    Name    Type    Comment
-   ======  ======  ====================================================================================================================================================================
-   start   string  Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   ======  ======  =============================================================================================
+   start   string  Time stamp for start of measuring. Format according to W3C |br|
+                   XML dateTime with a resolution of 3 decimal places. All time stamps |br|
+                   in UTC. E.g. 2009-10-02T14:34:34.341Z
    speed   string  Average speed in km/h (integer) |br|
                    - Value expressed as an integer with a range of 0-65535. |br|
                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  ======  ====================================================================================================================================================================
+   ======  ======  =============================================================================================
 
 
 S0207
