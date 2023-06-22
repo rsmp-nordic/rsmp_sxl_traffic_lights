@@ -30,7 +30,7 @@ Release date: 2022-06-23
   (serious error). :issue:`108`
 - Timeout for dynamic bands.
   Time until a designated time plan is entered due to lost connection with the
-  supervisor. :issue`95` and :issue:`96`
+  supervisor. :issue:`95` and :issue:`96`
 - M0019 and M0005. True/False mixed up.
   Both M0019 (force input) and M0005 (emergency route) had typos where True and
   False were mixed up in the description. :issue:`121` and :issue:`144`
