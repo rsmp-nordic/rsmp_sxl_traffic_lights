@@ -26,3 +26,4 @@ RSMP Signal Exchange List for Traffic Light Controllers
    multiple_supervisors
    security_codes
    examples
+   changelog
