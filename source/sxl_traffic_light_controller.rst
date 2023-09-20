@@ -1263,24 +1263,18 @@ group. Max, min and likely time to green and red.
    :class: longtable
 
 
-   =================  =========  =====  =====  =========================================================================================================================================================
+   =================  =========  =====  =====  ====================================================================================================================================================
    Name               Type       Min    Max    Comment
-   =================  =========  =====  =====  =========================================================================================================================================================
-   minToGEstimate     timestamp                Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green |br|
-                                               Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToGEstimate     timestamp                Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green |br|
-                                               Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToGEstimate  timestamp                Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green |br|
-                                               Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =================  =========  =====  =====  ====================================================================================================================================================
+   minToGEstimate     timestamp                Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green
+   maxToGEstimate     timestamp                Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green
+   likelyToGEstimate  timestamp                Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green
    ToGConfidence      integer    0      100    Confidence of the likelyToGEstimate. 0-100%
-   minToREstimate     timestamp                Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red |br|
-                                               Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToREstimate     timestamp                Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red |br|
-                                               Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToREstimate  timestamp                Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red |br|
-                                               Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   minToREstimate     timestamp                Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red
+   maxToREstimate     timestamp                Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red
+   likelyToREstimate  timestamp                Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red
    ToRConfidence      integer    0      100    Confidence of the likelyToREstimate. 0-100%
-   =================  =========  =====  =====  =========================================================================================================================================================
+   =================  =========  =====  =====  ====================================================================================================================================================
 
 
 S0026
@@ -1578,9 +1572,7 @@ stale
    Name    Type       Min    Max    Enum             Comment
    ======  =========  =====  =====  ===============  ============================================================================================
    r       string                                    ID of the priority request
-   t       timestamp                                 Timestamp, indicating when the priority last changed state |br|
-                                                     Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
-                                                     All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   t       timestamp                                 Timestamp, indicating when the priority last changed state
    s       string                   -received |br|   Current status of the priority request |br|
                                     -queued |br|     received: A new priority request was received but has not yet been processed |br|
                                     -activated |br|  queued: The priority request has been queued for later activation |br|
@@ -1740,9 +1732,9 @@ changed. The traffic parameters may be downloaded with S0098.
    :class: longtable
 
 
-   =========  =========  =============================================================================================================================================================
+   =========  =========  =============================================================================
    Name       Type       Comment
-   =========  =========  =============================================================================================================================================================
+   =========  =========  =============================================================================
    checksum   string     Checksum of the traffic parameters |br|
                          Uses SHA-2 as hashing algorithm |br|
                          Includes |br|
@@ -1762,8 +1754,8 @@ changed. The traffic parameters may be downloaded with S0098.
                          Note: |br|
                          - The checksum should be calculated using the same data as used in S0098 |br|
                          - Data Downloaded with S0098 and hashed with SHA-2 should match this value.
-   timestamp  timestamp  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   =========  =========  =============================================================================================================================================================
+   timestamp  timestamp  Time stamp of the checksum
+   =========  =========  =============================================================================
 
 
 S0098
@@ -1784,9 +1776,9 @@ provides the ability to downloaded them.
    :class: longtable
 
 
-   =========  =========  ===========================================================================================================================================================
+   =========  =========  ========================================================================================================================================
    Name       Type       Comment
-   =========  =========  ===========================================================================================================================================================
+   =========  =========  ========================================================================================================================================
    config     base64     Traffic parameters |br|
                          Includes |br|
                          - all signal programs, including program versions |br|
@@ -1805,10 +1797,10 @@ provides the ability to downloaded them.
                          Note: |br|
                          - There is no way to upload this binary file to the TLC using RSMP |br|
                          - The format of the binary file is not specified and is not expected to be compatible between suppliers
-   timestamp  timestamp  Time stamp of the config. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   timestamp  timestamp  Time stamp of the config
    version    string     Version information of the configuration. Contains basic information such as controller id, changes to config and other information |br|
                          The format is not specified in detail.
-   =========  =========  ===========================================================================================================================================================
+   =========  =========  ========================================================================================================================================
 
 
 S0201
@@ -1826,12 +1818,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =========  =====  =====  ====================================================================================================================================================================
+   =========  =========  =====  =====  ================================================================
    Name       Type       Min    Max    Comment
-   =========  =========  =====  =====  ====================================================================================================================================================================
-   starttime  timestamp                Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  =========  =====  =====  ================================================================
+   starttime  timestamp                Time stamp for start of measuring
    vehicles   integer    0      65535  Number of vehicles on a given detector logic (since last update)
-   =========  =========  =====  =====  ====================================================================================================================================================================
+   =========  =========  =====  =====  ================================================================
 
 
 S0202
@@ -1849,14 +1841,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =========  =====  =====  ========================================================================
+   =========  =========  =====  =====  =================================
    Name       Type       Min    Max    Comment
-   =========  =========  =====  =====  ========================================================================
-   starttime  timestamp                Time stamp for start of measuring. Format according to W3C |br|
-                                       XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                       in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  =========  =====  =====  =================================
+   starttime  timestamp                Time stamp for start of measuring
    speed      integer    0      65535  Average speed in km/h
-   =========  =========  =====  =====  ========================================================================
+   =========  =========  =====  =====  =================================
 
 
 S0203
@@ -1874,14 +1864,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =========  =====  =====  ========================================================================
+   =========  =========  =====  =====  =================================
    Name       Type       Min    Max    Comment
-   =========  =========  =====  =====  ========================================================================
-   starttime  timestamp                Time stamp for start of measuring. Format according to W3C |br|
-                                       XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                       in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  =========  =====  =====  =================================
+   starttime  timestamp                Time stamp for start of measuring
    occupancy  integer    0      100    Occupancy in percent (0-100%)
-   =========  =========  =====  =====  ========================================================================
+   =========  =========  =====  =====  =================================
 
 
 S0204
@@ -1899,12 +1887,10 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =========  =====  =====  ========================================================================
+   =========  =========  =====  =====  =================================
    Name       Type       Min    Max    Comment
-   =========  =========  =====  =====  ========================================================================
-   starttime  timestamp                Time stamp for start of measuring. Format according to W3C |br|
-                                       XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                       in UTC. E.g. 2009-10-02T14:34:34.341Z
+   =========  =========  =====  =====  =================================
+   starttime  timestamp                Time stamp for start of measuring
    P          integer    0      65535  Number of cars
    PS         integer    0      65535  Number of cars with trailers
    L          integer    0      65535  Number of trucks
@@ -1914,7 +1900,7 @@ Used for Traffic counting.
    MC         integer    0      65535  Number of motor cycles
    C          integer    0      65535  Number of bicycles
    F          integer    0      65535  Number of pedestrians
-   =========  =========  =====  =====  ========================================================================
+   =========  =========  =====  =====  =================================
 
 
 S0205
@@ -1933,15 +1919,15 @@ counting is done on all all detectors.
    :class: longtable
 
 
-   ========  =========  =====  =====  ====================================================================================================================================================================
+   ========  =========  =====  =====  =============================================================================================
    Name      Type       Min    Max    Comment
-   ========  =========  =====  =====  ====================================================================================================================================================================
-   start     timestamp                Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
+   ========  =========  =====  =====  =============================================================================================
+   start     timestamp                Time stamp for start of measuring
    vehicles  integer    -1     65535  Number of vehicles |br|
                                       - Value expressed as an integer with a range of 0-65535. |br|
                                       - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
                                       - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ========  =========  =====  =====  ====================================================================================================================================================================
+   ========  =========  =====  =====  =============================================================================================
 
 
 S0206
@@ -1963,9 +1949,7 @@ counting is done on all all detectors.
    ======  =========  =====  =====  =============================================================================================
    Name    Type       Min    Max    Comment
    ======  =========  =====  =====  =============================================================================================
-   start   timestamp                Time stamp for start of measuring. Format according to W3C |br|
-                                    XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                    in UTC. E.g. 2009-10-02T14:34:34.341Z
+   start   timestamp                Time stamp for start of measuring
    speed   integer    -1     65535  Average speed in km/h (integer) |br|
                                     - Value expressed as an integer with a range of 0-65535. |br|
                                     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
@@ -1992,9 +1976,7 @@ counting is done on all all detectors.
    =========  =========  =====  =====  =============================================================================================
    Name       Type       Min    Max    Comment
    =========  =========  =====  =====  =============================================================================================
-   start      timestamp                Time stamp for start of measuring. Format according to W3C |br|
-                                       XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                       in UTC. E.g. 2009-10-02T14:34:34.341Z
+   start      timestamp                Time stamp for start of measuring
    occupancy  integer    -1     100    Occupancy in percent (%) (0-100) |br|
                                        - Value expressed as an integer with a range of 0-100. |br|
                                        - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
@@ -2021,9 +2003,7 @@ counting is done on all all detectors.
    ======  =========  =====  =====  =============================================================================================
    Name    Type       Min    Max    Comment
    ======  =========  =====  =====  =============================================================================================
-   start   timestamp                Time stamp for start of measuring. Format according to W3C |br|
-                                    XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                    in UTC. E.g. 2009-10-02T14:34:34.341Z
+   start   timestamp                Time stamp for start of measuring
    P       integer    -1     65535  Number of cars |br|
                                     - Value expressed as an integer with a range of 0-65535. |br|
                                     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
