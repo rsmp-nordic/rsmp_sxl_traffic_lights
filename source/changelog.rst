@@ -10,6 +10,10 @@ Release date: 2023-10-01
 
 **Major changes**
 
+- The data type "timestamp" is used where applicable instead of "string".
+  Since RSMP 3.2.1 contains the definition of the timestamp type, there is
+  no need to define the timestamp format everywhere it's used. :issue:`171`
+
 **Minor changes**
 
 - Include the full changelog. :issue:`165`
