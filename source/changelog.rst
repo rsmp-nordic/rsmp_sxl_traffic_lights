@@ -8,8 +8,13 @@ Version 1.1.1
 -------------
 Release date: 2023-10-01
 
+The full list of changes between version 1.1.1 and 1.1
+`can be viewed on github <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/compare/1.1...1.1.1>`_.
+
 **Major changes**
 
+- Add S0035 "emergency route" for supporting multiple active routes.
+- Update S0005 with ability get start up mode for each individual intersection. :issue:`117`
 - The data type "timestamp" is used where applicable instead of "string".
   Since RSMP 3.2.1 contains the definition of the timestamp type, there is
   no need to define the timestamp format everywhere it's used. :issue:`171`
