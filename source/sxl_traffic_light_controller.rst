@@ -691,10 +691,10 @@ S0007
 Controller switched on
 
 The controller is active and is not in dark mode. Used to determine if
-the controller is operating, e.g. it shows red, green or yellow to the
-vehicles. During maintenance work the controller might be using dark
-mode (no output to the signal heads). Please note that all values in
-this status uses comma-separated lists - one value for each
+the there is output to the signal heads, e.g. it shows red, green or
+yellow to the vehicles. During maintenance work the controller might be
+using dark mode (no output to the signal heads). Please note that all
+values in this status uses comma-separated lists - one value for each
 intersection, e.g. “0” and “True” (one intersection) or “1,2” and
 “True,False” (two intersections).
 
