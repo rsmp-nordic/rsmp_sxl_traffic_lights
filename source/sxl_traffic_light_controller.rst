@@ -473,6 +473,7 @@ Status
    Traffic Light Controller  `S0032`_        Coordinated control
    Traffic Light Controller  `S0033`_        Signal Priority Status
    Traffic Light Controller  `S0034`_        Timeout for dynamic bands
+   Traffic Light Controller  `S0035`_        Emergency route
    Traffic Light Controller  `S0091`_        Operator logged in/out OP-panel
    Traffic Light Controller  `S0092`_        Operator logged in/out web-interface
    Traffic Light Controller  `S0095`_        Version of Traffic Light Controller
@@ -650,12 +651,28 @@ shows dark, red, yellow flash or using the predetermined start cycle
    :class: longtable
 
 
-   ======  =======  ==============================================
-   Name    Type     Comment
-   ======  =======  ==============================================
-   status  boolean  False: Controller is not in start up mode |br|
-                    True: Controller is currently in start up mode
-   ======  =======  ==============================================
+   ====================  =======  ================================================
+   Name                  Type     Comment
+   ====================  =======  ================================================
+   status                boolean  False: Controller is not in start up mode |br|
+                                  True: Controller is currently in start up mode
+   statusByIntersection  array    False: Intersection is not in start up mode |br|
+                                  True: Intersection is currently in start up mode
+   ====================  =======  ================================================
+
+
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: S0005 statusByIntersection
+   :class: longtable
+
+
+   ============  =======  =====  =====  ======  ===============
+   Name          Type     Min    Max    Enum    Comment
+   ============  =======  =====  =====  ======  ===============
+   intersection  integer  0      255            Intersection id
+   startup       boolean                        Start up mode
+   ============  =======  =====  =====  ======  ===============
 
 
 S0006
@@ -1611,6 +1628,44 @@ bands, M0014
    ======  =======  =====  =====  ===================
    status  integer      0  65535  Timeout, in minutes
    ======  =======  =====  =====  ===================
+
+
+S0035
+^^^^^^^^
+
+Emergency route
+
+The status is active during emergency prioritization. Used in situations
+where full priority is given in the emergency vehicle program.
+
+This status is similar to S0006, but supports multiple routes
+
+
+
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+
+.. table:: S0035
+   :class: longtable
+
+
+   ===============  ======  =======================
+   Name             Type    Comment
+   ===============  ======  =======================
+   emergencyroutes  array   Active emergency routes
+   ===============  ======  =======================
+
+
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: S0035 emergencyroutes
+   :class: longtable
+
+
+   ======  =======  =====  =====  ======  ============================
+   Name    Type       Min    Max  Enum    Comment
+   ======  =======  =====  =====  ======  ============================
+   id      integer      1    255          ID of active emergency route
+   ======  =======  =====  =====  ======  ============================
 
 
 S0091
