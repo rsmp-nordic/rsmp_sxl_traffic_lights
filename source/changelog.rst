@@ -13,8 +13,12 @@ Release date: 2023-10-01
 **Minor changes**
 
 - Include the full changelog. :issue:`165`
-- Rename S0006 "emergency stage" to "emergency route" :issue:`145` and :issue:`110`
 
+**Clarifications**
+
+- Update definition of "Red rest without start order". :issue:`104`
+- S0006: Rename "emergency stage" to "emergency route". :issue:`145` and :issue:`110`
+- S0007: Update description. :issue:`168`
 
 Version 1.1
 -----------
