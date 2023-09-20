@@ -4,6 +4,18 @@
 Change log
 ==========
 
+Version 1.1.1
+-------------
+Release date: 2023-10-01
+
+**Major changes**
+
+**Minor changes**
+
+- Include the full changelog. :issue:`165`
+- Rename S0006 "emergency stage" to "emergency route" :issue:`145` and :issue:`110`
+
+
 Version 1.1
 -----------
 Release date: 2022-06-23
