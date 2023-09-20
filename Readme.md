@@ -19,6 +19,7 @@ Including:
 - Chapter 6: Multiple supervisors
 - Chapter 7: Security codes
 - Chapter 8: Examples of all alarms, statuses and commands:
+- Chapter 9: Change log
 
 ## FAQ
 
