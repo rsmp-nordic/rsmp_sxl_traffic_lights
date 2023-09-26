@@ -30,7 +30,7 @@ This document contains examples for all message types.
 + `S0003 Input status`_
 + `S0004 Output status`_
 + `S0005 Traffic Light Controller starting`_
-+ `S0006 Emergency stage`_
++ `S0006 Emergency route`_
 + `S0007 Controller switched on`_
 + `S0008 Manual control`_
 + `S0009 Fixed time control`_
@@ -59,6 +59,7 @@ This document contains examples for all message types.
 + `S0032 Coordinated control`_
 + `S0033 Signal Priority Status`_
 + `S0034 Timeout for dynamic bands`_
++ `S0035 Emergency route`_
 + `S0091 Operator logged in/out OP-panel`_
 + `S0092 Operator logged web-interface`_
 + `S0095 Version of Traffic Light Controller`_
@@ -846,7 +847,7 @@ S0005 Traffic Light Controller starting
 
    
 
-S0006 Emergency stage
+S0006 Emergency route
 ~~~~~~~~~~~~~~~~~~~~~
    
 **Status Request**
@@ -2287,6 +2288,51 @@ S0034 Timeout for dynamic bands
                 "q":"recent"
         }]
     }
+
+S0035 Emergency route
+~~~~~~~~~~~~~~~~~~~~~
+   
+**Status Request**
+
+.. code-block:: json
+
+   {
+   	"mType":"rSMsg",
+   	"type":"StatusRequest",
+   	"mId":"1cf1a709-41fe-4072-94ea-75976229bf61",
+   	"ntsOId":"KK+AG0503=001TC000",
+   	"xNId":"",
+   	"cId":"KK+AG0503=001TC000",
+   	"sS":[{
+   		"sCI": "S0035",
+   		"n":"emergencyroutes"
+   	}]
+   }
+
+   
+**Status Response**
+
+.. code-block:: json
+
+   {
+   	"mType":"rSMsg",
+   	"type":"StatusResponse",
+   	"mId":"8f1cc2aa-06fa-45e6-9448-3d6207e12ece",
+   	"ntsOId":"KK+AG0503=001TC000",
+   	"xNId":"",
+   	"cId":"KK+AG0503=001TC000",
+   	"sTs":"2019-09-26T13:08:27.792Z",
+   	"sS":[{
+   		"sCI":"S0035",
+   		"n":"status",
+   		"q":"recent",
+   		"s": [{
+                        "id": "1"
+                },{
+                        "id": "2"
+                }]
+   	}]
+   }
 
    
 S0091 Operator logged in/out OP-panel
