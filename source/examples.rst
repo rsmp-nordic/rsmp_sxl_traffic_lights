@@ -821,6 +821,9 @@ S0005 Traffic Light Controller starting
    	"sS":[{
    		"sCI":"S0005",
    		"n":"status"
+             },{
+   		"sCI":"S0005",
+   		"n":"statusByIntersection"
    	}]
    }
 
@@ -842,6 +845,17 @@ S0005 Traffic Light Controller starting
    		"n":"status",
    		"s":"False",
    		"q":"recent"
+             },{
+   		"sCI":"S0005",
+   		"n":"status",
+   		"q":"recent",
+   		"s": [{
+                        "intersection": "1",
+                        "startup": "True"
+                },{
+                        "id": "2",
+                        "startup": "False"
+                }]
    	}]
    }
 
