@@ -681,9 +681,13 @@ S0006
 Emergency route
 
 The status is active during emergency prioritization. Used in situations
-where full priority is given in the emergency vehicle program. If no
-emergency route is active, status should be set to False, and
+where full priority is given in the emergency vehicle program or for
+other types of priority in some cases.
+
+If no emergency route is active, status should be set to False, and
 emergencystage to zero.
+
+Deprecated, use S0035 instead.
 
 
 
@@ -693,13 +697,13 @@ emergencystage to zero.
    :class: longtable
 
 
-   ==============  =======  =====  =====  =============================================================
+   ==============  =======  =====  =====  ============================================================================
    Name            Type     Min    Max    Comment
-   ==============  =======  =====  =====  =============================================================
-   status          boolean                False: Emergency route inactive |br|
+   ==============  =======  =====  =====  ============================================================================
+   status          boolean                ``Deprecated`` False: Emergency route inactive |br|
                                           True: Emergency route active
-   emergencystage  integer  0      255    Number of emergency route (set to zero if no route is active)
-   ==============  =======  =====  =====  =============================================================
+   emergencystage  integer  0      255    ``Deprecated`` Number of emergency route (set to zero if no route is active)
+   ==============  =======  =====  =====  ============================================================================
 
 
 S0007
@@ -993,13 +997,13 @@ S0015
 Current traffic situation
 
 The current traffic situation used in the controller. Used for
-area-based control where a command can be sent to a master traffic light
-controller about which predefined traffic situation to use (1-255).
-Traffic situation is a concept used to divide multiple TLC’s into areas
-and sub-areas. The traffic situation gives the possibility to change the
-TLC sub-area dynamically depending on the time of day and the traffic
-flow. Depending on the traffic situation each TLC selects the time plan
-dynamically.
+area-based control where the M0003 command can be sent to a master
+traffic light controller about which predefined traffic situation to use
+(1-255). Traffic situation is a concept used to divide multiple TLC’s
+into areas and sub-areas. The traffic situation gives the possibility to
+change the TLC sub-area dynamically depending on the time of day and the
+traffic flow. Depending on the traffic situation each TLC selects the
+time plan dynamically.
 
 
 
@@ -1085,11 +1089,11 @@ configured in the controller.
    :class: longtable
 
 
-   ======  =======  =====  =====  ==================================
+   ======  =======  =====  =====  ===================================
    Name    Type       Min    Max  Comment
-   ======  =======  =====  =====  ==================================
-   number  integer      1  65025  Number of time plans (depreciated)
-   ======  =======  =====  =====  ==================================
+   ======  =======  =====  =====  ===================================
+   number  integer      1  65025  ``Deprecated`` Number of time plans
+   ======  =======  =====  =====  ===================================
 
 
 S0019
@@ -1636,7 +1640,8 @@ S0035
 Emergency route
 
 The status is active during emergency prioritization. Used in situations
-where full priority is given in the emergency vehicle program.
+where full priority is given in the emergency vehicle program or for
+other types of priority in some cases.
 
 This status is similar to S0006, but supports multiple routes
 
@@ -2200,7 +2205,7 @@ M0003
 
 Sets traffic situation the controller uses
 
-Used for area-based control where a command can be sent to a master
+Used for area-based control where this command can be sent to a master
 traffic light controller about which predefined traffic situation to use
 (1-255). Traffic situation is a concept used to divide multiple TLC’s
 into areas and sub-areas. The traffic situation gives the possibility to
