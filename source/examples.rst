@@ -853,7 +853,7 @@ S0005 Traffic Light Controller starting
                         "intersection": "1",
                         "startup": "True"
                 },{
-                        "id": "2",
+                        "intersection": "2",
                         "startup": "False"
                 }]
    	}]
