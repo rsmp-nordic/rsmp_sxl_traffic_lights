@@ -456,7 +456,6 @@ Status
    Traffic Light Controller  `S0015`_        Current traffic situation
    Traffic Light Controller  `S0016`_        Number of detector logics
    Traffic Light Controller  `S0017`_        Number of signal groups
-   Traffic Light Controller  `S0018`_        Number of time plans
    Traffic Light Controller  `S0019`_        Number of traffic situations
    Traffic Light Controller  `S0020`_        Control mode
    Traffic Light Controller  `S0021`_        Manually set detector logic
@@ -583,20 +582,15 @@ could be external detectors, bus priority, and much more.
    :class: longtable
 
 
-   ===================  ======  ==========================================================================================
-   Name                 Type    Comment
-   ===================  ======  ==========================================================================================
-   inputstatus          string  Input status as text field |br|
-                                Each character represent the state of the input in consecutive order. |br|
-                                0 : Input is not active |br|
-                                1 : Input is active |br|
-                                - : Input is undefined/does not exist
-   extendedinputstatus  string  ``Deprecated`` Extended input status as text field |br|
-                                Each character represent the state of the extended input status in consecutive order. |br|
-                                0 : Input is not active |br|
-                                1 : Input is active |br|
-                                - : Input is undefined/does not exist
-   ===================  ======  ==========================================================================================
+   ===========  ======  ==========================================================================
+   Name         Type    Comment
+   ===========  ======  ==========================================================================
+   inputstatus  string  Input status as text field |br|
+                        Each character represent the state of the input in consecutive order. |br|
+                        0 : Input is not active |br|
+                        1 : Input is active |br|
+                        - : Input is undefined/does not exist
+   ===========  ======  ==========================================================================
 
 
 S0004
@@ -617,20 +611,15 @@ traffic controllers, external control systems, and much more.
    :class: longtable
 
 
-   ====================  ======  ===========================================================================================
-   Name                  Type    Comment
-   ====================  ======  ===========================================================================================
-   outputstatus          string  Output status as text field |br|
-                                 Each character represent the state of the output status in consecutive order. |br|
-                                 0 : Output is not active |br|
-                                 1 : Output is active |br|
-                                 - : Output is undefined/does not exist
-   extendedoutputstatus  string  ``Deprecated`` Extended output status as text field |br|
-                                 Each character represent the state of the extended output status in consecutive order. |br|
-                                 0 : Output is not active |br|
-                                 1 : Output is active |br|
-                                 - : Output is undefined/does not exist
-   ====================  ======  ===========================================================================================
+   ============  ======  ==================================================================================
+   Name          Type    Comment
+   ============  ======  ==================================================================================
+   outputstatus  string  Output status as text field |br|
+                         Each character represent the state of the output status in consecutive order. |br|
+                         0 : Output is not active |br|
+                         1 : Output is active |br|
+                         - : Output is undefined/does not exist
+   ============  ======  ==================================================================================
 
 
 S0005
@@ -1073,29 +1062,6 @@ groups configured in the controller.
    ======  =======  =====  =====  =======================
 
 
-S0018
-^^^^^^^^
-
-Number of time plans
-
-Can be used for the management system to check the number of time plans
-configured in the controller.
-
-
-
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
-
-.. table:: S0018
-   :class: longtable
-
-
-   ======  =======  =====  =====  ===================================
-   Name    Type       Min    Max  Comment
-   ======  =======  =====  =====  ===================================
-   number  integer      1  65025  ``Deprecated`` Number of time plans
-   ======  =======  =====  =====  ===================================
-
-
 S0019
 ^^^^^^^^
 
@@ -1181,7 +1147,7 @@ S0022
 List of time plans
 
 Provides a list of the configured time plans which is possible to use.
-This status was added due to status S0018 only provides the total number
+This status was added due to status S0018 only provided the total number
 of time plans and not which were possible to use with M0002. Can be used
 for the management system to check the number of time plans configured
 in the controller.

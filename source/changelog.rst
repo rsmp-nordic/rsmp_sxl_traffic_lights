@@ -18,6 +18,11 @@ The full list of changes between version 1.2 and 1.1
 - The data type "timestamp" is used where applicable instead of "string".
   Since RSMP 3.2.1 contains the definition of the timestamp type, there is
   no need to define the timestamp format everywhere it's used. :issue:`171`
+- Remove deprecated statuses:
+
+  * S0003 (only "extendedinputstatus")
+  * S0004 (only "extendedoutputstatus")
+  * S0018 (number of time plans), use S0022 (list of time plans) instead.
 
 **Minor changes**
 

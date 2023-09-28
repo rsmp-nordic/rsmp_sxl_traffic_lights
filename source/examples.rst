@@ -721,9 +721,6 @@ S0003 Input status
    	"sS":[{
    		"sCI":"S0003",
    		"n":"inputstatus"
-   	},{
-   		"sCI":"S0003",
-   		"n":"extendedinputstatus"
    	}]
    }
 
@@ -744,11 +741,6 @@ S0003 Input status
    		"sCI":"S0003",
    		"n":"inputstatus",
    		"s":"0000000000000000001000000000000000000010",
-   		"q":"recent"
-   	},{
-   		"sCI":"S0003",
-   		"n":"extendedinputstatus",
-   		"s":"0",
    		"q":"recent"
    	}]
    }
@@ -771,9 +763,6 @@ S0004 Output status
    	"sS":[{
    		"sCI":"S0004",
    		"n":"outputstatus"
-   	},{
-   		"sCI":"S0004",
-   		"n":"extendedoutputstatus"
    	}]
    }
 
@@ -794,11 +783,6 @@ S0004 Output status
    		"sCI":"S0004",
    		"n":"outputstatus",
    		"s":"0000000000000000001000000000000000000010",
-   		"q":"recent"
-   	},{
-   		"sCI":"S0004",
-   		"n":"extendedoutputstatus",
-   		"s":"0",
    		"q":"recent"
    	}]
    }
@@ -1488,48 +1472,6 @@ S0017 Number of signal groups
    		"sCI":"S0017",
    		"n":"number",
    		"s":"16",
-   		"q":"recent"
-   	}]
-   }
-
-   
-S0018 Number of time plans
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-   
-**Status Request**
-
-.. code-block:: json
-
-   {
-   	"mType":"rSMsg",
-   	"type":"StatusRequest",
-   	"mId":"005f9630-7800-4daa-82a8-ba1c74b7c293",
-   	"ntsOId":"KK+AG0503=001TC000",
-   	"xNId":"",
-   	"cId":"KK+AG0503=001TC000",
-   	"sS":[{
-   		"sCI":"S0018",
-   		"n":"number"
-   	}]
-   }
-
-   
-**Status Response**
-
-.. code-block:: json
-
-   {
-   	"mType":"rSMsg",
-   	"type":"StatusResponse",
-   	"mId":"f4029f3c-0f48-4af5-b1b9-a957b42ab165",
-   	"ntsOId":"KK+AG0503=001TC000",
-   	"xNId":"",
-   	"cId":"KK+AG0503=001TC000",
-   	"sTs":"2019-09-26T13:24:55.915Z",
-   	"sS":[{
-   		"sCI":"S0018",
-   		"n":"number",
-   		"s":"10",
    		"q":"recent"
    	}]
    }
