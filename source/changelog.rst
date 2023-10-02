@@ -6,7 +6,7 @@ Change log
 
 Version 1.2
 -----------
-Release date: 2023-10-01
+Release date: 2023-10-14
 
 The full list of changes between version 1.2 and 1.1
 `can be viewed on github <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/compare/1.1...1.2>`_.
