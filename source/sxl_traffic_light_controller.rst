@@ -444,7 +444,7 @@ Status
    Traffic Light Controller  `S0003`_        Input status
    Traffic Light Controller  `S0004`_        Output status
    Traffic Light Controller  `S0005`_        Traffic Light Controller starting
-   Traffic Light Controller  `S0006`_        Emergency stage
+   Traffic Light Controller  `S0006`_        Emergency route
    Traffic Light Controller  `S0007`_        Controller switched on
    Traffic Light Controller  `S0008`_        Manual control
    Traffic Light Controller  `S0009`_        Fixed time control
@@ -456,7 +456,6 @@ Status
    Traffic Light Controller  `S0015`_        Current traffic situation
    Traffic Light Controller  `S0016`_        Number of detector logics
    Traffic Light Controller  `S0017`_        Number of signal groups
-   Traffic Light Controller  `S0018`_        Number of time plans
    Traffic Light Controller  `S0019`_        Number of traffic situations
    Traffic Light Controller  `S0020`_        Control mode
    Traffic Light Controller  `S0021`_        Manually set detector logic
@@ -473,6 +472,7 @@ Status
    Traffic Light Controller  `S0032`_        Coordinated control
    Traffic Light Controller  `S0033`_        Signal Priority Status
    Traffic Light Controller  `S0034`_        Timeout for dynamic bands
+   Traffic Light Controller  `S0035`_        Emergency route
    Traffic Light Controller  `S0091`_        Operator logged in/out OP-panel
    Traffic Light Controller  `S0092`_        Operator logged in/out web-interface
    Traffic Light Controller  `S0095`_        Version of Traffic Light Controller
@@ -582,20 +582,15 @@ could be external detectors, bus priority, and much more.
    :class: longtable
 
 
-   ===================  ======  ==========================================================================================
-   Name                 Type    Comment
-   ===================  ======  ==========================================================================================
-   inputstatus          string  Input status as text field |br|
-                                Each character represent the state of the input in consecutive order. |br|
-                                0 : Input is not active |br|
-                                1 : Input is active |br|
-                                - : Input is undefined/does not exist
-   extendedinputstatus  string  ``Deprecated`` Extended input status as text field |br|
-                                Each character represent the state of the extended input status in consecutive order. |br|
-                                0 : Input is not active |br|
-                                1 : Input is active |br|
-                                - : Input is undefined/does not exist
-   ===================  ======  ==========================================================================================
+   ===========  ======  ==========================================================================
+   Name         Type    Comment
+   ===========  ======  ==========================================================================
+   inputstatus  string  Input status as text field |br|
+                        Each character represent the state of the input in consecutive order. |br|
+                        0 : Input is not active |br|
+                        1 : Input is active |br|
+                        - : Input is undefined/does not exist
+   ===========  ======  ==========================================================================
 
 
 S0004
@@ -616,20 +611,15 @@ traffic controllers, external control systems, and much more.
    :class: longtable
 
 
-   ====================  ======  ===========================================================================================
-   Name                  Type    Comment
-   ====================  ======  ===========================================================================================
-   outputstatus          string  Output status as text field |br|
-                                 Each character represent the state of the output status in consecutive order. |br|
-                                 0 : Output is not active |br|
-                                 1 : Output is active |br|
-                                 - : Output is undefined/does not exist
-   extendedoutputstatus  string  ``Deprecated`` Extended output status as text field |br|
-                                 Each character represent the state of the extended output status in consecutive order. |br|
-                                 0 : Output is not active |br|
-                                 1 : Output is active |br|
-                                 - : Output is undefined/does not exist
-   ====================  ======  ===========================================================================================
+   ============  ======  ==================================================================================
+   Name          Type    Comment
+   ============  ======  ==================================================================================
+   outputstatus  string  Output status as text field |br|
+                         Each character represent the state of the output status in consecutive order. |br|
+                         0 : Output is not active |br|
+                         1 : Output is active |br|
+                         - : Output is undefined/does not exist
+   ============  ======  ==================================================================================
 
 
 S0005
@@ -650,21 +640,43 @@ shows dark, red, yellow flash or using the predetermined start cycle
    :class: longtable
 
 
-   ======  =======  ==============================================
-   Name    Type     Comment
-   ======  =======  ==============================================
-   status  boolean  False: Controller is not in start up mode |br|
-                    True: Controller is currently in start up mode
-   ======  =======  ==============================================
+   ====================  =======  ================================================
+   Name                  Type     Comment
+   ====================  =======  ================================================
+   status                boolean  False: Controller is not in start up mode |br|
+                                  True: Controller is currently in start up mode
+   statusByIntersection  array    False: Intersection is not in start up mode |br|
+                                  True: Intersection is currently in start up mode
+   ====================  =======  ================================================
+
+
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: S0005 statusByIntersection
+   :class: longtable
+
+
+   ============  =======  =====  =====  ======  ===============
+   Name          Type     Min    Max    Enum    Comment
+   ============  =======  =====  =====  ======  ===============
+   intersection  integer  0      255            Intersection id
+   startup       boolean                        Start up mode
+   ============  =======  =====  =====  ======  ===============
 
 
 S0006
 ^^^^^^^^
 
-Emergency stage
+Emergency route
 
 The status is active during emergency prioritization. Used in situations
-where full priority is given in the emergency vehicle program.
+where full priority is given in the emergency vehicle program or for
+other types of priority in some cases.
+
+If no emergency route is active, status should be set to False, and
+emergencystage to zero.
+
+Deprecated, use S0035 instead.
 
 
 
@@ -674,13 +686,13 @@ where full priority is given in the emergency vehicle program.
    :class: longtable
 
 
-   ==============  =======  =====  =====  ====================================
+   ==============  =======  =====  =====  ============================================================================
    Name            Type     Min    Max    Comment
-   ==============  =======  =====  =====  ====================================
-   status          boolean                False: Emergency stage inactive |br|
-                                          True: Emergency stage active
-   emergencystage  integer  1      255    Number of emergency stage
-   ==============  =======  =====  =====  ====================================
+   ==============  =======  =====  =====  ============================================================================
+   status          boolean                ``Deprecated`` False: Emergency route inactive |br|
+                                          True: Emergency route active
+   emergencystage  integer  0      255    ``Deprecated`` Number of emergency route (set to zero if no route is active)
+   ==============  =======  =====  =====  ============================================================================
 
 
 S0007
@@ -689,10 +701,10 @@ S0007
 Controller switched on
 
 The controller is active and is not in dark mode. Used to determine if
-the controller is operating, e.g. it shows red, green or yellow to the
-vehicles. During maintenance work the controller might be using dark
-mode (no output to the signal heads). Please note that all values in
-this status uses comma-separated lists - one value for each
+the there is output to the signal heads, e.g. it shows red, green or
+yellow to the vehicles. During maintenance work the controller might be
+using dark mode (no output to the signal heads). Please note that all
+values in this status uses comma-separated lists - one value for each
 intersection, e.g. “0” and “True” (one intersection) or “1,2” and
 “True,False” (two intersections).
 
@@ -974,13 +986,13 @@ S0015
 Current traffic situation
 
 The current traffic situation used in the controller. Used for
-area-based control where a command can be sent to a master traffic light
-controller about which predefined traffic situation to use (1-255).
-Traffic situation is a concept used to divide multiple TLC’s into areas
-and sub-areas. The traffic situation gives the possibility to change the
-TLC sub-area dynamically depending on the time of day and the traffic
-flow. Depending on the traffic situation each TLC selects the time plan
-dynamically.
+area-based control where the M0003 command can be sent to a master
+traffic light controller about which predefined traffic situation to use
+(1-255). Traffic situation is a concept used to divide multiple TLC’s
+into areas and sub-areas. The traffic situation gives the possibility to
+change the TLC sub-area dynamically depending on the time of day and the
+traffic flow. Depending on the traffic situation each TLC selects the
+time plan dynamically.
 
 
 
@@ -1048,29 +1060,6 @@ groups configured in the controller.
    ======  =======  =====  =====  =======================
    number  integer      1  65025  Number of signal groups
    ======  =======  =====  =====  =======================
-
-
-S0018
-^^^^^^^^
-
-Number of time plans
-
-Can be used for the management system to check the number of time plans
-configured in the controller.
-
-
-
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
-
-.. table:: S0018
-   :class: longtable
-
-
-   ======  =======  =====  =====  ==================================
-   Name    Type       Min    Max  Comment
-   ======  =======  =====  =====  ==================================
-   number  integer      1  65025  Number of time plans (depreciated)
-   ======  =======  =====  =====  ==================================
 
 
 S0019
@@ -1158,7 +1147,7 @@ S0022
 List of time plans
 
 Provides a list of the configured time plans which is possible to use.
-This status was added due to status S0018 only provides the total number
+This status was added due to status S0018 only provided the total number
 of time plans and not which were possible to use with M0002. Can be used
 for the management system to check the number of time plans configured
 in the controller.
@@ -1230,19 +1219,19 @@ tune the coordination for optimal traffic flow.
    :class: longtable
 
 
-   ======  ======  ================================================
+   ======  ======  ===============================================
    Name    Type    Comment
-   ======  ======  ================================================
+   ======  ======  ===============================================
    status  string  Offset table |br|
-                   Each offset time is written as pp-tt where: |br|
-                   pp=time plan |br|
-                   tt=offset time in seconds |br|
+                   Each offset time is written as p-t where: |br|
+                   p=time plan number (from 1 to 255) |br|
+                   t=offset time in seconds (from 0 to 255) |br|
                    |br|
                    Each offset time is separated with a comma |br|
                    |br|
                    E.g. |br|
-                   pp-tt,pp-tt
-   ======  ======  ================================================
+                   1-0,2-13-3-7
+   ======  ======  ===============================================
 
 
 S0025
@@ -1261,24 +1250,18 @@ group. Max, min and likely time to green and red.
    :class: longtable
 
 
-   =================  =======  =====  =====  =========================================================================================================================================================
-   Name               Type     Min    Max    Comment
-   =================  =======  =====  =====  =========================================================================================================================================================
-   minToGEstimate     string                 Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToGEstimate     string                 Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToGEstimate  string                 Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   ToGConfidence      integer  0      100    Confidence of the likelyToGEstimate. 0-100%
-   minToREstimate     string                 Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   maxToREstimate     string                 Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   likelyToREstimate  string                 Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red |br|
-                                             Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   ToRConfidence      integer  0      100    Confidence of the likelyToREstimate. 0-100%
-   =================  =======  =====  =====  =========================================================================================================================================================
+   =================  =========  =====  =====  ====================================================================================================================================================
+   Name               Type       Min    Max    Comment
+   =================  =========  =====  =====  ====================================================================================================================================================
+   minToGEstimate     timestamp                Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green
+   maxToGEstimate     timestamp                Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green
+   likelyToGEstimate  timestamp                Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green
+   ToGConfidence      integer    0      100    Confidence of the likelyToGEstimate. 0-100%
+   minToREstimate     timestamp                Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red
+   maxToREstimate     timestamp                Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red
+   likelyToREstimate  timestamp                Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red
+   ToRConfidence      integer    0      100    Confidence of the likelyToREstimate. 0-100%
+   =================  =========  =====  =====  ====================================================================================================================================================
 
 
 S0026
@@ -1520,33 +1503,23 @@ Signal Priority Status
 
 This status can be used to get updates about priority requests. For
 example, you can use it to know when priority requests are activated or
-cancelled.
-
-A list of priorities is returned, referred to by their request ids. The
-same request id can appear only once.
-
-All priorities are included in the list (not only the ones that have
-changed state since the last update). This is done regardless of whether
-the status is send in respond to a status request, or due to a status
-subscription, and also regardless of whether a status subscription uses
-an update interval, or send-on-change, or both.
-
-If you subscribe using an update interval, you’re not guaranteed to get
-all intermediate states. To guarantee that, send-on-change must be used
-when subscribing.
-
-To understand how this status relates to ETSI/J2735, please see the
+cancelled. A list of priorities is returned, referred to by their
+request ids. The same request id can appear only once. All priorities
+are included in the list (not only the ones that have changed state
+since the last update). This is done regardless of whether the status is
+send in respond to a status request, or due to a status subscription,
+and also regardless of whether a status subscription uses an update
+interval, or send-on-change, or both. If you subscribe using an update
+interval, you’re not guaranteed to get all intermediate states. To
+guarantee that, send-on-change must be used when subscribing. To
+understand how this status relates to ETSI/J2735, please see the
 `wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`__.
-
 All priorities are send on every status update, regardless of whether an
-interval, or sendOnChange (or both) is used.
-
-When a priority reaches an end states (completed, timeout, rejected,
-cooldown or stale), it must be sent once on the next status update, then
-removed from the list.
-
-A request always starts in the ‘received’ state. The following table
-shows the possible state transitions:
+interval, or sendOnChange (or both) is used. When a priority reaches an
+end states (completed, timeout, rejected, cooldown or stale), it must be
+sent once on the next status update, then removed from the list. A
+request always starts in the ‘received’ state. The following table shows
+the possible state transitions:
 
 ========= =====================================
 State     Possible next states
@@ -1582,27 +1555,25 @@ stale
    :class: longtable
 
 
-   ======  =======  =====  =====  ===============  ============================================================================================
-   Name    Type     Min    Max    Enum             Comment
-   ======  =======  =====  =====  ===============  ============================================================================================
-   r       string                                  ID of the priority request
-   t       string                                  Timestamp, indicating when the priority last changed state |br|
-                                                   Format according to W3C XML dateTime with a resolution of 3 decimal places. |br|
-                                                   All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   s       string                 -received |br|   Current status of the priority request |br|
-                                  -queued |br|     received: A new priority request was received but has not yet been processed |br|
-                                  -activated |br|  queued: The priority request has been queued for later activation |br|
-                                  -completed |br|  activated: The priority was activated |br|
-                                  -timeout |br|    completed: The priority was cancelled as expected |br|
-                                  -rejected |br|   timeout: The priority has been queued for too long |br|
-                                  -cooldown |br|   rejected: The priority request cannot be granted |br|
-                                  -stale           cooldown: A similar priority request means the priority request cannot be activated now |br|
-                                                   stale: The priority has been active too long without cancellation, and was therefore removed
-   e       integer  0      255                     (Optional) Estimated green extension provided by the priority, in seconds |br|
-                                                   Only used when state is ‘completed’.
-   d       integer  0      255                     (Optional) Estimated red reduction provided by the priority, in seconds |br|
-                                                   Only used when state is ‘completed’.
-   ======  =======  =====  =====  ===============  ============================================================================================
+   ======  =========  =====  =====  ===============  ============================================================================================
+   Name    Type       Min    Max    Enum             Comment
+   ======  =========  =====  =====  ===============  ============================================================================================
+   r       string                                    ID of the priority request
+   t       timestamp                                 Timestamp, indicating when the priority last changed state
+   s       string                   -received |br|   Current status of the priority request |br|
+                                    -queued |br|     received: A new priority request was received but has not yet been processed |br|
+                                    -activated |br|  queued: The priority request has been queued for later activation |br|
+                                    -completed |br|  activated: The priority was activated |br|
+                                    -timeout |br|    completed: The priority was cancelled as expected |br|
+                                    -rejected |br|   timeout: The priority has been queued for too long |br|
+                                    -cooldown |br|   rejected: The priority request cannot be granted |br|
+                                    -stale           cooldown: A similar priority request means the priority request cannot be activated now |br|
+                                                     stale: The priority has been active too long without cancellation, and was therefore removed
+   e       integer    0      255                     (Optional) Estimated green extension provided by the priority, in seconds |br|
+                                                     Only used when state is ‘completed’.
+   d       integer    0      255                     (Optional) Estimated red reduction provided by the priority, in seconds |br|
+                                                     Only used when state is ‘completed’.
+   ======  =========  =====  =====  ===============  ============================================================================================
 
 
 S0034
@@ -1627,6 +1598,45 @@ bands, M0014
    ======  =======  =====  =====  ===================
    status  integer      0  65535  Timeout, in minutes
    ======  =======  =====  =====  ===================
+
+
+S0035
+^^^^^^^^
+
+Emergency route
+
+The status is active during emergency prioritization. Used in situations
+where full priority is given in the emergency vehicle program or for
+other types of priority in some cases.
+
+This status is similar to S0006, but supports multiple routes
+
+
+
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+
+.. table:: S0035
+   :class: longtable
+
+
+   ===============  ======  =======================
+   Name             Type    Comment
+   ===============  ======  =======================
+   emergencyroutes  array   Active emergency routes
+   ===============  ======  =======================
+
+
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
+
+.. table:: S0035 emergencyroutes
+   :class: longtable
+
+
+   ======  =======  =====  =====  ======  ============================
+   Name    Type       Min    Max  Enum    Comment
+   ======  =======  =====  =====  ======  ============================
+   id      integer      1    255          ID of active emergency route
+   ======  =======  =====  =====  ======  ============================
 
 
 S0091
@@ -1748,30 +1758,30 @@ changed. The traffic parameters may be downloaded with S0098.
    :class: longtable
 
 
-   =========  ======  =============================================================================================================================================================
-   Name       Type    Comment
-   =========  ======  =============================================================================================================================================================
-   checksum   string  Checksum of the traffic parameters |br|
-                      Uses SHA-2 as hashing algorithm |br|
-                      Includes |br|
-                      - all signal programs, including program versions |br|
-                      - signal group settings |br|
-                      - time plans |br|
-                      - safety matrix |br|
-                      - intergreen times |br|
-                      - detector settings |br|
-                      |br|
-                      It should NOT include: |br|
-                      - network settings |br|
-                      - log files |br|
-                      - software |br|
-                      - other device settings that are not part of the signal program |br|
-                      |br|
-                      Note: |br|
-                      - The checksum should be calculated using the same data as used in S0098 |br|
-                      - Data Downloaded with S0098 and hashed with SHA-2 should match this value.
-   timestamp  string  Time stamp of the checksum. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   =========  ======  =============================================================================================================================================================
+   =========  =========  =============================================================================
+   Name       Type       Comment
+   =========  =========  =============================================================================
+   checksum   string     Checksum of the traffic parameters |br|
+                         Uses SHA-2 as hashing algorithm |br|
+                         Includes |br|
+                         - all signal programs, including program versions |br|
+                         - signal group settings |br|
+                         - time plans |br|
+                         - safety matrix |br|
+                         - intergreen times |br|
+                         - detector settings |br|
+                         |br|
+                         It should NOT include: |br|
+                         - network settings |br|
+                         - log files |br|
+                         - software |br|
+                         - other device settings that are not part of the signal program |br|
+                         |br|
+                         Note: |br|
+                         - The checksum should be calculated using the same data as used in S0098 |br|
+                         - Data Downloaded with S0098 and hashed with SHA-2 should match this value.
+   timestamp  timestamp  Time stamp of the checksum
+   =========  =========  =============================================================================
 
 
 S0098
@@ -1792,31 +1802,31 @@ provides the ability to downloaded them.
    :class: longtable
 
 
-   =========  ======  ===========================================================================================================================================================
-   Name       Type    Comment
-   =========  ======  ===========================================================================================================================================================
-   config     base64  Traffic parameters |br|
-                      Includes |br|
-                      - all signal programs, including program versions |br|
-                      - signal group settings |br|
-                      - time plans |br|
-                      - safety matrix |br|
-                      - intergreen times |br|
-                      - detector setting |br|
-                      |br|
-                      It should NOT include: |br|
-                      - network settings |br|
-                      - log files |br|
-                      - software |br|
-                      - other device settings that are not part of the signal program |br|
-                      |br|
-                      Note: |br|
-                      - There is no way to upload this binary file to the TLC using RSMP |br|
-                      - The format of the binary file is not specified and is not expected to be compatible between suppliers
-   timestamp  string  Time stamp of the config. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   version    string  Version information of the configuration. Contains basic information such as controller id, changes to config and other information |br|
-                      The format is not specified in detail.
-   =========  ======  ===========================================================================================================================================================
+   =========  =========  ========================================================================================================================================
+   Name       Type       Comment
+   =========  =========  ========================================================================================================================================
+   config     base64     Traffic parameters |br|
+                         Includes |br|
+                         - all signal programs, including program versions |br|
+                         - signal group settings |br|
+                         - time plans |br|
+                         - safety matrix |br|
+                         - intergreen times |br|
+                         - detector setting |br|
+                         |br|
+                         It should NOT include: |br|
+                         - network settings |br|
+                         - log files |br|
+                         - software |br|
+                         - other device settings that are not part of the signal program |br|
+                         |br|
+                         Note: |br|
+                         - There is no way to upload this binary file to the TLC using RSMP |br|
+                         - The format of the binary file is not specified and is not expected to be compatible between suppliers
+   timestamp  timestamp  Time stamp of the config
+   version    string     Version information of the configuration. Contains basic information such as controller id, changes to config and other information |br|
+                         The format is not specified in detail.
+   =========  =========  ========================================================================================================================================
 
 
 S0201
@@ -1834,12 +1844,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  =====  =====  ====================================================================================================================================================================
-   Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  ====================================================================================================================================================================
-   starttime  string                 Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   vehicles   integer  0      65535  Number of vehicles on a given detector logic (since last update)
-   =========  =======  =====  =====  ====================================================================================================================================================================
+   =========  =========  =====  =====  ================================================================
+   Name       Type       Min    Max    Comment
+   =========  =========  =====  =====  ================================================================
+   starttime  timestamp                Time stamp for start of measuring
+   vehicles   integer    0      65535  Number of vehicles on a given detector logic (since last update)
+   =========  =========  =====  =====  ================================================================
 
 
 S0202
@@ -1857,14 +1867,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  =====  =====  ========================================================================
-   Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  ========================================================================
-   starttime  string                 Time stamp for start of measuring. Format according to W3C |br|
-                                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                     in UTC. E.g. 2009-10-02T14:34:34.341Z
-   speed      integer  0      65535  Average speed in km/h
-   =========  =======  =====  =====  ========================================================================
+   =========  =========  =====  =====  =================================
+   Name       Type       Min    Max    Comment
+   =========  =========  =====  =====  =================================
+   starttime  timestamp                Time stamp for start of measuring
+   speed      integer    0      65535  Average speed in km/h
+   =========  =========  =====  =====  =================================
 
 
 S0203
@@ -1882,14 +1890,12 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  =====  =====  ========================================================================
-   Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  ========================================================================
-   starttime  string                 Time stamp for start of measuring. Format according to W3C |br|
-                                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                     in UTC. E.g. 2009-10-02T14:34:34.341Z
-   occupancy  integer  0      100    Occupancy in percent (0-100%)
-   =========  =======  =====  =====  ========================================================================
+   =========  =========  =====  =====  =================================
+   Name       Type       Min    Max    Comment
+   =========  =========  =====  =====  =================================
+   starttime  timestamp                Time stamp for start of measuring
+   occupancy  integer    0      100    Occupancy in percent (0-100%)
+   =========  =========  =====  =====  =================================
 
 
 S0204
@@ -1907,22 +1913,20 @@ Used for Traffic counting.
    :class: longtable
 
 
-   =========  =======  =====  =====  ========================================================================
-   Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  ========================================================================
-   starttime  string                 Time stamp for start of measuring. Format according to W3C |br|
-                                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                     in UTC. E.g. 2009-10-02T14:34:34.341Z
-   P          integer  0      65535  Number of cars
-   PS         integer  0      65535  Number of cars with trailers
-   L          integer  0      65535  Number of trucks
-   LS         integer  0      65535  Number of trucks with trailers
-   B          integer  0      65535  Number of busses
-   SP         integer  0      65535  Number of trams
-   MC         integer  0      65535  Number of motor cycles
-   C          integer  0      65535  Number of bicycles
-   F          integer  0      65535  Number of pedestrians
-   =========  =======  =====  =====  ========================================================================
+   =========  =========  =====  =====  =================================
+   Name       Type       Min    Max    Comment
+   =========  =========  =====  =====  =================================
+   starttime  timestamp                Time stamp for start of measuring
+   P          integer    0      65535  Number of cars
+   PS         integer    0      65535  Number of cars with trailers
+   L          integer    0      65535  Number of trucks
+   LS         integer    0      65535  Number of trucks with trailers
+   B          integer    0      65535  Number of buses
+   SP         integer    0      65535  Number of trams
+   MC         integer    0      65535  Number of motor cycles
+   C          integer    0      65535  Number of bicycles
+   F          integer    0      65535  Number of pedestrians
+   =========  =========  =====  =====  =================================
 
 
 S0205
@@ -1941,15 +1945,15 @@ counting is done on all all detectors.
    :class: longtable
 
 
-   ========  =======  =====  =====  ====================================================================================================================================================================
-   Name      Type     Min    Max    Comment
-   ========  =======  =====  =====  ====================================================================================================================================================================
-   start     string                 Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z
-   vehicles  integer  -1     65535  Number of vehicles |br|
-                                    - Value expressed as an integer with a range of 0-65535. |br|
-                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ========  =======  =====  =====  ====================================================================================================================================================================
+   ========  =========  =====  =====  =============================================================================================
+   Name      Type       Min    Max    Comment
+   ========  =========  =====  =====  =============================================================================================
+   start     timestamp                Time stamp for start of measuring
+   vehicles  integer    -1     65535  Number of vehicles |br|
+                                      - Value expressed as an integer with a range of 0-65535. |br|
+                                      - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                      - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ========  =========  =====  =====  =============================================================================================
 
 
 S0206
@@ -1968,17 +1972,15 @@ counting is done on all all detectors.
    :class: longtable
 
 
-   ======  =======  =====  =====  =============================================================================================
-   Name    Type     Min    Max    Comment
-   ======  =======  =====  =====  =============================================================================================
-   start   string                 Time stamp for start of measuring. Format according to W3C |br|
-                                  XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                  in UTC. E.g. 2009-10-02T14:34:34.341Z
-   speed   integer  -1     65535  Average speed in km/h (integer) |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  =======  =====  =====  =============================================================================================
+   ======  =========  =====  =====  =============================================================================================
+   Name    Type       Min    Max    Comment
+   ======  =========  =====  =====  =============================================================================================
+   start   timestamp                Time stamp for start of measuring
+   speed   integer    -1     65535  Average speed in km/h (integer) |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ======  =========  =====  =====  =============================================================================================
 
 
 S0207
@@ -1997,17 +1999,15 @@ counting is done on all all detectors.
    :class: longtable
 
 
-   =========  =======  =====  =====  =============================================================================================
-   Name       Type     Min    Max    Comment
-   =========  =======  =====  =====  =============================================================================================
-   start      string                 Time stamp for start of measuring. Format according to W3C |br|
-                                     XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                     in UTC. E.g. 2009-10-02T14:34:34.341Z
-   occupancy  integer  -1     100    Occupancy in percent (%) (0-100) |br|
-                                     - Value expressed as an integer with a range of 0-100. |br|
-                                     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                     - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   =========  =======  =====  =====  =============================================================================================
+   =========  =========  =====  =====  =============================================================================================
+   Name       Type       Min    Max    Comment
+   =========  =========  =====  =====  =============================================================================================
+   start      timestamp                Time stamp for start of measuring
+   occupancy  integer    -1     100    Occupancy in percent (%) (0-100) |br|
+                                       - Value expressed as an integer with a range of 0-100. |br|
+                                       - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                       - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   =========  =========  =====  =====  =============================================================================================
 
 
 S0208
@@ -2026,49 +2026,47 @@ counting is done on all all detectors.
    :class: longtable
 
 
-   ======  =======  =====  =====  =============================================================================================
-   Name    Type     Min    Max    Comment
-   ======  =======  =====  =====  =============================================================================================
-   start   string                 Time stamp for start of measuring. Format according to W3C |br|
-                                  XML dateTime with a resolution of 3 decimal places. All time stamps |br|
-                                  in UTC. E.g. 2009-10-02T14:34:34.341Z
-   P       integer  -1     65535  Number of cars |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   PS      integer  -1     65535  Number of cars with trailers |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   L       integer  -1     65535  Number of trucks |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   LS      integer  -1     65535  Number of trucks with trailers |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   B       integer  -1     65535  Number of buses |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   SP      integer  -1     65535  Number of trams |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   MC      integer  -1     65535  Number of motor cycles |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   C       integer  -1     65535  Number of bicycles |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   F       integer  -1     65535  Number of pedestrians |br|
-                                  - Value expressed as an integer with a range of 0-65535. |br|
-                                  - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                  - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  =======  =====  =====  =============================================================================================
+   ======  =========  =====  =====  =============================================================================================
+   Name    Type       Min    Max    Comment
+   ======  =========  =====  =====  =============================================================================================
+   start   timestamp                Time stamp for start of measuring
+   P       integer    -1     65535  Number of cars |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   PS      integer    -1     65535  Number of cars with trailers |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   L       integer    -1     65535  Number of trucks |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   LS      integer    -1     65535  Number of trucks with trailers |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   B       integer    -1     65535  Number of buses |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   SP      integer    -1     65535  Number of trams |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   MC      integer    -1     65535  Number of motor cycles |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   C       integer    -1     65535  Number of bicycles |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   F       integer    -1     65535  Number of pedestrians |br|
+                                    - Value expressed as an integer with a range of 0-65535. |br|
+                                    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                    - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ======  =========  =====  =====  =============================================================================================
 
 
 Commands
@@ -2129,9 +2127,10 @@ Requires security code 2.
    ============  =======  =====  =====  ===================  ===========================================================================================
    Name          Type     Min    Max    Enum                 Comment
    ============  =======  =====  =====  ===================  ===========================================================================================
-   status        string                 -NormalControl |br|  NormalControl: Normal Control |br|
-                                        -YellowFlash |br|    YellowFlash: Enables yellow flash |br|
-                                        -Dark                Dark: Enables dark mode
+   status        string                 -NormalControl |br|  Set operating mode |br|
+                                        -YellowFlash |br|    NormalControl: Normal Control |br|
+                                        -Dark                YellowFlash: Enables yellow flash |br|
+                                                             Dark: Enables dark mode
    securityCode  string                                      Security code 2
    timeout       integer  0      1440                        Time in minutes until controller automatically reverts to previous functional position |br|
                                                              0=no automatic return
@@ -2172,7 +2171,7 @@ M0003
 
 Sets traffic situation the controller uses
 
-Used for area-based control where a command can be sent to a master
+Used for area-based control where this command can be sent to a master
 traffic light controller about which predefined traffic situation to use
 (1-255). Traffic situation is a concept used to divide multiple TLC’s
 into areas and sub-areas. The traffic situation gives the possibility to
@@ -2740,8 +2739,9 @@ The benefit of using this message over activating inputs or detector
 logics is that you can specify a priority level, vehicle type and
 estimated time of arrival. You can also update or cancel the request,
 and use the corresponding status message to track the status of the
-request, including how much priority was actually given. To understand
-how this command relates to ETSI/J2735, please see the
+request, including how much priority was actually given.
+
+To understand how this command relates to ETSI/J2735, please see the
 `wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`__.
 
 Activating signal priority is expected to provide more green time for a

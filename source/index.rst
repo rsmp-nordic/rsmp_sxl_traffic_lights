@@ -4,7 +4,7 @@
 
 .. footer::
 
-   Created 2022-06-10, 1.1
+   Created 2022-06-10, 1.2
 
 RSMP Signal Exchange List for Traffic Light Controllers
 =======================================================
@@ -26,3 +26,4 @@ RSMP Signal Exchange List for Traffic Light Controllers
    multiple_supervisors
    security_codes
    examples
+   changelog

@@ -30,7 +30,7 @@ This document contains examples for all message types.
 + `S0003 Input status`_
 + `S0004 Output status`_
 + `S0005 Traffic Light Controller starting`_
-+ `S0006 Emergency stage`_
++ `S0006 Emergency route`_
 + `S0007 Controller switched on`_
 + `S0008 Manual control`_
 + `S0009 Fixed time control`_
@@ -59,6 +59,7 @@ This document contains examples for all message types.
 + `S0032 Coordinated control`_
 + `S0033 Signal Priority Status`_
 + `S0034 Timeout for dynamic bands`_
++ `S0035 Emergency route`_
 + `S0091 Operator logged in/out OP-panel`_
 + `S0092 Operator logged web-interface`_
 + `S0095 Version of Traffic Light Controller`_
@@ -720,9 +721,6 @@ S0003 Input status
    	"sS":[{
    		"sCI":"S0003",
    		"n":"inputstatus"
-   	},{
-   		"sCI":"S0003",
-   		"n":"extendedinputstatus"
    	}]
    }
 
@@ -743,11 +741,6 @@ S0003 Input status
    		"sCI":"S0003",
    		"n":"inputstatus",
    		"s":"0000000000000000001000000000000000000010",
-   		"q":"recent"
-   	},{
-   		"sCI":"S0003",
-   		"n":"extendedinputstatus",
-   		"s":"0",
    		"q":"recent"
    	}]
    }
@@ -770,9 +763,6 @@ S0004 Output status
    	"sS":[{
    		"sCI":"S0004",
    		"n":"outputstatus"
-   	},{
-   		"sCI":"S0004",
-   		"n":"extendedoutputstatus"
    	}]
    }
 
@@ -793,11 +783,6 @@ S0004 Output status
    		"sCI":"S0004",
    		"n":"outputstatus",
    		"s":"0000000000000000001000000000000000000010",
-   		"q":"recent"
-   	},{
-   		"sCI":"S0004",
-   		"n":"extendedoutputstatus",
-   		"s":"0",
    		"q":"recent"
    	}]
    }
@@ -820,6 +805,9 @@ S0005 Traffic Light Controller starting
    	"sS":[{
    		"sCI":"S0005",
    		"n":"status"
+             },{
+   		"sCI":"S0005",
+   		"n":"statusByIntersection"
    	}]
    }
 
@@ -841,12 +829,23 @@ S0005 Traffic Light Controller starting
    		"n":"status",
    		"s":"False",
    		"q":"recent"
+             },{
+   		"sCI":"S0005",
+   		"n":"status",
+   		"q":"recent",
+   		"s": [{
+                        "intersection": "1",
+                        "startup": "True"
+                },{
+                        "intersection": "2",
+                        "startup": "False"
+                }]
    	}]
    }
 
    
 
-S0006 Emergency stage
+S0006 Emergency route
 ~~~~~~~~~~~~~~~~~~~~~
    
 **Status Request**
@@ -1473,48 +1472,6 @@ S0017 Number of signal groups
    		"sCI":"S0017",
    		"n":"number",
    		"s":"16",
-   		"q":"recent"
-   	}]
-   }
-
-   
-S0018 Number of time plans
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-   
-**Status Request**
-
-.. code-block:: json
-
-   {
-   	"mType":"rSMsg",
-   	"type":"StatusRequest",
-   	"mId":"005f9630-7800-4daa-82a8-ba1c74b7c293",
-   	"ntsOId":"KK+AG0503=001TC000",
-   	"xNId":"",
-   	"cId":"KK+AG0503=001TC000",
-   	"sS":[{
-   		"sCI":"S0018",
-   		"n":"number"
-   	}]
-   }
-
-   
-**Status Response**
-
-.. code-block:: json
-
-   {
-   	"mType":"rSMsg",
-   	"type":"StatusResponse",
-   	"mId":"f4029f3c-0f48-4af5-b1b9-a957b42ab165",
-   	"ntsOId":"KK+AG0503=001TC000",
-   	"xNId":"",
-   	"cId":"KK+AG0503=001TC000",
-   	"sTs":"2019-09-26T13:24:55.915Z",
-   	"sS":[{
-   		"sCI":"S0018",
-   		"n":"number",
-   		"s":"10",
    		"q":"recent"
    	}]
    }
@@ -2287,6 +2244,51 @@ S0034 Timeout for dynamic bands
                 "q":"recent"
         }]
     }
+
+S0035 Emergency route
+~~~~~~~~~~~~~~~~~~~~~
+   
+**Status Request**
+
+.. code-block:: json
+
+   {
+   	"mType":"rSMsg",
+   	"type":"StatusRequest",
+   	"mId":"1cf1a709-41fe-4072-94ea-75976229bf61",
+   	"ntsOId":"KK+AG0503=001TC000",
+   	"xNId":"",
+   	"cId":"KK+AG0503=001TC000",
+   	"sS":[{
+   		"sCI": "S0035",
+   		"n":"emergencyroutes"
+   	}]
+   }
+
+   
+**Status Response**
+
+.. code-block:: json
+
+   {
+   	"mType":"rSMsg",
+   	"type":"StatusResponse",
+   	"mId":"8f1cc2aa-06fa-45e6-9448-3d6207e12ece",
+   	"ntsOId":"KK+AG0503=001TC000",
+   	"xNId":"",
+   	"cId":"KK+AG0503=001TC000",
+   	"sTs":"2019-09-26T13:08:27.792Z",
+   	"sS":[{
+   		"sCI":"S0035",
+   		"n":"status",
+   		"q":"recent",
+   		"s": [{
+                        "id": "1"
+                },{
+                        "id": "2"
+                }]
+   	}]
+   }
 
    
 S0091 Operator logged in/out OP-panel

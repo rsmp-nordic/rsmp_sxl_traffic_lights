@@ -14,8 +14,7 @@ The corresponding ASCII character used for signal group status (S0001) is writte
       (``B``) The signal group has no green demand.
 
    Red rest without start order
-      (``A``) The signal group isn't allowed to demand green (green demand held back)
-      without a start order.
+      (``A``) The signal group is prevented to switch to green due to missing start order
 
    Red rest with privilege measurement
       (``C``) The signal group has no green demand but can turn green when other
