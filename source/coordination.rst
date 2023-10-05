@@ -155,7 +155,7 @@ the following general requirements:
 - The TLC must be able to communicate with the supervision system at the
   same as communicating between TLC:s.
 
-..  _4.3 Transport of data:  https://rsmp-nordic.org/rsmp_specifications/core/3.2/applicability/transport_of_data.html
+..  _4.3 Transport of data:  https://rsmp-nordic.github.io/rsmp_specifications/core/3.2.1/applicability/transport_of_data.html
 
 Functional requirements of the TLC
 ----------------------------------
