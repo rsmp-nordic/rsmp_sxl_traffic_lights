@@ -10,7 +10,7 @@ on:
 
 jobs:
   build-sxl-tlc:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - name: Check out rsmp_sxl_traffic_lights repository (gh-pages)
       uses: actions/checkout@v4
@@ -35,8 +35,30 @@ jobs:
               imagemagick \
               inkscape \
               librsvg2-bin \
-              latexmk \
-              mscgen
+              latexmk
+    - name: Install dependencies for mscgen
+      run: |
+        sudo apt-get remove nginx
+        sudo apt-get remove libgd3
+        sudo apt-get -y install autoconf flex bison gcc make pkg-config libgd-dev
+    - name: Clone mscgen
+      run: git clone https://github.com/dok-net/mscgen.git
+    - name: Fetch patch for mscgen (fixes issue under Ubuntu 20.04)
+      run: |
+        cp .github/patches/gd.diff mscgen
+        cd mscgen
+        patch -p1 <gd.diff
+    - name: Compile and install mscgen
+      run: |
+        cd mscgen
+        chmod +x autogen.sh
+        chmod +x test/renderercheck.sh
+        ./autogen.sh
+        autoupdate
+        ./configure
+        make
+        make check
+        sudo make install
     - name: Build rsmp_sxl_traffic_lights repository
       run: |
         cd 1.0.15
