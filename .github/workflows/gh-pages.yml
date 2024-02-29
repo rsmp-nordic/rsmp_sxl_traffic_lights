@@ -116,4 +116,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Excel
-        path: SXL_Traffic_Controller_ver_1_2..xlsx
+        path: SXL_Traffic_Controller_ver_1_2.xlsx
