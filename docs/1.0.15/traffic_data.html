@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>4. Traffic data &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.0.15-draft documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Coordination between traffic light controllers" href="coordination.html" />
+    <link rel="prev" title="3. Signal Group status" href="signal_group_status.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.15
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html">2. Signal Exchange List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">3. Signal Group status</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Traffic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordination.html">5. Coordination between traffic light controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">6. JSon Examples</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RSMP Signal Exchange List for Traffic Light Controllers</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>4. Traffic data</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/traffic_data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="traffic-data">
+<h1>4. Traffic data<a class="headerlink" href="#traffic-data" title="Permalink to this headline">¶</a></h1>
+<p>Traffic data (S0201-S0208) needs additional requirements in order to work
+correctly.</p>
+<ul class="simple">
+<li>The supervision system uses <strong>StatusSubscribe</strong> and <strong>StatusUpdate</strong> to
+continuously receive traffic data from the TLC using subscriptions.</li>
+<li><strong>starttime</strong> is the time stamp of start of measuring.
+E.g. if a subscription update is sent at 15:05 using a subscription update
+rate of 300 (5 minutes), <strong>starttime</strong> would be set to 15.00
+and <strong>vehicles</strong> (S0201) would contain the number of vehicles between
+15:00 and 15:05.</li>
+<li>Traffic counting must be made at even time intervals.
+For instance; if <strong>updateRate=300</strong> (every 5 minutes) is set at the
+status subscription, the traffic counter must start at 15:00:00,
+15:05:00, 15:10:00 and so on.</li>
+<li>No initial status update should be sent directly after receiving status
+subscription. Status updates should only be sent at even time intervals
+and not contain partial counting, e.g. 15:01-15:03 if updateRate=300</li>
+<li>The traffic counter must not reset its traffic counter after receiving
+a new subscription request. The traffic counter may only reset its
+traffic counter at even time intervals.</li>
+<li>Buffering of traffic data during connection interruptions should be
+possible to enable/disable in the equipment. If buffering is enabled it
+means that active subscriptions of traffic data (S0201-S0208) should remain
+active and not be canceled at connection interruption or at reestablishment.</li>
+<li>The traffic data must be buffered according to the time interval as
+determined by the status subscription if buffering is enabled.</li>
+</ul>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="coordination.html" class="btn btn-neutral float-right" title="5. Coordination between traffic light controllers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="signal_group_status.html" class="btn btn-neutral float-left" title="3. Signal Group status" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright RSMP Nordic
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
