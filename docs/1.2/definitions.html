@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Definitions &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.2 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Signal Exchange List" href="sxl_traffic_light_controller.html" />
+    <link rel="prev" title="RSMP Signal Exchange List for Traffic Light Controllers" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers
+          </a>
+              <div class="version">
+                1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html">2. Signal Exchange List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">3. Signal Group status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">4. Traffic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordination.html">5. Coordination between traffic light controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_supervisors.html">6. Multiple supervisors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_codes.html">7. Security codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">8. JSon Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">9. Change log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RSMP Signal Exchange List for Traffic Light Controllers</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">1. </span>Definitions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/definitions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="definitions">
+<h1><span class="section-number">1. </span>Definitions<a class="headerlink" href="#definitions" title="Permalink to this headline"></a></h1>
+<p>The following definitions is provided as information for use in RSMP and
+may be simplified from their original meanings.</p>
+<p>RSMP Nordic takes no responsibility for the correctness of the definitions.</p>
+<p>The corresponding ASCII character used for signal group status (S0001) is written first in parentheses.</p>
+<dl class="glossary simple">
+<dt id="term-Red-rest">Red rest<a class="headerlink" href="#term-Red-rest" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">B</span></code>) The signal group has no green demand.</p>
+</dd>
+<dt id="term-Red-rest-without-start-order">Red rest without start order<a class="headerlink" href="#term-Red-rest-without-start-order" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">A</span></code>) The signal group is prevented to switch to green due to missing start order</p>
+</dd>
+<dt id="term-Red-rest-with-privilege-measurement">Red rest with privilege measurement<a class="headerlink" href="#term-Red-rest-with-privilege-measurement" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">C</span></code>) The signal group has no green demand but can turn green when other
+signal groups in the same phase are turning green (signal group status
+<code class="docutils literal notranslate"><span class="pre">G</span></code>/<code class="docutils literal notranslate"><span class="pre">0</span></code>) or are green (signal groups status <code class="docutils literal notranslate"><span class="pre">1</span></code>/<code class="docutils literal notranslate"><span class="pre">2</span></code>/<code class="docutils literal notranslate"><span class="pre">3</span></code>/<code class="docutils literal notranslate"><span class="pre">4</span></code>/<code class="docutils literal notranslate"><span class="pre">5</span></code>).
+A green demand which arrives late when other signal groups are green according
+to the above, results in a change to green.</p>
+</dd>
+<dt id="term-Red-with-reservation">Red with reservation<a class="headerlink" href="#term-Red-with-reservation" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">D</span></code>) The signal group is red due to other priority.</p>
+</dd>
+<dt id="term-Red-with-request">Red with request<a class="headerlink" href="#term-Red-with-request" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">F</span></code>) The signal group waits for signal group status <code class="docutils literal notranslate"><span class="pre">1</span></code>/<code class="docutils literal notranslate"><span class="pre">2</span></code>/<code class="docutils literal notranslate"><span class="pre">3</span></code>/<code class="docutils literal notranslate"><span class="pre">4</span></code>/<code class="docutils literal notranslate"><span class="pre">5</span></code>
+of conflicting signal groups to end.</p>
+</dd>
+<dt id="term-Red-with-start-in-own-stage">Red with start in own stage<a class="headerlink" href="#term-Red-with-start-in-own-stage" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">G</span></code>) The signal group waits for signal group status <code class="docutils literal notranslate"><span class="pre">6</span></code>/<code class="docutils literal notranslate"><span class="pre">7</span></code>/<code class="docutils literal notranslate"><span class="pre">8</span></code>/<code class="docutils literal notranslate"><span class="pre">9</span></code>/<code class="docutils literal notranslate"><span class="pre">N</span></code>/<code class="docutils literal notranslate"><span class="pre">O</span></code>/<code class="docutils literal notranslate"><span class="pre">P</span></code> of
+conflicting signal groups to end.</p>
+</dd>
+<dt id="term-Minimum-green">Minimum green<a class="headerlink" href="#term-Minimum-green" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">1</span></code>) The shortest time which can be shown green for each respective signal
+group, this time can´t be shortened.</p>
+</dd>
+<dt id="term-Max.-minimum-green">Max. minimum green<a class="headerlink" href="#term-Max.-minimum-green" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">2</span></code>) The signal group status <a class="reference internal" href="#term-Minimum-green"><span class="xref std std-term">Minimum green</span></a> should be able to
+be extended with a traffic controlled variable part up to a maximum
+“Max. minimum-green”. If one or multiple detector logics are programmed
+to extend signal group status “Max. minimum-green”, then the detector
+logics will extend the minimum green time if they are active when the
+signal group is red. Signal group status “Max. minimum-green” should
+optionally be able to be shortened or not at prioritization.</p>
+</dd>
+<dt id="term-Maximum-green-extension">Maximum green (extension)<a class="headerlink" href="#term-Maximum-green-extension" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">3</span></code>) The signal group should be able to extend its showing of green through
+extension, e.g. from detector logics. When the signal group has green
+demand and status minimum green has ended, the signal group should
+continue its display of  green in status maximum green. Maximum green
+should be measured in parallel with minimum green up to a maximum
+“maximum green”. Signal group status “maximum green” should optionally
+be able to be shortened or not at prioritization.</p>
+</dd>
+<dt id="term-Green-rest">Green rest<a class="headerlink" href="#term-Green-rest" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">4</span></code>) A signal group continues its display of green due to one or multiple
+signal group/s in the same traffic pattern has more demand for green
+(signal group status <code class="docutils literal notranslate"><span class="pre">1</span></code>/<code class="docutils literal notranslate"><span class="pre">2</span></code>/<code class="docutils literal notranslate"><span class="pre">3</span></code>), The signal group has no conflict.
+It waits to be changed, by the rest mode.</p>
+</dd>
+<dt id="term-Green-passive">Green passive<a class="headerlink" href="#term-Green-passive" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">5</span></code>) A signal group continues its display of green due to other signal groups
+in the same traffic pattern has more demand for green (signal group
+status 1/2/3). The signal group has conflict. It waits to change, by
+conflicting signal group(s).</p>
+</dd>
+<dt id="term-Fixed-past-end-green">Fixed past-end-green<a class="headerlink" href="#term-Fixed-past-end-green" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">6</span></code>) When the signal group is ordered to change to red it should be able to
+continue to be green with a configurable fixed time.</p>
+</dd>
+<dt id="term-Extra-green-according-to-intergreen-times">Extra green according to intergreen times<a class="headerlink" href="#term-Extra-green-according-to-intergreen-times" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">7</span></code>) Signal groups remains green if possible, according to the conflicting
+signal groups</p>
+</dd>
+<dt id="term-Variable-past-end-green">Variable past-end-green<a class="headerlink" href="#term-Variable-past-end-green" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">8</span></code>) When the signal group is ordered to change to  red it should be able to
+continue to be green during a traffic controlled variable time
+(O function in LHOVRA). Signal group status “Past end green” should optionally be
+shortened or not at prioritization.</p>
+</dd>
+<dt id="term-Variable-yellow-or-yellow-green">Variable yellow or yellow green<a class="headerlink" href="#term-Variable-yellow-or-yellow-green" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">O</span></code>) Signal group status ”fixed yellow” can be extended with a traffic
+controlled variable part “Variable yellow”, the signal group status is
+usually extended by detector logics. (V function in LHOVRA).</p>
+</dd>
+<dt id="term-Variable-red">Variable red<a class="headerlink" href="#term-Variable-red" title="Permalink to this term"></a></dt><dd><p>(<code class="docutils literal notranslate"><span class="pre">P</span></code>) The fixed red time/intergreen time should be able to be extended with a
+traffic controlled variable part. It is usually measured in parallel
+with the fixed time whereby it must be longer to have any effect.
+(R function)</p>
+</dd>
+</dl>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="RSMP Signal Exchange List for Traffic Light Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sxl_traffic_light_controller.html" class="btn btn-neutral float-right" title="2. Signal Exchange List" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright RSMP Nordic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

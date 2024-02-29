@@ -1,0 +1,4893 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Signal Exchange List &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.2 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Signal Group status" href="signal_group_status.html" />
+    <link rel="prev" title="1. Definitions" href="definitions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers
+          </a>
+              <div class="version">
+                1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Signal Exchange List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#object-types">2.1. Object Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#grouped-objects">2.1.1. Grouped objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#single-objects">2.1.2. Single objects</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#aggregated-status">2.2. Aggregated status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alarms">2.3. Alarms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a0001">2.3.1. A0001</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0002">2.3.2. A0002</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0003">2.3.3. A0003</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0004">2.3.4. A0004</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0005">2.3.5. A0005</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0006">2.3.6. A0006</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0007">2.3.7. A0007</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0008">2.3.8. A0008</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0009">2.3.9. A0009</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0010">2.3.10. A0010</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0101">2.3.11. A0101</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0201">2.3.12. A0201</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0202">2.3.13. A0202</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0301">2.3.14. A0301</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0302">2.3.15. A0302</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0303">2.3.16. A0303</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0304">2.3.17. A0304</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#status">2.4. Status</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#s0001">2.4.1. S0001</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0002">2.4.2. S0002</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0003">2.4.3. S0003</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0004">2.4.4. S0004</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0005">2.4.5. S0005</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0006">2.4.6. S0006</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0007">2.4.7. S0007</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0008">2.4.8. S0008</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0009">2.4.9. S0009</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0010">2.4.10. S0010</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0011">2.4.11. S0011</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0012">2.4.12. S0012</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0013">2.4.13. S0013</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0014">2.4.14. S0014</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0015">2.4.15. S0015</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0016">2.4.16. S0016</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0017">2.4.17. S0017</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0019">2.4.18. S0019</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0020">2.4.19. S0020</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0021">2.4.20. S0021</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0022">2.4.21. S0022</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0023">2.4.22. S0023</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0024">2.4.23. S0024</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0025">2.4.24. S0025</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0026">2.4.25. S0026</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0027">2.4.26. S0027</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0028">2.4.27. S0028</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0029">2.4.28. S0029</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0030">2.4.29. S0030</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0031">2.4.30. S0031</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0032">2.4.31. S0032</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0033">2.4.32. S0033</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0034">2.4.33. S0034</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0035">2.4.34. S0035</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0091">2.4.35. S0091</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0092">2.4.36. S0092</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0095">2.4.37. S0095</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0096">2.4.38. S0096</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0097">2.4.39. S0097</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0098">2.4.40. S0098</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0201">2.4.41. S0201</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0202">2.4.42. S0202</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0203">2.4.43. S0203</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0204">2.4.44. S0204</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0205">2.4.45. S0205</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0206">2.4.46. S0206</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0207">2.4.47. S0207</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0208">2.4.48. S0208</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">2.5. Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#m0001">2.5.1. M0001</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0002">2.5.2. M0002</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0003">2.5.3. M0003</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0004">2.5.4. M0004</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0005">2.5.5. M0005</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0006">2.5.6. M0006</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0007">2.5.7. M0007</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0008">2.5.8. M0008</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0010">2.5.9. M0010</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0011">2.5.10. M0011</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0012">2.5.11. M0012</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0013">2.5.12. M0013</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0014">2.5.13. M0014</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0015">2.5.14. M0015</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0016">2.5.15. M0016</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0017">2.5.16. M0017</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0018">2.5.17. M0018</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0019">2.5.18. M0019</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0020">2.5.19. M0020</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0021">2.5.20. M0021</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0022">2.5.21. M0022</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0023">2.5.22. M0023</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0103">2.5.23. M0103</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0104">2.5.24. M0104</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">3. Signal Group status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">4. Traffic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordination.html">5. Coordination between traffic light controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_supervisors.html">6. Multiple supervisors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_codes.html">7. Security codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">8. JSon Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">9. Change log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RSMP Signal Exchange List for Traffic Light Controllers</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">2. </span>Signal Exchange List</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/sxl_traffic_light_controller.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="signal-exchange-list">
+<h1><span class="section-number">2. </span>Signal Exchange List<a class="headerlink" href="#signal-exchange-list" title="Permalink to this headline"></a></h1>
+<section id="object-types">
+<h2><span class="section-number">2.1. </span>Object Types<a class="headerlink" href="#object-types" title="Permalink to this headline"></a></h2>
+<section id="grouped-objects">
+<h3><span class="section-number">2.1.1. </span>Grouped objects<a class="headerlink" href="#grouped-objects" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default" id="id1">
+<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">Grouped objects</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 65%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ObjectType</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="single-objects">
+<h3><span class="section-number">2.1.2. </span>Single objects<a class="headerlink" href="#single-objects" title="Permalink to this headline"></a></h3>
+<table class="longtable docutils align-default" id="id2">
+<caption><span class="caption-number">Table 2.2 </span><span class="caption-text">Single objects</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 52%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ObjectType</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Signal group</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>Detector logic</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="aggregated-status">
+<h2><span class="section-number">2.2. </span>Aggregated status<a class="headerlink" href="#aggregated-status" title="Permalink to this headline"></a></h2>
+<table class="longtable docutils align-default" id="id3">
+<caption><span class="caption-number">Table 2.3 </span><span class="caption-text">Aggregated status</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ObjectType</p></th>
+<th class="head"><p>functionalPosition</p></th>
+<th class="head"><p>functionalState</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td></td>
+<td></td>
+<td><p>functionalPosition not used (set to null) <br> 
+functionalState not used (set to null)</p></td>
+</tr>
+</tbody>
+</table>
+<table class="longtable docutils align-default" id="id4">
+<caption><span class="caption-number">Table 2.4 </span><span class="caption-text">State bits</span><a class="headerlink" href="#id4" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 15%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>State-Bit</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Local mode</p></td>
+<td><p>Traffic Light Controller is in local mode. NTS has no control.</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>No Communications</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>High Priority Fault</p></td>
+<td><p>Traffic Light Controller is in fail safe mode; e.g. yellow flash or dark mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>Medium Priority Fault</p></td>
+<td><p>Traffic Light Controller has a medium priority fault, but not in fail safe mode. E.g. several lamp faults or detector fault</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>Low Priority Fault</p></td>
+<td><p>Traffic Light Controller has a low priority fault. E.g. Detector fault</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>Connected / Normal - In Use</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>Connected / Normal - Idle</p></td>
+<td><p>Traffic Light Controller dark according to configuration. NOTE! When dark according to configuration the controller is considered to be in use</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>Not Connected</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="alarms">
+<h2><span class="section-number">2.3. </span>Alarms<a class="headerlink" href="#alarms" title="Permalink to this headline"></a></h2>
+<table class="longtable docutils align-default" id="id5">
+<caption><span class="caption-number">Table 2.5 </span><span class="caption-text">Alarms</span><a class="headerlink" href="#id5" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 14%" />
+<col style="width: 39%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ObjectType</p></th>
+<th class="head"><p>alarmCodeId</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Priority</p></th>
+<th class="head"><p>Category</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#a0001">A0001</a></p></td>
+<td><p>Serious hardware error</p></td>
+<td><p>2</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#a0002">A0002</a></p></td>
+<td><p>Less serious hardware error</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#a0003">A0003</a></p></td>
+<td><p>Serious configuration error</p></td>
+<td><p>2</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#a0004">A0004</a></p></td>
+<td><p>Less serious configuration error</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#a0005">A0005</a></p></td>
+<td><p>Synchronisation error (coordination)</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#a0006">A0006</a></p></td>
+<td><p>Safety error</p></td>
+<td><p>2</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#a0007">A0007</a></p></td>
+<td><p>Communication error</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Signal group</p></td>
+<td><p><a class="reference internal" href="#a0008">A0008</a></p></td>
+<td><p>Dead lock error</p></td>
+<td><p>2</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#a0009">A0009</a></p></td>
+<td><p>Other error</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#a0010">A0010</a></p></td>
+<td><p>Door open</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>Signal group</p></td>
+<td><p><a class="reference internal" href="#a0101">A0101</a></p></td>
+<td><p>Pushbutton error</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Signal group</p></td>
+<td><p><a class="reference internal" href="#a0201">A0201</a></p></td>
+<td><p>Serious lamp error</p></td>
+<td><p>2</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>Signal group</p></td>
+<td><p><a class="reference internal" href="#a0202">A0202</a></p></td>
+<td><p>Less serious lamp error</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Detector logic</p></td>
+<td><p><a class="reference internal" href="#a0301">A0301</a></p></td>
+<td><p>Detector error (hardware)</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>Detector logic</p></td>
+<td><p><a class="reference internal" href="#a0302">A0302</a></p></td>
+<td><p>Detector error (logic error)</p></td>
+<td><p>3</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-odd"><td><p>Detector logic</p></td>
+<td><p><a class="reference internal" href="#a0303">A0303</a></p></td>
+<td><p>Serious detector error (hardware)</p></td>
+<td><p>2</p></td>
+<td><p>D</p></td>
+</tr>
+<tr class="row-even"><td><p>Detector logic</p></td>
+<td><p><a class="reference internal" href="#a0304">A0304</a></p></td>
+<td><p>Serious detector error (logic error)</p></td>
+<td><p>2</p></td>
+<td><p>D</p></td>
+</tr>
+</tbody>
+</table>
+<section id="a0001">
+<h3><span class="section-number">2.3.1. </span>A0001<a class="headerlink" href="#a0001" title="Permalink to this headline"></a></h3>
+<p>Serious hardware error</p>
+<p>Is a “major fault” defined according to 3.8 i EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
+</section>
+<section id="a0002">
+<h3><span class="section-number">2.3.2. </span>A0002<a class="headerlink" href="#a0002" title="Permalink to this headline"></a></h3>
+<p>Less serious hardware error</p>
+<p>Is a “minor fault” defined according to 3.11 in EN12675.</p>
+</section>
+<section id="a0003">
+<h3><span class="section-number">2.3.3. </span>A0003<a class="headerlink" href="#a0003" title="Permalink to this headline"></a></h3>
+<p>Serious configuration error</p>
+<p>Is a “major fault” defined according to 3.8 in EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
+</section>
+<section id="a0004">
+<h3><span class="section-number">2.3.4. </span>A0004<a class="headerlink" href="#a0004" title="Permalink to this headline"></a></h3>
+<p>Less serious configuration error</p>
+<p>Is a “minor fault” defined according to 3.11 in EN12675.</p>
+</section>
+<section id="a0005">
+<h3><span class="section-number">2.3.5. </span>A0005<a class="headerlink" href="#a0005" title="Permalink to this headline"></a></h3>
+<p>Synchronisation error (coordination)</p>
+<p>Is a “minor fault” defined according to 3.11 in EN12675.</p>
+</section>
+<section id="a0006">
+<h3><span class="section-number">2.3.6. </span>A0006<a class="headerlink" href="#a0006" title="Permalink to this headline"></a></h3>
+<p>Safety error</p>
+<p>Is a “major fault” defined according to 3.8 in EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
+</section>
+<section id="a0007">
+<h3><span class="section-number">2.3.7. </span>A0007<a class="headerlink" href="#a0007" title="Permalink to this headline"></a></h3>
+<p>Communication error</p>
+<p>Used for communication errors with the central system. Includes NTP
+connection loss if the TLC is configured to use NTP. Is a “minor fault”
+defined according to 3.11 in EN12675.</p>
+<table class="longtable docutils align-default" id="id6">
+<caption><span class="caption-number">Table 2.6 </span><span class="caption-text">A0007</span><a class="headerlink" href="#id6" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 14%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>protocol</p></td>
+<td><p>string</p></td>
+<td><p>-rsmp <br> 
+-ntp</p></td>
+<td><p>Type of communication error, e.g. NTP or RSMP <br> 
+rsmp: RSMP <br> 
+ntp: NTP</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a0008">
+<h3><span class="section-number">2.3.8. </span>A0008<a class="headerlink" href="#a0008" title="Permalink to this headline"></a></h3>
+<p>Dead lock error</p>
+<p>Used for dead lock errors. For instance; a signal group has requested
+green but is unable to switch due to a conflicting signal group for an
+extended period of time. At some point the request times out and the
+controller goes failure mode. The cause for this error is due to
+configuration errors or external sources. Is a “major fault” defined
+according to 3.8 in EN12675 which causes the controller to switch to a
+“failure mode” according to 3.6 in EN12675.</p>
+<table class="longtable docutils align-default" id="id7">
+<caption><span class="caption-number">Table 2.7 </span><span class="caption-text">A0008</span><a class="headerlink" href="#id7" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>timeplan</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td><p>Current time plan</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a0009">
+<h3><span class="section-number">2.3.9. </span>A0009<a class="headerlink" href="#a0009" title="Permalink to this headline"></a></h3>
+<p>Other error</p>
+<p>Used for other errors not covered by any other alarm type. Is a “minor
+fault” defined according to 3.11 in EN12675.</p>
+</section>
+<section id="a0010">
+<h3><span class="section-number">2.3.10. </span>A0010<a class="headerlink" href="#a0010" title="Permalink to this headline"></a></h3>
+<p>Door open</p>
+<p>Used for open door (room or cabinet).</p>
+</section>
+<section id="a0101">
+<h3><span class="section-number">2.3.11. </span>A0101<a class="headerlink" href="#a0101" title="Permalink to this headline"></a></h3>
+<p>Pushbutton error</p>
+<p>Used for push buttons.</p>
+</section>
+<section id="a0201">
+<h3><span class="section-number">2.3.12. </span>A0201<a class="headerlink" href="#a0201" title="Permalink to this headline"></a></h3>
+<p>Serious lamp error</p>
+<p>Used for lamp errors. Is a “major fault” defined according to 3.8 in
+EN12675 which causes the controller to switch to a “failure mode”
+according to 3.6 in EN12675.</p>
+<table class="longtable docutils align-default" id="id8">
+<caption><span class="caption-number">Table 2.8 </span><span class="caption-text">A0201</span><a class="headerlink" href="#id8" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 28%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>string</p></td>
+<td><p>-red <br> 
+-yellow <br> 
+-green</p></td>
+<td><p>Color of lamp <br> 
+red: red <br> 
+yellow: yellow <br> 
+green: green</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a0202">
+<h3><span class="section-number">2.3.13. </span>A0202<a class="headerlink" href="#a0202" title="Permalink to this headline"></a></h3>
+<p>Less serious lamp error</p>
+<p>Used for lamp errors. Is a “minor fault” defined according to 3.11 in
+EN12675.</p>
+<table class="longtable docutils align-default" id="id9">
+<caption><span class="caption-number">Table 2.9 </span><span class="caption-text">A0202</span><a class="headerlink" href="#id9" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 28%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>string</p></td>
+<td><p>-red <br> 
+-yellow <br> 
+-green</p></td>
+<td><p>Color of lamp <br> 
+red: red <br> 
+yellow: yellow <br> 
+green: green</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a0301">
+<h3><span class="section-number">2.3.14. </span>A0301<a class="headerlink" href="#a0301" title="Permalink to this headline"></a></h3>
+<p>Detector error (hardware)</p>
+<p>Is a “minor fault” defined according to 3.11 in EN12675.</p>
+<table class="longtable docutils align-default" id="id10">
+<caption><span class="caption-number">Table 2.10 </span><span class="caption-text">A0301</span><a class="headerlink" href="#id10" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 10%" />
+<col style="width: 14%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Designation of the detector (hardware)</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>string</p></td>
+<td><p>-loop <br> 
+-input</p></td>
+<td><p>Type of detector <br> 
+loop: Inductive detector loop <br> 
+input: External input</p></td>
+</tr>
+<tr class="row-even"><td><p>errormode</p></td>
+<td><p>string</p></td>
+<td><p>-on <br> 
+-off</p></td>
+<td><p>Detector forced on/off while detector error</p></td>
+</tr>
+<tr class="row-odd"><td><p>manual</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td><p>Manually controlled detector logic (True/False)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a0302">
+<h3><span class="section-number">2.3.15. </span>A0302<a class="headerlink" href="#a0302" title="Permalink to this headline"></a></h3>
+<p>Detector error (logic error)</p>
+<p>For instance; detector continuously on or off during an extended time.
+Is a “minor fault” defined according to 3.11 in EN12675.</p>
+<table class="longtable docutils align-default" id="id11">
+<caption><span class="caption-number">Table 2.11 </span><span class="caption-text">A0302</span><a class="headerlink" href="#id11" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 16%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Designation of the detector (hardware)</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>string</p></td>
+<td><p>-loop <br> 
+-input</p></td>
+<td><p>Type of detector <br> 
+loop: Inductive detector loop <br> 
+input: External input</p></td>
+</tr>
+<tr class="row-even"><td><p>errormode</p></td>
+<td><p>string</p></td>
+<td><p>-on <br> 
+-off</p></td>
+<td><p>Detector forced on/off while detector error</p></td>
+</tr>
+<tr class="row-odd"><td><p>manual</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td><p>Manually controlled detector logic (True/False)</p></td>
+</tr>
+<tr class="row-even"><td><p>logicerror</p></td>
+<td><p>string</p></td>
+<td><p>-always_off <br> 
+-always_on <br> 
+-intermittent</p></td>
+<td><p>Type of logic error <br> 
+always_off: no detection during predefined max time <br> 
+always_on: detection constantly on during predefined max time <br> 
+intermittent: intermittent logic fault (flutter)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a0303">
+<h3><span class="section-number">2.3.16. </span>A0303<a class="headerlink" href="#a0303" title="Permalink to this headline"></a></h3>
+<p>Serious detector error (hardware)</p>
+<p>Is a “major fault” defined according to 3.8 i EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
+<table class="longtable docutils align-default" id="id12">
+<caption><span class="caption-number">Table 2.12 </span><span class="caption-text">A0303</span><a class="headerlink" href="#id12" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 10%" />
+<col style="width: 14%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Designation of the detector (hardware)</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>string</p></td>
+<td><p>-loop <br> 
+-input</p></td>
+<td><p>Type of detector <br> 
+loop: Inductive detector loop <br> 
+input: External input</p></td>
+</tr>
+<tr class="row-even"><td><p>errormode</p></td>
+<td><p>string</p></td>
+<td><p>-on <br> 
+-off</p></td>
+<td><p>Detector forced on/off while detector error</p></td>
+</tr>
+<tr class="row-odd"><td><p>manual</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td><p>Manually controlled detector logic (True/False)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="a0304">
+<h3><span class="section-number">2.3.17. </span>A0304<a class="headerlink" href="#a0304" title="Permalink to this headline"></a></h3>
+<p>Serious detector error (logic error)</p>
+<p>For instance; detector continuously on or off during an extended time.
+Is a “major fault” defined according to 3.8 i EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675</p>
+<table class="longtable docutils align-default" id="id13">
+<caption><span class="caption-number">Table 2.13 </span><span class="caption-text">A0304</span><a class="headerlink" href="#id13" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 16%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detector</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Designation of the detector (hardware)</p></td>
+</tr>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p>string</p></td>
+<td><p>-loop <br> 
+-input</p></td>
+<td><p>Type of detector <br> 
+loop: Inductive detector loop <br> 
+input: External input</p></td>
+</tr>
+<tr class="row-even"><td><p>errormode</p></td>
+<td><p>string</p></td>
+<td><p>-on <br> 
+-off</p></td>
+<td><p>Detector forced on/off while detector error</p></td>
+</tr>
+<tr class="row-odd"><td><p>manual</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td><p>Manually controlled detector logic (True/False)</p></td>
+</tr>
+<tr class="row-even"><td><p>logicerror</p></td>
+<td><p>string</p></td>
+<td><p>-always_off <br> 
+-always_on <br> 
+-intermittent</p></td>
+<td><p>Type of logic error <br> 
+always_off: no detection during predefined max time <br> 
+always_on: detection constantly on during predefined max time <br> 
+intermittent: intermittent logic fault (flutter)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="status">
+<h2><span class="section-number">2.4. </span>Status<a class="headerlink" href="#status" title="Permalink to this headline"></a></h2>
+<table class="longtable docutils align-default" id="id14">
+<caption><span class="caption-number">Table 2.14 </span><span class="caption-text">Status</span><a class="headerlink" href="#id14" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 14%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ObjectType</p></th>
+<th class="head"><p>statusCodeId</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0001">S0001</a></p></td>
+<td><p>Signal group status</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0002">S0002</a></p></td>
+<td><p>Detector logic status</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0003">S0003</a></p></td>
+<td><p>Input status</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0004">S0004</a></p></td>
+<td><p>Output status</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0005">S0005</a></p></td>
+<td><p>Traffic Light Controller starting</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0006">S0006</a></p></td>
+<td><p>Emergency route</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0007">S0007</a></p></td>
+<td><p>Controller switched on</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0008">S0008</a></p></td>
+<td><p>Manual control</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0009">S0009</a></p></td>
+<td><p>Fixed time control</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0010">S0010</a></p></td>
+<td><p>Isolated control</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0011">S0011</a></p></td>
+<td><p>Yellow flash</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0012">S0012</a></p></td>
+<td><p>All red</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0013">S0013</a></p></td>
+<td><p>Police key</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0014">S0014</a></p></td>
+<td><p>Current time plan</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0015">S0015</a></p></td>
+<td><p>Current traffic situation</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0016">S0016</a></p></td>
+<td><p>Number of detector logics</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0017">S0017</a></p></td>
+<td><p>Number of signal groups</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0019">S0019</a></p></td>
+<td><p>Number of traffic situations</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0020">S0020</a></p></td>
+<td><p>Control mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0021">S0021</a></p></td>
+<td><p>Manually set detector logic</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0022">S0022</a></p></td>
+<td><p>List of time plans</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0023">S0023</a></p></td>
+<td><p>Dynamic bands</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0024">S0024</a></p></td>
+<td><p>Offset time</p></td>
+</tr>
+<tr class="row-odd"><td><p>Signal group</p></td>
+<td><p><a class="reference internal" href="#s0025">S0025</a></p></td>
+<td><p>Time-of-Green / Time-of-Red</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0026">S0026</a></p></td>
+<td><p>Week time table</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0027">S0027</a></p></td>
+<td><p>Time tables</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0028">S0028</a></p></td>
+<td><p>Cycle time</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0029">S0029</a></p></td>
+<td><p>Forced input status</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0030">S0030</a></p></td>
+<td><p>Forced output status</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0031">S0031</a></p></td>
+<td><p>Trigger level sensitivity for loop detector</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0032">S0032</a></p></td>
+<td><p>Coordinated control</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0033">S0033</a></p></td>
+<td><p>Signal Priority Status</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0034">S0034</a></p></td>
+<td><p>Timeout for dynamic bands</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0035">S0035</a></p></td>
+<td><p>Emergency route</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0091">S0091</a></p></td>
+<td><p>Operator logged in/out OP-panel</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0092">S0092</a></p></td>
+<td><p>Operator logged in/out web-interface</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0095">S0095</a></p></td>
+<td><p>Version of Traffic Light Controller</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0096">S0096</a></p></td>
+<td><p>Current date and time</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0097">S0097</a></p></td>
+<td><p>Checksum of traffic parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0098">S0098</a></p></td>
+<td><p>Configuration of traffic parameters</p></td>
+</tr>
+<tr class="row-even"><td><p>Detector logic</p></td>
+<td><p><a class="reference internal" href="#s0201">S0201</a></p></td>
+<td><p>Traffic Counting: Number of vehicles</p></td>
+</tr>
+<tr class="row-odd"><td><p>Detector logic</p></td>
+<td><p><a class="reference internal" href="#s0202">S0202</a></p></td>
+<td><p>Traffic Counting: Vehicle speed</p></td>
+</tr>
+<tr class="row-even"><td><p>Detector logic</p></td>
+<td><p><a class="reference internal" href="#s0203">S0203</a></p></td>
+<td><p>Traffic Counting: Occupancy</p></td>
+</tr>
+<tr class="row-odd"><td><p>Detector logic</p></td>
+<td><p><a class="reference internal" href="#s0204">S0204</a></p></td>
+<td><p>Traffic Counting: Number of vehicles of given classification</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0205">S0205</a></p></td>
+<td><p>Traffic Counting: Number of vehicles</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0206">S0206</a></p></td>
+<td><p>Traffic Counting: Vehicle speed</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0207">S0207</a></p></td>
+<td><p>Traffic Counting: Occupancy</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#s0208">S0208</a></p></td>
+<td><p>Traffic Counting: Number of vehicles of given classification</p></td>
+</tr>
+</tbody>
+</table>
+<section id="s0001">
+<h3><span class="section-number">2.4.1. </span>S0001<a class="headerlink" href="#s0001" title="Permalink to this headline"></a></h3>
+<p>Signal group status</p>
+<p>Provides the status of each signal group, including basic information
+such as green, yellow and red. But also detailed technical information.
+Can be used to draw a live signal group diagram as well provide
+diagnostic information about the performance of the controller.</p>
+<table class="longtable docutils align-default" id="id15">
+<caption><span class="caption-number">Table 2.15 </span><span class="caption-text">S0001</span><a class="headerlink" href="#id15" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 6%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>signalgroupstatus</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Signal group status as text field <br> 
+Each character represent the state of the signal group in consecutive order. <br> 
+Signal group status is described in detail in the corresponding section. <br> 
+- = Signal group is undefined/does not exist</p></td>
+</tr>
+<tr class="row-odd"><td><p>cyclecounter</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>999</p></td>
+<td><p>Cycle counter <br> 
+Used for handling of coordination between TLC’s. <br> 
+Is counted from 0 until it reaches the cycle time (See S0028). <br> 
+<br> 
+c = (b + o) mod t <br> 
+<br> 
+where c = cycle counter, <br> 
+b = base cycle counter, <br> 
+o = offset, <br> 
+t = cycle time, <br> 
+mod = modulo <br> 
+<br> 
+See the coordination section for more information.</p></td>
+</tr>
+<tr class="row-even"><td><p>basecyclecounter</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>999</p></td>
+<td><p>Base cycle counter <br> 
+Used for handling of coordination between TLC’s. <br> 
+Synchronized between all TLC’s in an active coordination. <br> 
+See the coordination section for more information.</p></td>
+</tr>
+<tr class="row-odd"><td><p>stage</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>999</p></td>
+<td><p>Current stage (isolated)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0002">
+<h3><span class="section-number">2.4.2. </span>S0002<a class="headerlink" href="#s0002" title="Permalink to this headline"></a></h3>
+<p>Detector logic status</p>
+<p>Provides the status of all detector logics of the controller. Can be
+used to draw a live signal group diagram as well provide diagnostic
+information about the performance of the controller. Can also be used
+for bus priority, external control systems, and much more.</p>
+<table class="longtable docutils align-default" id="id16">
+<caption><span class="caption-number">Table 2.16 </span><span class="caption-text">S0002</span><a class="headerlink" href="#id16" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 6%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detectorlogicstatus</p></td>
+<td><p>string</p></td>
+<td><p>Detector logic status as text field <br> 
+Each character represent the state of the detector logic in consecutive order. <br> 
+0 : Detector logic is not active <br> 
+1 : Detector logic is active <br> 
+- : Detector logic is undefined/does not exist</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0003">
+<h3><span class="section-number">2.4.3. </span>S0003<a class="headerlink" href="#s0003" title="Permalink to this headline"></a></h3>
+<p>Input status</p>
+<p>Input (1-255) of the controllers general purpose I/O. Input is used
+where the traffic light controller must react to external control. It
+could be external detectors, bus priority, and much more.</p>
+<table class="longtable docutils align-default" id="id17">
+<caption><span class="caption-number">Table 2.17 </span><span class="caption-text">S0003</span><a class="headerlink" href="#id17" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 7%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>inputstatus</p></td>
+<td><p>string</p></td>
+<td><p>Input status as text field <br> 
+Each character represent the state of the input in consecutive order. <br> 
+0 : Input is not active <br> 
+1 : Input is active <br> 
+- : Input is undefined/does not exist</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0004">
+<h3><span class="section-number">2.4.4. </span>S0004<a class="headerlink" href="#s0004" title="Permalink to this headline"></a></h3>
+<p>Output status</p>
+<p>Output (1-255) of the controllers general purpose I/O. Can be used for
+all types of output where the traffic light controller needs to control
+other equipment. Can be used for bus priority, coordination between
+traffic controllers, external control systems, and much more.</p>
+<table class="longtable docutils align-default" id="id18">
+<caption><span class="caption-number">Table 2.18 </span><span class="caption-text">S0004</span><a class="headerlink" href="#id18" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 6%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>outputstatus</p></td>
+<td><p>string</p></td>
+<td><p>Output status as text field <br> 
+Each character represent the state of the output status in consecutive order. <br> 
+0 : Output is not active <br> 
+1 : Output is active <br> 
+- : Output is undefined/does not exist</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0005">
+<h3><span class="section-number">2.4.5. </span>S0005<a class="headerlink" href="#s0005" title="Permalink to this headline"></a></h3>
+<p>Traffic Light Controller starting</p>
+<p>The traffic signal is starting, e.g. it is in startup mode and has not
+begun working normally yet. During startup mode the traffic controller
+shows dark, red, yellow flash or using the predetermined start cycle
+(minimum times).</p>
+<table class="longtable docutils align-default" id="id19">
+<caption><span class="caption-number">Table 2.19 </span><span class="caption-text">S0005</span><a class="headerlink" href="#id19" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 9%" />
+<col style="width: 64%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td><p>False: Controller is not in start up mode <br> 
+True: Controller is currently in start up mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>statusByIntersection</p></td>
+<td><p>array</p></td>
+<td><p>False: Intersection is not in start up mode <br> 
+True: Intersection is currently in start up mode</p></td>
+</tr>
+</tbody>
+</table>
+<table class="longtable docutils align-default" id="id20">
+<caption><span class="caption-number">Table 2.20 </span><span class="caption-text">S0005 statusByIntersection</span><a class="headerlink" href="#id20" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 14%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 12%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Intersection id</p></td>
+</tr>
+<tr class="row-odd"><td><p>startup</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Start up mode</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0006">
+<h3><span class="section-number">2.4.6. </span>S0006<a class="headerlink" href="#s0006" title="Permalink to this headline"></a></h3>
+<p>Emergency route</p>
+<p>The status is active during emergency prioritization. Used in situations
+where full priority is given in the emergency vehicle program or for
+other types of priority in some cases.</p>
+<p>If no emergency route is active, status should be set to False, and
+emergencystage to zero.</p>
+<p>Deprecated, use S0035 instead.</p>
+<table class="longtable docutils align-default" id="id21">
+<caption><span class="caption-number">Table 2.21 </span><span class="caption-text">S0006</span><a class="headerlink" href="#id21" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Deprecated</span></code> False: Emergency route inactive <br> 
+True: Emergency route active</p></td>
+</tr>
+<tr class="row-odd"><td><p>emergencystage</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Deprecated</span></code> Number of emergency route (set to zero if no route is active)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0007">
+<h3><span class="section-number">2.4.7. </span>S0007<a class="headerlink" href="#s0007" title="Permalink to this headline"></a></h3>
+<p>Controller switched on</p>
+<p>The controller is active and is not in dark mode. Used to determine if
+the there is output to the signal heads, e.g. it shows red, green or
+yellow to the vehicles. During maintenance work the controller might be
+using dark mode (no output to the signal heads). Please note that all
+values in this status uses comma-separated lists - one value for each
+intersection, e.g. “0” and “True” (one intersection) or “1,2” and
+“True,False” (two intersections).</p>
+<table class="longtable docutils align-default" id="id22">
+<caption><span class="caption-number">Table 2.22 </span><span class="caption-text">S0007</span><a class="headerlink" href="#id22" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
+Use “0” for all intersections of the TLC.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>False: Traffic Light Controller in dark mode <br> 
+True: Traffic Light Controller not in dark mode</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-operator_panel <br> 
+-calendar_clock <br> 
+-control_block <br> 
+-forced <br> 
+-startup <br> 
+-other</p></td>
+<td><p>Source of the status change <br> 
+operator_panel: Operator panel <br> 
+calendar_clock: Calendar/clock <br> 
+control_block: Control block <br> 
+forced: Forced due to external command e.g. supervisor <br> 
+startup: Set after startup mode <br> 
+other: Other reason</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0008">
+<h3><span class="section-number">2.4.8. </span>S0008<a class="headerlink" href="#s0008" title="Permalink to this headline"></a></h3>
+<p>Manual control</p>
+<p>Traffic control deactivated in controller. Signal timings is controlled
+manually by service personnel using the operating panel of the
+controller. Please note that all values in this status uses
+comma-separated lists - one value for each intersection, e.g. “0” and
+“True” (one intersection) or “1,2” and “True,False” (two intersections).</p>
+<table class="longtable docutils align-default" id="id23">
+<caption><span class="caption-number">Table 2.23 </span><span class="caption-text">S0008</span><a class="headerlink" href="#id23" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
+Use “0” for all intersections of the TLC.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>False: Manual control inactive <br> 
+True: Manual control active</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-operator_panel <br> 
+-calendar_clock <br> 
+-control_block <br> 
+-forced <br> 
+-startup <br> 
+-other</p></td>
+<td><p>Source of the status change <br> 
+operator_panel: Operator panel <br> 
+calendar_clock: Calendar/clock <br> 
+control_block: Control block <br> 
+forced: Forced due to external command e.g. supervisor <br> 
+startup: Set after startup mode <br> 
+other: Other reason</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0009">
+<h3><span class="section-number">2.4.9. </span>S0009<a class="headerlink" href="#s0009" title="Permalink to this headline"></a></h3>
+<p>Fixed time control</p>
+<p>Traffic actuated control deactivated and a pre-timed control is used.
+Usually only used in case normal detectors can’t be used, e.g. during
+maintenance work. Please note that all values in this status uses
+comma-separated lists - one value for each intersection, e.g. “0” and
+“True” (one intersection) or “1,2” and “True,False” (two intersections).</p>
+<table class="longtable docutils align-default" id="id24">
+<caption><span class="caption-number">Table 2.24 </span><span class="caption-text">S0009</span><a class="headerlink" href="#id24" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
+Use “0” for all intersections of the TLC.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>False: Fixed time control inactive <br> 
+True: Fixed time control active</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-operator_panel <br> 
+-calendar_clock <br> 
+-control_block <br> 
+-forced <br> 
+-startup <br> 
+-other</p></td>
+<td><p>Source of the status change <br> 
+operator_panel: Operator panel <br> 
+calendar_clock: Calendar/clock <br> 
+control_block: Control block <br> 
+forced: Forced due to external command e.g. supervisor <br> 
+startup: Set after startup mode <br> 
+other: Other reason</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0010">
+<h3><span class="section-number">2.4.10. </span>S0010<a class="headerlink" href="#s0010" title="Permalink to this headline"></a></h3>
+<p>Isolated control</p>
+<p>Isolated control mode indicates that the controller operates
+independently of any other traffic light controller. This may be
+different depending on traffic program (time plan). Used to determine if
+the controller is operating independently or operating with other
+controllers (coordination). Please note that all values in this status
+uses comma-separated lists - one value for each intersection, e.g. “0”
+and “True” (one intersection) or “1,2” and “True,False” (two
+intersections).</p>
+<table class="longtable docutils align-default" id="id25">
+<caption><span class="caption-number">Table 2.25 </span><span class="caption-text">S0010</span><a class="headerlink" href="#id25" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
+Use “0” for all intersections of the TLC.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>False: Isolated control disabled <br> 
+True: Isolated control enabled (Vehicle actuated control or Fixed time control)</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-operator_panel <br> 
+-calendar_clock <br> 
+-control_block <br> 
+-forced <br> 
+-startup <br> 
+-other</p></td>
+<td><p>Source of the status change <br> 
+operator_panel: Operator panel <br> 
+calendar_clock: Calendar/clock <br> 
+control_block: Control block <br> 
+forced: Forced due to external command e.g. supervisor <br> 
+startup: Set after startup mode <br> 
+other: Other reason</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0011">
+<h3><span class="section-number">2.4.11. </span>S0011<a class="headerlink" href="#s0011" title="Permalink to this headline"></a></h3>
+<p>Yellow flash</p>
+<p>The controller shows yellow flash. Yellow flash may be used during a
+serious fault (depending on configuration) or maintenance work. It can
+also be manually set using M0001. Some countries may use yellow flash as
+an normal operating mode, and not necessarily during fault. Please note
+that all values in this status uses comma-separated lists - one value
+for each intersection, e.g. “1,2” and “True,False”</p>
+<table class="longtable docutils align-default" id="id26">
+<caption><span class="caption-number">Table 2.26 </span><span class="caption-text">S0011</span><a class="headerlink" href="#id26" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
+Use “0” for all intersections of the TLC.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>False: Yellow flash disabled <br> 
+True: Yellow flash enabled</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-operator_panel <br> 
+-calendar_clock <br> 
+-control_block <br> 
+-forced <br> 
+-startup <br> 
+-other</p></td>
+<td><p>Source of the status change <br> 
+operator_panel: Operator panel <br> 
+calendar_clock: Calendar/clock <br> 
+control_block: Control block <br> 
+forced: Forced due to external command e.g. supervisor <br> 
+startup: Set after startup mode <br> 
+other: Other reason</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0012">
+<h3><span class="section-number">2.4.12. </span>S0012<a class="headerlink" href="#s0012" title="Permalink to this headline"></a></h3>
+<p>All red</p>
+<p>The controller show all red. All red can be manually set using the
+controllers operating panel during maintenance work. Please note that
+all values in this status uses comma-separated lists - one value for
+each intersection, e.g. “1,2” and “True,False”</p>
+<table class="longtable docutils align-default" id="id27">
+<caption><span class="caption-number">Table 2.27 </span><span class="caption-text">S0012</span><a class="headerlink" href="#id27" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
+Use “0” for all intersections of the TLC.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>False: All red disabled <br> 
+True: All red enabled</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-operator_panel <br> 
+-calendar_clock <br> 
+-control_block <br> 
+-forced <br> 
+-startup <br> 
+-other</p></td>
+<td><p>Source of the status change <br> 
+operator_panel: Operator panel <br> 
+calendar_clock: Calendar/clock <br> 
+control_block: Control block <br> 
+forced: Forced due to external command e.g. supervisor <br> 
+startup: Set after startup mode <br> 
+other: Other reason</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0013">
+<h3><span class="section-number">2.4.13. </span>S0013<a class="headerlink" href="#s0013" title="Permalink to this headline"></a></h3>
+<p>Police key</p>
+<p>The controller is forced to dark mode or yellow flash. The “police key”
+is a external control switch present in some controllers that manually
+switches the controller to either dark mode or yellow flash. Please note
+that all values in this status uses comma-separated lists - one value
+for each intersection, e.g. “1,2” and “0,1”</p>
+<table class="longtable docutils align-default" id="id28">
+<caption><span class="caption-number">Table 2.28 </span><span class="caption-text">S0013</span><a class="headerlink" href="#id28" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 6%" />
+<col style="width: 69%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
+Use “0” for all intersections of the TLC.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>integer</p></td>
+<td></td>
+<td></td>
+<td><p>-0 <br> 
+-1 <br> 
+-2 <br> 
+-3</p></td>
+<td><p>0: disabled <br> 
+1: dark mode <br> 
+2: yellow flash <br> 
+3: all red</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0014">
+<h3><span class="section-number">2.4.14. </span>S0014<a class="headerlink" href="#s0014" title="Permalink to this headline"></a></h3>
+<p>Current time plan</p>
+<p>The current time plan (signal program) used in the controller. There may
+be 1-255 predefined time plans. The time plan (signal program) may
+change signal timings, cycle time, control strategy and much more.
+Typical usage is is scenario based control where change of program is
+used to change priority etc.</p>
+<table class="longtable docutils align-default" id="id29">
+<caption><span class="caption-number">Table 2.29 </span><span class="caption-text">S0014</span><a class="headerlink" href="#id29" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 20%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Current time plan</p></td>
+</tr>
+<tr class="row-odd"><td><p>source</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-operator_panel <br> 
+-calendar_clock <br> 
+-control_block <br> 
+-forced <br> 
+-startup <br> 
+-other</p></td>
+<td><p>Source of the status change <br> 
+operator_panel: Operator panel <br> 
+calendar_clock: Calendar/clock <br> 
+control_block: Control block <br> 
+forced: Forced due to external command e.g. supervisor <br> 
+startup: Set after startup mode <br> 
+other: Other reason</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0015">
+<h3><span class="section-number">2.4.15. </span>S0015<a class="headerlink" href="#s0015" title="Permalink to this headline"></a></h3>
+<p>Current traffic situation</p>
+<p>The current traffic situation used in the controller. Used for
+area-based control where the M0003 command can be sent to a master
+traffic light controller about which predefined traffic situation to use
+(1-255). Traffic situation is a concept used to divide multiple TLC’s
+into areas and sub-areas. The traffic situation gives the possibility to
+change the TLC sub-area dynamically depending on the time of day and the
+traffic flow. Depending on the traffic situation each TLC selects the
+time plan dynamically.</p>
+<table class="longtable docutils align-default" id="id30">
+<caption><span class="caption-number">Table 2.30 </span><span class="caption-text">S0015</span><a class="headerlink" href="#id30" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 20%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Current traffic situation</p></td>
+</tr>
+<tr class="row-odd"><td><p>source</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-operator_panel <br> 
+-calendar_clock <br> 
+-control_block <br> 
+-forced <br> 
+-startup <br> 
+-other</p></td>
+<td><p>Source of the status change <br> 
+operator_panel: Operator panel <br> 
+calendar_clock: Calendar/clock <br> 
+control_block: Control block <br> 
+forced: Forced due to external command e.g. supervisor <br> 
+startup: Set after startup mode <br> 
+other: Other reason</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0016">
+<h3><span class="section-number">2.4.16. </span>S0016<a class="headerlink" href="#s0016" title="Permalink to this headline"></a></h3>
+<p>Number of detector logics</p>
+<p>Can be used by the management system to check the number of detector
+logics configured in the controller.</p>
+<table class="longtable docutils align-default" id="id31">
+<caption><span class="caption-number">Table 2.31 </span><span class="caption-text">S0016</span><a class="headerlink" href="#id31" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>65025</p></td>
+<td><p>Number of detector logics</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0017">
+<h3><span class="section-number">2.4.17. </span>S0017<a class="headerlink" href="#s0017" title="Permalink to this headline"></a></h3>
+<p>Number of signal groups</p>
+<p>Can be used for the management system to check the number of signal
+groups configured in the controller.</p>
+<table class="longtable docutils align-default" id="id32">
+<caption><span class="caption-number">Table 2.32 </span><span class="caption-text">S0017</span><a class="headerlink" href="#id32" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 15%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>65025</p></td>
+<td><p>Number of signal groups</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0019">
+<h3><span class="section-number">2.4.18. </span>S0019<a class="headerlink" href="#s0019" title="Permalink to this headline"></a></h3>
+<p>Number of traffic situations</p>
+<p>Can be used for the management system to check the number of traffic
+situations configured in the controller.</p>
+<table class="longtable docutils align-default" id="id33">
+<caption><span class="caption-number">Table 2.33 </span><span class="caption-text">S0019</span><a class="headerlink" href="#id33" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 14%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>number</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>65025</p></td>
+<td><p>Number of traffic situations</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0020">
+<h3><span class="section-number">2.4.19. </span>S0020<a class="headerlink" href="#s0020" title="Permalink to this headline"></a></h3>
+<p>Control mode</p>
+<p>Can be used for the management system to check the current control mode
+(startup, normal, standby, failure, test). Please note that all values
+in this status uses comma-separated lists - one value for each
+intersection, e.g. “1,2” and “startup,control”</p>
+<table class="longtable docutils align-default" id="id34">
+<caption><span class="caption-number">Table 2.34 </span><span class="caption-text">S0020</span><a class="headerlink" href="#id34" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 10%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
+Use “0” for all intersections of the TLC.</p></td>
+</tr>
+<tr class="row-odd"><td><p>controlmode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-startup <br> 
+-control <br> 
+-standby <br> 
+-failure <br> 
+-test</p></td>
+<td><p>startup: Startup mode <br> 
+control: Normal control <br> 
+standby: Standby mode <br> 
+failure: Failure mode <br> 
+test: Test mode</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0021">
+<h3><span class="section-number">2.4.20. </span>S0021<a class="headerlink" href="#s0021" title="Permalink to this headline"></a></h3>
+<p>Manually set detector logic</p>
+<p>Provides status of detector logic (1-255) regarding if they are either
+forced to true or false. Can be used to connect RSMP compatible
+detection equipment to the traffic light controller. Can also be used
+for prioritization.</p>
+<table class="longtable docutils align-default" id="id35">
+<caption><span class="caption-number">Table 2.35 </span><span class="caption-text">S0021</span><a class="headerlink" href="#id35" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 9%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>detectorlogics</p></td>
+<td><p>string</p></td>
+<td><p>Manually set detector logics (1/0) as text field</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0022">
+<h3><span class="section-number">2.4.21. </span>S0022<a class="headerlink" href="#s0022" title="Permalink to this headline"></a></h3>
+<p>List of time plans</p>
+<p>Provides a list of the configured time plans which is possible to use.
+This status was added due to status S0018 only provided the total number
+of time plans and not which were possible to use with M0002. Can be used
+for the management system to check the number of time plans configured
+in the controller.</p>
+<table class="longtable docutils align-default" id="id36">
+<caption><span class="caption-number">Table 2.36 </span><span class="caption-text">S0022</span><a class="headerlink" href="#id36" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Comma separated list of configured time plans. E.g. “1,2,3,5”</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0023">
+<h3><span class="section-number">2.4.22. </span>S0023<a class="headerlink" href="#s0023" title="Permalink to this headline"></a></h3>
+<p>Dynamic bands</p>
+<p>Provides a list of all defined dynamic bands. Dynamic bands moves start
+of signal groups in the cycle and changes the signal timings. A typical
+usage of dynamic bands is scenario based control where changing of
+signal timings is used for optimal traffic flow.</p>
+<table class="longtable docutils align-default" id="id37">
+<caption><span class="caption-number">Table 2.37 </span><span class="caption-text">S0023</span><a class="headerlink" href="#id37" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Dynamic bands <br> 
+Each dynamic band are written as pp-dd-ee where: <br> 
+pp=Time plan <br> 
+dd=Dynamic band number (from 1-10) <br> 
+ee=Extension in seconds in this band <br> 
+<br> 
+Each dynamic band is separated with a comma. <br> 
+<br> 
+E.g. <br> 
+pp-dd-ee,pp-dd-ee</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0024">
+<h3><span class="section-number">2.4.23. </span>S0024<a class="headerlink" href="#s0024" title="Permalink to this headline"></a></h3>
+<p>Offset time</p>
+<p>Offset time is used to define an offset between intersections in
+coordinated control. It is based on the expected travel time between
+intersections. Can be used by the management system to check to fine
+tune the coordination for optimal traffic flow.</p>
+<table class="longtable docutils align-default" id="id38">
+<caption><span class="caption-number">Table 2.38 </span><span class="caption-text">S0024</span><a class="headerlink" href="#id38" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Offset table <br> 
+Each offset time is written as p-t where: <br> 
+p=time plan number (from 1 to 255) <br> 
+t=offset time in seconds (from 0 to 255) <br> 
+<br> 
+Each offset time is separated with a comma <br> 
+<br> 
+E.g. <br> 
+1-0,2-13-3-7</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0025">
+<h3><span class="section-number">2.4.24. </span>S0025<a class="headerlink" href="#s0025" title="Permalink to this headline"></a></h3>
+<p>Time-of-Green / Time-of-Red</p>
+<p>Provides predicted signal timings of green and red for each signal
+group. Max, min and likely time to green and red.</p>
+<table class="longtable docutils align-default" id="id39">
+<caption><span class="caption-number">Table 2.39 </span><span class="caption-text">S0025</span><a class="headerlink" href="#id39" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>minToGEstimate</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green</p></td>
+</tr>
+<tr class="row-odd"><td><p>maxToGEstimate</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green</p></td>
+</tr>
+<tr class="row-even"><td><p>likelyToGEstimate</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green</p></td>
+</tr>
+<tr class="row-odd"><td><p>ToGConfidence</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td><p>Confidence of the likelyToGEstimate. 0-100%</p></td>
+</tr>
+<tr class="row-even"><td><p>minToREstimate</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red</p></td>
+</tr>
+<tr class="row-odd"><td><p>maxToREstimate</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red</p></td>
+</tr>
+<tr class="row-even"><td><p>likelyToREstimate</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red</p></td>
+</tr>
+<tr class="row-odd"><td><p>ToRConfidence</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td><p>Confidence of the likelyToREstimate. 0-100%</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0026">
+<h3><span class="section-number">2.4.25. </span>S0026<a class="headerlink" href="#s0026" title="Permalink to this headline"></a></h3>
+<p>Week time table</p>
+<p>Week time table for signal programs (time plan) to use for each day
+during a week. The week time table determine which predefined signal
+timings (time plan) to use during the week for optimal traffic flow.</p>
+<table class="longtable docutils align-default" id="id40">
+<caption><span class="caption-number">Table 2.40 </span><span class="caption-text">S0026</span><a class="headerlink" href="#id40" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 84%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Week time table. Defines time table to use for each week day <br> 
+Each day is written as d-t where: <br> 
+d=day of week <br> 
+t=time table nr <br> 
+<br> 
+Day of week legend: <br> 
+0=Monday <br> 
+1=Tuesday <br> 
+2=Wednesday <br> 
+3=Thursday <br> 
+4=Friday <br> 
+5=Saturday <br> 
+6=Sunday <br> 
+<br> 
+Each segment is separated with a comma <br> 
+E.g. <br> 
+d-t,d-t</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0027">
+<h3><span class="section-number">2.4.26. </span>S0027<a class="headerlink" href="#s0027" title="Permalink to this headline"></a></h3>
+<p>Time tables</p>
+<p>Time of day for when to switch signal program (time plan). The signal
+timings (time plan) to use during time of day for optimal traffic flow.</p>
+<table class="longtable docutils align-default" id="id41">
+<caption><span class="caption-number">Table 2.41 </span><span class="caption-text">S0027</span><a class="headerlink" href="#id41" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 82%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Time Table. Defines time tables <br> 
+Each time definition is written as t-o-h-m where: <br> 
+t=time table nr (1-12) <br> 
+o=function <br> 
+h=hour - switching time <br> 
+m=minute - switching minute <br> 
+<br> 
+Function legend: <br> 
+0=no plan is selected by time table <br> 
+1=set plan 1 <br> 
+… <br> 
+16= set plan 16 <br> 
+<br> 
+hour and minute is using local time (not UTC) <br> 
+<br> 
+Each time definition is separated with a comma <br> 
+<br> 
+E.g. <br> 
+t-o-h-m,t-o-h-m</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0028">
+<h3><span class="section-number">2.4.27. </span>S0028<a class="headerlink" href="#s0028" title="Permalink to this headline"></a></h3>
+<p>Cycle time</p>
+<p>Cycle time (or cycle length) is the sum of all phases in a time plan
+(traffic program). This time is fixed when using fixed time control or
+coordination (except “local coordination”). When the cycle counter
+reaches this length it is reset back to zero. Changing the cycle time
+can be used as part of scenario based control.</p>
+<table class="longtable docutils align-default" id="id42">
+<caption><span class="caption-number">Table 2.42 </span><span class="caption-text">S0028</span><a class="headerlink" href="#id42" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Cycle time table <br> 
+Each cycle time is written as pp-tt where: <br> 
+pp=time plan <br> 
+tt=cycle time in seconds <br> 
+<br> 
+Each cycle time is separated with a comma <br> 
+<br> 
+E.g. <br> 
+pp-tt,pp-tt</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0029">
+<h3><span class="section-number">2.4.28. </span>S0029<a class="headerlink" href="#s0029" title="Permalink to this headline"></a></h3>
+<p>Forced input status</p>
+<p>Provide status of input (1-255) regarding if they are forced or not. Can
+be used for all types of input where the traffic light controller must
+react to external control. Can be used for bus priority, coordination
+between traffic controllers, external control systems, and much more.</p>
+<table class="longtable docutils align-default" id="id43">
+<caption><span class="caption-number">Table 2.43 </span><span class="caption-text">S0029</span><a class="headerlink" href="#id43" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Forced input status as text field</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0030">
+<h3><span class="section-number">2.4.29. </span>S0030<a class="headerlink" href="#s0030" title="Permalink to this headline"></a></h3>
+<p>Forced output status</p>
+<p>Provide status of output (1-255) regarding if they are forced or not.
+Can be used for all types of output where the traffic light controller
+needs to control other equipment. Can be used for bus priority,
+coordination between traffic controllers, external control systems, and
+much more.</p>
+<table class="longtable docutils align-default" id="id44">
+<caption><span class="caption-number">Table 2.44 </span><span class="caption-text">S0030</span><a class="headerlink" href="#id44" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Forced output status as text field</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0031">
+<h3><span class="section-number">2.4.30. </span>S0031<a class="headerlink" href="#s0031" title="Permalink to this headline"></a></h3>
+<p>Trigger level sensitivity for loop detector</p>
+<p>The trigger level sensitivity determines at what level the loop detector
+should trigger. If it set too low then then traffic will not be detected
+as intended. If it is set too high the detector might give false
+positives. Can be used to make sure that the detectors detect traffic as
+intended.</p>
+<table class="longtable docutils align-default" id="id45">
+<caption><span class="caption-number">Table 2.45 </span><span class="caption-text">S0031</span><a class="headerlink" href="#id45" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Loop detector trigger level sensitivity is written as dd-ss where: <br> 
+dd=loop detector number <br> 
+ss=sensitivity value <br> 
+Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0032">
+<h3><span class="section-number">2.4.31. </span>S0032<a class="headerlink" href="#s0032" title="Permalink to this headline"></a></h3>
+<p>Coordinated control</p>
+<p>This status is used when coordination between traffic light controllers
+is active. Coordination is described in detail in the corresponding
+section Please note that all values in this status uses comma-separated
+lists - one value for each intersection, e.g. “1,2” and
+“centralized,off”</p>
+<table class="longtable docutils align-default" id="id46">
+<caption><span class="caption-number">Table 2.46 </span><span class="caption-text">S0032</span><a class="headerlink" href="#id46" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 15%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
+Use “0” for all intersections of the TLC.</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-local <br> 
+-centralized <br> 
+-off</p></td>
+<td><p>local: Local coordination <br> 
+centralized: Coordination with synchronized clock <br> 
+off: Coordination not active</p></td>
+</tr>
+<tr class="row-even"><td><p>source</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-operator_panel <br> 
+-calendar_clock <br> 
+-control_block <br> 
+-forced <br> 
+-startup <br> 
+-other</p></td>
+<td><p>Source of the status change <br> 
+operator_panel: Operator panel <br> 
+calendar_clock: Calendar/clock <br> 
+control_block: Control block <br> 
+forced: Forced due to external command e.g. supervisor <br> 
+startup: Set after startup mode <br> 
+other: Other reason</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0033">
+<h3><span class="section-number">2.4.32. </span>S0033<a class="headerlink" href="#s0033" title="Permalink to this headline"></a></h3>
+<p>Signal Priority Status</p>
+<p>This status can be used to get updates about priority requests. For
+example, you can use it to know when priority requests are activated or
+cancelled. A list of priorities is returned, referred to by their
+request ids. The same request id can appear only once. All priorities
+are included in the list (not only the ones that have changed state
+since the last update). This is done regardless of whether the status is
+send in respond to a status request, or due to a status subscription,
+and also regardless of whether a status subscription uses an update
+interval, or send-on-change, or both. If you subscribe using an update
+interval, you’re not guaranteed to get all intermediate states. To
+guarantee that, send-on-change must be used when subscribing. To
+understand how this status relates to ETSI/J2735, please see the
+<a class="reference external" href="https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735">wiki</a>.
+All priorities are send on every status update, regardless of whether an
+interval, or sendOnChange (or both) is used. When a priority reaches an
+end states (completed, timeout, rejected, cooldown or stale), it must be
+sent once on the next status update, then removed from the list. A
+request always starts in the ‘received’ state. The following table shows
+the possible state transitions:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>State</p></th>
+<th class="head"><p>Possible next states</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>received</p></td>
+<td><p>queued, activated, rejected, cooldown</p></td>
+</tr>
+<tr class="row-odd"><td><p>queued</p></td>
+<td><p>activated, timeout</p></td>
+</tr>
+<tr class="row-even"><td><p>activated</p></td>
+<td><p>completed, stale</p></td>
+</tr>
+<tr class="row-odd"><td><p>completed</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>timeout</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>rejected</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>cooldown</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>stale</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="longtable docutils align-default" id="id47">
+<caption><span class="caption-number">Table 2.47 </span><span class="caption-text">S0033</span><a class="headerlink" href="#id47" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>array</p></td>
+<td><p>JSON array of priority status items</p></td>
+</tr>
+</tbody>
+</table>
+<table class="longtable docutils align-default" id="id48">
+<caption><span class="caption-number">Table 2.48 </span><span class="caption-text">S0033 status</span><a class="headerlink" href="#id48" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 7%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 11%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>r</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>ID of the priority request</p></td>
+</tr>
+<tr class="row-odd"><td><p>t</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Timestamp, indicating when the priority last changed state</p></td>
+</tr>
+<tr class="row-even"><td><p>s</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-received <br> 
+-queued <br> 
+-activated <br> 
+-completed <br> 
+-timeout <br> 
+-rejected <br> 
+-cooldown <br> 
+-stale</p></td>
+<td><p>Current status of the priority request <br> 
+received: A new priority request was received but has not yet been processed <br> 
+queued: The priority request has been queued for later activation <br> 
+activated: The priority was activated <br> 
+completed: The priority was cancelled as expected <br> 
+timeout: The priority has been queued for too long <br> 
+rejected: The priority request cannot be granted <br> 
+cooldown: A similar priority request means the priority request cannot be activated now <br> 
+stale: The priority has been active too long without cancellation, and was therefore removed</p></td>
+</tr>
+<tr class="row-odd"><td><p>e</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>(Optional) Estimated green extension provided by the priority, in seconds <br> 
+Only used when state is ‘completed’.</p></td>
+</tr>
+<tr class="row-even"><td><p>d</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>(Optional) Estimated red reduction provided by the priority, in seconds <br> 
+Only used when state is ‘completed’.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0034">
+<h3><span class="section-number">2.4.33. </span>S0034<a class="headerlink" href="#s0034" title="Permalink to this headline"></a></h3>
+<p>Timeout for dynamic bands</p>
+<p>Time until a designated time plan is entered due to lost connection with
+the supervisor. Disabled if set to ‘0’. Used in conjunction with dynamic
+bands, M0014</p>
+<table class="longtable docutils align-default" id="id49">
+<caption><span class="caption-number">Table 2.49 </span><span class="caption-text">S0034</span><a class="headerlink" href="#id49" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 17%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Timeout, in minutes</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0035">
+<h3><span class="section-number">2.4.34. </span>S0035<a class="headerlink" href="#s0035" title="Permalink to this headline"></a></h3>
+<p>Emergency route</p>
+<p>The status is active during emergency prioritization. Used in situations
+where full priority is given in the emergency vehicle program or for
+other types of priority in some cases.</p>
+<p>This status is similar to S0006, but supports multiple routes</p>
+<table class="longtable docutils align-default" id="id50">
+<caption><span class="caption-number">Table 2.50 </span><span class="caption-text">S0035</span><a class="headerlink" href="#id50" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 14%" />
+<col style="width: 52%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>emergencyroutes</p></td>
+<td><p>array</p></td>
+<td><p>Active emergency routes</p></td>
+</tr>
+</tbody>
+</table>
+<table class="longtable docutils align-default" id="id51">
+<caption><span class="caption-number">Table 2.51 </span><span class="caption-text">S0035 emergencyroutes</span><a class="headerlink" href="#id51" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 11%" />
+<col style="width: 49%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>id</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>ID of active emergency route</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0091">
+<h3><span class="section-number">2.4.35. </span>S0091<a class="headerlink" href="#s0091" title="Permalink to this headline"></a></h3>
+<p>Operator logged in/out OP-panel</p>
+<p>Provides information if maintenance personnel is currently working on
+site.</p>
+<table class="longtable docutils align-default" id="id52">
+<caption><span class="caption-number">Table 2.52 </span><span class="caption-text">S0091</span><a class="headerlink" href="#id52" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>user</p></td>
+<td><p>integer</p></td>
+<td><p>-0 <br> 
+-1 <br> 
+-2</p></td>
+<td><p>0: Nobody logged in <br> 
+1: Operator logged in at level 1 (read only) <br> 
+2: Operator logged in at level 2 (read/write)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0092">
+<h3><span class="section-number">2.4.36. </span>S0092<a class="headerlink" href="#s0092" title="Permalink to this headline"></a></h3>
+<p>Operator logged in/out web-interface</p>
+<p>Provides information if maintenance personnel is currently working with
+the controller.</p>
+<table class="longtable docutils align-default" id="id53">
+<caption><span class="caption-number">Table 2.53 </span><span class="caption-text">S0092</span><a class="headerlink" href="#id53" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 71%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>user</p></td>
+<td><p>integer</p></td>
+<td><p>-0 <br> 
+-1 <br> 
+-2</p></td>
+<td><p>0: Nobody logged in <br> 
+1: Operator logged in at level 1 (read only) <br> 
+2: Operator logged in at level 2 (read/write)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0095">
+<h3><span class="section-number">2.4.37. </span>S0095<a class="headerlink" href="#s0095" title="Permalink to this headline"></a></h3>
+<p>Version of Traffic Light Controller</p>
+<p>Provides diagnostic version information.</p>
+<table class="longtable docutils align-default" id="id54">
+<caption><span class="caption-number">Table 2.54 </span><span class="caption-text">S0095</span><a class="headerlink" href="#id54" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 85%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Manufacturer, product name and version of traffic light controller</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0096">
+<h3><span class="section-number">2.4.38. </span>S0096<a class="headerlink" href="#s0096" title="Permalink to this headline"></a></h3>
+<p>Current date and time</p>
+<p>Note: UTC is used. Provides diagnostic information about the current
+date and time set in the controller.</p>
+<table class="longtable docutils align-default" id="id55">
+<caption><span class="caption-number">Table 2.55 </span><span class="caption-text">S0096</span><a class="headerlink" href="#id55" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>year</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>9999</p></td>
+<td><p>Year</p></td>
+</tr>
+<tr class="row-odd"><td><p>month</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>12</p></td>
+<td><p>Month</p></td>
+</tr>
+<tr class="row-even"><td><p>day</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>31</p></td>
+<td><p>Day of month</p></td>
+</tr>
+<tr class="row-odd"><td><p>hour</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>23</p></td>
+<td><p>Hour</p></td>
+</tr>
+<tr class="row-even"><td><p>minute</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>59</p></td>
+<td><p>Minute</p></td>
+</tr>
+<tr class="row-odd"><td><p>second</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>59</p></td>
+<td><p>Second</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0097">
+<h3><span class="section-number">2.4.39. </span>S0097<a class="headerlink" href="#s0097" title="Permalink to this headline"></a></h3>
+<p>Checksum of traffic parameters</p>
+<p>Can be used to check if any traffic parameter has been changed. For
+instance, depending on controller, maintenance personnel can modify
+traffic parameters on site to optimize traffic flow. This status
+provides the ability to monitor if any traffic parameter has been
+changed. The traffic parameters may be downloaded with S0098.</p>
+<table class="longtable docutils align-default" id="id56">
+<caption><span class="caption-number">Table 2.56 </span><span class="caption-text">S0097</span><a class="headerlink" href="#id56" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 81%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>checksum</p></td>
+<td><p>string</p></td>
+<td><p>Checksum of the traffic parameters <br> 
+Uses SHA-2 as hashing algorithm <br> 
+Includes <br> 
+- all signal programs, including program versions <br> 
+- signal group settings <br> 
+- time plans <br> 
+- safety matrix <br> 
+- intergreen times <br> 
+- detector settings <br> 
+<br> 
+It should NOT include: <br> 
+- network settings <br> 
+- log files <br> 
+- software <br> 
+- other device settings that are not part of the signal program <br> 
+<br> 
+Note: <br> 
+- The checksum should be calculated using the same data as used in S0098 <br> 
+- Data Downloaded with S0098 and hashed with SHA-2 should match this value.</p></td>
+</tr>
+<tr class="row-odd"><td><p>timestamp</p></td>
+<td><p>timestamp</p></td>
+<td><p>Time stamp of the checksum</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0098">
+<h3><span class="section-number">2.4.40. </span>S0098<a class="headerlink" href="#s0098" title="Permalink to this headline"></a></h3>
+<p>Configuration of traffic parameters</p>
+<p>Can be used to download all traffic parameters from the controller. For
+instance, depending on controller, maintenance personnel can modify
+traffic parameters on site to optimize traffic flow. This status
+provides the ability to downloaded them.</p>
+<table class="longtable docutils align-default" id="id57">
+<caption><span class="caption-number">Table 2.57 </span><span class="caption-text">S0098</span><a class="headerlink" href="#id57" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 88%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>config</p></td>
+<td><p>base64</p></td>
+<td><p>Traffic parameters <br> 
+Includes <br> 
+- all signal programs, including program versions <br> 
+- signal group settings <br> 
+- time plans <br> 
+- safety matrix <br> 
+- intergreen times <br> 
+- detector setting <br> 
+<br> 
+It should NOT include: <br> 
+- network settings <br> 
+- log files <br> 
+- software <br> 
+- other device settings that are not part of the signal program <br> 
+<br> 
+Note: <br> 
+- There is no way to upload this binary file to the TLC using RSMP <br> 
+- The format of the binary file is not specified and is not expected to be compatible between suppliers</p></td>
+</tr>
+<tr class="row-odd"><td><p>timestamp</p></td>
+<td><p>timestamp</p></td>
+<td><p>Time stamp of the config</p></td>
+</tr>
+<tr class="row-even"><td><p>version</p></td>
+<td><p>string</p></td>
+<td><p>Version information of the configuration. Contains basic information such as controller id, changes to config and other information <br> 
+The format is not specified in detail.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0201">
+<h3><span class="section-number">2.4.41. </span>S0201<a class="headerlink" href="#s0201" title="Permalink to this headline"></a></h3>
+<p>Traffic Counting: Number of vehicles</p>
+<p>Used for Traffic counting.</p>
+<table class="longtable docutils align-default" id="id58">
+<caption><span class="caption-number">Table 2.58 </span><span class="caption-text">S0201</span><a class="headerlink" href="#id58" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>starttime</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for start of measuring</p></td>
+</tr>
+<tr class="row-odd"><td><p>vehicles</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of vehicles on a given detector logic (since last update)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0202">
+<h3><span class="section-number">2.4.42. </span>S0202<a class="headerlink" href="#s0202" title="Permalink to this headline"></a></h3>
+<p>Traffic Counting: Vehicle speed</p>
+<p>Used for Traffic counting.</p>
+<table class="longtable docutils align-default" id="id59">
+<caption><span class="caption-number">Table 2.59 </span><span class="caption-text">S0202</span><a class="headerlink" href="#id59" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>starttime</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for start of measuring</p></td>
+</tr>
+<tr class="row-odd"><td><p>speed</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Average speed in km/h</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0203">
+<h3><span class="section-number">2.4.43. </span>S0203<a class="headerlink" href="#s0203" title="Permalink to this headline"></a></h3>
+<p>Traffic Counting: Occupancy</p>
+<p>Used for Traffic counting.</p>
+<table class="longtable docutils align-default" id="id60">
+<caption><span class="caption-number">Table 2.60 </span><span class="caption-text">S0203</span><a class="headerlink" href="#id60" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>starttime</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for start of measuring</p></td>
+</tr>
+<tr class="row-odd"><td><p>occupancy</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>100</p></td>
+<td><p>Occupancy in percent (0-100%)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0204">
+<h3><span class="section-number">2.4.44. </span>S0204<a class="headerlink" href="#s0204" title="Permalink to this headline"></a></h3>
+<p>Traffic Counting: Number of vehicles of given classification</p>
+<p>Used for Traffic counting.</p>
+<table class="longtable docutils align-default" id="id61">
+<caption><span class="caption-number">Table 2.61 </span><span class="caption-text">S0204</span><a class="headerlink" href="#id61" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>starttime</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for start of measuring</p></td>
+</tr>
+<tr class="row-odd"><td><p>P</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of cars</p></td>
+</tr>
+<tr class="row-even"><td><p>PS</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of cars with trailers</p></td>
+</tr>
+<tr class="row-odd"><td><p>L</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of trucks</p></td>
+</tr>
+<tr class="row-even"><td><p>LS</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of trucks with trailers</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of buses</p></td>
+</tr>
+<tr class="row-even"><td><p>SP</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of trams</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of motor cycles</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of bicycles</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Number of pedestrians</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0205">
+<h3><span class="section-number">2.4.45. </span>S0205<a class="headerlink" href="#s0205" title="Permalink to this headline"></a></h3>
+<p>Traffic Counting: Number of vehicles</p>
+<p>This status was introduced to improve performance in case traffic
+counting is done on all all detectors.</p>
+<table class="longtable docutils align-default" id="id62">
+<caption><span class="caption-number">Table 2.62 </span><span class="caption-text">S0205</span><a class="headerlink" href="#id62" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 8%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>start</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for start of measuring</p></td>
+</tr>
+<tr class="row-odd"><td><p>vehicles</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of vehicles <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0206">
+<h3><span class="section-number">2.4.46. </span>S0206<a class="headerlink" href="#s0206" title="Permalink to this headline"></a></h3>
+<p>Traffic Counting: Vehicle speed</p>
+<p>This status was introduced to improve performance in case traffic
+counting is done on all all detectors.</p>
+<table class="longtable docutils align-default" id="id63">
+<caption><span class="caption-number">Table 2.63 </span><span class="caption-text">S0206</span><a class="headerlink" href="#id63" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>start</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for start of measuring</p></td>
+</tr>
+<tr class="row-odd"><td><p>speed</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Average speed in km/h (integer) <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0207">
+<h3><span class="section-number">2.4.47. </span>S0207<a class="headerlink" href="#s0207" title="Permalink to this headline"></a></h3>
+<p>Traffic Counting: Occupancy</p>
+<p>This status was introduced to improve performance in case traffic
+counting is done on all all detectors.</p>
+<table class="longtable docutils align-default" id="id64">
+<caption><span class="caption-number">Table 2.64 </span><span class="caption-text">S0207</span><a class="headerlink" href="#id64" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 77%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>start</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for start of measuring</p></td>
+</tr>
+<tr class="row-odd"><td><p>occupancy</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>100</p></td>
+<td><p>Occupancy in percent (%) (0-100) <br> 
+- Value expressed as an integer with a range of 0-100. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="s0208">
+<h3><span class="section-number">2.4.48. </span>S0208<a class="headerlink" href="#s0208" title="Permalink to this headline"></a></h3>
+<p>Traffic Counting: Number of vehicles of given classification</p>
+<p>This status was introduced to improve performance in case traffic
+counting is done on all all detectors.</p>
+<table class="longtable docutils align-default" id="id65">
+<caption><span class="caption-number">Table 2.65 </span><span class="caption-text">S0208</span><a class="headerlink" href="#id65" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 8%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 79%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>start</p></td>
+<td><p>timestamp</p></td>
+<td></td>
+<td></td>
+<td><p>Time stamp for start of measuring</p></td>
+</tr>
+<tr class="row-odd"><td><p>P</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of cars <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+<tr class="row-even"><td><p>PS</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of cars with trailers <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+<tr class="row-odd"><td><p>L</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of trucks <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+<tr class="row-even"><td><p>LS</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of trucks with trailers <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of buses <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+<tr class="row-even"><td><p>SP</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of trams <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+<tr class="row-odd"><td><p>MC</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of motor cycles <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of bicycles <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p>integer</p></td>
+<td><p>-1</p></td>
+<td><p>65535</p></td>
+<td><p>Number of pedestrians <br> 
+- Value expressed as an integer with a range of 0-65535. <br> 
+- Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
+- The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="commands">
+<h2><span class="section-number">2.5. </span>Commands<a class="headerlink" href="#commands" title="Permalink to this headline"></a></h2>
+<table class="longtable docutils align-default" id="id66">
+<caption><span class="caption-number">Table 2.66 </span><span class="caption-text">Commands</span><a class="headerlink" href="#id66" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 14%" />
+<col style="width: 20%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ObjectType</p></th>
+<th class="head"><p>commandCodeId</p></th>
+<th class="head"><p>Command</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0001">M0001</a></p></td>
+<td><p>setValue</p></td>
+<td><p>Sets functional position</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0002">M0002</a></p></td>
+<td><p>setPlan</p></td>
+<td><p>Sets current time plan</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0003">M0003</a></p></td>
+<td><p>setTrafficSituation</p></td>
+<td><p>Sets traffic situation the controller uses</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0004">M0004</a></p></td>
+<td><p>setRestart</p></td>
+<td><p>Restarts Traffic Light Controller</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0005">M0005</a></p></td>
+<td><p>setEmergency</p></td>
+<td><p>Activate emergency route</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0006">M0006</a></p></td>
+<td><p>setInput</p></td>
+<td><p>Activate input</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0007">M0007</a></p></td>
+<td><p>setFixedTime</p></td>
+<td><p>Activate fixed time control</p></td>
+</tr>
+<tr class="row-odd"><td><p>Detector logic</p></td>
+<td><p><a class="reference internal" href="#m0008">M0008</a></p></td>
+<td><p>setForceDetectorLogic</p></td>
+<td><p>Sets manual activation of detector logic</p></td>
+</tr>
+<tr class="row-even"><td><p>Signal group</p></td>
+<td><p><a class="reference internal" href="#m0010">M0010</a></p></td>
+<td><p>setStart</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Signal group</p></td>
+<td><p><a class="reference internal" href="#m0011">M0011</a></p></td>
+<td><p>setStop</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0012">M0012</a></p></td>
+<td><p>setStart</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0013">M0013</a></p></td>
+<td><p>setInput</p></td>
+<td><p>Activate a series of inputs</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0014">M0014</a></p></td>
+<td><p>setCommands</p></td>
+<td><p>Set dynamic bands</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0015">M0015</a></p></td>
+<td><p>setOffset</p></td>
+<td><p>Set Offset time</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0016">M0016</a></p></td>
+<td><p>setWeekTable</p></td>
+<td><p>Set week time table</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0017">M0017</a></p></td>
+<td><p>setTimeTable</p></td>
+<td><p>Set time tables</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0018">M0018</a></p></td>
+<td><p>setCycleTime</p></td>
+<td><p>Set Cycle time</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0019">M0019</a></p></td>
+<td><p>setInput</p></td>
+<td><p>Force input</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0020">M0020</a></p></td>
+<td><p>setOutput</p></td>
+<td><p>Force output</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0021">M0021</a></p></td>
+<td><p>setLevel</p></td>
+<td><p>Set trigger level sensitivity for loop detector</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0022">M0022</a></p></td>
+<td><p>requestPriority</p></td>
+<td><p>Request Signal Priority</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0023">M0023</a></p></td>
+<td><p>setTimeout</p></td>
+<td><p>Set timeout for dynamic bands</p></td>
+</tr>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0103">M0103</a></p></td>
+<td><p>setSecurityCode</p></td>
+<td><p>Set security code</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0104">M0104</a></p></td>
+<td><p>setDate</p></td>
+<td><p>Set clock</p></td>
+</tr>
+</tbody>
+</table>
+<section id="m0001">
+<h3><span class="section-number">2.5.1. </span>M0001<a class="headerlink" href="#m0001" title="Permalink to this headline"></a></h3>
+<p>Sets functional position</p>
+<p>Sets the controller to yellow flash, dark mode or normal control.
+Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id67">
+<caption><span class="caption-number">Table 2.67 </span><span class="caption-text">M0001</span><a class="headerlink" href="#id67" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 14%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-NormalControl <br> 
+-YellowFlash <br> 
+-Dark</p></td>
+<td><p>Set operating mode <br> 
+NormalControl: Normal Control <br> 
+YellowFlash: Enables yellow flash <br> 
+Dark: Enables dark mode</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+<tr class="row-even"><td><p>timeout</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>1440</p></td>
+<td></td>
+<td><p>Time in minutes until controller automatically reverts to previous functional position <br> 
+0=no automatic return</p></td>
+</tr>
+<tr class="row-odd"><td><p>intersection</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>Intersection number</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0002">
+<h3><span class="section-number">2.5.2. </span>M0002<a class="headerlink" href="#m0002" title="Permalink to this headline"></a></h3>
+<p>Sets current time plan</p>
+<p>Change of traffic program of the traffic light controller. Typical
+usages is scenario based control where change of program is used to
+change signal timings etc. This command changes the signal timings for
+optimal traffic flow. Requires security code 2</p>
+<table class="longtable docutils align-default" id="id68">
+<caption><span class="caption-number">Table 2.68 </span><span class="caption-text">M0002</span><a class="headerlink" href="#id68" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 8%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td><p>False: Controller uses time plan according to programming <br> 
+True: Controller uses time plan according to command</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+<tr class="row-even"><td><p>timeplan</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td><p>designation of time plan</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0003">
+<h3><span class="section-number">2.5.3. </span>M0003<a class="headerlink" href="#m0003" title="Permalink to this headline"></a></h3>
+<p>Sets traffic situation the controller uses</p>
+<p>Used for area-based control where this command can be sent to a master
+traffic light controller about which predefined traffic situation to use
+(1-255). Traffic situation is a concept used to divide multiple TLC’s
+into areas and sub-areas. The traffic situation gives the possibility to
+change the TLC sub-area dynamically depending on the time of day and the
+traffic flow. Depending on the traffic situation each TLC selects the
+time plan dynamically. Requires security code 2</p>
+<table class="longtable docutils align-default" id="id69">
+<caption><span class="caption-number">Table 2.69 </span><span class="caption-text">M0003</span><a class="headerlink" href="#id69" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 7%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 70%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td><p>False: Controller uses traffic situation according to own programming <br> 
+True: Controller uses traffic situation according to command</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+<tr class="row-even"><td><p>traficsituation</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td><p>designation of traficsituation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0004">
+<h3><span class="section-number">2.5.4. </span>M0004<a class="headerlink" href="#m0004" title="Permalink to this headline"></a></h3>
+<p>Restarts Traffic Light Controller</p>
+<p>Used in the event of serious faults in the device where a restart is
+considered to be able to remedy a problem. Requires security code 2</p>
+<table class="longtable docutils align-default" id="id70">
+<caption><span class="caption-number">Table 2.70 </span><span class="caption-text">M0004</span><a class="headerlink" href="#id70" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 16%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td><p>True: Restart controller</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0005">
+<h3><span class="section-number">2.5.5. </span>M0005<a class="headerlink" href="#m0005" title="Permalink to this headline"></a></h3>
+<p>Activate emergency route</p>
+<p>The function is made for emergency prioritization. Works in the same way
+as the M0006 and M0008 where the traffic light controller responds to an
+input. Should be used in situations where full priority is given in the
+emergency vehicle program. Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id71">
+<caption><span class="caption-number">Table 2.71 </span><span class="caption-text">M0005</span><a class="headerlink" href="#id71" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 7%" />
+<col style="width: 55%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td><p>False: Deactivate emergency route <br> 
+True: Activate emergency route</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+<tr class="row-even"><td><p>emergencyroute</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td><p>Number of emergency route</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0006">
+<h3><span class="section-number">2.5.6. </span>M0006<a class="headerlink" href="#m0006" title="Permalink to this headline"></a></h3>
+<p>Activate input</p>
+<p>Set given input (1-255) of the controllers general purpose I/O to either
+true or false. The function can provide an input to the traffic light
+controller on which a predefined action can be taken. Can be used for
+all types of input where the traffic light controller must react to
+external control. Typical usages are bus priority, coordination between
+traffic controllers, external control systems, and much more. Requires
+security code 2.</p>
+<table class="longtable docutils align-default" id="id72">
+<caption><span class="caption-number">Table 2.72 </span><span class="caption-text">M0006</span><a class="headerlink" href="#id72" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 12%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 49%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td><p>False: Deactivate input <br> 
+True: Activate input</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+<tr class="row-even"><td><p>input</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td><p>Number of Input</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0007">
+<h3><span class="section-number">2.5.7. </span>M0007<a class="headerlink" href="#m0007" title="Permalink to this headline"></a></h3>
+<p>Activate fixed time control</p>
+<p>Deactivates the traffic actuated control using detectors and activates
+pre-timed control. Can be used in case normal detectors can’t be used,
+e.g. during maintenance work. Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id73">
+<caption><span class="caption-number">Table 2.73 </span><span class="caption-text">M0007</span><a class="headerlink" href="#id73" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 12%" />
+<col style="width: 68%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td><p>False: Deactivate fixed time control <br> 
+True: Activate fixed time control</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0008">
+<h3><span class="section-number">2.5.8. </span>M0008<a class="headerlink" href="#m0008" title="Permalink to this headline"></a></h3>
+<p>Sets manual activation of detector logic</p>
+<p>Set given detector logic (1-255) to either true or false. Can e.g. be
+used to connect RSMP compatible detection equipment to the traffic light
+controller. Can also be used for prioritization. Requires security code
+2</p>
+<table class="longtable docutils align-default" id="id74">
+<caption><span class="caption-number">Table 2.74 </span><span class="caption-text">M0008</span><a class="headerlink" href="#id74" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 9%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td><p>False: Deactivate manual control of detector logic <br> 
+True: Activate manual control of detector logic</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p>Security code 2</p></td>
+</tr>
+<tr class="row-even"><td><p>mode</p></td>
+<td><p>boolean</p></td>
+<td><p>False: Deactivate detector logic <br> 
+True: Activate detector logic</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0010">
+<h3><span class="section-number">2.5.9. </span>M0010<a class="headerlink" href="#m0010" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p>
+<table class="longtable docutils align-default" id="id75">
+<caption><span class="caption-number">Table 2.75 </span><span class="caption-text">M0010</span><a class="headerlink" href="#id75" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 23%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0011">
+<h3><span class="section-number">2.5.10. </span>M0011<a class="headerlink" href="#m0011" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p>
+<table class="longtable docutils align-default" id="id76">
+<caption><span class="caption-number">Table 2.76 </span><span class="caption-text">M0011</span><a class="headerlink" href="#id76" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 23%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0012">
+<h3><span class="section-number">2.5.11. </span>M0012<a class="headerlink" href="#m0012" title="Permalink to this headline"></a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p>
+<table class="longtable docutils align-default" id="id77">
+<caption><span class="caption-number">Table 2.77 </span><span class="caption-text">M0012</span><a class="headerlink" href="#id77" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 20%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0013">
+<h3><span class="section-number">2.5.12. </span>M0013<a class="headerlink" href="#m0013" title="Permalink to this headline"></a></h3>
+<p>Activate a series of inputs</p>
+<p>Set given inputs (1-255) of the controllers general purpose I/O to
+either true or false. This command was introduced due to coordination
+requirements needing to set many inputs to true/false at the same time
+and M0006 being to slow to send a message for each input individually.
+With this command many inputs can be set to true/false at the same time
+using a single command message. It can be used for all types of input
+where the traffic light controller must react to external control.
+Typical usages are bus priority, coordination between traffic
+controllers, external control systems, and much more.</p>
+<p>Requires security code 2.</p>
+<p>The parameter ‘status’ sets/unsets a block of 16 inputs at a time. It
+can be repeated to set several blocks of 16 inputs. Values are separated
+with comma. Blocks are separated with semicolon. Format: [Offset];[Bits
+to set];[Bits to unset];…</p>
+<ul class="simple">
+<li><p>‘Offset’ defines where the 16 inputs starts from</p></li>
+<li><p>‘Bits to set’ defines which bit(s) to set. ‘0’ if unused</p></li>
+<li><p>‘Bits to unset’ defines which bit(s) to unset. ‘0’ if unused</p></li>
+</ul>
+<p>Example 1: “3,4134,65” sets input 4,5,8,15 and unsets 3,9 - Input starts
+from no. 5 - “4134” is 1 0000 0010 0110 in binary, but since input
+starts from 3, it is shifted 3 bits, e.g. 1000 0001 0011 0000 which are
+bits 4,5,8,15 - “65” is 100 0001 in binary, but since input starts from
+3, it is shifted 3 bits, e.g. 10 0000 1000 which are bits 3,9</p>
+<p>Example 2: “12,1,4” sets input 12 and unsets 14 - Input starts from no.
+12 - “1” is 1 in binary, but since input starts at 12 it is shifted 12
+bits, e.g. 1 0000 0000 0000, which is bit 12 - “4” is 100 in binary, but
+since input starts at 12 it is shifted 12 bits, e.g. 100 0000 0000 0000,
+which is bit 14</p>
+<p>And both these examples could be sent in the same message as:
+“3,4143,65;12,1,4”</p>
+<p>Such a message would set input 4,5,8,12,15 and unset input 3,9,14</p>
+<p>Example 3: “0,1,2” sets input 0 and unsets 1 - Input starts from 0 - “1”
+is 1 in binary, which is bit 0 - “2” is 10 in binary, which is bit 1</p>
+<table class="longtable docutils align-default" id="id78">
+<caption><span class="caption-number">Table 2.78 </span><span class="caption-text">M0013</span><a class="headerlink" href="#id78" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 3%" />
+<col style="width: 90%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon <br> 
+Format: [Offset];[Bits to set];[Bits to unset];…</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0014">
+<h3><span class="section-number">2.5.13. </span>M0014<a class="headerlink" href="#m0014" title="Permalink to this headline"></a></h3>
+<p>Set dynamic bands</p>
+<p>Can be used to change between predefined signal timings. Moves the start
+of signal groups in the cycle. This command can be used to change the
+split of green time during the cycle. A typical usage is scenario based
+control where changing of signal timings is used for optimal traffic
+flow. Requires security code 2</p>
+<table class="longtable docutils align-default" id="id79">
+<caption><span class="caption-number">Table 2.79 </span><span class="caption-text">M0014</span><a class="headerlink" href="#id79" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 9%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 63%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>plan</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td><p>Plan to be changed</p></td>
+</tr>
+<tr class="row-odd"><td><p>status</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Dynamic bands <br> 
+Each dynamic band are written as dd-ee where: <br> 
+dd=Dynamic band number (from 1-10) <br> 
+ee=Extension in seconds in this band <br> 
+<br> 
+Each dynamic band is separated with a comma. <br> 
+<br> 
+E.g. <br> 
+dd-ee,dd-ee</p></td>
+</tr>
+<tr class="row-even"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0015">
+<h3><span class="section-number">2.5.14. </span>M0015<a class="headerlink" href="#m0015" title="Permalink to this headline"></a></h3>
+<p>Set Offset time</p>
+<p>Offset time is used to define an offset between intersections in
+coordinated control. It is based on the expected travel time between
+intersections. This command can be used to fine tune the coordination
+for optimal traffic flow. Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id80">
+<caption><span class="caption-number">Table 2.80 </span><span class="caption-text">M0015</span><a class="headerlink" href="#id80" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 13%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td><p>Set offset time in seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>plan</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td><p>Time plan nr</p></td>
+</tr>
+<tr class="row-even"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0016">
+<h3><span class="section-number">2.5.15. </span>M0016<a class="headerlink" href="#m0016" title="Permalink to this headline"></a></h3>
+<p>Set week time table</p>
+<p>Set which time table for signal programs to use for each day during a
+week. This command changes the signal timings during the week for
+optimal traffic flow. Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id81">
+<caption><span class="caption-number">Table 2.81 </span><span class="caption-text">M0016</span><a class="headerlink" href="#id81" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 7%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Week time table. Defines time table to use for each week day <br> 
+Each segment is written as d-t where: <br> 
+d=day of week <br> 
+t=time table nr <br> 
+<br> 
+Day of week legend: <br> 
+0=Monday <br> 
+1=Tuesday <br> 
+2=Wednesday <br> 
+3=Thursday <br> 
+4=Friday <br> 
+5=Saturday <br> 
+6=Sunday <br> 
+<br> 
+Each segment is separated with a comma <br> 
+<br> 
+E.g. <br> 
+d-t,d-t</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0017">
+<h3><span class="section-number">2.5.16. </span>M0017<a class="headerlink" href="#m0017" title="Permalink to this headline"></a></h3>
+<p>Set time tables</p>
+<p>Set time of day for when to automatically switch signal program (time
+plan). This command changes the signal timings according to time of day
+for optimal traffic flow. Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id82">
+<caption><span class="caption-number">Table 2.82 </span><span class="caption-text">M0017</span><a class="headerlink" href="#id82" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 8%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Time Table. Defines time tables <br> 
+Each time definition is written as t-o-h-m where: <br> 
+t=time table nr (1-12) <br> 
+o=function <br> 
+h=hour - switching time <br> 
+m=minute - switching minute <br> 
+<br> 
+Function legend: <br> 
+0=no plan is selected by time table <br> 
+1=set plan 1 <br> 
+… <br> 
+16= set plan 16 <br> 
+<br> 
+hour and minute is using local time (not UTC) <br> 
+<br> 
+Each time definition is separated with a comma. <br> 
+<br> 
+E.g. <br> 
+t-o-h-m,t-o-h-m</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0018">
+<h3><span class="section-number">2.5.17. </span>M0018<a class="headerlink" href="#m0018" title="Permalink to this headline"></a></h3>
+<p>Set Cycle time</p>
+<p>Cycle time (or cycle length) is the sum of all phases in a time plan
+(traffic program). This time is fixed when using fixed time control or
+coordination (except “local coordination”). When the cycle counter
+reaches this length it is reset back to zero. This command provides the
+ability to change the cycle time when using coordinated or fixed time
+control. It changes the timings for optimal traffic flow. Can be used
+with scenario based control. Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id83">
+<caption><span class="caption-number">Table 2.83 </span><span class="caption-text">M0018</span><a class="headerlink" href="#id83" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 13%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td><p>Set cycle time in seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>plan</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td><p>Time plan nr</p></td>
+</tr>
+<tr class="row-even"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0019">
+<h3><span class="section-number">2.5.18. </span>M0019<a class="headerlink" href="#m0019" title="Permalink to this headline"></a></h3>
+<p>Force input</p>
+<p>Force a given input (1-255) of the controllers general purpose I/O to
+either True or False. Can be used for all types of input where the
+traffic light controller must react to external control. Can be used for
+bus priority, coordination between traffic controllers, external control
+systems, and much more. Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id84">
+<caption><span class="caption-number">Table 2.84 </span><span class="caption-text">M0019</span><a class="headerlink" href="#id84" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 53%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td><p>False: Release input <br> 
+True: Force input</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+<tr class="row-even"><td><p>input</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td><p>Number of Input</p></td>
+</tr>
+<tr class="row-odd"><td><p>inputValue</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td><p>False: input forced to False <br> 
+True: input forced to True</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0020">
+<h3><span class="section-number">2.5.19. </span>M0020<a class="headerlink" href="#m0020" title="Permalink to this headline"></a></h3>
+<p>Force output</p>
+<p>Force a given output (1-255) of the controllers general purpose I/O to
+either True of False. Can be used for all types of output where the
+traffic light controller needs to control other equipment. Can be used
+for bus priority, coordination between traffic controllers, external
+control systems, and much more. Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id85">
+<caption><span class="caption-number">Table 2.85 </span><span class="caption-text">M0020</span><a class="headerlink" href="#id85" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td><p>False: Force output <br> 
+True: Release output</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+<tr class="row-even"><td><p>output</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>255</p></td>
+<td><p>Number of Output</p></td>
+</tr>
+<tr class="row-odd"><td><p>outputValue</p></td>
+<td><p>boolean</p></td>
+<td></td>
+<td></td>
+<td><p>False: output forced to False <br> 
+True: output forced to True</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0021">
+<h3><span class="section-number">2.5.20. </span>M0021<a class="headerlink" href="#m0021" title="Permalink to this headline"></a></h3>
+<p>Set trigger level sensitivity for loop detector</p>
+<p>The trigger level sensitivity determines at what level a loop detector
+should trigger. If it set too low then then traffic will not be detected
+as intended. If it is set too high the detector might give false
+positives. This command provides the ability to fine tune loop detectors
+to make sure they detect traffic as intended. Requires security code 2</p>
+<table class="longtable docutils align-default" id="id86">
+<caption><span class="caption-number">Table 2.86 </span><span class="caption-text">M0021</span><a class="headerlink" href="#id86" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 7%" />
+<col style="width: 80%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>Loop detector trigger level sensitivity is written as dd-ss where: <br> 
+dd=loop detector number <br> 
+ss=sensitivity value</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0022">
+<h3><span class="section-number">2.5.21. </span>M0022<a class="headerlink" href="#m0022" title="Permalink to this headline"></a></h3>
+<p>Request Signal Priority</p>
+<p>Useful for bus priority or other type of priorities like emergency
+vehicles or groups of cyclists.</p>
+<p>The benefit of using this message over activating inputs or detector
+logics is that you can specify a priority level, vehicle type and
+estimated time of arrival. You can also update or cancel the request,
+and use the corresponding status message to track the status of the
+request, including how much priority was actually given.</p>
+<p>To understand how this command relates to ETSI/J2735, please see the
+<a class="reference external" href="https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735">wiki</a>.</p>
+<p>Activating signal priority is expected to provide more green time for a
+particular movement through the intersection, but the exact mechanism
+must typically be configured in the controller.</p>
+<p>The movement to prioritize can be referenced in a number of ways,
+depending on what is configured in the controller, and in the system
+that sends priority requests. Either:</p>
+<ul class="simple">
+<li><p>Reference a signal group by setting ‘signalGroupId’. This method is
+simple, but will not allow you to have different priority mechanism
+for the same signal group, unless they can be distinguished by the
+vehicle type. For example, if you need to trigger different
+priorities depending on whether a bus goes straight or makes a turn
+for the same signal group, you need to use of the other referencing
+methods.</p></li>
+<li><p>Reference an input by setting ‘inputId’. This can be useful if you
+previously used inputs to activate priority. The input will not be
+activated, only the priority.</p></li>
+<li><p>Reference a connection by setting ‘connectionId’. A connection is a
+movement from a specific ingoing lane to a specific outgoing lane.</p></li>
+<li><p>Reference an intersection approach by setting ‘approachId’.</p></li>
+<li><p>Reference an ingoing lane by setting ‘laneInId’, and optionally also
+reference an outgoing lane by setting ‘laneOutId’.</p></li>
+</ul>
+<p>Referencing attributes that are not used must be left out, rather than
+set to null or empty strings. This includes:</p>
+<ul class="simple">
+<li><p>signalGroupId</p></li>
+<li><p>inputId</p></li>
+<li><p>connectionId</p></li>
+<li><p>approachId</p></li>
+<li><p>laneInId</p></li>
+<li><p>laneOutId</p></li>
+</ul>
+<p>Referencing attributes are only used when initiating a request. When
+updating or cancelling the request, the request is identified by its
+requestId, and no referencing attributes are allowed.</p>
+<p>You initiate a priority request with type set to ‘new’. You must provide
+a request id that uniquely identifies the request on the controller. It
+can be a randomly generated UUID (universally unique identifier), or it
+can be constructed by combining e.g. a vehicle id and some other
+identifier. When updating or cancelling a request, you must pass the
+same request id again.</p>
+<p>Providing ETA (estimated time of arrival) when initiating a request is
+optional, but can help the controller plan ahead in cases where you’re
+able to send the request before the vehicle arrives at the intersection.
+You’re allowed to initiate the request without an ETA and provide it in
+a later request update. But providing the ETA when initiating the
+request is recommended, since it will give the controller more time to
+plan ahead.</p>
+<p>Like ETA, providing a vehicle type is optional, but can help the
+controller decide how to best handle the request.</p>
+<p>The priority level provides a way to indicate the relative importance of
+the request compared to other requests. For example, emergency vehicles
+or delayed buses could be given a higher priority level.</p>
+<p>If the ETA changes before the priority is cancelled, or you want to
+change the priority level, you can send another request message with
+type set to ‘update’. The vehicle type cannot be changed.</p>
+<p>When you send a priority request, it will be processed to decide if it’s
+possible to activate the requested priority.</p>
+<p>If the request is accepted, the priority can either be activated
+immediately, or if another priority is currently active, it can be
+queued for later activation.</p>
+<p>If the priority cannot be accepted the request is rejected. Cooldown is
+a specific type of rejection, which means that s similar request has
+just completed, and some time needs to pass before a similar request can
+be activated.</p>
+<p>When a request is queued, it is expected to become activated later, but
+in case too long passes without activation, the controller is expected
+to time out the request.</p>
+<p>Once a priority is activated, you’re excepted to cancel it as soon as
+there’s no need for it anymore, typically when the vehicle has passed
+the intersection. You cancel a request by sending a request passing the
+existing request id setting the type to ‘cancel’.</p>
+<p>If a request is never cancelled, the controller is expected to remove
+the priority at some point, but until then the priority might block
+requests in other direction which is why you should always cancel a
+priority when it’s not needed anymore.</p>
+<table class="longtable docutils align-default" id="id87">
+<caption><span class="caption-number">Table 2.87 </span><span class="caption-text">M0022</span><a class="headerlink" href="#id87" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 6%" />
+<col style="width: 4%" />
+<col style="width: 4%" />
+<col style="width: 18%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>requestId</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>A string that uniquely identifies the request on the controller</p></td>
+</tr>
+<tr class="row-odd"><td><p>signalGroupId</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p>(Optional) ID of a signal group component</p></td>
+</tr>
+<tr class="row-even"><td><p>inputId</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>(Optional) ID of an input, using the same numbering scheme as M0006</p></td>
+</tr>
+<tr class="row-odd"><td><p>connectionId</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>(Optional) ID of a connection, connecting an ingoing and an outgoing lane</p></td>
+</tr>
+<tr class="row-even"><td><p>approachId</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>16</p></td>
+<td></td>
+<td><p>(Optional) ID of an intersection approach</p></td>
+</tr>
+<tr class="row-odd"><td><p>laneInId</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>(Optional) ID of an ingoing lane</p></td>
+</tr>
+<tr class="row-even"><td><p>laneOutId</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>(Optional) ID of an outgoing lane</p></td>
+</tr>
+<tr class="row-odd"><td><p>priorityId</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>(Optional) ID of a priority</p></td>
+</tr>
+<tr class="row-even"><td><p>type</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-new <br> 
+-update <br> 
+-cancel</p></td>
+<td><p>new: New priority request <br> 
+update: Update to existing priority request <br> 
+cancel: Cancel an existing priority</p></td>
+</tr>
+<tr class="row-odd"><td><p>level</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>14</p></td>
+<td></td>
+<td><p>0: Lowest, 14: Highest</p></td>
+</tr>
+<tr class="row-even"><td><p>eta</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>255</p></td>
+<td></td>
+<td><p>(Optional) Estimated time of arrival to the intersection, in seconds</p></td>
+</tr>
+<tr class="row-odd"><td><p>vehicleType</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>-pedestrian <br> 
+-bicycle <br> 
+-motorcycle <br> 
+-car <br> 
+-bus <br> 
+-lightTruck <br> 
+-heavyTruck <br> 
+-tram <br> 
+-emergency <br> 
+-safetyCar <br> 
+-specialTransport <br> 
+-other</p></td>
+<td><p>(Optional) Vehicle type <br> 
+pedestrian: Pedestrians <br> 
+bicycle: Bicycles <br> 
+motorcycle: Motorcycles <br> 
+car: Passenger vehicle <br> 
+bus: Bus used for public transport <br> 
+lightTruck: Light truck <br> 
+heavyTruck: Heavy truck <br> 
+tram: Trams used for Public transport <br> 
+emergency: Police, fire or ambulance <br> 
+safetyCar: For e.g. escort vehicles <br> 
+specialTransport: For e.g. heavy load <br> 
+other: Other type of vehicle</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0023">
+<h3><span class="section-number">2.5.22. </span>M0023<a class="headerlink" href="#m0023" title="Permalink to this headline"></a></h3>
+<p>Set timeout for dynamic bands</p>
+<p>Switch to a designated time plan if this timeout is reached due to lost
+connection with the supervisor. Disable by setting timeout to ‘0’. Used
+in conjunction with dynamic bands, M0014 Requires security code 2.</p>
+<table class="longtable docutils align-default" id="id88">
+<caption><span class="caption-number">Table 2.88 </span><span class="caption-text">M0023</span><a class="headerlink" href="#id88" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>65535</p></td>
+<td><p>Timeout, in minutes</p></td>
+</tr>
+<tr class="row-odd"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0103">
+<h3><span class="section-number">2.5.23. </span>M0103<a class="headerlink" href="#m0103" title="Permalink to this headline"></a></h3>
+<p>Set security code</p>
+<p>Change the security code to use when sending commands Security codes are
+used as an extra layer of security in many commands. They need to match
+between the supervision system and the traffic light controller in order
+for the commands to be executed.</p>
+<table class="longtable docutils align-default" id="id89">
+<caption><span class="caption-number">Table 2.89 </span><span class="caption-text">M0103</span><a class="headerlink" href="#id89" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 9%" />
+<col style="width: 18%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Enum</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>status</p></td>
+<td><p>string</p></td>
+<td><p>-Level1 <br> 
+-Level2</p></td>
+<td><p>Level1: Change security code 1 <br> 
+Level2: Change security code 2</p></td>
+</tr>
+<tr class="row-odd"><td><p>oldSecurityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>Previous security code</p></td>
+</tr>
+<tr class="row-even"><td><p>newSecurityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td><p>New security code</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="m0104">
+<h3><span class="section-number">2.5.24. </span>M0104<a class="headerlink" href="#m0104" title="Permalink to this headline"></a></h3>
+<p>Set clock</p>
+<p>Can be used to manually set the clock of the traffic light controller if
+automatic time synchronization (NTP or watchdog sync) is not available.
+For instance, during maintenance work. Note: UTC is used. Requires
+security code 1</p>
+<table class="longtable docutils align-default" id="id90">
+<caption><span class="caption-number">Table 2.90 </span><span class="caption-text">M0104</span><a class="headerlink" href="#id90" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 16%" />
+<col style="width: 11%" />
+<col style="width: 11%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Min</p></th>
+<th class="head"><p>Max</p></th>
+<th class="head"><p>Comment</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>securityCode</p></td>
+<td><p>string</p></td>
+<td></td>
+<td></td>
+<td><p>Security code 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>year</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>9999</p></td>
+<td><p>Year</p></td>
+</tr>
+<tr class="row-even"><td><p>month</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>12</p></td>
+<td><p>Month</p></td>
+</tr>
+<tr class="row-odd"><td><p>day</p></td>
+<td><p>integer</p></td>
+<td><p>1</p></td>
+<td><p>31</p></td>
+<td><p>Day of month</p></td>
+</tr>
+<tr class="row-even"><td><p>hour</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>23</p></td>
+<td><p>Hour</p></td>
+</tr>
+<tr class="row-odd"><td><p>minute</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>59</p></td>
+<td><p>Minute</p></td>
+</tr>
+<tr class="row-even"><td><p>second</p></td>
+<td><p>integer</p></td>
+<td><p>0</p></td>
+<td><p>59</p></td>
+<td><p>Second</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="definitions.html" class="btn btn-neutral float-left" title="1. Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="signal_group_status.html" class="btn btn-neutral float-right" title="3. Signal Group status" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright RSMP Nordic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

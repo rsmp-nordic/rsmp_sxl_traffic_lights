@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Signal Group status &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.2 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Traffic data" href="traffic_data.html" />
+    <link rel="prev" title="2. Signal Exchange List" href="sxl_traffic_light_controller.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> RSMP Signal Exchange List for Traffic Light Controllers
+          </a>
+              <div class="version">
+                1.2
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html">2. Signal Exchange List</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Signal Group status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">4. Traffic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordination.html">5. Coordination between traffic light controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_supervisors.html">6. Multiple supervisors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_codes.html">7. Security codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">8. JSon Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">9. Change log</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RSMP Signal Exchange List for Traffic Light Controllers</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">3. </span>Signal Group status</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/signal_group_status.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="signal-group-status">
+<h1><span class="section-number">3. </span>Signal Group status<a class="headerlink" href="#signal-group-status" title="Permalink to this headline"></a></h1>
+<p>Signal groups status (S0001) is defined as a text string where each character represents the current status for each signal group.
+Each character has the following definition:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Signal group status</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 49%" />
+<col style="width: 34%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ASCII</p></th>
+<th class="head"><p>Definition</p></th>
+<th class="head"><p>Output</p></th>
+<th class="head"><p>Green request</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>a</p></td>
+<td><p>Disabled</p></td>
+<td><p>Dark</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>b</p></td>
+<td><p>Manual control to dark</p></td>
+<td><p>Dark</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>c</p></td>
+<td><p>Manual control to flashing yellow</p></td>
+<td><p>Yellow flash</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>d</p></td>
+<td><p>Manual control to flashing red</p></td>
+<td><p>Red flash</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>e</p></td>
+<td><p>Start-up interval 1</p></td>
+<td><p>Dark or yellow flash</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>f</p></td>
+<td><p>Start-up interval 2</p></td>
+<td><p>Vehicles: yellow, Pedestrians: red</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>g</p></td>
+<td><p>Start-up interval 3</p></td>
+<td><p>Red</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>h</p></td>
+<td><p>Manual control to red</p></td>
+<td><p>Red</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>A</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Red-rest-without-start-order"><span class="xref std std-term">Red rest without start order</span></a></p></td>
+<td><p>Red</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>B</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Red-rest"><span class="xref std std-term">Red rest</span></a></p></td>
+<td><p>Red</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>C</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Red-rest-with-privilege-measurement"><span class="xref std std-term">Red rest with privilege measurement</span></a></p></td>
+<td><p>Red</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>D</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Red-with-reservation"><span class="xref std std-term">Red with reservation</span></a></p></td>
+<td><p>Red</p></td>
+<td><p>Y/N</p></td>
+</tr>
+<tr class="row-even"><td><p>E</p></td>
+<td><p>Red with request and without start order</p></td>
+<td><p>Red</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>F</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Red-with-request"><span class="xref std std-term">Red with request</span></a></p></td>
+<td><p>Red</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>G</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Red-with-start-in-own-stage"><span class="xref std std-term">Red with start in own stage</span></a></p></td>
+<td><p>Red</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>0</p></td>
+<td><p>Red-yellow</p></td>
+<td><p>Red/Yellow</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Minimum-green"><span class="xref std std-term">Minimum green</span></a></p></td>
+<td><p>Green</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Max.-minimum-green"><span class="xref std std-term">Max. minimum green</span></a></p></td>
+<td><p>Green</p></td>
+<td><p>Y/N</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Maximum-green-extension"><span class="xref std std-term">Maximum green (extension)</span></a></p></td>
+<td><p>Green</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Green-rest"><span class="xref std std-term">Green rest</span></a></p></td>
+<td><p>Green</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Green-passive"><span class="xref std std-term">Green passive</span></a></p></td>
+<td><p>Green</p></td>
+<td><p>N</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Fixed-past-end-green"><span class="xref std std-term">Fixed past-end-green</span></a></p></td>
+<td><p>Green</p></td>
+<td><p>Y/N</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Extra-green-according-to-intergreen-times"><span class="xref std std-term">Extra green according to intergreen times</span></a></p></td>
+<td><p>Green</p></td>
+<td><p>Y/N</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Variable-past-end-green"><span class="xref std std-term">Variable past-end-green</span></a></p></td>
+<td><p>Green</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-even"><td><p>9</p></td>
+<td><p>Flashing green</p></td>
+<td><p>Green</p></td>
+<td><p>Y/N</p></td>
+</tr>
+<tr class="row-odd"><td><p>N</p></td>
+<td><p>Fixed yellow or yellow-green</p></td>
+<td><p>Yellow</p></td>
+<td><p>Y/N</p></td>
+</tr>
+<tr class="row-even"><td><p>O</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Variable-yellow-or-yellow-green"><span class="xref std std-term">Variable yellow or yellow green</span></a></p></td>
+<td><p>Yellow</p></td>
+<td><p>Y</p></td>
+</tr>
+<tr class="row-odd"><td><p>P</p></td>
+<td><p><a class="reference internal" href="definitions.html#term-Variable-red"><span class="xref std std-term">Variable red</span></a></p></td>
+<td><p>Red</p></td>
+<td><p>Y</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sxl_traffic_light_controller.html" class="btn btn-neutral float-left" title="2. Signal Exchange List" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="traffic_data.html" class="btn btn-neutral float-right" title="4. Traffic data" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright RSMP Nordic.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
