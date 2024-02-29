@@ -109,7 +109,7 @@ jobs:
           --stdout \
           --short-desc \
           --sxl rsmp_schema/schemas/tlc/1.1/sxl.yaml \
-          --site sxl-tools/tlc/SXL_Traffic_Controller_ver_1_0.15-site.yaml \
+          --site sxl-tools/tlc/SXL_Traffic_Controller_ver_1_1-site.yaml \
           > SXL_Traffic_Controller_ver_1_1.xlsx
 
     - name: Upload Excel as artifact
