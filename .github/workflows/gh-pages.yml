@@ -45,7 +45,7 @@ jobs:
       run: git clone https://github.com/dok-net/mscgen.git
     - name: Fetch patch for mscgen (fixes issue under Ubuntu 20.04)
       run: |
-        cp .github/patches/gd.diff mscgen
+        cp 1.0.15/.github/patches/gd.diff mscgen
         cd mscgen
         patch -p1 <gd.diff
     - name: Compile and install mscgen
