@@ -39,7 +39,7 @@ $(MSC_DIR)/%.png: $(MSC_DIR)/%.msc
 	@echo MSCGEN: $<
 
 $(SVG_DIR)/%.png: $(SVG_DIR)/%.svg
-	@inkscape -z $< -e $@
+	@inkscape $< --export-filename=$@
 	@echo CONVERT: $<
 
 generated-images: $(GEN_MSC_DIAGRAMS) $(GEN_PNG_IMGS)
@@ -51,7 +51,6 @@ singlehtml: Makefile generated-images
 
 html: Makefile generated-images
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-	@cp -a build/html/. docs
 
 latexpdf: Makefile generated-images
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
