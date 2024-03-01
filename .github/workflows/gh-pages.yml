@@ -1,0 +1,119 @@
+# This workflow updates the sphinx documentation and builds a website
+
+name: Build SXL TLC
+
+on:
+  push:
+    branches: [ 1.2.1 ]
+  workflow_dispatch:
+  repository_dispatch:
+
+jobs:
+  build-sxl-tlc:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out rsmp_sxl_traffic_lights repository (gh-pages)
+      uses: actions/checkout@v4
+      with:
+        ref: gh-pages
+    - name: Check out rsmp_sxl_traffic_lights repository (1.2.1 branch)
+      uses: actions/checkout@v4
+      with:
+        path: 1.2.1
+        ref: 1.2.1
+    - name: Install dependencies
+      run: |
+        sudo add-apt-repository ppa:inkscape.dev/stable
+        sudo apt-get update
+        sudo apt-get -y install \
+              python3-sphinx \
+              python3-sphinx-rtd-theme \
+              texlive \
+              texlive-latex-extra \
+              texlive-humanities \
+              texlive-fonts-extra \
+              imagemagick \
+              inkscape \
+              librsvg2-bin \
+              latexmk \
+              mscgen
+    - name: Build rsmp_sxl_traffic_lights repository
+      run: |
+        cd 1.2.1
+        make html latexpdf
+    - name: Setup git
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+    - name: Commit documentation changes
+      run: |
+        mkdir -p docs/1.2.1
+        cp -r 1.2.1/build/html/* docs/1.2.1
+        git pull -q
+        git add docs/1.2.1
+        git commit -m "Update documentation" -a || true
+        # The above will fail if no changes were present, so
+        # we ignore the return code.
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: gh-pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Upload PDF as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: PDF
+        path: 1.2.1/build/latex/sxl-tlc.pdf
+
+  build-sxl-excel-tlc:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Check out rsmp_schema repository
+      uses: actions/checkout@v4
+      with:
+        repository: rsmp-nordic/rsmp_schema
+        path: rsmp_schema
+
+    - name: Check out sxl-tools repository
+      uses: actions/checkout@v4
+      with:
+        repository: rsmp-nordic/sxl-tools
+        path: sxl-tools
+
+    - name: Install dependencies
+      run: |-
+        gem install rubyXL --user
+        sudo apt install python3-xlsxwriter
+
+    - name: Create xlsx template
+      run: |
+        sxl-tools/create_template.py \
+          --num-grouped-objects 5 \
+          --num-single-objects 510 \
+          --num-alarms 26 \
+          --num-statuses 54 \
+          --num-command-functional-position 1 \
+          --num-command-functional-state 1 \
+          --num-command-maneuver 1 \
+          --num-command-parameters 24 \
+          --alarm-rvs 5 \
+          --status-rvs 10 \
+          --command-args 7 \
+          --output template.xlsx
+
+    - name: Export to xlsx
+      run: |
+        sxl-tools/yaml2xlsx.rb \
+          --template template.xlsx \
+          --stdout \
+          --short-desc \
+          --sxl rsmp_schema/schemas/tlc/1.2.1/sxl.yaml \
+          --site sxl-tools/tlc/SXL_Traffic_Controller_ver_1_1-site.yaml \
+          > SXL_Traffic_Controller_ver_1_2_1.xlsx
+
+    - name: Upload Excel as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: Excel
+        path: SXL_Traffic_Controller_ver_1_2_1.xlsx
