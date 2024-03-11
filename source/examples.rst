@@ -42,7 +42,6 @@ This document contains examples for all message types.
 + `S0015 Current traffic situation`_
 + `S0016 Number of detector logics`_
 + `S0017 Number of signal groups`_
-+ `S0018 Number of time plans`_
 + `S0019 Number of traffic situations`_
 + `S0020 Control mode`_
 + `S0021 Manually set detector logic`_
