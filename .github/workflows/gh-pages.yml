@@ -21,6 +21,21 @@ jobs:
       with:
         path: 1.2.1
         ref: 1.2.1
+    - name: Check out rsmp_schema repository
+      uses: actions/checkout@v4
+      with:
+        repository: rsmp-nordic/rsmp_schema
+        path: rsmp_schema
+        ref: 1.2.1
+    - name: Check out sxl-tools repository
+      uses: actions/checkout@v4
+      with:
+        repository: rsmp-nordic/sxl-tools
+        path: sxl-tools
+    - name: Create ReStrucTured text (RST) from yaml
+      run: |-
+        sudo apt-get -y install python3-tabulate python3-pypandoc
+        sxl-tools/yaml2rst.py <rsmp_schema/schemas/tlc/1.2.1/sxl.yaml >1.2.1/source/sxl_traffic_light_controller.rst
     - name: Install dependencies
       run: |
         sudo add-apt-repository ppa:inkscape.dev/stable
