@@ -93,3 +93,7 @@ The corresponding ASCII character used for signal group status (S0001) is writte
       with the fixed time whereby it must be longer to have any effect.
       (R function)
 
+   Start-up interval
+     The controller always starts with a start-up sequence for the signal groups before using normal 3-light control.
+     The general definition of the signal group status for each interval can be found in the :ref:`signal-group-status`,
+     but the exact definition depends on national regulations, including the duration of each interval of the sequence.

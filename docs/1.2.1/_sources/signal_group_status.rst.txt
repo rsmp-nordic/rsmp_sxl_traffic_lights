@@ -1,3 +1,5 @@
+.. _signal-group-status:
+
 Signal Group status
 ===================
 
@@ -15,9 +17,9 @@ Each character has the following definition:
    b     Manual control to dark                            Dark
    c     Manual control to flashing yellow                 Yellow flash
    d     Manual control to flashing red                    Red flash
-   e     Start-up interval 1                               Dark or yellow flash
-   f     Start-up interval 2                               Vehicles: yellow, Pedestrians: red
-   g     Start-up interval 3                               Red
+   e     :term:`Start-up interval` 1                       Dark or yellow flash
+   f     :term:`Start-up interval` 2                       Vehicles: yellow, Pedestrians: red
+   g     :term:`Start-up interval` 3                       Red
    h     Manual control to red                             Red
    A     :term:`Red rest without start order`              Red                                N
    B     :term:`Red rest`                                  Red                                N
