@@ -2232,12 +2232,12 @@ considered to be able to remedy a problem. Requires security code 2
    :class: longtable
 
 
-   ============  =======  ========================
+   ============  =======  =======================================
    Name          Type     Comment
-   ============  =======  ========================
-   status        boolean  True: Restart controller
-   securityCode  string   Security code 2
-   ============  =======  ========================
+   ============  =======  =======================================
+   status        boolean  ``Deprecated`` True: Restart controller
+   securityCode  string   ``Deprecated`` Security code 2
+   ============  =======  =======================================
 
 
 M0005
