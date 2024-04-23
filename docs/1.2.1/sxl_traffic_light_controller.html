@@ -1987,12 +1987,12 @@ intersection, e.g. “1,2” and “startup,control”</p>
 <table class="longtable docutils align-default" id="id34">
 <caption><span class="caption-number">Table 2.34 </span><span class="caption-text">S0020</span><a class="headerlink" href="#id34" title="Permalink to this table"></a></caption>
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 6%" />
+<col style="width: 7%" />
 <col style="width: 4%" />
-<col style="width: 4%" />
-<col style="width: 10%" />
-<col style="width: 66%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 8%" />
+<col style="width: 76%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -2021,11 +2021,11 @@ Use “0” for all intersections of the TLC.</p></td>
 -standby <br> 
 -failure <br> 
 -test</p></td>
-<td><p>startup: Startup mode <br> 
-control: Normal control <br> 
-standby: Standby mode <br> 
-failure: Failure mode <br> 
-test: Test mode</p></td>
+<td><p>startup: The controller starts up, performs a power on self test and performs each <a class="reference internal" href="definitions.html#term-Start-up-interval"><span class="xref std std-term">start-up interval</span></a> <br> 
+control: Normal 3-light control <br> 
+standby: The controller is in dark or yellow flash mode (either according to programming or manually set) <br> 
+failure: The controller has a “major fault” defined according to 3.8 i EN12675. The controller is in dark or yellow flash mode <br> 
+test: Mode used for various tests, e.g. signal lights</p></td>
 </tr>
 </tbody>
 </table>
@@ -3613,12 +3613,12 @@ Requires security code 2.</p>
 <table class="longtable docutils align-default" id="id67">
 <caption><span class="caption-number">Table 2.67 </span><span class="caption-text">M0001</span><a class="headerlink" href="#id67" title="Permalink to this table"></a></caption>
 <colgroup>
-<col style="width: 9%" />
-<col style="width: 5%" />
+<col style="width: 7%" />
 <col style="width: 4%" />
-<col style="width: 4%" />
-<col style="width: 14%" />
-<col style="width: 65%" />
+<col style="width: 3%" />
+<col style="width: 3%" />
+<col style="width: 11%" />
+<col style="width: 71%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -3662,7 +3662,9 @@ Dark: Enables dark mode</p></td>
 <td><p>0</p></td>
 <td><p>255</p></td>
 <td></td>
-<td><p>Intersection number</p></td>
+<td><p>Intersection number <br> 
+Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). <br> 
+0: All intersections</p></td>
 </tr>
 </tbody>
 </table>
