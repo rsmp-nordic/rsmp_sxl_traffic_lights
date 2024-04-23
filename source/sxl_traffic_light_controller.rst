@@ -2143,9 +2143,9 @@ Requires security code 2.
    :class: longtable
 
 
-   ============  =======  =====  =====  ===================  ===========================================================================================
+   ============  =======  =====  =====  ===================  =======================================================================================================================
    Name          Type     Min    Max    Enum                 Comment
-   ============  =======  =====  =====  ===================  ===========================================================================================
+   ============  =======  =====  =====  ===================  =======================================================================================================================
    status        string                 -NormalControl |br|  Set operating mode |br|
                                         -YellowFlash |br|    NormalControl: Normal Control |br|
                                         -Dark                YellowFlash: Enables yellow flash |br|
@@ -2153,8 +2153,10 @@ Requires security code 2.
    securityCode  string                                      Security code 2
    timeout       integer  0      1440                        Time in minutes until controller automatically reverts to previous functional position |br|
                                                              0=no automatic return
-   intersection  integer  0      255                         Intersection number
-   ============  =======  =====  =====  ===================  ===========================================================================================
+   intersection  integer  0      255                         Intersection number |br|
+                                                             Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). |br|
+                                                             0: All intersections
+   ============  =======  =====  =====  ===================  =======================================================================================================================
 
 
 M0002
