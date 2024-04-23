@@ -4,6 +4,19 @@
 Change log
 ==========
 
+Version 1.2.1
+-------------
+Release date: 2024-05-01
+
+The full list of changes between 1.2.1 and 1.2 can be viewed on github.
+:compare:`v1.2...v1.2.1`
+
+- Add "start-up interval" to the definitions. :issue:`184`
+- Clarification of string format in S0002, S0003, S0004, S0012, S0029, S0030. :issue:`166`
+- Clarification of M0001 (normal/yellow flash/dark mode). :issue:`160`
+- Clarification of S0020 (control mode). :issue:`139`
+- Deprecation of M0004 (restart). :issue:`99`
+
 Version 1.2
 -----------
 Release date: 2023-10-03
