@@ -83,10 +83,11 @@ todo_include_todos = False
 
 # Github issues
 
-extlinks = {'issue': ('https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/%s', '[%s]'),
-            'pull': ('https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/pulls/%s', '[%s]')}
-
-
+extlinks = {
+    'issue': ('https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/%s', '[%s]'),
+    'pull': ('https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/pulls/%s', '[%s]'),
+    'compare': ('https://github.com/rsmp-nordic/rsmp_core/compare/%s', '[%s]')
+}
 
 # -- Options for HTML output ----------------------------------------------
 
