@@ -6,7 +6,7 @@ Change log
 
 Version 1.2.1
 -------------
-Release date: 2024-05-01
+Release date: 2024-06-01
 
 The full list of changes between 1.2.1 and 1.2 can be viewed on github.
 :compare:`v1.2...v1.2.1`
