@@ -15,7 +15,7 @@ The full list of changes between 1.2.1 and 1.2 can be viewed on github.
 - Clarification of string format in S0002, S0003, S0004, S0012, S0029, S0030. :issue:`166`
 - Clarification of M0001 (normal/yellow flash/dark mode). :issue:`160`
 - Clarification of S0020 (control mode). :issue:`139`
-- Deprecation of M0004 (restart). :issue:`99`
+- Deprecation of M0004 (restart). :schema_issue:`99`
 
 Version 1.2
 -----------
