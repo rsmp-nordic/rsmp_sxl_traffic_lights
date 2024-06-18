@@ -26,7 +26,6 @@ jobs:
       with:
         repository: rsmp-nordic/rsmp_schema
         path: rsmp_schema
-        ref: 1.2.1
     - name: Check out sxl-tools repository
       uses: actions/checkout@v4
       with:
@@ -89,7 +88,6 @@ jobs:
       with:
         repository: rsmp-nordic/rsmp_schema
         path: rsmp_schema
-        ref: 1.2.1
     - name: Check out sxl-tools repository
       uses: actions/checkout@v4
       with:
