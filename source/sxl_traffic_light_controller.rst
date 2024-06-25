@@ -1107,17 +1107,17 @@ intersection, e.g. “1,2” and “startup,control”
    :class: longtable
 
 
-   ============  =======  =====  =====  =============  ==================================================================================
+   ============  =======  =====  =====  =============  ===================================================================================================================================
    Name          Type     Min    Max    Enum           Comment
-   ============  =======  =====  =====  =============  ==================================================================================
+   ============  =======  =====  =====  =============  ===================================================================================================================================
    intersection  integer  0      255                   Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
                                                        Use “0” for all intersections of the TLC.
-   controlmode   string                 -startup |br|  startup: Startup mode |br|
-                                        -control |br|  control: Normal control |br|
-                                        -standby |br|  standby: Standby mode |br|
-                                        -failure |br|  failure: Failure mode |br|
-                                        -test          test: Test mode
-   ============  =======  =====  =====  =============  ==================================================================================
+   controlmode   string                 -startup |br|  startup: The controller starts up, performs a power on self test and performs each :term:`start-up interval` |br|
+                                        -control |br|  control: Normal 3-light control |br|
+                                        -standby |br|  standby: The controller is in dark or yellow flash mode (either according to programming or manually set) |br|
+                                        -failure |br|  failure: The controller has a “major fault” defined according to 3.8 i EN12675. The controller is in dark or yellow flash mode |br|
+                                        -test          test: Mode used for various tests, e.g. signal lights
+   ============  =======  =====  =====  =============  ===================================================================================================================================
 
 
 S0021
