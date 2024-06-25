@@ -21,9 +21,10 @@ Including:
 - Chapter 8: Examples of all alarms, statuses and commands:
 - Chapter 9: Change log
 
-## FAQ
+## Wiki
 
-Please see the [faq](faq.md) for frequently asked questions.
+Please see the SXL for TLC [Wiki](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki)
+for best practices and frequently asked questions.
 
 ## Generating the specification from source
 

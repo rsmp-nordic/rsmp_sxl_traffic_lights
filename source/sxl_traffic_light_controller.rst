@@ -512,9 +512,10 @@ diagnostic information about the performance of the controller.
    Name               Type     Min    Max    Comment
    =================  =======  =====  =====  =================================================================================
    signalgroupstatus  string                 Signal group status as text field |br|
-                                             Each character represent the state of the signal group in consecutive order. |br|
+                                             Each character represent the state of the signal group in consecutive order, |br|
+                                             where the leftmost character starts with signal group 1. |br|
                                              Signal group status is described in detail in the corresponding section. |br|
-                                             - = Signal group is undefined/does not exist
+                                             - : Signal group is undefined/does not exist
    cyclecounter       integer  0      999    Cycle counter |br|
                                              Used for handling of coordination between TLC’s. |br|
                                              Is counted from 0 until it reaches the cycle time (See S0028). |br|
@@ -558,7 +559,8 @@ for bus priority, external control systems, and much more.
    Name                 Type    Comment
    ===================  ======  ===================================================================================
    detectorlogicstatus  string  Detector logic status as text field |br|
-                                Each character represent the state of the detector logic in consecutive order. |br|
+                                Each character represent the state of the detector logic in consecutive order, |br|
+                                where the leftmost character starts with detector logic 1. |br|
                                 0 : Detector logic is not active |br|
                                 1 : Detector logic is active |br|
                                 - : Detector logic is undefined/does not exist
@@ -586,7 +588,8 @@ could be external detectors, bus priority, and much more.
    Name         Type    Comment
    ===========  ======  ==========================================================================
    inputstatus  string  Input status as text field |br|
-                        Each character represent the state of the input in consecutive order. |br|
+                        Each character represent the state of the input in consecutive order, |br|
+                        where the leftmost character starts with input 1. |br|
                         0 : Input is not active |br|
                         1 : Input is active |br|
                         - : Input is undefined/does not exist
@@ -615,7 +618,8 @@ traffic controllers, external control systems, and much more.
    Name          Type    Comment
    ============  ======  ==================================================================================
    outputstatus  string  Output status as text field |br|
-                         Each character represent the state of the output status in consecutive order. |br|
+                         Each character represent the state of the output status in consecutive order, |br|
+                         where the leftmost character starts with output 1. |br|
                          0 : Output is not active |br|
                          1 : Output is active |br|
                          - : Output is undefined/does not exist
@@ -1103,17 +1107,17 @@ intersection, e.g. “1,2” and “startup,control”
    :class: longtable
 
 
-   ============  =======  =====  =====  =============  ==================================================================================
+   ============  =======  =====  =====  =============  ===================================================================================================================================
    Name          Type     Min    Max    Enum           Comment
-   ============  =======  =====  =====  =============  ==================================================================================
+   ============  =======  =====  =====  =============  ===================================================================================================================================
    intersection  integer  0      255                   Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
                                                        Use “0” for all intersections of the TLC.
-   controlmode   string                 -startup |br|  startup: Startup mode |br|
-                                        -control |br|  control: Normal control |br|
-                                        -standby |br|  standby: Standby mode |br|
-                                        -failure |br|  failure: Failure mode |br|
-                                        -test          test: Test mode
-   ============  =======  =====  =====  =============  ==================================================================================
+   controlmode   string                 -startup |br|  startup: The controller starts up, performs a power on self test and performs each :term:`start-up interval` |br|
+                                        -control |br|  control: Normal 3-light control |br|
+                                        -standby |br|  standby: The controller is in dark or yellow flash mode (either according to programming or manually set) |br|
+                                        -failure |br|  failure: The controller has a “major fault” defined according to 3.8 i EN12675. The controller is in dark or yellow flash mode |br|
+                                        -test          test: Mode used for various tests, e.g. signal lights
+   ============  =======  =====  =====  =============  ===================================================================================================================================
 
 
 S0021
@@ -1134,11 +1138,16 @@ for prioritization.
    :class: longtable
 
 
-   ==============  ======  ================================================
+   ==============  ======  ===============================================================
    Name            Type    Comment
-   ==============  ======  ================================================
-   detectorlogics  string  Manually set detector logics (1/0) as text field
-   ==============  ======  ================================================
+   ==============  ======  ===============================================================
+   detectorlogics  string  Manually set detector logic as text field |br|
+                           Each character represent the state in consecutive order, |br|
+                           where the leftmost character starts with detector logic 1. |br|
+                           0 : Detector logic not manually set |br|
+                           1 : Detector logic manually set |br|
+                           - : Detector logic is undefined/does not exist
+   ==============  ======  ===============================================================
 
 
 S0022
@@ -1397,11 +1406,16 @@ between traffic controllers, external control systems, and much more.
    :class: longtable
 
 
-   ======  ======  =================================
+   ======  ======  =============================================================
    Name    Type    Comment
-   ======  ======  =================================
-   status  string  Forced input status as text field
-   ======  ======  =================================
+   ======  ======  =============================================================
+   status  string  Forced input status as text field |br|
+                   Each character represent the state in consecutive order, |br|
+                   where the leftmost character starts with input 1. |br|
+                   0 : Input not forced |br|
+                   1 : Input forced |br|
+                   - : Input undefined/does not exist
+   ======  ======  =============================================================
 
 
 S0030
@@ -1423,11 +1437,16 @@ much more.
    :class: longtable
 
 
-   ======  ======  ==================================
+   ======  ======  =============================================================
    Name    Type    Comment
-   ======  ======  ==================================
-   status  string  Forced output status as text field
-   ======  ======  ==================================
+   ======  ======  =============================================================
+   status  string  Forced output status as text field |br|
+                   Each character represent the state in consecutive order, |br|
+                   where the leftmost character starts with output 1. |br|
+                   0 : Output not forced |br|
+                   1 : Output forced |br|
+                   - : Output undefined/does not exist
+   ======  ======  =============================================================
 
 
 S0031
@@ -2124,9 +2143,9 @@ Requires security code 2.
    :class: longtable
 
 
-   ============  =======  =====  =====  ===================  ===========================================================================================
+   ============  =======  =====  =====  ===================  =======================================================================================================================
    Name          Type     Min    Max    Enum                 Comment
-   ============  =======  =====  =====  ===================  ===========================================================================================
+   ============  =======  =====  =====  ===================  =======================================================================================================================
    status        string                 -NormalControl |br|  Set operating mode |br|
                                         -YellowFlash |br|    NormalControl: Normal Control |br|
                                         -Dark                YellowFlash: Enables yellow flash |br|
@@ -2134,8 +2153,10 @@ Requires security code 2.
    securityCode  string                                      Security code 2
    timeout       integer  0      1440                        Time in minutes until controller automatically reverts to previous functional position |br|
                                                              0=no automatic return
-   intersection  integer  0      255                         Intersection number
-   ============  =======  =====  =====  ===================  ===========================================================================================
+   intersection  integer  0      255                         Intersection number |br|
+                                                             Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). |br|
+                                                             0: All intersections
+   ============  =======  =====  =====  ===================  =======================================================================================================================
 
 
 M0002
@@ -2213,12 +2234,12 @@ considered to be able to remedy a problem. Requires security code 2
    :class: longtable
 
 
-   ============  =======  ========================
+   ============  =======  =======================================
    Name          Type     Comment
-   ============  =======  ========================
-   status        boolean  True: Restart controller
-   securityCode  string   Security code 2
-   ============  =======  ========================
+   ============  =======  =======================================
+   status        boolean  ``Deprecated`` True: Restart controller
+   securityCode  string   ``Deprecated`` Security code 2
+   ============  =======  =======================================
 
 
 M0005
