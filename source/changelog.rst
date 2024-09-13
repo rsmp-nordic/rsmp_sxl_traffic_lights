@@ -53,7 +53,7 @@ Release date: 2022-06-23
 
 **Major changes**
 
-- Designated command/status for priority.
+- M0022, S0033: Designated command/status for priority.
   Add a specific command and status for requesting priority for designated
   vehicles. :issue:`129`
 - S0091, S0092: "Operator logged in" updated.
