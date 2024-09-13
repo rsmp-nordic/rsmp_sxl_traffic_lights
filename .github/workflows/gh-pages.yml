@@ -108,7 +108,7 @@ jobs:
           --template template.xlsx \
           --stdout \
           --short-desc \
-          --sxl rsmp_schema/schemas/tlc/1.1/sxl.yaml \
+          --sxl rsmp_schema/schemas/tlc/1.1.0/sxl.yaml \
           --site sxl-tools/tlc/SXL_Traffic_Controller_ver_1_1-site.yaml \
           > SXL_Traffic_Controller_ver_1_1.xlsx
 
