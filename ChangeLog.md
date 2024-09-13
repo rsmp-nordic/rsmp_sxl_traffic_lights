@@ -3,6 +3,7 @@
 ## Major changes
 
 - Designated command/status for priority.
+- M0022, S0033: Designated command/status for priority.
   Add a specific command and status for requesting priority for designated vehicles.
   [#129](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/issues/129)
 - S0091, S0092: "Operator logged in" updated.
