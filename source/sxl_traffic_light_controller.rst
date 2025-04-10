@@ -2107,7 +2107,7 @@ Commands
    Traffic Light Controller  `M0005`_         setEmergency           Activate emergency route
    Traffic Light Controller  `M0006`_         setInput               Activate input
    Traffic Light Controller  `M0007`_         setFixedTime           Activate fixed time control
-   Detector logic            `M0008`_         setForceDetectorLogic  Sets manual activation of detector logic
+   Detector logic            `M0008`_         setForceDetectorLogic  Force detector logic
    Signal group              `M0010`_         setStart               ``Reserved``
    Signal group              `M0011`_         setStop                ``Reserved``
    Traffic Light Controller  `M0012`_         setStart               ``Reserved``
@@ -2330,13 +2330,26 @@ e.g. during maintenance work. Requires security code 2.
 M0008
 ^^^^^
 
-Sets manual activation of detector logic
+Force detector logic
 
-Set given detector logic (1-255) to either true or false. Can e.g. be
-used to connect RSMP compatible detection equipment to the traffic light
-controller. Can also be used for prioritization. Requires security code
-2
+Force a given detector logic (1-255) to either true or false.
 
+When 'status' is true the detector logic is forced to the state specified in 'mode'.
+While forced, no other source can activate or deactivate the detector logic.
+When forcing, the 'duration' can be set to automatically release the
+detector logic after a specific time interval.
+
+When 'status' is false the detector logic is released and the state
+will again be controlled by other sources, e.g. hardware.
+Note that this means that releasing does not guarantee a return to the previous state. 
+This is because the other control sources might have changed state while
+the detector logic was forced.
+When releasing, the 'mode' and 'duration' attributes are ignored.
+
+Can also be for signal group prioritization if the controller is programmed
+to activate priority based on detector logic actication.
+
+Requires security code 2.
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
@@ -2348,11 +2361,16 @@ controller. Can also be used for prioritization. Requires security code
    ============  =======  =======================================================
    Name          Type     Comment
    ============  =======  =======================================================
-   status        boolean  False: Deactivate manual control of detector logic |br|
-                          True: Activate manual control of detector logic
+   status        boolean  True: Release detector logic, 'mode' is ignored.|br|
+                          False: Force detector logic to the value in 'mode'.
+   mode          boolean  Mode to force to (ignored if 'status' is false).|br|
+                          True: Activate detector logic |br|
+                          False: Deactivate detector logic
+   duration      integer  If set, automatically release after this number of|br|
+                          milliseconds. Ignored if 'status' is false.|br|
+                          Setting to zero is the same as leaving out, and means|br|
+                          no automatic release will happen.
    securityCode  string   Security code 2
-   mode          boolean  False: Deactivate detector logic |br|
-                          True: Activate detector logic
    ============  =======  =======================================================
 
 
