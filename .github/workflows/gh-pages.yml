@@ -26,6 +26,7 @@ jobs:
       with:
         repository: rsmp-nordic/rsmp_schema
         path: rsmp_schema
+        ref: tlc_1.3.0
     - name: Check out sxl-tools repository
       uses: actions/checkout@v4
       with:
