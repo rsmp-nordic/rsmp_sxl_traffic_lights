@@ -1031,7 +1031,7 @@ for bus priority, external control systems, and much more.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>detectorlogicstatus</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Detector logic status as text field <br> 
 Each character represent the state of the detector logic in consecutive order, <br> 
 where the leftmost character starts with detector logic 1. <br> 
@@ -1058,7 +1058,7 @@ could be external detectors, bus priority, and much more.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>inputstatus</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Input status as text field <br> 
 Each character represent the state of the input in consecutive order, <br> 
 where the leftmost character starts with input 1. <br> 
@@ -1205,19 +1205,19 @@ intersection, e.g. “0” and “True” (one intersection) or “1,2” and
 </thead>
 <tbody>
 <tr class="row-even"><td><p>intersection</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td></td>
 <td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
 Use “0” for all intersections of the TLC.</p></td>
 </tr>
 <tr class="row-odd"><td><p>status</p></td>
-<td><p>boolean_as_string</p></td>
+<td><p>boolean_as_string_list</p></td>
 <td></td>
 <td><p>False: Traffic Light Controller in dark mode <br> 
 True: Traffic Light Controller not in dark mode</p></td>
 </tr>
 <tr class="row-even"><td><p>source</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-operator_panel <br> 
 -calendar_clock <br> 
 -control_block <br> 
@@ -1254,19 +1254,19 @@ comma-separated lists - one value for each intersection, e.g. “0” and
 </thead>
 <tbody>
 <tr class="row-even"><td><p>intersection</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td></td>
 <td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
 Use “0” for all intersections of the TLC.</p></td>
 </tr>
 <tr class="row-odd"><td><p>status</p></td>
-<td><p>boolean_as_string</p></td>
+<td><p>boolean_as_string_list</p></td>
 <td></td>
 <td><p>False: Manual control inactive <br> 
 True: Manual control active</p></td>
 </tr>
 <tr class="row-even"><td><p>source</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-operator_panel <br> 
 -calendar_clock <br> 
 -control_block <br> 
@@ -1303,19 +1303,19 @@ comma-separated lists - one value for each intersection, e.g. “0” and
 </thead>
 <tbody>
 <tr class="row-even"><td><p>intersection</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td></td>
 <td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
 Use “0” for all intersections of the TLC.</p></td>
 </tr>
 <tr class="row-odd"><td><p>status</p></td>
-<td><p>boolean_as_string</p></td>
+<td><p>boolean_as_string_list</p></td>
 <td></td>
 <td><p>False: Fixed time control inactive <br> 
 True: Fixed time control active</p></td>
 </tr>
 <tr class="row-even"><td><p>source</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-operator_panel <br> 
 -calendar_clock <br> 
 -control_block <br> 
@@ -1355,19 +1355,19 @@ intersections).</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>intersection</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td></td>
 <td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
 Use “0” for all intersections of the TLC.</p></td>
 </tr>
 <tr class="row-odd"><td><p>status</p></td>
-<td><p>boolean_as_string</p></td>
+<td><p>boolean_as_string_list</p></td>
 <td></td>
 <td><p>False: Isolated control disabled <br> 
 True: Isolated control enabled (Vehicle actuated control or Fixed time control)</p></td>
 </tr>
 <tr class="row-even"><td><p>source</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-operator_panel <br> 
 -calendar_clock <br> 
 -control_block <br> 
@@ -1405,19 +1405,19 @@ for each intersection, e.g. “1,2” and “True,False”</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>intersection</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td></td>
 <td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
 Use “0” for all intersections of the TLC.</p></td>
 </tr>
 <tr class="row-odd"><td><p>status</p></td>
-<td><p>boolean_as_string</p></td>
+<td><p>boolean_as_string_list</p></td>
 <td></td>
 <td><p>False: Yellow flash disabled <br> 
 True: Yellow flash enabled</p></td>
 </tr>
 <tr class="row-even"><td><p>source</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-operator_panel <br> 
 -calendar_clock <br> 
 -control_block <br> 
@@ -1453,19 +1453,19 @@ each intersection, e.g. “1,2” and “True,False”</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>intersection</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td></td>
 <td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
 Use “0” for all intersections of the TLC.</p></td>
 </tr>
 <tr class="row-odd"><td><p>status</p></td>
-<td><p>boolean_as_string</p></td>
+<td><p>boolean_as_string_list</p></td>
 <td></td>
 <td><p>False: All red disabled <br> 
 True: All red enabled</p></td>
 </tr>
 <tr class="row-even"><td><p>source</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-operator_panel <br> 
 -calendar_clock <br> 
 -control_block <br> 
@@ -1502,13 +1502,13 @@ for each intersection, e.g. “1,2” and “0,1”</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>intersection</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td></td>
 <td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
 Use “0” for all intersections of the TLC.</p></td>
 </tr>
 <tr class="row-odd"><td><p>status</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>-0 <br> 
 -1 <br> 
 -2 <br> 
@@ -1545,7 +1545,7 @@ used to change priority etc.</p>
 <td><p>Current time plan</p></td>
 </tr>
 <tr class="row-odd"><td><p>source</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-operator_panel <br> 
 -calendar_clock <br> 
 -control_block <br> 
@@ -1590,7 +1590,7 @@ time plan dynamically.</p>
 <td><p>Current traffic situation</p></td>
 </tr>
 <tr class="row-odd"><td><p>source</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-operator_panel <br> 
 -calendar_clock <br> 
 -control_block <br> 
@@ -1689,13 +1689,13 @@ intersection, e.g. “1,2” and “startup,control”</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>intersection</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td></td>
 <td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
 Use “0” for all intersections of the TLC.</p></td>
 </tr>
 <tr class="row-odd"><td><p>controlmode</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-startup <br> 
 -control <br> 
 -standby <br> 
@@ -1756,7 +1756,7 @@ in the controller.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_list_as_string</p></td>
 <td><p>Comma separated list of configured time plans. E.g. “1,2,3,5”</p></td>
 </tr>
 </tbody>
@@ -1811,7 +1811,7 @@ tune the coordination for optimal traffic flow.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Offset table <br> 
 Each offset time is written as p-t where: <br> 
 p=time plan number (from 1 to 255) <br> 
@@ -1890,7 +1890,7 @@ timings (time plan) to use during the week for optimal traffic flow.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Week time table. Defines time table to use for each week day <br> 
 Each day is written as d-t where: <br> 
 d=day of week <br> 
@@ -1927,7 +1927,7 @@ timings (time plan) to use during time of day for optimal traffic flow.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Time Table. Defines time tables <br> 
 Each time definition is written as t-o-h-m where: <br> 
 t=time table nr (1-12) <br> 
@@ -1969,7 +1969,7 @@ can be used as part of scenario based control.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Cycle time table <br> 
 Each cycle time is written as pp-tt where: <br> 
 pp=time plan <br> 
@@ -2058,7 +2058,7 @@ intended.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Loop detector trigger level sensitivity is written as dd-ss where: <br> 
 dd=loop detector number <br> 
 ss=sensitivity value <br> 
@@ -2086,13 +2086,13 @@ lists - one value for each intersection, e.g. “1,2” and
 </thead>
 <tbody>
 <tr class="row-even"><td><p>intersection</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td></td>
 <td><p>Comma separated list of intersections which the status relates to, e.g. “1,2” <br> 
 Use “0” for all intersections of the TLC.</p></td>
 </tr>
 <tr class="row-odd"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-local <br> 
 -centralized <br> 
 -off</p></td>
@@ -2101,7 +2101,7 @@ centralized: Coordination with synchronized clock <br>
 off: Coordination not active</p></td>
 </tr>
 <tr class="row-even"><td><p>source</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>-operator_panel <br> 
 -calendar_clock <br> 
 -control_block <br> 
@@ -2525,7 +2525,7 @@ Note: <br>
 <td><p>Time stamp of the config</p></td>
 </tr>
 <tr class="row-even"><td><p>version</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Version information of the configuration. Contains basic information such as controller id, changes to config and other information <br> 
 The format is not specified in detail.</p></td>
 </tr>
@@ -2679,7 +2679,7 @@ counting is done on all all detectors.</p>
 <td><p>Time stamp for start of measuring</p></td>
 </tr>
 <tr class="row-odd"><td><p>vehicles</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of vehicles <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
@@ -2707,7 +2707,7 @@ counting is done on all all detectors.</p>
 <td><p>Time stamp for start of measuring</p></td>
 </tr>
 <tr class="row-odd"><td><p>speed</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Average speed in km/h (integer) <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
@@ -2735,7 +2735,7 @@ counting is done on all all detectors.</p>
 <td><p>Time stamp for start of measuring</p></td>
 </tr>
 <tr class="row-odd"><td><p>occupancy</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Occupancy in percent (%) (0-100) <br> 
 - Value expressed as an integer with a range of 0-100. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
@@ -2763,63 +2763,63 @@ counting is done on all all detectors.</p>
 <td><p>Time stamp for start of measuring</p></td>
 </tr>
 <tr class="row-odd"><td><p>P</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of cars <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
 - The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
 </tr>
 <tr class="row-even"><td><p>PS</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of cars with trailers <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
 - The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
 </tr>
 <tr class="row-odd"><td><p>L</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of trucks <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
 - The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
 </tr>
 <tr class="row-even"><td><p>LS</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of trucks with trailers <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
 - The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
 </tr>
 <tr class="row-odd"><td><p>B</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of buses <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
 - The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
 </tr>
 <tr class="row-even"><td><p>SP</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of trams <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
 - The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
 </tr>
 <tr class="row-odd"><td><p>MC</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of motor cycles <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
 - The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
 </tr>
 <tr class="row-even"><td><p>C</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of bicycles <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
 - The value is set to “-1” if no data could be measured (e.g. detector fault)</p></td>
 </tr>
 <tr class="row-odd"><td><p>F</p></td>
-<td><p>integer_as_string</p></td>
+<td><p>integer_as_string_list</p></td>
 <td><p>Number of pedestrians <br> 
 - Value expressed as an integer with a range of 0-65535. <br> 
 - Contains data from all detector logics. Each detector logic is separated with a comma. <br> 
@@ -3306,7 +3306,7 @@ True: Activate detector logic</p></td>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>securityCode</p></td>
@@ -3363,7 +3363,7 @@ is 1 in binary, which is bit 0 - “2” is 10 in binary, which is bit 1</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon <br> 
 Format: [Offset];[Bits to set];[Bits to unset];…</p></td>
 </tr>
@@ -3396,7 +3396,7 @@ flow. Requires security code 2</p>
 <td><p>Plan to be changed</p></td>
 </tr>
 <tr class="row-odd"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Dynamic bands <br> 
 Each dynamic band are written as dd-ee where: <br> 
 dd=Dynamic band number (from 1-10) <br> 
@@ -3461,7 +3461,7 @@ optimal traffic flow. Requires security code 2.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Week time table. Defines time table to use for each week day <br> 
 Each segment is written as d-t where: <br> 
 d=day of week <br> 
@@ -3504,7 +3504,7 @@ for optimal traffic flow. Requires security code 2.</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Time Table. Defines time tables <br> 
 Each time definition is written as t-o-h-m where: <br> 
 t=time table nr (1-12) <br> 
@@ -3661,7 +3661,7 @@ to make sure they detect traffic as intended. Requires security code 2</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>status</p></td>
-<td><p>string_as_string</p></td>
+<td><p>string_list_as_string</p></td>
 <td><p>Loop detector trigger level sensitivity is written as dd-ss where: <br> 
 dd=loop detector number <br> 
 ss=sensitivity value</p></td>

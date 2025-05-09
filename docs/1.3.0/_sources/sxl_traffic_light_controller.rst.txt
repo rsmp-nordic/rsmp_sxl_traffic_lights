@@ -555,16 +555,16 @@ for bus priority, external control systems, and much more.
    :class: longtable
 
 
-   ===================  ================  ===================================================================================
-   Name                 Type              Comment
-   ===================  ================  ===================================================================================
-   detectorlogicstatus  string_as_string  Detector logic status as text field |br|
-                                          Each character represent the state of the detector logic in consecutive order, |br|
-                                          where the leftmost character starts with detector logic 1. |br|
-                                          0 : Detector logic is not active |br|
-                                          1 : Detector logic is active |br|
-                                          - : Detector logic is undefined/does not exist
-   ===================  ================  ===================================================================================
+   ===================  =====================  ===================================================================================
+   Name                 Type                   Comment
+   ===================  =====================  ===================================================================================
+   detectorlogicstatus  string_list_as_string  Detector logic status as text field |br|
+                                               Each character represent the state of the detector logic in consecutive order, |br|
+                                               where the leftmost character starts with detector logic 1. |br|
+                                               0 : Detector logic is not active |br|
+                                               1 : Detector logic is active |br|
+                                               - : Detector logic is undefined/does not exist
+   ===================  =====================  ===================================================================================
 
 
 S0003
@@ -584,16 +584,16 @@ could be external detectors, bus priority, and much more.
    :class: longtable
 
 
-   ===========  ================  ==========================================================================
-   Name         Type              Comment
-   ===========  ================  ==========================================================================
-   inputstatus  string_as_string  Input status as text field |br|
-                                  Each character represent the state of the input in consecutive order, |br|
-                                  where the leftmost character starts with input 1. |br|
-                                  0 : Input is not active |br|
-                                  1 : Input is active |br|
-                                  - : Input is undefined/does not exist
-   ===========  ================  ==========================================================================
+   ===========  =====================  ==========================================================================
+   Name         Type                   Comment
+   ===========  =====================  ==========================================================================
+   inputstatus  string_list_as_string  Input status as text field |br|
+                                       Each character represent the state of the input in consecutive order, |br|
+                                       where the leftmost character starts with input 1. |br|
+                                       0 : Input is not active |br|
+                                       1 : Input is active |br|
+                                       - : Input is undefined/does not exist
+   ===========  =====================  ==========================================================================
 
 
 S0004
@@ -720,21 +720,21 @@ intersection, e.g. “0” and “True” (one intersection) or “1,2” and
    :class: longtable
 
 
-   ============  =================  ====================  ==================================================================================
-   Name          Type               Enum                  Comment
-   ============  =================  ====================  ==================================================================================
-   intersection  integer_as_string                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-                                                          Use “0” for all intersections of the TLC.
-   status        boolean_as_string                        False: Traffic Light Controller in dark mode |br|
-                                                          True: Traffic Light Controller not in dark mode
-   source        string_as_string   -operator_panel |br|  Source of the status change |br|
-                                    -calendar_clock |br|  operator_panel: Operator panel |br|
-                                    -control_block |br|   calendar_clock: Calendar/clock |br|
-                                    -forced |br|          control_block: Control block |br|
-                                    -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                                    -other                startup: Set after startup mode |br|
-                                                          other: Other reason
-   ============  =================  ====================  ==================================================================================
+   ============  ======================  ====================  ==================================================================================
+   Name          Type                    Enum                  Comment
+   ============  ======================  ====================  ==================================================================================
+   intersection  integer_as_string_list                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                               Use “0” for all intersections of the TLC.
+   status        boolean_as_string_list                        False: Traffic Light Controller in dark mode |br|
+                                                               True: Traffic Light Controller not in dark mode
+   source        string_list_as_string   -operator_panel |br|  Source of the status change |br|
+                                         -calendar_clock |br|  operator_panel: Operator panel |br|
+                                         -control_block |br|   calendar_clock: Calendar/clock |br|
+                                         -forced |br|          control_block: Control block |br|
+                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                         -other                startup: Set after startup mode |br|
+                                                               other: Other reason
+   ============  ======================  ====================  ==================================================================================
 
 
 S0008
@@ -756,21 +756,21 @@ comma-separated lists - one value for each intersection, e.g. “0” and
    :class: longtable
 
 
-   ============  =================  ====================  ==================================================================================
-   Name          Type               Enum                  Comment
-   ============  =================  ====================  ==================================================================================
-   intersection  integer_as_string                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-                                                          Use “0” for all intersections of the TLC.
-   status        boolean_as_string                        False: Manual control inactive |br|
-                                                          True: Manual control active
-   source        string_as_string   -operator_panel |br|  Source of the status change |br|
-                                    -calendar_clock |br|  operator_panel: Operator panel |br|
-                                    -control_block |br|   calendar_clock: Calendar/clock |br|
-                                    -forced |br|          control_block: Control block |br|
-                                    -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                                    -other                startup: Set after startup mode |br|
-                                                          other: Other reason
-   ============  =================  ====================  ==================================================================================
+   ============  ======================  ====================  ==================================================================================
+   Name          Type                    Enum                  Comment
+   ============  ======================  ====================  ==================================================================================
+   intersection  integer_as_string_list                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                               Use “0” for all intersections of the TLC.
+   status        boolean_as_string_list                        False: Manual control inactive |br|
+                                                               True: Manual control active
+   source        string_list_as_string   -operator_panel |br|  Source of the status change |br|
+                                         -calendar_clock |br|  operator_panel: Operator panel |br|
+                                         -control_block |br|   calendar_clock: Calendar/clock |br|
+                                         -forced |br|          control_block: Control block |br|
+                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                         -other                startup: Set after startup mode |br|
+                                                               other: Other reason
+   ============  ======================  ====================  ==================================================================================
 
 
 S0009
@@ -792,21 +792,21 @@ comma-separated lists - one value for each intersection, e.g. “0” and
    :class: longtable
 
 
-   ============  =================  ====================  ==================================================================================
-   Name          Type               Enum                  Comment
-   ============  =================  ====================  ==================================================================================
-   intersection  integer_as_string                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-                                                          Use “0” for all intersections of the TLC.
-   status        boolean_as_string                        False: Fixed time control inactive |br|
-                                                          True: Fixed time control active
-   source        string_as_string   -operator_panel |br|  Source of the status change |br|
-                                    -calendar_clock |br|  operator_panel: Operator panel |br|
-                                    -control_block |br|   calendar_clock: Calendar/clock |br|
-                                    -forced |br|          control_block: Control block |br|
-                                    -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                                    -other                startup: Set after startup mode |br|
-                                                          other: Other reason
-   ============  =================  ====================  ==================================================================================
+   ============  ======================  ====================  ==================================================================================
+   Name          Type                    Enum                  Comment
+   ============  ======================  ====================  ==================================================================================
+   intersection  integer_as_string_list                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                               Use “0” for all intersections of the TLC.
+   status        boolean_as_string_list                        False: Fixed time control inactive |br|
+                                                               True: Fixed time control active
+   source        string_list_as_string   -operator_panel |br|  Source of the status change |br|
+                                         -calendar_clock |br|  operator_panel: Operator panel |br|
+                                         -control_block |br|   calendar_clock: Calendar/clock |br|
+                                         -forced |br|          control_block: Control block |br|
+                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                         -other                startup: Set after startup mode |br|
+                                                               other: Other reason
+   ============  ======================  ====================  ==================================================================================
 
 
 S0010
@@ -831,21 +831,21 @@ intersections).
    :class: longtable
 
 
-   ============  =================  ====================  ==================================================================================
-   Name          Type               Enum                  Comment
-   ============  =================  ====================  ==================================================================================
-   intersection  integer_as_string                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-                                                          Use “0” for all intersections of the TLC.
-   status        boolean_as_string                        False: Isolated control disabled |br|
-                                                          True: Isolated control enabled (Vehicle actuated control or Fixed time control)
-   source        string_as_string   -operator_panel |br|  Source of the status change |br|
-                                    -calendar_clock |br|  operator_panel: Operator panel |br|
-                                    -control_block |br|   calendar_clock: Calendar/clock |br|
-                                    -forced |br|          control_block: Control block |br|
-                                    -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                                    -other                startup: Set after startup mode |br|
-                                                          other: Other reason
-   ============  =================  ====================  ==================================================================================
+   ============  ======================  ====================  ==================================================================================
+   Name          Type                    Enum                  Comment
+   ============  ======================  ====================  ==================================================================================
+   intersection  integer_as_string_list                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                               Use “0” for all intersections of the TLC.
+   status        boolean_as_string_list                        False: Isolated control disabled |br|
+                                                               True: Isolated control enabled (Vehicle actuated control or Fixed time control)
+   source        string_list_as_string   -operator_panel |br|  Source of the status change |br|
+                                         -calendar_clock |br|  operator_panel: Operator panel |br|
+                                         -control_block |br|   calendar_clock: Calendar/clock |br|
+                                         -forced |br|          control_block: Control block |br|
+                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                         -other                startup: Set after startup mode |br|
+                                                               other: Other reason
+   ============  ======================  ====================  ==================================================================================
 
 
 S0011
@@ -868,21 +868,21 @@ for each intersection, e.g. “1,2” and “True,False”
    :class: longtable
 
 
-   ============  =================  ====================  ==================================================================================
-   Name          Type               Enum                  Comment
-   ============  =================  ====================  ==================================================================================
-   intersection  integer_as_string                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-                                                          Use “0” for all intersections of the TLC.
-   status        boolean_as_string                        False: Yellow flash disabled |br|
-                                                          True: Yellow flash enabled
-   source        string_as_string   -operator_panel |br|  Source of the status change |br|
-                                    -calendar_clock |br|  operator_panel: Operator panel |br|
-                                    -control_block |br|   calendar_clock: Calendar/clock |br|
-                                    -forced |br|          control_block: Control block |br|
-                                    -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                                    -other                startup: Set after startup mode |br|
-                                                          other: Other reason
-   ============  =================  ====================  ==================================================================================
+   ============  ======================  ====================  ==================================================================================
+   Name          Type                    Enum                  Comment
+   ============  ======================  ====================  ==================================================================================
+   intersection  integer_as_string_list                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                               Use “0” for all intersections of the TLC.
+   status        boolean_as_string_list                        False: Yellow flash disabled |br|
+                                                               True: Yellow flash enabled
+   source        string_list_as_string   -operator_panel |br|  Source of the status change |br|
+                                         -calendar_clock |br|  operator_panel: Operator panel |br|
+                                         -control_block |br|   calendar_clock: Calendar/clock |br|
+                                         -forced |br|          control_block: Control block |br|
+                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                         -other                startup: Set after startup mode |br|
+                                                               other: Other reason
+   ============  ======================  ====================  ==================================================================================
 
 
 S0012
@@ -903,21 +903,21 @@ each intersection, e.g. “1,2” and “True,False”
    :class: longtable
 
 
-   ============  =================  ====================  ==================================================================================
-   Name          Type               Enum                  Comment
-   ============  =================  ====================  ==================================================================================
-   intersection  integer_as_string                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-                                                          Use “0” for all intersections of the TLC.
-   status        boolean_as_string                        False: All red disabled |br|
-                                                          True: All red enabled
-   source        string_as_string   -operator_panel |br|  Source of the status change |br|
-                                    -calendar_clock |br|  operator_panel: Operator panel |br|
-                                    -control_block |br|   calendar_clock: Calendar/clock |br|
-                                    -forced |br|          control_block: Control block |br|
-                                    -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                                    -other                startup: Set after startup mode |br|
-                                                          other: Other reason
-   ============  =================  ====================  ==================================================================================
+   ============  ======================  ====================  ==================================================================================
+   Name          Type                    Enum                  Comment
+   ============  ======================  ====================  ==================================================================================
+   intersection  integer_as_string_list                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                               Use “0” for all intersections of the TLC.
+   status        boolean_as_string_list                        False: All red disabled |br|
+                                                               True: All red enabled
+   source        string_list_as_string   -operator_panel |br|  Source of the status change |br|
+                                         -calendar_clock |br|  operator_panel: Operator panel |br|
+                                         -control_block |br|   calendar_clock: Calendar/clock |br|
+                                         -forced |br|          control_block: Control block |br|
+                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                         -other                startup: Set after startup mode |br|
+                                                               other: Other reason
+   ============  ======================  ====================  ==================================================================================
 
 
 S0013
@@ -939,16 +939,16 @@ for each intersection, e.g. “1,2” and “0,1”
    :class: longtable
 
 
-   ============  =================  =======  ==================================================================================
-   Name          Type               Enum     Comment
-   ============  =================  =======  ==================================================================================
-   intersection  integer_as_string           Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-                                             Use “0” for all intersections of the TLC.
-   status        integer_as_string  -0 |br|  0: disabled |br|
-                                    -1 |br|  1: dark mode |br|
-                                    -2 |br|  2: yellow flash |br|
-                                    -3       3: all red
-   ============  =================  =======  ==================================================================================
+   ============  ======================  =======  ==================================================================================
+   Name          Type                    Enum     Comment
+   ============  ======================  =======  ==================================================================================
+   intersection  integer_as_string_list           Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                  Use “0” for all intersections of the TLC.
+   status        integer_as_string_list  -0 |br|  0: disabled |br|
+                                         -1 |br|  1: dark mode |br|
+                                         -2 |br|  2: yellow flash |br|
+                                         -3       3: all red
+   ============  ======================  =======  ==================================================================================
 
 
 S0014
@@ -970,18 +970,18 @@ used to change priority etc.
    :class: longtable
 
 
-   ======  =================  ====================  ===========================================================
-   Name    Type               Enum                  Comment
-   ======  =================  ====================  ===========================================================
-   status  integer_as_string                        Current time plan
-   source  string_as_string   -operator_panel |br|  Source of the status change |br|
-                              -calendar_clock |br|  operator_panel: Operator panel |br|
-                              -control_block |br|   calendar_clock: Calendar/clock |br|
-                              -forced |br|          control_block: Control block |br|
-                              -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                              -other                startup: Set after startup mode |br|
-                                                    other: Other reason
-   ======  =================  ====================  ===========================================================
+   ======  =====================  ====================  ===========================================================
+   Name    Type                   Enum                  Comment
+   ======  =====================  ====================  ===========================================================
+   status  integer_as_string                            Current time plan
+   source  string_list_as_string  -operator_panel |br|  Source of the status change |br|
+                                  -calendar_clock |br|  operator_panel: Operator panel |br|
+                                  -control_block |br|   calendar_clock: Calendar/clock |br|
+                                  -forced |br|          control_block: Control block |br|
+                                  -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                  -other                startup: Set after startup mode |br|
+                                                        other: Other reason
+   ======  =====================  ====================  ===========================================================
 
 
 S0015
@@ -1006,18 +1006,18 @@ time plan dynamically.
    :class: longtable
 
 
-   ======  =================  ====================  ===========================================================
-   Name    Type               Enum                  Comment
-   ======  =================  ====================  ===========================================================
-   status  integer_as_string                        Current traffic situation
-   source  string_as_string   -operator_panel |br|  Source of the status change |br|
-                              -calendar_clock |br|  operator_panel: Operator panel |br|
-                              -control_block |br|   calendar_clock: Calendar/clock |br|
-                              -forced |br|          control_block: Control block |br|
-                              -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                              -other                startup: Set after startup mode |br|
-                                                    other: Other reason
-   ======  =================  ====================  ===========================================================
+   ======  =====================  ====================  ===========================================================
+   Name    Type                   Enum                  Comment
+   ======  =====================  ====================  ===========================================================
+   status  integer_as_string                            Current traffic situation
+   source  string_list_as_string  -operator_panel |br|  Source of the status change |br|
+                                  -calendar_clock |br|  operator_panel: Operator panel |br|
+                                  -control_block |br|   calendar_clock: Calendar/clock |br|
+                                  -forced |br|          control_block: Control block |br|
+                                  -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                  -other                startup: Set after startup mode |br|
+                                                        other: Other reason
+   ======  =====================  ====================  ===========================================================
 
 
 S0016
@@ -1107,17 +1107,17 @@ intersection, e.g. “1,2” and “startup,control”
    :class: longtable
 
 
-   ============  =================  =============  ===================================================================================================================================
-   Name          Type               Enum           Comment
-   ============  =================  =============  ===================================================================================================================================
-   intersection  integer_as_string                 Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-                                                   Use “0” for all intersections of the TLC.
-   controlmode   string_as_string   -startup |br|  startup: The controller starts up, performs a power on self test and performs each :term:`start-up interval` |br|
-                                    -control |br|  control: Normal 3-light control |br|
-                                    -standby |br|  standby: The controller is in dark or yellow flash mode (either according to programming or manually set) |br|
-                                    -failure |br|  failure: The controller has a “major fault” defined according to 3.8 i EN12675. The controller is in dark or yellow flash mode |br|
-                                    -test          test: Mode used for various tests, e.g. signal lights
-   ============  =================  =============  ===================================================================================================================================
+   ============  ======================  =============  ===================================================================================================================================
+   Name          Type                    Enum           Comment
+   ============  ======================  =============  ===================================================================================================================================
+   intersection  integer_as_string_list                 Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                        Use “0” for all intersections of the TLC.
+   controlmode   string_list_as_string   -startup |br|  startup: The controller starts up, performs a power on self test and performs each :term:`start-up interval` |br|
+                                         -control |br|  control: Normal 3-light control |br|
+                                         -standby |br|  standby: The controller is in dark or yellow flash mode (either according to programming or manually set) |br|
+                                         -failure |br|  failure: The controller has a “major fault” defined according to 3.8 i EN12675. The controller is in dark or yellow flash mode |br|
+                                         -test          test: Mode used for various tests, e.g. signal lights
+   ============  ======================  =============  ===================================================================================================================================
 
 
 S0021
@@ -1169,11 +1169,11 @@ in the controller.
    :class: longtable
 
 
-   ======  =================  =============================================================
-   Name    Type               Comment
-   ======  =================  =============================================================
-   status  integer_as_string  Comma separated list of configured time plans. E.g. "1,2,3,5"
-   ======  =================  =============================================================
+   ======  ======================  =============================================================
+   Name    Type                    Comment
+   ======  ======================  =============================================================
+   status  integer_list_as_string  Comma separated list of configured time plans. E.g. "1,2,3,5"
+   ======  ======================  =============================================================
 
 
 S0023
@@ -1228,19 +1228,19 @@ tune the coordination for optimal traffic flow.
    :class: longtable
 
 
-   ======  ================  ===============================================
-   Name    Type              Comment
-   ======  ================  ===============================================
-   status  string_as_string  Offset table |br|
-                             Each offset time is written as p-t where: |br|
-                             p=time plan number (from 1 to 255) |br|
-                             t=offset time in seconds (from 0 to 255) |br|
-                             |br|
-                             Each offset time is separated with a comma |br|
-                             |br|
-                             E.g. |br|
-                             1-0,2-13-3-7
-   ======  ================  ===============================================
+   ======  =====================  ===============================================
+   Name    Type                   Comment
+   ======  =====================  ===============================================
+   status  string_list_as_string  Offset table |br|
+                                  Each offset time is written as p-t where: |br|
+                                  p=time plan number (from 1 to 255) |br|
+                                  t=offset time in seconds (from 0 to 255) |br|
+                                  |br|
+                                  Each offset time is separated with a comma |br|
+                                  |br|
+                                  E.g. |br|
+                                  1-0,2-13-3-7
+   ======  =====================  ===============================================
 
 
 S0025
@@ -1290,27 +1290,27 @@ timings (time plan) to use during the week for optimal traffic flow.
    :class: longtable
 
 
-   ======  ================  =================================================================
-   Name    Type              Comment
-   ======  ================  =================================================================
-   status  string_as_string  Week time table. Defines time table to use for each week day |br|
-                             Each day is written as d-t where: |br|
-                             d=day of week |br|
-                             t=time table nr |br|
-                             |br|
-                             Day of week legend: |br|
-                             0=Monday |br|
-                             1=Tuesday |br|
-                             2=Wednesday |br|
-                             3=Thursday |br|
-                             4=Friday |br|
-                             5=Saturday |br|
-                             6=Sunday |br|
-                             |br|
-                             Each segment is separated with a comma |br|
-                             E.g. |br|
-                             d-t,d-t
-   ======  ================  =================================================================
+   ======  =====================  =================================================================
+   Name    Type                   Comment
+   ======  =====================  =================================================================
+   status  string_list_as_string  Week time table. Defines time table to use for each week day |br|
+                                  Each day is written as d-t where: |br|
+                                  d=day of week |br|
+                                  t=time table nr |br|
+                                  |br|
+                                  Day of week legend: |br|
+                                  0=Monday |br|
+                                  1=Tuesday |br|
+                                  2=Wednesday |br|
+                                  3=Thursday |br|
+                                  4=Friday |br|
+                                  5=Saturday |br|
+                                  6=Sunday |br|
+                                  |br|
+                                  Each segment is separated with a comma |br|
+                                  E.g. |br|
+                                  d-t,d-t
+   ======  =====================  =================================================================
 
 
 S0027
@@ -1329,29 +1329,29 @@ timings (time plan) to use during time of day for optimal traffic flow.
    :class: longtable
 
 
-   ======  ================  ======================================================
-   Name    Type              Comment
-   ======  ================  ======================================================
-   status  string_as_string  Time Table. Defines time tables |br|
-                             Each time definition is written as t-o-h-m where: |br|
-                             t=time table nr (1-12) |br|
-                             o=function |br|
-                             h=hour - switching time |br|
-                             m=minute - switching minute |br|
-                             |br|
-                             Function legend: |br|
-                             0=no plan is selected by time table |br|
-                             1=set plan 1 |br|
-                             … |br|
-                             16= set plan 16 |br|
-                             |br|
-                             hour and minute is using local time (not UTC) |br|
-                             |br|
-                             Each time definition is separated with a comma |br|
-                             |br|
-                             E.g. |br|
-                             t-o-h-m,t-o-h-m
-   ======  ================  ======================================================
+   ======  =====================  ======================================================
+   Name    Type                   Comment
+   ======  =====================  ======================================================
+   status  string_list_as_string  Time Table. Defines time tables |br|
+                                  Each time definition is written as t-o-h-m where: |br|
+                                  t=time table nr (1-12) |br|
+                                  o=function |br|
+                                  h=hour - switching time |br|
+                                  m=minute - switching minute |br|
+                                  |br|
+                                  Function legend: |br|
+                                  0=no plan is selected by time table |br|
+                                  1=set plan 1 |br|
+                                  … |br|
+                                  16= set plan 16 |br|
+                                  |br|
+                                  hour and minute is using local time (not UTC) |br|
+                                  |br|
+                                  Each time definition is separated with a comma |br|
+                                  |br|
+                                  E.g. |br|
+                                  t-o-h-m,t-o-h-m
+   ======  =====================  ======================================================
 
 
 S0028
@@ -1373,19 +1373,19 @@ can be used as part of scenario based control.
    :class: longtable
 
 
-   ======  ================  ===============================================
-   Name    Type              Comment
-   ======  ================  ===============================================
-   status  string_as_string  Cycle time table |br|
-                             Each cycle time is written as pp-tt where: |br|
-                             pp=time plan |br|
-                             tt=cycle time in seconds |br|
-                             |br|
-                             Each cycle time is separated with a comma |br|
-                             |br|
-                             E.g. |br|
-                             pp-tt,pp-tt
-   ======  ================  ===============================================
+   ======  =====================  ===============================================
+   Name    Type                   Comment
+   ======  =====================  ===============================================
+   status  string_list_as_string  Cycle time table |br|
+                                  Each cycle time is written as pp-tt where: |br|
+                                  pp=time plan |br|
+                                  tt=cycle time in seconds |br|
+                                  |br|
+                                  Each cycle time is separated with a comma |br|
+                                  |br|
+                                  E.g. |br|
+                                  pp-tt,pp-tt
+   ======  =====================  ===============================================
 
 
 S0029
@@ -1468,14 +1468,14 @@ intended.
    :class: longtable
 
 
-   ======  ================  =======================================================================
-   Name    Type              Comment
-   ======  ================  =======================================================================
-   status  string_as_string  Loop detector trigger level sensitivity is written as dd-ss where: |br|
-                             dd=loop detector number |br|
-                             ss=sensitivity value |br|
-                             Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
-   ======  ================  =======================================================================
+   ======  =====================  =======================================================================
+   Name    Type                   Comment
+   ======  =====================  =======================================================================
+   status  string_list_as_string  Loop detector trigger level sensitivity is written as dd-ss where: |br|
+                                  dd=loop detector number |br|
+                                  ss=sensitivity value |br|
+                                  Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
+   ======  =====================  =======================================================================
 
 
 S0032
@@ -1497,22 +1497,22 @@ lists - one value for each intersection, e.g. “1,2” and
    :class: longtable
 
 
-   ============  =================  ====================  ==================================================================================
-   Name          Type               Enum                  Comment
-   ============  =================  ====================  ==================================================================================
-   intersection  integer_as_string                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-                                                          Use “0” for all intersections of the TLC.
-   status        string_as_string   -local |br|           local: Local coordination |br|
-                                    -centralized |br|     centralized: Coordination with synchronized clock |br|
-                                    -off                  off: Coordination not active
-   source        string_as_string   -operator_panel |br|  Source of the status change |br|
-                                    -calendar_clock |br|  operator_panel: Operator panel |br|
-                                    -control_block |br|   calendar_clock: Calendar/clock |br|
-                                    -forced |br|          control_block: Control block |br|
-                                    -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                                    -other                startup: Set after startup mode |br|
-                                                          other: Other reason
-   ============  =================  ====================  ==================================================================================
+   ============  ======================  ====================  ==================================================================================
+   Name          Type                    Enum                  Comment
+   ============  ======================  ====================  ==================================================================================
+   intersection  integer_as_string_list                        Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+                                                               Use “0” for all intersections of the TLC.
+   status        string_list_as_string   -local |br|           local: Local coordination |br|
+                                         -centralized |br|     centralized: Coordination with synchronized clock |br|
+                                         -off                  off: Coordination not active
+   source        string_list_as_string   -operator_panel |br|  Source of the status change |br|
+                                         -calendar_clock |br|  operator_panel: Operator panel |br|
+                                         -control_block |br|   calendar_clock: Calendar/clock |br|
+                                         -forced |br|          control_block: Control block |br|
+                                         -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                         -other                startup: Set after startup mode |br|
+                                                               other: Other reason
+   ============  ======================  ====================  ==================================================================================
 
 
 S0033
@@ -1821,31 +1821,31 @@ provides the ability to downloaded them.
    :class: longtable
 
 
-   =========  ================  ========================================================================================================================================
-   Name       Type              Comment
-   =========  ================  ========================================================================================================================================
-   config     base64            Traffic parameters |br|
-                                Includes |br|
-                                - all signal programs, including program versions |br|
-                                - signal group settings |br|
-                                - time plans |br|
-                                - safety matrix |br|
-                                - intergreen times |br|
-                                - detector setting |br|
-                                |br|
-                                It should NOT include: |br|
-                                - network settings |br|
-                                - log files |br|
-                                - software |br|
-                                - other device settings that are not part of the signal program |br|
-                                |br|
-                                Note: |br|
-                                - There is no way to upload this binary file to the TLC using RSMP |br|
-                                - The format of the binary file is not specified and is not expected to be compatible between suppliers
-   timestamp  timestamp         Time stamp of the config
-   version    string_as_string  Version information of the configuration. Contains basic information such as controller id, changes to config and other information |br|
-                                The format is not specified in detail.
-   =========  ================  ========================================================================================================================================
+   =========  =====================  ========================================================================================================================================
+   Name       Type                   Comment
+   =========  =====================  ========================================================================================================================================
+   config     base64                 Traffic parameters |br|
+                                     Includes |br|
+                                     - all signal programs, including program versions |br|
+                                     - signal group settings |br|
+                                     - time plans |br|
+                                     - safety matrix |br|
+                                     - intergreen times |br|
+                                     - detector setting |br|
+                                     |br|
+                                     It should NOT include: |br|
+                                     - network settings |br|
+                                     - log files |br|
+                                     - software |br|
+                                     - other device settings that are not part of the signal program |br|
+                                     |br|
+                                     Note: |br|
+                                     - There is no way to upload this binary file to the TLC using RSMP |br|
+                                     - The format of the binary file is not specified and is not expected to be compatible between suppliers
+   timestamp  timestamp              Time stamp of the config
+   version    string_list_as_string  Version information of the configuration. Contains basic information such as controller id, changes to config and other information |br|
+                                     The format is not specified in detail.
+   =========  =====================  ========================================================================================================================================
 
 
 S0201
@@ -1964,15 +1964,15 @@ counting is done on all all detectors.
    :class: longtable
 
 
-   ========  =================  =============================================================================================
-   Name      Type               Comment
-   ========  =================  =============================================================================================
-   start     timestamp          Time stamp for start of measuring
-   vehicles  integer_as_string  Number of vehicles |br|
-                                - Value expressed as an integer with a range of 0-65535. |br|
-                                - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ========  =================  =============================================================================================
+   ========  ======================  =============================================================================================
+   Name      Type                    Comment
+   ========  ======================  =============================================================================================
+   start     timestamp               Time stamp for start of measuring
+   vehicles  integer_as_string_list  Number of vehicles |br|
+                                     - Value expressed as an integer with a range of 0-65535. |br|
+                                     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                     - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ========  ======================  =============================================================================================
 
 
 S0206
@@ -1991,15 +1991,15 @@ counting is done on all all detectors.
    :class: longtable
 
 
-   ======  =================  =============================================================================================
-   Name    Type               Comment
-   ======  =================  =============================================================================================
-   start   timestamp          Time stamp for start of measuring
-   speed   integer_as_string  Average speed in km/h (integer) |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  =================  =============================================================================================
+   ======  ======================  =============================================================================================
+   Name    Type                    Comment
+   ======  ======================  =============================================================================================
+   start   timestamp               Time stamp for start of measuring
+   speed   integer_as_string_list  Average speed in km/h (integer) |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ======  ======================  =============================================================================================
 
 
 S0207
@@ -2018,15 +2018,15 @@ counting is done on all all detectors.
    :class: longtable
 
 
-   =========  =================  =============================================================================================
-   Name       Type               Comment
-   =========  =================  =============================================================================================
-   start      timestamp          Time stamp for start of measuring
-   occupancy  integer_as_string  Occupancy in percent (%) (0-100) |br|
-                                 - Value expressed as an integer with a range of 0-100. |br|
-                                 - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                                 - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   =========  =================  =============================================================================================
+   =========  ======================  =============================================================================================
+   Name       Type                    Comment
+   =========  ======================  =============================================================================================
+   start      timestamp               Time stamp for start of measuring
+   occupancy  integer_as_string_list  Occupancy in percent (%) (0-100) |br|
+                                      - Value expressed as an integer with a range of 0-100. |br|
+                                      - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                      - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   =========  ======================  =============================================================================================
 
 
 S0208
@@ -2045,47 +2045,47 @@ counting is done on all all detectors.
    :class: longtable
 
 
-   ======  =================  =============================================================================================
-   Name    Type               Comment
-   ======  =================  =============================================================================================
-   start   timestamp          Time stamp for start of measuring
-   P       integer_as_string  Number of cars |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   PS      integer_as_string  Number of cars with trailers |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   L       integer_as_string  Number of trucks |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   LS      integer_as_string  Number of trucks with trailers |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   B       integer_as_string  Number of buses |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   SP      integer_as_string  Number of trams |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   MC      integer_as_string  Number of motor cycles |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   C       integer_as_string  Number of bicycles |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   F       integer_as_string  Number of pedestrians |br|
-                              - Value expressed as an integer with a range of 0-65535. |br|
-                              - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-                              - The value is set to “-1” if no data could be measured (e.g. detector fault)
-   ======  =================  =============================================================================================
+   ======  ======================  =============================================================================================
+   Name    Type                    Comment
+   ======  ======================  =============================================================================================
+   start   timestamp               Time stamp for start of measuring
+   P       integer_as_string_list  Number of cars |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   PS      integer_as_string_list  Number of cars with trailers |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   L       integer_as_string_list  Number of trucks |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   LS      integer_as_string_list  Number of trucks with trailers |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   B       integer_as_string_list  Number of buses |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   SP      integer_as_string_list  Number of trams |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   MC      integer_as_string_list  Number of motor cycles |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   C       integer_as_string_list  Number of bicycles |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   F       integer_as_string_list  Number of pedestrians |br|
+                                   - Value expressed as an integer with a range of 0-65535. |br|
+                                   - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+                                   - The value is set to “-1” if no data could be measured (e.g. detector fault)
+   ======  ======================  =============================================================================================
 
 
 Commands
@@ -2428,12 +2428,12 @@ M0012
    :class: longtable
 
 
-   ============  ================  ============
-   Name          Type              Comment
-   ============  ================  ============
-   status        string_as_string  ``Reserved``
-   securityCode  string            ``Reserved``
-   ============  ================  ============
+   ============  =====================  ============
+   Name          Type                   Comment
+   ============  =====================  ============
+   status        string_list_as_string  ``Reserved``
+   securityCode  string                 ``Reserved``
+   ============  =====================  ============
 
 
 M0013
@@ -2490,13 +2490,13 @@ is 1 in binary, which is bit 0 - “2” is 10 in binary, which is bit 1
    :class: longtable
 
 
-   ============  ================  =========================================================================================================================================================================
-   Name          Type              Comment
-   ============  ================  =========================================================================================================================================================================
-   status        string_as_string  Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon |br|
-                                   Format: [Offset];[Bits to set];[Bits to unset];…
-   securityCode  string            Security code 2
-   ============  ================  =========================================================================================================================================================================
+   ============  =====================  =========================================================================================================================================================================
+   Name          Type                   Comment
+   ============  =====================  =========================================================================================================================================================================
+   status        string_list_as_string  Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon |br|
+                                        Format: [Offset];[Bits to set];[Bits to unset];…
+   securityCode  string                 Security code 2
+   ============  =====================  =========================================================================================================================================================================
 
 
 M0014
@@ -2518,21 +2518,21 @@ flow. Requires security code 2
    :class: longtable
 
 
-   ============  =================  ==================================================
-   Name          Type               Comment
-   ============  =================  ==================================================
-   plan          integer_as_string  Plan to be changed
-   status        string_as_string   Dynamic bands |br|
-                                    Each dynamic band are written as dd-ee where: |br|
-                                    dd=Dynamic band number (from 1-10) |br|
-                                    ee=Extension in seconds in this band |br|
-                                    |br|
-                                    Each dynamic band is separated with a comma. |br|
-                                    |br|
-                                    E.g. |br|
-                                    dd-ee,dd-ee
-   securityCode  string             Security code 2
-   ============  =================  ==================================================
+   ============  =====================  ==================================================
+   Name          Type                   Comment
+   ============  =====================  ==================================================
+   plan          integer_as_string      Plan to be changed
+   status        string_list_as_string  Dynamic bands |br|
+                                        Each dynamic band are written as dd-ee where: |br|
+                                        dd=Dynamic band number (from 1-10) |br|
+                                        ee=Extension in seconds in this band |br|
+                                        |br|
+                                        Each dynamic band is separated with a comma. |br|
+                                        |br|
+                                        E.g. |br|
+                                        dd-ee,dd-ee
+   securityCode  string                 Security code 2
+   ============  =====================  ==================================================
 
 
 M0015
@@ -2579,29 +2579,29 @@ optimal traffic flow. Requires security code 2.
    :class: longtable
 
 
-   ============  ================  =================================================================
-   Name          Type              Comment
-   ============  ================  =================================================================
-   status        string_as_string  Week time table. Defines time table to use for each week day |br|
-                                   Each segment is written as d-t where: |br|
-                                   d=day of week |br|
-                                   t=time table nr |br|
-                                   |br|
-                                   Day of week legend: |br|
-                                   0=Monday |br|
-                                   1=Tuesday |br|
-                                   2=Wednesday |br|
-                                   3=Thursday |br|
-                                   4=Friday |br|
-                                   5=Saturday |br|
-                                   6=Sunday |br|
-                                   |br|
-                                   Each segment is separated with a comma |br|
-                                   |br|
-                                   E.g. |br|
-                                   d-t,d-t
-   securityCode  string            Security code 2
-   ============  ================  =================================================================
+   ============  =====================  =================================================================
+   Name          Type                   Comment
+   ============  =====================  =================================================================
+   status        string_list_as_string  Week time table. Defines time table to use for each week day |br|
+                                        Each segment is written as d-t where: |br|
+                                        d=day of week |br|
+                                        t=time table nr |br|
+                                        |br|
+                                        Day of week legend: |br|
+                                        0=Monday |br|
+                                        1=Tuesday |br|
+                                        2=Wednesday |br|
+                                        3=Thursday |br|
+                                        4=Friday |br|
+                                        5=Saturday |br|
+                                        6=Sunday |br|
+                                        |br|
+                                        Each segment is separated with a comma |br|
+                                        |br|
+                                        E.g. |br|
+                                        d-t,d-t
+   securityCode  string                 Security code 2
+   ============  =====================  =================================================================
 
 
 M0017
@@ -2621,30 +2621,30 @@ for optimal traffic flow. Requires security code 2.
    :class: longtable
 
 
-   ============  ================  ======================================================
-   Name          Type              Comment
-   ============  ================  ======================================================
-   status        string_as_string  Time Table. Defines time tables |br|
-                                   Each time definition is written as t-o-h-m where: |br|
-                                   t=time table nr (1-12) |br|
-                                   o=function |br|
-                                   h=hour - switching time |br|
-                                   m=minute - switching minute |br|
-                                   |br|
-                                   Function legend: |br|
-                                   0=no plan is selected by time table |br|
-                                   1=set plan 1 |br|
-                                   … |br|
-                                   16= set plan 16 |br|
-                                   |br|
-                                   hour and minute is using local time (not UTC) |br|
-                                   |br|
-                                   Each time definition is separated with a comma. |br|
-                                   |br|
-                                   E.g. |br|
-                                   t-o-h-m,t-o-h-m
-   securityCode  string            Security code 2
-   ============  ================  ======================================================
+   ============  =====================  ======================================================
+   Name          Type                   Comment
+   ============  =====================  ======================================================
+   status        string_list_as_string  Time Table. Defines time tables |br|
+                                        Each time definition is written as t-o-h-m where: |br|
+                                        t=time table nr (1-12) |br|
+                                        o=function |br|
+                                        h=hour - switching time |br|
+                                        m=minute - switching minute |br|
+                                        |br|
+                                        Function legend: |br|
+                                        0=no plan is selected by time table |br|
+                                        1=set plan 1 |br|
+                                        … |br|
+                                        16= set plan 16 |br|
+                                        |br|
+                                        hour and minute is using local time (not UTC) |br|
+                                        |br|
+                                        Each time definition is separated with a comma. |br|
+                                        |br|
+                                        E.g. |br|
+                                        t-o-h-m,t-o-h-m
+   securityCode  string                 Security code 2
+   ============  =====================  ======================================================
 
 
 M0018
@@ -2759,14 +2759,14 @@ to make sure they detect traffic as intended. Requires security code 2
    :class: longtable
 
 
-   ============  ================  =======================================================================
-   Name          Type              Comment
-   ============  ================  =======================================================================
-   status        string_as_string  Loop detector trigger level sensitivity is written as dd-ss where: |br|
-                                   dd=loop detector number |br|
-                                   ss=sensitivity value
-   securityCode  string            Security code 2
-   ============  ================  =======================================================================
+   ============  =====================  =======================================================================
+   Name          Type                   Comment
+   ============  =====================  =======================================================================
+   status        string_list_as_string  Loop detector trigger level sensitivity is written as dd-ss where: |br|
+                                        dd=loop detector number |br|
+                                        ss=sensitivity value
+   securityCode  string                 Security code 2
+   ============  =====================  =======================================================================
 
 
 M0022
