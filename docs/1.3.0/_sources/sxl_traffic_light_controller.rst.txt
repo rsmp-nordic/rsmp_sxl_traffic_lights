@@ -204,17 +204,17 @@ according to 3.8 in EN12675 which causes the controller to switch to a
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: A0008
    :class: longtable
 
 
-   ========  =================  =================
-   Name      Type               Comment
-   ========  =================  =================
-   timeplan  integer_as_string  Current time plan
-   ========  =================  =================
+   ========  =================  =====  =====  =================
+   Name      Type                 Min    Max  Comment
+   ========  =================  =====  =====  =================
+   timeplan  integer_as_string      1    255  Current time plan
+   ========  =================  =====  =====  =================
 
 
 A0009
@@ -502,39 +502,39 @@ diagnostic information about the performance of the controller.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0001
    :class: longtable
 
 
-   =================  =================  =================================================================================
-   Name               Type               Comment
-   =================  =================  =================================================================================
-   signalgroupstatus  string             Signal group status as text field |br|
-                                         Each character represent the state of the signal group in consecutive order, |br|
-                                         where the leftmost character starts with signal group 1. |br|
-                                         Signal group status is described in detail in the corresponding section. |br|
-                                         - : Signal group is undefined/does not exist
-   cyclecounter       integer_as_string  Cycle counter |br|
-                                         Used for handling of coordination between TLC’s. |br|
-                                         Is counted from 0 until it reaches the cycle time (See S0028). |br|
-                                         |br|
-                                         c = (b + o) mod t |br|
-                                         |br|
-                                         where c = cycle counter, |br|
-                                         b = base cycle counter, |br|
-                                         o = offset, |br|
-                                         t = cycle time, |br|
-                                         mod = modulo |br|
-                                         |br|
-                                         See the coordination section for more information.
-   basecyclecounter   integer_as_string  Base cycle counter |br|
-                                         Used for handling of coordination between TLC’s. |br|
-                                         Synchronized between all TLC’s in an active coordination. |br|
-                                         See the coordination section for more information.
-   stage              integer_as_string  Current stage (isolated)
-   =================  =================  =================================================================================
+   =================  =================  =====  =====  =================================================================================
+   Name               Type               Min    Max    Comment
+   =================  =================  =====  =====  =================================================================================
+   signalgroupstatus  string                           Signal group status as text field |br|
+                                                       Each character represent the state of the signal group in consecutive order, |br|
+                                                       where the leftmost character starts with signal group 1. |br|
+                                                       Signal group status is described in detail in the corresponding section. |br|
+                                                       - : Signal group is undefined/does not exist
+   cyclecounter       integer_as_string  0      999    Cycle counter |br|
+                                                       Used for handling of coordination between TLC’s. |br|
+                                                       Is counted from 0 until it reaches the cycle time (See S0028). |br|
+                                                       |br|
+                                                       c = (b + o) mod t |br|
+                                                       |br|
+                                                       where c = cycle counter, |br|
+                                                       b = base cycle counter, |br|
+                                                       o = offset, |br|
+                                                       t = cycle time, |br|
+                                                       mod = modulo |br|
+                                                       |br|
+                                                       See the coordination section for more information.
+   basecyclecounter   integer_as_string  0      999    Base cycle counter |br|
+                                                       Used for handling of coordination between TLC’s. |br|
+                                                       Synchronized between all TLC’s in an active coordination. |br|
+                                                       See the coordination section for more information.
+   stage              integer_as_string  0      999    Current stage (isolated)
+   =================  =================  =====  =====  =================================================================================
 
 
 S0002
@@ -663,7 +663,7 @@ shows dark, red, yellow flash or using the predetermined start cycle
    ============  =================  =====  =====  ======  ===============
    Name          Type               Min    Max    Enum    Comment
    ============  =================  =====  =====  ======  ===============
-   intersection  integer_as_string                        Intersection id
+   intersection  integer_as_string  0      255            Intersection id
    startup       boolean_as_string                        Start up mode
    ============  =================  =====  =====  ======  ===============
 
@@ -684,19 +684,19 @@ Deprecated, use S0035 instead.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0006
    :class: longtable
 
 
-   ==============  =================  ============================================================================
-   Name            Type               Comment
-   ==============  =================  ============================================================================
-   status          boolean_as_string  ``Deprecated`` False: Emergency route inactive |br|
-                                      True: Emergency route active
-   emergencystage  integer_as_string  ``Deprecated`` Number of emergency route (set to zero if no route is active)
-   ==============  =================  ============================================================================
+   ==============  =================  =====  =====  ============================================================================
+   Name            Type               Min    Max    Comment
+   ==============  =================  =====  =====  ============================================================================
+   status          boolean_as_string                ``Deprecated`` False: Emergency route inactive |br|
+                                                    True: Emergency route active
+   emergencystage  integer_as_string  0      255    ``Deprecated`` Number of emergency route (set to zero if no route is active)
+   ==============  =================  =====  =====  ============================================================================
 
 
 S0007
@@ -964,24 +964,24 @@ used to change priority etc.
 
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: S0014
    :class: longtable
 
 
-   ======  =====================  ====================  ===========================================================
-   Name    Type                   Enum                  Comment
-   ======  =====================  ====================  ===========================================================
-   status  integer_as_string                            Current time plan
-   source  string_list_as_string  -operator_panel |br|  Source of the status change |br|
-                                  -calendar_clock |br|  operator_panel: Operator panel |br|
-                                  -control_block |br|   calendar_clock: Calendar/clock |br|
-                                  -forced |br|          control_block: Control block |br|
-                                  -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                                  -other                startup: Set after startup mode |br|
-                                                        other: Other reason
-   ======  =====================  ====================  ===========================================================
+   ======  =====================  =====  =====  ====================  ===========================================================
+   Name    Type                   Min    Max    Enum                  Comment
+   ======  =====================  =====  =====  ====================  ===========================================================
+   status  integer_as_string      1      255                          Current time plan
+   source  string_list_as_string                -operator_panel |br|  Source of the status change |br|
+                                                -calendar_clock |br|  operator_panel: Operator panel |br|
+                                                -control_block |br|   calendar_clock: Calendar/clock |br|
+                                                -forced |br|          control_block: Control block |br|
+                                                -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                                -other                startup: Set after startup mode |br|
+                                                                      other: Other reason
+   ======  =====================  =====  =====  ====================  ===========================================================
 
 
 S0015
@@ -1000,24 +1000,24 @@ time plan dynamically.
 
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: S0015
    :class: longtable
 
 
-   ======  =====================  ====================  ===========================================================
-   Name    Type                   Enum                  Comment
-   ======  =====================  ====================  ===========================================================
-   status  integer_as_string                            Current traffic situation
-   source  string_list_as_string  -operator_panel |br|  Source of the status change |br|
-                                  -calendar_clock |br|  operator_panel: Operator panel |br|
-                                  -control_block |br|   calendar_clock: Calendar/clock |br|
-                                  -forced |br|          control_block: Control block |br|
-                                  -startup |br|         forced: Forced due to external command e.g. supervisor |br|
-                                  -other                startup: Set after startup mode |br|
-                                                        other: Other reason
-   ======  =====================  ====================  ===========================================================
+   ======  =====================  =====  =====  ====================  ===========================================================
+   Name    Type                   Min    Max    Enum                  Comment
+   ======  =====================  =====  =====  ====================  ===========================================================
+   status  integer_as_string      1      255                          Current traffic situation
+   source  string_list_as_string                -operator_panel |br|  Source of the status change |br|
+                                                -calendar_clock |br|  operator_panel: Operator panel |br|
+                                                -control_block |br|   calendar_clock: Calendar/clock |br|
+                                                -forced |br|          control_block: Control block |br|
+                                                -startup |br|         forced: Forced due to external command e.g. supervisor |br|
+                                                -other                startup: Set after startup mode |br|
+                                                                      other: Other reason
+   ======  =====================  =====  =====  ====================  ===========================================================
 
 
 S0016
@@ -1030,17 +1030,17 @@ logics configured in the controller.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0016
    :class: longtable
 
 
-   ======  =================  =========================
-   Name    Type               Comment
-   ======  =================  =========================
-   number  integer_as_string  Number of detector logics
-   ======  =================  =========================
+   ======  =================  =====  =====  =========================
+   Name    Type                 Min    Max  Comment
+   ======  =================  =====  =====  =========================
+   number  integer_as_string      1  65025  Number of detector logics
+   ======  =================  =====  =====  =========================
 
 
 S0017
@@ -1053,17 +1053,17 @@ groups configured in the controller.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0017
    :class: longtable
 
 
-   ======  =================  =======================
-   Name    Type               Comment
-   ======  =================  =======================
-   number  integer_as_string  Number of signal groups
-   ======  =================  =======================
+   ======  =================  =====  =====  =======================
+   Name    Type                 Min    Max  Comment
+   ======  =================  =====  =====  =======================
+   number  integer_as_string      1  65025  Number of signal groups
+   ======  =================  =====  =====  =======================
 
 
 S0019
@@ -1076,17 +1076,17 @@ situations configured in the controller.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0019
    :class: longtable
 
 
-   ======  =================  ============================
-   Name    Type               Comment
-   ======  =================  ============================
-   number  integer_as_string  Number of traffic situations
-   ======  =================  ============================
+   ======  =================  =====  =====  ============================
+   Name    Type                 Min    Max  Comment
+   ======  =================  =====  =====  ============================
+   number  integer_as_string      1  65025  Number of traffic situations
+   ======  =================  =====  =====  ============================
 
 
 S0020
@@ -1253,24 +1253,24 @@ group. Max, min and likely time to green and red.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0025
    :class: longtable
 
 
-   =================  =================  ====================================================================================================================================================
-   Name               Type               Comment
-   =================  =================  ====================================================================================================================================================
-   minToGEstimate     timestamp          Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green
-   maxToGEstimate     timestamp          Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green
-   likelyToGEstimate  timestamp          Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green
-   ToGConfidence      integer_as_string  Confidence of the likelyToGEstimate. 0-100%
-   minToREstimate     timestamp          Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red
-   maxToREstimate     timestamp          Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red
-   likelyToREstimate  timestamp          Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red
-   ToRConfidence      integer_as_string  Confidence of the likelyToREstimate. 0-100%
-   =================  =================  ====================================================================================================================================================
+   =================  =================  =====  =====  ====================================================================================================================================================
+   Name               Type               Min    Max    Comment
+   =================  =================  =====  =====  ====================================================================================================================================================
+   minToGEstimate     timestamp                        Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green
+   maxToGEstimate     timestamp                        Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green
+   likelyToGEstimate  timestamp                        Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green
+   ToGConfidence      integer_as_string  0      100    Confidence of the likelyToGEstimate. 0-100%
+   minToREstimate     timestamp                        Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red
+   maxToREstimate     timestamp                        Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red
+   likelyToREstimate  timestamp                        Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red
+   ToRConfidence      integer_as_string  0      100    Confidence of the likelyToREstimate. 0-100%
+   =================  =================  =====  =====  ====================================================================================================================================================
 
 
 S0026
@@ -1588,9 +1588,9 @@ stale
                                             -cooldown |br|   rejected: The priority request cannot be granted |br|
                                             -stale           cooldown: A similar priority request means the priority request cannot be activated now |br|
                                                              stale: The priority has been active too long without cancellation, and was therefore removed
-   e       integer_as_string                                 (Optional) Estimated green extension provided by the priority, in seconds |br|
+   e       integer_as_string  0      255                     (Optional) Estimated green extension provided by the priority, in seconds |br|
                                                              Only used when state is ‘completed’.
-   d       integer_as_string                                 (Optional) Estimated red reduction provided by the priority, in seconds |br|
+   d       integer_as_string  0      255                     (Optional) Estimated red reduction provided by the priority, in seconds |br|
                                                              Only used when state is ‘completed’.
    ======  =================  =====  =====  ===============  ============================================================================================
 
@@ -1606,17 +1606,17 @@ bands, M0014
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0034
    :class: longtable
 
 
-   ======  =================  ===================
-   Name    Type               Comment
-   ======  =================  ===================
-   status  integer_as_string  Timeout, in minutes
-   ======  =================  ===================
+   ======  =================  =====  =====  ===================
+   Name    Type                 Min    Max  Comment
+   ======  =================  =====  =====  ===================
+   status  integer_as_string      0  65535  Timeout, in minutes
+   ======  =================  =====  =====  ===================
 
 
 S0035
@@ -1652,9 +1652,9 @@ This status is similar to S0006, but supports multiple routes
 
 
    ======  =================  =====  =====  ======  ============================
-   Name    Type               Min    Max    Enum    Comment
+   Name    Type                 Min    Max  Enum    Comment
    ======  =================  =====  =====  ======  ============================
-   id      integer_as_string                        ID of active emergency route
+   id      integer_as_string      1    255          ID of active emergency route
    ======  =================  =====  =====  ======  ============================
 
 
@@ -1740,22 +1740,22 @@ date and time set in the controller.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0096
    :class: longtable
 
 
-   ======  =================  ============
-   Name    Type               Comment
-   ======  =================  ============
-   year    integer_as_string  Year
-   month   integer_as_string  Month
-   day     integer_as_string  Day of month
-   hour    integer_as_string  Hour
-   minute  integer_as_string  Minute
-   second  integer_as_string  Second
-   ======  =================  ============
+   ======  =================  =====  =====  ============
+   Name    Type                 Min    Max  Comment
+   ======  =================  =====  =====  ============
+   year    integer_as_string      0   9999  Year
+   month   integer_as_string      1     12  Month
+   day     integer_as_string      1     31  Day of month
+   hour    integer_as_string      0     23  Hour
+   minute  integer_as_string      0     59  Minute
+   second  integer_as_string      0     59  Second
+   ======  =================  =====  =====  ============
 
 
 S0097
@@ -1857,18 +1857,18 @@ Used for Traffic counting.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0201
    :class: longtable
 
 
-   =========  =================  ================================================================
-   Name       Type               Comment
-   =========  =================  ================================================================
-   starttime  timestamp          Time stamp for start of measuring
-   vehicles   integer_as_string  Number of vehicles on a given detector logic (since last update)
-   =========  =================  ================================================================
+   =========  =================  =====  =====  ================================================================
+   Name       Type               Min    Max    Comment
+   =========  =================  =====  =====  ================================================================
+   starttime  timestamp                        Time stamp for start of measuring
+   vehicles   integer_as_string  0      65535  Number of vehicles on a given detector logic (since last update)
+   =========  =================  =====  =====  ================================================================
 
 
 S0202
@@ -1880,18 +1880,18 @@ Used for Traffic counting.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0202
    :class: longtable
 
 
-   =========  =================  =================================
-   Name       Type               Comment
-   =========  =================  =================================
-   starttime  timestamp          Time stamp for start of measuring
-   speed      integer_as_string  Average speed in km/h
-   =========  =================  =================================
+   =========  =================  =====  =====  =================================
+   Name       Type               Min    Max    Comment
+   =========  =================  =====  =====  =================================
+   starttime  timestamp                        Time stamp for start of measuring
+   speed      integer_as_string  0      65535  Average speed in km/h
+   =========  =================  =====  =====  =================================
 
 
 S0203
@@ -1903,18 +1903,18 @@ Used for Traffic counting.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0203
    :class: longtable
 
 
-   =========  =================  =================================
-   Name       Type               Comment
-   =========  =================  =================================
-   starttime  timestamp          Time stamp for start of measuring
-   occupancy  integer_as_string  Occupancy in percent (0-100%)
-   =========  =================  =================================
+   =========  =================  =====  =====  =================================
+   Name       Type               Min    Max    Comment
+   =========  =================  =====  =====  =================================
+   starttime  timestamp                        Time stamp for start of measuring
+   occupancy  integer_as_string  0      100    Occupancy in percent (0-100%)
+   =========  =================  =====  =====  =================================
 
 
 S0204
@@ -1926,26 +1926,26 @@ Used for Traffic counting.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: S0204
    :class: longtable
 
 
-   =========  =================  =================================
-   Name       Type               Comment
-   =========  =================  =================================
-   starttime  timestamp          Time stamp for start of measuring
-   P          integer_as_string  Number of cars
-   PS         integer_as_string  Number of cars with trailers
-   L          integer_as_string  Number of trucks
-   LS         integer_as_string  Number of trucks with trailers
-   B          integer_as_string  Number of buses
-   SP         integer_as_string  Number of trams
-   MC         integer_as_string  Number of motor cycles
-   C          integer_as_string  Number of bicycles
-   F          integer_as_string  Number of pedestrians
-   =========  =================  =================================
+   =========  =================  =====  =====  =================================
+   Name       Type               Min    Max    Comment
+   =========  =================  =====  =====  =================================
+   starttime  timestamp                        Time stamp for start of measuring
+   P          integer_as_string  0      65535  Number of cars
+   PS         integer_as_string  0      65535  Number of cars with trailers
+   L          integer_as_string  0      65535  Number of trucks
+   LS         integer_as_string  0      65535  Number of trucks with trailers
+   B          integer_as_string  0      65535  Number of buses
+   SP         integer_as_string  0      65535  Number of trams
+   MC         integer_as_string  0      65535  Number of motor cycles
+   C          integer_as_string  0      65535  Number of bicycles
+   F          integer_as_string  0      65535  Number of pedestrians
+   =========  =================  =====  =====  =================================
 
 
 S0205
@@ -2137,26 +2137,26 @@ Requires security code 2.
 
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: M0001
    :class: longtable
 
 
-   ============  =================  ===================  =======================================================================================================================
-   Name          Type               Enum                 Comment
-   ============  =================  ===================  =======================================================================================================================
-   status        string             -NormalControl |br|  Set operating mode |br|
-                                    -YellowFlash |br|    NormalControl: Normal Control |br|
-                                    -Dark                YellowFlash: Enables yellow flash |br|
-                                                         Dark: Enables dark mode
-   securityCode  string                                  Security code 2
-   timeout       integer_as_string                       Time in minutes until controller automatically reverts to previous functional position |br|
-                                                         0=no automatic return
-   intersection  integer_as_string                       Intersection number |br|
-                                                         Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). |br|
-                                                         0: All intersections
-   ============  =================  ===================  =======================================================================================================================
+   ============  =================  =====  =====  ===================  =======================================================================================================================
+   Name          Type               Min    Max    Enum                 Comment
+   ============  =================  =====  =====  ===================  =======================================================================================================================
+   status        string                           -NormalControl |br|  Set operating mode |br|
+                                                  -YellowFlash |br|    NormalControl: Normal Control |br|
+                                                  -Dark                YellowFlash: Enables yellow flash |br|
+                                                                       Dark: Enables dark mode
+   securityCode  string                                                Security code 2
+   timeout       integer_as_string  0      1440                        Time in minutes until controller automatically reverts to previous functional position |br|
+                                                                       0=no automatic return
+   intersection  integer_as_string  0      255                         Intersection number |br|
+                                                                       Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). |br|
+                                                                       0: All intersections
+   ============  =================  =====  =====  ===================  =======================================================================================================================
 
 
 M0002
@@ -2171,20 +2171,20 @@ optimal traffic flow. Requires security code 2
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0002
    :class: longtable
 
 
-   ============  =================  ==============================================================
-   Name          Type               Comment
-   ============  =================  ==============================================================
-   status        boolean_as_string  False: Controller uses time plan according to programming |br|
-                                    True: Controller uses time plan according to command
-   securityCode  string             Security code 2
-   timeplan      integer_as_string  designation of time plan
-   ============  =================  ==============================================================
+   ============  =================  =====  =====  ==============================================================
+   Name          Type               Min    Max    Comment
+   ============  =================  =====  =====  ==============================================================
+   status        boolean_as_string                False: Controller uses time plan according to programming |br|
+                                                  True: Controller uses time plan according to command
+   securityCode  string                           Security code 2
+   timeplan      integer_as_string  1      255    designation of time plan
+   ============  =================  =====  =====  ==============================================================
 
 
 M0003
@@ -2202,20 +2202,20 @@ time plan dynamically. Requires security code 2
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0003
    :class: longtable
 
 
-   ===============  =================  ==========================================================================
-   Name             Type               Comment
-   ===============  =================  ==========================================================================
-   status           boolean_as_string  False: Controller uses traffic situation according to own programming |br|
-                                       True: Controller uses traffic situation according to command
-   securityCode     string             Security code 2
-   traficsituation  integer_as_string  designation of traficsituation
-   ===============  =================  ==========================================================================
+   ===============  =================  =====  =====  ==========================================================================
+   Name             Type               Min    Max    Comment
+   ===============  =================  =====  =====  ==========================================================================
+   status           boolean_as_string                False: Controller uses traffic situation according to own programming |br|
+                                                     True: Controller uses traffic situation according to command
+   securityCode     string                           Security code 2
+   traficsituation  integer_as_string  1      255    designation of traficsituation
+   ===============  =================  =====  =====  ==========================================================================
 
 
 M0004
@@ -2254,20 +2254,20 @@ emergency vehicle program. Requires security code 2.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0005
    :class: longtable
 
 
-   ==============  =================  ======================================
-   Name            Type               Comment
-   ==============  =================  ======================================
-   status          boolean_as_string  False: Deactivate emergency route |br|
-                                      True: Activate emergency route
-   securityCode    string             Security code 2
-   emergencyroute  integer_as_string  Number of emergency route
-   ==============  =================  ======================================
+   ==============  =================  =====  =====  ======================================
+   Name            Type               Min    Max    Comment
+   ==============  =================  =====  =====  ======================================
+   status          boolean_as_string                False: Deactivate emergency route |br|
+                                                    True: Activate emergency route
+   securityCode    string                           Security code 2
+   emergencyroute  integer_as_string  1      255    Number of emergency route
+   ==============  =================  =====  =====  ======================================
 
 
 M0006
@@ -2285,20 +2285,20 @@ security code 2.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0006
    :class: longtable
 
 
-   ============  =================  ============================
-   Name          Type               Comment
-   ============  =================  ============================
-   status        boolean_as_string  False: Deactivate input |br|
-                                    True: Activate input
-   securityCode  string             Security code 2
-   input         integer_as_string  Number of Input
-   ============  =================  ============================
+   ============  =================  =====  =====  ============================
+   Name          Type               Min    Max    Comment
+   ============  =================  =====  =====  ============================
+   status        boolean_as_string                False: Deactivate input |br|
+                                                  True: Activate input
+   securityCode  string                           Security code 2
+   input         integer_as_string  1      255    Number of Input
+   ============  =================  =====  =====  ============================
 
 
 M0007
@@ -2512,27 +2512,27 @@ flow. Requires security code 2
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0014
    :class: longtable
 
 
-   ============  =====================  ==================================================
-   Name          Type                   Comment
-   ============  =====================  ==================================================
-   plan          integer_as_string      Plan to be changed
-   status        string_list_as_string  Dynamic bands |br|
-                                        Each dynamic band are written as dd-ee where: |br|
-                                        dd=Dynamic band number (from 1-10) |br|
-                                        ee=Extension in seconds in this band |br|
-                                        |br|
-                                        Each dynamic band is separated with a comma. |br|
-                                        |br|
-                                        E.g. |br|
-                                        dd-ee,dd-ee
-   securityCode  string                 Security code 2
-   ============  =====================  ==================================================
+   ============  =====================  =====  =====  ==================================================
+   Name          Type                   Min    Max    Comment
+   ============  =====================  =====  =====  ==================================================
+   plan          integer_as_string      0      255    Plan to be changed
+   status        string_list_as_string                Dynamic bands |br|
+                                                      Each dynamic band are written as dd-ee where: |br|
+                                                      dd=Dynamic band number (from 1-10) |br|
+                                                      ee=Extension in seconds in this band |br|
+                                                      |br|
+                                                      Each dynamic band is separated with a comma. |br|
+                                                      |br|
+                                                      E.g. |br|
+                                                      dd-ee,dd-ee
+   securityCode  string                               Security code 2
+   ============  =====================  =====  =====  ==================================================
 
 
 M0015
@@ -2547,19 +2547,19 @@ for optimal traffic flow. Requires security code 2.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0015
    :class: longtable
 
 
-   ============  =================  ==========================
-   Name          Type               Comment
-   ============  =================  ==========================
-   status        integer_as_string  Set offset time in seconds
-   plan          integer_as_string  Time plan nr
-   securityCode  string             Security code 2
-   ============  =================  ==========================
+   ============  =================  =====  =====  ==========================
+   Name          Type               Min    Max    Comment
+   ============  =================  =====  =====  ==========================
+   status        integer_as_string  0      255    Set offset time in seconds
+   plan          integer_as_string  0      255    Time plan nr
+   securityCode  string                           Security code 2
+   ============  =================  =====  =====  ==========================
 
 
 M0016
@@ -2662,19 +2662,19 @@ with scenario based control. Requires security code 2.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0018
    :class: longtable
 
 
-   ============  =================  =========================
-   Name          Type               Comment
-   ============  =================  =========================
-   status        integer_as_string  Set cycle time in seconds
-   plan          integer_as_string  Time plan nr
-   securityCode  string             Security code 2
-   ============  =================  =========================
+   ============  =================  =====  =====  =========================
+   Name          Type               Min    Max    Comment
+   ============  =================  =====  =====  =========================
+   status        integer_as_string  1      255    Set cycle time in seconds
+   plan          integer_as_string  0      255    Time plan nr
+   securityCode  string                           Security code 2
+   ============  =================  =====  =====  =========================
 
 
 M0019
@@ -2690,22 +2690,22 @@ systems, and much more. Requires security code 2.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0019
    :class: longtable
 
 
-   ============  =================  =================================
-   Name          Type               Comment
-   ============  =================  =================================
-   status        boolean_as_string  False: Release input |br|
-                                    True: Force input
-   securityCode  string             Security code 2
-   input         integer_as_string  Number of Input
-   inputValue    boolean_as_string  False: input forced to False |br|
-                                    True: input forced to True
-   ============  =================  =================================
+   ============  =================  =====  =====  =================================
+   Name          Type               Min    Max    Comment
+   ============  =================  =====  =====  =================================
+   status        boolean_as_string                False: Release input |br|
+                                                  True: Force input
+   securityCode  string                           Security code 2
+   input         integer_as_string  1      255    Number of Input
+   inputValue    boolean_as_string                False: input forced to False |br|
+                                                  True: input forced to True
+   ============  =================  =====  =====  =================================
 
 
 M0020
@@ -2722,22 +2722,22 @@ control systems, and much more. When the output is released
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0020
    :class: longtable
 
 
-   ============  =================  =============================
-   Name          Type               Comment
-   ============  =================  =============================
-   status        boolean_as_string  True: Force output |br|
-                                    False: Release output
-   securityCode  string             Security code 2
-   output        integer_as_string  Number of Output
-   outputValue   boolean_as_string  False: output forced off |br|
-                                    True: output forced on
-   ============  =================  =============================
+   ============  =================  =====  =====  =============================
+   Name          Type               Min    Max    Comment
+   ============  =================  =====  =====  =============================
+   status        boolean_as_string                True: Force output |br|
+                                                  False: Release output
+   securityCode  string                           Security code 2
+   output        integer_as_string  1      255    Number of Output
+   outputValue   boolean_as_string                False: output forced off |br|
+                                                  True: output forced on
+   ============  =================  =====  =====  =============================
 
 
 M0021
@@ -2878,42 +2878,42 @@ priority when it’s not needed anymore.
 
 
 
-.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.20}|\Yl{0.55}|
+.. tabularcolumns:: |\Yl{0.15}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.20}|\Yl{0.35}|
 
 .. table:: M0022
    :class: longtable
 
 
-   =============  =================  ======================  =========================================================================
-   Name           Type               Enum                    Comment
-   =============  =================  ======================  =========================================================================
-   requestId      string                                     A string that uniquely identifies the request on the controller
-   signalGroupId  string                                     (Optional) ID of a signal group component
-   inputId        integer_as_string                          (Optional) ID of an input, using the same numbering scheme as M0006
-   connectionId   integer_as_string                          (Optional) ID of a connection, connecting an ingoing and an outgoing lane
-   approachId     integer_as_string                          (Optional) ID of an intersection approach
-   laneInId       integer_as_string                          (Optional) ID of an ingoing lane
-   laneOutId      integer_as_string                          (Optional) ID of an outgoing lane
-   priorityId     integer_as_string                          (Optional) ID of a priority
-   type           string             -new |br|               new: New priority request |br|
-                                     -update |br|            update: Update to existing priority request |br|
-                                     -cancel                 cancel: Cancel an existing priority
-   level          integer_as_string                          0: Lowest, 14: Highest
-   eta            integer_as_string                          (Optional) Estimated time of arrival to the intersection, in seconds
-   vehicleType    string             -pedestrian |br|        (Optional) Vehicle type |br|
-                                     -bicycle |br|           pedestrian: Pedestrians |br|
-                                     -motorcycle |br|        bicycle: Bicycles |br|
-                                     -car |br|               motorcycle: Motorcycles |br|
-                                     -bus |br|               car: Passenger vehicle |br|
-                                     -lightTruck |br|        bus: Bus used for public transport |br|
-                                     -heavyTruck |br|        lightTruck: Light truck |br|
-                                     -tram |br|              heavyTruck: Heavy truck |br|
-                                     -emergency |br|         tram: Trams used for Public transport |br|
-                                     -safetyCar |br|         emergency: Police, fire or ambulance |br|
-                                     -specialTransport |br|  safetyCar: For e.g. escort vehicles |br|
-                                     -other                  specialTransport: For e.g. heavy load |br|
-                                                             other: Other type of vehicle
-   =============  =================  ======================  =========================================================================
+   =============  =================  =====  =====  ======================  =========================================================================
+   Name           Type               Min    Max    Enum                    Comment
+   =============  =================  =====  =====  ======================  =========================================================================
+   requestId      string                                                   A string that uniquely identifies the request on the controller
+   signalGroupId  string                                                   (Optional) ID of a signal group component
+   inputId        integer_as_string  0      255                            (Optional) ID of an input, using the same numbering scheme as M0006
+   connectionId   integer_as_string  0      255                            (Optional) ID of a connection, connecting an ingoing and an outgoing lane
+   approachId     integer_as_string  0      16                             (Optional) ID of an intersection approach
+   laneInId       integer_as_string  0      255                            (Optional) ID of an ingoing lane
+   laneOutId      integer_as_string  0      255                            (Optional) ID of an outgoing lane
+   priorityId     integer_as_string  0      255                            (Optional) ID of a priority
+   type           string                           -new |br|               new: New priority request |br|
+                                                   -update |br|            update: Update to existing priority request |br|
+                                                   -cancel                 cancel: Cancel an existing priority
+   level          integer_as_string  0      14                             0: Lowest, 14: Highest
+   eta            integer_as_string  0      255                            (Optional) Estimated time of arrival to the intersection, in seconds
+   vehicleType    string                           -pedestrian |br|        (Optional) Vehicle type |br|
+                                                   -bicycle |br|           pedestrian: Pedestrians |br|
+                                                   -motorcycle |br|        bicycle: Bicycles |br|
+                                                   -car |br|               motorcycle: Motorcycles |br|
+                                                   -bus |br|               car: Passenger vehicle |br|
+                                                   -lightTruck |br|        bus: Bus used for public transport |br|
+                                                   -heavyTruck |br|        lightTruck: Light truck |br|
+                                                   -tram |br|              heavyTruck: Heavy truck |br|
+                                                   -emergency |br|         tram: Trams used for Public transport |br|
+                                                   -safetyCar |br|         emergency: Police, fire or ambulance |br|
+                                                   -specialTransport |br|  safetyCar: For e.g. escort vehicles |br|
+                                                   -other                  specialTransport: For e.g. heavy load |br|
+                                                                           other: Other type of vehicle
+   =============  =================  =====  =====  ======================  =========================================================================
 
 
 M0023
@@ -2927,18 +2927,18 @@ in conjunction with dynamic bands, M0014 Requires security code 2.
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0023
    :class: longtable
 
 
-   ============  =================  ===================
-   Name          Type               Comment
-   ============  =================  ===================
-   status        integer_as_string  Timeout, in minutes
-   securityCode  string             Security code 2
-   ============  =================  ===================
+   ============  =================  =====  =====  ===================
+   Name          Type               Min    Max    Comment
+   ============  =================  =====  =====  ===================
+   status        integer_as_string  0      65535  Timeout, in minutes
+   securityCode  string                           Security code 2
+   ============  =================  =====  =====  ===================
 
 
 M0103
@@ -2981,23 +2981,23 @@ security code 1
 
 
 
-.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.6499999999999999}|
+.. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
 
 .. table:: M0104
    :class: longtable
 
 
-   ============  =================  ===============
-   Name          Type               Comment
-   ============  =================  ===============
-   securityCode  string             Security code 1
-   year          integer_as_string  Year
-   month         integer_as_string  Month
-   day           integer_as_string  Day of month
-   hour          integer_as_string  Hour
-   minute        integer_as_string  Minute
-   second        integer_as_string  Second
-   ============  =================  ===============
+   ============  =================  =====  =====  ===============
+   Name          Type               Min    Max    Comment
+   ============  =================  =====  =====  ===============
+   securityCode  string                           Security code 1
+   year          integer_as_string  0      9999   Year
+   month         integer_as_string  1      12     Month
+   day           integer_as_string  1      31     Day of month
+   hour          integer_as_string  0      23     Hour
+   minute        integer_as_string  0      59     Minute
+   second        integer_as_string  0      59     Second
+   ============  =================  =====  =====  ===============
 
 
 .. |br| replace:: |br_html| |br_latex|

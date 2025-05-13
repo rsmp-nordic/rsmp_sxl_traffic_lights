@@ -4,6 +4,19 @@
 Change log
 ==========
 
+Version 1.3.0
+-------------
+Release date:
+
+The full list of changes between 1.3.0 and 1.2.1 can be viewed on github.
+:compare:`v1.2.1...v1.3.0`
+
+- Update the SXL to use the legacy data names, e.g. "integer_as_string". :issue:`219`
+- Clarify definitions of aggregated status bits. :issue:`80`
+- M0020: Fixed True/False mixed up :issue:`191`
+- M0008: Add ability to only force detector logic for a short duration :issue:`158`
+- Show sxl version info for each command/status and attribute :issue:`138`
+
 Version 1.2.1
 -------------
 Release date: 2024-06-25
