@@ -495,11 +495,34 @@ S0001
 
 Signal group status
 
-Provides the status of each signal group, including basic information
-such as green, yellow and red. But also detailed technical information.
-Can be used to draw a live signal group diagram as well provide
+Provides the status of each signal group, e.g. green, yellow, red,
+or other states used in the signal program. See the section on signal
+group states for more information about the possible states.
+
+Can be used to draw a live signal group diagram as well as to provide
 diagnostic information about the performance of the controller.
 
+The base cycle counter is based on just the internal clock and the
+cycle length. Controllers with synchronized clocks and the same cycle
+length will therefore have identical base cycle counters.
+
+The cycle counter is based on the base cycle counter, but shifts the
+phase using the offset set in the controller:
+
+c = (b + o) modulo l
+
+where:
+c = cycle counter
+b = base cycle counter
+o = offset
+l = cycle length
+
+See the coordination section for more information about cycle counters.
+
+The millisecond attributes updates only when the
+signal group state changes, meaning it's safe to subscribe to it
+using **sendOnChange** - you will not be flooded with state updates
+every millisecond.
 
 
 .. tabularcolumns:: |\Yl{0.25}|\Yl{0.10}|\Yl{0.10}|\Yl{0.10}|\Yl{0.44999999999999996}|
@@ -512,27 +535,19 @@ diagnostic information about the performance of the controller.
    Name               Type               Min    Max    Comment
    =================  =================  =====  =====  =================================================================================
    signalgroupstatus  string                           Signal group status as text field |br|
-                                                       Each character represent the state of the signal group in consecutive order, |br|
+                                                       Each character represents the state of the signal group in consecutive order, |br|
                                                        where the leftmost character starts with signal group 1. |br|
-                                                       Signal group status is described in detail in the corresponding section. |br|
-                                                       - : Signal group is undefined/does not exist
-   cyclecounter       integer_as_string  0      999    Cycle counter |br|
-                                                       Used for handling of coordination between TLC’s. |br|
-                                                       Is counted from 0 until it reaches the cycle time (See S0028). |br|
-                                                       |br|
-                                                       c = (b + o) mod t |br|
-                                                       |br|
-                                                       where c = cycle counter, |br|
-                                                       b = base cycle counter, |br|
-                                                       o = offset, |br|
-                                                       t = cycle time, |br|
-                                                       mod = modulo |br|
-                                                       |br|
-                                                       See the coordination section for more information.
+                                                       Signal group status is described in detail in the corresponding section.|br|
+                                                       A dash "-" is used for undefined/non-existing signal groups.
    basecyclecounter   integer_as_string  0      999    Base cycle counter |br|
-                                                       Used for handling of coordination between TLC’s. |br|
-                                                       Synchronized between all TLC’s in an active coordination. |br|
-                                                       See the coordination section for more information.
+                                                       Updates once per second, counting from 0 and wrapping around at the cycle|br|
+                                                       length.
+   cyclecounter       integer_as_string  0      999    Cycle counter |br|
+                                                       Updates once per second, counting from 0 and wrapping around at the cycle|br|
+                                                       length.
+   millisecond        integer_as_string  0      999999 Millisecond|br|
+                                                       Updates only when the signal group status changes, providing the precise|br|
+                                                       cycle counter in milliseconds of when the state changed.                                                                    
    stage              integer_as_string  0      999    Current stage (isolated)
    =================  =================  =====  =====  =================================================================================
 
