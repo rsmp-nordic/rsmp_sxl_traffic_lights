@@ -60,7 +60,7 @@ This document contains examples for all message types.
 + `S0034 Timeout for dynamic bands`_
 + `S0035 Emergency route`_
 + `S0091 Operator logged in/out OP-panel`_
-+ `S0092 Operator logged web-interface`_
++ `S0092 Operator logged in/out web-interface`_
 + `S0095 Version of Traffic Light Controller`_
 + `S0096 Current date and time`_
 + `S0097 Checksum of traffic parameters`_
