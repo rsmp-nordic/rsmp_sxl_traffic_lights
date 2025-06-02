@@ -83,7 +83,7 @@ This document contains examples for all message types.
 + `M0005 Activate emergency route`_
 + `M0006 Activate input`_
 + `M0007 Activate fixed time control`_
-+ `M0008 Sets manual activation of detector logic`_
++ `M0008 Force detector logic`_
 + `M0010 Start of signal group`_
 + `M0011 Stop of signal group`_
 + `M0012 Request start or stop of a series of signal groups`_
@@ -3572,8 +3572,8 @@ M0007 Activate fixed time control
    }
 
    
-M0008 Sets manual activation of detector logic
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+M0008 Force detector logic
+~~~~~~~~~~~~~~~~~~~~~~~~~~
    
 **Command Request**
 
@@ -3591,6 +3591,11 @@ M0008 Sets manual activation of detector logic
    		"n":"status",
    		"cO":"setForceDetectorLogic",
    		"v":"True"
+   	},{
+   		"cCI":"M0008",
+   		"n":"duration",
+   		"cO":"setForceDetectorLogic",
+   		"v":"1000"
    	},{
    		"cCI":"M0008",
    		"n":"securityCode",
