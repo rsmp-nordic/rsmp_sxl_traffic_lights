@@ -132,7 +132,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#m0005-activate-emergency-route">8.3.5. M0005 Activate emergency route</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0006-activate-input">8.3.6. M0006 Activate input</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0007-activate-fixed-time-control">8.3.7. M0007 Activate fixed time control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0008-sets-manual-activation-of-detector-logic">8.3.8. M0008 Sets manual activation of detector logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0008-force-detector-logic">8.3.8. M0008 Force detector logic</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0010-start-of-signal-group">8.3.9. M0010 Start of signal group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0011-stop-of-signal-group">8.3.10. M0011 Stop of signal group</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0012-request-start-or-stop-of-a-series-of-signal-groups">8.3.11. M0012 Request start or stop of a series of signal groups</a></li>
@@ -263,7 +263,7 @@
 <li><p><a class="reference internal" href="#m0005-activate-emergency-route">M0005 Activate emergency route</a></p></li>
 <li><p><a class="reference internal" href="#m0006-activate-input">M0006 Activate input</a></p></li>
 <li><p><a class="reference internal" href="#m0007-activate-fixed-time-control">M0007 Activate fixed time control</a></p></li>
-<li><p><a class="reference internal" href="#m0008-sets-manual-activation-of-detector-logic">M0008 Sets manual activation of detector logic</a></p></li>
+<li><p><a class="reference internal" href="#m0008-force-detector-logic">M0008 Force detector logic</a></p></li>
 <li><p><a class="reference internal" href="#m0010-start-of-signal-group">M0010 Start of signal group</a></p></li>
 <li><p><a class="reference internal" href="#m0011-stop-of-signal-group">M0011 Stop of signal group</a></p></li>
 <li><p><a class="reference internal" href="#m0012-request-start-or-stop-of-a-series-of-signal-groups">M0012 Request start or stop of a series of signal groups</a></p></li>
@@ -3418,8 +3418,8 @@
 </pre></div>
 </div>
 </section>
-<section id="m0008-sets-manual-activation-of-detector-logic">
-<h3><span class="section-number">8.3.8. </span>M0008 Sets manual activation of detector logic<a class="headerlink" href="#m0008-sets-manual-activation-of-detector-logic" title="Link to this heading"></a></h3>
+<section id="m0008-force-detector-logic">
+<h3><span class="section-number">8.3.8. </span>M0008 Force detector logic<a class="headerlink" href="#m0008-force-detector-logic" title="Link to this heading"></a></h3>
 <p><strong>Command Request</strong></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">     </span><span class="nt">&quot;mType&quot;</span><span class="p">:</span><span class="s2">&quot;rSMsg&quot;</span><span class="p">,</span>
@@ -3433,6 +3433,11 @@
 <span class="w">             </span><span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;status&quot;</span><span class="p">,</span>
 <span class="w">             </span><span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setForceDetectorLogic&quot;</span><span class="p">,</span>
 <span class="w">             </span><span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;True&quot;</span>
+<span class="w">     </span><span class="p">},{</span>
+<span class="w">             </span><span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0008&quot;</span><span class="p">,</span>
+<span class="w">             </span><span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;duration&quot;</span><span class="p">,</span>
+<span class="w">             </span><span class="nt">&quot;cO&quot;</span><span class="p">:</span><span class="s2">&quot;setForceDetectorLogic&quot;</span><span class="p">,</span>
+<span class="w">             </span><span class="nt">&quot;v&quot;</span><span class="p">:</span><span class="s2">&quot;1000&quot;</span>
 <span class="w">     </span><span class="p">},{</span>
 <span class="w">             </span><span class="nt">&quot;cCI&quot;</span><span class="p">:</span><span class="s2">&quot;M0008&quot;</span><span class="p">,</span>
 <span class="w">             </span><span class="nt">&quot;n&quot;</span><span class="p">:</span><span class="s2">&quot;securityCode&quot;</span><span class="p">,</span>
