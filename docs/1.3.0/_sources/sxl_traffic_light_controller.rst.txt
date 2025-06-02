@@ -3020,6 +3020,7 @@ duration
 
     ====  =====================
     type  ``integer_as_string``
+    min   ``0``
     ====  =====================
 
 securityCode
