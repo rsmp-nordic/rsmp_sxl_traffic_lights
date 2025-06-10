@@ -83,95 +83,102 @@ Alarms
    :class: longtable
 
 
-   ========================  =============  ====================================  ==========  ==========
-   ObjectType                alarmCodeId    Description                             Priority  Category
-   ========================  =============  ====================================  ==========  ==========
-   Traffic Light Controller  `A0001`_       Serious hardware error                         2  D
-   Traffic Light Controller  `A0002`_       Less serious hardware error                    3  D
-   Traffic Light Controller  `A0003`_       Serious configuration error                    2  D
-   Traffic Light Controller  `A0004`_       Less serious configuration error               3  D
-   Traffic Light Controller  `A0005`_       Synchronisation error (coordination)           3  D
-   Traffic Light Controller  `A0006`_       Safety error                                   2  D
-   Traffic Light Controller  `A0007`_       Communication error                            3  D
-   Signal group              `A0008`_       Dead lock error                                2  D
-   Traffic Light Controller  `A0009`_       Other error                                    3  D
-   Traffic Light Controller  `A0010`_       Door open                                      3  D
-   Signal group              `A0101`_       Pushbutton error                               3  D
-   Signal group              `A0201`_       Serious lamp error                             2  D
-   Signal group              `A0202`_       Less serious lamp error                        3  D
-   Detector logic            `A0301`_       Detector error (hardware)                      3  D
-   Detector logic            `A0302`_       Detector error (logic error)                   3  D
-   Detector logic            `A0303`_       Serious detector error (hardware)              2  D
-   Detector logic            `A0304`_       Serious detector error (logic error)           2  D
-   ========================  =============  ====================================  ==========  ==========
+   ========================  =============  =====================================  ==========  ==========
+   ObjectType                alarmCodeId    Description                              Priority  Category
+   ========================  =============  =====================================  ==========  ==========
+   Traffic Light Controller  `A0001`_       Serious hardware error.                         2  D
+   Traffic Light Controller  `A0002`_       Less serious hardware error.                    3  D
+   Traffic Light Controller  `A0003`_       Serious configuration error.                    2  D
+   Traffic Light Controller  `A0004`_       Less serious configuration error.               3  D
+   Traffic Light Controller  `A0005`_       Synchronisation error (coordination).           3  D
+   Traffic Light Controller  `A0006`_       Safety error                                    2  D
+   Traffic Light Controller  `A0007`_       Communication error.                            3  D
+   Signal group              `A0008`_       Dead lock error.                                2  D
+   Traffic Light Controller  `A0009`_       Other error.                                    3  D
+   Traffic Light Controller  `A0010`_       Door open.                                      3  D
+   Signal group              `A0101`_       Pushbutton error.                               3  D
+   Signal group              `A0201`_       Serious lamp error.                             2  D
+   Signal group              `A0202`_       Less serious lamp error.                        3  D
+   Detector logic            `A0301`_       Detector error (hardware).                      3  D
+   Detector logic            `A0302`_       Detector error (logic error).                   3  D
+   Detector logic            `A0303`_       Serious detector error (hardware).              2  D
+   Detector logic            `A0304`_       Serious detector error (logic error).           2  D
+   ========================  =============  =====================================  ==========  ==========
 
 
-A0001
-^^^^^
+.. _A0001:
 
-Serious hardware error
+A0001 Serious hardware error.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Is a “major fault” defined according to 3.8 in EN12675 which causes the
-controller to switch to a “failure mode” according to 3.6 in EN12675.
-
-
-
-A0002
-^^^^^
-
-Less serious hardware error
-
-Is a “minor fault” defined according to 3.11 in EN12675.
-
-
-
-A0003
-^^^^^
-
-Serious configuration error
+Added in version: ``1.0.0``
 
 Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 
+.. _A0002:
 
-A0004
-^^^^^
+A0002 Less serious hardware error.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Less serious configuration error
-
-Is a “minor fault” defined according to 3.11 in EN12675.
-
-
-
-A0005
-^^^^^
-
-Synchronisation error (coordination)
+Added in version: ``1.0.0``
 
 Is a “minor fault” defined according to 3.11 in EN12675.
 
 
+.. _A0003:
 
-A0006
-^^^^^
+A0003 Serious configuration error.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Safety error
+Added in version: ``1.0.0``
 
 Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 
+.. _A0004:
 
-A0007
-^^^^^
+A0004 Less serious configuration error.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Communication error
+Added in version: ``1.0.0``
+
+Is a “minor fault” defined according to 3.11 in EN12675.
+
+
+.. _A0005:
+
+A0005 Synchronisation error (coordination).
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.0``
+
+Is a “minor fault” defined according to 3.11 in EN12675.
+
+
+.. _A0006:
+
+A0006 Safety error
+^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.0``
+
+Is a “major fault” defined according to 3.8 in EN12675 which causes the
+controller to switch to a “failure mode” according to 3.6 in EN12675.
+
+
+.. _A0007:
+
+A0007 Communication error.
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.0``
 
 Used for communication errors with the central system. Includes NTP
 connection loss if the TLC is configured to use NTP. Is a “minor fault”
 defined according to 3.11 in EN12675.
-
 
 **Return values**
 
@@ -190,10 +197,12 @@ protocol
     ntp     NTP
     ======  =============
 
-A0008
-^^^^^
+.. _A0008:
 
-Dead lock error
+A0008 Dead lock error.
+^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Used for dead lock errors. For instance; a signal group has requested
 green but is unable to switch due to a conflicting signal group for an
@@ -202,7 +211,6 @@ controller goes into failure mode. The cause for this error is due to
 configuration errors or external sources. Is a “major fault” defined
 according to 3.8 in EN12675 which causes the controller to switch to a
 “failure mode” according to 3.6 in EN12675.
-
 
 **Return values**
 
@@ -216,44 +224,48 @@ timeplan
     min   ``1``
     ====  =====================
 
-A0009
-^^^^^
+.. _A0009:
 
-Other error
+A0009 Other error.
+^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.0``
 
 Used for other errors not covered by any other alarm type. Is a “minor
 fault” defined according to 3.11 in EN12675.
 
 
+.. _A0010:
 
-A0010
-^^^^^
+A0010 Door open.
+^^^^^^^^^^^^^^^^
 
-Door open
+Added in version: ``1.0.15``
 
 Used for open door (room or cabinet).
 
 
+.. _A0101:
 
-A0101
-^^^^^
+A0101 Pushbutton error.
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Pushbutton error
+Added in version: ``1.0.0``
 
 Used for push buttons.
 
 
+.. _A0201:
 
-A0201
-^^^^^
+A0201 Serious lamp error.
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Serious lamp error
+Added in version: ``1.0.0``
 
 Used for lamp errors. Is a “major fault” defined according to 3.8 in
 EN12675 which causes the controller to switch to a “failure mode”
 according to 3.6 in EN12675.
 
-
 **Return values**
 
 color
@@ -272,15 +284,16 @@ color
     green   green
     ======  =============
 
-A0202
-^^^^^
+.. _A0202:
 
-Less serious lamp error
+A0202 Less serious lamp error.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.0``
 
 Used for lamp errors. Is a “minor fault” defined according to 3.11 in
 EN12675.
 
-
 **Return values**
 
 color
@@ -299,13 +312,14 @@ color
     green   green
     ======  =============
 
-A0301
-^^^^^
+.. _A0301:
 
-Detector error (hardware)
+A0301 Detector error (hardware).
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Is a “minor fault” defined according to 3.11 in EN12675.
-
 
 **Return values**
 
@@ -355,14 +369,15 @@ manual
     type  ``boolean_as_string``
     ====  =====================
 
-A0302
-^^^^^
+.. _A0302:
 
-Detector error (logic error)
+A0302 Detector error (logic error).
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 For instance; detector continuously on or off during an extended time.
 Is a “minor fault” defined according to 3.11 in EN12675.
-
 
 **Return values**
 
@@ -376,7 +391,7 @@ detector
 
 type
 
-    Type of detector
+    Type of detector.
 
     ====  ==========
     type  ``string``
@@ -428,14 +443,15 @@ logicerror
     intermittent  intermittent logic fault (flutter)
     ============  ==================================================
 
-A0303
-^^^^^
+.. _A0303:
 
-Serious detector error (hardware)
+A0303 Serious detector error (hardware).
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.1.0``
 
 Is a “major fault” defined according to 3.8 i EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.
-
 
 **Return values**
 
@@ -449,7 +465,7 @@ detector
 
 type
 
-    Type of detector
+    Type of detector.
 
     ====  ==========
     type  ``string``
@@ -485,15 +501,16 @@ manual
     type  ``boolean_as_string``
     ====  =====================
 
-A0304
-^^^^^
+.. _A0304:
 
-Serious detector error (logic error)
+A0304 Serious detector error (logic error).
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.1.0``
 
 For instance; detector continuously on or off during an extended time.
 Is a “major fault” defined according to 3.8 i EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675
-
 
 **Return values**
 
@@ -507,7 +524,7 @@ detector
 
 type
 
-    Type of detector
+    Type of detector.
 
     ====  ==========
     type  ``string``
@@ -573,76 +590,77 @@ Status
    :class: longtable
 
 
-   ========================  ==============  ============================================================
+   ========================  ==============  =============================================================
    ObjectType                statusCodeId    Description
-   ========================  ==============  ============================================================
-   Traffic Light Controller  `S0001`_        Signal group status
-   Traffic Light Controller  `S0002`_        Detector logic status
-   Traffic Light Controller  `S0003`_        Input status
-   Traffic Light Controller  `S0004`_        Output status
-   Traffic Light Controller  `S0005`_        Traffic Light Controller starting
-   Traffic Light Controller  `S0006`_        Emergency route
-   Traffic Light Controller  `S0007`_        Controller switched on
-   Traffic Light Controller  `S0008`_        Manual control
-   Traffic Light Controller  `S0009`_        Fixed time control
-   Traffic Light Controller  `S0010`_        Isolated control
-   Traffic Light Controller  `S0011`_        Yellow flash
-   Traffic Light Controller  `S0012`_        All red
+   ========================  ==============  =============================================================
+   Traffic Light Controller  `S0001`_        Signal group status.
+   Traffic Light Controller  `S0002`_        Detector logic status.
+   Traffic Light Controller  `S0003`_        Input status.
+   Traffic Light Controller  `S0004`_        Output status.
+   Traffic Light Controller  `S0005`_        Traffic Light Controller starting.
+   Traffic Light Controller  `S0006`_        Emergency route.
+   Traffic Light Controller  `S0007`_        Controller switched on.
+   Traffic Light Controller  `S0008`_        Manual control.
+   Traffic Light Controller  `S0009`_        Fixed time control.
+   Traffic Light Controller  `S0010`_        Isolated control.
+   Traffic Light Controller  `S0011`_        Yellow flash.
+   Traffic Light Controller  `S0012`_        All red.
    Traffic Light Controller  `S0013`_        Police key
-   Traffic Light Controller  `S0014`_        Current time plan
-   Traffic Light Controller  `S0015`_        Current traffic situation
-   Traffic Light Controller  `S0016`_        Number of detector logics
-   Traffic Light Controller  `S0017`_        Number of signal groups
-   Traffic Light Controller  `S0019`_        Number of traffic situations
-   Traffic Light Controller  `S0020`_        Control mode
-   Traffic Light Controller  `S0021`_        Manually set detector logic
-   Traffic Light Controller  `S0022`_        List of time plans
-   Traffic Light Controller  `S0023`_        Dynamic bands
-   Traffic Light Controller  `S0024`_        Offset time
-   Signal group              `S0025`_        Time-of-Green / Time-of-Red
-   Traffic Light Controller  `S0026`_        Week time table
-   Traffic Light Controller  `S0027`_        Time tables
-   Traffic Light Controller  `S0028`_        Cycle time
-   Traffic Light Controller  `S0029`_        Forced input status
-   Traffic Light Controller  `S0030`_        Forced output status
-   Traffic Light Controller  `S0031`_        Trigger level sensitivity for loop detector
+   Traffic Light Controller  `S0014`_        Current time plan.
+   Traffic Light Controller  `S0015`_        Current traffic situation.
+   Traffic Light Controller  `S0016`_        Number of detector logics.
+   Traffic Light Controller  `S0017`_        Number of signal groups.
+   Traffic Light Controller  `S0019`_        Number of traffic situations.
+   Traffic Light Controller  `S0020`_        Control mode.
+   Traffic Light Controller  `S0021`_        Manually set detector logic.
+   Traffic Light Controller  `S0022`_        List of time plans.
+   Traffic Light Controller  `S0023`_        Dynamic bands.
+   Traffic Light Controller  `S0024`_        Offset time.
+   Signal group              `S0025`_        Time-of-Green / Time-of-Red.
+   Traffic Light Controller  `S0026`_        Week time table.
+   Traffic Light Controller  `S0027`_        Time tables.
+   Traffic Light Controller  `S0028`_        Cycle time.
+   Traffic Light Controller  `S0029`_        Forced input status.
+   Traffic Light Controller  `S0030`_        Forced output status.
+   Traffic Light Controller  `S0031`_        Trigger level sensitivity for loop detector.
    Traffic Light Controller  `S0032`_        Coordinated control
    Traffic Light Controller  `S0033`_        Signal Priority Status
-   Traffic Light Controller  `S0034`_        Timeout for dynamic bands
-   Traffic Light Controller  `S0035`_        Emergency route
-   Traffic Light Controller  `S0091`_        Operator logged in/out OP-panel
-   Traffic Light Controller  `S0092`_        Operator logged in/out web-interface
-   Traffic Light Controller  `S0095`_        Version of Traffic Light Controller
-   Traffic Light Controller  `S0096`_        Current date and time
-   Traffic Light Controller  `S0097`_        Checksum of traffic parameters
-   Traffic Light Controller  `S0098`_        Configuration of traffic parameters
-   Detector logic            `S0201`_        Traffic Counting: Number of vehicles
-   Detector logic            `S0202`_        Traffic Counting: Vehicle speed
-   Detector logic            `S0203`_        Traffic Counting: Occupancy
-   Detector logic            `S0204`_        Traffic Counting: Number of vehicles of given classification
-   Traffic Light Controller  `S0205`_        Traffic Counting: Number of vehicles
+   Traffic Light Controller  `S0034`_        Timeout for dynamic bands.
+   Traffic Light Controller  `S0035`_        Emergency route.
+   Traffic Light Controller  `S0091`_        Operator logged in/out OP-panel.
+   Traffic Light Controller  `S0092`_        Operator logged in/out web-interface.
+   Traffic Light Controller  `S0095`_        Version of Traffic Light Controller.
+   Traffic Light Controller  `S0096`_        Current date and time.
+   Traffic Light Controller  `S0097`_        Checksum of traffic parameters.
+   Traffic Light Controller  `S0098`_        Configuration of traffic parameters.
+   Detector logic            `S0201`_        Traffic Counting: Number of vehicles.
+   Detector logic            `S0202`_        Traffic Counting: Vehicle speed.
+   Detector logic            `S0203`_        Traffic Counting: Occupancy.
+   Detector logic            `S0204`_        Traffic Counting: Number of vehicles of given classification.
+   Traffic Light Controller  `S0205`_        Traffic Counting: Number of vehicles.
    Traffic Light Controller  `S0206`_        Traffic Counting: Vehicle speed
-   Traffic Light Controller  `S0207`_        Traffic Counting: Occupancy
-   Traffic Light Controller  `S0208`_        Traffic Counting: Number of vehicles of given classification
-   ========================  ==============  ============================================================
+   Traffic Light Controller  `S0207`_        Traffic Counting: Occupancy.
+   Traffic Light Controller  `S0208`_        Traffic Counting: Number of vehicles of given classification.
+   ========================  ==============  =============================================================
 
 
-S0001
-^^^^^^^^
+.. _S0001:
 
-Signal group status
+S0001 Signal group status.
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.0``
 
 Provides the status of each signal group, including basic information
 such as green, yellow and red. But also detailed technical information.
 Can be used to draw a live signal group diagram as well provide
 diagnostic information about the performance of the controller.
 
-
 **Return values**
 
 signalgroupstatus
 
-    Signal group status as text field |br|
+    Signal group status as text field. |br|
     Each character represent the state of the signal group in consecutive order, |br|
     where the leftmost character starts with signal group 1. |br|
     Signal group status is described in detail in the corresponding section. |br|
@@ -654,7 +672,7 @@ signalgroupstatus
 
 cyclecounter
 
-    Cycle counter |br|
+    Cycle counter. |br|
     Used for handling of coordination between TLC’s. |br|
     Is counted from 0 until it reaches the cycle time (See S0028). |br|
     |br|
@@ -676,7 +694,7 @@ cyclecounter
 
 basecyclecounter
 
-    Base cycle counter |br|
+    Base cycle counter. |br|
     Used for handling of coordination between TLC’s. |br|
     Synchronized between all TLC’s in an active coordination. |br|
     See the coordination section for more information.
@@ -697,22 +715,23 @@ stage
     min   ``0``
     ====  =====================
 
-S0002
-^^^^^^^^
+.. _S0002:
 
-Detector logic status
+S0002 Detector logic status.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Provides the status of all detector logics of the controller. Can be
 used to draw a live signal group diagram as well provide diagnostic
 information about the performance of the controller. Can also be used
 for bus priority, external control systems, and much more.
 
-
 **Return values**
 
 detectorlogicstatus
 
-    Detector logic status as text field |br|
+    Detector logic status as text field. |br|
     Each character represent the state of the detector logic in consecutive order, |br|
     where the leftmost character starts with detector logic 1. |br|
     0 : Detector logic is not active |br|
@@ -723,21 +742,22 @@ detectorlogicstatus
     type  ``string_list_as_string``
     ====  =========================
 
-S0003
-^^^^^^^^
+.. _S0003:
 
-Input status
+S0003 Input status.
+^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Input (1-255) of the controllers general purpose I/O. Input is used
 where the traffic light controller must react to external control. It
 could be external detectors, bus priority, and much more.
 
-
 **Return values**
 
 inputstatus
 
-    Input status as text field |br|
+    Input status as text field. |br|
     Each character represent the state of the input in consecutive order, |br|
     where the leftmost character starts with input 1. |br|
     0 : Input is not active |br|
@@ -748,22 +768,23 @@ inputstatus
     type  ``string_list_as_string``
     ====  =========================
 
-S0004
-^^^^^^^^
+.. _S0004:
 
-Output status
+S0004 Output status.
+^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Output (1-255) of the controllers general purpose I/O. Can be used for
 all types of output where the traffic light controller needs to control
 other equipment. Can be used for bus priority, coordination between
 traffic controllers, external control systems, and much more.
 
-
 **Return values**
 
 outputstatus
 
-    Output status as text field |br|
+    Output status as text field. |br|
     Each character represent the state of the output status in consecutive order, |br|
     where the leftmost character starts with output 1. |br|
     0 : Output is not active |br|
@@ -774,16 +795,17 @@ outputstatus
     type  ``string``
     ====  ==========
 
-S0005
-^^^^^^^^
+.. _S0005:
 
-Traffic Light Controller starting
+S0005 Traffic Light Controller starting.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 The traffic signal is starting, e.g. it is in startup mode and has not
 begun working normally yet. During startup mode the traffic controller
 shows dark, red, yellow flash or using the predetermined start cycle
 (minimum times).
-
 
 **Return values**
 
@@ -830,10 +852,12 @@ statusByIntersection: startup
     type  ``boolean_as_string``
     ====  =====================
 
-S0006
-^^^^^^^^
+.. _S0006:
 
-Emergency route
+S0006 Emergency route.
+^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 The status is active during emergency prioritization. Used in situations
 where full priority is given in the emergency vehicle program or for
@@ -843,7 +867,6 @@ If no emergency route is active, status should be set to False, and
 emergencystage to zero.
 
 Deprecated, use S0035 instead.
-
 
 **Return values**
 
@@ -866,10 +889,12 @@ emergencystage
     min   ``0``
     ====  =====================
 
-S0007
-^^^^^^^^
+.. _S0007:
 
-Controller switched on
+S0007 Controller switched on.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 The controller is active and is not in dark mode. Used to determine if
 the there is output to the signal heads, e.g. it shows red, green or
@@ -879,12 +904,11 @@ values in this status uses comma-separated lists - one value for each
 intersection, e.g. “0” and “True” (one intersection) or “1,2” and
 “True,False” (two intersections).
 
-
 **Return values**
 
 intersection
 
-    Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+    Comma separated list of intersections which the status relates to, e.g. “1,2”. |br|
     Use “0” for all intersections of the TLC.
 
     ====  ==========================
@@ -919,10 +943,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0008
-^^^^^^^^
+.. _S0008:
 
-Manual control
+S0008 Manual control.
+^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Traffic control deactivated in controller. Signal timings is controlled
 manually by service personnel using the operating panel of the
@@ -930,12 +956,11 @@ controller. Please note that all values in this status uses
 comma-separated lists - one value for each intersection, e.g. “0” and
 “True” (one intersection) or “1,2” and “True,False” (two intersections).
 
-
 **Return values**
 
 intersection
 
-    Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+    Comma separated list of intersections which the status relates to, e.g. “1,2”. |br|
     Use “0” for all intersections of the TLC.
 
     ====  ==========================
@@ -970,10 +995,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0009
-^^^^^^^^
+.. _S0009:
 
-Fixed time control
+S0009 Fixed time control.
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Traffic actuated control deactivated and a pre-timed control is used.
 Usually only used in case normal detectors can’t be used, e.g. during
@@ -981,12 +1008,11 @@ maintenance work. Please note that all values in this status uses
 comma-separated lists - one value for each intersection, e.g. “0” and
 “True” (one intersection) or “1,2” and “True,False” (two intersections).
 
-
 **Return values**
 
 intersection
 
-    Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+    Comma separated list of intersections which the status relates to, e.g. “1,2”. |br|
     Use “0” for all intersections of the TLC.
 
     ====  ==========================
@@ -1021,10 +1047,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0010
-^^^^^^^^
+.. _S0010:
 
-Isolated control
+S0010 Isolated control.
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Isolated control mode indicates that the controller operates
 independently of any other traffic light controller. This may be
@@ -1035,12 +1063,11 @@ uses comma-separated lists - one value for each intersection, e.g. “0”
 and “True” (one intersection) or “1,2” and “True,False” (two
 intersections).
 
-
 **Return values**
 
 intersection
 
-    Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+    Comma separated list of intersections which the status relates to, e.g. “1,2”. |br|
     Use “0” for all intersections of the TLC.
 
     ====  ==========================
@@ -1075,10 +1102,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0011
-^^^^^^^^
+.. _S0011:
 
-Yellow flash
+S0011 Yellow flash.
+^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 The controller shows yellow flash. Yellow flash may be used during a
 serious fault (depending on configuration) or maintenance work. It can
@@ -1087,12 +1116,11 @@ a normal operating mode, and not necessarily during fault. Please note
 that all values in this status uses comma-separated lists - one value
 for each intersection, e.g. “1,2” and “True,False”
 
-
 **Return values**
 
 intersection
 
-    Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+    Comma separated list of intersections which the status relates to, e.g. “1,2”. |br|
     Use “0” for all intersections of the TLC.
 
     ====  ==========================
@@ -1127,22 +1155,23 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0012
-^^^^^^^^
+.. _S0012:
 
-All red
+S0012 All red.
+^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 The controller show all red. All red can be manually set using the
 controllers operating panel during maintenance work. Please note that
 all values in this status uses comma-separated lists - one value for
 each intersection, e.g. “1,2” and “True,False”
 
-
 **Return values**
 
 intersection
 
-    Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+    Comma separated list of intersections which the status relates to, e.g. “1,2”. |br|
     Use “0” for all intersections of the TLC.
 
     ====  ==========================
@@ -1177,10 +1206,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0013
-^^^^^^^^
+.. _S0013:
 
-Police key
+S0013 Police key
+^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 The controller is forced to dark mode or yellow flash. The “police key”
 is an external control switch present in some controllers that manually
@@ -1188,12 +1219,11 @@ switches the controller to either dark mode or yellow flash. Please note
 that all values in this status uses comma-separated lists - one value
 for each intersection, e.g. “1,2” and “0,1”
 
-
 **Return values**
 
 intersection
 
-    Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+    Comma separated list of intersections which the status relates to, e.g. “1,2”. |br|
     Use “0” for all intersections of the TLC.
 
     ====  ==========================
@@ -1216,17 +1246,18 @@ status
          3  all red
     ======  =============
 
-S0014
-^^^^^^^^
+.. _S0014:
 
-Current time plan
+S0014 Current time plan.
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 The current time plan (signal program) used in the controller. There may
 be 1-255 predefined time plans. The time plan (signal program) may
 change signal timings, cycle time, control strategy and much more.
 Typical usage is scenario based control where change of program is used
 to change priority etc.
-
 
 **Return values**
 
@@ -1259,10 +1290,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0015
-^^^^^^^^
+.. _S0015:
 
-Current traffic situation
+S0015 Current traffic situation.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 The current traffic situation used in the controller. Used for
 area-based control where the M0003 command can be sent to a master
@@ -1272,7 +1305,6 @@ into areas and sub-areas. The traffic situation gives the possibility to
 change the TLC sub-area dynamically depending on the time of day and the
 traffic flow. Depending on the traffic situation each TLC selects the
 time plan dynamically.
-
 
 **Return values**
 
@@ -1305,14 +1337,15 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0016
-^^^^^^^^
+.. _S0016:
 
-Number of detector logics
+S0016 Number of detector logics.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Can be used by the management system to check the number of detector
 logics configured in the controller.
-
 
 **Return values**
 
@@ -1326,14 +1359,15 @@ number
     min   ``1``
     ====  =====================
 
-S0017
-^^^^^^^^
+.. _S0017:
 
-Number of signal groups
+S0017 Number of signal groups.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Can be used for the management system to check the number of signal
 groups configured in the controller.
-
 
 **Return values**
 
@@ -1347,14 +1381,15 @@ number
     min   ``1``
     ====  =====================
 
-S0019
-^^^^^^^^
+.. _S0019:
 
-Number of traffic situations
+S0019 Number of traffic situations.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Can be used for the management system to check the number of traffic
 situations configured in the controller.
-
 
 **Return values**
 
@@ -1368,22 +1403,23 @@ number
     min   ``1``
     ====  =====================
 
-S0020
-^^^^^^^^
+.. _S0020:
 
-Control mode
+S0020 Control mode.
+^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Can be used for the management system to check the current control mode
 (startup, normal, standby, failure, test). Please note that all values
 in this status uses comma-separated lists - one value for each
 intersection, e.g. “1,2” and “startup,control”
 
-
 **Return values**
 
 intersection
 
-    Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+    Comma separated list of intersections which the status relates to, e.g. “1,2”. |br|
     Use “0” for all intersections of the TLC.
 
     ====  ==========================
@@ -1407,22 +1443,23 @@ controlmode
     test     Mode used for various tests, e.g. signal lights
     =======  ======================================================================================================================
 
-S0021
-^^^^^^^^
+.. _S0021:
 
-Manually set detector logic
+S0021 Manually set detector logic.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.3``
 
 Provides status of detector logic (1-255) regarding if they are either
 forced to true or false. Can be used to connect RSMP compatible
 detection equipment to the traffic light controller. Can also be used
 for prioritization.
 
-
 **Return values**
 
 detectorlogics
 
-    Manually set detector logic as text field |br|
+    Manually set detector logic as text field. |br|
     Each character represent the state in consecutive order, |br|
     where the leftmost character starts with detector logic 1. |br|
     0 : Detector logic not manually set |br|
@@ -1433,17 +1470,18 @@ detectorlogics
     type  ``string``
     ====  ==========
 
-S0022
-^^^^^^^^
+.. _S0022:
 
-List of time plans
+S0022 List of time plans.
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Provides a list of the configured time plans which is possible to use.
 This status was added due to status S0018 only provided the total number
 of time plans and not which were possible to use with M0002. Can be used
 for the management system to check the number of time plans configured
 in the controller.
-
 
 **Return values**
 
@@ -1455,22 +1493,23 @@ status
     type  ``integer_list_as_string``
     ====  ==========================
 
-S0023
-^^^^^^^^
+.. _S0023:
 
-Dynamic bands
+S0023 Dynamic bands.
+^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Provides a list of all defined dynamic bands. Dynamic bands moves start
 of signal groups in the cycle and changes the signal timings. A typical
 usage of dynamic bands is scenario based control where changing of
 signal timings is used for optimal traffic flow.
 
-
 **Return values**
 
 status
 
-    Dynamic bands |br|
+    Dynamic bands. |br|
     Each dynamic band are written as pp-dd-ee where: |br|
     pp=Time plan |br|
     dd=Dynamic band number (from 1-10) |br|
@@ -1485,16 +1524,17 @@ status
     type  ``string``
     ====  ==========
 
-S0024
-^^^^^^^^
+.. _S0024:
 
-Offset time
+S0024 Offset time.
+^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Offset time is used to define an offset between intersections in
 coordinated control. It is based on the expected travel time between
 intersections. Can be used by the management system to check to fine
 tune the coordination for optimal traffic flow.
-
 
 **Return values**
 
@@ -1514,20 +1554,21 @@ status
     type  ``string_list_as_string``
     ====  =========================
 
-S0025
-^^^^^^^^
+.. _S0025:
 
-Time-of-Green / Time-of-Red
+S0025 Time-of-Green / Time-of-Red.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Provides predicted signal timings of green and red for each signal
 group. Max, min and likely time to green and red.
-
 
 **Return values**
 
 minToGEstimate
 
-    Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green
+    Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green.
 
     ====  =============
     type  ``timestamp``
@@ -1535,7 +1576,7 @@ minToGEstimate
 
 maxToGEstimate
 
-    Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green
+    Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green.
 
     ====  =============
     type  ``timestamp``
@@ -1543,7 +1584,7 @@ maxToGEstimate
 
 likelyToGEstimate
 
-    Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green
+    Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green.
 
     ====  =============
     type  ``timestamp``
@@ -1561,7 +1602,7 @@ ToGConfidence
 
 minToREstimate
 
-    Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red
+    Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red.
 
     ====  =============
     type  ``timestamp``
@@ -1569,7 +1610,7 @@ minToREstimate
 
 maxToREstimate
 
-    Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red
+    Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red.
 
     ====  =============
     type  ``timestamp``
@@ -1577,7 +1618,7 @@ maxToREstimate
 
 likelyToREstimate
 
-    Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red
+    Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red.
 
     ====  =============
     type  ``timestamp``
@@ -1593,15 +1634,16 @@ ToRConfidence
     min   ``0``
     ====  =====================
 
-S0026
-^^^^^^^^
+.. _S0026:
 
-Week time table
+S0026 Week time table.
+^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Week time table for signal programs (time plan) to use for each day
 during a week. The week time table determine which predefined signal
 timings (time plan) to use during the week for optimal traffic flow.
-
 
 **Return values**
 
@@ -1629,20 +1671,21 @@ status
     type  ``string_list_as_string``
     ====  =========================
 
-S0027
-^^^^^^^^
+.. _S0027:
 
-Time tables
+S0027 Time tables.
+^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Time of day for when to switch signal program (time plan). The signal
 timings (time plan) to use during time of day for optimal traffic flow.
-
 
 **Return values**
 
 status
 
-    Time Table. Defines time tables |br|
+    Time Table. Defines time tables. |br|
     Each time definition is written as t-o-h-m where: |br|
     t=time table nr (1-12) |br|
     o=function |br|
@@ -1666,17 +1709,18 @@ status
     type  ``string_list_as_string``
     ====  =========================
 
-S0028
-^^^^^^^^
+.. _S0028:
 
-Cycle time
+S0028 Cycle time.
+^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Cycle time (or cycle length) is the sum of all phases in a time plan
 (traffic program). This time is fixed when using fixed time control or
 coordination (except “local coordination”). When the cycle counter
 reaches this length it is reset back to zero. Changing the cycle time
 can be used as part of scenario based control.
-
 
 **Return values**
 
@@ -1696,22 +1740,23 @@ status
     type  ``string_list_as_string``
     ====  =========================
 
-S0029
-^^^^^^^^
+.. _S0029:
 
-Forced input status
+S0029 Forced input status.
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Provide status of input (1-255) regarding if they are forced or not. Can
 be used for all types of input where the traffic light controller must
 react to external control. Can be used for bus priority, coordination
 between traffic controllers, external control systems, and much more.
 
-
 **Return values**
 
 status
 
-    Forced input status as text field |br|
+    Forced input status as text field. |br|
     Each character represent the state in consecutive order, |br|
     where the leftmost character starts with input 1. |br|
     0 : Input not forced |br|
@@ -1722,10 +1767,12 @@ status
     type  ``string``
     ====  ==========
 
-S0030
-^^^^^^^^
+.. _S0030:
 
-Forced output status
+S0030 Forced output status.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.15``
 
 Provide status of output (1-255) regarding if they are forced or not.
 Can be used for all types of output where the traffic light controller
@@ -1733,12 +1780,11 @@ needs to control other equipment. Can be used for bus priority,
 coordination between traffic controllers, external control systems, and
 much more.
 
-
 **Return values**
 
 status
 
-    Forced output status as text field |br|
+    Forced output status as text field. |br|
     Each character represent the state in consecutive order, |br|
     where the leftmost character starts with output 1. |br|
     0 : Output not forced |br|
@@ -1749,17 +1795,18 @@ status
     type  ``string``
     ====  ==========
 
-S0031
-^^^^^^^^
+.. _S0031:
 
-Trigger level sensitivity for loop detector
+S0031 Trigger level sensitivity for loop detector.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.15``
 
 The trigger level sensitivity determines at what level the loop detector
 should trigger. If it set too low then then traffic will not be detected
 as intended. If it is set too high the detector might give false
 positives. Can be used to make sure that the detectors detect traffic as
 intended.
-
 
 **Return values**
 
@@ -1774,10 +1821,12 @@ status
     type  ``string_list_as_string``
     ====  =========================
 
-S0032
-^^^^^^^^
+.. _S0032:
 
-Coordinated control
+S0032 Coordinated control
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.1.0``
 
 This status is used when coordination between traffic light controllers
 is active. Coordination is described in detail in the corresponding
@@ -1785,12 +1834,11 @@ section Please note that all values in this status uses comma-separated
 lists - one value for each intersection, e.g. “1,2” and
 “centralized,off”
 
-
 **Return values**
 
 intersection
 
-    Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
+    Comma separated list of intersections which the status relates to, e.g. “1,2”. |br|
     Use “0” for all intersections of the TLC.
 
     ====  ==========================
@@ -1831,10 +1879,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0033
-^^^^^^^^
+.. _S0033:
 
-Signal Priority Status
+S0033 Signal Priority Status
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.1.0``
 
 This status can be used to get updates about priority requests. For
 example, you can use it to know when priority requests are activated or
@@ -1869,7 +1919,6 @@ cooldown
 stale     
 ========= =====================================
 
-
 **Return values**
 
 status
@@ -1884,7 +1933,7 @@ status
     Name    Description
     ======  ==============================================================================
     r       ID of the priority request
-    t       Timestamp, indicating when the priority last changed state
+    t       Timestamp, indicating when the priority last changed state.
     s       Current status of the priority request
     e       (Optional) Estimated green extension provided by the priority, in seconds |br|
             Only used when state is ‘completed’.
@@ -1902,7 +1951,7 @@ status: r
 
 status: t
 
-    Timestamp, indicating when the priority last changed state
+    Timestamp, indicating when the priority last changed state.
 
     ====  =============
     type  ``timestamp``
@@ -1951,15 +2000,16 @@ status: d
     min   ``0``
     ====  =====================
 
-S0034
-^^^^^^^^
+.. _S0034:
 
-Timeout for dynamic bands
+S0034 Timeout for dynamic bands.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.1.0``
 
 Time until a designated time plan is entered due to lost connection with
 the supervisor. Disabled if set to ‘0’. Used in conjunction with dynamic
 bands, M0014
-
 
 **Return values**
 
@@ -1973,17 +2023,18 @@ status
     min   ``0``
     ====  =====================
 
-S0035
-^^^^^^^^
+.. _S0035:
 
-Emergency route
+S0035 Emergency route.
+^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.2.0``
 
 The status is active during emergency prioritization. Used in situations
 where full priority is given in the emergency vehicle program or for
 other types of priority in some cases.
 
 This status is similar to S0006, but supports multiple routes
-
 
 **Return values**
 
@@ -2011,15 +2062,16 @@ emergencyroutes: id
     min   ``1``
     ====  =====================
 
-S0091
-^^^^^^^^
+.. _S0091:
 
-Operator logged in/out OP-panel
+S0091 Operator logged in/out OP-panel.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Provides information if maintenance personnel is currently working on
 site.
 
-
 **Return values**
 
 user
@@ -2037,15 +2089,16 @@ user
          2  Operator logged in at level 2 (read/write)
     ======  ==========================================
 
-S0092
-^^^^^^^^
+.. _S0092:
 
-Operator logged in/out web-interface
+S0092 Operator logged in/out web-interface.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Provides information if maintenance personnel is currently working with
 the controller.
 
-
 **Return values**
 
 user
@@ -2063,13 +2116,14 @@ user
          2  Operator logged in at level 2 (read/write)
     ======  ==========================================
 
-S0095
-^^^^^^^^
+.. _S0095:
 
-Version of Traffic Light Controller
+S0095 Version of Traffic Light Controller.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Provides diagnostic version information.
-
 
 **Return values**
 
@@ -2081,14 +2135,15 @@ status
     type  ``string``
     ====  ==========
 
-S0096
-^^^^^^^^
+.. _S0096:
 
-Current date and time
+S0096 Current date and time.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Note: UTC is used. Provides diagnostic information about the current
 date and time set in the controller.
-
 
 **Return values**
 
@@ -2152,17 +2207,18 @@ second
     min   ``0``
     ====  =====================
 
-S0097
-^^^^^^^^
+.. _S0097:
 
-Checksum of traffic parameters
+S0097 Checksum of traffic parameters.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.15``
 
 Can be used to check if any traffic parameter has been changed. For
 instance, depending on controller, maintenance personnel can modify
 traffic parameters on site to optimize traffic flow. This status
 provides the ability to monitor if any traffic parameter has been
 changed. The traffic parameters may be downloaded with S0098.
-
 
 **Return values**
 
@@ -2200,22 +2256,23 @@ timestamp
     type  ``timestamp``
     ====  =============
 
-S0098
-^^^^^^^^
+.. _S0098:
 
-Configuration of traffic parameters
+S0098 Configuration of traffic parameters.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.15``
 
 Can be used to download all traffic parameters from the controller. For
 instance, depending on controller, maintenance personnel can modify
 traffic parameters on site to optimize traffic flow. This status
 provides the ability to downloaded them.
 
-
 **Return values**
 
 config
 
-    Traffic parameters |br|
+    Traffic parameters. |br|
     Includes |br|
     - all signal programs, including program versions |br|
     - signal group settings |br|
@@ -2248,20 +2305,21 @@ timestamp
 
 version
 
-    Version information of the configuration. Contains basic information such as controller id, changes to config and other information |br|
+    Version information of the configuration. Contains basic information such as controller id, changes to config and other information. |br|
     The format is not specified in detail.
 
     ====  =========================
     type  ``string_list_as_string``
     ====  =========================
 
-S0201
-^^^^^^^^
+.. _S0201:
 
-Traffic Counting: Number of vehicles
+S0201 Traffic Counting: Number of vehicles.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.5``
 
 Used for Traffic counting.
-
 
 **Return values**
 
@@ -2283,13 +2341,14 @@ vehicles
     min   ``0``
     ====  =====================
 
-S0202
-^^^^^^^^
+.. _S0202:
 
-Traffic Counting: Vehicle speed
+S0202 Traffic Counting: Vehicle speed.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.5``
 
 Used for Traffic counting.
-
 
 **Return values**
 
@@ -2311,13 +2370,14 @@ speed
     min   ``0``
     ====  =====================
 
-S0203
-^^^^^^^^
+.. _S0203:
 
-Traffic Counting: Occupancy
+S0203 Traffic Counting: Occupancy.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.5``
 
 Used for Traffic counting.
-
 
 **Return values**
 
@@ -2339,13 +2399,14 @@ occupancy
     min   ``0``
     ====  =====================
 
-S0204
-^^^^^^^^
+.. _S0204:
 
-Traffic Counting: Number of vehicles of given classification
+S0204 Traffic Counting: Number of vehicles of given classification.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.5``
 
 Used for Traffic counting.
-
 
 **Return values**
 
@@ -2447,14 +2508,15 @@ F
     min   ``0``
     ====  =====================
 
-S0205
-^^^^^^^^
+.. _S0205:
 
-Traffic Counting: Number of vehicles
+S0205 Traffic Counting: Number of vehicles.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
-
 
 **Return values**
 
@@ -2468,7 +2530,7 @@ start
 
 vehicles
 
-    Number of vehicles |br|
+    Number of vehicles. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2477,14 +2539,15 @@ vehicles
     type  ``integer_as_string_list``
     ====  ==========================
 
-S0206
-^^^^^^^^
+.. _S0206:
 
-Traffic Counting: Vehicle speed
+S0206 Traffic Counting: Vehicle speed
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
-
 
 **Return values**
 
@@ -2498,7 +2561,7 @@ start
 
 speed
 
-    Average speed in km/h (integer) |br|
+    Average speed in km/h (integer). |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2507,14 +2570,15 @@ speed
     type  ``integer_as_string_list``
     ====  ==========================
 
-S0207
-^^^^^^^^
+.. _S0207:
 
-Traffic Counting: Occupancy
+S0207 Traffic Counting: Occupancy.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
-
 
 **Return values**
 
@@ -2537,14 +2601,15 @@ occupancy
     type  ``integer_as_string_list``
     ====  ==========================
 
-S0208
-^^^^^^^^
+.. _S0208:
 
-Traffic Counting: Number of vehicles of given classification
+S0208 Traffic Counting: Number of vehicles of given classification.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
-
 
 **Return values**
 
@@ -2558,7 +2623,7 @@ start
 
 P
 
-    Number of cars |br|
+    Number of cars. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2569,7 +2634,7 @@ P
 
 PS
 
-    Number of cars with trailers |br|
+    Number of cars with trailers. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2580,7 +2645,7 @@ PS
 
 L
 
-    Number of trucks |br|
+    Number of trucks. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2591,7 +2656,7 @@ L
 
 LS
 
-    Number of trucks with trailers |br|
+    Number of trucks with trailers. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2602,7 +2667,7 @@ LS
 
 B
 
-    Number of buses |br|
+    Number of buses. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2613,7 +2678,7 @@ B
 
 SP
 
-    Number of trams |br|
+    Number of trams. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2624,7 +2689,7 @@ SP
 
 MC
 
-    Number of motor cycles |br|
+    Number of motor cycles. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2635,7 +2700,7 @@ MC
 
 C
 
-    Number of bicycles |br|
+    Number of bicycles. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2646,7 +2711,7 @@ C
 
 F
 
-    Number of pedestrians |br|
+    Number of pedestrians. |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
@@ -2664,44 +2729,46 @@ Commands
    :class: longtable
 
 
-   ========================  ===============  =====================  ===============================================
+   ========================  ===============  =====================  ================================================
    ObjectType                commandCodeId    Command                Description
-   ========================  ===============  =====================  ===============================================
-   Traffic Light Controller  `M0001`_         setValue               Sets functional position
-   Traffic Light Controller  `M0002`_         setPlan                Sets current time plan
-   Traffic Light Controller  `M0003`_         setTrafficSituation    Sets traffic situation the controller uses
-   Traffic Light Controller  `M0004`_         setRestart             Restarts Traffic Light Controller
-   Traffic Light Controller  `M0005`_         setEmergency           Activate emergency route
-   Traffic Light Controller  `M0006`_         setInput               Activate input
-   Traffic Light Controller  `M0007`_         setFixedTime           Activate fixed time control
-   Detector logic            `M0008`_         setForceDetectorLogic  Force detector logic
+   ========================  ===============  =====================  ================================================
+   Traffic Light Controller  `M0001`_         setValue               Sets functional position.
+   Traffic Light Controller  `M0002`_         setPlan                Sets current time plan.
+   Traffic Light Controller  `M0003`_         setTrafficSituation    Sets traffic situation the controller uses.
+   Traffic Light Controller  `M0004`_         setRestart             Restarts Traffic Light Controller.
+   Traffic Light Controller  `M0005`_         setEmergency           Activate emergency route.
+   Traffic Light Controller  `M0006`_         setInput               Activate input.
+   Traffic Light Controller  `M0007`_         setFixedTime           Activate fixed time control.
+   Detector logic            `M0008`_         setForceDetectorLogic  Force detector logic.
    Signal group              `M0010`_         setStart               ``Reserved``
    Signal group              `M0011`_         setStop                ``Reserved``
    Traffic Light Controller  `M0012`_         setStart               ``Reserved``
    Traffic Light Controller  `M0013`_         setInput               Activate a series of inputs
-   Traffic Light Controller  `M0014`_         setCommands            Set dynamic bands
-   Traffic Light Controller  `M0015`_         setOffset              Set Offset time
-   Traffic Light Controller  `M0016`_         setWeekTable           Set week time table
-   Traffic Light Controller  `M0017`_         setTimeTable           Set time tables
-   Traffic Light Controller  `M0018`_         setCycleTime           Set Cycle time
-   Traffic Light Controller  `M0019`_         setInput               Force input
-   Traffic Light Controller  `M0020`_         setOutput              Force output
-   Traffic Light Controller  `M0021`_         setLevel               Set trigger level sensitivity for loop detector
+   Traffic Light Controller  `M0014`_         setCommands            Set dynamic bands.
+   Traffic Light Controller  `M0015`_         setOffset              Set Offset time.
+   Traffic Light Controller  `M0016`_         setWeekTable           Set week time table.
+   Traffic Light Controller  `M0017`_         setTimeTable           Set time tables.
+   Traffic Light Controller  `M0018`_         setCycleTime           Set Cycle time.
+   Traffic Light Controller  `M0019`_         setInput               Force input.
+   Traffic Light Controller  `M0020`_         setOutput              Force output.
+   Traffic Light Controller  `M0021`_         setLevel               Set trigger level sensitivity for loop detector.
    Traffic Light Controller  `M0022`_         requestPriority        Request Signal Priority
    Traffic Light Controller  `M0023`_         setTimeout             Set timeout for dynamic bands
-   Traffic Light Controller  `M0103`_         setSecurityCode        Set security code
-   Traffic Light Controller  `M0104`_         setDate                Set clock
-   ========================  ===============  =====================  ===============================================
+   Traffic Light Controller  `M0103`_         setSecurityCode        Set security code.
+   Traffic Light Controller  `M0104`_         setDate                Set clock.
+   ========================  ===============  =====================  ================================================
 
 
-M0001
-^^^^^
+.. _M0001:
 
-Sets functional position
+M0001 Sets functional position. \|br\| Sets the controller to yellow flash,
+dark mode or normal control. \|br\| Requires security code 2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Sets the controller to yellow flash, dark mode or normal control.
 Requires security code 2.
-
 
 **Arguments**
 
@@ -2731,7 +2798,7 @@ securityCode
 
 timeout
 
-    Time in minutes until controller automatically reverts to previous functional position |br|
+    Time in minutes until controller automatically reverts to previous functional position. |br|
     0=no automatic return
 
     ====  =====================
@@ -2742,7 +2809,7 @@ timeout
 
 intersection
 
-    Intersection number |br|
+    Intersection number. |br|
     Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). |br|
     0: All intersections
 
@@ -2752,16 +2819,21 @@ intersection
     min   ``0``
     ====  =====================
 
-M0002
-^^^^^
+.. _M0002:
 
-Sets current time plan
+M0002 Sets current time plan. \|br\| Change of traffic program of the traffic
+light controller. \|br\| Typical usages is scenario based control where
+change of program is used to change signal timings etc. \|br\| This
+command changes the signal timings for optimal traffic flow. \|br\|
+Requires security code 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Change of traffic program of the traffic light controller. Typical
 usages is scenario based control where change of program is used to
 change signal timings etc. This command changes the signal timings for
 optimal traffic flow. Requires security code 2
-
 
 **Arguments**
 
@@ -2792,10 +2864,19 @@ timeplan
     min   ``1``
     ====  =====================
 
-M0003
-^^^^^
+.. _M0003:
 
-Sets traffic situation the controller uses
+M0003 Sets traffic situation the controller uses. \|br\| Used for area-based
+control where this command can be sent to a master traffic light
+controller about which predefined traffic situation to use (1-255).
+\|br\| Traffic situation is a concept used to divide multiple TLC’s into
+areas and sub-areas. The traffic situation gives the possibility to
+change the TLC sub-area dynamically depending on the time of day and the
+traffic flow. Depending on the traffic situation each TLC selects the
+time plan dynamically. \|br\| Requires security code 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Used for area-based control where this command can be sent to a master
 traffic light controller about which predefined traffic situation to use
@@ -2804,7 +2885,6 @@ into areas and sub-areas. The traffic situation gives the possibility to
 change the TLC sub-area dynamically depending on the time of day and the
 traffic flow. Depending on the traffic situation each TLC selects the
 time plan dynamically. Requires security code 2
-
 
 **Arguments**
 
@@ -2835,14 +2915,17 @@ traficsituation
     min   ``1``
     ====  =====================
 
-M0004
-^^^^^
+.. _M0004:
 
-Restarts Traffic Light Controller
+M0004 Restarts Traffic Light Controller. \|br\| Used in the event of serious
+faults in the device where a restart is considered to be able to remedy
+a problem. \|br\| Requires security code 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Used in the event of serious faults in the device where a restart is
 considered to be able to remedy a problem. Requires security code 2
-
 
 **Arguments**
 
@@ -2862,16 +2945,21 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0005
-^^^^^
+.. _M0005:
 
-Activate emergency route
+M0005 Activate emergency route. \|br\| The function is made for emergency
+prioritization. Works in the same way as the M0006 and M0008 where the
+traffic light controller responds to an input. \|br\| Should be used in
+situations where full priority is given in the emergency vehicle
+program. \|br\| Requires security code 2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 The function is made for emergency prioritization. Works in the same way
 as the M0006 and M0008 where the traffic light controller responds to an
 input. Should be used in situations where full priority is given in the
 emergency vehicle program. Requires security code 2.
-
 
 **Arguments**
 
@@ -2902,10 +2990,19 @@ emergencyroute
     min   ``1``
     ====  =====================
 
-M0006
-^^^^^
+.. _M0006:
 
-Activate input
+M0006 Activate input. \|br\| Set given input (1-255) of the controllers
+general purpose I/O to either true or false. \|br\| The function can
+provide an input to the traffic light controller on which a predefined
+action can be taken. \|br\| Can be used for all types of input where the
+traffic light controller must react to external control. \|br\| Typical
+usages are bus priority, coordination between traffic controllers,
+external control systems, and much more. \|br\| Requires security code
+2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Set given input (1-255) of the controllers general purpose I/O to either
 true or false. The function can provide an input to the traffic light
@@ -2914,7 +3011,6 @@ all types of input where the traffic light controller must react to
 external control. Typical usages are bus priority, coordination between
 traffic controllers, external control systems, and much more. Requires
 security code 2.
-
 
 **Arguments**
 
@@ -2945,15 +3041,19 @@ input
     min   ``1``
     ====  =====================
 
-M0007
-^^^^^
+.. _M0007:
 
-Activate fixed time control
+M0007 Activate fixed time control. \|br\| Deactivates the traffic actuated
+control using detectors and activates pre-timed control. \|br\| Can be
+used in case normal detectors can’t be used, e.g. during maintenance
+work. \|br\| Requires security code 2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.2``
 
 Deactivates the traffic actuated control using detectors and activates
 pre-timed control. Can be used in case normal detectors can’t be used,
 e.g. during maintenance work. Requires security code 2.
-
 
 **Arguments**
 
@@ -2974,10 +3074,26 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0008
-^^^^^
+.. _M0008:
 
-Force detector logic
+M0008 Force detector logic. \|br\| Force a given detector logic (1-255) to
+either true or false. \|br\| \|br\| When ‘status’ is true the detector
+logic is forced to the state specified in ‘mode’. \|br\| While forced,
+no other source can activate or deactivate the detector logic. \|br\|
+When forcing, the ‘duration’ can be set to automatically release the
+\|br\| detector logic after a specific time interval. \|br\| \|br\| When
+‘status’ is false the detector logic is released and the state \|br\|
+will again be controlled by other sources, e.g. hardware. \|br\| Note
+that this means that releasing does not guarantee a return to the
+previous state. \|br\| This is because the other control sources might
+have changed state while \|br\| the detector logic was forced. \|br\|
+When releasing, the ‘mode’ and ‘duration’ attributes are ignored. \|br\|
+\|br\| Can also be for signal group prioritization if the controller is
+programmed \|br\| to activate priority based on detector logic
+actication. \|br\| \|br\| Requires security code 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.3``
 
 Force a given detector logic (1-255) to either true or false.
 
@@ -2999,12 +3115,11 @@ programmed to activate priority based on detector logic actication.
 
 Requires security code 2
 
-
 **Arguments**
 
 status
 
-    False: Release detector logic, 'mode' is ignored |br|
+    False: Release detector logic, 'mode' is ignored. |br|
     True: Force detector logic to the value in 'mode'.
 
     ====  =====================
@@ -3032,7 +3147,7 @@ securityCode
 
 mode
 
-    Mode to force to (ignored if 'status' is false) |br|
+    Mode to force to (ignored if 'status' is false). |br|
     False: Deactivate detector logic |br|
     True: Activate detector logic
 
@@ -3040,8 +3155,12 @@ mode
     type  ``boolean_as_string``
     ====  =====================
 
-M0010
-^^^^^
+.. _M0010:
+
+M0010 ``Reserved``
+^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.8``
 
 ``Reserved``
 
@@ -3063,8 +3182,12 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0011
-^^^^^
+.. _M0011:
+
+M0011 ``Reserved``
+^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.8``
 
 ``Reserved``
 
@@ -3086,8 +3209,12 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0012
-^^^^^
+.. _M0012:
+
+M0012 ``Reserved``
+^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.8``
 
 ``Reserved``
 
@@ -3109,10 +3236,44 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0013
-^^^^^
+.. _M0013:
 
-Activate a series of inputs
+M0013 Activate a series of inputs \|br\| \|br\| Set given inputs (1-255) of
+the controllers general purpose I/O to either true or false. This
+command was introduced due to coordination requirements needing to set
+many inputs to true/false at the same time and M0006 being to slow to
+send a message for each input individually. With this command many
+inputs can be set to true/false at the same time using a single command
+message. It can be used for all types of input where the traffic light
+controller must react to external control. Typical usages are bus
+priority, coordination between traffic controllers, external control
+systems, and much more. \|br\| \|br\| Requires security code 2. \|br\|
+\|br\| The parameter ‘status’ sets/unsets a block of 16 inputs at a
+time. It can be repeated to set several blocks of 16 inputs. Values are
+separated with comma. Blocks are separated with semicolon. Format:
+[Offset];[Bits to set];[Bits to unset];… \|br\| \|br\| - ‘Offset’
+defines where the 16 inputs starts from \|br\| - ‘Bits to set’ defines
+which bit(s) to set. ‘0’ if unused \|br\| - ‘Bits to unset’ defines
+which bit(s) to unset. ‘0’ if unused \|br\| \|br\| Example 1: \|br\|
+“3,4134,65” sets input 4,5,8,15 and unsets 3,9 \|br\| - Input starts
+from no. 5 \|br\| - “4134” is 1 0000 0010 0110 in binary, but since
+input starts from 3, it is shifted 3 bits, e.g. 1000 0001 0011 0000
+which are bits 4,5,8,15 \|br\| - “65” is 100 0001 in binary, but since
+input starts from 3, it is shifted 3 bits, e.g. 10 0000 1000 which are
+bits 3,9 \|br\| \|br\| Example 2: \|br\| “12,1,4” sets input 12 and
+unsets 14 \|br\| - Input starts from no. 12 \|br\| - “1” is 1 in binary,
+but since input starts at 12 it is shifted 12 bits, e.g. 1 0000 0000
+0000, which is bit 12 \|br\| - “4” is 100 in binary, but since input
+starts at 12 it is shifted 12 bits, e.g. 100 0000 0000 0000, which is
+bit 14 \|br\| \|br\| And both these examples could be sent in the same
+message as: “3,4143,65;12,1,4” \|br\| \|br\| Such a message would set
+input 4,5,8,12,15 and unset input 3,9,14 \|br\| \|br\| Example 3: \|br\|
+“0,1,2” sets input 0 and unsets 1 \|br\| - Input starts from 0 \|br\| -
+“1” is 1 in binary, which is bit 0 \|br\| - “2” is 10 in binary, which
+is bit 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.8``
 
 Set given inputs (1-255) of the controllers general purpose I/O to
 either true or false. This command was introduced due to coordination
@@ -3155,12 +3316,11 @@ Such a message would set input 4,5,8,12,15 and unset input 3,9,14
 Example 3: “0,1,2” sets input 0 and unsets 1 - Input starts from 0 - “1”
 is 1 in binary, which is bit 0 - “2” is 10 in binary, which is bit 1
 
-
 **Arguments**
 
 status
 
-    Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon |br|
+    Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. |br|
     Format: [Offset];[Bits to set];[Bits to unset];…
 
     ====  =========================
@@ -3175,17 +3335,23 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0014
-^^^^^
+.. _M0014:
 
-Set dynamic bands
+M0014 Set dynamic bands. \|br\| Can be used to change between predefined
+signal timings. Moves the start of signal groups in the cycle. \|br\|
+This command can be used to change the split of green time during the
+cycle. A typical usage is scenario based control where changing of
+signal timings is used for optimal traffic flow. \|br\| Requires
+security code 2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Can be used to change between predefined signal timings. Moves the start
 of signal groups in the cycle. This command can be used to change the
 split of green time during the cycle. A typical usage is scenario based
 control where changing of signal timings is used for optimal traffic
 flow. Requires security code 2
-
 
 **Arguments**
 
@@ -3201,7 +3367,7 @@ plan
 
 status
 
-    Dynamic bands |br|
+    Dynamic bands. |br|
     Each dynamic band are written as dd-ee where: |br|
     dd=Dynamic band number (from 1-10) |br|
     ee=Extension in seconds in this band |br|
@@ -3223,16 +3389,21 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0015
-^^^^^
+.. _M0015:
 
-Set Offset time
+M0015 Set Offset time. \|br\| Offset time is used to define an offset between
+intersections in coordinated control. It is based on the expected travel
+time between intersections. \|br\| This command can be used to fine tune
+the coordination for optimal traffic flow. \|br\| Requires security code
+2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Offset time is used to define an offset between intersections in
 coordinated control. It is based on the expected travel time between
 intersections. This command can be used to fine tune the coordination
 for optimal traffic flow. Requires security code 2.
-
 
 **Arguments**
 
@@ -3264,15 +3435,19 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0016
-^^^^^
+.. _M0016:
 
-Set week time table
+M0016 Set week time table. \|br\| Set which time table for signal programs to
+use for each day during a week. \|br\| This command changes the signal
+timings during the week for optimal traffic flow. \|br\| Requires
+security code 2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Set which time table for signal programs to use for each day during a
 week. This command changes the signal timings during the week for
 optimal traffic flow. Requires security code 2.
-
 
 **Arguments**
 
@@ -3308,21 +3483,25 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0017
-^^^^^
+.. _M0017:
 
-Set time tables
+M0017 Set time tables. \|br\| Set time of day for when to automatically switch
+signal program (time plan). \|br\| This command changes the signal
+timings according to time of day for optimal traffic flow. \|br\|
+Requires security code 2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Set time of day for when to automatically switch signal program (time
 plan). This command changes the signal timings according to time of day
 for optimal traffic flow. Requires security code 2.
 
-
 **Arguments**
 
 status
 
-    Time Table. Defines time tables |br|
+    Time Table. Defines time tables. |br|
     Each time definition is written as t-o-h-m where: |br|
     t=time table nr (1-12) |br|
     o=function |br|
@@ -3354,10 +3533,19 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0018
-^^^^^
+.. _M0018:
 
-Set Cycle time
+M0018 Set Cycle time. \|br\| Cycle time (or cycle length) is the sum of all
+phases in a time plan (traffic program). This time is fixed when using
+fixed time control or coordination (except “local coordination”). When
+the cycle counter reaches this length it is reset back to zero. \|br\|
+This command provides the ability to change the cycle time when using
+coordinated or fixed time control. It changes the timings for optimal
+traffic flow. Can be used with scenario based control. \|br\| Requires
+security code 2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Cycle time (or cycle length) is the sum of all phases in a time plan
 (traffic program). This time is fixed when using fixed time control or
@@ -3366,7 +3554,6 @@ reaches this length it is reset back to zero. This command provides the
 ability to change the cycle time when using coordinated or fixed time
 control. It changes the timings for optimal traffic flow. Can be used
 with scenario based control. Requires security code 2.
-
 
 **Arguments**
 
@@ -3398,17 +3585,23 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0019
-^^^^^
+.. _M0019:
 
-Force input
+M0019 Force input. \|br\| Force a given input (1-255) of the controllers
+general purpose I/O to either True or False. Can be used for all types
+of input where the traffic light controller must react to external
+control. \|br\| Can be used for bus priority, coordination between
+traffic controllers, external control systems, and much more. \|br\|
+Requires security code 2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.13``
 
 Force a given input (1-255) of the controllers general purpose I/O to
 either True or False. Can be used for all types of input where the
 traffic light controller must react to external control. Can be used for
 bus priority, coordination between traffic controllers, external control
 systems, and much more. Requires security code 2.
-
 
 **Arguments**
 
@@ -3448,10 +3641,18 @@ inputValue
     type  ``boolean_as_string``
     ====  =====================
 
-M0020
-^^^^^
+.. _M0020:
 
-Force output
+M0020 Force output. \|br\| Force a given output (1-255) of the controllers
+general purpose I/O to either True of False. Can be used for all types
+of output where the traffic light controller needs to control other
+equipment. \|br\| Can be used for bus priority, coordination between
+traffic controllers, external control systems, and much more. \|br\|
+When the output is released (status=False), the outputValue is ignored.
+\|br\| Requires security code 2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.15``
 
 Force a given output (1-255) of the controllers general purpose I/O to
 either True of False. Can be used for all types of output where the
@@ -3459,7 +3660,6 @@ traffic light controller needs to control other equipment. Can be used
 for bus priority, coordination between traffic controllers, external
 control systems, and much more. When the output is released
 (status=False), the outputValue is ignored. Requires security code 2.
-
 
 **Arguments**
 
@@ -3499,17 +3699,24 @@ outputValue
     type  ``boolean_as_string``
     ====  =====================
 
-M0021
-^^^^^
+.. _M0021:
 
-Set trigger level sensitivity for loop detector
+M0021 Set trigger level sensitivity for loop detector. \|br\| The trigger
+level sensitivity determines at what level a loop detector should
+trigger. If it set too low then then traffic will not be detected as
+intended. If it is set too high the detector might give false positives.
+\|br\| This command provides the ability to fine tune loop detectors to
+make sure they detect traffic as intended. \|br\| Requires security code
+2
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.15``
 
 The trigger level sensitivity determines at what level a loop detector
 should trigger. If it set too low then then traffic will not be detected
 as intended. If it is set too high the detector might give false
 positives. This command provides the ability to fine tune loop detectors
 to make sure they detect traffic as intended. Requires security code 2
-
 
 **Arguments**
 
@@ -3531,10 +3738,85 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0022
-^^^^^
+.. _M0022:
 
-Request Signal Priority
+M0022 Request Signal Priority \|br\| \|br\| Useful for bus priority or other
+type of priorities like emergency vehicles or groups of cyclists. \|br\|
+\|br\| The benefit of using this message over activating inputs or
+detector logics is that you can specify a priority level, vehicle type
+and estimated time of arrival. You can also update or cancel the
+request, and use the corresponding status message to track the status of
+the request, including how much priority was actually given. \|br\|
+\|br\| To understand how this command relates to ETSI/J2735, please see
+the
+`wiki <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735>`__.
+\|br\| \|br\| Activating signal priority is expected to provide more
+green time for a particular movement through the intersection, but the
+exact mechanism must typically be configured in the controller. \|br\|
+\|br\| The movement to prioritize can be referenced in a number of ways,
+depending on what is configured in the controller, and in the system
+that sends priority requests. Either: \|br\| \|br\| - Reference a signal
+group by setting ‘signalGroupId’. This method is simple, but will not
+allow you to have different priority mechanism for the same signal
+group, unless they can be distinguished by the vehicle type. For
+example, if you need to trigger different priorities depending on
+whether a bus goes straight or makes a turn for the same signal group,
+you need to use of the other referencing methods. \|br\| - Reference an
+input by setting ‘inputId’. This can be useful if you previously used
+inputs to activate priority. The input will not be activated, only the
+priority. \|br\| - Reference a connection by setting ‘connectionId’. A
+connection is a movement from a specific ingoing lane to a specific
+outgoing lane. \|br\| - Reference an intersection approach by setting
+‘approachId’. \|br\| - Reference an ingoing lane by setting ‘laneInId’,
+and optionally also reference an outgoing lane by setting ‘laneOutId’.
+\|br\| \|br\| Referencing attributes that are not used must be left out,
+rather than set to null or empty strings. This includes: \|br\| \|br\| -
+signalGroupId \|br\| - inputId \|br\| - connectionId \|br\| - approachId
+\|br\| - laneInId \|br\| - laneOutId \|br\| \|br\| Referencing
+attributes are only used when initiating a request. When updating or
+cancelling the request, the request is identified by its requestId, and
+no referencing attributes are allowed. \|br\| \|br\| You initiate a
+priority request with type set to ‘new’. You must provide a request id
+that uniquely identifies the request on the controller. It can be a
+randomly generated UUID (universally unique identifier), or it can be
+constructed by combining e.g. a vehicle id and some other identifier.
+When updating or cancelling a request, you must pass the same request id
+again. \|br\| \|br\| Providing ETA (estimated time of arrival) when
+initiating a request is optional, but can help the controller plan ahead
+in cases where you’re able to send the request before the vehicle
+arrives at the intersection. You’re allowed to initiate the request
+without an ETA and provide it in a later request update. But providing
+the ETA when initiating the request is recommended, since it will give
+the controller more time to plan ahead. \|br\| \|br\| Like ETA,
+providing a vehicle type is optional, but can help the controller decide
+how to best handle the request. \|br\| \|br\| The priority level
+provides a way to indicate the relative importance of the request
+compared to other requests. For example, emergency vehicles or delayed
+buses could be given a higher priority level. \|br\| \|br\| If the ETA
+changes before the priority is cancelled, or you want to change the
+priority level, you can send another request message with type set to
+‘update’. The vehicle type cannot be changed. \|br\| \|br\| When you
+send a priority request, it will be processed to decide if it’s possible
+to activate the requested priority. \|br\| \|br\| If the request is
+accepted, the priority can either be activated immediately, or if
+another priority is currently active, it can be queued for later
+activation. \|br\| \|br\| If the priority cannot be accepted the request
+is rejected. Cooldown is a specific type of rejection, which means that
+s similar request has just completed, and some time needs to pass before
+a similar request can be activated. \|br\| \|br\| When a request is
+queued, it is expected to become activated later, but in case too long
+passes without activation, the controller is expected to time out the
+request. \|br\| \|br\| Once a priority is activated, you’re excepted to
+cancel it as soon as there’s no need for it anymore, typically when the
+vehicle has passed the intersection. You cancel a request by sending a
+request passing the existing request id setting the type to ‘cancel’.
+\|br\| \|br\| If a request is never cancelled, the controller is
+expected to remove the priority at some point, but until then the
+priority might block requests in other direction which is why you should
+always cancel a priority when it’s not needed anymore.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.1.0``
 
 Useful for bus priority or other type of priorities like emergency
 vehicles or groups of cyclists.
@@ -3638,7 +3920,6 @@ the priority at some point, but until then the priority might block
 requests in other direction which is why you should always cancel a
 priority when it’s not needed anymore.
 
-
 **Arguments**
 
 requestId
@@ -3651,7 +3932,7 @@ requestId
 
 signalGroupId
 
-    (Optional) ID of a signal group component
+    (Optional) ID of a signal group component.
 
     ====  ==========
     type  ``string``
@@ -3777,15 +4058,19 @@ vehicleType
     other             Other type of vehicle
     ================  ===============================
 
-M0023
-^^^^^
+.. _M0023:
 
-Set timeout for dynamic bands
+M0023 Set timeout for dynamic bands \|br\| Switch to a designated time plan if
+this timeout is reached due to lost connection with the supervisor.
+\|br\| Disable by setting timeout to ‘0’. \|br\| Used in conjunction
+with dynamic bands, M0014 \|br\| Requires security code 2.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.1.0``
 
 Switch to a designated time plan if this timeout is reached due to lost
 connection with the supervisor. Disable by setting timeout to ‘0’. Used
 in conjunction with dynamic bands, M0014 Requires security code 2.
-
 
 **Arguments**
 
@@ -3807,16 +4092,20 @@ securityCode
     type  ``string``
     ====  ==========
 
-M0103
-^^^^^
+.. _M0103:
 
-Set security code
+M0103 Set security code. \|br\| Change the security code to use when sending
+commands \|br\| Security codes are used as an extra layer of security in
+many commands. They need to match between the supervision system and the
+traffic light controller in order for the commands to be executed.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Change the security code to use when sending commands Security codes are
 used as an extra layer of security in many commands. They need to match
 between the supervision system and the traffic light controller in order
 for the commands to be executed.
-
 
 **Arguments**
 
@@ -3850,16 +4139,20 @@ newSecurityCode
     type  ``string``
     ====  ==========
 
-M0104
-^^^^^
+.. _M0104:
 
-Set clock
+M0104 Set clock. \|br\| Can be used to manually set the clock of the traffic
+light controller if automatic time synchronization (NTP or watchdog
+sync) is not available. For instance, during maintenance work. \|br\|
+Note: UTC is used. \|br\| Requires security code 1
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Added in version: ``1.0.1``
 
 Can be used to manually set the clock of the traffic light controller if
 automatic time synchronization (NTP or watchdog sync) is not available.
 For instance, during maintenance work. Note: UTC is used. Requires
 security code 1
-
 
 **Arguments**
 
