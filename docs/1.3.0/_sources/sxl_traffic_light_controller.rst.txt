@@ -65,8 +65,8 @@ Aggregated status
    ===========  =====================  ===========================================================================================================================
              1  Local mode             Traffic Light Controller is in local mode. NTS has no control.
              2  No Communications      Not used
-             3  High Priority Fault    Traffic Light Controller is in fail safe mode; e.g. yellow flash or dark mode
-             4  Medium Priority Fault  Traffic Light Controller has a medium priority fault, but not in fail safe mode. E.g. several lamp faults or detector fault
+             3  High Priority Fault    Traffic Light Controller is in fail-safe mode; e.g. yellow flash or dark mode
+             4  Medium Priority Fault  Traffic Light Controller has a medium priority fault, but not in fail-safe mode. E.g. several lamp faults or detector fault
              5  Low Priority Fault     Traffic Light Controller has a low priority fault. E.g. Detector fault
              6  Connected - In Use     Traffic Light Controller is not in dark mode or in yellow flash
              7  Connected - Idle       Traffic Light Controller is in dark mode or in yellow flash
@@ -111,7 +111,7 @@ A0001
 
 Serious hardware error
 
-Is a “major fault” defined according to 3.8 i EN12675 which causes the
+Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 
@@ -198,7 +198,7 @@ Dead lock error
 Used for dead lock errors. For instance; a signal group has requested
 green but is unable to switch due to a conflicting signal group for an
 extended period of time. At some point the request times out and the
-controller goes failure mode. The cause for this error is due to
+controller goes into failure mode. The cause for this error is due to
 configuration errors or external sources. Is a “major fault” defined
 according to 3.8 in EN12675 which causes the controller to switch to a
 “failure mode” according to 3.6 in EN12675.
@@ -1083,7 +1083,7 @@ Yellow flash
 The controller shows yellow flash. Yellow flash may be used during a
 serious fault (depending on configuration) or maintenance work. It can
 also be manually set using M0001. Some countries may use yellow flash as
-an normal operating mode, and not necessarily during fault. Please note
+a normal operating mode, and not necessarily during fault. Please note
 that all values in this status uses comma-separated lists - one value
 for each intersection, e.g. “1,2” and “True,False”
 
@@ -1183,7 +1183,7 @@ S0013
 Police key
 
 The controller is forced to dark mode or yellow flash. The “police key”
-is a external control switch present in some controllers that manually
+is an external control switch present in some controllers that manually
 switches the controller to either dark mode or yellow flash. Please note
 that all values in this status uses comma-separated lists - one value
 for each intersection, e.g. “1,2” and “0,1”
@@ -1224,8 +1224,8 @@ Current time plan
 The current time plan (signal program) used in the controller. There may
 be 1-255 predefined time plans. The time plan (signal program) may
 change signal timings, cycle time, control strategy and much more.
-Typical usage is is scenario based control where change of program is
-used to change priority etc.
+Typical usage is scenario based control where change of program is used
+to change priority etc.
 
 
 **Return values**
@@ -1397,15 +1397,15 @@ controlmode
     type  ``string_list_as_string``
     ====  =========================
 
-    =======  =====================================================================================================================
+    =======  ======================================================================================================================
     Enum     Description
-    =======  =====================================================================================================================
+    =======  ======================================================================================================================
     startup  The controller starts up, performs a power on self test and performs each :term:`start-up interval`
     control  Normal 3-light control
     standby  The controller is in dark or yellow flash mode (either according to programming or manually set)
-    failure  The controller has a “major fault” defined according to 3.8 i EN12675. The controller is in dark or yellow flash mode
+    failure  The controller has a “major fault” defined according to 3.8 in EN12675. The controller is in dark or yellow flash mode
     test     Mode used for various tests, e.g. signal lights
-    =======  =====================================================================================================================
+    =======  ======================================================================================================================
 
 S0021
 ^^^^^^^^
@@ -3294,7 +3294,6 @@ status
     6=Sunday |br|
     |br|
     Each segment is separated with a comma |br|
-    |br|
     E.g. |br|
     d-t,d-t
 

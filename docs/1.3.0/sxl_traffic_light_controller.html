@@ -265,11 +265,11 @@ functionalState not used (set to null)</p></td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
 <td><p>High Priority Fault</p></td>
-<td><p>Traffic Light Controller is in fail safe mode; e.g. yellow flash or dark mode</p></td>
+<td><p>Traffic Light Controller is in fail-safe mode; e.g. yellow flash or dark mode</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
 <td><p>Medium Priority Fault</p></td>
-<td><p>Traffic Light Controller has a medium priority fault, but not in fail safe mode. E.g. several lamp faults or detector fault</p></td>
+<td><p>Traffic Light Controller has a medium priority fault, but not in fail-safe mode. E.g. several lamp faults or detector fault</p></td>
 </tr>
 <tr class="row-even"><td><p>5</p></td>
 <td><p>Low Priority Fault</p></td>
@@ -410,7 +410,7 @@ functionalState not used (set to null)</p></td>
 <section id="a0001">
 <h3><span class="section-number">2.3.1. </span>A0001<a class="headerlink" href="#a0001" title="Link to this heading"></a></h3>
 <p>Serious hardware error</p>
-<p>Is a “major fault” defined according to 3.8 i EN12675 which causes the
+<p>Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
 </section>
 <section id="a0002">
@@ -480,7 +480,7 @@ defined according to 3.11 in EN12675.</p>
 <p>Used for dead lock errors. For instance; a signal group has requested
 green but is unable to switch due to a conflicting signal group for an
 extended period of time. At some point the request times out and the
-controller goes failure mode. The cause for this error is due to
+controller goes into failure mode. The cause for this error is due to
 configuration errors or external sources. Is a “major fault” defined
 according to 3.8 in EN12675 which causes the controller to switch to a
 “failure mode” according to 3.6 in EN12675.</p>
@@ -1759,7 +1759,7 @@ True: Isolated control enabled (Vehicle actuated control or Fixed time control)<
 <p>The controller shows yellow flash. Yellow flash may be used during a
 serious fault (depending on configuration) or maintenance work. It can
 also be manually set using M0001. Some countries may use yellow flash as
-an normal operating mode, and not necessarily during fault. Please note
+a normal operating mode, and not necessarily during fault. Please note
 that all values in this status uses comma-separated lists - one value
 for each intersection, e.g. “1,2” and “True,False”</p>
 <p><strong>Return values</strong></p>
@@ -1901,7 +1901,7 @@ True: All red enabled</p>
 <h3><span class="section-number">2.4.13. </span>S0013<a class="headerlink" href="#s0013" title="Link to this heading"></a></h3>
 <p>Police key</p>
 <p>The controller is forced to dark mode or yellow flash. The “police key”
-is a external control switch present in some controllers that manually
+is an external control switch present in some controllers that manually
 switches the controller to either dark mode or yellow flash. Please note
 that all values in this status uses comma-separated lists - one value
 for each intersection, e.g. “1,2” and “0,1”</p>
@@ -1956,8 +1956,8 @@ Use “0” for all intersections of the TLC.</p>
 <p>The current time plan (signal program) used in the controller. There may
 be 1-255 predefined time plans. The time plan (signal program) may
 change signal timings, cycle time, control strategy and much more.
-Typical usage is is scenario based control where change of program is
-used to change priority etc.</p>
+Typical usage is scenario based control where change of program is used
+to change priority etc.</p>
 <p><strong>Return values</strong></p>
 <p>status</p>
 <blockquote>
@@ -2201,7 +2201,7 @@ Use “0” for all intersections of the TLC.</p>
 <td><p>The controller is in dark or yellow flash mode (either according to programming or manually set)</p></td>
 </tr>
 <tr class="row-odd"><td><p>failure</p></td>
-<td><p>The controller has a “major fault” defined according to 3.8 i EN12675. The controller is in dark or yellow flash mode</p></td>
+<td><p>The controller has a “major fault” defined according to 3.8 in EN12675. The controller is in dark or yellow flash mode</p></td>
 </tr>
 <tr class="row-even"><td><p>test</p></td>
 <td><p>Mode used for various tests, e.g. signal lights</p></td>
@@ -4603,7 +4603,6 @@ Day of week legend: <br>
 6=Sunday <br> 
 <br> 
 Each segment is separated with a comma <br> 
-<br> 
 E.g. <br> 
 d-t,d-t</p>
 <table class="docutils align-default">

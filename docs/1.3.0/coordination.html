@@ -103,7 +103,7 @@
 <p>Coordination between Traffic Light Controllers (TLC) implies that several
 intersections are controlled together in a coordinated control mode at
 local or central level. Regardless of operational mode, prerequisites
-are - among other things, that TLC:s must use the same time plan and must
+are - among other things, that TLCs must use the same time plan and must
 be in synchronous operation.</p>
 <p>Local coordination can be applied in minor systems (up to 4
 intersections). Control will in these systems be made with a common and
@@ -117,8 +117,8 @@ different traffic levels. In the individual intersection a certain
 smaller degree of traffic adaption should be allowed, however, only
 within the framework of the fixed and given cycle time.</p>
 <p>The two coordination levels should be possible to combine. During peak
-hours should e.g. the entire traffic signal area be coordinated at
-central level while a split in locally coordinated sub areas should be
+hours, for example, the entire traffic signal area should be coordinated at
+central level while a split into locally coordinated sub-areas should be
 possible during normal off-peak hours.</p>
 <figure class="align-center" id="id1">
 <a class="reference internal image-reference" href="_images/types_of_coordination.png"><img alt="_images/types_of_coordination.png" src="_images/types_of_coordination.png" style="width: 476.4px; height: 169.79999999999998px;" /></a>
@@ -127,9 +127,9 @@ possible during normal off-peak hours.</p>
 </figcaption>
 </figure>
 <p>Since there are variants of coordination which are not strictly
-centralized but still uses the same principles of communication, the
+centralized but still use the same principles of communication, the
 term <em>coordination with synchronized cycle counter</em> is used rather than
-<em>central coordination</em> here on after.</p>
+<em>central coordination</em> hereinafter.</p>
 <figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="_images/coordination.png"><img alt="_images/coordination.png" src="_images/coordination.png" style="width: 436.8px; height: 325.8px;" /></a>
 <figcaption>
@@ -139,17 +139,17 @@ term <em>coordination with synchronized cycle counter</em> is used rather than
 </section>
 <section id="coordination-type-local-coordination">
 <h2><span class="section-number">5.2. </span>Coordination type “Local coordination”<a class="headerlink" href="#coordination-type-local-coordination" title="Link to this heading"></a></h2>
-<p>Local coordination is achieved by supplementing the TLC:s control bits
+<p>Local coordination is achieved by supplementing the TLCs’ control bits
 of the signal groups with special control bits from signal group(s) in
 another intersection.</p>
 <p>This can be achieved with the following status modes:</p>
 <ul class="simple">
-<li><p>“Front edge of green wave”, which is normally sent when conflicting
+<li><p>“Front edge of green wave”, which is normally sent when a conflicting
 signal group in downstream traffic lights turns yellow</p></li>
 <li><p>“Rear edge of green wave”, which is normally sent when demand for
 green ends or yellow is sent to downstream TLC.</p></li>
 </ul>
-<p>Front edge of green wave normally prevents signal groups in other TLC:s
+<p>Front edge of green wave normally prevents signal groups in other TLCs
 to start and rear edge of green wave normally extends signal groups in
 green, normally when demand for green ends, or yellow.</p>
 <p>Commands should be able to be sent from an optional change in signal
@@ -193,13 +193,13 @@ pedestrian green and green/yellow will be reduced or excluded.
 Coordination should be achieved by exchanging the normal start bits
 against special control bits which should be possible to send per one
 second steps.</p>
-<p>If control bits to the local TLC is missing for 120 seconds, the TLC
-should automatically revert to a predetermined back up or safety mode.
-If/when the control bits returns, the TLC should automatically return to
+<p>If control bits to the local TLC are missing for 120 seconds, the TLC
+should automatically revert to a predetermined backup or safety mode.
+If/when the control bits return, the TLC should automatically return to
 coordination.</p>
 <p>The control bits, arranged and time distributed within the framework of
 the cycle of the time plan, should give the coordinated installation a
-certain signal group sequence, split and offset between TLC’S.</p>
+certain signal group sequence, split and offset between TLCs.</p>
 <p>The control bits should be possible to use internally in a TLC or be
 possible to send externally to another TLC which consequently also
 should be able to receive externally incoming control bits. Together
@@ -215,23 +215,23 @@ situation, initialization and clock sync needs to be sent and received.</p>
 <p><strong>Coordination with external control bits</strong></p>
 <p>In addition to the control bits in the previous paragraph, start bits
 and stop bits must be sent and received.</p>
-<p>TLC:s should also be able to receive external start/stop bits. If the
+<p>TLCs should also be able to receive external start/stop bits. If the
 active time plan is controlled by the other TLC, it must also be able
-to receive subscription/request of e. g traffic data, detector logic
-and signal groups status etc.</p>
+to receive subscription/request of e.g. traffic data, detector logic
+and signal group status etc.</p>
 </section>
 <section id="general-rsmp-requirements">
 <h2><span class="section-number">5.5. </span>General RSMP requirements<a class="headerlink" href="#general-rsmp-requirements" title="Link to this heading"></a></h2>
-<p>Communication must be established directly between TLC:s. This demands
+<p>Communication must be established directly between TLCs. This demands
 the following general requirements:</p>
 <ul class="simple">
 <li><p>The TLC needs to support communication between sites according to section
 <a class="reference external" href="https://rsmp-nordic.github.io/rsmp_specifications/core/3.2.1/applicability/transport_of_data.html">4.3 Transport of data</a> in the RSMP specification</p></li>
-<li><p>In every TLC, it must be possible to connect to other TLC:s and to
-receive connections from other TLC:s (client-server).</p></li>
+<li><p>In every TLC, it must be possible to connect to other TLCs and to
+receive connections from other TLCs (client-server).</p></li>
 <li><p>The TLC must have a list with every connected and communicating TLC
 with editable communication parameters for each individual unit.</p></li>
-<li><p>The mentioned list above includes IP-addresses and signal exchange
+<li><p>The mentioned list above includes IP addresses and signal exchange
 lists for every connected TLC.</p></li>
 <li><p>The TLC must be configurable with signal exchange lists for every TLC
 that communication is intended with.  The signal exchange lists
@@ -240,17 +240,17 @@ which are needed to establish communication. Relevant parts of signal
 exchange lists must therefore be easily editable, in particular
 <strong>siteId</strong>, <strong>component-id</strong>, etc.</p></li>
 <li><p>The TLC must be able to communicate with the supervision system at the
-same as communicating between TLC:s.</p></li>
+same time as communicating between TLCs.</p></li>
 </ul>
 </section>
 <section id="functional-requirements-of-the-tlc">
 <h2><span class="section-number">5.6. </span>Functional requirements of the TLC<a class="headerlink" href="#functional-requirements-of-the-tlc" title="Link to this heading"></a></h2>
-<p>To establish coordination, it is required that both TLC:s use suitable
+<p>To establish coordination, it is required that both TLCs use suitable
 time plan/traffic situation and synchronize their cycle timers.</p>
 <ul class="simple">
-<li><p>It must be possible to configure TLC:s as leader/follower</p></li>
+<li><p>It must be possible to configure TLCs as leader/follower</p></li>
 <li><p>One leader TLC should be able to communicate with up to 20 follower
-TLC:s.</p></li>
+TLCs.</p></li>
 </ul>
 <p>The following input/output is needed</p>
 <table class="docutils align-default" id="id5">
@@ -338,11 +338,11 @@ field is empty for this reason.</p>
 </section>
 <section id="communication-establishment">
 <h2><span class="section-number">5.8. </span>Communication establishment<a class="headerlink" href="#communication-establishment" title="Link to this heading"></a></h2>
-<p>Follower TLC’s acts server and waits for a leader TLC to connect.
+<p>Follower TLCs act as servers and wait for a leader TLC to connect.
 Should communication fail, it is the responsibility of the leader
 TLC to connect again.</p>
-<p>When the leader TLC has connected, messages between the TLC’s are
-sent according the initialization sequence.</p>
+<p>When the leader TLC has connected, messages between the TLCs are
+sent according to the initialization sequence.</p>
 <p>Communication is continuously established even if coordination is not
 active.</p>
 <p>The handshake sequence is defined in the RSMP specification, section
@@ -357,9 +357,9 @@ coordination isn’t possible, coordination is terminated.</p></li>
 <li><p>Leader switches to coordinated time plan in its own TLC.</p></li>
 <li><p>Leader sends command to all followers to switch to coordinated time
 plan.</p></li>
-<li><p>Leader waits at own synchronisation step until synchronisation
+<li><p>Leader waits at own synchronization step until synchronization
 step is active in all followers. Leader must subscribe to
-S0004 <em>Synchronisation step</em> in all followers to verify this.</p></li>
+S0004 <em>Synchronization step</em> in all followers to verify this.</p></li>
 <li><p>Leader activates input (S0013) <em>coordination can continue</em>
 in all followers about continued coordination.</p></li>
 <li><p>Coordination active. Leader continuously checks that coordination
@@ -388,16 +388,16 @@ whether coordination should proceed regardless if a single follower
 can’t activate coordination.</p></li>
 <li><p>Leader switches to coordinated time plan in its own TLC.</p></li>
 <li><p>Leader sends command to all followers to switch to coordinated time
-plan. Followers switch time plan when their cycle counters reaches
+plan. Followers switch time plan when their cycle counters reach
 zero.</p></li>
 <li><p>Leader sends synchronization pulse when its base cycle counter
 reaches zero. Synchronization pulse means that the cycle counter
-should be set to zero. Followers adds any configured offset time on
+should be set to zero. Followers add any configured offset time on
 their own.</p></li>
 <li><p>Coordination active. Leader continuously checks that coordination
 still is possible in all followers (see step 1) through subscription
 on output (S0004) <em>coordination is possible</em>. Coordination is
-terminated if output (S0004) <em>coordination is possible</em> turns false is
+terminated if output (S0004) <em>coordination is possible</em> turns false in
 any follower TLC.</p></li>
 <li><p>If external control bits are used: Leader sends START/STOP order to
 followers during each cycle</p></li>
@@ -435,8 +435,8 @@ StatusResponse) needs to be sent because no command is executed.</p>
 <p>A command should be acknowledged when received using CommandResponse,
 but for certain commands this is no guarantee that the command really
 is executed. To confirm command execution, Leader TLC needs to
-subscribe to corresponding statuses and check whether expected statues
-changes according to command.</p>
+subscribe to corresponding statuses and check whether expected statuses
+change according to command.</p>
 <p>MessageNotAck terminates coordination, but communication continues
 to be active.</p>
 <p>If an error occurs which causes MessageNotAck to be sent, then alarm
@@ -445,7 +445,7 @@ A0005 must continuously be activated in the TLC.</p>
 <li><p>Alarm is activated at first received MessageNotAck. The TLC should not
 try to send the same command multiple times as an effect of
 MessageNotAck with the intention of later succeeding with the command.</p></li>
-<li><p>Alarm is activated in both of the TLC:s sending MessageNotAck
+<li><p>Alarm is activated in both of the TLCs sending MessageNotAck
 as well as the TLC the message.</p></li>
 <li><p>Alarm A0005 is sent to the supervision system.</p></li>
 <li><p>The next message which leads to MessageAck deactivates

@@ -93,11 +93,11 @@ Release date: 2022-06-23
 
 **Minor changes**
 
-- M0013: Add "All read" as possible option for Police Key. :issue:`119`
+- M0013: Add "All red" as possible option for Police Key. :issue:`119`
 - Use only JSON data types. Replace "long" with "integer". :issue:`133`
 - S0001: Use '-' if there are gaps in the numbering. :issue:`125`
 - M0010, M0011, M0012 marked as reserved for future use.
-- extendedinputstatus and extendedoutstatus in S0003 and S0004 marked as
+- extendedinputstatus and extendedoutputstatus in S0003 and S0004 marked as
   deprecated.
 
 **Minor clarifications**
@@ -109,7 +109,7 @@ Release date: 2022-06-23
 - Signal group status: Ascii character after each definition. :issue:`103`
 - S0011: Yellow flash. Clarification in description. :issue:`112`
 - M0019: Typo in example for "Force Input". :issue:`136`
-- Aggregated Status, functionalPosition  and functionalState (fS and fP) is unused.
+- Aggregated Status, functionalPosition and functionalState (fS and fP) are unused.
   :issue:`90`
 - Definition of max. minimum green. :issue:`102`
 - Clarify that a number of statuses uses comma separated lists of intersections.
