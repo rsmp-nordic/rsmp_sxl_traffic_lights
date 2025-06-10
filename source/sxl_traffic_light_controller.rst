@@ -212,8 +212,8 @@ timeplan
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 A0009
@@ -638,14 +638,15 @@ Can be used to draw a live signal group diagram as well provide
 diagnostic information about the performance of the controller.
 
 
+**Return values**
 
 signalgroupstatus
 
     Signal group status as text field |br|
-Each character represent the state of the signal group in consecutive order, |br|
-where the leftmost character starts with signal group 1. |br|
-Signal group status is described in detail in the corresponding section. |br|
-- : Signal group is undefined/does not exist
+    Each character represent the state of the signal group in consecutive order, |br|
+    where the leftmost character starts with signal group 1. |br|
+    Signal group status is described in detail in the corresponding section. |br|
+    - : Signal group is undefined/does not exist
 
     ====  ==========
     type  ``string``
@@ -654,34 +655,36 @@ Signal group status is described in detail in the corresponding section. |br|
 cyclecounter
 
     Cycle counter |br|
-Used for handling of coordination between TLC’s. |br|
-Is counted from 0 until it reaches the cycle time (See S0028). |br|
-|br|
-c = (b + o) mod t |br|
-|br|
-where c = cycle counter, |br|
-b = base cycle counter, |br|
-o = offset, |br|
-t = cycle time, |br|
-mod = modulo |br|
-|br|
-See the coordination section for more information.
+    Used for handling of coordination between TLC’s. |br|
+    Is counted from 0 until it reaches the cycle time (See S0028). |br|
+    |br|
+    c = (b + o) mod t |br|
+    |br|
+    where c = cycle counter, |br|
+    b = base cycle counter, |br|
+    o = offset, |br|
+    t = cycle time, |br|
+    mod = modulo |br|
+    |br|
+    See the coordination section for more information.
 
     ====  =====================
     type  ``integer_as_string``
     max   ``999``
+    min   ``0``
     ====  =====================
 
 basecyclecounter
 
     Base cycle counter |br|
-Used for handling of coordination between TLC’s. |br|
-Synchronized between all TLC’s in an active coordination. |br|
-See the coordination section for more information.
+    Used for handling of coordination between TLC’s. |br|
+    Synchronized between all TLC’s in an active coordination. |br|
+    See the coordination section for more information.
 
     ====  =====================
     type  ``integer_as_string``
     max   ``999``
+    min   ``0``
     ====  =====================
 
 stage
@@ -691,6 +694,7 @@ stage
     ====  =====================
     type  ``integer_as_string``
     max   ``999``
+    min   ``0``
     ====  =====================
 
 S0002
@@ -704,15 +708,16 @@ information about the performance of the controller. Can also be used
 for bus priority, external control systems, and much more.
 
 
+**Return values**
 
 detectorlogicstatus
 
     Detector logic status as text field |br|
-Each character represent the state of the detector logic in consecutive order, |br|
-where the leftmost character starts with detector logic 1. |br|
-0 : Detector logic is not active |br|
-1 : Detector logic is active |br|
-- : Detector logic is undefined/does not exist
+    Each character represent the state of the detector logic in consecutive order, |br|
+    where the leftmost character starts with detector logic 1. |br|
+    0 : Detector logic is not active |br|
+    1 : Detector logic is active |br|
+    - : Detector logic is undefined/does not exist
 
     ====  =========================
     type  ``string_list_as_string``
@@ -728,15 +733,16 @@ where the traffic light controller must react to external control. It
 could be external detectors, bus priority, and much more.
 
 
+**Return values**
 
 inputstatus
 
     Input status as text field |br|
-Each character represent the state of the input in consecutive order, |br|
-where the leftmost character starts with input 1. |br|
-0 : Input is not active |br|
-1 : Input is active |br|
-- : Input is undefined/does not exist
+    Each character represent the state of the input in consecutive order, |br|
+    where the leftmost character starts with input 1. |br|
+    0 : Input is not active |br|
+    1 : Input is active |br|
+    - : Input is undefined/does not exist
 
     ====  =========================
     type  ``string_list_as_string``
@@ -753,15 +759,16 @@ other equipment. Can be used for bus priority, coordination between
 traffic controllers, external control systems, and much more.
 
 
+**Return values**
 
 outputstatus
 
     Output status as text field |br|
-Each character represent the state of the output status in consecutive order, |br|
-where the leftmost character starts with output 1. |br|
-0 : Output is not active |br|
-1 : Output is active |br|
-- : Output is undefined/does not exist
+    Each character represent the state of the output status in consecutive order, |br|
+    where the leftmost character starts with output 1. |br|
+    0 : Output is not active |br|
+    1 : Output is active |br|
+    - : Output is undefined/does not exist
 
     ====  ==========
     type  ``string``
@@ -778,11 +785,12 @@ shows dark, red, yellow flash or using the predetermined start cycle
 (minimum times).
 
 
+**Return values**
 
 status
 
     False: Controller is not in start up mode |br|
-True: Controller is currently in start up mode
+    True: Controller is currently in start up mode
 
     ====  =====================
     type  ``boolean_as_string``
@@ -791,24 +799,30 @@ True: Controller is currently in start up mode
 statusByIntersection
 
     False: Intersection is not in start up mode |br|
-True: Intersection is currently in start up mode
+    True: Intersection is currently in start up mode
 
     ====  =========
     type  ``array``
     ====  =========
-('intersection', 'integer_as_string', 0, 255, {}, 'Intersection id', [])
 
-intersection
+    ============  ===============
+    Name          Description
+    ============  ===============
+    intersection  Intersection id
+    startup       Start up mode
+    ============  ===============
+
+statusByIntersection: intersection
 
     Intersection id
 
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
-('startup', 'boolean_as_string', '', '', {}, 'Start up mode', [])
 
-startup
+statusByIntersection: startup
 
     Start up mode
 
@@ -831,11 +845,12 @@ emergencystage to zero.
 Deprecated, use S0035 instead.
 
 
+**Return values**
 
 status
 
     ``Deprecated`` False: Emergency route inactive |br|
-True: Emergency route active
+    True: Emergency route active
 
     ====  =====================
     type  ``boolean_as_string``
@@ -848,6 +863,7 @@ emergencystage
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 S0007
@@ -864,11 +880,12 @@ intersection, e.g. “0” and “True” (one intersection) or “1,2” and
 “True,False” (two intersections).
 
 
+**Return values**
 
 intersection
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-Use “0” for all intersections of the TLC.
+    Use “0” for all intersections of the TLC.
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -877,7 +894,7 @@ Use “0” for all intersections of the TLC.
 status
 
     False: Traffic Light Controller in dark mode |br|
-True: Traffic Light Controller not in dark mode
+    True: Traffic Light Controller not in dark mode
 
     ====  ==========================
     type  ``boolean_as_string_list``
@@ -914,11 +931,12 @@ comma-separated lists - one value for each intersection, e.g. “0” and
 “True” (one intersection) or “1,2” and “True,False” (two intersections).
 
 
+**Return values**
 
 intersection
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-Use “0” for all intersections of the TLC.
+    Use “0” for all intersections of the TLC.
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -927,7 +945,7 @@ Use “0” for all intersections of the TLC.
 status
 
     False: Manual control inactive |br|
-True: Manual control active
+    True: Manual control active
 
     ====  ==========================
     type  ``boolean_as_string_list``
@@ -964,11 +982,12 @@ comma-separated lists - one value for each intersection, e.g. “0” and
 “True” (one intersection) or “1,2” and “True,False” (two intersections).
 
 
+**Return values**
 
 intersection
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-Use “0” for all intersections of the TLC.
+    Use “0” for all intersections of the TLC.
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -977,7 +996,7 @@ Use “0” for all intersections of the TLC.
 status
 
     False: Fixed time control inactive |br|
-True: Fixed time control active
+    True: Fixed time control active
 
     ====  ==========================
     type  ``boolean_as_string_list``
@@ -1017,11 +1036,12 @@ and “True” (one intersection) or “1,2” and “True,False” (two
 intersections).
 
 
+**Return values**
 
 intersection
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-Use “0” for all intersections of the TLC.
+    Use “0” for all intersections of the TLC.
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -1030,7 +1050,7 @@ Use “0” for all intersections of the TLC.
 status
 
     False: Isolated control disabled |br|
-True: Isolated control enabled (Vehicle actuated control or Fixed time control)
+    True: Isolated control enabled (Vehicle actuated control or Fixed time control)
 
     ====  ==========================
     type  ``boolean_as_string_list``
@@ -1068,11 +1088,12 @@ that all values in this status uses comma-separated lists - one value
 for each intersection, e.g. “1,2” and “True,False”
 
 
+**Return values**
 
 intersection
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-Use “0” for all intersections of the TLC.
+    Use “0” for all intersections of the TLC.
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -1081,7 +1102,7 @@ Use “0” for all intersections of the TLC.
 status
 
     False: Yellow flash disabled |br|
-True: Yellow flash enabled
+    True: Yellow flash enabled
 
     ====  ==========================
     type  ``boolean_as_string_list``
@@ -1117,11 +1138,12 @@ all values in this status uses comma-separated lists - one value for
 each intersection, e.g. “1,2” and “True,False”
 
 
+**Return values**
 
 intersection
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-Use “0” for all intersections of the TLC.
+    Use “0” for all intersections of the TLC.
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -1130,7 +1152,7 @@ Use “0” for all intersections of the TLC.
 status
 
     False: All red disabled |br|
-True: All red enabled
+    True: All red enabled
 
     ====  ==========================
     type  ``boolean_as_string_list``
@@ -1167,11 +1189,12 @@ that all values in this status uses comma-separated lists - one value
 for each intersection, e.g. “1,2” and “0,1”
 
 
+**Return values**
 
 intersection
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-Use “0” for all intersections of the TLC.
+    Use “0” for all intersections of the TLC.
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -1179,7 +1202,6 @@ Use “0” for all intersections of the TLC.
 
 status
 
-    
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -1206,6 +1228,7 @@ Typical usage is scenario based control where change of program is used
 to change priority etc.
 
 
+**Return values**
 
 status
 
@@ -1213,8 +1236,8 @@ status
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 source
@@ -1251,6 +1274,7 @@ traffic flow. Depending on the traffic situation each TLC selects the
 time plan dynamically.
 
 
+**Return values**
 
 status
 
@@ -1258,8 +1282,8 @@ status
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 source
@@ -1290,6 +1314,7 @@ Can be used by the management system to check the number of detector
 logics configured in the controller.
 
 
+**Return values**
 
 number
 
@@ -1297,8 +1322,8 @@ number
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``65025``
+    min   ``1``
     ====  =====================
 
 S0017
@@ -1310,6 +1335,7 @@ Can be used for the management system to check the number of signal
 groups configured in the controller.
 
 
+**Return values**
 
 number
 
@@ -1317,8 +1343,8 @@ number
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``65025``
+    min   ``1``
     ====  =====================
 
 S0019
@@ -1330,6 +1356,7 @@ Can be used for the management system to check the number of traffic
 situations configured in the controller.
 
 
+**Return values**
 
 number
 
@@ -1337,8 +1364,8 @@ number
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``65025``
+    min   ``1``
     ====  =====================
 
 S0020
@@ -1352,11 +1379,12 @@ in this status uses comma-separated lists - one value for each
 intersection, e.g. “1,2” and “startup,control”
 
 
+**Return values**
 
 intersection
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-Use “0” for all intersections of the TLC.
+    Use “0” for all intersections of the TLC.
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -1364,7 +1392,6 @@ Use “0” for all intersections of the TLC.
 
 controlmode
 
-    
 
     ====  =========================
     type  ``string_list_as_string``
@@ -1391,15 +1418,16 @@ detection equipment to the traffic light controller. Can also be used
 for prioritization.
 
 
+**Return values**
 
 detectorlogics
 
     Manually set detector logic as text field |br|
-Each character represent the state in consecutive order, |br|
-where the leftmost character starts with detector logic 1. |br|
-0 : Detector logic not manually set |br|
-1 : Detector logic manually set |br|
-- : Detector logic is undefined/does not exist
+    Each character represent the state in consecutive order, |br|
+    where the leftmost character starts with detector logic 1. |br|
+    0 : Detector logic not manually set |br|
+    1 : Detector logic manually set |br|
+    - : Detector logic is undefined/does not exist
 
     ====  ==========
     type  ``string``
@@ -1417,6 +1445,7 @@ for the management system to check the number of time plans configured
 in the controller.
 
 
+**Return values**
 
 status
 
@@ -1437,19 +1466,20 @@ usage of dynamic bands is scenario based control where changing of
 signal timings is used for optimal traffic flow.
 
 
+**Return values**
 
 status
 
     Dynamic bands |br|
-Each dynamic band are written as pp-dd-ee where: |br|
-pp=Time plan |br|
-dd=Dynamic band number (from 1-10) |br|
-ee=Extension in seconds in this band |br|
-|br|
-Each dynamic band is separated with a comma. |br|
-|br|
-E.g. |br|
-pp-dd-ee,pp-dd-ee
+    Each dynamic band are written as pp-dd-ee where: |br|
+    pp=Time plan |br|
+    dd=Dynamic band number (from 1-10) |br|
+    ee=Extension in seconds in this band |br|
+    |br|
+    Each dynamic band is separated with a comma. |br|
+    |br|
+    E.g. |br|
+    pp-dd-ee,pp-dd-ee
 
     ====  ==========
     type  ``string``
@@ -1466,18 +1496,19 @@ intersections. Can be used by the management system to check to fine
 tune the coordination for optimal traffic flow.
 
 
+**Return values**
 
 status
 
     Offset table |br|
-Each offset time is written as p-t where: |br|
-p=time plan number (from 1 to 255) |br|
-t=offset time in seconds (from 0 to 255) |br|
-|br|
-Each offset time is separated with a comma |br|
-|br|
-E.g. |br|
-1-0,2-13-3-7
+    Each offset time is written as p-t where: |br|
+    p=time plan number (from 1 to 255) |br|
+    t=offset time in seconds (from 0 to 255) |br|
+    |br|
+    Each offset time is separated with a comma |br|
+    |br|
+    E.g. |br|
+    1-0,2-13-3-7
 
     ====  =========================
     type  ``string_list_as_string``
@@ -1492,6 +1523,7 @@ Provides predicted signal timings of green and red for each signal
 group. Max, min and likely time to green and red.
 
 
+**Return values**
 
 minToGEstimate
 
@@ -1524,6 +1556,7 @@ ToGConfidence
     ====  =====================
     type  ``integer_as_string``
     max   ``100``
+    min   ``0``
     ====  =====================
 
 minToREstimate
@@ -1557,6 +1590,7 @@ ToRConfidence
     ====  =====================
     type  ``integer_as_string``
     max   ``100``
+    min   ``0``
     ====  =====================
 
 S0026
@@ -1569,26 +1603,27 @@ during a week. The week time table determine which predefined signal
 timings (time plan) to use during the week for optimal traffic flow.
 
 
+**Return values**
 
 status
 
     Week time table. Defines time table to use for each week day |br|
-Each day is written as d-t where: |br|
-d=day of week |br|
-t=time table nr |br|
-|br|
-Day of week legend: |br|
-0=Monday |br|
-1=Tuesday |br|
-2=Wednesday |br|
-3=Thursday |br|
-4=Friday |br|
-5=Saturday |br|
-6=Sunday |br|
-|br|
-Each segment is separated with a comma |br|
-E.g. |br|
-d-t,d-t
+    Each day is written as d-t where: |br|
+    d=day of week |br|
+    t=time table nr |br|
+    |br|
+    Day of week legend: |br|
+    0=Monday |br|
+    1=Tuesday |br|
+    2=Wednesday |br|
+    3=Thursday |br|
+    4=Friday |br|
+    5=Saturday |br|
+    6=Sunday |br|
+    |br|
+    Each segment is separated with a comma |br|
+    E.g. |br|
+    d-t,d-t
 
     ====  =========================
     type  ``string_list_as_string``
@@ -1603,28 +1638,29 @@ Time of day for when to switch signal program (time plan). The signal
 timings (time plan) to use during time of day for optimal traffic flow.
 
 
+**Return values**
 
 status
 
     Time Table. Defines time tables |br|
-Each time definition is written as t-o-h-m where: |br|
-t=time table nr (1-12) |br|
-o=function |br|
-h=hour - switching time |br|
-m=minute - switching minute |br|
-|br|
-Function legend: |br|
-0=no plan is selected by time table |br|
-1=set plan 1 |br|
-… |br|
-16= set plan 16 |br|
-|br|
-hour and minute is using local time (not UTC) |br|
-|br|
-Each time definition is separated with a comma |br|
-|br|
-E.g. |br|
-t-o-h-m,t-o-h-m
+    Each time definition is written as t-o-h-m where: |br|
+    t=time table nr (1-12) |br|
+    o=function |br|
+    h=hour - switching time |br|
+    m=minute - switching minute |br|
+    |br|
+    Function legend: |br|
+    0=no plan is selected by time table |br|
+    1=set plan 1 |br|
+    … |br|
+    16= set plan 16 |br|
+    |br|
+    hour and minute is using local time (not UTC) |br|
+    |br|
+    Each time definition is separated with a comma |br|
+    |br|
+    E.g. |br|
+    t-o-h-m,t-o-h-m
 
     ====  =========================
     type  ``string_list_as_string``
@@ -1642,18 +1678,19 @@ reaches this length it is reset back to zero. Changing the cycle time
 can be used as part of scenario based control.
 
 
+**Return values**
 
 status
 
     Cycle time table |br|
-Each cycle time is written as pp-tt where: |br|
-pp=time plan |br|
-tt=cycle time in seconds |br|
-|br|
-Each cycle time is separated with a comma |br|
-|br|
-E.g. |br|
-pp-tt,pp-tt
+    Each cycle time is written as pp-tt where: |br|
+    pp=time plan |br|
+    tt=cycle time in seconds |br|
+    |br|
+    Each cycle time is separated with a comma |br|
+    |br|
+    E.g. |br|
+    pp-tt,pp-tt
 
     ====  =========================
     type  ``string_list_as_string``
@@ -1670,15 +1707,16 @@ react to external control. Can be used for bus priority, coordination
 between traffic controllers, external control systems, and much more.
 
 
+**Return values**
 
 status
 
     Forced input status as text field |br|
-Each character represent the state in consecutive order, |br|
-where the leftmost character starts with input 1. |br|
-0 : Input not forced |br|
-1 : Input forced |br|
-- : Input undefined/does not exist
+    Each character represent the state in consecutive order, |br|
+    where the leftmost character starts with input 1. |br|
+    0 : Input not forced |br|
+    1 : Input forced |br|
+    - : Input undefined/does not exist
 
     ====  ==========
     type  ``string``
@@ -1696,15 +1734,16 @@ coordination between traffic controllers, external control systems, and
 much more.
 
 
+**Return values**
 
 status
 
     Forced output status as text field |br|
-Each character represent the state in consecutive order, |br|
-where the leftmost character starts with output 1. |br|
-0 : Output not forced |br|
-1 : Output forced |br|
-- : Output undefined/does not exist
+    Each character represent the state in consecutive order, |br|
+    where the leftmost character starts with output 1. |br|
+    0 : Output not forced |br|
+    1 : Output forced |br|
+    - : Output undefined/does not exist
 
     ====  ==========
     type  ``string``
@@ -1722,13 +1761,14 @@ positives. Can be used to make sure that the detectors detect traffic as
 intended.
 
 
+**Return values**
 
 status
 
     Loop detector trigger level sensitivity is written as dd-ss where: |br|
-dd=loop detector number |br|
-ss=sensitivity value |br|
-Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
+    dd=loop detector number |br|
+    ss=sensitivity value |br|
+    Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
 
     ====  =========================
     type  ``string_list_as_string``
@@ -1746,11 +1786,12 @@ lists - one value for each intersection, e.g. “1,2” and
 “centralized,off”
 
 
+**Return values**
 
 intersection
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
-Use “0” for all intersections of the TLC.
+    Use “0” for all intersections of the TLC.
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -1758,7 +1799,6 @@ Use “0” for all intersections of the TLC.
 
 status
 
-    
 
     ====  =========================
     type  ``string_list_as_string``
@@ -1830,6 +1870,7 @@ stale
 ========= =====================================
 
 
+**Return values**
 
 status
 
@@ -1838,27 +1879,36 @@ status
     ====  =========
     type  ``array``
     ====  =========
-('r', 'string', '', '', {}, 'ID of the priority request', [])
 
-r
+    ======  ==============================================================================
+    Name    Description
+    ======  ==============================================================================
+    r       ID of the priority request
+    t       Timestamp, indicating when the priority last changed state
+    s       Current status of the priority request
+    e       (Optional) Estimated green extension provided by the priority, in seconds |br|
+            Only used when state is ‘completed’.
+    d       (Optional) Estimated red reduction provided by the priority, in seconds |br|
+            Only used when state is ‘completed’.
+    ======  ==============================================================================
+
+status: r
 
     ID of the priority request
 
     ====  ==========
     type  ``string``
     ====  ==========
-('t', 'timestamp', '', '', {}, 'Timestamp, indicating when the priority last changed state', [])
 
-t
+status: t
 
     Timestamp, indicating when the priority last changed state
 
     ====  =============
     type  ``timestamp``
     ====  =============
-('s', 'string', '', '', {'received': 'A new priority request was received but has not yet been processed', 'queued': 'The priority request has been queued for later activation', 'activated': 'The priority was activated', 'completed': 'The priority was cancelled as expected', 'timeout': 'The priority has been queued for too long', 'rejected': 'The priority request cannot be granted', 'cooldown': 'A similar priority request means the priority request cannot be activated now', 'stale': 'The priority has been active too long without cancellation, and was therefore removed'}, 'Current status of the priority request', [])
 
-s
+status: s
 
     Current status of the priority request
 
@@ -1878,27 +1928,27 @@ s
     cooldown   A similar priority request means the priority request cannot be activated now
     stale      The priority has been active too long without cancellation, and was therefore removed
     =========  =====================================================================================
-('e', 'integer_as_string', 0, 255, {}, '(Optional) Estimated green extension provided by the priority, in seconds |br|\nOnly used when state is ‘completed’.', [])
 
-e
+status: e
 
     (Optional) Estimated green extension provided by the priority, in seconds |br|
-Only used when state is ‘completed’.
+    Only used when state is ‘completed’.
 
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
-('d', 'integer_as_string', 0, 255, {}, '(Optional) Estimated red reduction provided by the priority, in seconds |br|\nOnly used when state is ‘completed’.', [])
 
-d
+status: d
 
     (Optional) Estimated red reduction provided by the priority, in seconds |br|
-Only used when state is ‘completed’.
+    Only used when state is ‘completed’.
 
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 S0034
@@ -1911,6 +1961,7 @@ the supervisor. Disabled if set to ‘0’. Used in conjunction with dynamic
 bands, M0014
 
 
+**Return values**
 
 status
 
@@ -1919,6 +1970,7 @@ status
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 S0035
@@ -1933,6 +1985,7 @@ other types of priority in some cases.
 This status is similar to S0006, but supports multiple routes
 
 
+**Return values**
 
 emergencyroutes
 
@@ -1941,16 +1994,21 @@ emergencyroutes
     ====  =========
     type  ``array``
     ====  =========
-('id', 'integer_as_string', 1, 255, {}, 'ID of active emergency route', [])
 
-id
+    ======  ============================
+    Name    Description
+    ======  ============================
+    id      ID of active emergency route
+    ======  ============================
+
+emergencyroutes: id
 
     ID of active emergency route
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 S0091
@@ -1962,10 +2020,10 @@ Provides information if maintenance personnel is currently working on
 site.
 
 
+**Return values**
 
 user
 
-    
 
     ====  =====================
     type  ``integer_as_string``
@@ -1988,10 +2046,10 @@ Provides information if maintenance personnel is currently working with
 the controller.
 
 
+**Return values**
 
 user
 
-    
 
     ====  =====================
     type  ``integer_as_string``
@@ -2013,6 +2071,7 @@ Version of Traffic Light Controller
 Provides diagnostic version information.
 
 
+**Return values**
 
 status
 
@@ -2031,6 +2090,7 @@ Note: UTC is used. Provides diagnostic information about the current
 date and time set in the controller.
 
 
+**Return values**
 
 year
 
@@ -2039,6 +2099,7 @@ year
     ====  =====================
     type  ``integer_as_string``
     max   ``9999``
+    min   ``0``
     ====  =====================
 
 month
@@ -2047,8 +2108,8 @@ month
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``12``
+    min   ``1``
     ====  =====================
 
 day
@@ -2057,8 +2118,8 @@ day
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``31``
+    min   ``1``
     ====  =====================
 
 hour
@@ -2068,6 +2129,7 @@ hour
     ====  =====================
     type  ``integer_as_string``
     max   ``23``
+    min   ``0``
     ====  =====================
 
 minute
@@ -2077,6 +2139,7 @@ minute
     ====  =====================
     type  ``integer_as_string``
     max   ``59``
+    min   ``0``
     ====  =====================
 
 second
@@ -2086,6 +2149,7 @@ second
     ====  =====================
     type  ``integer_as_string``
     max   ``59``
+    min   ``0``
     ====  =====================
 
 S0097
@@ -2100,28 +2164,29 @@ provides the ability to monitor if any traffic parameter has been
 changed. The traffic parameters may be downloaded with S0098.
 
 
+**Return values**
 
 checksum
 
     Checksum of the traffic parameters |br|
-Uses SHA-2 as hashing algorithm |br|
-Includes |br|
-- all signal programs, including program versions |br|
-- signal group settings |br|
-- time plans |br|
-- safety matrix |br|
-- intergreen times |br|
-- detector settings |br|
-|br|
-It should NOT include: |br|
-- network settings |br|
-- log files |br|
-- software |br|
-- other device settings that are not part of the signal program |br|
-|br|
-Note: |br|
-- The checksum should be calculated using the same data as used in S0098 |br|
-- Data Downloaded with S0098 and hashed with SHA-2 should match this value.
+    Uses SHA-2 as hashing algorithm |br|
+    Includes |br|
+    - all signal programs, including program versions |br|
+    - signal group settings |br|
+    - time plans |br|
+    - safety matrix |br|
+    - intergreen times |br|
+    - detector settings |br|
+    |br|
+    It should NOT include: |br|
+    - network settings |br|
+    - log files |br|
+    - software |br|
+    - other device settings that are not part of the signal program |br|
+    |br|
+    Note: |br|
+    - The checksum should be calculated using the same data as used in S0098 |br|
+    - Data Downloaded with S0098 and hashed with SHA-2 should match this value.
 
     ====  ==========
     type  ``string``
@@ -2146,27 +2211,28 @@ traffic parameters on site to optimize traffic flow. This status
 provides the ability to downloaded them.
 
 
+**Return values**
 
 config
 
     Traffic parameters |br|
-Includes |br|
-- all signal programs, including program versions |br|
-- signal group settings |br|
-- time plans |br|
-- safety matrix |br|
-- intergreen times |br|
-- detector setting |br|
-|br|
-It should NOT include: |br|
-- network settings |br|
-- log files |br|
-- software |br|
-- other device settings that are not part of the signal program |br|
-|br|
-Note: |br|
-- There is no way to upload this binary file to the TLC using RSMP |br|
-- The format of the binary file is not specified and is not expected to be compatible between suppliers
+    Includes |br|
+    - all signal programs, including program versions |br|
+    - signal group settings |br|
+    - time plans |br|
+    - safety matrix |br|
+    - intergreen times |br|
+    - detector setting |br|
+    |br|
+    It should NOT include: |br|
+    - network settings |br|
+    - log files |br|
+    - software |br|
+    - other device settings that are not part of the signal program |br|
+    |br|
+    Note: |br|
+    - There is no way to upload this binary file to the TLC using RSMP |br|
+    - The format of the binary file is not specified and is not expected to be compatible between suppliers
 
     ====  ==========
     type  ``base64``
@@ -2183,7 +2249,7 @@ timestamp
 version
 
     Version information of the configuration. Contains basic information such as controller id, changes to config and other information |br|
-The format is not specified in detail.
+    The format is not specified in detail.
 
     ====  =========================
     type  ``string_list_as_string``
@@ -2197,6 +2263,7 @@ Traffic Counting: Number of vehicles
 Used for Traffic counting.
 
 
+**Return values**
 
 starttime
 
@@ -2213,6 +2280,7 @@ vehicles
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 S0202
@@ -2223,6 +2291,7 @@ Traffic Counting: Vehicle speed
 Used for Traffic counting.
 
 
+**Return values**
 
 starttime
 
@@ -2239,6 +2308,7 @@ speed
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 S0203
@@ -2249,6 +2319,7 @@ Traffic Counting: Occupancy
 Used for Traffic counting.
 
 
+**Return values**
 
 starttime
 
@@ -2265,6 +2336,7 @@ occupancy
     ====  =====================
     type  ``integer_as_string``
     max   ``100``
+    min   ``0``
     ====  =====================
 
 S0204
@@ -2275,6 +2347,7 @@ Traffic Counting: Number of vehicles of given classification
 Used for Traffic counting.
 
 
+**Return values**
 
 starttime
 
@@ -2291,6 +2364,7 @@ P
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 PS
@@ -2300,6 +2374,7 @@ PS
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 L
@@ -2309,6 +2384,7 @@ L
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 LS
@@ -2318,6 +2394,7 @@ LS
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 B
@@ -2327,6 +2404,7 @@ B
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 SP
@@ -2336,6 +2414,7 @@ SP
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 MC
@@ -2345,6 +2424,7 @@ MC
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 C
@@ -2354,6 +2434,7 @@ C
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 F
@@ -2363,6 +2444,7 @@ F
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 S0205
@@ -2374,6 +2456,7 @@ This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
 
 
+**Return values**
 
 start
 
@@ -2386,9 +2469,9 @@ start
 vehicles
 
     Number of vehicles |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2403,6 +2486,7 @@ This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
 
 
+**Return values**
 
 start
 
@@ -2415,9 +2499,9 @@ start
 speed
 
     Average speed in km/h (integer) |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2432,6 +2516,7 @@ This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
 
 
+**Return values**
 
 start
 
@@ -2444,9 +2529,9 @@ start
 occupancy
 
     Occupancy in percent (%) (0-100) |br|
-- Value expressed as an integer with a range of 0-100. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-100. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2461,6 +2546,7 @@ This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
 
 
+**Return values**
 
 start
 
@@ -2473,9 +2559,9 @@ start
 P
 
     Number of cars |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2484,9 +2570,9 @@ P
 PS
 
     Number of cars with trailers |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2495,9 +2581,9 @@ PS
 L
 
     Number of trucks |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2506,9 +2592,9 @@ L
 LS
 
     Number of trucks with trailers |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2517,9 +2603,9 @@ LS
 B
 
     Number of buses |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2528,9 +2614,9 @@ B
 SP
 
     Number of trams |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2539,9 +2625,9 @@ SP
 MC
 
     Number of motor cycles |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2550,9 +2636,9 @@ MC
 C
 
     Number of bicycles |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2561,9 +2647,9 @@ C
 F
 
     Number of pedestrians |br|
-- Value expressed as an integer with a range of 0-65535. |br|
-- Contains data from all detector logics. Each detector logic is separated with a comma. |br|
-- The value is set to “-1” if no data could be measured (e.g. detector fault)
+    - Value expressed as an integer with a range of 0-65535. |br|
+    - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
+    - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
     ====  ==========================
     type  ``integer_as_string_list``
@@ -2617,6 +2703,7 @@ Sets the controller to yellow flash, dark mode or normal control.
 Requires security code 2.
 
 
+**Arguments**
 
 status
 
@@ -2645,22 +2732,24 @@ securityCode
 timeout
 
     Time in minutes until controller automatically reverts to previous functional position |br|
-0=no automatic return
+    0=no automatic return
 
     ====  =====================
     type  ``integer_as_string``
     max   ``1440``
+    min   ``0``
     ====  =====================
 
 intersection
 
     Intersection number |br|
-Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). |br|
-0: All intersections
+    Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). |br|
+    0: All intersections
 
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 M0002
@@ -2674,11 +2763,12 @@ change signal timings etc. This command changes the signal timings for
 optimal traffic flow. Requires security code 2
 
 
+**Arguments**
 
 status
 
     False: Controller uses time plan according to programming |br|
-True: Controller uses time plan according to command
+    True: Controller uses time plan according to command
 
     ====  =====================
     type  ``boolean_as_string``
@@ -2698,8 +2788,8 @@ timeplan
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 M0003
@@ -2716,11 +2806,12 @@ traffic flow. Depending on the traffic situation each TLC selects the
 time plan dynamically. Requires security code 2
 
 
+**Arguments**
 
 status
 
     False: Controller uses traffic situation according to own programming |br|
-True: Controller uses traffic situation according to command
+    True: Controller uses traffic situation according to command
 
     ====  =====================
     type  ``boolean_as_string``
@@ -2740,8 +2831,8 @@ traficsituation
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 M0004
@@ -2753,6 +2844,7 @@ Used in the event of serious faults in the device where a restart is
 considered to be able to remedy a problem. Requires security code 2
 
 
+**Arguments**
 
 status
 
@@ -2781,11 +2873,12 @@ input. Should be used in situations where full priority is given in the
 emergency vehicle program. Requires security code 2.
 
 
+**Arguments**
 
 status
 
     False: Deactivate emergency route |br|
-True: Activate emergency route
+    True: Activate emergency route
 
     ====  =====================
     type  ``boolean_as_string``
@@ -2805,8 +2898,8 @@ emergencyroute
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 M0006
@@ -2823,11 +2916,12 @@ traffic controllers, external control systems, and much more. Requires
 security code 2.
 
 
+**Arguments**
 
 status
 
     False: Deactivate input |br|
-True: Activate input
+    True: Activate input
 
     ====  =====================
     type  ``boolean_as_string``
@@ -2847,8 +2941,8 @@ input
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 M0007
@@ -2861,11 +2955,12 @@ pre-timed control. Can be used in case normal detectors can’t be used,
 e.g. during maintenance work. Requires security code 2.
 
 
+**Arguments**
 
 status
 
     False: Deactivate fixed time control |br|
-True: Activate fixed time control
+    True: Activate fixed time control
 
     ====  =====================
     type  ``boolean_as_string``
@@ -2905,11 +3000,12 @@ programmed to activate priority based on detector logic actication.
 Requires security code 2
 
 
+**Arguments**
 
 status
 
     False: Release detector logic, 'mode' is ignored |br|
-True: Force detector logic to the value in 'mode'.
+    True: Force detector logic to the value in 'mode'.
 
     ====  =====================
     type  ``boolean_as_string``
@@ -2918,9 +3014,9 @@ True: Force detector logic to the value in 'mode'.
 duration
 
     If set, automatically release after this number of |br|
-milliseconds. Ignored if 'status' is false. |br|
-Setting to zero is the same as leaving out, and means |br|
-no automatic release will happen.
+    milliseconds. Ignored if 'status' is false. |br|
+    Setting to zero is the same as leaving out, and means |br|
+    no automatic release will happen.
 
     ====  =====================
     type  ``integer_as_string``
@@ -2937,8 +3033,8 @@ securityCode
 mode
 
     Mode to force to (ignored if 'status' is false) |br|
-False: Deactivate detector logic |br|
-True: Activate detector logic
+    False: Deactivate detector logic |br|
+    True: Activate detector logic
 
     ====  =====================
     type  ``boolean_as_string``
@@ -2949,6 +3045,7 @@ M0010
 
 ``Reserved``
 
+**Arguments**
 
 status
 
@@ -2971,6 +3068,7 @@ M0011
 
 ``Reserved``
 
+**Arguments**
 
 status
 
@@ -2993,6 +3091,7 @@ M0012
 
 ``Reserved``
 
+**Arguments**
 
 status
 
@@ -3057,11 +3156,12 @@ Example 3: “0,1,2” sets input 0 and unsets 1 - Input starts from 0 - “1”
 is 1 in binary, which is bit 0 - “2” is 10 in binary, which is bit 1
 
 
+**Arguments**
 
 status
 
     Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon |br|
-Format: [Offset];[Bits to set];[Bits to unset];…
+    Format: [Offset];[Bits to set];[Bits to unset];…
 
     ====  =========================
     type  ``string_list_as_string``
@@ -3087,6 +3187,7 @@ control where changing of signal timings is used for optimal traffic
 flow. Requires security code 2
 
 
+**Arguments**
 
 plan
 
@@ -3095,19 +3196,20 @@ plan
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 status
 
     Dynamic bands |br|
-Each dynamic band are written as dd-ee where: |br|
-dd=Dynamic band number (from 1-10) |br|
-ee=Extension in seconds in this band |br|
-|br|
-Each dynamic band is separated with a comma. |br|
-|br|
-E.g. |br|
-dd-ee,dd-ee
+    Each dynamic band are written as dd-ee where: |br|
+    dd=Dynamic band number (from 1-10) |br|
+    ee=Extension in seconds in this band |br|
+    |br|
+    Each dynamic band is separated with a comma. |br|
+    |br|
+    E.g. |br|
+    dd-ee,dd-ee
 
     ====  =========================
     type  ``string_list_as_string``
@@ -3132,6 +3234,7 @@ intersections. This command can be used to fine tune the coordination
 for optimal traffic flow. Requires security code 2.
 
 
+**Arguments**
 
 status
 
@@ -3140,6 +3243,7 @@ status
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 plan
@@ -3149,6 +3253,7 @@ plan
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 securityCode
@@ -3169,26 +3274,27 @@ week. This command changes the signal timings during the week for
 optimal traffic flow. Requires security code 2.
 
 
+**Arguments**
 
 status
 
     Week time table. Defines time table to use for each week day |br|
-Each segment is written as d-t where: |br|
-d=day of week |br|
-t=time table nr |br|
-|br|
-Day of week legend: |br|
-0=Monday |br|
-1=Tuesday |br|
-2=Wednesday |br|
-3=Thursday |br|
-4=Friday |br|
-5=Saturday |br|
-6=Sunday |br|
-|br|
-Each segment is separated with a comma |br|
-E.g. |br|
-d-t,d-t
+    Each segment is written as d-t where: |br|
+    d=day of week |br|
+    t=time table nr |br|
+    |br|
+    Day of week legend: |br|
+    0=Monday |br|
+    1=Tuesday |br|
+    2=Wednesday |br|
+    3=Thursday |br|
+    4=Friday |br|
+    5=Saturday |br|
+    6=Sunday |br|
+    |br|
+    Each segment is separated with a comma |br|
+    E.g. |br|
+    d-t,d-t
 
     ====  =========================
     type  ``string_list_as_string``
@@ -3212,28 +3318,29 @@ plan). This command changes the signal timings according to time of day
 for optimal traffic flow. Requires security code 2.
 
 
+**Arguments**
 
 status
 
     Time Table. Defines time tables |br|
-Each time definition is written as t-o-h-m where: |br|
-t=time table nr (1-12) |br|
-o=function |br|
-h=hour - switching time |br|
-m=minute - switching minute |br|
-|br|
-Function legend: |br|
-0=no plan is selected by time table |br|
-1=set plan 1 |br|
-… |br|
-16= set plan 16 |br|
-|br|
-hour and minute is using local time (not UTC) |br|
-|br|
-Each time definition is separated with a comma. |br|
-|br|
-E.g. |br|
-t-o-h-m,t-o-h-m
+    Each time definition is written as t-o-h-m where: |br|
+    t=time table nr (1-12) |br|
+    o=function |br|
+    h=hour - switching time |br|
+    m=minute - switching minute |br|
+    |br|
+    Function legend: |br|
+    0=no plan is selected by time table |br|
+    1=set plan 1 |br|
+    … |br|
+    16= set plan 16 |br|
+    |br|
+    hour and minute is using local time (not UTC) |br|
+    |br|
+    Each time definition is separated with a comma. |br|
+    |br|
+    E.g. |br|
+    t-o-h-m,t-o-h-m
 
     ====  =========================
     type  ``string_list_as_string``
@@ -3261,6 +3368,7 @@ control. It changes the timings for optimal traffic flow. Can be used
 with scenario based control. Requires security code 2.
 
 
+**Arguments**
 
 status
 
@@ -3268,8 +3376,8 @@ status
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 plan
@@ -3279,6 +3387,7 @@ plan
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 securityCode
@@ -3301,11 +3410,12 @@ bus priority, coordination between traffic controllers, external control
 systems, and much more. Requires security code 2.
 
 
+**Arguments**
 
 status
 
     False: Release input |br|
-True: Force input
+    True: Force input
 
     ====  =====================
     type  ``boolean_as_string``
@@ -3325,14 +3435,14 @@ input
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 inputValue
 
     False: input forced to False |br|
-True: input forced to True
+    True: input forced to True
 
     ====  =====================
     type  ``boolean_as_string``
@@ -3351,11 +3461,12 @@ control systems, and much more. When the output is released
 (status=False), the outputValue is ignored. Requires security code 2.
 
 
+**Arguments**
 
 status
 
     True: Force output |br|
-False: Release output
+    False: Release output
 
     ====  =====================
     type  ``boolean_as_string``
@@ -3375,14 +3486,14 @@ output
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``255``
+    min   ``1``
     ====  =====================
 
 outputValue
 
     False: output forced off |br|
-True: output forced on
+    True: output forced on
 
     ====  =====================
     type  ``boolean_as_string``
@@ -3400,12 +3511,13 @@ positives. This command provides the ability to fine tune loop detectors
 to make sure they detect traffic as intended. Requires security code 2
 
 
+**Arguments**
 
 status
 
     Loop detector trigger level sensitivity is written as dd-ss where: |br|
-dd=loop detector number |br|
-ss=sensitivity value
+    dd=loop detector number |br|
+    ss=sensitivity value
 
     ====  =========================
     type  ``string_list_as_string``
@@ -3527,6 +3639,7 @@ requests in other direction which is why you should always cancel a
 priority when it’s not needed anymore.
 
 
+**Arguments**
 
 requestId
 
@@ -3551,6 +3664,7 @@ inputId
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 connectionId
@@ -3560,6 +3674,7 @@ connectionId
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 approachId
@@ -3569,6 +3684,7 @@ approachId
     ====  =====================
     type  ``integer_as_string``
     max   ``16``
+    min   ``0``
     ====  =====================
 
 laneInId
@@ -3578,6 +3694,7 @@ laneInId
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 laneOutId
@@ -3587,6 +3704,7 @@ laneOutId
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 priorityId
@@ -3596,11 +3714,11 @@ priorityId
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 type
 
-    
 
     ====  ==========
     type  ``string``
@@ -3621,6 +3739,7 @@ level
     ====  =====================
     type  ``integer_as_string``
     max   ``14``
+    min   ``0``
     ====  =====================
 
 eta
@@ -3630,6 +3749,7 @@ eta
     ====  =====================
     type  ``integer_as_string``
     max   ``255``
+    min   ``0``
     ====  =====================
 
 vehicleType
@@ -3667,6 +3787,7 @@ connection with the supervisor. Disable by setting timeout to ‘0’. Used
 in conjunction with dynamic bands, M0014 Requires security code 2.
 
 
+**Arguments**
 
 status
 
@@ -3675,6 +3796,7 @@ status
     ====  =====================
     type  ``integer_as_string``
     max   ``65535``
+    min   ``0``
     ====  =====================
 
 securityCode
@@ -3696,10 +3818,10 @@ between the supervision system and the traffic light controller in order
 for the commands to be executed.
 
 
+**Arguments**
 
 status
 
-    
 
     ====  ==========
     type  ``string``
@@ -3739,6 +3861,7 @@ For instance, during maintenance work. Note: UTC is used. Requires
 security code 1
 
 
+**Arguments**
 
 securityCode
 
@@ -3755,6 +3878,7 @@ year
     ====  =====================
     type  ``integer_as_string``
     max   ``9999``
+    min   ``0``
     ====  =====================
 
 month
@@ -3763,8 +3887,8 @@ month
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``12``
+    min   ``1``
     ====  =====================
 
 day
@@ -3773,8 +3897,8 @@ day
 
     ====  =====================
     type  ``integer_as_string``
-    min   ``1``
     max   ``31``
+    min   ``1``
     ====  =====================
 
 hour
@@ -3784,6 +3908,7 @@ hour
     ====  =====================
     type  ``integer_as_string``
     max   ``23``
+    min   ``0``
     ====  =====================
 
 minute
@@ -3793,6 +3918,7 @@ minute
     ====  =====================
     type  ``integer_as_string``
     max   ``59``
+    min   ``0``
     ====  =====================
 
 second
@@ -3802,6 +3928,7 @@ second
     ====  =====================
     type  ``integer_as_string``
     max   ``59``
+    min   ``0``
     ====  =====================
 
 .. |br| replace:: |br_html| |br_latex|
