@@ -2332,8 +2332,8 @@ S0091 Operator logged in/out OP-panel
    }
 
    
-S0092 Operator logged web-interface
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+S0092 Operator logged in/out web-interface
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
 **Status Request**
 
