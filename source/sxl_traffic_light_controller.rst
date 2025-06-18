@@ -2731,7 +2731,7 @@ securityCode
 
 timeout
 
-    Time in minutes until controller automatically reverts to previous functional position |br|
+    (Optional) Time in minutes until controller automatically reverts to previous functional position |br|
     0=no automatic return
 
     ====  =====================
@@ -2742,7 +2742,7 @@ timeout
 
 intersection
 
-    Intersection number |br|
+    (Optional) Intersection number |br|
     Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). |br|
     0: All intersections
 
