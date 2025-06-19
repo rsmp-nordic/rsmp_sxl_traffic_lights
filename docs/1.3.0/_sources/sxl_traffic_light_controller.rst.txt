@@ -109,6 +109,8 @@ Alarms
 A0001
 ^^^^^
 
+Available from SXL version: ``1.0.0``
+
 Serious hardware error
 
 Is a “major fault” defined according to 3.8 in EN12675 which causes the
@@ -119,6 +121,8 @@ controller to switch to a “failure mode” according to 3.6 in EN12675.
 A0002
 ^^^^^
 
+Available from SXL version: ``1.0.0``
+
 Less serious hardware error
 
 Is a “minor fault” defined according to 3.11 in EN12675.
@@ -127,6 +131,8 @@ Is a “minor fault” defined according to 3.11 in EN12675.
 
 A0003
 ^^^^^
+
+Available from SXL version: ``1.0.0``
 
 Serious configuration error
 
@@ -138,6 +144,8 @@ controller to switch to a “failure mode” according to 3.6 in EN12675.
 A0004
 ^^^^^
 
+Available from SXL version: ``1.0.0``
+
 Less serious configuration error
 
 Is a “minor fault” defined according to 3.11 in EN12675.
@@ -146,6 +154,8 @@ Is a “minor fault” defined according to 3.11 in EN12675.
 
 A0005
 ^^^^^
+
+Available from SXL version: ``1.0.0``
 
 Synchronisation error (coordination)
 
@@ -156,6 +166,8 @@ Is a “minor fault” defined according to 3.11 in EN12675.
 A0006
 ^^^^^
 
+Available from SXL version: ``1.0.0``
+
 Safety error
 
 Is a “major fault” defined according to 3.8 in EN12675 which causes the
@@ -165,6 +177,8 @@ controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 A0007
 ^^^^^
+
+Available from SXL version: ``1.0.0``
 
 Communication error
 
@@ -193,6 +207,8 @@ protocol
 A0008
 ^^^^^
 
+Available from SXL version: ``1.0.1``
+
 Dead lock error
 
 Used for dead lock errors. For instance; a signal group has requested
@@ -219,6 +235,8 @@ timeplan
 A0009
 ^^^^^
 
+Available from SXL version: ``1.0.0``
+
 Other error
 
 Used for other errors not covered by any other alarm type. Is a “minor
@@ -229,6 +247,8 @@ fault” defined according to 3.11 in EN12675.
 A0010
 ^^^^^
 
+Available from SXL version: ``1.0.15``
+
 Door open
 
 Used for open door (room or cabinet).
@@ -238,6 +258,8 @@ Used for open door (room or cabinet).
 A0101
 ^^^^^
 
+Available from SXL version: ``1.0.0``
+
 Pushbutton error
 
 Used for push buttons.
@@ -246,6 +268,8 @@ Used for push buttons.
 
 A0201
 ^^^^^
+
+Available from SXL version: ``1.0.0``
 
 Serious lamp error
 
@@ -275,6 +299,8 @@ color
 A0202
 ^^^^^
 
+Available from SXL version: ``1.0.0``
+
 Less serious lamp error
 
 Used for lamp errors. Is a “minor fault” defined according to 3.11 in
@@ -301,6 +327,8 @@ color
 
 A0301
 ^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Detector error (hardware)
 
@@ -357,6 +385,8 @@ manual
 
 A0302
 ^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Detector error (logic error)
 
@@ -431,6 +461,8 @@ logicerror
 A0303
 ^^^^^
 
+Available from SXL version: ``1.1.0``
+
 Serious detector error (hardware)
 
 Is a “major fault” defined according to 3.8 i EN12675 which causes the
@@ -487,6 +519,8 @@ manual
 
 A0304
 ^^^^^
+
+Available from SXL version: ``1.1.0``
 
 Serious detector error (logic error)
 
@@ -630,6 +664,8 @@ Status
 S0001
 ^^^^^^^^
 
+Available from SXL version: ``1.0.0``
+
 Signal group status
 
 Provides the status of each signal group, including basic information
@@ -700,6 +736,8 @@ stage
 S0002
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Detector logic status
 
 Provides the status of all detector logics of the controller. Can be
@@ -726,6 +764,8 @@ detectorlogicstatus
 S0003
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Input status
 
 Input (1-255) of the controllers general purpose I/O. Input is used
@@ -750,6 +790,8 @@ inputstatus
 
 S0004
 ^^^^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Output status
 
@@ -776,6 +818,8 @@ outputstatus
 
 S0005
 ^^^^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Traffic Light Controller starting
 
@@ -833,6 +877,8 @@ statusByIntersection: startup
 S0006
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Emergency route
 
 The status is active during emergency prioritization. Used in situations
@@ -868,6 +914,8 @@ emergencystage
 
 S0007
 ^^^^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Controller switched on
 
@@ -922,6 +970,8 @@ source
 S0008
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Manual control
 
 Traffic control deactivated in controller. Signal timings is controlled
@@ -973,6 +1023,8 @@ source
 S0009
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Fixed time control
 
 Traffic actuated control deactivated and a pre-timed control is used.
@@ -1023,6 +1075,8 @@ source
 
 S0010
 ^^^^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Isolated control
 
@@ -1078,6 +1132,8 @@ source
 S0011
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Yellow flash
 
 The controller shows yellow flash. Yellow flash may be used during a
@@ -1130,6 +1186,8 @@ source
 S0012
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 All red
 
 The controller show all red. All red can be manually set using the
@@ -1180,6 +1238,8 @@ source
 S0013
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Police key
 
 The controller is forced to dark mode or yellow flash. The “police key”
@@ -1218,6 +1278,8 @@ status
 
 S0014
 ^^^^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Current time plan
 
@@ -1261,6 +1323,8 @@ source
 
 S0015
 ^^^^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Current traffic situation
 
@@ -1308,6 +1372,8 @@ source
 S0016
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Number of detector logics
 
 Can be used by the management system to check the number of detector
@@ -1328,6 +1394,8 @@ number
 
 S0017
 ^^^^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Number of signal groups
 
@@ -1350,6 +1418,8 @@ number
 S0019
 ^^^^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Number of traffic situations
 
 Can be used for the management system to check the number of traffic
@@ -1370,6 +1440,8 @@ number
 
 S0020
 ^^^^^^^^
+
+Available from SXL version: ``1.0.2``
 
 Control mode
 
@@ -1410,6 +1482,8 @@ controlmode
 S0021
 ^^^^^^^^
 
+Available from SXL version: ``1.0.3``
+
 Manually set detector logic
 
 Provides status of detector logic (1-255) regarding if they are either
@@ -1436,6 +1510,8 @@ detectorlogics
 S0022
 ^^^^^^^^
 
+Available from SXL version: ``1.0.13``
+
 List of time plans
 
 Provides a list of the configured time plans which is possible to use.
@@ -1457,6 +1533,8 @@ status
 
 S0023
 ^^^^^^^^
+
+Available from SXL version: ``1.0.13``
 
 Dynamic bands
 
@@ -1488,6 +1566,8 @@ status
 S0024
 ^^^^^^^^
 
+Available from SXL version: ``1.0.13``
+
 Offset time
 
 Offset time is used to define an offset between intersections in
@@ -1516,6 +1596,8 @@ status
 
 S0025
 ^^^^^^^^
+
+Available from SXL version: ``1.0.13``
 
 Time-of-Green / Time-of-Red
 
@@ -1596,6 +1678,8 @@ ToRConfidence
 S0026
 ^^^^^^^^
 
+Available from SXL version: ``1.0.13``
+
 Week time table
 
 Week time table for signal programs (time plan) to use for each day
@@ -1631,6 +1715,8 @@ status
 
 S0027
 ^^^^^^^^
+
+Available from SXL version: ``1.0.13``
 
 Time tables
 
@@ -1669,6 +1755,8 @@ status
 S0028
 ^^^^^^^^
 
+Available from SXL version: ``1.0.13``
+
 Cycle time
 
 Cycle time (or cycle length) is the sum of all phases in a time plan
@@ -1699,6 +1787,8 @@ status
 S0029
 ^^^^^^^^
 
+Available from SXL version: ``1.0.13``
+
 Forced input status
 
 Provide status of input (1-255) regarding if they are forced or not. Can
@@ -1724,6 +1814,8 @@ status
 
 S0030
 ^^^^^^^^
+
+Available from SXL version: ``1.0.15``
 
 Forced output status
 
@@ -1752,6 +1844,8 @@ status
 S0031
 ^^^^^^^^
 
+Available from SXL version: ``1.0.15``
+
 Trigger level sensitivity for loop detector
 
 The trigger level sensitivity determines at what level the loop detector
@@ -1776,6 +1870,8 @@ status
 
 S0032
 ^^^^^^^^
+
+Available from SXL version: ``1.1.0``
 
 Coordinated control
 
@@ -1833,6 +1929,8 @@ source
 
 S0033
 ^^^^^^^^
+
+Available from SXL version: ``1.1.0``
 
 Signal Priority Status
 
@@ -1954,6 +2052,8 @@ status: d
 S0034
 ^^^^^^^^
 
+Available from SXL version: ``1.1.0``
+
 Timeout for dynamic bands
 
 Time until a designated time plan is entered due to lost connection with
@@ -1975,6 +2075,8 @@ status
 
 S0035
 ^^^^^^^^
+
+Available from SXL version: ``1.2.0``
 
 Emergency route
 
@@ -2014,6 +2116,8 @@ emergencyroutes: id
 S0091
 ^^^^^^^^
 
+Available from SXL version: ``1.0.1``
+
 Operator logged in/out OP-panel
 
 Provides information if maintenance personnel is currently working on
@@ -2039,6 +2143,8 @@ user
 
 S0092
 ^^^^^^^^
+
+Available from SXL version: ``1.0.1``
 
 Operator logged in/out web-interface
 
@@ -2066,6 +2172,8 @@ user
 S0095
 ^^^^^^^^
 
+Available from SXL version: ``1.0.1``
+
 Version of Traffic Light Controller
 
 Provides diagnostic version information.
@@ -2083,6 +2191,8 @@ status
 
 S0096
 ^^^^^^^^
+
+Available from SXL version: ``1.0.1``
 
 Current date and time
 
@@ -2155,6 +2265,8 @@ second
 S0097
 ^^^^^^^^
 
+Available from SXL version: ``1.0.15``
+
 Checksum of traffic parameters
 
 Can be used to check if any traffic parameter has been changed. For
@@ -2202,6 +2314,8 @@ timestamp
 
 S0098
 ^^^^^^^^
+
+Available from SXL version: ``1.0.15``
 
 Configuration of traffic parameters
 
@@ -2258,6 +2372,8 @@ version
 S0201
 ^^^^^^^^
 
+Available from SXL version: ``1.0.5``
+
 Traffic Counting: Number of vehicles
 
 Used for Traffic counting.
@@ -2285,6 +2401,8 @@ vehicles
 
 S0202
 ^^^^^^^^
+
+Available from SXL version: ``1.0.5``
 
 Traffic Counting: Vehicle speed
 
@@ -2314,6 +2432,8 @@ speed
 S0203
 ^^^^^^^^
 
+Available from SXL version: ``1.0.5``
+
 Traffic Counting: Occupancy
 
 Used for Traffic counting.
@@ -2341,6 +2461,8 @@ occupancy
 
 S0204
 ^^^^^^^^
+
+Available from SXL version: ``1.0.5``
 
 Traffic Counting: Number of vehicles of given classification
 
@@ -2450,6 +2572,8 @@ F
 S0205
 ^^^^^^^^
 
+Available from SXL version: ``1.0.14``
+
 Traffic Counting: Number of vehicles
 
 This status was introduced to improve performance in case traffic
@@ -2479,6 +2603,8 @@ vehicles
 
 S0206
 ^^^^^^^^
+
+Available from SXL version: ``1.0.14``
 
 Traffic Counting: Vehicle speed
 
@@ -2510,6 +2636,8 @@ speed
 S0207
 ^^^^^^^^
 
+Available from SXL version: ``1.0.14``
+
 Traffic Counting: Occupancy
 
 This status was introduced to improve performance in case traffic
@@ -2539,6 +2667,8 @@ occupancy
 
 S0208
 ^^^^^^^^
+
+Available from SXL version: ``1.0.14``
 
 Traffic Counting: Number of vehicles of given classification
 
@@ -2697,6 +2827,8 @@ Commands
 M0001
 ^^^^^
 
+Available from SXL version: ``1.0.1``
+
 Sets functional position
 
 Sets the controller to yellow flash, dark mode or normal control.
@@ -2755,6 +2887,8 @@ intersection
 M0002
 ^^^^^
 
+Available from SXL version: ``1.0.1``
+
 Sets current time plan
 
 Change of traffic program of the traffic light controller. Typical
@@ -2794,6 +2928,8 @@ timeplan
 
 M0003
 ^^^^^
+
+Available from SXL version: ``1.0.1``
 
 Sets traffic situation the controller uses
 
@@ -2838,6 +2974,8 @@ traficsituation
 M0004
 ^^^^^
 
+Available from SXL version: ``1.0.1``
+
 Restarts Traffic Light Controller
 
 Used in the event of serious faults in the device where a restart is
@@ -2864,6 +3002,8 @@ securityCode
 
 M0005
 ^^^^^
+
+Available from SXL version: ``1.0.1``
 
 Activate emergency route
 
@@ -2904,6 +3044,8 @@ emergencyroute
 
 M0006
 ^^^^^
+
+Available from SXL version: ``1.0.1``
 
 Activate input
 
@@ -2948,6 +3090,8 @@ input
 M0007
 ^^^^^
 
+Available from SXL version: ``1.0.2``
+
 Activate fixed time control
 
 Deactivates the traffic actuated control using detectors and activates
@@ -2976,6 +3120,8 @@ securityCode
 
 M0008
 ^^^^^
+
+Available from SXL version: ``1.0.3``
 
 Force detector logic
 
@@ -3044,6 +3190,8 @@ mode
 M0010
 ^^^^^
 
+Available from SXL version: ``1.0.8``
+
 ``Reserved``
 
 **Arguments**
@@ -3066,6 +3214,8 @@ securityCode
 
 M0011
 ^^^^^
+
+Available from SXL version: ``1.0.8``
 
 ``Reserved``
 
@@ -3090,6 +3240,8 @@ securityCode
 M0012
 ^^^^^
 
+Available from SXL version: ``1.0.8``
+
 ``Reserved``
 
 **Arguments**
@@ -3112,6 +3264,8 @@ securityCode
 
 M0013
 ^^^^^
+
+Available from SXL version: ``1.0.8``
 
 Activate a series of inputs
 
@@ -3179,6 +3333,8 @@ securityCode
 M0014
 ^^^^^
 
+Available from SXL version: ``1.0.13``
+
 Set dynamic bands
 
 Can be used to change between predefined signal timings. Moves the start
@@ -3227,6 +3383,8 @@ securityCode
 M0015
 ^^^^^
 
+Available from SXL version: ``1.0.13``
+
 Set Offset time
 
 Offset time is used to define an offset between intersections in
@@ -3267,6 +3425,8 @@ securityCode
 
 M0016
 ^^^^^
+
+Available from SXL version: ``1.0.13``
 
 Set week time table
 
@@ -3311,6 +3471,8 @@ securityCode
 
 M0017
 ^^^^^
+
+Available from SXL version: ``1.0.13``
 
 Set time tables
 
@@ -3358,6 +3520,8 @@ securityCode
 M0018
 ^^^^^
 
+Available from SXL version: ``1.0.13``
+
 Set Cycle time
 
 Cycle time (or cycle length) is the sum of all phases in a time plan
@@ -3401,6 +3565,8 @@ securityCode
 
 M0019
 ^^^^^
+
+Available from SXL version: ``1.0.13``
 
 Force input
 
@@ -3451,6 +3617,8 @@ inputValue
 
 M0020
 ^^^^^
+
+Available from SXL version: ``1.0.15``
 
 Force output
 
@@ -3503,6 +3671,8 @@ outputValue
 M0021
 ^^^^^
 
+Available from SXL version: ``1.0.15``
+
 Set trigger level sensitivity for loop detector
 
 The trigger level sensitivity determines at what level a loop detector
@@ -3534,6 +3704,8 @@ securityCode
 
 M0022
 ^^^^^
+
+Available from SXL version: ``1.1.0``
 
 Request Signal Priority
 
@@ -3781,6 +3953,8 @@ vehicleType
 M0023
 ^^^^^
 
+Available from SXL version: ``1.1.0``
+
 Set timeout for dynamic bands
 
 Switch to a designated time plan if this timeout is reached due to lost
@@ -3810,6 +3984,8 @@ securityCode
 
 M0103
 ^^^^^
+
+Available from SXL version: ``1.0.1``
 
 Set security code
 
@@ -3853,6 +4029,8 @@ newSecurityCode
 
 M0104
 ^^^^^
+
+Available from SXL version: ``1.0.1``
 
 Set clock
 
