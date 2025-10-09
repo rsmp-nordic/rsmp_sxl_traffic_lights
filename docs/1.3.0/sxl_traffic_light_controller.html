@@ -1201,18 +1201,44 @@ controller to switch to a “failure mode” according to 3.6 in EN12675</p>
 <h3><span class="section-number">2.4.1. </span>S0001<a class="headerlink" href="#s0001" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Signal group status</p>
-<p>Provides the status of each signal group, including basic information
-such as green, yellow and red. But also detailed technical information.
-Can be used to draw a live signal group diagram as well provide
+<p>Provides the status of each signal group, e.g. green, yellow, red, or
+other states used in the signal program. See the section on signal group
+states for more information about the possible states.</p>
+<p>Can be used to draw a live signal group diagram as well as to provide
 diagnostic information about the performance of the controller.</p>
+<p>The base cycle counter is computed based on the internal clock and the
+cycle time. Controllers in active coordination will have synchronized
+base cycle counters.</p>
+<p>The cycle clock is based on the base cycle counter, but shifts the phase
+using the offset set in the controller:</p>
+<p>c = (b + o) modulo t</p>
+<div class="line-block">
+<div class="line">where:</div>
+<div class="line">c = cycle counter</div>
+<div class="line">b = base cycle counter</div>
+<div class="line">o = offset</div>
+<div class="line">t = cycle time</div>
+</div>
+<p>THe cycle counter and base cycle counter are both specified using whole
+seconds.</p>
+<p>See the coordination section for more information about cycle counters.</p>
+<p>The millisecond attributes provides the high resolution cycle counter
+(not base cycle counter) of the the last signal group change. If the
+controller internally works with discrete ticks, the value must be
+quantized to the tick where the signal groups changed. E.g. if the
+controller uses 100ms ticks, the value must be quantized to 0, 100, 200,
+300…</p>
+<p>The millisecond attribute updates only when one or more signal group
+states changes, NOT every millisecond. Subscribing with <strong>sendOnChange</strong>
+will therefore not result in updates every millisecond.</p>
 <p><strong>Return values</strong></p>
 <p>signalgroupstatus</p>
 <blockquote>
 <div><p>Signal group status as text field <br> 
-Each character represent the state of the signal group in consecutive order, <br> 
+Each character represents the state of the signal group in consecutive order, <br> 
 where the leftmost character starts with signal group 1. <br> 
 Signal group status is described in detail in the corresponding section. <br> 
-- : Signal group is undefined/does not exist</p>
+A dash “-” is used for undefined/non-existing signal groups.</p>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>type</p></td>
@@ -1221,21 +1247,10 @@ Signal group status is described in detail in the corresponding section. <br>
 </tbody>
 </table>
 </div></blockquote>
-<p>cyclecounter</p>
+<p>basecyclecounter</p>
 <blockquote>
-<div><p>Cycle counter <br> 
-Used for handling of coordination between TLC’s. <br> 
-Is counted from 0 until it reaches the cycle time (See S0028). <br> 
-<br> 
-c = (b + o) mod t <br> 
-<br> 
-where c = cycle counter, <br> 
-b = base cycle counter, <br> 
-o = offset, <br> 
-t = cycle time, <br> 
-mod = modulo <br> 
-<br> 
-See the coordination section for more information.</p>
+<div><p>Base cycle counter <br> 
+Updates once per second, counting from 0 and wrapping around when reaching the cycle time.</p>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>type</p></td>
@@ -1250,12 +1265,10 @@ See the coordination section for more information.</p>
 </tbody>
 </table>
 </div></blockquote>
-<p>basecyclecounter</p>
+<p>cyclecounter</p>
 <blockquote>
-<div><p>Base cycle counter <br> 
-Used for handling of coordination between TLC’s. <br> 
-Synchronized between all TLC’s in an active coordination. <br> 
-See the coordination section for more information.</p>
+<div><p>Cycle counter <br> 
+Updates once per second, counting from 0 and wrapping around when reaching the cycle time.</p>
 <table class="docutils align-default">
 <tbody>
 <tr class="row-odd"><td><p>type</p></td>
@@ -1263,6 +1276,25 @@ See the coordination section for more information.</p>
 </tr>
 <tr class="row-even"><td><p>max</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">999</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>min</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>millisecond</p>
+<blockquote>
+<div><p>Provides the cycle counter (not base cycle counter) in milliseconds <br> 
+of when the last signal group state changed occured. <br> 
+Updates only when the signalgroupstatus attribute changes.</p>
+<table class="docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p>type</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">integer_as_string</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>max</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">999999</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>min</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">0</span></code></p></td>
@@ -5406,10 +5438,14 @@ for the commands to be executed.</p>
 <h3><span class="section-number">2.5.24. </span>M0104<a class="headerlink" href="#m0104" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Set clock</p>
-<p>Can be used to manually set the clock of the traffic light controller if
-automatic time synchronization (NTP or watchdog sync) is not available.
-For instance, during maintenance work. Note: UTC is used. Requires
-security code 1</p>
+<p>This command will be removed in an upcoming version. You should instead
+use automatic time synchronization using e.g. using NTP or GPS.</p>
+<p>Can be used to manually set the clock of the traffic light controller in
+case automatic time synchronization is not available, e.g. during
+maintenance work.</p>
+<p>If automatic time synchronization is active, the command returns a
+normal response, but is otherwise ignored and does not set the clock.</p>
+<p>UTC is used. Requires security code 1.</p>
 <p><strong>Arguments</strong></p>
 <p>securityCode</p>
 <blockquote>

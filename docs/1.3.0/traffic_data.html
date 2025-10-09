@@ -48,7 +48,13 @@
 <li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html">2. Signal Exchange List</a></li>
 <li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">3. Signal Group status</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Traffic data</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Traffic data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interval-based-subscription-only">4.1. Interval based subscription only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clean-time-points">4.2. “Clean” time-points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#value-is-reset-on-subscription-interval">4.3. Value is reset on subscription interval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#buffering">4.4. Buffering</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="coordination.html">5. Coordination between traffic light controllers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multiple_supervisors.html">6. Multiple supervisors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="security_codes.html">7. Security codes</a></li>
@@ -84,24 +90,45 @@
 <h1><span class="section-number">4. </span>Traffic data<a class="headerlink" href="#traffic-data" title="Link to this heading"></a></h1>
 <p>Traffic data (S0201-S0208) needs additional requirements in order to work
 correctly.</p>
+<section id="interval-based-subscription-only">
+<h2><span class="section-number">4.1. </span>Interval based subscription only<a class="headerlink" href="#interval-based-subscription-only" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The supervision system uses <strong>StatusSubscribe</strong> and <strong>StatusUpdate</strong> to
 continuously receive traffic data from the TLC using subscriptions.</p></li>
+<li><p>sendOnChange (sOc) must be set to <strong>false</strong> and updateRate must not be
+set to “0”.</p></li>
+<li><p>The use of <strong>StatusRequest</strong> and <strong>StatusResponse</strong> is not supported.</p></li>
+</ul>
+</section>
+<section id="clean-time-points">
+<h2><span class="section-number">4.2. </span>“Clean” time-points<a class="headerlink" href="#clean-time-points" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Traffic counting must be measured during even time intervals.
+For instance; if <strong>updateRate=300</strong> (every 5 minutes) is set at the
+status subscription, the traffic counter must start at 15:00:00,
+15:05:00, 15:10:00.</p></li>
+<li><p>Traffic counting must not contain partial counting.
+E.g. It should not return the measurement for 15:03-15:05 if the
+updateRate is set to 300.</p></li>
+</ul>
+</section>
+<section id="value-is-reset-on-subscription-interval">
+<h2><span class="section-number">4.3. </span>Value is reset on subscription interval<a class="headerlink" href="#value-is-reset-on-subscription-interval" title="Link to this heading"></a></h2>
+<ul class="simple">
 <li><p><strong>starttime</strong> is the time stamp of start of measuring.
 E.g. if a subscription update is sent at 15:05 using a subscription update
 rate of 300 (5 minutes), <strong>starttime</strong> would be set to 15.00
 and <strong>vehicles</strong> (S0201) would contain the number of vehicles between
 15:00 and 15:05.</p></li>
-<li><p>Traffic counting must be made at even time intervals.
-For instance; if <strong>updateRate=300</strong> (every 5 minutes) is set at the
-status subscription, the traffic counter must start at 15:00:00,
-15:05:00, 15:10:00 and so on.</p></li>
-<li><p>No initial status update should be sent directly after receiving status
-subscription. Status updates should only be sent at even time intervals
-and not contain partial counting, e.g. 15:01-15:03 if updateRate=300</p></li>
 <li><p>The traffic counter must not reset its traffic counter after receiving
-a new subscription request. The traffic counter may only reset its
-traffic counter at even time intervals.</p></li>
+a new subscription request.</p></li>
+<li><p>The traffic counter must only reset its traffic counter at even time
+intervals.</p></li>
+</ul>
+</section>
+<section id="buffering">
+<h2><span class="section-number">4.4. </span>Buffering<a class="headerlink" href="#buffering" title="Link to this heading"></a></h2>
+<ul class="simple">
 <li><p>Buffering of traffic data during connection interruptions should be
 possible to enable/disable in the equipment. If buffering is enabled it
 means that active subscriptions of traffic data (S0201-S0208) should remain
@@ -109,6 +136,7 @@ active and not be canceled at connection interruption or at reestablishment.</p>
 <li><p>The traffic data must be buffered according to the time interval as
 determined by the status subscription if buffering is enabled.</p></li>
 </ul>
+</section>
 </section>
 
 

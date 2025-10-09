@@ -668,10 +668,43 @@ Available from SXL version: ``1.0.0``
 
 Signal group status
 
-Provides the status of each signal group, including basic information
-such as green, yellow and red. But also detailed technical information.
-Can be used to draw a live signal group diagram as well provide
+Provides the status of each signal group, e.g. green, yellow, red, or
+other states used in the signal program. See the section on signal group
+states for more information about the possible states.
+
+Can be used to draw a live signal group diagram as well as to provide
 diagnostic information about the performance of the controller.
+
+The base cycle counter is computed based on the internal clock and the
+cycle time. Controllers in active coordination will have synchronized
+base cycle counters.
+
+The cycle clock is based on the base cycle counter, but shifts the phase
+using the offset set in the controller:
+
+c = (b + o) modulo t
+
+| where:
+| c = cycle counter
+| b = base cycle counter
+| o = offset
+| t = cycle time
+
+THe cycle counter and base cycle counter are both specified using whole
+seconds.
+
+See the coordination section for more information about cycle counters.
+
+The millisecond attributes provides the high resolution cycle counter
+(not base cycle counter) of the the last signal group change. If the
+controller internally works with discrete ticks, the value must be
+quantized to the tick where the signal groups changed. E.g. if the
+controller uses 100ms ticks, the value must be quantized to 0, 100, 200,
+300…
+
+The millisecond attribute updates only when one or more signal group
+states changes, NOT every millisecond. Subscribing with **sendOnChange**
+will therefore not result in updates every millisecond.
 
 
 **Return values**
@@ -679,30 +712,19 @@ diagnostic information about the performance of the controller.
 signalgroupstatus
 
     Signal group status as text field |br|
-    Each character represent the state of the signal group in consecutive order, |br|
+    Each character represents the state of the signal group in consecutive order, |br|
     where the leftmost character starts with signal group 1. |br|
     Signal group status is described in detail in the corresponding section. |br|
-    - : Signal group is undefined/does not exist
+    A dash "-" is used for undefined/non-existing signal groups.
 
     ====  ==========
     type  ``string``
     ====  ==========
 
-cyclecounter
+basecyclecounter
 
-    Cycle counter |br|
-    Used for handling of coordination between TLC’s. |br|
-    Is counted from 0 until it reaches the cycle time (See S0028). |br|
-    |br|
-    c = (b + o) mod t |br|
-    |br|
-    where c = cycle counter, |br|
-    b = base cycle counter, |br|
-    o = offset, |br|
-    t = cycle time, |br|
-    mod = modulo |br|
-    |br|
-    See the coordination section for more information.
+    Base cycle counter |br|
+    Updates once per second, counting from 0 and wrapping around when reaching the cycle time.
 
     ====  =====================
     type  ``integer_as_string``
@@ -710,16 +732,26 @@ cyclecounter
     min   ``0``
     ====  =====================
 
-basecyclecounter
+cyclecounter
 
-    Base cycle counter |br|
-    Used for handling of coordination between TLC’s. |br|
-    Synchronized between all TLC’s in an active coordination. |br|
-    See the coordination section for more information.
+    Cycle counter |br|
+    Updates once per second, counting from 0 and wrapping around when reaching the cycle time.
 
     ====  =====================
     type  ``integer_as_string``
     max   ``999``
+    min   ``0``
+    ====  =====================
+
+millisecond
+
+    Provides the cycle counter (not base cycle counter) in milliseconds |br|
+    of when the last signal group state changed occured. |br|
+    Updates only when the signalgroupstatus attribute changes.
+
+    ====  =====================
+    type  ``integer_as_string``
+    max   ``999999``
     min   ``0``
     ====  =====================
 
@@ -4034,10 +4066,17 @@ Available from SXL version: ``1.0.1``
 
 Set clock
 
-Can be used to manually set the clock of the traffic light controller if
-automatic time synchronization (NTP or watchdog sync) is not available.
-For instance, during maintenance work. Note: UTC is used. Requires
-security code 1
+This command will be removed in an upcoming version. You should instead
+use automatic time synchronization using e.g. using NTP or GPS.
+
+Can be used to manually set the clock of the traffic light controller in
+case automatic time synchronization is not available, e.g. during
+maintenance work.
+
+If automatic time synchronization is active, the command returns a
+normal response, but is otherwise ignored and does not set the clock.
+
+UTC is used. Requires security code 1.
 
 
 **Arguments**
