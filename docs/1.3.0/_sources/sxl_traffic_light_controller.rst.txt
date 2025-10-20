@@ -106,81 +106,81 @@ Alarms
    ========================  =============  ====================================  ==========  ==========
 
 
-A0001
+.. _A0001:
+
+A0001 Serious hardware error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Serious hardware error
 
 Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 
 
-A0002
+.. _A0002:
+
+A0002 Less serious hardware error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Less serious hardware error
 
 Is a “minor fault” defined according to 3.11 in EN12675.
 
 
 
-A0003
+.. _A0003:
+
+A0003 Serious configuration error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Serious configuration error
 
 Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 
 
-A0004
+.. _A0004:
+
+A0004 Less serious configuration error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Less serious configuration error
 
 Is a “minor fault” defined according to 3.11 in EN12675.
 
 
 
-A0005
+.. _A0005:
+
+A0005 Synchronisation error (coordination)
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Synchronisation error (coordination)
 
 Is a “minor fault” defined according to 3.11 in EN12675.
 
 
 
-A0006
+.. _A0006:
+
+A0006 Safety error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Safety error
 
 Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 
 
-A0007
+.. _A0007:
+
+A0007 Communication error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Communication error
 
 Used for communication errors with the central system. Includes NTP
 connection loss if the TLC is configured to use NTP. Is a “minor fault”
@@ -189,13 +189,10 @@ defined according to 3.11 in EN12675.
 
 **Return values**
 
-protocol
+**protocol** ``string``
 
     Type of communication error, e.g. NTP or RSMP
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =============
     Enum    Description
@@ -204,12 +201,12 @@ protocol
     ntp     NTP
     ======  =============
 
-A0008
+.. _A0008:
+
+A0008 Dead lock error
 ^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Dead lock error
 
 Used for dead lock errors. For instance; a signal group has requested
 green but is unable to switch due to a conflicting signal group for an
@@ -222,56 +219,55 @@ according to 3.8 in EN12675 which causes the controller to switch to a
 
 **Return values**
 
-timeplan
+**timeplan** ``integer_as_string``
 
     Current time plan
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-A0009
+.. _A0009:
+
+A0009 Other error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Other error
 
 Used for other errors not covered by any other alarm type. Is a “minor
 fault” defined according to 3.11 in EN12675.
 
 
 
-A0010
+.. _A0010:
+
+A0010 Door open
 ^^^^^
 
 Available from SXL version: ``1.0.15``
-
-Door open
 
 Used for open door (room or cabinet).
 
 
 
-A0101
+.. _A0101:
+
+A0101 Pushbutton error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Pushbutton error
 
 Used for push buttons.
 
 
 
-A0201
+.. _A0201:
+
+A0201 Serious lamp error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Serious lamp error
 
 Used for lamp errors. Is a “major fault” defined according to 3.8 in
 EN12675 which causes the controller to switch to a “failure mode”
@@ -280,13 +276,10 @@ according to 3.6 in EN12675.
 
 **Return values**
 
-color
+**color** ``string``
 
     Color of lamp
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =============
     Enum    Description
@@ -296,12 +289,12 @@ color
     green   green
     ======  =============
 
-A0202
+.. _A0202:
+
+A0202 Less serious lamp error
 ^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Less serious lamp error
 
 Used for lamp errors. Is a “minor fault” defined according to 3.11 in
 EN12675.
@@ -309,13 +302,10 @@ EN12675.
 
 **Return values**
 
-color
+**color** ``string``
 
     Color of lamp
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =============
     Enum    Description
@@ -325,33 +315,27 @@ color
     green   green
     ======  =============
 
-A0301
+.. _A0301:
+
+A0301 Detector error (hardware)
 ^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Detector error (hardware)
 
 Is a “minor fault” defined according to 3.11 in EN12675.
 
 
 **Return values**
 
-detector
+**detector** ``string``
 
     Designation of the detector (hardware)
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-type
+**type** ``string``
 
     Type of detector
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =======================
     Enum    Description
@@ -360,13 +344,10 @@ type
     input   External input
     ======  =======================
 
-errormode
+**errormode** ``string``
 
     Detector forced on/off while detector error
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =============
     Enum    Description
@@ -375,20 +356,17 @@ errormode
     off
     ======  =============
 
-manual
+**manual** ``boolean_as_string``
 
     Manually controlled detector logic (True/False)
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-A0302
+.. _A0302:
+
+A0302 Detector error (logic error)
 ^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Detector error (logic error)
 
 For instance; detector continuously on or off during an extended time.
 Is a “minor fault” defined according to 3.11 in EN12675.
@@ -396,21 +374,15 @@ Is a “minor fault” defined according to 3.11 in EN12675.
 
 **Return values**
 
-detector
+**detector** ``string``
 
     Designation of the detector (hardware)
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-type
+**type** ``string``
 
     Type of detector
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =======================
     Enum    Description
@@ -419,13 +391,10 @@ type
     input   External input
     ======  =======================
 
-errormode
+**errormode** ``string``
 
     Detector forced on/off while detector error
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =============
     Enum    Description
@@ -434,21 +403,15 @@ errormode
     off
     ======  =============
 
-manual
+**manual** ``boolean_as_string``
 
     Manually controlled detector logic (True/False)
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-logicerror
+**logicerror** ``string``
 
     Type of logic error
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ============  ==================================================
     Enum          Description
@@ -458,12 +421,12 @@ logicerror
     intermittent  intermittent logic fault (flutter)
     ============  ==================================================
 
-A0303
+.. _A0303:
+
+A0303 Serious detector error (hardware)
 ^^^^^
 
 Available from SXL version: ``1.1.0``
-
-Serious detector error (hardware)
 
 Is a “major fault” defined according to 3.8 i EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.
@@ -471,21 +434,15 @@ controller to switch to a “failure mode” according to 3.6 in EN12675.
 
 **Return values**
 
-detector
+**detector** ``string``
 
     Designation of the detector (hardware)
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-type
+**type** ``string``
 
     Type of detector
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =======================
     Enum    Description
@@ -494,13 +451,10 @@ type
     input   External input
     ======  =======================
 
-errormode
+**errormode** ``string``
 
     Detector forced on/off while detector error
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =============
     Enum    Description
@@ -509,20 +463,17 @@ errormode
     off
     ======  =============
 
-manual
+**manual** ``boolean_as_string``
 
     Manually controlled detector logic (True/False)
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-A0304
+.. _A0304:
+
+A0304 Serious detector error (logic error)
 ^^^^^
 
 Available from SXL version: ``1.1.0``
-
-Serious detector error (logic error)
 
 For instance; detector continuously on or off during an extended time.
 Is a “major fault” defined according to 3.8 i EN12675 which causes the
@@ -531,21 +482,15 @@ controller to switch to a “failure mode” according to 3.6 in EN12675
 
 **Return values**
 
-detector
+**detector** ``string``
 
     Designation of the detector (hardware)
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-type
+**type** ``string``
 
     Type of detector
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =======================
     Enum    Description
@@ -554,13 +499,10 @@ type
     input   External input
     ======  =======================
 
-errormode
+**errormode** ``string``
 
     Detector forced on/off while detector error
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  =============
     Enum    Description
@@ -569,21 +511,15 @@ errormode
     off
     ======  =============
 
-manual
+**manual** ``boolean_as_string``
 
     Manually controlled detector logic (True/False)
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-logicerror
+**logicerror** ``string``
 
     Type of logic error
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ============  ==================================================
     Enum          Description
@@ -661,12 +597,12 @@ Status
    ========================  ==============  ============================================================
 
 
-S0001
+.. _S0001:
+
+S0001 Signal group status
 ^^^^^^^^
 
 Available from SXL version: ``1.0.0``
-
-Signal group status
 
 Provides the status of each signal group, e.g. green, yellow, red, or
 other states used in the signal program. See the section on signal group
@@ -709,7 +645,7 @@ will therefore not result in updates every millisecond.
 
 **Return values**
 
-signalgroupstatus
+**signalgroupstatus** ``string``
 
     Signal group status as text field |br|
     Each character represents the state of the signal group in consecutive order, |br|
@@ -717,60 +653,53 @@ signalgroupstatus
     Signal group status is described in detail in the corresponding section. |br|
     A dash "-" is used for undefined/non-existing signal groups.
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-basecyclecounter
+**basecyclecounter** ``integer_as_string``
 
     Base cycle counter |br|
     Updates once per second, counting from 0 and wrapping around when reaching the cycle time.
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``999``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``999``
+    min  ``0``
+    ===  =======
 
-cyclecounter
+**cyclecounter** ``integer_as_string``
 
     Cycle counter |br|
     Updates once per second, counting from 0 and wrapping around when reaching the cycle time.
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``999``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``999``
+    min  ``0``
+    ===  =======
 
-millisecond
+**millisecond** ``integer_as_string``
 
     Provides the cycle counter (not base cycle counter) in milliseconds |br|
     of when the last signal group state changed occured. |br|
     Updates only when the signalgroupstatus attribute changes.
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``999999``
-    min   ``0``
-    ====  =====================
+    ===  ==========
+    max  ``999999``
+    min  ``0``
+    ===  ==========
 
-stage
+**stage** ``integer_as_string``
 
     Current stage (isolated)
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``999``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``999``
+    min  ``0``
+    ===  =======
 
-S0002
+.. _S0002:
+
+S0002 Detector logic status
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Detector logic status
 
 Provides the status of all detector logics of the controller. Can be
 used to draw a live signal group diagram as well provide diagnostic
@@ -780,7 +709,7 @@ for bus priority, external control systems, and much more.
 
 **Return values**
 
-detectorlogicstatus
+**detectorlogicstatus** ``string_list_as_string``
 
     Detector logic status as text field |br|
     Each character represent the state of the detector logic in consecutive order, |br|
@@ -789,16 +718,13 @@ detectorlogicstatus
     1 : Detector logic is active |br|
     - : Detector logic is undefined/does not exist
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-S0003
+.. _S0003:
+
+S0003 Input status
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Input status
 
 Input (1-255) of the controllers general purpose I/O. Input is used
 where the traffic light controller must react to external control. It
@@ -807,7 +733,7 @@ could be external detectors, bus priority, and much more.
 
 **Return values**
 
-inputstatus
+**inputstatus** ``string_list_as_string``
 
     Input status as text field |br|
     Each character represent the state of the input in consecutive order, |br|
@@ -816,16 +742,13 @@ inputstatus
     1 : Input is active |br|
     - : Input is undefined/does not exist
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-S0004
+.. _S0004:
+
+S0004 Output status
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Output status
 
 Output (1-255) of the controllers general purpose I/O. Can be used for
 all types of output where the traffic light controller needs to control
@@ -835,7 +758,7 @@ traffic controllers, external control systems, and much more.
 
 **Return values**
 
-outputstatus
+**outputstatus** ``string``
 
     Output status as text field |br|
     Each character represent the state of the output status in consecutive order, |br|
@@ -844,16 +767,13 @@ outputstatus
     1 : Output is active |br|
     - : Output is undefined/does not exist
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-S0005
+.. _S0005:
+
+S0005 Traffic Light Controller starting
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Traffic Light Controller starting
 
 The traffic signal is starting, e.g. it is in startup mode and has not
 begun working normally yet. During startup mode the traffic controller
@@ -863,23 +783,17 @@ shows dark, red, yellow flash or using the predetermined start cycle
 
 **Return values**
 
-status
+**status** ``boolean_as_string``
 
     False: Controller is not in start up mode |br|
     True: Controller is currently in start up mode
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-statusByIntersection
+**statusByIntersection** ``array``
 
     False: Intersection is not in start up mode |br|
     True: Intersection is currently in start up mode
 
-    ====  =========
-    type  ``array``
-    ====  =========
 
     ============  ===============
     Name          Description
@@ -888,30 +802,26 @@ statusByIntersection
     startup       Start up mode
     ============  ===============
 
-statusByIntersection: intersection
+**statusByIntersection: intersection** ``integer_as_string``
 
     Intersection id
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-statusByIntersection: startup
+**statusByIntersection: startup** ``boolean_as_string``
 
     Start up mode
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-S0006
+.. _S0006:
+
+S0006 Emergency route
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Emergency route
 
 The status is active during emergency prioritization. Used in situations
 where full priority is given in the emergency vehicle program or for
@@ -925,31 +835,27 @@ Deprecated, use S0035 instead.
 
 **Return values**
 
-status
+**status** ``boolean_as_string``
 
     ``Deprecated`` False: Emergency route inactive |br|
     True: Emergency route active
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-emergencystage
+**emergencystage** ``integer_as_string``
 
     ``Deprecated`` Number of emergency route (set to zero if no route is active)
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-S0007
+.. _S0007:
+
+S0007 Controller switched on
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Controller switched on
 
 The controller is active and is not in dark mode. Used to determine if
 the there is output to the signal heads, e.g. it shows red, green or
@@ -962,31 +868,22 @@ intersection, e.g. “0” and “True” (one intersection) or “1,2” and
 
 **Return values**
 
-intersection
+**intersection** ``integer_as_string_list``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-status
+**status** ``boolean_as_string_list``
 
     False: Traffic Light Controller in dark mode |br|
     True: Traffic Light Controller not in dark mode
 
-    ====  ==========================
-    type  ``boolean_as_string_list``
-    ====  ==========================
 
-source
+**source** ``string_list_as_string``
 
     Source of the status change
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ==============  ==============================================
     Enum            Description
@@ -999,12 +896,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0008
+.. _S0008:
+
+S0008 Manual control
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Manual control
 
 Traffic control deactivated in controller. Signal timings is controlled
 manually by service personnel using the operating panel of the
@@ -1015,31 +912,22 @@ comma-separated lists - one value for each intersection, e.g. “0” and
 
 **Return values**
 
-intersection
+**intersection** ``integer_as_string_list``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-status
+**status** ``boolean_as_string_list``
 
     False: Manual control inactive |br|
     True: Manual control active
 
-    ====  ==========================
-    type  ``boolean_as_string_list``
-    ====  ==========================
 
-source
+**source** ``string_list_as_string``
 
     Source of the status change
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ==============  ==============================================
     Enum            Description
@@ -1052,12 +940,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0009
+.. _S0009:
+
+S0009 Fixed time control
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Fixed time control
 
 Traffic actuated control deactivated and a pre-timed control is used.
 Usually only used in case normal detectors can’t be used, e.g. during
@@ -1068,31 +956,22 @@ comma-separated lists - one value for each intersection, e.g. “0” and
 
 **Return values**
 
-intersection
+**intersection** ``integer_as_string_list``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-status
+**status** ``boolean_as_string_list``
 
     False: Fixed time control inactive |br|
     True: Fixed time control active
 
-    ====  ==========================
-    type  ``boolean_as_string_list``
-    ====  ==========================
 
-source
+**source** ``string_list_as_string``
 
     Source of the status change
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ==============  ==============================================
     Enum            Description
@@ -1105,12 +984,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0010
+.. _S0010:
+
+S0010 Isolated control
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Isolated control
 
 Isolated control mode indicates that the controller operates
 independently of any other traffic light controller. This may be
@@ -1124,31 +1003,22 @@ intersections).
 
 **Return values**
 
-intersection
+**intersection** ``integer_as_string_list``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-status
+**status** ``boolean_as_string_list``
 
     False: Isolated control disabled |br|
     True: Isolated control enabled (Vehicle actuated control or Fixed time control)
 
-    ====  ==========================
-    type  ``boolean_as_string_list``
-    ====  ==========================
 
-source
+**source** ``string_list_as_string``
 
     Source of the status change
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ==============  ==============================================
     Enum            Description
@@ -1161,12 +1031,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0011
+.. _S0011:
+
+S0011 Yellow flash
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Yellow flash
 
 The controller shows yellow flash. Yellow flash may be used during a
 serious fault (depending on configuration) or maintenance work. It can
@@ -1178,31 +1048,22 @@ for each intersection, e.g. “1,2” and “True,False”
 
 **Return values**
 
-intersection
+**intersection** ``integer_as_string_list``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-status
+**status** ``boolean_as_string_list``
 
     False: Yellow flash disabled |br|
     True: Yellow flash enabled
 
-    ====  ==========================
-    type  ``boolean_as_string_list``
-    ====  ==========================
 
-source
+**source** ``string_list_as_string``
 
     Source of the status change
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ==============  ==============================================
     Enum            Description
@@ -1215,12 +1076,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0012
+.. _S0012:
+
+S0012 All red
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-All red
 
 The controller show all red. All red can be manually set using the
 controllers operating panel during maintenance work. Please note that
@@ -1230,31 +1091,22 @@ each intersection, e.g. “1,2” and “True,False”
 
 **Return values**
 
-intersection
+**intersection** ``integer_as_string_list``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-status
+**status** ``boolean_as_string_list``
 
     False: All red disabled |br|
     True: All red enabled
 
-    ====  ==========================
-    type  ``boolean_as_string_list``
-    ====  ==========================
 
-source
+**source** ``string_list_as_string``
 
     Source of the status change
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ==============  ==============================================
     Enum            Description
@@ -1267,12 +1119,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0013
+.. _S0013:
+
+S0013 Police key
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Police key
 
 The controller is forced to dark mode or yellow flash. The “police key”
 is an external control switch present in some controllers that manually
@@ -1283,21 +1135,15 @@ for each intersection, e.g. “1,2” and “0,1”
 
 **Return values**
 
-intersection
+**intersection** ``integer_as_string_list``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-status
+**status** ``integer_as_string_list``
 
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
     ======  =============
       Enum  Description
@@ -1308,12 +1154,12 @@ status
          3  all red
     ======  =============
 
-S0014
+.. _S0014:
+
+S0014 Current time plan
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Current time plan
 
 The current time plan (signal program) used in the controller. There may
 be 1-255 predefined time plans. The time plan (signal program) may
@@ -1324,23 +1170,19 @@ to change priority etc.
 
 **Return values**
 
-status
+**status** ``integer_as_string``
 
     Current time plan
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-source
+**source** ``string_list_as_string``
 
     Source of the status change
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ==============  ==============================================
     Enum            Description
@@ -1353,12 +1195,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0015
+.. _S0015:
+
+S0015 Current traffic situation
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Current traffic situation
 
 The current traffic situation used in the controller. Used for
 area-based control where the M0003 command can be sent to a master
@@ -1372,23 +1214,19 @@ time plan dynamically.
 
 **Return values**
 
-status
+**status** ``integer_as_string``
 
     Current traffic situation
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-source
+**source** ``string_list_as_string``
 
     Source of the status change
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ==============  ==============================================
     Enum            Description
@@ -1401,12 +1239,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0016
+.. _S0016:
+
+S0016 Number of detector logics
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Number of detector logics
 
 Can be used by the management system to check the number of detector
 logics configured in the controller.
@@ -1414,22 +1252,21 @@ logics configured in the controller.
 
 **Return values**
 
-number
+**number** ``integer_as_string``
 
     Number of detector logics
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65025``
-    min   ``1``
-    ====  =====================
+    ===  =========
+    max  ``65025``
+    min  ``1``
+    ===  =========
 
-S0017
+.. _S0017:
+
+S0017 Number of signal groups
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Number of signal groups
 
 Can be used for the management system to check the number of signal
 groups configured in the controller.
@@ -1437,22 +1274,21 @@ groups configured in the controller.
 
 **Return values**
 
-number
+**number** ``integer_as_string``
 
     Number of signal groups
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65025``
-    min   ``1``
-    ====  =====================
+    ===  =========
+    max  ``65025``
+    min  ``1``
+    ===  =========
 
-S0019
+.. _S0019:
+
+S0019 Number of traffic situations
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Number of traffic situations
 
 Can be used for the management system to check the number of traffic
 situations configured in the controller.
@@ -1460,22 +1296,21 @@ situations configured in the controller.
 
 **Return values**
 
-number
+**number** ``integer_as_string``
 
     Number of traffic situations
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65025``
-    min   ``1``
-    ====  =====================
+    ===  =========
+    max  ``65025``
+    min  ``1``
+    ===  =========
 
-S0020
+.. _S0020:
+
+S0020 Control mode
 ^^^^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Control mode
 
 Can be used for the management system to check the current control mode
 (startup, normal, standby, failure, test). Please note that all values
@@ -1485,21 +1320,15 @@ intersection, e.g. “1,2” and “startup,control”
 
 **Return values**
 
-intersection
+**intersection** ``integer_as_string_list``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-controlmode
+**controlmode** ``string_list_as_string``
 
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     =======  ======================================================================================================================
     Enum     Description
@@ -1511,12 +1340,12 @@ controlmode
     test     Mode used for various tests, e.g. signal lights
     =======  ======================================================================================================================
 
-S0021
+.. _S0021:
+
+S0021 Manually set detector logic
 ^^^^^^^^
 
 Available from SXL version: ``1.0.3``
-
-Manually set detector logic
 
 Provides status of detector logic (1-255) regarding if they are either
 forced to true or false. Can be used to connect RSMP compatible
@@ -1526,7 +1355,7 @@ for prioritization.
 
 **Return values**
 
-detectorlogics
+**detectorlogics** ``string``
 
     Manually set detector logic as text field |br|
     Each character represent the state in consecutive order, |br|
@@ -1535,16 +1364,13 @@ detectorlogics
     1 : Detector logic manually set |br|
     - : Detector logic is undefined/does not exist
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-S0022
+.. _S0022:
+
+S0022 List of time plans
 ^^^^^^^^
 
 Available from SXL version: ``1.0.13``
-
-List of time plans
 
 Provides a list of the configured time plans which is possible to use.
 This status was added due to status S0018 only provided the total number
@@ -1555,20 +1381,17 @@ in the controller.
 
 **Return values**
 
-status
+**status** ``integer_list_as_string``
 
     Comma separated list of configured time plans. E.g. "1,2,3,5"
 
-    ====  ==========================
-    type  ``integer_list_as_string``
-    ====  ==========================
 
-S0023
+.. _S0023:
+
+S0023 Dynamic bands
 ^^^^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Dynamic bands
 
 Provides a list of all defined dynamic bands. Dynamic bands moves start
 of signal groups in the cycle and changes the signal timings. A typical
@@ -1578,7 +1401,7 @@ signal timings is used for optimal traffic flow.
 
 **Return values**
 
-status
+**status** ``string``
 
     Dynamic bands |br|
     Each dynamic band are written as pp-dd-ee where: |br|
@@ -1591,16 +1414,13 @@ status
     E.g. |br|
     pp-dd-ee,pp-dd-ee
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-S0024
+.. _S0024:
+
+S0024 Offset time
 ^^^^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Offset time
 
 Offset time is used to define an offset between intersections in
 coordinated control. It is based on the expected travel time between
@@ -1610,7 +1430,7 @@ tune the coordination for optimal traffic flow.
 
 **Return values**
 
-status
+**status** ``string_list_as_string``
 
     Offset table |br|
     Each offset time is written as p-t where: |br|
@@ -1622,16 +1442,13 @@ status
     E.g. |br|
     1-0,2-13-3-7
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-S0025
+.. _S0025:
+
+S0025 Time-of-Green / Time-of-Red
 ^^^^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Time-of-Green / Time-of-Red
 
 Provides predicted signal timings of green and red for each signal
 group. Max, min and likely time to green and red.
@@ -1639,80 +1456,60 @@ group. Max, min and likely time to green and red.
 
 **Return values**
 
-minToGEstimate
+**minToGEstimate** ``timestamp``
 
     Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-maxToGEstimate
+**maxToGEstimate** ``timestamp``
 
     Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-likelyToGEstimate
+**likelyToGEstimate** ``timestamp``
 
     Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-ToGConfidence
+**ToGConfidence** ``integer_as_string``
 
     Confidence of the likelyToGEstimate. 0-100%
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``100``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``100``
+    min  ``0``
+    ===  =======
 
-minToREstimate
+**minToREstimate** ``timestamp``
 
     Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-maxToREstimate
+**maxToREstimate** ``timestamp``
 
     Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-likelyToREstimate
+**likelyToREstimate** ``timestamp``
 
     Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-ToRConfidence
+**ToRConfidence** ``integer_as_string``
 
     Confidence of the likelyToREstimate. 0-100%
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``100``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``100``
+    min  ``0``
+    ===  =======
 
-S0026
+.. _S0026:
+
+S0026 Week time table
 ^^^^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Week time table
 
 Week time table for signal programs (time plan) to use for each day
 during a week. The week time table determine which predefined signal
@@ -1721,7 +1518,7 @@ timings (time plan) to use during the week for optimal traffic flow.
 
 **Return values**
 
-status
+**status** ``string_list_as_string``
 
     Week time table. Defines time table to use for each week day |br|
     Each day is written as d-t where: |br|
@@ -1741,16 +1538,13 @@ status
     E.g. |br|
     d-t,d-t
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-S0027
+.. _S0027:
+
+S0027 Time tables
 ^^^^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Time tables
 
 Time of day for when to switch signal program (time plan). The signal
 timings (time plan) to use during time of day for optimal traffic flow.
@@ -1758,7 +1552,7 @@ timings (time plan) to use during time of day for optimal traffic flow.
 
 **Return values**
 
-status
+**status** ``string_list_as_string``
 
     Time Table. Defines time tables |br|
     Each time definition is written as t-o-h-m where: |br|
@@ -1780,16 +1574,13 @@ status
     E.g. |br|
     t-o-h-m,t-o-h-m
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-S0028
+.. _S0028:
+
+S0028 Cycle time
 ^^^^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Cycle time
 
 Cycle time (or cycle length) is the sum of all phases in a time plan
 (traffic program). This time is fixed when using fixed time control or
@@ -1800,7 +1591,7 @@ can be used as part of scenario based control.
 
 **Return values**
 
-status
+**status** ``string_list_as_string``
 
     Cycle time table |br|
     Each cycle time is written as pp-tt where: |br|
@@ -1812,16 +1603,13 @@ status
     E.g. |br|
     pp-tt,pp-tt
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-S0029
+.. _S0029:
+
+S0029 Forced input status
 ^^^^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Forced input status
 
 Provide status of input (1-255) regarding if they are forced or not. Can
 be used for all types of input where the traffic light controller must
@@ -1831,7 +1619,7 @@ between traffic controllers, external control systems, and much more.
 
 **Return values**
 
-status
+**status** ``string``
 
     Forced input status as text field |br|
     Each character represent the state in consecutive order, |br|
@@ -1840,16 +1628,13 @@ status
     1 : Input forced |br|
     - : Input undefined/does not exist
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-S0030
+.. _S0030:
+
+S0030 Forced output status
 ^^^^^^^^
 
 Available from SXL version: ``1.0.15``
-
-Forced output status
 
 Provide status of output (1-255) regarding if they are forced or not.
 Can be used for all types of output where the traffic light controller
@@ -1860,7 +1645,7 @@ much more.
 
 **Return values**
 
-status
+**status** ``string``
 
     Forced output status as text field |br|
     Each character represent the state in consecutive order, |br|
@@ -1869,16 +1654,13 @@ status
     1 : Output forced |br|
     - : Output undefined/does not exist
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-S0031
+.. _S0031:
+
+S0031 Trigger level sensitivity for loop detector
 ^^^^^^^^
 
 Available from SXL version: ``1.0.15``
-
-Trigger level sensitivity for loop detector
 
 The trigger level sensitivity determines at what level the loop detector
 should trigger. If it set too low then then traffic will not be detected
@@ -1889,23 +1671,20 @@ intended.
 
 **Return values**
 
-status
+**status** ``string_list_as_string``
 
     Loop detector trigger level sensitivity is written as dd-ss where: |br|
     dd=loop detector number |br|
     ss=sensitivity value |br|
     Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-S0032
+.. _S0032:
+
+S0032 Coordinated control
 ^^^^^^^^
 
 Available from SXL version: ``1.1.0``
-
-Coordinated control
 
 This status is used when coordination between traffic light controllers
 is active. Coordination is described in detail in the corresponding
@@ -1916,21 +1695,15 @@ lists - one value for each intersection, e.g. “1,2” and
 
 **Return values**
 
-intersection
+**intersection** ``integer_as_string_list``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-status
+**status** ``string_list_as_string``
 
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ===========  ====================================
     Enum         Description
@@ -1940,13 +1713,10 @@ status
     off          Coordination not active
     ===========  ====================================
 
-source
+**source** ``string_list_as_string``
 
     Source of the status change
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
     ==============  ==============================================
     Enum            Description
@@ -1959,12 +1729,12 @@ source
     other           Other reason
     ==============  ==============================================
 
-S0033
+.. _S0033:
+
+S0033 Signal Priority Status
 ^^^^^^^^
 
 Available from SXL version: ``1.1.0``
-
-Signal Priority Status
 
 This status can be used to get updates about priority requests. For
 example, you can use it to know when priority requests are activated or
@@ -2002,13 +1772,10 @@ stale
 
 **Return values**
 
-status
+**status** ``array``
 
     JSON array of priority status items
 
-    ====  =========
-    type  ``array``
-    ====  =========
 
     ======  ==============================================================================
     Name    Description
@@ -2022,29 +1789,20 @@ status
             Only used when state is ‘completed’.
     ======  ==============================================================================
 
-status: r
+**status: r** ``string``
 
     ID of the priority request
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-status: t
+**status: t** ``timestamp``
 
     Timestamp, indicating when the priority last changed state
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-status: s
+**status: s** ``string``
 
     Current status of the priority request
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     =========  =====================================================================================
     Enum       Description
@@ -2059,34 +1817,32 @@ status: s
     stale      The priority has been active too long without cancellation, and was therefore removed
     =========  =====================================================================================
 
-status: e
+**status: e** ``integer_as_string``
 
     (Optional) Estimated green extension provided by the priority, in seconds |br|
     Only used when state is ‘completed’.
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-status: d
+**status: d** ``integer_as_string``
 
     (Optional) Estimated red reduction provided by the priority, in seconds |br|
     Only used when state is ‘completed’.
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-S0034
+.. _S0034:
+
+S0034 Timeout for dynamic bands
 ^^^^^^^^
 
 Available from SXL version: ``1.1.0``
-
-Timeout for dynamic bands
 
 Time until a designated time plan is entered due to lost connection with
 the supervisor. Disabled if set to ‘0’. Used in conjunction with dynamic
@@ -2095,22 +1851,21 @@ bands, M0014
 
 **Return values**
 
-status
+**status** ``integer_as_string``
 
     Timeout, in minutes
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-S0035
+.. _S0035:
+
+S0035 Emergency route
 ^^^^^^^^
 
 Available from SXL version: ``1.2.0``
-
-Emergency route
 
 The status is active during emergency prioritization. Used in situations
 where full priority is given in the emergency vehicle program or for
@@ -2121,13 +1876,10 @@ This status is similar to S0006, but supports multiple routes
 
 **Return values**
 
-emergencyroutes
+**emergencyroutes** ``array``
 
     Active emergency routes
 
-    ====  =========
-    type  ``array``
-    ====  =========
 
     ======  ============================
     Name    Description
@@ -2135,22 +1887,21 @@ emergencyroutes
     id      ID of active emergency route
     ======  ============================
 
-emergencyroutes: id
+**emergencyroutes: id** ``integer_as_string``
 
     ID of active emergency route
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-S0091
+.. _S0091:
+
+S0091 Operator logged in/out OP-panel
 ^^^^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Operator logged in/out OP-panel
 
 Provides information if maintenance personnel is currently working on
 site.
@@ -2158,12 +1909,9 @@ site.
 
 **Return values**
 
-user
+**user** ``integer_as_string``
 
 
-    ====  =====================
-    type  ``integer_as_string``
-    ====  =====================
 
     ======  ==========================================
       Enum  Description
@@ -2173,12 +1921,12 @@ user
          2  Operator logged in at level 2 (read/write)
     ======  ==========================================
 
-S0092
+.. _S0092:
+
+S0092 Operator logged in/out web-interface
 ^^^^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Operator logged in/out web-interface
 
 Provides information if maintenance personnel is currently working with
 the controller.
@@ -2186,12 +1934,9 @@ the controller.
 
 **Return values**
 
-user
+**user** ``integer_as_string``
 
 
-    ====  =====================
-    type  ``integer_as_string``
-    ====  =====================
 
     ======  ==========================================
       Enum  Description
@@ -2201,32 +1946,29 @@ user
          2  Operator logged in at level 2 (read/write)
     ======  ==========================================
 
-S0095
+.. _S0095:
+
+S0095 Version of Traffic Light Controller
 ^^^^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Version of Traffic Light Controller
 
 Provides diagnostic version information.
 
 
 **Return values**
 
-status
+**status** ``string``
 
     Manufacturer, product name and version of traffic light controller
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-S0096
+.. _S0096:
+
+S0096 Current date and time
 ^^^^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Current date and time
 
 Note: UTC is used. Provides diagnostic information about the current
 date and time set in the controller.
@@ -2234,72 +1976,66 @@ date and time set in the controller.
 
 **Return values**
 
-year
+**year** ``integer_as_string``
 
     Year
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``9999``
-    min   ``0``
-    ====  =====================
+    ===  ========
+    max  ``9999``
+    min  ``0``
+    ===  ========
 
-month
+**month** ``integer_as_string``
 
     Month
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``12``
-    min   ``1``
-    ====  =====================
+    ===  ======
+    max  ``12``
+    min  ``1``
+    ===  ======
 
-day
+**day** ``integer_as_string``
 
     Day of month
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``31``
-    min   ``1``
-    ====  =====================
+    ===  ======
+    max  ``31``
+    min  ``1``
+    ===  ======
 
-hour
+**hour** ``integer_as_string``
 
     Hour
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``23``
-    min   ``0``
-    ====  =====================
+    ===  ======
+    max  ``23``
+    min  ``0``
+    ===  ======
 
-minute
+**minute** ``integer_as_string``
 
     Minute
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``59``
-    min   ``0``
-    ====  =====================
+    ===  ======
+    max  ``59``
+    min  ``0``
+    ===  ======
 
-second
+**second** ``integer_as_string``
 
     Second
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``59``
-    min   ``0``
-    ====  =====================
+    ===  ======
+    max  ``59``
+    min  ``0``
+    ===  ======
 
-S0097
+.. _S0097:
+
+S0097 Checksum of traffic parameters
 ^^^^^^^^
 
 Available from SXL version: ``1.0.15``
-
-Checksum of traffic parameters
 
 Can be used to check if any traffic parameter has been changed. For
 instance, depending on controller, maintenance personnel can modify
@@ -2310,7 +2046,7 @@ changed. The traffic parameters may be downloaded with S0098.
 
 **Return values**
 
-checksum
+**checksum** ``string``
 
     Checksum of the traffic parameters |br|
     Uses SHA-2 as hashing algorithm |br|
@@ -2332,24 +2068,18 @@ checksum
     - The checksum should be calculated using the same data as used in S0098 |br|
     - Data Downloaded with S0098 and hashed with SHA-2 should match this value.
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-timestamp
+**timestamp** ``timestamp``
 
     Time stamp of the checksum
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-S0098
+.. _S0098:
+
+S0098 Configuration of traffic parameters
 ^^^^^^^^
 
 Available from SXL version: ``1.0.15``
-
-Configuration of traffic parameters
 
 Can be used to download all traffic parameters from the controller. For
 instance, depending on controller, maintenance personnel can modify
@@ -2359,7 +2089,7 @@ provides the ability to downloaded them.
 
 **Return values**
 
-config
+**config** ``base64``
 
     Traffic parameters |br|
     Includes |br|
@@ -2380,233 +2110,200 @@ config
     - There is no way to upload this binary file to the TLC using RSMP |br|
     - The format of the binary file is not specified and is not expected to be compatible between suppliers
 
-    ====  ==========
-    type  ``base64``
-    ====  ==========
 
-timestamp
+**timestamp** ``timestamp``
 
     Time stamp of the config
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-version
+**version** ``string_list_as_string``
 
     Version information of the configuration. Contains basic information such as controller id, changes to config and other information |br|
     The format is not specified in detail.
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-S0201
+.. _S0201:
+
+S0201 Traffic Counting: Number of vehicles
 ^^^^^^^^
 
 Available from SXL version: ``1.0.5``
-
-Traffic Counting: Number of vehicles
 
 Used for Traffic counting.
 
 
 **Return values**
 
-starttime
+**starttime** ``timestamp``
 
     Time stamp for start of measuring
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-vehicles
+**vehicles** ``integer_as_string``
 
     Number of vehicles on a given detector logic (since last update)
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-S0202
+.. _S0202:
+
+S0202 Traffic Counting: Vehicle speed
 ^^^^^^^^
 
 Available from SXL version: ``1.0.5``
-
-Traffic Counting: Vehicle speed
 
 Used for Traffic counting.
 
 
 **Return values**
 
-starttime
+**starttime** ``timestamp``
 
     Time stamp for start of measuring
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-speed
+**speed** ``integer_as_string``
 
     Average speed in km/h
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-S0203
+.. _S0203:
+
+S0203 Traffic Counting: Occupancy
 ^^^^^^^^
 
 Available from SXL version: ``1.0.5``
-
-Traffic Counting: Occupancy
 
 Used for Traffic counting.
 
 
 **Return values**
 
-starttime
+**starttime** ``timestamp``
 
     Time stamp for start of measuring
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-occupancy
+**occupancy** ``integer_as_string``
 
     Occupancy in percent (0-100%)
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``100``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``100``
+    min  ``0``
+    ===  =======
 
-S0204
+.. _S0204:
+
+S0204 Traffic Counting: Number of vehicles of given classification
 ^^^^^^^^
 
 Available from SXL version: ``1.0.5``
-
-Traffic Counting: Number of vehicles of given classification
 
 Used for Traffic counting.
 
 
 **Return values**
 
-starttime
+**starttime** ``timestamp``
 
     Time stamp for start of measuring
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-P
+**P** ``integer_as_string``
 
     Number of cars
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-PS
+**PS** ``integer_as_string``
 
     Number of cars with trailers
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-L
+**L** ``integer_as_string``
 
     Number of trucks
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-LS
+**LS** ``integer_as_string``
 
     Number of trucks with trailers
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-B
+**B** ``integer_as_string``
 
     Number of buses
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-SP
+**SP** ``integer_as_string``
 
     Number of trams
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-MC
+**MC** ``integer_as_string``
 
     Number of motor cycles
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-C
+**C** ``integer_as_string``
 
     Number of bicycles
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-F
+**F** ``integer_as_string``
 
     Number of pedestrians
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-S0205
+.. _S0205:
+
+S0205 Traffic Counting: Number of vehicles
 ^^^^^^^^
 
 Available from SXL version: ``1.0.14``
-
-Traffic Counting: Number of vehicles
 
 This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
@@ -2614,31 +2311,25 @@ counting is done on all all detectors.
 
 **Return values**
 
-start
+**start** ``timestamp``
 
     Time stamp for start of measuring
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-vehicles
+**vehicles** ``integer_as_string_list``
 
     Number of vehicles |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-S0206
+.. _S0206:
+
+S0206 Traffic Counting: Vehicle speed
 ^^^^^^^^
 
 Available from SXL version: ``1.0.14``
-
-Traffic Counting: Vehicle speed
 
 This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
@@ -2646,31 +2337,25 @@ counting is done on all all detectors.
 
 **Return values**
 
-start
+**start** ``timestamp``
 
     Time stamp for start of measuring
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-speed
+**speed** ``integer_as_string_list``
 
     Average speed in km/h (integer) |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-S0207
+.. _S0207:
+
+S0207 Traffic Counting: Occupancy
 ^^^^^^^^
 
 Available from SXL version: ``1.0.14``
-
-Traffic Counting: Occupancy
 
 This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
@@ -2678,31 +2363,25 @@ counting is done on all all detectors.
 
 **Return values**
 
-start
+**start** ``timestamp``
 
     Time stamp for start of measuring
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-occupancy
+**occupancy** ``integer_as_string_list``
 
     Occupancy in percent (%) (0-100) |br|
     - Value expressed as an integer with a range of 0-100. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-S0208
+.. _S0208:
+
+S0208 Traffic Counting: Number of vehicles of given classification
 ^^^^^^^^
 
 Available from SXL version: ``1.0.14``
-
-Traffic Counting: Number of vehicles of given classification
 
 This status was introduced to improve performance in case traffic
 counting is done on all all detectors.
@@ -2710,112 +2389,82 @@ counting is done on all all detectors.
 
 **Return values**
 
-start
+**start** ``timestamp``
 
     Time stamp for start of measuring
 
-    ====  =============
-    type  ``timestamp``
-    ====  =============
 
-P
+**P** ``integer_as_string_list``
 
     Number of cars |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-PS
+**PS** ``integer_as_string_list``
 
     Number of cars with trailers |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-L
+**L** ``integer_as_string_list``
 
     Number of trucks |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-LS
+**LS** ``integer_as_string_list``
 
     Number of trucks with trailers |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-B
+**B** ``integer_as_string_list``
 
     Number of buses |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-SP
+**SP** ``integer_as_string_list``
 
     Number of trams |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-MC
+**MC** ``integer_as_string_list``
 
     Number of motor cycles |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-C
+**C** ``integer_as_string_list``
 
     Number of bicycles |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
-F
+**F** ``integer_as_string_list``
 
     Number of pedestrians |br|
     - Value expressed as an integer with a range of 0-65535. |br|
     - Contains data from all detector logics. Each detector logic is separated with a comma. |br|
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
-    ====  ==========================
-    type  ``integer_as_string_list``
-    ====  ==========================
 
 Commands
 --------
@@ -2856,12 +2505,12 @@ Commands
    ========================  ===============  =====================  ===============================================
 
 
-M0001
+.. _M0001:
+
+M0001 Sets functional position
 ^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Sets functional position
 
 Sets the controller to yellow flash, dark mode or normal control.
 Requires security code 2.
@@ -2869,13 +2518,10 @@ Requires security code 2.
 
 **Arguments**
 
-status
+**status** ``string``
 
     Set operating mode
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     =============  ====================
     Enum           Description
@@ -2885,43 +2531,38 @@ status
     Dark           Enables dark mode
     =============  ====================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-timeout
+**timeout** ``integer_as_string``
 
     (Optional) Time in minutes until controller automatically reverts to previous functional position |br|
     0=no automatic return
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``1440``
-    min   ``0``
-    ====  =====================
+    ===  ========
+    max  ``1440``
+    min  ``0``
+    ===  ========
 
-intersection
+**intersection** ``integer_as_string``
 
     (Optional) Intersection number |br|
     Command only applies to specified intersection. Other intersections remains in their respective operating mode(s). |br|
     0: All intersections
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-M0002
+.. _M0002:
+
+M0002 Sets current time plan
 ^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Sets current time plan
 
 Change of traffic program of the traffic light controller. Typical
 usages is scenario based control where change of program is used to
@@ -2931,39 +2572,32 @@ optimal traffic flow. Requires security code 2
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     False: Controller uses time plan according to programming |br|
     True: Controller uses time plan according to command
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-timeplan
+**timeplan** ``integer_as_string``
 
     designation of time plan
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-M0003
+.. _M0003:
+
+M0003 Sets traffic situation the controller uses
 ^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Sets traffic situation the controller uses
 
 Used for area-based control where this command can be sent to a master
 traffic light controller about which predefined traffic situation to use
@@ -2976,39 +2610,32 @@ time plan dynamically. Requires security code 2
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     False: Controller uses traffic situation according to own programming |br|
     True: Controller uses traffic situation according to command
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-traficsituation
+**traficsituation** ``integer_as_string``
 
     designation of traficsituation
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-M0004
+.. _M0004:
+
+M0004 Restarts Traffic Light Controller
 ^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Restarts Traffic Light Controller
 
 Used in the event of serious faults in the device where a restart is
 considered to be able to remedy a problem. Requires security code 2
@@ -3016,28 +2643,22 @@ considered to be able to remedy a problem. Requires security code 2
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     ``Deprecated`` True: Restart controller
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     ``Deprecated`` Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0005
+.. _M0005:
+
+M0005 Activate emergency route
 ^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Activate emergency route
 
 The function is made for emergency prioritization. Works in the same way
 as the M0006 and M0008 where the traffic light controller responds to an
@@ -3047,39 +2668,32 @@ emergency vehicle program. Requires security code 2.
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     False: Deactivate emergency route |br|
     True: Activate emergency route
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-emergencyroute
+**emergencyroute** ``integer_as_string``
 
     Number of emergency route
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-M0006
+.. _M0006:
+
+M0006 Activate input
 ^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Activate input
 
 Set given input (1-255) of the controllers general purpose I/O to either
 true or false. The function can provide an input to the traffic light
@@ -3092,39 +2706,32 @@ security code 2.
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     False: Deactivate input |br|
     True: Activate input
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-input
+**input** ``integer_as_string``
 
     Number of Input
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-M0007
+.. _M0007:
+
+M0007 Activate fixed time control
 ^^^^^
 
 Available from SXL version: ``1.0.2``
-
-Activate fixed time control
 
 Deactivates the traffic actuated control using detectors and activates
 pre-timed control. Can be used in case normal detectors can’t be used,
@@ -3133,29 +2740,23 @@ e.g. during maintenance work. Requires security code 2.
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     False: Deactivate fixed time control |br|
     True: Activate fixed time control
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0008
+.. _M0008:
+
+M0008 Force detector logic
 ^^^^^
 
 Available from SXL version: ``1.0.3``
-
-Force detector logic
 
 Force a given detector logic (1-255) to either true or false.
 
@@ -3180,46 +2781,38 @@ Requires security code 2
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     False: Release detector logic, 'mode' is ignored |br|
     True: Force detector logic to the value in 'mode'.
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-duration
+**duration** ``integer_as_string``
 
     If set, automatically release after this number of |br|
     milliseconds. Ignored if 'status' is false. |br|
     Setting to zero is the same as leaving out, and means |br|
     no automatic release will happen.
 
-    ====  =====================
-    type  ``integer_as_string``
-    min   ``0``
-    ====  =====================
+    ===  =====
+    min  ``0``
+    ===  =====
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-mode
+**mode** ``boolean_as_string``
 
     Mode to force to (ignored if 'status' is false) |br|
     False: Deactivate detector logic |br|
     True: Activate detector logic
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-M0010
+.. _M0010:
+
+M0010 ``Reserved``
 ^^^^^
 
 Available from SXL version: ``1.0.8``
@@ -3228,23 +2821,19 @@ Available from SXL version: ``1.0.8``
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     ``Reserved``
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     ``Reserved``
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0011
+.. _M0011:
+
+M0011 ``Reserved``
 ^^^^^
 
 Available from SXL version: ``1.0.8``
@@ -3253,23 +2842,19 @@ Available from SXL version: ``1.0.8``
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     ``Reserved``
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     ``Reserved``
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0012
+.. _M0012:
+
+M0012 ``Reserved``
 ^^^^^
 
 Available from SXL version: ``1.0.8``
@@ -3278,28 +2863,22 @@ Available from SXL version: ``1.0.8``
 
 **Arguments**
 
-status
+**status** ``string_list_as_string``
 
     ``Reserved``
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-securityCode
+**securityCode** ``string``
 
     ``Reserved``
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0013
+.. _M0013:
+
+M0013 Activate a series of inputs
 ^^^^^
 
 Available from SXL version: ``1.0.8``
-
-Activate a series of inputs
 
 Set given inputs (1-255) of the controllers general purpose I/O to
 either true or false. This command was introduced due to coordination
@@ -3345,29 +2924,23 @@ is 1 in binary, which is bit 0 - “2” is 10 in binary, which is bit 1
 
 **Arguments**
 
-status
+**status** ``string_list_as_string``
 
     Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon |br|
     Format: [Offset];[Bits to set];[Bits to unset];…
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0014
+.. _M0014:
+
+M0014 Set dynamic bands
 ^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Set dynamic bands
 
 Can be used to change between predefined signal timings. Moves the start
 of signal groups in the cycle. This command can be used to change the
@@ -3378,17 +2951,16 @@ flow. Requires security code 2
 
 **Arguments**
 
-plan
+**plan** ``integer_as_string``
 
     Plan to be changed
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-status
+**status** ``string_list_as_string``
 
     Dynamic bands |br|
     Each dynamic band are written as dd-ee where: |br|
@@ -3400,24 +2972,18 @@ status
     E.g. |br|
     dd-ee,dd-ee
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0015
+.. _M0015:
+
+M0015 Set Offset time
 ^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Set Offset time
 
 Offset time is used to define an offset between intersections in
 coordinated control. It is based on the expected travel time between
@@ -3427,40 +2993,35 @@ for optimal traffic flow. Requires security code 2.
 
 **Arguments**
 
-status
+**status** ``integer_as_string``
 
     Set offset time in seconds
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-plan
+**plan** ``integer_as_string``
 
     Time plan nr
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0016
+.. _M0016:
+
+M0016 Set week time table
 ^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Set week time table
 
 Set which time table for signal programs to use for each day during a
 week. This command changes the signal timings during the week for
@@ -3469,7 +3030,7 @@ optimal traffic flow. Requires security code 2.
 
 **Arguments**
 
-status
+**status** ``string_list_as_string``
 
     Week time table. Defines time table to use for each week day |br|
     Each segment is written as d-t where: |br|
@@ -3489,24 +3050,18 @@ status
     E.g. |br|
     d-t,d-t
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0017
+.. _M0017:
+
+M0017 Set time tables
 ^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Set time tables
 
 Set time of day for when to automatically switch signal program (time
 plan). This command changes the signal timings according to time of day
@@ -3515,7 +3070,7 @@ for optimal traffic flow. Requires security code 2.
 
 **Arguments**
 
-status
+**status** ``string_list_as_string``
 
     Time Table. Defines time tables |br|
     Each time definition is written as t-o-h-m where: |br|
@@ -3537,24 +3092,18 @@ status
     E.g. |br|
     t-o-h-m,t-o-h-m
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0018
+.. _M0018:
+
+M0018 Set Cycle time
 ^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Set Cycle time
 
 Cycle time (or cycle length) is the sum of all phases in a time plan
 (traffic program). This time is fixed when using fixed time control or
@@ -3567,40 +3116,35 @@ with scenario based control. Requires security code 2.
 
 **Arguments**
 
-status
+**status** ``integer_as_string``
 
     Set cycle time in seconds
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-plan
+**plan** ``integer_as_string``
 
     Time plan nr
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0019
+.. _M0019:
+
+M0019 Force input
 ^^^^^
 
 Available from SXL version: ``1.0.13``
-
-Force input
 
 Force a given input (1-255) of the controllers general purpose I/O to
 either True or False. Can be used for all types of input where the
@@ -3611,48 +3155,38 @@ systems, and much more. Requires security code 2.
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     False: Release input |br|
     True: Force input
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-input
+**input** ``integer_as_string``
 
     Number of Input
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-inputValue
+**inputValue** ``boolean_as_string``
 
     False: input forced to False |br|
     True: input forced to True
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-M0020
+.. _M0020:
+
+M0020 Force output
 ^^^^^
 
 Available from SXL version: ``1.0.15``
-
-Force output
 
 Force a given output (1-255) of the controllers general purpose I/O to
 either True of False. Can be used for all types of output where the
@@ -3664,48 +3198,38 @@ control systems, and much more. When the output is released
 
 **Arguments**
 
-status
+**status** ``boolean_as_string``
 
     True: Force output |br|
     False: Release output
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-output
+**output** ``integer_as_string``
 
     Number of Output
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``1``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``1``
+    ===  =======
 
-outputValue
+**outputValue** ``boolean_as_string``
 
     False: output forced off |br|
     True: output forced on
 
-    ====  =====================
-    type  ``boolean_as_string``
-    ====  =====================
 
-M0021
+.. _M0021:
+
+M0021 Set trigger level sensitivity for loop detector
 ^^^^^
 
 Available from SXL version: ``1.0.15``
-
-Set trigger level sensitivity for loop detector
 
 The trigger level sensitivity determines at what level a loop detector
 should trigger. If it set too low then then traffic will not be detected
@@ -3716,30 +3240,24 @@ to make sure they detect traffic as intended. Requires security code 2
 
 **Arguments**
 
-status
+**status** ``string_list_as_string``
 
     Loop detector trigger level sensitivity is written as dd-ss where: |br|
     dd=loop detector number |br|
     ss=sensitivity value
 
-    ====  =========================
-    type  ``string_list_as_string``
-    ====  =========================
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0022
+.. _M0022:
+
+M0022 Request Signal Priority
 ^^^^^
 
 Available from SXL version: ``1.1.0``
-
-Request Signal Priority
 
 Useful for bus priority or other type of priorities like emergency
 vehicles or groups of cyclists.
@@ -3846,88 +3364,73 @@ priority when it’s not needed anymore.
 
 **Arguments**
 
-requestId
+**requestId** ``string``
 
     A string that uniquely identifies the request on the controller
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-signalGroupId
+**signalGroupId** ``string``
 
     (Optional) ID of a signal group component
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-inputId
+**inputId** ``integer_as_string``
 
     (Optional) ID of an input, using the same numbering scheme as M0006
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-connectionId
+**connectionId** ``integer_as_string``
 
     (Optional) ID of a connection, connecting an ingoing and an outgoing lane
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-approachId
+**approachId** ``integer_as_string``
 
     (Optional) ID of an intersection approach
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``16``
-    min   ``0``
-    ====  =====================
+    ===  ======
+    max  ``16``
+    min  ``0``
+    ===  ======
 
-laneInId
+**laneInId** ``integer_as_string``
 
     (Optional) ID of an ingoing lane
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-laneOutId
+**laneOutId** ``integer_as_string``
 
     (Optional) ID of an outgoing lane
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-priorityId
+**priorityId** ``integer_as_string``
 
     (Optional) ID of a priority
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-type
+**type** ``string``
 
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  ===================================
     Enum    Description
@@ -3937,33 +3440,28 @@ type
     cancel  Cancel an existing priority
     ======  ===================================
 
-level
+**level** ``integer_as_string``
 
     0: Lowest, 14: Highest
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``14``
-    min   ``0``
-    ====  =====================
+    ===  ======
+    max  ``14``
+    min  ``0``
+    ===  ======
 
-eta
+**eta** ``integer_as_string``
 
     (Optional) Estimated time of arrival to the intersection, in seconds
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``255``
-    min   ``0``
-    ====  =====================
+    ===  =======
+    max  ``255``
+    min  ``0``
+    ===  =======
 
-vehicleType
+**vehicleType** ``string``
 
     (Optional) Vehicle type
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ================  ===============================
     Enum              Description
@@ -3982,12 +3480,12 @@ vehicleType
     other             Other type of vehicle
     ================  ===============================
 
-M0023
+.. _M0023:
+
+M0023 Set timeout for dynamic bands
 ^^^^^
 
 Available from SXL version: ``1.1.0``
-
-Set timeout for dynamic bands
 
 Switch to a designated time plan if this timeout is reached due to lost
 connection with the supervisor. Disable by setting timeout to ‘0’. Used
@@ -3996,30 +3494,26 @@ in conjunction with dynamic bands, M0014 Requires security code 2.
 
 **Arguments**
 
-status
+**status** ``integer_as_string``
 
     Timeout, in minutes
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``65535``
-    min   ``0``
-    ====  =====================
+    ===  =========
+    max  ``65535``
+    min  ``0``
+    ===  =========
 
-securityCode
+**securityCode** ``string``
 
     Security code 2
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0103
+.. _M0103:
+
+M0103 Set security code
 ^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Set security code
 
 Change the security code to use when sending commands Security codes are
 used as an extra layer of security in many commands. They need to match
@@ -4029,12 +3523,9 @@ for the commands to be executed.
 
 **Arguments**
 
-status
+**status** ``string``
 
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
     ======  ======================
     Enum    Description
@@ -4043,28 +3534,22 @@ status
     Level2  Change security code 2
     ======  ======================
 
-oldSecurityCode
+**oldSecurityCode** ``string``
 
     Previous security code
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-newSecurityCode
+**newSecurityCode** ``string``
 
     New security code
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-M0104
+.. _M0104:
+
+M0104 Set clock
 ^^^^^
 
 Available from SXL version: ``1.0.1``
-
-Set clock
 
 This command will be removed in an upcoming version. You should instead
 use automatic time synchronization using e.g. using NTP or GPS.
@@ -4081,73 +3566,64 @@ UTC is used. Requires security code 1.
 
 **Arguments**
 
-securityCode
+**securityCode** ``string``
 
     Security code 1
 
-    ====  ==========
-    type  ``string``
-    ====  ==========
 
-year
+**year** ``integer_as_string``
 
     Year
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``9999``
-    min   ``0``
-    ====  =====================
+    ===  ========
+    max  ``9999``
+    min  ``0``
+    ===  ========
 
-month
+**month** ``integer_as_string``
 
     Month
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``12``
-    min   ``1``
-    ====  =====================
+    ===  ======
+    max  ``12``
+    min  ``1``
+    ===  ======
 
-day
+**day** ``integer_as_string``
 
     Day of month
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``31``
-    min   ``1``
-    ====  =====================
+    ===  ======
+    max  ``31``
+    min  ``1``
+    ===  ======
 
-hour
+**hour** ``integer_as_string``
 
     Hour
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``23``
-    min   ``0``
-    ====  =====================
+    ===  ======
+    max  ``23``
+    min  ``0``
+    ===  ======
 
-minute
+**minute** ``integer_as_string``
 
     Minute
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``59``
-    min   ``0``
-    ====  =====================
+    ===  ======
+    max  ``59``
+    min  ``0``
+    ===  ======
 
-second
+**second** ``integer_as_string``
 
     Second
 
-    ====  =====================
-    type  ``integer_as_string``
-    max   ``59``
-    min   ``0``
-    ====  =====================
+    ===  ======
+    max  ``59``
+    min  ``0``
+    ===  ======
 
 .. |br| replace:: |br_html| |br_latex|
 
