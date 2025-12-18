@@ -2481,7 +2481,7 @@ Commands
    Traffic Light Controller  `M0001`_         setValue               Sets functional position
    Traffic Light Controller  `M0002`_         setPlan                Sets current time plan
    Traffic Light Controller  `M0003`_         setTrafficSituation    Sets traffic situation the controller uses
-   Traffic Light Controller  `M0004`_         setRestart             Restarts Traffic Light Controller
+   Traffic Light Controller  `M0004`_         setRestart             Reset Traffic Light Controller
    Traffic Light Controller  `M0005`_         setEmergency           Activate emergency route
    Traffic Light Controller  `M0006`_         setInput               Activate input
    Traffic Light Controller  `M0007`_         setFixedTime           Activate fixed time control
@@ -2500,6 +2500,7 @@ Commands
    Traffic Light Controller  `M0021`_         setLevel               Set trigger level sensitivity for loop detector
    Traffic Light Controller  `M0022`_         requestPriority        Request Signal Priority
    Traffic Light Controller  `M0023`_         setTimeout             Set timeout for dynamic bands
+   Traffic Light Controller  `M0024`_         clearAlarms            Clear all alarms
    Traffic Light Controller  `M0103`_         setSecurityCode        Set security code
    Traffic Light Controller  `M0104`_         setDate                Set clock
    ========================  ===============  =====================  ===============================================
@@ -2632,25 +2633,40 @@ time plan dynamically. Requires security code 2
 
 .. _M0004:
 
-M0004 Restarts Traffic Light Controller
+M0004 Reset Traffic Light Controller
 ^^^^^
 
 Available from SXL version: ``1.0.1``
 
-Used in the event of serious faults in the device where a restart is
-considered to be able to remedy a problem. Requires security code 2
+This command is used as a last resort to attempt to remotely fix serious
+faults. If unsuccessful, manual intervention on site is probably
+required.
+
+The controller must attempt all available safe action to reset to a
+functional state. Depending on regulations and controller capabilities,
+examples actions could be:
+
+-  resetting parameters to defaults
+-  restarting applications
+-  restarting peripheral hardware
+-  going through a shutdown/startup sequence and cycling power
+
+The controller must also clear all alarms.
+
+Requires security code 2. The attribute ‘status’ is deprecated and must
+be set to true.
 
 
 **Arguments**
 
 **status** ``boolean_as_string``
 
-    ``Deprecated`` True: Restart controller
+    True: Reset controller
 
 
 **securityCode** ``string``
 
-    ``Deprecated`` Security code 2
+    Security code 2
 
 
 .. _M0005:
@@ -3506,6 +3522,24 @@ in conjunction with dynamic bands, M0014 Requires security code 2.
 **securityCode** ``string``
 
     Security code 2
+
+
+.. _M0024:
+
+M0024 Clear all alarms
+^^^^^
+
+Available from SXL version: ``1.3.0``
+
+Clear all active alarms in the traffic light controller. If the cause of
+an alarm is still present, the alarm will be reactivated again.
+
+
+**Arguments**
+
+**status** ``boolean``
+
+    True: Clear all alarms
 
 
 .. _M0103:
