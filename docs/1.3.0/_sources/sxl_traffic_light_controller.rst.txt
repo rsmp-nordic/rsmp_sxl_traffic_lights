@@ -2129,7 +2129,8 @@ S0201 Traffic Counting: Number of vehicles
 
 Available from SXL version: ``1.0.5``
 
-Used for Traffic counting.
+Used for Traffic counting. Please see Section 4: “Traffic counting” for
+additional requirements.
 
 
 **Return values**
@@ -2155,7 +2156,8 @@ S0202 Traffic Counting: Vehicle speed
 
 Available from SXL version: ``1.0.5``
 
-Used for Traffic counting.
+Used for Traffic counting. Please see Section 4: “Traffic counting” for
+additional requirements.
 
 
 **Return values**
@@ -2181,7 +2183,8 @@ S0203 Traffic Counting: Occupancy
 
 Available from SXL version: ``1.0.5``
 
-Used for Traffic counting.
+Used for Traffic counting. Please see Section 4: “Traffic counting” for
+additional requirements.
 
 
 **Return values**
@@ -2207,7 +2210,8 @@ S0204 Traffic Counting: Number of vehicles of given classification
 
 Available from SXL version: ``1.0.5``
 
-Used for Traffic counting.
+Used for Traffic counting. Please see Section 4: “Traffic counting” for
+additional requirements.
 
 
 **Return values**
@@ -2306,7 +2310,8 @@ S0205 Traffic Counting: Number of vehicles
 Available from SXL version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
-counting is done on all all detectors.
+counting is done on all all detectors. Please see Section 4: “Traffic
+counting” for additional requirements.
 
 
 **Return values**
@@ -2332,7 +2337,8 @@ S0206 Traffic Counting: Vehicle speed
 Available from SXL version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
-counting is done on all all detectors.
+counting is done on all all detectors. Please see Section 4: “Traffic
+counting” for additional requirements.
 
 
 **Return values**
@@ -2358,7 +2364,8 @@ S0207 Traffic Counting: Occupancy
 Available from SXL version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
-counting is done on all all detectors.
+counting is done on all all detectors. Please see Section 4: “Traffic
+counting” for additional requirements.
 
 
 **Return values**
@@ -2384,7 +2391,8 @@ S0208 Traffic Counting: Number of vehicles of given classification
 Available from SXL version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
-counting is done on all all detectors.
+counting is done on all all detectors. Please see Section 4: “Traffic
+counting” for additional requirements.
 
 
 **Return values**
