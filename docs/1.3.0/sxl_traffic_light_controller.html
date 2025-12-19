@@ -128,7 +128,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#m0001-sets-functional-position">2.5.1. M0001 Sets functional position</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0002-sets-current-time-plan">2.5.2. M0002 Sets current time plan</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0003-sets-traffic-situation-the-controller-uses">2.5.3. M0003 Sets traffic situation the controller uses</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0004-restarts-traffic-light-controller">2.5.4. M0004 Restarts Traffic Light Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0004-reset-traffic-light-controller">2.5.4. M0004 Reset Traffic Light Controller</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0005-activate-emergency-route">2.5.5. M0005 Activate emergency route</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0006-activate-input">2.5.6. M0006 Activate input</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0007-activate-fixed-time-control">2.5.7. M0007 Activate fixed time control</a></li>
@@ -147,8 +147,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#m0021-set-trigger-level-sensitivity-for-loop-detector">2.5.20. M0021 Set trigger level sensitivity for loop detector</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0022-request-signal-priority">2.5.21. M0022 Request Signal Priority</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#m0023-set-timeout-for-dynamic-bands">2.5.22. M0023 Set timeout for dynamic bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0103-set-security-code">2.5.23. M0103 Set security code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0104-set-clock">2.5.24. M0104 Set clock</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0024-clear-all-alarms">2.5.23. M0024 Clear all alarms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0103-set-security-code">2.5.24. M0103 Set security code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0104-set-clock">2.5.25. M0104 Set clock</a></li>
 </ul>
 </li>
 </ul>
@@ -2999,7 +3000,7 @@ counting” for additional requirements.</p>
 <tr class="row-odd"><td><p>Traffic Light Controller</p></td>
 <td><p><a class="reference internal" href="#m0004">M0004</a></p></td>
 <td><p>setRestart</p></td>
-<td><p>Restarts Traffic Light Controller</p></td>
+<td><p>Reset Traffic Light Controller</p></td>
 </tr>
 <tr class="row-even"><td><p>Traffic Light Controller</p></td>
 <td><p><a class="reference internal" href="#m0005">M0005</a></p></td>
@@ -3092,11 +3093,16 @@ counting” for additional requirements.</p>
 <td><p>Set timeout for dynamic bands</p></td>
 </tr>
 <tr class="row-even"><td><p>Traffic Light Controller</p></td>
+<td><p><a class="reference internal" href="#m0024">M0024</a></p></td>
+<td><p>clearAlarms</p></td>
+<td><p>Clear all alarms</p></td>
+</tr>
+<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
 <td><p><a class="reference internal" href="#m0103">M0103</a></p></td>
 <td><p>setSecurityCode</p></td>
 <td><p>Set security code</p></td>
 </tr>
-<tr class="row-odd"><td><p>Traffic Light Controller</p></td>
+<tr class="row-even"><td><p>Traffic Light Controller</p></td>
 <td><p><a class="reference internal" href="#m0104">M0104</a></p></td>
 <td><p>setDate</p></td>
 <td><p>Set clock</p></td>
@@ -3234,19 +3240,32 @@ True: Controller uses traffic situation according to command</p>
 </table>
 </div></blockquote>
 </section>
-<section id="m0004-restarts-traffic-light-controller">
-<span id="m0004"></span><h3><span class="section-number">2.5.4. </span>M0004 Restarts Traffic Light Controller<a class="headerlink" href="#m0004-restarts-traffic-light-controller" title="Link to this heading"></a></h3>
+<section id="m0004-reset-traffic-light-controller">
+<span id="m0004"></span><h3><span class="section-number">2.5.4. </span>M0004 Reset Traffic Light Controller<a class="headerlink" href="#m0004-reset-traffic-light-controller" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
-<p>Used in the event of serious faults in the device where a restart is
-considered to be able to remedy a problem. Requires security code 2</p>
+<p>This command is used as a last resort to attempt to remotely fix serious
+faults. If unsuccessful, manual intervention on site is probably
+required.</p>
+<p>The controller must attempt all available safe action to reset to a
+functional state. Depending on regulations and controller capabilities,
+examples actions could be:</p>
+<ul class="simple">
+<li><p>resetting parameters to defaults</p></li>
+<li><p>restarting applications</p></li>
+<li><p>restarting peripheral hardware</p></li>
+<li><p>going through a shutdown/startup sequence and cycling power</p></li>
+</ul>
+<p>The controller must also clear all alarms.</p>
+<p>Requires security code 2. The attribute ‘status’ is deprecated and must
+be set to true.</p>
 <p><strong>Arguments</strong></p>
 <p><strong>status</strong> <code class="docutils literal notranslate"><span class="pre">boolean_as_string</span></code></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">Deprecated</span></code> True: Restart controller</p>
+<div><p>True: Reset controller</p>
 </div></blockquote>
 <p><strong>securityCode</strong> <code class="docutils literal notranslate"><span class="pre">string</span></code></p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">Deprecated</span></code> Security code 2</p>
+<div><p>Security code 2</p>
 </div></blockquote>
 </section>
 <section id="m0005-activate-emergency-route">
@@ -4067,8 +4086,19 @@ in conjunction with dynamic bands, M0014 Requires security code 2.</p>
 <div><p>Security code 2</p>
 </div></blockquote>
 </section>
+<section id="m0024-clear-all-alarms">
+<span id="m0024"></span><h3><span class="section-number">2.5.23. </span>M0024 Clear all alarms<a class="headerlink" href="#m0024-clear-all-alarms" title="Link to this heading"></a></h3>
+<p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.3.0</span></code></p>
+<p>Clear all active alarms in the traffic light controller. If the cause of
+an alarm is still present, the alarm will be reactivated again.</p>
+<p><strong>Arguments</strong></p>
+<p><strong>status</strong> <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
+<blockquote>
+<div><p>True: Clear all alarms</p>
+</div></blockquote>
+</section>
 <section id="m0103-set-security-code">
-<span id="m0103"></span><h3><span class="section-number">2.5.23. </span>M0103 Set security code<a class="headerlink" href="#m0103-set-security-code" title="Link to this heading"></a></h3>
+<span id="m0103"></span><h3><span class="section-number">2.5.24. </span>M0103 Set security code<a class="headerlink" href="#m0103-set-security-code" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Change the security code to use when sending commands Security codes are
 used as an extra layer of security in many commands. They need to match
@@ -4103,7 +4133,7 @@ for the commands to be executed.</p>
 </div></blockquote>
 </section>
 <section id="m0104-set-clock">
-<span id="m0104"></span><h3><span class="section-number">2.5.24. </span>M0104 Set clock<a class="headerlink" href="#m0104-set-clock" title="Link to this heading"></a></h3>
+<span id="m0104"></span><h3><span class="section-number">2.5.25. </span>M0104 Set clock<a class="headerlink" href="#m0104-set-clock" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>This command will be removed in an upcoming version. You should instead
 use automatic time synchronization using e.g. using NTP or GPS.</p>
