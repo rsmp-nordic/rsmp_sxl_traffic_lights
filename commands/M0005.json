@@ -1,0 +1,69 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Activate emergency route.\nThe function is made for emergency prioritization. Works in the same way as the M0006 and M0008 where the traffic light controller responds to an input.\nShould be used in situations where full priority is given in the emergency vehicle program.\nRequires security code 2.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "emergencyroute",
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setEmergency"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "False: Activate emergency route\nTrue: Deactivate emergency route",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "emergencyroute"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Number of emergency route",
+            "$ref" : "../defs/definitions.json#/integer"
+          }
+        }
+      }
+    }
+  ]
+}

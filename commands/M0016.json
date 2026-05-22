@@ -1,0 +1,51 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Set week time table.\nSet which time table for signal programs to use for each day during a week.\nThis command changes the signal timings during the week for optimal traffic flow.\nRequires security code 2.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setWeekTable"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Week time table. Defines time table to use for each week day\nEach segment is written as d-t where:\nd=day of week\nt=time table nr\n\nDay of week legend:\n0=Monday\n1=Tuesday\n2=Wednesday\n3=Thursday\n4=Friday\n5=Saturday\n6=Sunday\n\nEach segment is separated with a comma\n\nE.g.\nd-t,d-t",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    }
+  ]
+}

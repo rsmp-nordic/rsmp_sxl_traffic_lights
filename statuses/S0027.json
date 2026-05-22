@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Time tables.\nTime of day for when to switch signal program (time plan).\nThe signal timings (time plan) to use during time of day for optimal traffic flow.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time Table. Defines time tables.\nEach time definition is written as t-o-h-m where:\nt=time table nr (1-12)\no=function\nh=hour - switching time\nm=minute - switching minute\n\nFunction legend:\n0=no plan is selected by time table\n1=set plan 1\n...\n16= set plan 16\n\nhour and minute is using local time (not UTC)\n\nEach time definition is separated with a comma\n\nE.g.\nt-o-h-m,t-o-h-m",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

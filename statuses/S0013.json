@@ -1,0 +1,54 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Police key\nThe controller is forced to dark mode or yellow flash.\nThe \"police key\" is a external control switch present in some controllers that manually switches the controller to either dark mode or yellow flash.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "intersection",
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "intersection"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)\nOther value: Intersection number",
+              "$ref" : "../defs/definitions.json#/integer_list"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "$ref" : "../defs/definitions.json#/integer_list",
+              "pattern" : "(?-mix:^(0|1|2)(?:,(0|1|2))*$)"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

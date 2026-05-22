@@ -1,0 +1,51 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Activate a series of inputs.\nSet given inputs (1-255) of the controllers general purpose I/O to either true or false.\nThis command was introduced due to coordination requirements needing to set many inputs to true/false at the same time and M0006 being to slow to send a message for each input individually. With this command many inputs can be set to true/false at the same time using a single RSMP message.\nCan be used for all types of input where the traffic light controller must react to external control. Typical usages are bus priority, coordination between traffic controllers, external control systems, and much more.\nRequires security code 2",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setInput"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Sets/Unsets a block of 16 inputs at a time. Can be repeated to set several blocks of 16 inputs. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format, colon, \":\" is used in example below.\n\nFormat: [Offset],[Bits to set],[Bits to unset]:...\n\nOffset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768.\n\nExample 1:\n\"5, 4134, 65\" sets input 6,7,10,17 = on and 5,11 = off\n(Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0)\n\nExample 2:\n\"22, 1, 4\" sets input 22 = on and 24 = off\n(Input starts from no. 22 and bit 0 = 1 and bit 2 = 0)\n\nAnd both thease examples could be sent in the same message as:\n\"5,4143:65:22,1,4\"\n\nSuch a message would activate input 6,7,10,17,22 and deactivate input 5,11,24",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    }
+  ]
+}

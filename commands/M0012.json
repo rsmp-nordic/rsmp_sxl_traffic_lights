@@ -1,0 +1,51 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Request start or stop of a series of signal groups.\nStarts or stops several signal groups.\nThis command was introduced due to coordination requirements needing to set many signal groups to green and red at the same time and M0010 and M0012 being to slow to send a message for each signal group individually.\nAlthough this command is intended to be used with coordination it is not actually specified to be used for this yet. It is reserved in the SXL for possible future use.\nIntended for use with coordination of signaling systems where a traffic light controller communicates with neighboring controllers.\nOnly used when a primary controller orders signal group of other controller to green or red (Coordination with external control bits).\nMay also include purposes for adaptive control where a UTC system or a local traffic light controller takes over the phase control (stage control).\nRequires security code 2.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setStart"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Orders signal groups to green or red. Sets a block of 16 signal groups at a time. Can be repeated to set several blocks of 16 signal groups. Values are separated with comma. Blocks are separated with semicolon. Since semicolon breaks the SXL csv-format, colon is used in example below.\n\n1=Order signal group to green\n0=Order signal group to red\n\nFormat: [Offset],[Bits to set],[Bits to unset]:...\n\nOffset sets where the 16 inputs starts from followed by two 16 bit values telling which bit to set and unset in binary format, i.e. first bit have value 1 and last bit have value 32768.\n\nExample 1:\n\"5, 4134, 65\" sets input 6,7,10,17 = on and 5,11 = off\n(Input starts from no. 5 and bit 1,2,5,12 = 1 and bit 0,6 = 0)\n\nExample 2:\n\"22, 1, 4\" sets input 22 = on and 24 = off\n(Input starts from no. 22 and bit 0 = 1 and bit 2 = 0)\n\nAnd both these examples could be sent in the same message as:\n\"5,4143,65:22,1,4\"\n\nSuch a message would order signal group 6,7,10,17,22 to green and signal group 5,11,24 to red",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    }
+  ]
+}

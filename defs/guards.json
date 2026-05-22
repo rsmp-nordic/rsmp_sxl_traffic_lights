@@ -1,0 +1,24 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "$defs" : {
+    "q_unknown_or_undefined" : {
+      "allOf" : [
+        {
+          "required" : [
+            "q"
+          ]
+        },
+        {
+          "properties" : {
+            "q" : {
+              "enum" : [
+                "undefined",
+                "unknown"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
