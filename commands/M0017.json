@@ -1,0 +1,51 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Set time tables.\nSet time of day for when to automatically switch signal program (time plan).\nThis command changes the signal timings according to time of day for optimal traffic flow.\nRequires security code 2.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setTimeTable"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Time Table. Defines time tables.\nEach time definition is written as t-o-h-m where:\nt=time table nr (1-12)\no=function\nh=hour - switching time\nm=minute - switching minute\n\nFunction legend:\n0=no plan is selected by time table\n1=set plan 1\n...\n16= set plan 16\n\nhour and minute is using local time (not UTC)\n\nEach time definition is separated with a comma.\n\nE.g.\nt-o-h-m,t-o-h-m",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    }
+  ]
+}

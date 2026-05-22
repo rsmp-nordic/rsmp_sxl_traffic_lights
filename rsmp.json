@@ -1,0 +1,74 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "name" : "tlc",
+  "description" : "Traffic Light Controllers",
+  "version" : "1.0.14",
+  "allOf" : [
+    {
+      "if" : {
+        "required" : [
+          "type"
+        ],
+        "properties" : {
+          "type" : {
+            "const" : "CommandRequest"
+          }
+        }
+      },
+      "then" : {
+        "$ref" : "commands/command_requests.json"
+      }
+    },
+    {
+      "if" : {
+        "required" : [
+          "type"
+        ],
+        "properties" : {
+          "type" : {
+            "const" : "CommandResponse"
+          }
+        }
+      },
+      "then" : {
+        "$ref" : "commands/command_responses.json"
+      }
+    },
+    {
+      "if" : {
+        "required" : [
+          "type"
+        ],
+        "properties" : {
+          "type" : {
+            "enum" : [
+              "StatusRequest",
+              "StatusResponse",
+              "StatusSubscribe",
+              "StatusUnsubscribe",
+              "StatusUpdate"
+            ]
+          }
+        }
+      },
+      "then" : {
+        "$ref" : "statuses/statuses.json"
+      }
+    },
+    {
+      "if" : {
+        "required" : [
+          "type"
+        ],
+        "properties" : {
+          "type" : {
+            "const" : "Alarm"
+          }
+        }
+      },
+      "then" : {
+        "$ref" : "alarms/alarms.json"
+      }
+    }
+  ]
+}
