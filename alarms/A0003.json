@@ -1,0 +1,4 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Serious configuration error.\nIs a \"major fault\" defined according to 3.8 in EN12675 which causes the controller to switch to a \"failure mode\" according to 3.6 in EN12675."
+}

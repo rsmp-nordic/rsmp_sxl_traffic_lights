@@ -1,0 +1,54 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Input status.\nInput (1-255) of the controllers general purpose I/O.\nInput is used where the traffic light controller must react to external control. It could be external detectors, bus priority, and much more.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "extendedinputstatus",
+        "inputstatus"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "inputstatus"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Input status as text field",
+              "type" : "string"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "extendedinputstatus"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Extended input status as text field",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

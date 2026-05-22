@@ -1,0 +1,69 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Sets manual activation of detector logic.\nSet given detector logic (1-255) to either true or false.\nCan e.g. be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.\nRequires security code 2",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "mode",
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setForceDetectorLogic"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "False: Deactivate manual control of detector logic\nTrue: Activate manual control of detector logic",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "mode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "False: Deactivate detector logic\nTrue: Activate detector logic",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    }
+  ]
+}

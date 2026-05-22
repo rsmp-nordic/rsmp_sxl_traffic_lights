@@ -1,0 +1,54 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Control mode.\nCan be used for the management system to check the current control mode (startup, normal, standby, failure, test).",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "controlmode",
+        "intersection"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "intersection"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "0: Not applicable (only one intersection exists or applicable for all intersection of the traffic light controller)\nOther value: Intersection number",
+              "$ref" : "../defs/definitions.json#/integer_list"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "controlmode"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "$ref" : "../defs/definitions.json#/string_list",
+              "pattern" : "(?-mix:^(startup|control|standby|failure|test)(?:,(startup|control|standby|failure|test))*$)"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
