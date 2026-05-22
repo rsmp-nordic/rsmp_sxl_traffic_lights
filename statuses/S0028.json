@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Cycle time.\nCycle time (or cycle length) is the sum of all phases in a time plan (traffic program). This time is fixed when using fixed time control or coordination (except \"local coordination\"). When the cycle counter reaches this length it is reset back to zero.\nChanging the cycle time can be used as part of scenario based control.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Cycle time table\nEach cycle time is written as pp-tt where:\npp=time plan\ntt=cycle time in seconds\n\nEach cycle time is separated with a comma\n\nE.g.\npp-tt,pp-tt",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

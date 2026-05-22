@@ -1,0 +1,69 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Activate input.\nSet given input (1-255) of the controllers general purpose I/O to either true or false.\nThe function can provide an input to the traffic light controller on which a predefined action can be taken.\nCan be used for all types of input where the traffic light controller must react to external control.\nTypical usages are bus priority, coordination between traffic controllers, external control systems, and much more.\nRequires security code 2.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "input",
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setInput"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "False: Deactivate input\nTrue: Activate input",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "input"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Number of Input",
+            "$ref" : "../defs/definitions.json#/integer"
+          }
+        }
+      }
+    }
+  ]
+}

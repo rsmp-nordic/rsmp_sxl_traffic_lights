@@ -1,0 +1,115 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Detector error (logic error).\nFor instance; detector continuously on or off during an extended time.\nIs a \"minor fault\" defined according to 3.11 in EN12675.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "detector",
+        "errormode",
+        "logicerror",
+        "manual",
+        "type"
+      ]
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "detector"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Designation of the detector (hardware)",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "type"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Type of detector.",
+            "type" : "string",
+            "enum" : [
+              "input",
+              "loop"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "errormode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Detector forced on/off while detector error",
+            "type" : "string",
+            "enum" : [
+              "off",
+              "on"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "manual"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Manually controlled detector logic (True/False)",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "logicerror"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Type of logic error",
+            "type" : "string",
+            "enum" : [
+              "always_off",
+              "always_on",
+              "intermittent"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

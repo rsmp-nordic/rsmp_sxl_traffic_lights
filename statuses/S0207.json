@@ -1,0 +1,54 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Traffic Counting: Occupancy.\nThis status was introduced to improve performance in case traffic counting is done on all all detectors.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "occupancy",
+        "start"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "start"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp for start of measuring",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "occupancy"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Occupancy in percent (%) (0-100)\n- Value expressed as an integer with a range of 0-100.\n- Contains data from all detector logics. Each detector logic is separated with a comma.\n- The value is set to \"-1\" if no data could be measured (e.g. detector fault)",
+              "$ref" : "../defs/definitions.json#/integer_list"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

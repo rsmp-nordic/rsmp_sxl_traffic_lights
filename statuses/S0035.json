@@ -1,0 +1,49 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Emergency route.\nThe status is active during emergency prioritization.\nUsed in situations where full priority is given in the emergency vehicle program\nor for other types of priority in some cases.\n\nThis status is similar to S0006, but supports multiple routes",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "emergencyroutes"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "emergencyroutes"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Active emergency routes",
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "required" : [
+                  "id"
+                ],
+                "unevaluatedProperties" : false,
+                "properties" : {
+                  "id" : {
+                    "description" : "ID of active emergency route",
+                    "$ref" : "../defs/definitions.json#/integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

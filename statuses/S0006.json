@@ -1,0 +1,54 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Emergency route.\nThe status is active during emergency prioritization.\nUsed in situations where full priority is given in the emergency vehicle program\nor for other types of priority in some cases.\n\nIf no emergency route is active, status should be set to False, and emergencystage to zero.\n\nDeprecated, use S0035 instead.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "emergencystage",
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "False: Emergency route inactive\nTrue: Emergency route active",
+              "$ref" : "../defs/definitions.json#/boolean"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "emergencystage"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of emergency route (set to zero if no route is active)",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
