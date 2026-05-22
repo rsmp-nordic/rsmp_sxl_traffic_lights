@@ -1,0 +1,239 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "properties" : {
+    "aCId" : {
+      "enum" : [
+        "A0001",
+        "A0002",
+        "A0003",
+        "A0004",
+        "A0005",
+        "A0006",
+        "A0007",
+        "A0008",
+        "A0009",
+        "A0101",
+        "A0201",
+        "A0202",
+        "A0301",
+        "A0302"
+      ]
+    },
+    "rvs" : {
+      "items" : {
+        "allOf" : [
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0001"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0001.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0002"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0002.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0003"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0003.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0004"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0004.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0005"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0005.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0006"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0006.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0007"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0007.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0008"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0008.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0009"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0009.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0101"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0101.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0201"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0201.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0202"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0202.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0301"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0301.json"
+            }
+          },
+          {
+            "if" : {
+              "required" : [
+                "aCId"
+              ],
+              "properties" : {
+                "aCId" : {
+                  "const" : "A0302"
+                }
+              }
+            },
+            "then" : {
+              "$ref" : "A0302.json"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

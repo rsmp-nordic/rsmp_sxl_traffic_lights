@@ -1,0 +1,57 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Operator logged in/out web-interface.\nProvides information if maintenance personnel is currently working with the controller.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status",
+        "user"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "user"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "nobody: No one logged in\n<username>: User currently logged in",
+              "type" : "string"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "type" : "string",
+              "enum" : [
+                "login",
+                "logout"
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

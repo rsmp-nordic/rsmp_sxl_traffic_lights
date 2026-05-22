@@ -1,0 +1,4 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Communication error between one or multiple traffic light controllers and central control system.\nUsed for communication errors with the central system. Includes NTP connection loss if the TLC is configured to use NTP.\nIs a \"minor fault\" defined according to 3.11 in EN12675."
+}

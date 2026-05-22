@@ -1,0 +1,30 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Dead lock error.\nUsed for dead lock errors.\nFor instance; a signal group has requested green but is unable to switch due to a conflicting signal group for an extended period of time. At some point the request times out and the controller goes failure mode. The cause for this error is due to configuration errors or external sources.\nIs a \"major fault\" defined according to 3.8 in EN12675 which causes the controller to switch to a \"failure mode\" according to 3.6 in EN12675.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "timeplan"
+      ]
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "timeplan"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Current time plan",
+            "$ref" : "../defs/definitions.json#/integer"
+          }
+        }
+      }
+    }
+  ]
+}

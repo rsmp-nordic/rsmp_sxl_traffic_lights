@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Traffic Light Controller starting.\nThe traffic signal is starting, e.g. it is in startup mode and has not begun working normally yet.\nDuring startup mode the traffic controller shows dark, red, yellow flash or using the predetermined start cycle (minimum times).",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "False: Controller is not in start up mode\nTrue: Controller is currently in start up mode",
+              "$ref" : "../defs/definitions.json#/boolean"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
