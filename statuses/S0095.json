@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Version of Traffic Light Controller.\nProvides diagnostic version information.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Manufacturer, product name and version of traffic light controller",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

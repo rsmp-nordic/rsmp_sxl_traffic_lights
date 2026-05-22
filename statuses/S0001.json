@@ -1,0 +1,91 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Signal group status.\nProvides the status of each signal group, including basic information such as green, yellow and red. But also detailed technical information.\nCan be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "basecyclecounter",
+        "cyclecounter",
+        "signalgroupstatus",
+        "stage"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "signalgroupstatus"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Signal group status as text field.\nEach character represent the state of the signal group in consecutive order,\nwhere the leftmost character starts with signal group 1.\nSignal group status is described in detail in the corresponding section.\n- : Signal group is undefined/does not exist",
+              "type" : "string",
+              "pattern" : "^[a-hA-G0-9N-P]*$"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "cyclecounter"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Cycle counter.\nUsed for handling of coordination between TLC's.\nIs counted from 0 until it reaches the cycle time (See S0028).\n\nc = (b + o) mod t\n\nwhere c = cycle counter,\nb = base cycle counter,\no = offset,\nt = cycle time,\nmod = modulo\n\nSee the coordination section for more information.",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "basecyclecounter"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Base cycle counter.\nUsed for handling of coordination between TLC's.\nSynchronized between all TLC's in an active coordination.\nSee the coordination section for more information.",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "stage"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Current stage (isolated)",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

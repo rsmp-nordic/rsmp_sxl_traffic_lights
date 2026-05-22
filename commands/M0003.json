@@ -1,0 +1,69 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Sets traffic situation the controller uses.\nUsed for area-based control where this command can be sent to a master traffic light controller about which predefined traffic situation to use (1-255).\nTraffic situation is a concept used to divide multiple TLC's into areas and sub-areas. The traffic situation gives the possibility to change the TLC sub-area dynamically depending on the time of day and the traffic flow. Depending on the traffic situation each TLC selects the time plan dynamically.\nRequires security code 2",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "securityCode",
+        "status",
+        "traficsituation"
+      ]
+    },
+    "cO" : {
+      "const" : "setTrafficSituation"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "False: Controller uses traffic situation according to own programming\nTrue: Controller uses traffic situation according to command",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "traficsituation"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "designation of traficsituation",
+            "$ref" : "../defs/definitions.json#/integer"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Force input.\nForce a given input (1-255) of the controllers general purpose I/O to either True or False. Can be used for all types of input where the traffic light controller must react to external control.\nCan be used for bus priority, coordination between traffic controllers, external control systems, and much more.\nRequires security code 2.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "input",
+        "inputValue",
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setInput"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "False: Release input\nTrue: Force input",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "input"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Number of Input",
+            "$ref" : "../defs/definitions.json#/integer"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "inputValue"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "False: input forced to False\nTrue: input forced to True",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    }
+  ]
+}

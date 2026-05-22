@@ -1,0 +1,72 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Configuration of traffic parameters.\nCan be used to download all traffic parameters from the controller.\nFor instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to downloaded them.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "config",
+        "timestamp",
+        "version"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "config"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Traffic parameters.\nIncludes\n- all signal programs, including program versions\n- signal group settings\n- time plans\n- safety matrix\n- intergreen times\n- detector setting\n\nIt should NOT include:\n- network settings\n- log files\n- software\n- other device settings that are not part of the signal program\n\nNote:\n- There is no way to upload this binary file to the TLC using RSMP\n- The format of the binary file is not specified and is not expected to be compatible between suppliers",
+              "type" : "string"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "timestamp"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp of the config",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "version"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Version information of the configuration. Contains basic information such as controller id, changes to config and other information.\nThe format is not specified in detail.",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

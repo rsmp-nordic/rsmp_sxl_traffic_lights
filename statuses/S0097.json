@@ -1,0 +1,54 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Checksum of traffic parameters.\nCan be used to check if any traffic parameter has been changed.\nFor instance, depending on controller, maintenance personnel can modify traffic parameters on site to optimize traffic flow. This status provides the ability to monitor if any traffic parameter has been changed. The traffic parameters may be downloaded with S0098.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "checksum",
+        "timestamp"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "checksum"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Checksum of the traffic parameters\nUses SHA-2 as hashing algorithm\nIncludes\n- all signal programs, including program versions\n- signal group settings\n- time plans\n- safety matrix\n- intergreen times\n- detector settings\n\nIt should NOT include:\n- network settings\n- log files\n- software\n- other device settings that are not part of the signal program\n\nNote:\n- The checksum should be calculated using the same data as used in S0098\n- Data Downloaded with S0098 and hashed with SHA-2 should match this value.",
+              "type" : "string"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "timestamp"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp of the checksum",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

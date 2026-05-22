@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Forced output status.\nProvide status of output (1-255) regarding if they are forced or not. Can be used for all types of output where the traffic light controller needs to control other equipment.\nCan be used for bus priority, coordination between traffic controllers, external control systems, and much more.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Forced output status as text field.\nEach character represent the state in consecutive order,\nwhere the leftmost character starts with output 1.\n0 : Output not forced\n1 : Output forced\n- : Output undefined/does not exist",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
