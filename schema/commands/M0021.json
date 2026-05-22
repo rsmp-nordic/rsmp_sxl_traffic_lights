@@ -1,0 +1,51 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Set trigger level sensitivity for loop detector.\nThe trigger level sensitivity determines at what level a loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives.\nThis command provides the ability to fine tune loop detectors to make sure they detect traffic as intended.\nRequires security code 2",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setLevel"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Loop detector trigger level sensitivity is written as dd-ss where:\ndd=loop detector number\nss=sensitivity value",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    }
+  ]
+}

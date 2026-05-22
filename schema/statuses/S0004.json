@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Output status.\nOutput (1-255) of the controllers general purpose I/O.\nCan be used for all types of output where the traffic light controller needs to control other equipment. Can be used for bus priority, coordination between traffic controllers, external control systems, and much more.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "outputstatus"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "outputstatus"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Output status as text field.\nEach character represent the state of the output status in consecutive order,\nwhere the leftmost character starts with output 1.\n0 : Output is not active\n1 : Output is active\n- : Output is undefined/does not exist",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Time-of-Green / Time-of-Red.\nProvides predicted signal timings of green and red for each signal group. Max, min and likely time to green and red.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "ToGConfidence",
+        "ToRConfidence",
+        "likelyToGEstimate",
+        "likelyToREstimate",
+        "maxToGEstimate",
+        "maxToREstimate",
+        "minToGEstimate",
+        "minToREstimate"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "minToGEstimate"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp for the minimum time for the signal group to go to green. If the signal group is green, it is the minimum time for the next green.",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "maxToGEstimate"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp for the maximum time for the signal group to go to green. If the signal group is green, it is the maximum time for the next green.",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "likelyToGEstimate"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp for the most likely time for the signal group to go to green. If the signal group is green, it is the most likely time for the next green.",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "ToGConfidence"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Confidence of the likelyToGEstimate. 0-100%",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "minToREstimate"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp for the minimum time for the signal group to go to red. If the signal group is red, it is the minimum time for the next red.",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "maxToREstimate"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp for the maximum time for the signal group to go to red. If the signal group is red, it is the maximum time for the next red.",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "likelyToREstimate"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp for the most likely time for the signal group to go to red. If the signal group is red, it is the most likely time for the next red.",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "ToRConfidence"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Confidence of the likelyToREstimate. 0-100%",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

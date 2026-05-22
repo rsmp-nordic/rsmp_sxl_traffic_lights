@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Forced input status.\nProvide status of input (1-255) regarding if they are forced or not. Can be used for all types of input where the traffic light controller must react to external control.\nCan be used for bus priority, coordination between traffic controllers, external control systems, and much more.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Forced input status as text field.\nEach character represent the state in consecutive order,\nwhere the leftmost character starts with input 1.\n0 : Input not forced\n1 : Input forced\n- : Input undefined/does not exist",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

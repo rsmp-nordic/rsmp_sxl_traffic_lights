@@ -1,0 +1,73 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Yellow flash.\nThe controller shows yellow flash.\nYellow flash may be used during a serious fault (depending on configuration) or maintenance work. It can also be manually set using M0001.\nSome countries may use yellow flash as an normal operating mode, and not necessarily during fault.\nPlease note that all values in this status uses comma-separated lists - one value for each intersection, e.g. \"1,2\" and \"True,False\"",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "intersection",
+        "source",
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "intersection"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Comma separated list of intersections which the status relates to, e.g. \"1,2\".\nUse \"0\" for all intersections of the TLC.",
+              "$ref" : "../defs/definitions.json#/integer_list"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "False: Yellow flash disabled\nTrue: Yellow flash enabled",
+              "$ref" : "../defs/definitions.json#/boolean_list"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "source"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Source of the status change",
+              "$ref" : "../defs/definitions.json#/string_list",
+              "pattern" : "(?-mix:^(operator_panel|calendar_clock|control_block|forced|startup|other)(?:,(operator_panel|calendar_clock|control_block|forced|startup|other))*$)"
+            }
+          }
+        }
+      }
+    ]
+  }
+}
