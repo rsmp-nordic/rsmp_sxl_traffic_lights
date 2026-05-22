@@ -1,0 +1,223 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "items" : {
+    "allOf" : [
+      {
+        "properties" : {
+          "cCI" : {
+            "enum" : [
+              "M0001",
+              "M0002",
+              "M0003",
+              "M0004",
+              "M0005",
+              "M0006",
+              "M0007",
+              "M0008",
+              "M0010",
+              "M0011",
+              "M0019",
+              "M0103",
+              "M0104"
+            ]
+          }
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0001"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0001.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0002"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0002.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0003"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0003.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0004"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0004.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0005"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0005.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0006"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0006.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0007"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0007.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0008"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0008.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0010"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0010.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0011"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0011.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0019"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0019.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0103"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0103.json"
+        }
+      },
+      {
+        "if" : {
+          "required" : [
+            "cCI"
+          ],
+          "properties" : {
+            "cCI" : {
+              "const" : "M0104"
+            }
+          }
+        },
+        "then" : {
+          "$ref" : "M0104.json"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Sets current time plan.\nChange of traffic program of the traffic light controller.\nTypical usages is scenario based control where change of program is used to change signal timings etc.\nThis command changes the signal timings for optimal traffic flow.\nRequires security code 2",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "securityCode",
+        "status",
+        "timeplan"
+      ]
+    },
+    "cO" : {
+      "const" : "setPlan"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "False: Controller uses time plan according to programming\nTrue: Controller uses time plan according to command",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "timeplan"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "designation of time plan",
+            "$ref" : "../defs/definitions.json#/integer"
+          }
+        }
+      }
+    }
+  ]
+}
