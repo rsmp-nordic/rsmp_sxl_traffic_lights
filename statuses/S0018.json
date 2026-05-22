@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Number of time plans\nCan be used for the management system to check the number of time plans configured in the controller.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "number"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "number"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of time plans (depreciated)",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

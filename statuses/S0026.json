@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Week time table.\nWeek time table for signal programs (time plan) to use for each day during a week.\nThe week time table determine which predefined signal timings (time plan) to use during the week for optimal traffic flow.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Week time table. Defines time table to use for each week day\nEach day is written as d-t where:\nd=day of week\nt=time table nr\n\nDay of week legend:\n0=Monday\n1=Tuesday\n2=Wednesday\n3=Thursday\n4=Friday\n5=Saturday\n6=Sunday\n\nEach segment is separated with a comma\nE.g.\nd-t,d-t",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

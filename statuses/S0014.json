@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Current time plan.\nThe current time plan (signal program) used in the controller. There may be 1-255 predefined time plans.\nThe time plan (signal program) may change signal timings, cycle time, control strategy and much more. Typical usage is is scenario based control where change of program is used to change priority etc.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Current time plan",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

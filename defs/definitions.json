@@ -1,0 +1,67 @@
+{
+  "message_id": {
+    "description" : "Message Id",
+    "type": "string",
+    "$comment" : "Example: 1.2.3 or 1.2",
+    "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[89abAB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}$"
+  },
+  "timestamp" : {
+    "description" : "Timestamp",
+    "type": "string",
+    "$comment" : "Example: 2015-06-08T11:49:03.293Z",
+    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}\\.[0-9]{3}Z$"
+  },
+  "integer" : {
+    "description" : "Integer as string",
+    "type": "string",
+    "$comment" : "Example: 123 or -123",
+    "pattern": "^\\-?[0-9]+$"
+  },
+  "version": {
+    "description" : "Version",
+    "type": "string",
+    "$comment" : "Example: 1.2.3 or 1.2",
+    "pattern" : "^[0-9]{1,2}\\.[0-9]{1,2}(\\.[0-9]{1,2})?"
+  },
+  "command_code": {
+    "description" : "Command code id",
+    "type" : "string",
+    "pattern" : "^M"
+  },
+  "status_code": {
+    "description" : "Status code id",
+    "type" : "string",
+    "pattern" : "^S"
+  },
+  "alarm_code": {
+    "description" : "Alarm code id",
+    "type" : "string",
+    "pattern" : "^A"
+  },
+  "component_id": {
+    "description" : "Compoment id",
+    "type" : "string"
+  },
+  "boolean": {
+    "description" : "Boolean as string",
+    "type" : "string",
+    "enum" : [ "True", "False" ]
+  },
+  "integer_list": {
+    "description" : "Comma-separated list of integers as strings",
+    "type" : "string",
+    "pattern" : "^(\\-?\\d+)(?:,(\\-?\\d+))*$"
+  },
+  "boolean_list": {
+    "description" : "Comma-separated list of booleans as strings",
+    "type" : "string",
+    "pattern" : "^(True|False)(?:,(True|False))*$"
+  },
+  "string_list": {
+    "description" : "Comma-separated list of strings",
+    "type" : "string"
+  }
+}
+
+
+

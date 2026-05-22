@@ -1,0 +1,72 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Set security code.\nChange the security code to use when sending commands\nSecurity codes are used as an extra layer of security in many commands. They need to match between the supervision system and the traffic light controller in order for the commands to be executed.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "newSecurityCode",
+        "oldSecurityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setSecurityCode"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "type" : "string",
+            "enum" : [
+              "Level1",
+              "Level2"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "oldSecurityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Previous security code",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "newSecurityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "New security code",
+            "type" : "string"
+          }
+        }
+      }
+    }
+  ]
+}
