@@ -1,0 +1,73 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "All red.\nThe controller show all red.\nAll red can be manually set using the controllers operating panel during maintenance work.\nPlease note that all values in this status uses comma-separated lists - one value for each intersection, e.g. \"1,2\" and \"True,False\"",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "intersection",
+        "source",
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "intersection"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Comma separated list of intersections which the status relates to, e.g. \"1,2\".\nUse \"0\" for all intersections of the TLC.",
+              "$ref" : "../defs/definitions.json#/integer_list"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "False: All red disabled\nTrue: All red enabled",
+              "$ref" : "../defs/definitions.json#/boolean_list"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "source"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Source of the status change",
+              "$ref" : "../defs/definitions.json#/string_list",
+              "pattern" : "(?-mix:^(operator_panel|calendar_clock|control_block|forced|startup|other)(?:,(operator_panel|calendar_clock|control_block|forced|startup|other))*$)"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

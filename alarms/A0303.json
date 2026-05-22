@@ -1,0 +1,92 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Serious detector error (hardware).\nIs a \"major fault\" defined according to 3.8 i EN12675 which causes the controller to switch to a \"failure mode\" according to 3.6 in EN12675.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "detector",
+        "errormode",
+        "manual",
+        "type"
+      ]
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "detector"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Designation of the detector (hardware)",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "type"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Type of detector.",
+            "type" : "string",
+            "enum" : [
+              "input",
+              "loop"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "errormode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Detector forced on/off while detector error",
+            "type" : "string",
+            "enum" : [
+              "off",
+              "on"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "manual"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Manually controlled detector logic (True/False)",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    }
+  ]
+}

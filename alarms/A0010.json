@@ -1,0 +1,4 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Door open.\nUsed for open door (room or cabinet)."
+}

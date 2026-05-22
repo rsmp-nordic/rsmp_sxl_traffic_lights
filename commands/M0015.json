@@ -1,0 +1,69 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Set Offset time.\nOffset time is used to define an offset between intersections in coordinated control. It is based on the expected travel time between intersections.\nThis command can be used to fine tune the coordination for optimal traffic flow.\nRequires security code 2.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "plan",
+        "securityCode",
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "setOffset"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Set offset time in seconds",
+            "$ref" : "../defs/definitions.json#/integer"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "plan"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Time plan nr",
+            "$ref" : "../defs/definitions.json#/integer"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "securityCode"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "Security code 2",
+            "type" : "string"
+          }
+        }
+      }
+    }
+  ]
+}

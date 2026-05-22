@@ -1,0 +1,198 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Traffic Counting: Number of vehicles of given classification.\nUsed for Traffic counting.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "B",
+        "C",
+        "F",
+        "L",
+        "LS",
+        "MC",
+        "P",
+        "PS",
+        "SP",
+        "starttime"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "starttime"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp for start of measuring. Format according to W3C\nXML dateTime with a resolution of 3 decimal places. All time stamps\nin UTC. E.g. 2009-10-02T14:34:34.341Z",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "P"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of cars",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "PS"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of cars with trailers",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "L"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of trucks",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "LS"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of trucks with trailers",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "B"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of buses",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "SP"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of trams",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "MC"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of motor cycles",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "C"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of bicycles",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "F"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of pedestrians",
+              "$ref" : "../defs/definitions.json#/integer"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

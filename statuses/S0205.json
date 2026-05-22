@@ -1,0 +1,54 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Traffic Counting: Number of vehicles.\nThis status was introduced to improve performance in case traffic counting is done on all all detectors.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "start",
+        "vehicles"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "start"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Time stamp for start of measuring. Format according to W3C XML dateTime with a resolution of 3 decimal places. All time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z",
+              "$ref" : "../defs/definitions.json#/timestamp"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "vehicles"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Number of vehicles.\n- Value expressed as an integer with a range of 0-65535.\n- Contains data from all detector logics. Each detector logic is separated with a comma.\n- The value is set to \"-1\" if no data could be measured (e.g. detector fault)",
+              "$ref" : "../defs/definitions.json#/integer_list"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

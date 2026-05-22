@@ -1,0 +1,36 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Trigger level sensitivity for loop detector.\nThe trigger level sensitivity determines at what level the loop detector should trigger. If it set too low then then traffic will not be detected as intended. If it is set too high the detector might give false positives.\nCan be used to make sure that the detectors detect traffic as intended.",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Loop detector trigger level sensitivity is written as dd-ss where:\ndd=loop detector number\nss=sensitivity value\nEach loop detector is separated with a comma. E.g.dd-ss,dd-ss.",
+              "type" : "string"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

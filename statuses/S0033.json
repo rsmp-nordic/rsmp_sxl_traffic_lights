@@ -1,0 +1,77 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Signal Priority Status\nThis status can be used to get updates about priority requests. For example, you can use it to know when priority requests are activated or cancelled.\nA list of priorities is returned, referred to by their request ids. The same request id can appear only once.\nAll priorities are included in the list (not only the ones that have changed state since the last update). This is done regardless of whether the status is send in respond to a status request, or due to a status subscription, and also regardless of whether a status subscription uses an update interval, or send-on-change, or both.\nIf you subscribe using an update interval, you're not guaranteed to get all intermediate states. To guarantee that, send-on-change must be used when subscribing.\nTo understand how this status relates to ETSI/J2735, please see the [wiki](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735).\nAll priorities are send on every status update, regardless of whether an interval, or sendOnChange (or both) is used.\nWhen a priority reaches an end states (completed, timeout, rejected, cooldown or stale), it must be sent once on the next status update, then removed from the list.\nA request always starts in the 'received' state. The following table shows the possible state transitions:\n\nState      | Possible next states\n---------- | -------------------------------------\nreceived   | queued, activated, rejected, cooldown\nqueued     | activated, timeout\nactivated  | completed, stale\ncompleted  |\ntimeout    |\nrejected   |\ncooldown   |\nstale      |",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    }
+  },
+  "if" : {
+    "$ref" : "../defs/guards.json#/$defs/q_unknown_or_undefined"
+  },
+  "then" : {},
+  "else" : {
+    "allOf" : [
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "status"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "JSON array of priority status items",
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "required" : [
+                  "r",
+                  "s",
+                  "t"
+                ],
+                "unevaluatedProperties" : false,
+                "properties" : {
+                  "r" : {
+                    "description" : "ID of the priority request",
+                    "type" : "string"
+                  },
+                  "t" : {
+                    "description" : "Timestamp, indicating when the priority last changed state.\nFormat according to W3C XML dateTime with a resolution of 3 decimal places.\nAll time stamps in UTC. E.g. 2009-10-02T14:34:34.341Z",
+                    "$ref" : "../defs/definitions.json#/timestamp"
+                  },
+                  "s" : {
+                    "description" : "Current status of the priority request",
+                    "type" : "string",
+                    "enum" : [
+                      "activated",
+                      "completed",
+                      "cooldown",
+                      "queued",
+                      "received",
+                      "rejected",
+                      "stale",
+                      "timeout"
+                    ]
+                  },
+                  "e" : {
+                    "description" : "Estimated green extension provided by the priority, in seconds\nOnly used when state is 'completed'.",
+                    "$ref" : "../defs/definitions.json#/integer"
+                  },
+                  "d" : {
+                    "description" : "Estimated red reduction provided by the priority, in seconds\nOnly used when state is 'completed'.",
+                    "$ref" : "../defs/definitions.json#/integer"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
