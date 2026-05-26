@@ -1,9 +1,10 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Sets manual activation of detector logic.\nSet given detector logic (1-255) to either true or false.\nCan e.g. be used to connect RSMP compatible detection equipment to the traffic light controller. Can also be used for prioritization.\nRequires security code 2",
+  "description" : "Force detector logic.\nForce a given detector logic (1-255) to either true or false.\n\nWhen 'status' is true the detector logic is forced to the state specified in 'mode'.\nWhile forced, no other source can activate or deactivate the detector logic.\nWhen forcing, the 'duration' can be set to automatically release the\ndetector logic after a specific time interval.\n\nWhen 'status' is false the detector logic is released and the state\nwill again be controlled by other sources, e.g. hardware.\nNote that this means that releasing does not guarantee a return to the previous state.\nThis is because the other control sources might have changed state while\nthe detector logic was forced.\nWhen releasing, the 'mode' and 'duration' attributes are ignored.\n\nCan also be for signal group prioritization if the controller is programmed\nto activate priority based on detector logic actication.\n\nRequires security code 2",
   "properties" : {
     "n" : {
       "enum" : [
+        "duration",
         "mode",
         "securityCode",
         "status"
@@ -25,8 +26,25 @@
       "then" : {
         "properties" : {
           "v" : {
-            "description" : "False: Deactivate manual control of detector logic\nTrue: Activate manual control of detector logic",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "description" : "False: Release detector logic, 'mode' is ignored.\nTrue: Force detector logic to the value in 'mode'.",
+            "type" : "string"
+          }
+        }
+      }
+    },
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "duration"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "If set, automatically release after this number of\nmilliseconds. Ignored if 'status' is false.\nSetting to zero is the same as leaving out, and means\nno automatic release will happen.",
+            "type" : "string"
           }
         }
       }
@@ -59,8 +77,8 @@
       "then" : {
         "properties" : {
           "v" : {
-            "description" : "False: Deactivate detector logic\nTrue: Activate detector logic",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "description" : "Mode to force to (ignored if 'status' is false).\nFalse: Deactivate detector logic\nTrue: Activate detector logic",
+            "type" : "string"
           }
         }
       }

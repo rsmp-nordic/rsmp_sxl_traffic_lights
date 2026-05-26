@@ -1,11 +1,12 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Signal group status.\nProvides the status of each signal group, including basic information such as green, yellow and red. But also detailed technical information.\nCan be used to draw a live signal group diagram as well provide diagnostic information about the performance of the controller.",
+  "description" : "Signal group status.\nProvides the status of each signal group, e.g. green, yellow, red,\nor other states used in the signal program.\nSee the section on signal group states for more information about\nthe possible states.\n\nCan be used to draw a live signal group diagram as well as to provide\ndiagnostic information about the performance of the controller.\n\nThe base cycle counter is computed based on the internal clock and\nthe cycle time. Controllers in active coordination will have\nsynchronized base cycle counters.\n\nThe cycle clock is based on the base cycle counter, but shifts the\nphase using the offset set in the controller:\n\nc = (b + o) modulo t\n\nwhere: \\\nc = cycle counter \\\nb = base cycle counter \\\no = offset \\\nt = cycle time\n\nTHe cycle counter and base cycle counter are both specified using whole seconds.\n\nSee the coordination section for more information about cycle\ncounters.\n\nThe millisecond attributes provides the high resolution cycle counter\n(not base cycle counter) of the the last signal group change.\nIf the controller internally works with discrete ticks, the value must\nbe quantized to the tick where the signal groups changed.\nE.g. if the controller uses 100ms ticks, the value must be\nquantized to 0, 100, 200, 300...\n\nThe millisecond attribute updates only when one or more signal group states changes,\nNOT every millisecond. Subscribing with **sendOnChange** will therefore not result in\nupdates every millisecond.",
   "properties" : {
     "n" : {
       "enum" : [
         "basecyclecounter",
         "cyclecounter",
+        "millisecond",
         "signalgroupstatus",
         "stage"
       ]
@@ -28,26 +29,9 @@
         "then" : {
           "properties" : {
             "s" : {
-              "description" : "Signal group status as text field.\nEach character represent the state of the signal group in consecutive order,\nwhere the leftmost character starts with signal group 1.\nSignal group status is described in detail in the corresponding section.\n- : Signal group is undefined/does not exist",
+              "description" : "Signal group status as text field.\nEach character represents the state of the signal group in consecutive order,\nwhere the leftmost character starts with signal group 1.\nSignal group status is described in detail in the corresponding section.\nA dash \"-\" is used for undefined/non-existing signal groups.",
               "type" : "string",
               "pattern" : "^[a-hA-G0-9N-P]*$"
-            }
-          }
-        }
-      },
-      {
-        "if" : {
-          "properties" : {
-            "n" : {
-              "const" : "cyclecounter"
-            }
-          }
-        },
-        "then" : {
-          "properties" : {
-            "s" : {
-              "description" : "Cycle counter.\nUsed for handling of coordination between TLC's.\nIs counted from 0 until it reaches the cycle time (See S0028).\n\nc = (b + o) mod t\n\nwhere c = cycle counter,\nb = base cycle counter,\no = offset,\nt = cycle time,\nmod = modulo\n\nSee the coordination section for more information.",
-              "$ref" : "../defs/definitions.json#/integer"
             }
           }
         }
@@ -63,8 +47,42 @@
         "then" : {
           "properties" : {
             "s" : {
-              "description" : "Base cycle counter.\nUsed for handling of coordination between TLC's.\nSynchronized between all TLC's in an active coordination.\nSee the coordination section for more information.",
-              "$ref" : "../defs/definitions.json#/integer"
+              "description" : "Base cycle counter.\nUpdates once per second, counting from 0 and wrapping around when reaching the cycle time.",
+              "type" : "string"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "cyclecounter"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Cycle counter.\nUpdates once per second, counting from 0 and wrapping around when reaching the cycle time.",
+              "type" : "string"
+            }
+          }
+        }
+      },
+      {
+        "if" : {
+          "properties" : {
+            "n" : {
+              "const" : "millisecond"
+            }
+          }
+        },
+        "then" : {
+          "properties" : {
+            "s" : {
+              "description" : "Provides the cycle counter (not base cycle counter) in milliseconds\nof when the last signal group state changed occured.\nUpdates only when the signalgroupstatus attribute changes.",
+              "type" : "string"
             }
           }
         }
@@ -81,7 +99,7 @@
           "properties" : {
             "s" : {
               "description" : "Current stage (isolated)",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }

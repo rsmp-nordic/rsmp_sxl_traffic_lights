@@ -62,7 +62,7 @@
           "properties" : {
             "s" : {
               "description" : "Version information of the configuration. Contains basic information such as controller id, changes to config and other information.\nThe format is not specified in detail.",
-              "type" : "string"
+              "$ref" : "../defs/definitions.json#/string_list"
             }
           }
         }

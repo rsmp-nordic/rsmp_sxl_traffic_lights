@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Traffic Counting: Occupancy.\nUsed for Traffic counting.",
+  "description" : "Traffic Counting: Occupancy.\nUsed for Traffic counting.\nPlease see Section 4: \"Traffic counting\" for additional requirements.",
   "properties" : {
     "n" : {
       "enum" : [
@@ -44,7 +44,7 @@
           "properties" : {
             "s" : {
               "description" : "Occupancy in percent (0-100%)",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }

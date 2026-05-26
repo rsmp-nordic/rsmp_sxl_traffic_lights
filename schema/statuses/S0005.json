@@ -27,7 +27,7 @@
           "properties" : {
             "s" : {
               "description" : "False: Controller is not in start up mode\nTrue: Controller is currently in start up mode",
-              "$ref" : "../defs/definitions.json#/boolean"
+              "type" : "string"
             }
           }
         }
@@ -55,11 +55,11 @@
                 "properties" : {
                   "intersection" : {
                     "description" : "Intersection id",
-                    "$ref" : "../defs/definitions.json#/integer"
+                    "type" : "string"
                   },
                   "startup" : {
                     "description" : "Start up mode",
-                    "$ref" : "../defs/definitions.json#/boolean"
+                    "type" : "string"
                   }
                 }
               }

@@ -25,7 +25,7 @@
         "properties" : {
           "v" : {
             "description" : "Loop detector trigger level sensitivity is written as dd-ss where:\ndd=loop detector number\nss=sensitivity value",
-            "type" : "string"
+            "$ref" : "../defs/definitions.json#/string_list"
           }
         }
       }

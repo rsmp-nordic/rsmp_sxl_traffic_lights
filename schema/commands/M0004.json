@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Restarts Traffic Light Controller.\nUsed in the event of serious faults in the device where a restart is considered to be able to remedy a problem.\nRequires security code 2",
+  "description" : "Reset Traffic Light Controller.\n\nThis command is used as a last resort to attempt to remotely fix serious faults.\nIf unsuccessful, manual intervention on site is probably required.\n\nThe controller must attempt all available safe action to reset to a functional state.\nDepending on regulations and controller capabilities, examples actions could be:\n\n- resetting parameters to defaults\n- restarting applications\n- restarting peripheral hardware\n- going through a shutdown/startup sequence and cycling power\n\nThe controller must also clear all alarms.\n\nRequires security code 2.\nThe attribute 'status' is deprecated and must be set to true.",
   "properties" : {
     "n" : {
       "enum" : [
@@ -24,8 +24,8 @@
       "then" : {
         "properties" : {
           "v" : {
-            "description" : "True: Restart controller",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "description" : "True: Reset controller",
+            "type" : "string"
           }
         }
       }

@@ -1,0 +1,33 @@
+{
+  "$schema" : "https://json-schema.org/draft/2020-12/schema",
+  "description" : "Clear all alarms.\nClear all active alarms in the traffic light controller.\nIf the cause of an alarm is still present, the alarm will be reactivated again.  ",
+  "properties" : {
+    "n" : {
+      "enum" : [
+        "status"
+      ]
+    },
+    "cO" : {
+      "const" : "clearAlarms"
+    }
+  },
+  "allOf" : [
+    {
+      "if" : {
+        "properties" : {
+          "n" : {
+            "const" : "status"
+          }
+        }
+      },
+      "then" : {
+        "properties" : {
+          "v" : {
+            "description" : "True: Clear all alarms",
+            "$ref" : "../defs/definitions.json#/boolean"
+          }
+        }
+      }
+    }
+  ]
+}

@@ -27,7 +27,7 @@
           "properties" : {
             "s" : {
               "description" : "Current traffic situation",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -44,15 +44,8 @@
           "properties" : {
             "s" : {
               "description" : "Source of the status change",
-              "type" : "string",
-              "enum" : [
-                "calendar_clock",
-                "control_block",
-                "forced",
-                "operator_panel",
-                "other",
-                "startup"
-              ]
+              "$ref" : "../defs/definitions.json#/string_list",
+              "pattern" : "(?-mix:^(operator_panel|calendar_clock|control_block|forced|startup|other)(?:,(operator_panel|calendar_clock|control_block|forced|startup|other))*$)"
             }
           }
         }

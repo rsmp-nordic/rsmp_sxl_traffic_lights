@@ -52,6 +52,11 @@
     "type" : "string",
     "pattern" : "^(\\-?\\d+)(?:,(\\-?\\d+))*$"
   },
+  "number_list": {
+    "description" : "Comma-separated list of numbers as strings",
+    "type" : "string",
+    "pattern" : "^(\\-?\\d+(\\.\\d+)?)(?:,(\\-?\\d+(\\.\\d+)?))*$"
+  },
   "boolean_list": {
     "description" : "Comma-separated list of booleans as strings",
     "type" : "string",

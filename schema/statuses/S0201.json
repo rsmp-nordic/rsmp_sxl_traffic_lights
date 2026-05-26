@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Traffic Counting: Number of vehicles.\nUsed for Traffic counting.",
+  "description" : "Traffic Counting: Number of vehicles.\nUsed for Traffic counting.\nPlease see Section 4: \"Traffic counting\" for additional requirements.",
   "properties" : {
     "n" : {
       "enum" : [
@@ -44,7 +44,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of vehicles on a given detector logic (since last update)",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }

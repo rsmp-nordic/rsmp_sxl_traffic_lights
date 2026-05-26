@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Force output.\nForce a given output (1-255) of the controllers general purpose I/O to either True of False. Can be used for all types of output where the traffic light controller needs to control other equipment.\nCan be used for bus priority, coordination between traffic controllers, external control systems, and much more.\nRequires security code 2.",
+  "description" : "Force output.\nForce a given output (1-255) of the controllers general purpose I/O to either True of False. Can be used for all types of output where the traffic light controller needs to control other equipment.\nCan be used for bus priority, coordination between traffic controllers, external control systems, and much more.\nWhen the output is released (status=False), the outputValue is ignored.\nRequires security code 2.",
   "properties" : {
     "n" : {
       "enum" : [
@@ -26,8 +26,8 @@
       "then" : {
         "properties" : {
           "v" : {
-            "description" : "False: Force output\nTrue: Release output",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "description" : "True: Force output\nFalse: Release output",
+            "type" : "string"
           }
         }
       }
@@ -61,7 +61,7 @@
         "properties" : {
           "v" : {
             "description" : "Number of Output",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -77,8 +77,8 @@
       "then" : {
         "properties" : {
           "v" : {
-            "description" : "False: output forced to False\nTrue: output forced to True",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "description" : "False: output forced off\nTrue: output forced on",
+            "type" : "string"
           }
         }
       }

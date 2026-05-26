@@ -24,8 +24,8 @@
       "then" : {
         "properties" : {
           "v" : {
-            "description" : "Week time table. Defines time table to use for each week day\nEach segment is written as d-t where:\nd=day of week\nt=time table nr\n\nDay of week legend:\n0=Monday\n1=Tuesday\n2=Wednesday\n3=Thursday\n4=Friday\n5=Saturday\n6=Sunday\n\nEach segment is separated with a comma\n\nE.g.\nd-t,d-t",
-            "type" : "string"
+            "description" : "Week time table. Defines time table to use for each week day\nEach segment is written as d-t where:\nd=day of week\nt=time table nr\n\nDay of week legend:\n0=Monday\n1=Tuesday\n2=Wednesday\n3=Thursday\n4=Friday\n5=Saturday\n6=Sunday\n\nEach segment is separated with a comma\nE.g.\nd-t,d-t",
+            "$ref" : "../defs/definitions.json#/string_list"
           }
         }
       }

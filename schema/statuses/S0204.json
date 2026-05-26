@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Traffic Counting: Number of vehicles of given classification.\nUsed for Traffic counting.",
+  "description" : "Traffic Counting: Number of vehicles of given classification.\nUsed for Traffic counting.\nPlease see Section 4: \"Traffic counting\" for additional requirements.",
   "properties" : {
     "n" : {
       "enum" : [
@@ -52,7 +52,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of cars",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -69,7 +69,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of cars with trailers",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -86,7 +86,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of trucks",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -103,7 +103,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of trucks with trailers",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -120,7 +120,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of buses",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -137,7 +137,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of trams",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -154,7 +154,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of motor cycles",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -171,7 +171,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of bicycles",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -188,7 +188,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of pedestrians",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }

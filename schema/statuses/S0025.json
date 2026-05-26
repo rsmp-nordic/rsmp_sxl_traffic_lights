@@ -84,7 +84,7 @@
           "properties" : {
             "s" : {
               "description" : "Confidence of the likelyToGEstimate. 0-100%",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }
@@ -152,7 +152,7 @@
           "properties" : {
             "s" : {
               "description" : "Confidence of the likelyToREstimate. 0-100%",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }

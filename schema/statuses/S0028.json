@@ -26,7 +26,7 @@
           "properties" : {
             "s" : {
               "description" : "Cycle time table\nEach cycle time is written as pp-tt where:\npp=time plan\ntt=cycle time in seconds\n\nEach cycle time is separated with a comma\n\nE.g.\npp-tt,pp-tt",
-              "type" : "string"
+              "$ref" : "../defs/definitions.json#/string_list"
             }
           }
         }

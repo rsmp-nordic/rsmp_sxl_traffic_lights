@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Request Signal Priority\n\nUseful for bus priority or other type of priorities like emergency vehicles or groups of cyclists.\n\nThe benefit of using this message over activating inputs or detector logics is that you can specify a priority level, vehicle type and estimated time of arrival. You can also update or cancel the request, and use the corresponding status message to track the status of the request, including how much priority was actually given.\n\nTo understand how this command relates to ETSI/J2735, please see the [wiki](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735).\n\nActivating signal priority is expected to provide more green time for a particular movement through the intersection, but the exact mechanism must typically be configured in the controller.\n\nThe movement to prioritize can be referenced in a number of ways, depending on what is configured in the controller, and in the system that sends priority requests. Either:\n\n- Reference a signal group by setting 'signalGroupId'. This method is simple, but will not allow you to have different priority mechanism for the same signal group, unless they can be distinguished by the vehicle type. For example, if you need to trigger different priorities depending on whether a bus goes straight or makes a turn for the same signal group, you need to use of the other referencing methods.\n- Reference an input by setting 'inputId'. This can be useful if you previously used inputs to activate priority. The input will not be activated, only the priority.\n- Reference a connection by setting 'connectionId'. A connection is a movement from a specific ingoing lane to a specific outgoing lane.\n- Reference an intersection approach by setting 'approachId'.\n- Reference an ingoing lane by setting 'laneInId', and optionally also reference an outgoing lane by setting 'laneOutId'.\n\nReferencing attributes that are not used must be left out, rather than set to null or empty strings. This includes:\n\n- signalGroupId\n- inputId\n- connectionId\n- approachId\n- laneInId\n- laneOutId\n\nReferencing attributes are only used when initiating a request. When updating or cancelling the request, the request is identified by its requestId, and no referencing attributes are allowed.\n\nYou initiate a priority request with type set to 'new'. You must provide a request id that uniquely identifies the request on the controller. It can be a randomly generated UUID (universally unique identifier), or it can be constructed by combining e.g. a vehicle id and some other identifier. When updating or cancelling a request, you must pass the same request id again.\n\nProviding ETA (estimated time of arrival) when initiating a request is optional, but can help the controller plan ahead in cases where you're able to send the request before the vehicle arrives at the intersection. You're allowed to initiate the request without an ETA and provide it in a later request update. But providing the ETA when initiating the request is recommended, since it will give the controller more time to plan ahead.\n\nLike ETA, providing a vehicle type is optional, but can help the controller decide how to best handle the request.\n\nThe priority level provides a way to indicate the relative importance of the request compared to other requests. For example, emergency vehicles or delayed buses could be given a higher priority level.\n\nIf the ETA changes before the priority is cancelled, or you want to change the priority level, you can send another request message with type set to 'update'. The vehicle type cannot be changed.\n\nWhen you send a priority request, it will be processed to decide if it's possible to activate the requested priority.\n\nIf the request is accepted, the priority can either be activated immediately, or if another priority is currently active, it can be queued for later activation.\n\nIf the priority cannot be accepted the request is rejected. Cooldown is a specific type of rejection, which means that s similar request has just completed, and some time needs to pass before a similar request can be activated.\n\nWhen a request is queued, it is expected to become activated later, but in case too long passes without activation, the controller is expected to time out the request.\n\nOnce a priority is activated, you're excepted to cancel it as soon as there's no need for it anymore, typically when the vehicle has passed the intersection. You cancel a request by sending a request passing the existing request id setting the type to 'cancel'.\n\nIf a request is never cancelled, the controller is expected to remove the priority at some point, but until then the priority might block requests in other direction which is why you should always cancel a priority when it's not needed anymore.",
+  "description" : "Request Signal Priority\n\nUseful for bus priority or other type of priorities like emergency vehicles or groups of cyclists.\n\nThe benefit of using this message over activating inputs or detector logics is that you can specify a priority level, vehicle type and estimated time of arrival. You can also update or cancel the request, and use the corresponding status message to track the status of the request, including how much priority was actually given.\n\nTo understand how this command relates to ETSI/J2735, please see the [wiki](https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/wiki/Signal-priority-and-ETSI-J2735).\n\nActivating signal priority is expected to provide more green time for a particular movement through the intersection, but the exact mechanism must typically be configured in the controller.\n\nThe movement to prioritize can be referenced in a number of ways, depending on what is configured in the controller, and in the system that sends priority requests. Either:\n\n- Reference a signal group by setting ‘signalGroupId’. This method is simple, but will not allow you to have different priority mechanism for the same signal group, unless they can be distinguished by the vehicle type. For example, if you need to trigger different priorities depending on whether a bus goes straight or makes a turn for the same signal group, you need to use of the other referencing methods.\n- Reference an input by setting ‘inputId’. This can be useful if you previously used inputs to activate priority. The input will not be activated, only the priority.\n- Reference a connection by setting ‘connectionId’. A connection is a movement from a specific ingoing lane to a specific outgoing lane.\n- Reference an intersection approach by setting ‘approachId’.\n- Reference an ingoing lane by setting ‘laneInId’, and optionally also reference an outgoing lane by setting ‘laneOutId’.\n\nReferencing attributes that are not used must be left out, rather than set to null or empty strings. This includes:\n\n- signalGroupId\n- inputId\n- connectionId\n- approachId\n- laneInId\n- laneOutId\n\nReferencing attributes are only used when initiating a request. When updating or cancelling the request, the request is identified by its requestId, and no referencing attributes are allowed.\n\nYou initiate a priority request with type set to ‘new’. You must provide a request id that uniquely identifies the request on the controller. It can be a randomly generated UUID (universally unique identifier), or it can be constructed by combining e.g. a vehicle id and some other identifier. When updating or cancelling a request, you must pass the same request id again.\n\nProviding ETA (estimated time of arrival) when initiating a request is optional, but can help the controller plan ahead in cases where you’re able to send the request before the vehicle arrives at the intersection. You’re allowed to initiate the request without an ETA and provide it in a later request update. But providing the ETA when initiating the request is recommended, since it will give the controller more time to plan ahead.\n\nLike ETA, providing a vehicle type is optional, but can help the controller decide how to best handle the request.\n\nThe priority level provides a way to indicate the relative importance of the request compared to other requests. For example, emergency vehicles or delayed buses could be given a higher priority level.\n\nIf the ETA changes before the priority is cancelled, or you want to change the priority level, you can send another request message with type set to ‘update’. The vehicle type cannot be changed.\n\nWhen you send a priority request, it will be processed to decide if it’s possible to activate the requested priority.\n\nIf the request is accepted, the priority can either be activated immediately, or if another priority is currently active, it can be queued for later activation.\n\nIf the priority cannot be accepted the request is rejected. Cooldown is a specific type of rejection, which means that s similar request has just completed, and some time needs to pass before a similar request can be activated.\n\nWhen a request is queued, it is expected to become activated later, but in case too long passes without activation, the controller is expected to time out the request.\n\nOnce a priority is activated, you’re excepted to cancel it as soon as there’s no need for it anymore, typically when the vehicle has passed the intersection. You cancel a request by sending a request passing the existing request id setting the type to ‘cancel’.\n\nIf a request is never cancelled, the controller is expected to remove the priority at some point, but until then the priority might block requests in other direction which is why you should always cancel a priority when it’s not needed anymore.",
   "properties" : {
     "n" : {
       "enum" : [
@@ -69,7 +69,7 @@
         "properties" : {
           "v" : {
             "description" : "ID of an input, using the same numbering scheme as M0006",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -86,7 +86,7 @@
         "properties" : {
           "v" : {
             "description" : "ID of a connection, connecting an ingoing and an outgoing lane",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -103,7 +103,7 @@
         "properties" : {
           "v" : {
             "description" : "ID of an intersection approach",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -120,7 +120,7 @@
         "properties" : {
           "v" : {
             "description" : "ID of an ingoing lane",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -137,7 +137,7 @@
         "properties" : {
           "v" : {
             "description" : "ID of an outgoing lane",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -154,7 +154,7 @@
         "properties" : {
           "v" : {
             "description" : "ID of a priority",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -192,7 +192,7 @@
         "properties" : {
           "v" : {
             "description" : "0: Lowest, 14: Highest",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -209,7 +209,7 @@
         "properties" : {
           "v" : {
             "description" : "Estimated time of arrival to the intersection, in seconds",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }

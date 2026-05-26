@@ -25,7 +25,7 @@
         "properties" : {
           "v" : {
             "description" : "Timeout, in minutes",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }

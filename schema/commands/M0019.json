@@ -27,7 +27,7 @@
         "properties" : {
           "v" : {
             "description" : "False: Release input\nTrue: Force input",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "type" : "string"
           }
         }
       }
@@ -61,7 +61,7 @@
         "properties" : {
           "v" : {
             "description" : "Number of Input",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -78,7 +78,7 @@
         "properties" : {
           "v" : {
             "description" : "False: input forced to False\nTrue: input forced to True",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "type" : "string"
           }
         }
       }

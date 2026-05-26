@@ -27,7 +27,7 @@
         "then" : {
           "properties" : {
             "s" : {
-              "description" : "Comma separated list of intersections which the status relates to, e.g. \"1,2\".\nUse \"0\" for all intersections of the TLC.",
+              "description" : "Comma separated list of intersections which the status relates to, e.g. “1,2”.\nUse “0” for all intersections of the TLC.",
               "$ref" : "../defs/definitions.json#/integer_list"
             }
           }

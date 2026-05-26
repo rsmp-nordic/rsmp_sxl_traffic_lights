@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Traffic Counting: Occupancy.\nThis status was introduced to improve performance in case traffic counting is done on all all detectors.",
+  "description" : "Traffic Counting: Occupancy.\nThis status was introduced to improve performance in case traffic counting is done on all all detectors.\nPlease see Section 4: \"Traffic counting\" for additional requirements.",
   "properties" : {
     "n" : {
       "enum" : [
@@ -43,7 +43,7 @@
         "then" : {
           "properties" : {
             "s" : {
-              "description" : "Occupancy in percent (%) (0-100)\n- Value expressed as an integer with a range of 0-100.\n- Contains data from all detector logics. Each detector logic is separated with a comma.\n- The value is set to \"-1\" if no data could be measured (e.g. detector fault)",
+              "description" : "Occupancy in percent (%) (0-100)\n- Value expressed as an integer with a range of 0-100.\n- Contains data from all detector logics. Each detector logic is separated with a comma.\n- The value is set to “-1” if no data could be measured (e.g. detector fault)",
               "$ref" : "../defs/definitions.json#/integer_list"
             }
           }

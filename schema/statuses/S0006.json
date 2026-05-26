@@ -27,7 +27,7 @@
           "properties" : {
             "s" : {
               "description" : "False: Emergency route inactive\nTrue: Emergency route active",
-              "$ref" : "../defs/definitions.json#/boolean"
+              "type" : "string"
             }
           }
         }
@@ -44,7 +44,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of emergency route (set to zero if no route is active)",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }

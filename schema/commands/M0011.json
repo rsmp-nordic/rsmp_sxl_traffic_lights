@@ -25,7 +25,7 @@
         "properties" : {
           "v" : {
             "description" : "False: No command (default)\nTrue: Order a signal group to red",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "type" : "string"
           }
         }
       }

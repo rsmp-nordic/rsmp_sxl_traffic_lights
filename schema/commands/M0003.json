@@ -26,7 +26,7 @@
         "properties" : {
           "v" : {
             "description" : "False: Controller uses traffic situation according to own programming\nTrue: Controller uses traffic situation according to command",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "type" : "string"
           }
         }
       }
@@ -60,7 +60,7 @@
         "properties" : {
           "v" : {
             "description" : "designation of traficsituation",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }

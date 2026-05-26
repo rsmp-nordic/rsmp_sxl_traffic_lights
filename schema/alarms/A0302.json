@@ -84,7 +84,7 @@
         "properties" : {
           "v" : {
             "description" : "Manually controlled detector logic (True/False)",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "type" : "string"
           }
         }
       }

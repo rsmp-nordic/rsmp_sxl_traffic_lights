@@ -25,7 +25,7 @@
         "then" : {
           "properties" : {
             "s" : {
-              "$ref" : "../defs/definitions.json#/integer",
+              "type" : "string",
               "enum" : [
                 "0",
                 "1",

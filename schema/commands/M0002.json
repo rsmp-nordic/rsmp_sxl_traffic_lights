@@ -26,7 +26,7 @@
         "properties" : {
           "v" : {
             "description" : "False: Controller uses time plan according to programming\nTrue: Controller uses time plan according to command",
-            "$ref" : "../defs/definitions.json#/boolean"
+            "type" : "string"
           }
         }
       }
@@ -60,7 +60,7 @@
         "properties" : {
           "v" : {
             "description" : "designation of time plan",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }

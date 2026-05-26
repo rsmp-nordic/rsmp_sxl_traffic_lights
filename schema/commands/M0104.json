@@ -1,6 +1,6 @@
 {
   "$schema" : "https://json-schema.org/draft/2020-12/schema",
-  "description" : "Set clock.\nCan be used to manually set the clock of the traffic light controller if automatic  time synchronization (NTP or watchdog sync) is not available. For instance, during maintenance work.\nNote: UTC is used.\nRequires security code 1",
+  "description" : "Set clock.\nThis command will be removed in an upcoming version.\nYou should instead use automatic time synchronization using e.g. using NTP or GPS.\n\nCan be used to manually set the clock of the traffic light controller in case\nautomatic time synchronization is not available, e.g. during maintenance work.\n\nIf automatic time synchronization is active, the\ncommand returns a normal response, but is otherwise ignored and does not set\nthe clock.\n\nUTC is used. Requires security code 1.  ",
   "properties" : {
     "n" : {
       "enum" : [
@@ -47,7 +47,7 @@
         "properties" : {
           "v" : {
             "description" : "Year",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -64,7 +64,7 @@
         "properties" : {
           "v" : {
             "description" : "Month",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -81,7 +81,7 @@
         "properties" : {
           "v" : {
             "description" : "Day of month",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -98,7 +98,7 @@
         "properties" : {
           "v" : {
             "description" : "Hour",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -115,7 +115,7 @@
         "properties" : {
           "v" : {
             "description" : "Minute",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -132,7 +132,7 @@
         "properties" : {
           "v" : {
             "description" : "Second",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }

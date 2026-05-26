@@ -26,7 +26,7 @@
           "properties" : {
             "s" : {
               "description" : "Number of detector logics",
-              "$ref" : "../defs/definitions.json#/integer"
+              "type" : "string"
             }
           }
         }

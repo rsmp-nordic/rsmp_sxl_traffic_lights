@@ -36,7 +36,7 @@
                 "properties" : {
                   "id" : {
                     "description" : "ID of active emergency route",
-                    "$ref" : "../defs/definitions.json#/integer"
+                    "type" : "string"
                   }
                 }
               }

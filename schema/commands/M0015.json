@@ -26,7 +26,7 @@
         "properties" : {
           "v" : {
             "description" : "Set offset time in seconds",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
@@ -43,7 +43,7 @@
         "properties" : {
           "v" : {
             "description" : "Time plan nr",
-            "$ref" : "../defs/definitions.json#/integer"
+            "type" : "string"
           }
         }
       }
