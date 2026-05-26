@@ -50,7 +50,7 @@ jobs:
         mkdir -p docs/1.1.0
         cp -r 1.1.0/build/html/* docs/1.1.0
         git pull -q
-        git add docs/1.1
+        git add docs/1.1.0
         git commit -m "Update documentation" -a || true
         # The above will fail if no changes were present, so
         # we ignore the return code.
