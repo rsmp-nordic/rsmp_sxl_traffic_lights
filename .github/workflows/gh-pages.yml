@@ -4,7 +4,7 @@ name: Build SXL TLC
 
 on:
   push:
-    branches: [ 1.1 ]
+    branches: [ 1.1.0 ]
   workflow_dispatch:
   repository_dispatch:
 
@@ -16,11 +16,11 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: gh-pages
-    - name: Check out rsmp_sxl_traffic_lights repository (1.1 branch)
+    - name: Check out rsmp_sxl_traffic_lights repository (1.1.0 branch)
       uses: actions/checkout@v4
       with:
-        path: 1.1
-        ref: 1.1
+        path: 1.1.0
+        ref: 1.1.0
     - name: Install dependencies
       run: |
         sudo add-apt-repository ppa:inkscape.dev/stable
@@ -39,7 +39,7 @@ jobs:
               mscgen
     - name: Build rsmp_sxl_traffic_lights repository
       run: |
-        cd 1.1
+        cd 1.1.0
         make html latexpdf
     - name: Setup git
       run: |
@@ -47,8 +47,8 @@ jobs:
         git config --local user.name "GitHub Action"
     - name: Commit documentation changes
       run: |
-        mkdir -p docs/1.1
-        cp -r 1.1/build/html/* docs/1.1
+        mkdir -p docs/1.1.0
+        cp -r 1.1.0/build/html/* docs/1.1.0
         git pull -q
         git add docs/1.1
         git commit -m "Update documentation" -a || true
@@ -63,7 +63,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: PDF
-        path: 1.1/build/latex/sxl-tlc.pdf
+        path: 1.1.0/build/latex/sxl-tlc.pdf
 
   build-sxl-excel-tlc:
     runs-on: ubuntu-latest
