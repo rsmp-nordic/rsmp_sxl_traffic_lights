@@ -868,13 +868,13 @@ intersection, e.g. “0” and “True” (one intersection) or “1,2” and
 
 **Return values**
 
-**intersection** ``integer_as_string_list``
+**intersection** ``integer_list_as_string``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
 
-**status** ``boolean_as_string_list``
+**status** ``boolean_list_as_string``
 
     False: Traffic Light Controller in dark mode |br|
     True: Traffic Light Controller not in dark mode
@@ -912,13 +912,13 @@ comma-separated lists - one value for each intersection, e.g. “0” and
 
 **Return values**
 
-**intersection** ``integer_as_string_list``
+**intersection** ``integer_list_as_string``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
 
-**status** ``boolean_as_string_list``
+**status** ``boolean_list_as_string``
 
     False: Manual control inactive |br|
     True: Manual control active
@@ -956,13 +956,13 @@ comma-separated lists - one value for each intersection, e.g. “0” and
 
 **Return values**
 
-**intersection** ``integer_as_string_list``
+**intersection** ``integer_list_as_string``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
 
-**status** ``boolean_as_string_list``
+**status** ``boolean_list_as_string``
 
     False: Fixed time control inactive |br|
     True: Fixed time control active
@@ -1003,13 +1003,13 @@ intersections).
 
 **Return values**
 
-**intersection** ``integer_as_string_list``
+**intersection** ``integer_list_as_string``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
 
-**status** ``boolean_as_string_list``
+**status** ``boolean_list_as_string``
 
     False: Isolated control disabled |br|
     True: Isolated control enabled (Vehicle actuated control or Fixed time control)
@@ -1048,13 +1048,13 @@ for each intersection, e.g. “1,2” and “True,False”
 
 **Return values**
 
-**intersection** ``integer_as_string_list``
+**intersection** ``integer_list_as_string``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
 
-**status** ``boolean_as_string_list``
+**status** ``boolean_list_as_string``
 
     False: Yellow flash disabled |br|
     True: Yellow flash enabled
@@ -1091,13 +1091,13 @@ each intersection, e.g. “1,2” and “True,False”
 
 **Return values**
 
-**intersection** ``integer_as_string_list``
+**intersection** ``integer_list_as_string``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
 
-**status** ``boolean_as_string_list``
+**status** ``boolean_list_as_string``
 
     False: All red disabled |br|
     True: All red enabled
@@ -1135,13 +1135,13 @@ for each intersection, e.g. “1,2” and “0,1”
 
 **Return values**
 
-**intersection** ``integer_as_string_list``
+**intersection** ``integer_list_as_string``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
 
 
-**status** ``integer_as_string_list``
+**status** ``integer_list_as_string``
 
 
 
@@ -1320,7 +1320,7 @@ intersection, e.g. “1,2” and “startup,control”
 
 **Return values**
 
-**intersection** ``integer_as_string_list``
+**intersection** ``integer_list_as_string``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
@@ -1695,7 +1695,7 @@ lists - one value for each intersection, e.g. “1,2” and
 
 **Return values**
 
-**intersection** ``integer_as_string_list``
+**intersection** ``integer_list_as_string``
 
     Comma separated list of intersections which the status relates to, e.g. “1,2” |br|
     Use “0” for all intersections of the TLC.
@@ -2316,7 +2316,7 @@ counting is done on all all detectors.
     Time stamp for start of measuring
 
 
-**vehicles** ``integer_as_string_list``
+**vehicles** ``integer_list_as_string``
 
     Number of vehicles |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2342,7 +2342,7 @@ counting is done on all all detectors.
     Time stamp for start of measuring
 
 
-**speed** ``integer_as_string_list``
+**speed** ``integer_list_as_string``
 
     Average speed in km/h (integer) |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2368,7 +2368,7 @@ counting is done on all all detectors.
     Time stamp for start of measuring
 
 
-**occupancy** ``integer_as_string_list``
+**occupancy** ``integer_list_as_string``
 
     Occupancy in percent (%) (0-100) |br|
     - Value expressed as an integer with a range of 0-100. |br|
@@ -2394,7 +2394,7 @@ counting is done on all all detectors.
     Time stamp for start of measuring
 
 
-**P** ``integer_as_string_list``
+**P** ``integer_list_as_string``
 
     Number of cars |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2402,7 +2402,7 @@ counting is done on all all detectors.
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
 
-**PS** ``integer_as_string_list``
+**PS** ``integer_list_as_string``
 
     Number of cars with trailers |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2410,7 +2410,7 @@ counting is done on all all detectors.
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
 
-**L** ``integer_as_string_list``
+**L** ``integer_list_as_string``
 
     Number of trucks |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2418,7 +2418,7 @@ counting is done on all all detectors.
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
 
-**LS** ``integer_as_string_list``
+**LS** ``integer_list_as_string``
 
     Number of trucks with trailers |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2426,7 +2426,7 @@ counting is done on all all detectors.
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
 
-**B** ``integer_as_string_list``
+**B** ``integer_list_as_string``
 
     Number of buses |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2434,7 +2434,7 @@ counting is done on all all detectors.
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
 
-**SP** ``integer_as_string_list``
+**SP** ``integer_list_as_string``
 
     Number of trams |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2442,7 +2442,7 @@ counting is done on all all detectors.
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
 
-**MC** ``integer_as_string_list``
+**MC** ``integer_list_as_string``
 
     Number of motor cycles |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2450,7 +2450,7 @@ counting is done on all all detectors.
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
 
-**C** ``integer_as_string_list``
+**C** ``integer_list_as_string``
 
     Number of bicycles |br|
     - Value expressed as an integer with a range of 0-65535. |br|
@@ -2458,7 +2458,7 @@ counting is done on all all detectors.
     - The value is set to “-1” if no data could be measured (e.g. detector fault)
 
 
-**F** ``integer_as_string_list``
+**F** ``integer_list_as_string``
 
     Number of pedestrians |br|
     - Value expressed as an integer with a range of 0-65535. |br|
