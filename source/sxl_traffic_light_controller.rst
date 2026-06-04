@@ -2129,7 +2129,8 @@ S0201 Traffic Counting: Number of vehicles
 
 Available from SXL version: ``1.0.5``
 
-Used for Traffic counting.
+Used for Traffic counting. Please see Section 4: “Traffic counting” for
+additional requirements.
 
 
 **Return values**
@@ -2155,7 +2156,8 @@ S0202 Traffic Counting: Vehicle speed
 
 Available from SXL version: ``1.0.5``
 
-Used for Traffic counting.
+Used for Traffic counting. Please see Section 4: “Traffic counting” for
+additional requirements.
 
 
 **Return values**
@@ -2181,7 +2183,8 @@ S0203 Traffic Counting: Occupancy
 
 Available from SXL version: ``1.0.5``
 
-Used for Traffic counting.
+Used for Traffic counting. Please see Section 4: “Traffic counting” for
+additional requirements.
 
 
 **Return values**
@@ -2207,7 +2210,8 @@ S0204 Traffic Counting: Number of vehicles of given classification
 
 Available from SXL version: ``1.0.5``
 
-Used for Traffic counting.
+Used for Traffic counting. Please see Section 4: “Traffic counting” for
+additional requirements.
 
 
 **Return values**
@@ -2306,7 +2310,8 @@ S0205 Traffic Counting: Number of vehicles
 Available from SXL version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
-counting is done on all all detectors.
+counting is done on all all detectors. Please see Section 4: “Traffic
+counting” for additional requirements.
 
 
 **Return values**
@@ -2332,7 +2337,8 @@ S0206 Traffic Counting: Vehicle speed
 Available from SXL version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
-counting is done on all all detectors.
+counting is done on all all detectors. Please see Section 4: “Traffic
+counting” for additional requirements.
 
 
 **Return values**
@@ -2358,7 +2364,8 @@ S0207 Traffic Counting: Occupancy
 Available from SXL version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
-counting is done on all all detectors.
+counting is done on all all detectors. Please see Section 4: “Traffic
+counting” for additional requirements.
 
 
 **Return values**
@@ -2384,7 +2391,8 @@ S0208 Traffic Counting: Number of vehicles of given classification
 Available from SXL version: ``1.0.14``
 
 This status was introduced to improve performance in case traffic
-counting is done on all all detectors.
+counting is done on all all detectors. Please see Section 4: “Traffic
+counting” for additional requirements.
 
 
 **Return values**
@@ -2646,10 +2654,10 @@ The controller must attempt all available safe action to reset to a
 functional state. Depending on regulations and controller capabilities,
 examples actions could be:
 
--  resetting parameters to defaults
--  restarting applications
--  restarting peripheral hardware
--  going through a shutdown/startup sequence and cycling power
+- resetting parameters to defaults
+- restarting applications
+- restarting peripheral hardware
+- going through a shutdown/startup sequence and cycling power
 
 The controller must also clear all alarms.
 
@@ -2913,9 +2921,9 @@ can be repeated to set several blocks of 16 inputs. Values are separated
 with comma. Blocks are separated with semicolon. Format: [Offset];[Bits
 to set];[Bits to unset];…
 
--  ‘Offset’ defines where the 16 inputs starts from
--  ‘Bits to set’ defines which bit(s) to set. ‘0’ if unused
--  ‘Bits to unset’ defines which bit(s) to unset. ‘0’ if unused
+- ‘Offset’ defines where the 16 inputs starts from
+- ‘Bits to set’ defines which bit(s) to set. ‘0’ if unused
+- ‘Bits to unset’ defines which bit(s) to unset. ‘0’ if unused
 
 Example 1: “3,4134,65” sets input 4,5,8,15 and unsets 3,9 - Input starts
 from no. 5 - “4134” is 1 0000 0010 0110 in binary, but since input
@@ -3295,31 +3303,30 @@ The movement to prioritize can be referenced in a number of ways,
 depending on what is configured in the controller, and in the system
 that sends priority requests. Either:
 
--  Reference a signal group by setting ‘signalGroupId’. This method is
-   simple, but will not allow you to have different priority mechanism
-   for the same signal group, unless they can be distinguished by the
-   vehicle type. For example, if you need to trigger different
-   priorities depending on whether a bus goes straight or makes a turn
-   for the same signal group, you need to use of the other referencing
-   methods.
--  Reference an input by setting ‘inputId’. This can be useful if you
-   previously used inputs to activate priority. The input will not be
-   activated, only the priority.
--  Reference a connection by setting ‘connectionId’. A connection is a
-   movement from a specific ingoing lane to a specific outgoing lane.
--  Reference an intersection approach by setting ‘approachId’.
--  Reference an ingoing lane by setting ‘laneInId’, and optionally also
-   reference an outgoing lane by setting ‘laneOutId’.
+- Reference a signal group by setting ‘signalGroupId’. This method is
+  simple, but will not allow you to have different priority mechanism
+  for the same signal group, unless they can be distinguished by the
+  vehicle type. For example, if you need to trigger different priorities
+  depending on whether a bus goes straight or makes a turn for the same
+  signal group, you need to use of the other referencing methods.
+- Reference an input by setting ‘inputId’. This can be useful if you
+  previously used inputs to activate priority. The input will not be
+  activated, only the priority.
+- Reference a connection by setting ‘connectionId’. A connection is a
+  movement from a specific ingoing lane to a specific outgoing lane.
+- Reference an intersection approach by setting ‘approachId’.
+- Reference an ingoing lane by setting ‘laneInId’, and optionally also
+  reference an outgoing lane by setting ‘laneOutId’.
 
 Referencing attributes that are not used must be left out, rather than
 set to null or empty strings. This includes:
 
--  signalGroupId
--  inputId
--  connectionId
--  approachId
--  laneInId
--  laneOutId
+- signalGroupId
+- inputId
+- connectionId
+- approachId
+- laneInId
+- laneOutId
 
 Referencing attributes are only used when initiating a request. When
 updating or cancelling the request, the request is identified by its
