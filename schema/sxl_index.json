@@ -1,0 +1,577 @@
+{
+  "meta" : {
+    "name" : "tlc",
+    "description" : "Traffic Light Controllers",
+    "version" : "1.3.0"
+  },
+  "statuses" : {
+    "S0001" : {
+      "arguments" : [
+        "basecyclecounter",
+        "cyclecounter",
+        "millisecond",
+        "signalgroupstatus",
+        "stage"
+      ]
+    },
+    "S0002" : {
+      "arguments" : [
+        "detectorlogicstatus"
+      ]
+    },
+    "S0003" : {
+      "arguments" : [
+        "inputstatus"
+      ]
+    },
+    "S0004" : {
+      "arguments" : [
+        "outputstatus"
+      ]
+    },
+    "S0005" : {
+      "arguments" : [
+        "status",
+        "statusByIntersection"
+      ]
+    },
+    "S0006" : {
+      "arguments" : [
+        "emergencystage",
+        "status"
+      ]
+    },
+    "S0007" : {
+      "arguments" : [
+        "intersection",
+        "source",
+        "status"
+      ]
+    },
+    "S0008" : {
+      "arguments" : [
+        "intersection",
+        "source",
+        "status"
+      ]
+    },
+    "S0009" : {
+      "arguments" : [
+        "intersection",
+        "source",
+        "status"
+      ]
+    },
+    "S0010" : {
+      "arguments" : [
+        "intersection",
+        "source",
+        "status"
+      ]
+    },
+    "S0011" : {
+      "arguments" : [
+        "intersection",
+        "source",
+        "status"
+      ]
+    },
+    "S0012" : {
+      "arguments" : [
+        "intersection",
+        "source",
+        "status"
+      ]
+    },
+    "S0013" : {
+      "arguments" : [
+        "intersection",
+        "status"
+      ]
+    },
+    "S0014" : {
+      "arguments" : [
+        "source",
+        "status"
+      ]
+    },
+    "S0015" : {
+      "arguments" : [
+        "source",
+        "status"
+      ]
+    },
+    "S0016" : {
+      "arguments" : [
+        "number"
+      ]
+    },
+    "S0017" : {
+      "arguments" : [
+        "number"
+      ]
+    },
+    "S0019" : {
+      "arguments" : [
+        "number"
+      ]
+    },
+    "S0020" : {
+      "arguments" : [
+        "controlmode",
+        "intersection"
+      ]
+    },
+    "S0021" : {
+      "arguments" : [
+        "detectorlogics"
+      ]
+    },
+    "S0022" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0023" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0024" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0025" : {
+      "arguments" : [
+        "ToGConfidence",
+        "ToRConfidence",
+        "likelyToGEstimate",
+        "likelyToREstimate",
+        "maxToGEstimate",
+        "maxToREstimate",
+        "minToGEstimate",
+        "minToREstimate"
+      ]
+    },
+    "S0026" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0027" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0028" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0029" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0030" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0031" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0032" : {
+      "arguments" : [
+        "intersection",
+        "source",
+        "status"
+      ]
+    },
+    "S0033" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0034" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0035" : {
+      "arguments" : [
+        "emergencyroutes"
+      ]
+    },
+    "S0091" : {
+      "arguments" : [
+        "user"
+      ]
+    },
+    "S0092" : {
+      "arguments" : [
+        "user"
+      ]
+    },
+    "S0095" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "S0096" : {
+      "arguments" : [
+        "day",
+        "hour",
+        "minute",
+        "month",
+        "second",
+        "year"
+      ]
+    },
+    "S0097" : {
+      "arguments" : [
+        "checksum",
+        "timestamp"
+      ]
+    },
+    "S0098" : {
+      "arguments" : [
+        "config",
+        "timestamp",
+        "version"
+      ]
+    },
+    "S0201" : {
+      "arguments" : [
+        "starttime",
+        "vehicles"
+      ]
+    },
+    "S0202" : {
+      "arguments" : [
+        "speed",
+        "starttime"
+      ]
+    },
+    "S0203" : {
+      "arguments" : [
+        "occupancy",
+        "starttime"
+      ]
+    },
+    "S0204" : {
+      "arguments" : [
+        "B",
+        "C",
+        "F",
+        "L",
+        "LS",
+        "MC",
+        "P",
+        "PS",
+        "SP",
+        "starttime"
+      ]
+    },
+    "S0205" : {
+      "arguments" : [
+        "start",
+        "vehicles"
+      ]
+    },
+    "S0206" : {
+      "arguments" : [
+        "speed",
+        "start"
+      ]
+    },
+    "S0207" : {
+      "arguments" : [
+        "occupancy",
+        "start"
+      ]
+    },
+    "S0208" : {
+      "arguments" : [
+        "B",
+        "C",
+        "F",
+        "L",
+        "LS",
+        "MC",
+        "P",
+        "PS",
+        "SP",
+        "start"
+      ]
+    }
+  },
+  "commands" : {
+    "M0001" : {
+      "arguments" : [
+        "intersection",
+        "securityCode",
+        "status",
+        "timeout"
+      ]
+    },
+    "M0002" : {
+      "arguments" : [
+        "securityCode",
+        "status",
+        "timeplan"
+      ]
+    },
+    "M0003" : {
+      "arguments" : [
+        "securityCode",
+        "status",
+        "traficsituation"
+      ]
+    },
+    "M0004" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0005" : {
+      "arguments" : [
+        "emergencyroute",
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0006" : {
+      "arguments" : [
+        "input",
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0007" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0008" : {
+      "arguments" : [
+        "duration",
+        "mode",
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0010" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0011" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0012" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0013" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0014" : {
+      "arguments" : [
+        "plan",
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0015" : {
+      "arguments" : [
+        "plan",
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0016" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0017" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0018" : {
+      "arguments" : [
+        "plan",
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0019" : {
+      "arguments" : [
+        "input",
+        "inputValue",
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0020" : {
+      "arguments" : [
+        "output",
+        "outputValue",
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0021" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0022" : {
+      "arguments" : [
+        "approachId",
+        "connectionId",
+        "eta",
+        "inputId",
+        "laneInId",
+        "laneOutId",
+        "level",
+        "priorityId",
+        "requestId",
+        "signalGroupId",
+        "type",
+        "vehicleType"
+      ]
+    },
+    "M0023" : {
+      "arguments" : [
+        "securityCode",
+        "status"
+      ]
+    },
+    "M0024" : {
+      "arguments" : [
+        "status"
+      ]
+    },
+    "M0103" : {
+      "arguments" : [
+        "newSecurityCode",
+        "oldSecurityCode",
+        "status"
+      ]
+    },
+    "M0104" : {
+      "arguments" : [
+        "day",
+        "hour",
+        "minute",
+        "month",
+        "second",
+        "securityCode",
+        "year"
+      ]
+    }
+  },
+  "alarms" : {
+    "A0001" : {
+      "arguments" : []
+    },
+    "A0002" : {
+      "arguments" : []
+    },
+    "A0003" : {
+      "arguments" : []
+    },
+    "A0004" : {
+      "arguments" : []
+    },
+    "A0005" : {
+      "arguments" : []
+    },
+    "A0006" : {
+      "arguments" : []
+    },
+    "A0007" : {
+      "arguments" : [
+        "protocol"
+      ]
+    },
+    "A0008" : {
+      "arguments" : [
+        "timeplan"
+      ]
+    },
+    "A0009" : {
+      "arguments" : []
+    },
+    "A0010" : {
+      "arguments" : []
+    },
+    "A0101" : {
+      "arguments" : []
+    },
+    "A0201" : {
+      "arguments" : [
+        "color"
+      ]
+    },
+    "A0202" : {
+      "arguments" : [
+        "color"
+      ]
+    },
+    "A0301" : {
+      "arguments" : [
+        "detector",
+        "errormode",
+        "manual",
+        "type"
+      ]
+    },
+    "A0302" : {
+      "arguments" : [
+        "detector",
+        "errormode",
+        "logicerror",
+        "manual",
+        "type"
+      ]
+    },
+    "A0303" : {
+      "arguments" : [
+        "detector",
+        "errormode",
+        "manual",
+        "type"
+      ]
+    },
+    "A0304" : {
+      "arguments" : [
+        "detector",
+        "errormode",
+        "logicerror",
+        "manual",
+        "type"
+      ]
+    }
+  }
+}
