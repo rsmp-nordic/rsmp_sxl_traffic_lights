@@ -70,5 +70,6 @@
         "$ref" : "alarms/alarms.json"
       }
     }
-  ]
+  ],
+  "minimum_core_version" : "3.3.0"
 }

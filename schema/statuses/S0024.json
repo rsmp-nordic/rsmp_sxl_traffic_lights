@@ -26,7 +26,8 @@
           "properties" : {
             "s" : {
               "description" : "Offset table\nEach offset time is written as p-t where:\np=time plan number (from 1 to 255)\nt=offset time in seconds (from 0 to 255)\n\nEach offset time is separated with a comma\n\nE.g.\n1-0,2-13-3-7",
-              "$ref" : "../defs/definitions.json#/string_list"
+              "$ref" : "../defs/definitions.json#/string_list",
+              "pattern" : "^(\\d{1,3}\\-\\d{1,3})(?:,(\\d{1,3}\\-\\d{1,3}))*$"
             }
           }
         }
