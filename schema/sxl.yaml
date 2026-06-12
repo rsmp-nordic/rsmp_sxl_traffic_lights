@@ -3,6 +3,7 @@ meta:
   name: tlc
   description: Traffic Light Controllers
   version: 1.0.8
+  minimum_core_version: 3.1.2
 objects:
   Traffic Light Controller:
     description:
