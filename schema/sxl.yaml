@@ -825,17 +825,17 @@ objects:
               YellowFlash: Enables yellow flash
               Dark: Enables dark mode
           securityCode:
-            type: string_list
+            type: string
             description: Security code 2
           timeout:
-            type: integer_list
+            type: integer
             description: |-
               Time in minutes until controller automatically reverts to previous functional position.
               0=no automatic return
             min: 0
             max: 1440
           intersection:
-            type: integer_list
+            type: integer
             description: Intersection number
             min: 0
             max: 255
