@@ -63,7 +63,7 @@ Aggregated status
    ===========  =====================  ===========================================================================================================================
      State-Bit  Description            Comment
    ===========  =====================  ===========================================================================================================================
-             1  Local mode             Traffic Light Controller is in local mode. NTS has no control.
+             1  Local mode             Traffic Light Controller is in local mode
              2  No Communications      Not used
              3  High Priority Fault    Traffic Light Controller is in fail-safe mode; e.g. yellow flash or dark mode
              4  Medium Priority Fault  Traffic Light Controller has a medium priority fault, but not in fail-safe mode. E.g. several lamp faults or detector fault
