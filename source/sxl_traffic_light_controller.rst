@@ -1393,26 +1393,29 @@ S0023 Dynamic bands
 
 Available from SXL version: ``1.0.13``
 
-Provides a list of all defined dynamic bands. Dynamic bands moves start
-of signal groups in the cycle and changes the signal timings. A typical
-usage of dynamic bands is scenario based control where changing of
-signal timings is used for optimal traffic flow.
+Provides the current extension value of every configured dynamic band in
+every time plan. Use this status to discover which plan and band numbers
+are available, to read the values before changing them, and to verify a
+change made with M0014.
+
+A dynamic band is a timing boundary configured in a signal plan. Moving
+the boundary changes the start time of one or more signal groups. The
+signal plan defines which signal groups each band affects; that mapping
+is not transferred over RSMP.
 
 
 **Return values**
 
 **status** ``string``
 
-    Dynamic bands |br|
-    Each dynamic band are written as pp-dd-ee where: |br|
+    Comma-separated list of dynamic bands. Each item uses the format pp-dd-ee, where: |br|
     pp=Time plan |br|
-    dd=Dynamic band number (from 1-10) |br|
-    ee=Extension in seconds in this band |br|
+    dd=Dynamic band number (1-10) |br|
+    ee=Current extension value in seconds |br|
     |br|
-    Each dynamic band is separated with a comma. |br|
+    Example: "1-1-12,1-3-5,2-1-0" means that plan 1 has band 1 set to 12 seconds and band 3 set to 5 seconds, while plan 2 has band 1 set to 0 seconds. |br|
     |br|
-    E.g. |br|
-    pp-dd-ee,pp-dd-ee
+    An empty string means that no dynamic bands are configured.
 
 
 .. _S0024:
@@ -2966,18 +2969,39 @@ M0014 Set dynamic bands
 
 Available from SXL version: ``1.0.13``
 
-Can be used to change between predefined signal timings. Moves the start
-of signal groups in the cycle. This command can be used to change the
-split of green time during the cycle. A typical usage is scenario based
-control where changing of signal timings is used for optimal traffic
-flow. Requires security code 2
+Adjusts preconfigured signal-plan timings without selecting a different
+time plan. Each time plan can contain up to ten numbered dynamic bands.
+A band is a timing boundary defined in the controller's signal program;
+it determines which signal-group start times move when the band is
+extended. M0014 changes only the extension values. It does not create
+bands or define which signal groups they affect.
+
+The exact effect of an extension depends on the controller configuration.
+It can redistribute green time between movements and, where configured,
+increase the total cycle time. This is typically used by scenario-based
+control to respond to measured traffic demand without switching among a
+large number of fixed plans.
+
+The plan argument identifies the time plan whose stored band values are
+changed. The status argument contains one or more band-extension pairs.
+Each supplied value replaces the previous value for that band; it is not
+added to it. Bands omitted from the command are unchanged. Set a band to
+0 to remove its extension. If the selected plan is not currently active,
+the stored values apply when that plan is subsequently selected.
+
+Example: for plan 4, status "1-12,3-5" sets band 1 to a 12-second
+extension and band 3 to a 5-second extension. The controller-specific
+configuration determines which signal groups move as a result. Use S0023
+to read the available bands and verify their values.
+
+Requires security code 2
 
 
 **Arguments**
 
 **plan** ``integer_as_string``
 
-    Plan to be changed
+    Time plan whose dynamic-band values are changed. This command does not select the plan.
 
     ===  =======
     max  ``255``
@@ -2986,15 +3010,13 @@ flow. Requires security code 2
 
 **status** ``string_list_as_string``
 
-    Dynamic bands |br|
-    Each dynamic band are written as dd-ee where: |br|
-    dd=Dynamic band number (from 1-10) |br|
-    ee=Extension in seconds in this band |br|
+    Comma-separated list of dynamic bands to change. Each item uses the format dd-ee, where: |br|
+    dd=Dynamic band number (1-10) |br|
+    ee=New extension value in seconds; 0 removes the extension |br|
     |br|
-    Each dynamic band is separated with a comma. |br|
+    Example: "1-12,3-5" |br|
     |br|
-    E.g. |br|
-    dd-ee,dd-ee
+    Each value replaces the previous value of the specified band. Bands not included in the list are unchanged.
 
 
 **securityCode** ``string``
@@ -3675,4 +3697,3 @@ UTC is used. Requires security code 1.
 .. |br_latex| raw:: latex
 
    \newline
-
