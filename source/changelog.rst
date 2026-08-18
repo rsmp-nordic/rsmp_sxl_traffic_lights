@@ -16,6 +16,7 @@ The full list of changes between 1.3.0 and 1.2.1 can be viewed on github.
 - M0020: Fixed True/False mixed up :issue:`191`
 - M0008: Add ability to only force detector logic for a short duration :issue:`158`
 - Show sxl version info for each command/status and attribute :issue:`138`
+- Define fundamental traffic light controller concepts and terminology. :issue:`205`
 
 Version 1.2.1
 -------------
