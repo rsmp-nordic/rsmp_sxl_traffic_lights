@@ -3556,10 +3556,11 @@ M0103 Set security code
 
 Available from SXL version: ``1.0.1``
 
-Change the security code to use when sending commands Security codes are
-used as an extra layer of security in many commands. They need to match
-between the supervision system and the traffic light controller in order
-for the commands to be executed.
+Change a security code used when sending commands. Security codes are
+shared application-level values. The code required by a command must
+match between the supervision system and the traffic light controller
+for the command to be executed. Security codes are not cryptographic
+protection.
 
 
 **Arguments**
