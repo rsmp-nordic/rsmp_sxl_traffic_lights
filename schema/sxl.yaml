@@ -1769,6 +1769,7 @@ objects:
               cancel: Cancel an existing priority
           level:
             type: integer_as_string
+            optional: true
             description: |-
               0: Lowest, 14: Highest
             min: 0
