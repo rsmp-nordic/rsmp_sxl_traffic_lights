@@ -200,30 +200,13 @@ Plans and schedules
    using its own calendar and clock.
 
 ``Traffic situation``
-   A higher-level description of conditions or intended operation in an area
-   or sub-area. A traffic situation may cause different controllers to select
-   different local time plans. It therefore coordinates an operational intent
-   without requiring all controllers to use the same plan number.
-
-The common selection paths can be summarized as:
-
-.. code-block:: text
-
-   week table -> time table -----------+
-                                        |
-   traffic situation ------------------+--> selected time plan
-                                        |
-   external time-plan selection -------+
-
-   selected time plan + detector logic + controller programming
-                                           |
-                                           v
-                                  signal-group changes
+   A higher-level description of conditions that can should affect operation,
+   such as traffic volumme, events or emergency situations.
+   A traffic situation may cause different controllers to select
+   different time plan.
 
 An external system can request a particular time plan or return selection to
-the controller's own programming. The controller configuration defines how its
-local schedules, traffic situations, control functions, and other local inputs
-interact.
+the controller's own programming. 
 
 Timing and control
 ^^^^^^^^^^^^^^^^^^
@@ -258,16 +241,15 @@ Timing and control
    demand.
 
 ``Traffic-actuated control``
-   Controller operation in which locally configured functions use detector
-   demand to start service or extend green within the configured limits of the
-   selected time plan. The controller programming decides how the demand is
-   handled. Activating fixed-time control deactivates this operation. SXL does
-   not define the actuation method.
+   Controller operation in which detector demand is used to start service or
+   extend green within the configured limits of the selected time plan.
+   The controller programming decides how the demand is
+   handled. The SXL does not define the actuation method.
 
 ``Adaptive control``
    Controller or external-system operation that adjusts signal timing in
    response to measured or predicted traffic conditions. An adaptive system
-   may select or adjust fixed time plans using SXL, but SXL defines the
+   may select or adjust fixed time plans, but the SXL defines only the
    exchanged commands and statuses, not the adaptive strategy.
 
 Local operation
