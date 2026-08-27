@@ -3091,6 +3091,9 @@ Set time of day for when to automatically switch signal program (time
 plan). This command changes the signal timings according to time of day
 for optimal traffic flow. Requires security code 2.
 
+No plan means that the controller will be in standby mode and will not control traffic. 
+Standby mode is is configured on the controller and is typically mandated by national regulation.
+It can be yellow flash, red flash, dark mode, etc.
 
 **Arguments**
 
