@@ -2524,6 +2524,9 @@ Available from SXL version: ``1.0.1``
 Sets the controller to yellow flash, dark mode or normal control.
 Requires security code 2.
 
+Normal control is the default mode of operation where the time plan is selected according 
+to the day and week schedule, the M0002 command or local override.
+
 
 **Arguments**
 
