@@ -18,6 +18,7 @@ RSMP Signal Exchange List for Traffic Light Controllers
    :maxdepth: 2
    :numbered:
 
+   controller_concepts
    definitions
    sxl_traffic_light_controller
    signal_group_status
