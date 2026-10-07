@@ -272,6 +272,22 @@ synonyms:
    The immediate origin of a reported change, such as the controller's local
    day table or an external command.
 
+   One of the following sources can be used:
+
+   - Operator panel: Either the physical operator panel on the controller or a
+     remote operator panel in the web interface of the controller.
+
+   - Calendar clock: Local schedule in the controller
+
+   - Control block: Local programming in the controller
+
+   - Forced: Forced due to external command e.g. supervisor or other
+     programming in the controller
+
+   - Startup: See :term:`Start-up interval`
+
+   - Other: Any other source not listed above
+
 For example, normal operation may be requested as the functional position
 while the controller is in normal control mode, a particular signal program is
 selected, and each signal group has its own current status. These describe
