@@ -4,8 +4,31 @@ Traffic data
 Traffic data (S0201-S0208) needs additional requirements in order to work
 correctly.
 
+Interval based subscription only
+--------------------------------
+
 - The supervision system uses **StatusSubscribe** and **StatusUpdate** to
   continuously receive traffic data from the TLC using subscriptions.
+
+- sendOnChange (sOc) must be set to **false** and updateRate must not be
+  set to "0".
+
+- The use of **StatusRequest** and **StatusResponse** is not supported.
+
+"Clean" time-points
+-------------------
+
+- Traffic counting must be measured during even time intervals.
+  For instance; if **updateRate=300** (every 5 minutes) is set at the
+  status subscription, the traffic counter must start at 15:00:00,
+  15:05:00, 15:10:00.
+
+- Traffic counting must not contain partial counting.
+  E.g. It should not return the measurement for 15:03-15:05 if the
+  updateRate is set to 300.
+
+Value is reset on subscription interval
+---------------------------------------
 
 - **starttime** is the time stamp of start of measuring.
   E.g. if a subscription update is sent at 15:05 using a subscription update
@@ -13,18 +36,14 @@ correctly.
   and **vehicles** (S0201) would contain the number of vehicles between
   15:00 and 15:05.
 
-- Traffic counting must be made at even time intervals.
-  For instance; if **updateRate=300** (every 5 minutes) is set at the
-  status subscription, the traffic counter must start at 15:00:00,
-  15:05:00, 15:10:00 and so on.
-
-- No initial status update should be sent directly after receiving status
-  subscription. Status updates should only be sent at even time intervals
-  and not contain partial counting, e.g. 15:01-15:03 if updateRate=300
-
 - The traffic counter must not reset its traffic counter after receiving
-  a new subscription request. The traffic counter may only reset its
-  traffic counter at even time intervals.
+  a new subscription request.
+
+- The traffic counter must only reset its traffic counter at even time
+  intervals.
+
+Buffering
+---------
  
 - Buffering of traffic data during connection interruptions should be
   possible to enable/disable in the equipment. If buffering is enabled it

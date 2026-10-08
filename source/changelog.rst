@@ -4,11 +4,24 @@
 Change log
 ==========
 
+Version 1.3.0
+-------------
+Release date:
+
+The full list of changes between 1.3.0 and 1.2.1 can be viewed on github.
+:compare:`v1.2.1...v1.3.0`
+
+- Update the SXL to use the legacy data names, e.g. "integer_as_string". :issue:`219`
+- Clarify definitions of aggregated status bits. :issue:`80`
+- M0020: Fixed True/False mixed up :issue:`191`
+- M0008: Add ability to only force detector logic for a short duration :issue:`158`
+- Show sxl version info for each command/status and attribute :issue:`138`
+
 Version 1.2.1
 -------------
 Release date: 2024-06-25
 
-The full list of changes between 1.2.1 and 1.2 can be viewed on github.
+The full list of changes between 1.2.1 and 1.2.0 can be viewed on github.
 :compare:`v1.2...v1.2.1`
 
 - Add "start-up interval" to the definitions. :issue:`184`
@@ -17,12 +30,12 @@ The full list of changes between 1.2.1 and 1.2 can be viewed on github.
 - Clarification of S0020 (control mode). :issue:`139`
 - Deprecation of M0004 (restart). :schema_issue:`99`
 
-Version 1.2
------------
+Version 1.2.0
+-------------
 Release date: 2023-10-03
 
-The full list of changes between version 1.2 and 1.1
-`can be viewed on github <https://github.com/rsmp-nordic/rsmp_sxl_traffic_lights/compare/1.1...v1.2>`_.
+The full list of changes between 1.1.0 and 1.2.0 can be viewed on github.
+:compare:`v1.1...v1.2`
 
 **Major changes**
 
@@ -47,8 +60,8 @@ The full list of changes between version 1.2 and 1.1
 - S0006: Rename "emergency stage" to "emergency route". :issue:`145` and :issue:`110`
 - S0007: Update description. :issue:`168`
 
-Version 1.1
------------
+Version 1.1.0
+-------------
 Release date: 2022-06-23
 
 **Major changes**
@@ -80,11 +93,11 @@ Release date: 2022-06-23
 
 **Minor changes**
 
-- M0013: Add "All read" as possible option for Police Key. :issue:`119`
+- M0013: Add "All red" as possible option for Police Key. :issue:`119`
 - Use only JSON data types. Replace "long" with "integer". :issue:`133`
 - S0001: Use '-' if there are gaps in the numbering. :issue:`125`
 - M0010, M0011, M0012 marked as reserved for future use.
-- extendedinputstatus and extendedoutstatus in S0003 and S0004 marked as
+- extendedinputstatus and extendedoutputstatus in S0003 and S0004 marked as
   deprecated.
 
 **Minor clarifications**
@@ -96,7 +109,7 @@ Release date: 2022-06-23
 - Signal group status: Ascii character after each definition. :issue:`103`
 - S0011: Yellow flash. Clarification in description. :issue:`112`
 - M0019: Typo in example for "Force Input". :issue:`136`
-- Aggregated Status, functionalPosition  and functionalState (fS and fP) is unused.
+- Aggregated Status, functionalPosition and functionalState (fS and fP) are unused.
   :issue:`90`
 - Definition of max. minimum green. :issue:`102`
 - Clarify that a number of statuses uses comma separated lists of intersections.
@@ -105,7 +118,7 @@ Release date: 2022-06-23
 
 Version 1.0.15
 ---------------
-Relase date: 2020-10-30
+Release date: 2020-10-30
 
 - The coordination specification has been added. :pull:`79`
   Coordination with RSMP were tested already back in 2013-2014 together with
