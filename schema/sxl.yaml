@@ -1458,7 +1458,7 @@ objects:
 
           Adjusts preconfigured signal-plan timings without selecting a different time plan. Each time plan can contain up to ten numbered dynamic bands. A band is a timing boundary defined in the controller's signal program; it determines which signal-group start times move when the band is extended. M0014 changes only the extension values. It does not create bands or define which signal groups they affect.
 
-          The exact effect of an extension depends on the controller configuration. It can redistribute green time between movements and, where configured, increase the total cycle time. This is typically used by scenario-based control to respond to measured traffic demand without switching among a large number of fixed plans.
+          It redistributes green time between movements. The exact effect of an extension depends on the controller configuration. This is typically used by scenario-based control to respond to measured traffic demand without switching among a large number of fixed plans.
 
           The plan argument identifies the time plan whose stored band values are changed. The status argument contains one or more band-extension pairs. Each supplied value replaces the previous value for that band; it is not added to it. Bands omitted from the command are unchanged. Set a band to 0 to remove its extension. If the selected plan is not currently active, the stored values apply when that plan is subsequently selected.
 
