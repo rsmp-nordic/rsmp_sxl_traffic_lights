@@ -2971,16 +2971,15 @@ Available from SXL version: ``1.0.13``
 
 Adjusts preconfigured signal-plan timings without selecting a different
 time plan. Each time plan can contain up to ten numbered dynamic bands.
-A band is a timing boundary defined in the controller's signal program;
+A band is a timing boundary defined in the controller’s signal program;
 it determines which signal-group start times move when the band is
 extended. M0014 changes only the extension values. It does not create
 bands or define which signal groups they affect.
 
-The exact effect of an extension depends on the controller configuration.
-It can redistribute green time between movements and, where configured,
-increase the total cycle time. This is typically used by scenario-based
-control to respond to measured traffic demand without switching among a
-large number of fixed plans.
+It redistributes green time between movements. The exact effect of an
+extension depends on the controller configuration. This is typically
+used by scenario-based control to respond to measured traffic demand
+without switching among a large number of fixed plans.
 
 The plan argument identifies the time plan whose stored band values are
 changed. The status argument contains one or more band-extension pairs.
@@ -2989,7 +2988,7 @@ added to it. Bands omitted from the command are unchanged. Set a band to
 0 to remove its extension. If the selected plan is not currently active,
 the stored values apply when that plan is subsequently selected.
 
-Example: for plan 4, status "1-12,3-5" sets band 1 to a 12-second
+Example: for plan 4, status “1-12,3-5” sets band 1 to a 12-second
 extension and band 3 to a 5-second extension. The controller-specific
 configuration determines which signal groups move as a result. Use S0023
 to read the available bands and verify their values.
@@ -3001,7 +3000,7 @@ Requires security code 2
 
 **plan** ``integer_as_string``
 
-    Time plan whose dynamic-band values are changed. This command does not select the plan.
+    Time plan whose dynamic-band values are changed. This command does not select the plan
 
     ===  =======
     max  ``255``
@@ -3697,3 +3696,4 @@ UTC is used. Requires security code 1.
 .. |br_latex| raw:: latex
 
    \newline
+
