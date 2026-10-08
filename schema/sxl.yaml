@@ -10,7 +10,7 @@ objects:
     aggregated_status:
       1:
         title: Local mode
-        description: Traffic Light Controller is in local mode. NTS has no control.
+        description: Traffic Light Controller is in local mode
       2:
         title: No Communications
         description: Not used
