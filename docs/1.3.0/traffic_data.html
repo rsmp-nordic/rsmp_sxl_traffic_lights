@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4. Traffic data &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.3.0 documentation</title>
+  <title>5. Traffic data &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=86f27845" />
 
@@ -18,8 +18,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Coordination between traffic light controllers" href="coordination.html" />
-    <link rel="prev" title="3. Signal Group status" href="signal_group_status.html" /> 
+    <link rel="next" title="6. Coordination between traffic light controllers" href="coordination.html" />
+    <link rel="prev" title="4. Signal Group status" href="signal_group_status.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,21 +45,22 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html">2. Signal Exchange List</a></li>
-<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">3. Signal Group status</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. Traffic data</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#interval-based-subscription-only">4.1. Interval based subscription only</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#clean-time-points">4.2. “Clean” time-points</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#value-is-reset-on-subscription-interval">4.3. Value is reset on subscription interval</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#buffering">4.4. Buffering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller_concepts.html">1. Traffic light controller concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">2. Definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sxl_traffic_light_controller.html">3. Signal Exchange List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">4. Signal Group status</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. Traffic data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interval-based-subscription-only">5.1. Interval based subscription only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clean-time-points">5.2. “Clean” time-points</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#value-is-reset-on-subscription-interval">5.3. Value is reset on subscription interval</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#buffering">5.4. Buffering</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="coordination.html">5. Coordination between traffic light controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multiple_supervisors.html">6. Multiple supervisors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security_codes.html">7. Security codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">8. JSon Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">9. Change log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordination.html">6. Coordination between traffic light controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_supervisors.html">7. Multiple supervisors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_codes.html">8. Security codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">9. JSon Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">10. Change log</a></li>
 </ul>
 
         </div>
@@ -76,7 +77,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4. </span>Traffic data</li>
+      <li class="breadcrumb-item active"><span class="section-number">5. </span>Traffic data</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/traffic_data.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,11 +88,11 @@
            <div itemprop="articleBody">
              
   <section id="traffic-data">
-<h1><span class="section-number">4. </span>Traffic data<a class="headerlink" href="#traffic-data" title="Link to this heading"></a></h1>
+<h1><span class="section-number">5. </span>Traffic data<a class="headerlink" href="#traffic-data" title="Link to this heading"></a></h1>
 <p>Traffic data (S0201-S0208) needs additional requirements in order to work
 correctly.</p>
 <section id="interval-based-subscription-only">
-<h2><span class="section-number">4.1. </span>Interval based subscription only<a class="headerlink" href="#interval-based-subscription-only" title="Link to this heading"></a></h2>
+<h2><span class="section-number">5.1. </span>Interval based subscription only<a class="headerlink" href="#interval-based-subscription-only" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>The supervision system uses <strong>StatusSubscribe</strong> and <strong>StatusUpdate</strong> to
 continuously receive traffic data from the TLC using subscriptions.</p></li>
@@ -101,7 +102,7 @@ set to “0”.</p></li>
 </ul>
 </section>
 <section id="clean-time-points">
-<h2><span class="section-number">4.2. </span>“Clean” time-points<a class="headerlink" href="#clean-time-points" title="Link to this heading"></a></h2>
+<h2><span class="section-number">5.2. </span>“Clean” time-points<a class="headerlink" href="#clean-time-points" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Traffic counting must be measured during even time intervals.
 For instance; if <strong>updateRate=300</strong> (every 5 minutes) is set at the
@@ -113,7 +114,7 @@ updateRate is set to 300.</p></li>
 </ul>
 </section>
 <section id="value-is-reset-on-subscription-interval">
-<h2><span class="section-number">4.3. </span>Value is reset on subscription interval<a class="headerlink" href="#value-is-reset-on-subscription-interval" title="Link to this heading"></a></h2>
+<h2><span class="section-number">5.3. </span>Value is reset on subscription interval<a class="headerlink" href="#value-is-reset-on-subscription-interval" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><strong>starttime</strong> is the time stamp of start of measuring.
 E.g. if a subscription update is sent at 15:05 using a subscription update
@@ -127,7 +128,7 @@ intervals.</p></li>
 </ul>
 </section>
 <section id="buffering">
-<h2><span class="section-number">4.4. </span>Buffering<a class="headerlink" href="#buffering" title="Link to this heading"></a></h2>
+<h2><span class="section-number">5.4. </span>Buffering<a class="headerlink" href="#buffering" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Buffering of traffic data during connection interruptions should be
 possible to enable/disable in the equipment. If buffering is enabled it
@@ -143,8 +144,8 @@ determined by the status subscription if buffering is enabled.</p></li>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="signal_group_status.html" class="btn btn-neutral float-left" title="3. Signal Group status" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="coordination.html" class="btn btn-neutral float-right" title="5. Coordination between traffic light controllers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="signal_group_status.html" class="btn btn-neutral float-left" title="4. Signal Group status" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="coordination.html" class="btn btn-neutral float-right" title="6. Coordination between traffic light controllers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

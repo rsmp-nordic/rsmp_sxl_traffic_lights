@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2. Signal Exchange List &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.3.0 documentation</title>
+  <title>3. Signal Exchange List &mdash; RSMP Signal Exchange List for Traffic Light Controllers 1.3.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=86f27845" />
 
@@ -18,8 +18,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Signal Group status" href="signal_group_status.html" />
-    <link rel="prev" title="1. Definitions" href="definitions.html" /> 
+    <link rel="next" title="4. Signal Group status" href="signal_group_status.html" />
+    <link rel="prev" title="2. Definitions" href="definitions.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -45,122 +45,123 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="definitions.html">1. Definitions</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Signal Exchange List</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#object-types">2.1. Object Types</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#grouped-objects">2.1.1. Grouped objects</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#single-objects">2.1.2. Single objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="controller_concepts.html">1. Traffic light controller concepts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="definitions.html">2. Definitions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Signal Exchange List</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#object-types">3.1. Object Types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#grouped-objects">3.1.1. Grouped objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#single-objects">3.1.2. Single objects</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#aggregated-status">2.2. Aggregated status</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#alarms">2.3. Alarms</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#a0001-serious-hardware-error">2.3.1. A0001 Serious hardware error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0002-less-serious-hardware-error">2.3.2. A0002 Less serious hardware error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0003-serious-configuration-error">2.3.3. A0003 Serious configuration error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0004-less-serious-configuration-error">2.3.4. A0004 Less serious configuration error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0005-synchronisation-error-coordination">2.3.5. A0005 Synchronisation error (coordination)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0006-safety-error">2.3.6. A0006 Safety error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0007-communication-error">2.3.7. A0007 Communication error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0008-dead-lock-error">2.3.8. A0008 Dead lock error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0009-other-error">2.3.9. A0009 Other error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0010-door-open">2.3.10. A0010 Door open</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0101-pushbutton-error">2.3.11. A0101 Pushbutton error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0201-serious-lamp-error">2.3.12. A0201 Serious lamp error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0202-less-serious-lamp-error">2.3.13. A0202 Less serious lamp error</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0301-detector-error-hardware">2.3.14. A0301 Detector error (hardware)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0302-detector-error-logic-error">2.3.15. A0302 Detector error (logic error)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0303-serious-detector-error-hardware">2.3.16. A0303 Serious detector error (hardware)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#a0304-serious-detector-error-logic-error">2.3.17. A0304 Serious detector error (logic error)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#aggregated-status">3.2. Aggregated status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#alarms">3.3. Alarms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a0001-serious-hardware-error">3.3.1. A0001 Serious hardware error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0002-less-serious-hardware-error">3.3.2. A0002 Less serious hardware error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0003-serious-configuration-error">3.3.3. A0003 Serious configuration error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0004-less-serious-configuration-error">3.3.4. A0004 Less serious configuration error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0005-synchronisation-error-coordination">3.3.5. A0005 Synchronisation error (coordination)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0006-safety-error">3.3.6. A0006 Safety error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0007-communication-error">3.3.7. A0007 Communication error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0008-dead-lock-error">3.3.8. A0008 Dead lock error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0009-other-error">3.3.9. A0009 Other error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0010-door-open">3.3.10. A0010 Door open</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0101-pushbutton-error">3.3.11. A0101 Pushbutton error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0201-serious-lamp-error">3.3.12. A0201 Serious lamp error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0202-less-serious-lamp-error">3.3.13. A0202 Less serious lamp error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0301-detector-error-hardware">3.3.14. A0301 Detector error (hardware)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0302-detector-error-logic-error">3.3.15. A0302 Detector error (logic error)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0303-serious-detector-error-hardware">3.3.16. A0303 Serious detector error (hardware)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a0304-serious-detector-error-logic-error">3.3.17. A0304 Serious detector error (logic error)</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#status">2.4. Status</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#s0001-signal-group-status">2.4.1. S0001 Signal group status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0002-detector-logic-status">2.4.2. S0002 Detector logic status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0003-input-status">2.4.3. S0003 Input status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0004-output-status">2.4.4. S0004 Output status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0005-traffic-light-controller-starting">2.4.5. S0005 Traffic Light Controller starting</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0006-emergency-route">2.4.6. S0006 Emergency route</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0007-controller-switched-on">2.4.7. S0007 Controller switched on</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0008-manual-control">2.4.8. S0008 Manual control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0009-fixed-time-control">2.4.9. S0009 Fixed time control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0010-isolated-control">2.4.10. S0010 Isolated control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0011-yellow-flash">2.4.11. S0011 Yellow flash</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0012-all-red">2.4.12. S0012 All red</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0013-police-key">2.4.13. S0013 Police key</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0014-current-time-plan">2.4.14. S0014 Current time plan</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0015-current-traffic-situation">2.4.15. S0015 Current traffic situation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0016-number-of-detector-logics">2.4.16. S0016 Number of detector logics</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0017-number-of-signal-groups">2.4.17. S0017 Number of signal groups</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0019-number-of-traffic-situations">2.4.18. S0019 Number of traffic situations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0020-control-mode">2.4.19. S0020 Control mode</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0021-manually-set-detector-logic">2.4.20. S0021 Manually set detector logic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0022-list-of-time-plans">2.4.21. S0022 List of time plans</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0023-dynamic-bands">2.4.22. S0023 Dynamic bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0024-offset-time">2.4.23. S0024 Offset time</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0025-time-of-green-time-of-red">2.4.24. S0025 Time-of-Green / Time-of-Red</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0026-week-time-table">2.4.25. S0026 Week time table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0027-time-tables">2.4.26. S0027 Time tables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0028-cycle-time">2.4.27. S0028 Cycle time</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0029-forced-input-status">2.4.28. S0029 Forced input status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0030-forced-output-status">2.4.29. S0030 Forced output status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0031-trigger-level-sensitivity-for-loop-detector">2.4.30. S0031 Trigger level sensitivity for loop detector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0032-coordinated-control">2.4.31. S0032 Coordinated control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0033-signal-priority-status">2.4.32. S0033 Signal Priority Status</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0034-timeout-for-dynamic-bands">2.4.33. S0034 Timeout for dynamic bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0035-emergency-route">2.4.34. S0035 Emergency route</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0091-operator-logged-in-out-op-panel">2.4.35. S0091 Operator logged in/out OP-panel</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0092-operator-logged-in-out-web-interface">2.4.36. S0092 Operator logged in/out web-interface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0095-version-of-traffic-light-controller">2.4.37. S0095 Version of Traffic Light Controller</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0096-current-date-and-time">2.4.38. S0096 Current date and time</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0097-checksum-of-traffic-parameters">2.4.39. S0097 Checksum of traffic parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0098-configuration-of-traffic-parameters">2.4.40. S0098 Configuration of traffic parameters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0201-traffic-counting-number-of-vehicles">2.4.41. S0201 Traffic Counting: Number of vehicles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0202-traffic-counting-vehicle-speed">2.4.42. S0202 Traffic Counting: Vehicle speed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0203-traffic-counting-occupancy">2.4.43. S0203 Traffic Counting: Occupancy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0204-traffic-counting-number-of-vehicles-of-given-classification">2.4.44. S0204 Traffic Counting: Number of vehicles of given classification</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0205-traffic-counting-number-of-vehicles">2.4.45. S0205 Traffic Counting: Number of vehicles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0206-traffic-counting-vehicle-speed">2.4.46. S0206 Traffic Counting: Vehicle speed</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0207-traffic-counting-occupancy">2.4.47. S0207 Traffic Counting: Occupancy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#s0208-traffic-counting-number-of-vehicles-of-given-classification">2.4.48. S0208 Traffic Counting: Number of vehicles of given classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#status">3.4. Status</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#s0001-signal-group-status">3.4.1. S0001 Signal group status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0002-detector-logic-status">3.4.2. S0002 Detector logic status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0003-input-status">3.4.3. S0003 Input status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0004-output-status">3.4.4. S0004 Output status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0005-traffic-light-controller-starting">3.4.5. S0005 Traffic Light Controller starting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0006-emergency-route">3.4.6. S0006 Emergency route</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0007-controller-switched-on">3.4.7. S0007 Controller switched on</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0008-manual-control">3.4.8. S0008 Manual control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0009-fixed-time-control">3.4.9. S0009 Fixed time control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0010-isolated-control">3.4.10. S0010 Isolated control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0011-yellow-flash">3.4.11. S0011 Yellow flash</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0012-all-red">3.4.12. S0012 All red</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0013-police-key">3.4.13. S0013 Police key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0014-current-time-plan">3.4.14. S0014 Current time plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0015-current-traffic-situation">3.4.15. S0015 Current traffic situation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0016-number-of-detector-logics">3.4.16. S0016 Number of detector logics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0017-number-of-signal-groups">3.4.17. S0017 Number of signal groups</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0019-number-of-traffic-situations">3.4.18. S0019 Number of traffic situations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0020-control-mode">3.4.19. S0020 Control mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0021-manually-set-detector-logic">3.4.20. S0021 Manually set detector logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0022-list-of-time-plans">3.4.21. S0022 List of time plans</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0023-dynamic-bands">3.4.22. S0023 Dynamic bands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0024-offset-time">3.4.23. S0024 Offset time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0025-time-of-green-time-of-red">3.4.24. S0025 Time-of-Green / Time-of-Red</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0026-week-time-table">3.4.25. S0026 Week time table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0027-time-tables">3.4.26. S0027 Time tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0028-cycle-time">3.4.27. S0028 Cycle time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0029-forced-input-status">3.4.28. S0029 Forced input status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0030-forced-output-status">3.4.29. S0030 Forced output status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0031-trigger-level-sensitivity-for-loop-detector">3.4.30. S0031 Trigger level sensitivity for loop detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0032-coordinated-control">3.4.31. S0032 Coordinated control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0033-signal-priority-status">3.4.32. S0033 Signal Priority Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0034-timeout-for-dynamic-bands">3.4.33. S0034 Timeout for dynamic bands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0035-emergency-route">3.4.34. S0035 Emergency route</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0091-operator-logged-in-out-op-panel">3.4.35. S0091 Operator logged in/out OP-panel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0092-operator-logged-in-out-web-interface">3.4.36. S0092 Operator logged in/out web-interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0095-version-of-traffic-light-controller">3.4.37. S0095 Version of Traffic Light Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0096-current-date-and-time">3.4.38. S0096 Current date and time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0097-checksum-of-traffic-parameters">3.4.39. S0097 Checksum of traffic parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0098-configuration-of-traffic-parameters">3.4.40. S0098 Configuration of traffic parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0201-traffic-counting-number-of-vehicles">3.4.41. S0201 Traffic Counting: Number of vehicles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0202-traffic-counting-vehicle-speed">3.4.42. S0202 Traffic Counting: Vehicle speed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0203-traffic-counting-occupancy">3.4.43. S0203 Traffic Counting: Occupancy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0204-traffic-counting-number-of-vehicles-of-given-classification">3.4.44. S0204 Traffic Counting: Number of vehicles of given classification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0205-traffic-counting-number-of-vehicles">3.4.45. S0205 Traffic Counting: Number of vehicles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0206-traffic-counting-vehicle-speed">3.4.46. S0206 Traffic Counting: Vehicle speed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0207-traffic-counting-occupancy">3.4.47. S0207 Traffic Counting: Occupancy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#s0208-traffic-counting-number-of-vehicles-of-given-classification">3.4.48. S0208 Traffic Counting: Number of vehicles of given classification</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#commands">2.5. Commands</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#m0001-sets-functional-position">2.5.1. M0001 Sets functional position</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0002-sets-current-time-plan">2.5.2. M0002 Sets current time plan</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0003-sets-traffic-situation-the-controller-uses">2.5.3. M0003 Sets traffic situation the controller uses</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0004-reset-traffic-light-controller">2.5.4. M0004 Reset Traffic Light Controller</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0005-activate-emergency-route">2.5.5. M0005 Activate emergency route</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0006-activate-input">2.5.6. M0006 Activate input</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0007-activate-fixed-time-control">2.5.7. M0007 Activate fixed time control</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0008-force-detector-logic">2.5.8. M0008 Force detector logic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0010-reserved">2.5.9. M0010 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0011-reserved">2.5.10. M0011 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0012-reserved">2.5.11. M0012 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0013-activate-a-series-of-inputs">2.5.12. M0013 Activate a series of inputs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0014-set-dynamic-bands">2.5.13. M0014 Set dynamic bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0015-set-offset-time">2.5.14. M0015 Set Offset time</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0016-set-week-time-table">2.5.15. M0016 Set week time table</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0017-set-time-tables">2.5.16. M0017 Set time tables</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0018-set-cycle-time">2.5.17. M0018 Set Cycle time</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0019-force-input">2.5.18. M0019 Force input</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0020-force-output">2.5.19. M0020 Force output</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0021-set-trigger-level-sensitivity-for-loop-detector">2.5.20. M0021 Set trigger level sensitivity for loop detector</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0022-request-signal-priority">2.5.21. M0022 Request Signal Priority</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0023-set-timeout-for-dynamic-bands">2.5.22. M0023 Set timeout for dynamic bands</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0024-clear-all-alarms">2.5.23. M0024 Clear all alarms</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0103-set-security-code">2.5.24. M0103 Set security code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#m0104-set-clock">2.5.25. M0104 Set clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#commands">3.5. Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#m0001-sets-functional-position">3.5.1. M0001 Sets functional position</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0002-sets-current-time-plan">3.5.2. M0002 Sets current time plan</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0003-sets-traffic-situation-the-controller-uses">3.5.3. M0003 Sets traffic situation the controller uses</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0004-reset-traffic-light-controller">3.5.4. M0004 Reset Traffic Light Controller</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0005-activate-emergency-route">3.5.5. M0005 Activate emergency route</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0006-activate-input">3.5.6. M0006 Activate input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0007-activate-fixed-time-control">3.5.7. M0007 Activate fixed time control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0008-force-detector-logic">3.5.8. M0008 Force detector logic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0010-reserved">3.5.9. M0010 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0011-reserved">3.5.10. M0011 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0012-reserved">3.5.11. M0012 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0013-activate-a-series-of-inputs">3.5.12. M0013 Activate a series of inputs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0014-set-dynamic-bands">3.5.13. M0014 Set dynamic bands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0015-set-offset-time">3.5.14. M0015 Set Offset time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0016-set-week-time-table">3.5.15. M0016 Set week time table</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0017-set-time-tables">3.5.16. M0017 Set time tables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0018-set-cycle-time">3.5.17. M0018 Set Cycle time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0019-force-input">3.5.18. M0019 Force input</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0020-force-output">3.5.19. M0020 Force output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0021-set-trigger-level-sensitivity-for-loop-detector">3.5.20. M0021 Set trigger level sensitivity for loop detector</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0022-request-signal-priority">3.5.21. M0022 Request Signal Priority</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0023-set-timeout-for-dynamic-bands">3.5.22. M0023 Set timeout for dynamic bands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0024-clear-all-alarms">3.5.23. M0024 Clear all alarms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0103-set-security-code">3.5.24. M0103 Set security code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#m0104-set-clock">3.5.25. M0104 Set clock</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">3. Signal Group status</a></li>
-<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">4. Traffic data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="coordination.html">5. Coordination between traffic light controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="multiple_supervisors.html">6. Multiple supervisors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="security_codes.html">7. Security codes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="examples.html">8. JSon Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">9. Change log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="signal_group_status.html">4. Signal Group status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="traffic_data.html">5. Traffic data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="coordination.html">6. Coordination between traffic light controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multiple_supervisors.html">7. Multiple supervisors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="security_codes.html">8. Security codes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">9. JSon Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">10. Change log</a></li>
 </ul>
 
         </div>
@@ -177,7 +178,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">2. </span>Signal Exchange List</li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Signal Exchange List</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/sxl_traffic_light_controller.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -188,13 +189,13 @@
            <div itemprop="articleBody">
              
   <section id="signal-exchange-list">
-<h1><span class="section-number">2. </span>Signal Exchange List<a class="headerlink" href="#signal-exchange-list" title="Link to this heading"></a></h1>
+<h1><span class="section-number">3. </span>Signal Exchange List<a class="headerlink" href="#signal-exchange-list" title="Link to this heading"></a></h1>
 <section id="object-types">
-<h2><span class="section-number">2.1. </span>Object Types<a class="headerlink" href="#object-types" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.1. </span>Object Types<a class="headerlink" href="#object-types" title="Link to this heading"></a></h2>
 <section id="grouped-objects">
-<h3><span class="section-number">2.1.1. </span>Grouped objects<a class="headerlink" href="#grouped-objects" title="Link to this heading"></a></h3>
+<h3><span class="section-number">3.1.1. </span>Grouped objects<a class="headerlink" href="#grouped-objects" title="Link to this heading"></a></h3>
 <table class="longtable docutils align-default" id="id1">
-<caption><span class="caption-number">Table 2.1 </span><span class="caption-text">Grouped objects</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 3.1 </span><span class="caption-text">Grouped objects</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>ObjectType</p></th>
 <th class="head"><p>Description</p></th>
@@ -208,9 +209,9 @@
 </table>
 </section>
 <section id="single-objects">
-<h3><span class="section-number">2.1.2. </span>Single objects<a class="headerlink" href="#single-objects" title="Link to this heading"></a></h3>
+<h3><span class="section-number">3.1.2. </span>Single objects<a class="headerlink" href="#single-objects" title="Link to this heading"></a></h3>
 <table class="longtable docutils align-default" id="id2">
-<caption><span class="caption-number">Table 2.2 </span><span class="caption-text">Single objects</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 3.2 </span><span class="caption-text">Single objects</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>ObjectType</p></th>
 <th class="head"><p>Description</p></th>
@@ -228,9 +229,9 @@
 </section>
 </section>
 <section id="aggregated-status">
-<h2><span class="section-number">2.2. </span>Aggregated status<a class="headerlink" href="#aggregated-status" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.2. </span>Aggregated status<a class="headerlink" href="#aggregated-status" title="Link to this heading"></a></h2>
 <table class="longtable docutils align-default" id="id3">
-<caption><span class="caption-number">Table 2.3 </span><span class="caption-text">Aggregated status</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 3.3 </span><span class="caption-text">Aggregated status</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>ObjectType</p></th>
 <th class="head"><p>functionalPosition</p></th>
@@ -248,7 +249,7 @@ functionalState not used (set to null)</p></td>
 </tbody>
 </table>
 <table class="longtable docutils align-default" id="id4">
-<caption><span class="caption-number">Table 2.4 </span><span class="caption-text">State bits</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 3.4 </span><span class="caption-text">State bits</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>State-Bit</p></th>
 <th class="head"><p>Description</p></th>
@@ -292,9 +293,9 @@ functionalState not used (set to null)</p></td>
 </table>
 </section>
 <section id="alarms">
-<h2><span class="section-number">2.3. </span>Alarms<a class="headerlink" href="#alarms" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.3. </span>Alarms<a class="headerlink" href="#alarms" title="Link to this heading"></a></h2>
 <table class="longtable docutils align-default" id="id5">
-<caption><span class="caption-number">Table 2.5 </span><span class="caption-text">Alarms</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 3.5 </span><span class="caption-text">Alarms</span><a class="headerlink" href="#id5" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>ObjectType</p></th>
 <th class="head"><p>alarmCodeId</p></th>
@@ -409,40 +410,40 @@ functionalState not used (set to null)</p></td>
 </tbody>
 </table>
 <section id="a0001-serious-hardware-error">
-<span id="a0001"></span><h3><span class="section-number">2.3.1. </span>A0001 Serious hardware error<a class="headerlink" href="#a0001-serious-hardware-error" title="Link to this heading"></a></h3>
+<span id="a0001"></span><h3><span class="section-number">3.3.1. </span>A0001 Serious hardware error<a class="headerlink" href="#a0001-serious-hardware-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
 </section>
 <section id="a0002-less-serious-hardware-error">
-<span id="a0002"></span><h3><span class="section-number">2.3.2. </span>A0002 Less serious hardware error<a class="headerlink" href="#a0002-less-serious-hardware-error" title="Link to this heading"></a></h3>
+<span id="a0002"></span><h3><span class="section-number">3.3.2. </span>A0002 Less serious hardware error<a class="headerlink" href="#a0002-less-serious-hardware-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Is a “minor fault” defined according to 3.11 in EN12675.</p>
 </section>
 <section id="a0003-serious-configuration-error">
-<span id="a0003"></span><h3><span class="section-number">2.3.3. </span>A0003 Serious configuration error<a class="headerlink" href="#a0003-serious-configuration-error" title="Link to this heading"></a></h3>
+<span id="a0003"></span><h3><span class="section-number">3.3.3. </span>A0003 Serious configuration error<a class="headerlink" href="#a0003-serious-configuration-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
 </section>
 <section id="a0004-less-serious-configuration-error">
-<span id="a0004"></span><h3><span class="section-number">2.3.4. </span>A0004 Less serious configuration error<a class="headerlink" href="#a0004-less-serious-configuration-error" title="Link to this heading"></a></h3>
+<span id="a0004"></span><h3><span class="section-number">3.3.4. </span>A0004 Less serious configuration error<a class="headerlink" href="#a0004-less-serious-configuration-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Is a “minor fault” defined according to 3.11 in EN12675.</p>
 </section>
 <section id="a0005-synchronisation-error-coordination">
-<span id="a0005"></span><h3><span class="section-number">2.3.5. </span>A0005 Synchronisation error (coordination)<a class="headerlink" href="#a0005-synchronisation-error-coordination" title="Link to this heading"></a></h3>
+<span id="a0005"></span><h3><span class="section-number">3.3.5. </span>A0005 Synchronisation error (coordination)<a class="headerlink" href="#a0005-synchronisation-error-coordination" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Is a “minor fault” defined according to 3.11 in EN12675.</p>
 </section>
 <section id="a0006-safety-error">
-<span id="a0006"></span><h3><span class="section-number">2.3.6. </span>A0006 Safety error<a class="headerlink" href="#a0006-safety-error" title="Link to this heading"></a></h3>
+<span id="a0006"></span><h3><span class="section-number">3.3.6. </span>A0006 Safety error<a class="headerlink" href="#a0006-safety-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Is a “major fault” defined according to 3.8 in EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
 </section>
 <section id="a0007-communication-error">
-<span id="a0007"></span><h3><span class="section-number">2.3.7. </span>A0007 Communication error<a class="headerlink" href="#a0007-communication-error" title="Link to this heading"></a></h3>
+<span id="a0007"></span><h3><span class="section-number">3.3.7. </span>A0007 Communication error<a class="headerlink" href="#a0007-communication-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Used for communication errors with the central system. Includes NTP
 connection loss if the TLC is configured to use NTP. Is a “minor fault”
@@ -469,7 +470,7 @@ defined according to 3.11 in EN12675.</p>
 </div></blockquote>
 </section>
 <section id="a0008-dead-lock-error">
-<span id="a0008"></span><h3><span class="section-number">2.3.8. </span>A0008 Dead lock error<a class="headerlink" href="#a0008-dead-lock-error" title="Link to this heading"></a></h3>
+<span id="a0008"></span><h3><span class="section-number">3.3.8. </span>A0008 Dead lock error<a class="headerlink" href="#a0008-dead-lock-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Used for dead lock errors. For instance; a signal group has requested
 green but is unable to switch due to a conflicting signal group for an
@@ -495,23 +496,23 @@ according to 3.8 in EN12675 which causes the controller to switch to a
 </div></blockquote>
 </section>
 <section id="a0009-other-error">
-<span id="a0009"></span><h3><span class="section-number">2.3.9. </span>A0009 Other error<a class="headerlink" href="#a0009-other-error" title="Link to this heading"></a></h3>
+<span id="a0009"></span><h3><span class="section-number">3.3.9. </span>A0009 Other error<a class="headerlink" href="#a0009-other-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Used for other errors not covered by any other alarm type. Is a “minor
 fault” defined according to 3.11 in EN12675.</p>
 </section>
 <section id="a0010-door-open">
-<span id="a0010"></span><h3><span class="section-number">2.3.10. </span>A0010 Door open<a class="headerlink" href="#a0010-door-open" title="Link to this heading"></a></h3>
+<span id="a0010"></span><h3><span class="section-number">3.3.10. </span>A0010 Door open<a class="headerlink" href="#a0010-door-open" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.15</span></code></p>
 <p>Used for open door (room or cabinet).</p>
 </section>
 <section id="a0101-pushbutton-error">
-<span id="a0101"></span><h3><span class="section-number">2.3.11. </span>A0101 Pushbutton error<a class="headerlink" href="#a0101-pushbutton-error" title="Link to this heading"></a></h3>
+<span id="a0101"></span><h3><span class="section-number">3.3.11. </span>A0101 Pushbutton error<a class="headerlink" href="#a0101-pushbutton-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Used for push buttons.</p>
 </section>
 <section id="a0201-serious-lamp-error">
-<span id="a0201"></span><h3><span class="section-number">2.3.12. </span>A0201 Serious lamp error<a class="headerlink" href="#a0201-serious-lamp-error" title="Link to this heading"></a></h3>
+<span id="a0201"></span><h3><span class="section-number">3.3.12. </span>A0201 Serious lamp error<a class="headerlink" href="#a0201-serious-lamp-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Used for lamp errors. Is a “major fault” defined according to 3.8 in
 EN12675 which causes the controller to switch to a “failure mode”
@@ -541,7 +542,7 @@ according to 3.6 in EN12675.</p>
 </div></blockquote>
 </section>
 <section id="a0202-less-serious-lamp-error">
-<span id="a0202"></span><h3><span class="section-number">2.3.13. </span>A0202 Less serious lamp error<a class="headerlink" href="#a0202-less-serious-lamp-error" title="Link to this heading"></a></h3>
+<span id="a0202"></span><h3><span class="section-number">3.3.13. </span>A0202 Less serious lamp error<a class="headerlink" href="#a0202-less-serious-lamp-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Used for lamp errors. Is a “minor fault” defined according to 3.11 in
 EN12675.</p>
@@ -570,7 +571,7 @@ EN12675.</p>
 </div></blockquote>
 </section>
 <section id="a0301-detector-error-hardware">
-<span id="a0301"></span><h3><span class="section-number">2.3.14. </span>A0301 Detector error (hardware)<a class="headerlink" href="#a0301-detector-error-hardware" title="Link to this heading"></a></h3>
+<span id="a0301"></span><h3><span class="section-number">3.3.14. </span>A0301 Detector error (hardware)<a class="headerlink" href="#a0301-detector-error-hardware" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Is a “minor fault” defined according to 3.11 in EN12675.</p>
 <p><strong>Return values</strong></p>
@@ -622,7 +623,7 @@ EN12675.</p>
 </div></blockquote>
 </section>
 <section id="a0302-detector-error-logic-error">
-<span id="a0302"></span><h3><span class="section-number">2.3.15. </span>A0302 Detector error (logic error)<a class="headerlink" href="#a0302-detector-error-logic-error" title="Link to this heading"></a></h3>
+<span id="a0302"></span><h3><span class="section-number">3.3.15. </span>A0302 Detector error (logic error)<a class="headerlink" href="#a0302-detector-error-logic-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>For instance; detector continuously on or off during an extended time.
 Is a “minor fault” defined according to 3.11 in EN12675.</p>
@@ -697,7 +698,7 @@ Is a “minor fault” defined according to 3.11 in EN12675.</p>
 </div></blockquote>
 </section>
 <section id="a0303-serious-detector-error-hardware">
-<span id="a0303"></span><h3><span class="section-number">2.3.16. </span>A0303 Serious detector error (hardware)<a class="headerlink" href="#a0303-serious-detector-error-hardware" title="Link to this heading"></a></h3>
+<span id="a0303"></span><h3><span class="section-number">3.3.16. </span>A0303 Serious detector error (hardware)<a class="headerlink" href="#a0303-serious-detector-error-hardware" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code></p>
 <p>Is a “major fault” defined according to 3.8 i EN12675 which causes the
 controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
@@ -750,7 +751,7 @@ controller to switch to a “failure mode” according to 3.6 in EN12675.</p>
 </div></blockquote>
 </section>
 <section id="a0304-serious-detector-error-logic-error">
-<span id="a0304"></span><h3><span class="section-number">2.3.17. </span>A0304 Serious detector error (logic error)<a class="headerlink" href="#a0304-serious-detector-error-logic-error" title="Link to this heading"></a></h3>
+<span id="a0304"></span><h3><span class="section-number">3.3.17. </span>A0304 Serious detector error (logic error)<a class="headerlink" href="#a0304-serious-detector-error-logic-error" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code></p>
 <p>For instance; detector continuously on or off during an extended time.
 Is a “major fault” defined according to 3.8 i EN12675 which causes the
@@ -827,9 +828,9 @@ controller to switch to a “failure mode” according to 3.6 in EN12675</p>
 </section>
 </section>
 <section id="status">
-<h2><span class="section-number">2.4. </span>Status<a class="headerlink" href="#status" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.4. </span>Status<a class="headerlink" href="#status" title="Link to this heading"></a></h2>
 <table class="longtable docutils align-default" id="id6">
-<caption><span class="caption-number">Table 2.6 </span><span class="caption-text">Status</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 3.6 </span><span class="caption-text">Status</span><a class="headerlink" href="#id6" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>ObjectType</p></th>
 <th class="head"><p>statusCodeId</p></th>
@@ -1032,7 +1033,7 @@ controller to switch to a “failure mode” according to 3.6 in EN12675</p>
 </tbody>
 </table>
 <section id="s0001-signal-group-status">
-<span id="s0001"></span><h3><span class="section-number">2.4.1. </span>S0001 Signal group status<a class="headerlink" href="#s0001-signal-group-status" title="Link to this heading"></a></h3>
+<span id="s0001"></span><h3><span class="section-number">3.4.1. </span>S0001 Signal group status<a class="headerlink" href="#s0001-signal-group-status" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p>
 <p>Provides the status of each signal group, e.g. green, yellow, red, or
 other states used in the signal program. See the section on signal group
@@ -1135,7 +1136,7 @@ Updates only when the signalgroupstatus attribute changes.</p>
 </div></blockquote>
 </section>
 <section id="s0002-detector-logic-status">
-<span id="s0002"></span><h3><span class="section-number">2.4.2. </span>S0002 Detector logic status<a class="headerlink" href="#s0002-detector-logic-status" title="Link to this heading"></a></h3>
+<span id="s0002"></span><h3><span class="section-number">3.4.2. </span>S0002 Detector logic status<a class="headerlink" href="#s0002-detector-logic-status" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Provides the status of all detector logics of the controller. Can be
 used to draw a live signal group diagram as well provide diagnostic
@@ -1153,7 +1154,7 @@ where the leftmost character starts with detector logic 1. <br>
 </div></blockquote>
 </section>
 <section id="s0003-input-status">
-<span id="s0003"></span><h3><span class="section-number">2.4.3. </span>S0003 Input status<a class="headerlink" href="#s0003-input-status" title="Link to this heading"></a></h3>
+<span id="s0003"></span><h3><span class="section-number">3.4.3. </span>S0003 Input status<a class="headerlink" href="#s0003-input-status" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Input (1-255) of the controllers general purpose I/O. Input is used
 where the traffic light controller must react to external control. It
@@ -1170,7 +1171,7 @@ where the leftmost character starts with input 1. <br>
 </div></blockquote>
 </section>
 <section id="s0004-output-status">
-<span id="s0004"></span><h3><span class="section-number">2.4.4. </span>S0004 Output status<a class="headerlink" href="#s0004-output-status" title="Link to this heading"></a></h3>
+<span id="s0004"></span><h3><span class="section-number">3.4.4. </span>S0004 Output status<a class="headerlink" href="#s0004-output-status" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Output (1-255) of the controllers general purpose I/O. Can be used for
 all types of output where the traffic light controller needs to control
@@ -1188,7 +1189,7 @@ where the leftmost character starts with output 1. <br>
 </div></blockquote>
 </section>
 <section id="s0005-traffic-light-controller-starting">
-<span id="s0005"></span><h3><span class="section-number">2.4.5. </span>S0005 Traffic Light Controller starting<a class="headerlink" href="#s0005-traffic-light-controller-starting" title="Link to this heading"></a></h3>
+<span id="s0005"></span><h3><span class="section-number">3.4.5. </span>S0005 Traffic Light Controller starting<a class="headerlink" href="#s0005-traffic-light-controller-starting" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>The traffic signal is starting, e.g. it is in startup mode and has not
 begun working normally yet. During startup mode the traffic controller
@@ -1240,7 +1241,7 @@ True: Intersection is currently in start up mode</p>
 </div></blockquote>
 </section>
 <section id="s0006-emergency-route">
-<span id="s0006"></span><h3><span class="section-number">2.4.6. </span>S0006 Emergency route<a class="headerlink" href="#s0006-emergency-route" title="Link to this heading"></a></h3>
+<span id="s0006"></span><h3><span class="section-number">3.4.6. </span>S0006 Emergency route<a class="headerlink" href="#s0006-emergency-route" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>The status is active during emergency prioritization. Used in situations
 where full priority is given in the emergency vehicle program or for
@@ -1270,7 +1271,7 @@ True: Emergency route active</p>
 </div></blockquote>
 </section>
 <section id="s0007-controller-switched-on">
-<span id="s0007"></span><h3><span class="section-number">2.4.7. </span>S0007 Controller switched on<a class="headerlink" href="#s0007-controller-switched-on" title="Link to this heading"></a></h3>
+<span id="s0007"></span><h3><span class="section-number">3.4.7. </span>S0007 Controller switched on<a class="headerlink" href="#s0007-controller-switched-on" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>The controller is active and is not in dark mode. Used to determine if
 the there is output to the signal heads, e.g. it shows red, green or
@@ -1323,7 +1324,7 @@ True: Traffic Light Controller not in dark mode</p>
 </div></blockquote>
 </section>
 <section id="s0008-manual-control">
-<span id="s0008"></span><h3><span class="section-number">2.4.8. </span>S0008 Manual control<a class="headerlink" href="#s0008-manual-control" title="Link to this heading"></a></h3>
+<span id="s0008"></span><h3><span class="section-number">3.4.8. </span>S0008 Manual control<a class="headerlink" href="#s0008-manual-control" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Traffic control deactivated in controller. Signal timings is controlled
 manually by service personnel using the operating panel of the
@@ -1374,7 +1375,7 @@ True: Manual control active</p>
 </div></blockquote>
 </section>
 <section id="s0009-fixed-time-control">
-<span id="s0009"></span><h3><span class="section-number">2.4.9. </span>S0009 Fixed time control<a class="headerlink" href="#s0009-fixed-time-control" title="Link to this heading"></a></h3>
+<span id="s0009"></span><h3><span class="section-number">3.4.9. </span>S0009 Fixed time control<a class="headerlink" href="#s0009-fixed-time-control" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Traffic actuated control deactivated and a pre-timed control is used.
 Usually only used in case normal detectors can’t be used, e.g. during
@@ -1425,7 +1426,7 @@ True: Fixed time control active</p>
 </div></blockquote>
 </section>
 <section id="s0010-isolated-control">
-<span id="s0010"></span><h3><span class="section-number">2.4.10. </span>S0010 Isolated control<a class="headerlink" href="#s0010-isolated-control" title="Link to this heading"></a></h3>
+<span id="s0010"></span><h3><span class="section-number">3.4.10. </span>S0010 Isolated control<a class="headerlink" href="#s0010-isolated-control" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Isolated control mode indicates that the controller operates
 independently of any other traffic light controller. This may be
@@ -1479,7 +1480,7 @@ True: Isolated control enabled (Vehicle actuated control or Fixed time control)<
 </div></blockquote>
 </section>
 <section id="s0011-yellow-flash">
-<span id="s0011"></span><h3><span class="section-number">2.4.11. </span>S0011 Yellow flash<a class="headerlink" href="#s0011-yellow-flash" title="Link to this heading"></a></h3>
+<span id="s0011"></span><h3><span class="section-number">3.4.11. </span>S0011 Yellow flash<a class="headerlink" href="#s0011-yellow-flash" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>The controller shows yellow flash. Yellow flash may be used during a
 serious fault (depending on configuration) or maintenance work. It can
@@ -1531,7 +1532,7 @@ True: Yellow flash enabled</p>
 </div></blockquote>
 </section>
 <section id="s0012-all-red">
-<span id="s0012"></span><h3><span class="section-number">2.4.12. </span>S0012 All red<a class="headerlink" href="#s0012-all-red" title="Link to this heading"></a></h3>
+<span id="s0012"></span><h3><span class="section-number">3.4.12. </span>S0012 All red<a class="headerlink" href="#s0012-all-red" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>The controller show all red. All red can be manually set using the
 controllers operating panel during maintenance work. Please note that
@@ -1581,7 +1582,7 @@ True: All red enabled</p>
 </div></blockquote>
 </section>
 <section id="s0013-police-key">
-<span id="s0013"></span><h3><span class="section-number">2.4.13. </span>S0013 Police key<a class="headerlink" href="#s0013-police-key" title="Link to this heading"></a></h3>
+<span id="s0013"></span><h3><span class="section-number">3.4.13. </span>S0013 Police key<a class="headerlink" href="#s0013-police-key" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>The controller is forced to dark mode or yellow flash. The “police key”
 is an external control switch present in some controllers that manually
@@ -1620,7 +1621,7 @@ Use “0” for all intersections of the TLC.</p>
 </div></blockquote>
 </section>
 <section id="s0014-current-time-plan">
-<span id="s0014"></span><h3><span class="section-number">2.4.14. </span>S0014 Current time plan<a class="headerlink" href="#s0014-current-time-plan" title="Link to this heading"></a></h3>
+<span id="s0014"></span><h3><span class="section-number">3.4.14. </span>S0014 Current time plan<a class="headerlink" href="#s0014-current-time-plan" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>The current time plan (signal program) used in the controller. There may
 be 1-255 predefined time plans. The time plan (signal program) may
@@ -1675,7 +1676,7 @@ to change priority etc.</p>
 </div></blockquote>
 </section>
 <section id="s0015-current-traffic-situation">
-<span id="s0015"></span><h3><span class="section-number">2.4.15. </span>S0015 Current traffic situation<a class="headerlink" href="#s0015-current-traffic-situation" title="Link to this heading"></a></h3>
+<span id="s0015"></span><h3><span class="section-number">3.4.15. </span>S0015 Current traffic situation<a class="headerlink" href="#s0015-current-traffic-situation" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>The current traffic situation used in the controller. Used for
 area-based control where the M0003 command can be sent to a master
@@ -1733,7 +1734,7 @@ time plan dynamically.</p>
 </div></blockquote>
 </section>
 <section id="s0016-number-of-detector-logics">
-<span id="s0016"></span><h3><span class="section-number">2.4.16. </span>S0016 Number of detector logics<a class="headerlink" href="#s0016-number-of-detector-logics" title="Link to this heading"></a></h3>
+<span id="s0016"></span><h3><span class="section-number">3.4.16. </span>S0016 Number of detector logics<a class="headerlink" href="#s0016-number-of-detector-logics" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Can be used by the management system to check the number of detector
 logics configured in the controller.</p>
@@ -1754,7 +1755,7 @@ logics configured in the controller.</p>
 </div></blockquote>
 </section>
 <section id="s0017-number-of-signal-groups">
-<span id="s0017"></span><h3><span class="section-number">2.4.17. </span>S0017 Number of signal groups<a class="headerlink" href="#s0017-number-of-signal-groups" title="Link to this heading"></a></h3>
+<span id="s0017"></span><h3><span class="section-number">3.4.17. </span>S0017 Number of signal groups<a class="headerlink" href="#s0017-number-of-signal-groups" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Can be used for the management system to check the number of signal
 groups configured in the controller.</p>
@@ -1775,7 +1776,7 @@ groups configured in the controller.</p>
 </div></blockquote>
 </section>
 <section id="s0019-number-of-traffic-situations">
-<span id="s0019"></span><h3><span class="section-number">2.4.18. </span>S0019 Number of traffic situations<a class="headerlink" href="#s0019-number-of-traffic-situations" title="Link to this heading"></a></h3>
+<span id="s0019"></span><h3><span class="section-number">3.4.18. </span>S0019 Number of traffic situations<a class="headerlink" href="#s0019-number-of-traffic-situations" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Can be used for the management system to check the number of traffic
 situations configured in the controller.</p>
@@ -1796,7 +1797,7 @@ situations configured in the controller.</p>
 </div></blockquote>
 </section>
 <section id="s0020-control-mode">
-<span id="s0020"></span><h3><span class="section-number">2.4.19. </span>S0020 Control mode<a class="headerlink" href="#s0020-control-mode" title="Link to this heading"></a></h3>
+<span id="s0020"></span><h3><span class="section-number">3.4.19. </span>S0020 Control mode<a class="headerlink" href="#s0020-control-mode" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Can be used for the management system to check the current control mode
 (startup, normal, standby, failure, test). Please note that all values
@@ -1837,7 +1838,7 @@ Use “0” for all intersections of the TLC.</p>
 </div></blockquote>
 </section>
 <section id="s0021-manually-set-detector-logic">
-<span id="s0021"></span><h3><span class="section-number">2.4.20. </span>S0021 Manually set detector logic<a class="headerlink" href="#s0021-manually-set-detector-logic" title="Link to this heading"></a></h3>
+<span id="s0021"></span><h3><span class="section-number">3.4.20. </span>S0021 Manually set detector logic<a class="headerlink" href="#s0021-manually-set-detector-logic" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.3</span></code></p>
 <p>Provides status of detector logic (1-255) regarding if they are either
 forced to true or false. Can be used to connect RSMP compatible
@@ -1855,7 +1856,7 @@ where the leftmost character starts with detector logic 1. <br>
 </div></blockquote>
 </section>
 <section id="s0022-list-of-time-plans">
-<span id="s0022"></span><h3><span class="section-number">2.4.21. </span>S0022 List of time plans<a class="headerlink" href="#s0022-list-of-time-plans" title="Link to this heading"></a></h3>
+<span id="s0022"></span><h3><span class="section-number">3.4.21. </span>S0022 List of time plans<a class="headerlink" href="#s0022-list-of-time-plans" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Provides a list of the configured time plans which is possible to use.
 This status was added due to status S0018 only provided the total number
@@ -1869,7 +1870,7 @@ in the controller.</p>
 </div></blockquote>
 </section>
 <section id="s0023-dynamic-bands">
-<span id="s0023"></span><h3><span class="section-number">2.4.22. </span>S0023 Dynamic bands<a class="headerlink" href="#s0023-dynamic-bands" title="Link to this heading"></a></h3>
+<span id="s0023"></span><h3><span class="section-number">3.4.22. </span>S0023 Dynamic bands<a class="headerlink" href="#s0023-dynamic-bands" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Provides a list of all defined dynamic bands. Dynamic bands moves start
 of signal groups in the cycle and changes the signal timings. A typical
@@ -1891,7 +1892,7 @@ pp-dd-ee,pp-dd-ee</p>
 </div></blockquote>
 </section>
 <section id="s0024-offset-time">
-<span id="s0024"></span><h3><span class="section-number">2.4.23. </span>S0024 Offset time<a class="headerlink" href="#s0024-offset-time" title="Link to this heading"></a></h3>
+<span id="s0024"></span><h3><span class="section-number">3.4.23. </span>S0024 Offset time<a class="headerlink" href="#s0024-offset-time" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Offset time is used to define an offset between intersections in
 coordinated control. It is based on the expected travel time between
@@ -1912,7 +1913,7 @@ E.g. <br>
 </div></blockquote>
 </section>
 <section id="s0025-time-of-green-time-of-red">
-<span id="s0025"></span><h3><span class="section-number">2.4.24. </span>S0025 Time-of-Green / Time-of-Red<a class="headerlink" href="#s0025-time-of-green-time-of-red" title="Link to this heading"></a></h3>
+<span id="s0025"></span><h3><span class="section-number">3.4.24. </span>S0025 Time-of-Green / Time-of-Red<a class="headerlink" href="#s0025-time-of-green-time-of-red" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Provides predicted signal timings of green and red for each signal
 group. Max, min and likely time to green and red.</p>
@@ -1971,7 +1972,7 @@ group. Max, min and likely time to green and red.</p>
 </div></blockquote>
 </section>
 <section id="s0026-week-time-table">
-<span id="s0026"></span><h3><span class="section-number">2.4.25. </span>S0026 Week time table<a class="headerlink" href="#s0026-week-time-table" title="Link to this heading"></a></h3>
+<span id="s0026"></span><h3><span class="section-number">3.4.25. </span>S0026 Week time table<a class="headerlink" href="#s0026-week-time-table" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Week time table for signal programs (time plan) to use for each day
 during a week. The week time table determine which predefined signal
@@ -1999,7 +2000,7 @@ d-t,d-t</p>
 </div></blockquote>
 </section>
 <section id="s0027-time-tables">
-<span id="s0027"></span><h3><span class="section-number">2.4.26. </span>S0027 Time tables<a class="headerlink" href="#s0027-time-tables" title="Link to this heading"></a></h3>
+<span id="s0027"></span><h3><span class="section-number">3.4.26. </span>S0027 Time tables<a class="headerlink" href="#s0027-time-tables" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Time of day for when to switch signal program (time plan). The signal
 timings (time plan) to use during time of day for optimal traffic flow.</p>
@@ -2028,7 +2029,7 @@ t-o-h-m,t-o-h-m</p>
 </div></blockquote>
 </section>
 <section id="s0028-cycle-time">
-<span id="s0028"></span><h3><span class="section-number">2.4.27. </span>S0028 Cycle time<a class="headerlink" href="#s0028-cycle-time" title="Link to this heading"></a></h3>
+<span id="s0028"></span><h3><span class="section-number">3.4.27. </span>S0028 Cycle time<a class="headerlink" href="#s0028-cycle-time" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Cycle time (or cycle length) is the sum of all phases in a time plan
 (traffic program). This time is fixed when using fixed time control or
@@ -2050,7 +2051,7 @@ pp-tt,pp-tt</p>
 </div></blockquote>
 </section>
 <section id="s0029-forced-input-status">
-<span id="s0029"></span><h3><span class="section-number">2.4.28. </span>S0029 Forced input status<a class="headerlink" href="#s0029-forced-input-status" title="Link to this heading"></a></h3>
+<span id="s0029"></span><h3><span class="section-number">3.4.28. </span>S0029 Forced input status<a class="headerlink" href="#s0029-forced-input-status" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Provide status of input (1-255) regarding if they are forced or not. Can
 be used for all types of input where the traffic light controller must
@@ -2068,7 +2069,7 @@ where the leftmost character starts with input 1. <br>
 </div></blockquote>
 </section>
 <section id="s0030-forced-output-status">
-<span id="s0030"></span><h3><span class="section-number">2.4.29. </span>S0030 Forced output status<a class="headerlink" href="#s0030-forced-output-status" title="Link to this heading"></a></h3>
+<span id="s0030"></span><h3><span class="section-number">3.4.29. </span>S0030 Forced output status<a class="headerlink" href="#s0030-forced-output-status" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.15</span></code></p>
 <p>Provide status of output (1-255) regarding if they are forced or not.
 Can be used for all types of output where the traffic light controller
@@ -2087,7 +2088,7 @@ where the leftmost character starts with output 1. <br>
 </div></blockquote>
 </section>
 <section id="s0031-trigger-level-sensitivity-for-loop-detector">
-<span id="s0031"></span><h3><span class="section-number">2.4.30. </span>S0031 Trigger level sensitivity for loop detector<a class="headerlink" href="#s0031-trigger-level-sensitivity-for-loop-detector" title="Link to this heading"></a></h3>
+<span id="s0031"></span><h3><span class="section-number">3.4.30. </span>S0031 Trigger level sensitivity for loop detector<a class="headerlink" href="#s0031-trigger-level-sensitivity-for-loop-detector" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.15</span></code></p>
 <p>The trigger level sensitivity determines at what level the loop detector
 should trigger. If it set too low then then traffic will not be detected
@@ -2104,7 +2105,7 @@ Each loop detector is separated with a comma. E.g.dd-ss,dd-ss.</p>
 </div></blockquote>
 </section>
 <section id="s0032-coordinated-control">
-<span id="s0032"></span><h3><span class="section-number">2.4.31. </span>S0032 Coordinated control<a class="headerlink" href="#s0032-coordinated-control" title="Link to this heading"></a></h3>
+<span id="s0032"></span><h3><span class="section-number">3.4.31. </span>S0032 Coordinated control<a class="headerlink" href="#s0032-coordinated-control" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code></p>
 <p>This status is used when coordination between traffic light controllers
 is active. Coordination is described in detail in the corresponding
@@ -2171,7 +2172,7 @@ Use “0” for all intersections of the TLC.</p>
 </div></blockquote>
 </section>
 <section id="s0033-signal-priority-status">
-<span id="s0033"></span><h3><span class="section-number">2.4.32. </span>S0033 Signal Priority Status<a class="headerlink" href="#s0033-signal-priority-status" title="Link to this heading"></a></h3>
+<span id="s0033"></span><h3><span class="section-number">3.4.32. </span>S0033 Signal Priority Status<a class="headerlink" href="#s0033-signal-priority-status" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code></p>
 <p>This status can be used to get updates about priority requests. For
 example, you can use it to know when priority requests are activated or
@@ -2333,7 +2334,7 @@ Only used when state is ‘completed’.</p>
 </div></blockquote>
 </section>
 <section id="s0034-timeout-for-dynamic-bands">
-<span id="s0034"></span><h3><span class="section-number">2.4.33. </span>S0034 Timeout for dynamic bands<a class="headerlink" href="#s0034-timeout-for-dynamic-bands" title="Link to this heading"></a></h3>
+<span id="s0034"></span><h3><span class="section-number">3.4.33. </span>S0034 Timeout for dynamic bands<a class="headerlink" href="#s0034-timeout-for-dynamic-bands" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code></p>
 <p>Time until a designated time plan is entered due to lost connection with
 the supervisor. Disabled if set to ‘0’. Used in conjunction with dynamic
@@ -2355,7 +2356,7 @@ bands, M0014</p>
 </div></blockquote>
 </section>
 <section id="s0035-emergency-route">
-<span id="s0035"></span><h3><span class="section-number">2.4.34. </span>S0035 Emergency route<a class="headerlink" href="#s0035-emergency-route" title="Link to this heading"></a></h3>
+<span id="s0035"></span><h3><span class="section-number">3.4.34. </span>S0035 Emergency route<a class="headerlink" href="#s0035-emergency-route" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.2.0</span></code></p>
 <p>The status is active during emergency prioritization. Used in situations
 where full priority is given in the emergency vehicle program or for
@@ -2394,7 +2395,7 @@ other types of priority in some cases.</p>
 </div></blockquote>
 </section>
 <section id="s0091-operator-logged-in-out-op-panel">
-<span id="s0091"></span><h3><span class="section-number">2.4.35. </span>S0091 Operator logged in/out OP-panel<a class="headerlink" href="#s0091-operator-logged-in-out-op-panel" title="Link to this heading"></a></h3>
+<span id="s0091"></span><h3><span class="section-number">3.4.35. </span>S0091 Operator logged in/out OP-panel<a class="headerlink" href="#s0091-operator-logged-in-out-op-panel" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Provides information if maintenance personnel is currently working on
 site.</p>
@@ -2422,7 +2423,7 @@ site.</p>
 </div></blockquote>
 </section>
 <section id="s0092-operator-logged-in-out-web-interface">
-<span id="s0092"></span><h3><span class="section-number">2.4.36. </span>S0092 Operator logged in/out web-interface<a class="headerlink" href="#s0092-operator-logged-in-out-web-interface" title="Link to this heading"></a></h3>
+<span id="s0092"></span><h3><span class="section-number">3.4.36. </span>S0092 Operator logged in/out web-interface<a class="headerlink" href="#s0092-operator-logged-in-out-web-interface" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Provides information if maintenance personnel is currently working with
 the controller.</p>
@@ -2450,7 +2451,7 @@ the controller.</p>
 </div></blockquote>
 </section>
 <section id="s0095-version-of-traffic-light-controller">
-<span id="s0095"></span><h3><span class="section-number">2.4.37. </span>S0095 Version of Traffic Light Controller<a class="headerlink" href="#s0095-version-of-traffic-light-controller" title="Link to this heading"></a></h3>
+<span id="s0095"></span><h3><span class="section-number">3.4.37. </span>S0095 Version of Traffic Light Controller<a class="headerlink" href="#s0095-version-of-traffic-light-controller" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Provides diagnostic version information.</p>
 <p><strong>Return values</strong></p>
@@ -2460,7 +2461,7 @@ the controller.</p>
 </div></blockquote>
 </section>
 <section id="s0096-current-date-and-time">
-<span id="s0096"></span><h3><span class="section-number">2.4.38. </span>S0096 Current date and time<a class="headerlink" href="#s0096-current-date-and-time" title="Link to this heading"></a></h3>
+<span id="s0096"></span><h3><span class="section-number">3.4.38. </span>S0096 Current date and time<a class="headerlink" href="#s0096-current-date-and-time" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Note: UTC is used. Provides diagnostic information about the current
 date and time set in the controller.</p>
@@ -2551,7 +2552,7 @@ date and time set in the controller.</p>
 </div></blockquote>
 </section>
 <section id="s0097-checksum-of-traffic-parameters">
-<span id="s0097"></span><h3><span class="section-number">2.4.39. </span>S0097 Checksum of traffic parameters<a class="headerlink" href="#s0097-checksum-of-traffic-parameters" title="Link to this heading"></a></h3>
+<span id="s0097"></span><h3><span class="section-number">3.4.39. </span>S0097 Checksum of traffic parameters<a class="headerlink" href="#s0097-checksum-of-traffic-parameters" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.15</span></code></p>
 <p>Can be used to check if any traffic parameter has been changed. For
 instance, depending on controller, maintenance personnel can modify
@@ -2587,7 +2588,7 @@ Note: <br>
 </div></blockquote>
 </section>
 <section id="s0098-configuration-of-traffic-parameters">
-<span id="s0098"></span><h3><span class="section-number">2.4.40. </span>S0098 Configuration of traffic parameters<a class="headerlink" href="#s0098-configuration-of-traffic-parameters" title="Link to this heading"></a></h3>
+<span id="s0098"></span><h3><span class="section-number">3.4.40. </span>S0098 Configuration of traffic parameters<a class="headerlink" href="#s0098-configuration-of-traffic-parameters" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.15</span></code></p>
 <p>Can be used to download all traffic parameters from the controller. For
 instance, depending on controller, maintenance personnel can modify
@@ -2626,7 +2627,7 @@ The format is not specified in detail.</p>
 </div></blockquote>
 </section>
 <section id="s0201-traffic-counting-number-of-vehicles">
-<span id="s0201"></span><h3><span class="section-number">2.4.41. </span>S0201 Traffic Counting: Number of vehicles<a class="headerlink" href="#s0201-traffic-counting-number-of-vehicles" title="Link to this heading"></a></h3>
+<span id="s0201"></span><h3><span class="section-number">3.4.41. </span>S0201 Traffic Counting: Number of vehicles<a class="headerlink" href="#s0201-traffic-counting-number-of-vehicles" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.5</span></code></p>
 <p>Used for Traffic counting. Please see Section 4: “Traffic counting” for
 additional requirements.</p>
@@ -2651,7 +2652,7 @@ additional requirements.</p>
 </div></blockquote>
 </section>
 <section id="s0202-traffic-counting-vehicle-speed">
-<span id="s0202"></span><h3><span class="section-number">2.4.42. </span>S0202 Traffic Counting: Vehicle speed<a class="headerlink" href="#s0202-traffic-counting-vehicle-speed" title="Link to this heading"></a></h3>
+<span id="s0202"></span><h3><span class="section-number">3.4.42. </span>S0202 Traffic Counting: Vehicle speed<a class="headerlink" href="#s0202-traffic-counting-vehicle-speed" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.5</span></code></p>
 <p>Used for Traffic counting. Please see Section 4: “Traffic counting” for
 additional requirements.</p>
@@ -2676,7 +2677,7 @@ additional requirements.</p>
 </div></blockquote>
 </section>
 <section id="s0203-traffic-counting-occupancy">
-<span id="s0203"></span><h3><span class="section-number">2.4.43. </span>S0203 Traffic Counting: Occupancy<a class="headerlink" href="#s0203-traffic-counting-occupancy" title="Link to this heading"></a></h3>
+<span id="s0203"></span><h3><span class="section-number">3.4.43. </span>S0203 Traffic Counting: Occupancy<a class="headerlink" href="#s0203-traffic-counting-occupancy" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.5</span></code></p>
 <p>Used for Traffic counting. Please see Section 4: “Traffic counting” for
 additional requirements.</p>
@@ -2701,7 +2702,7 @@ additional requirements.</p>
 </div></blockquote>
 </section>
 <section id="s0204-traffic-counting-number-of-vehicles-of-given-classification">
-<span id="s0204"></span><h3><span class="section-number">2.4.44. </span>S0204 Traffic Counting: Number of vehicles of given classification<a class="headerlink" href="#s0204-traffic-counting-number-of-vehicles-of-given-classification" title="Link to this heading"></a></h3>
+<span id="s0204"></span><h3><span class="section-number">3.4.44. </span>S0204 Traffic Counting: Number of vehicles of given classification<a class="headerlink" href="#s0204-traffic-counting-number-of-vehicles-of-given-classification" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.5</span></code></p>
 <p>Used for Traffic counting. Please see Section 4: “Traffic counting” for
 additional requirements.</p>
@@ -2838,7 +2839,7 @@ additional requirements.</p>
 </div></blockquote>
 </section>
 <section id="s0205-traffic-counting-number-of-vehicles">
-<span id="s0205"></span><h3><span class="section-number">2.4.45. </span>S0205 Traffic Counting: Number of vehicles<a class="headerlink" href="#s0205-traffic-counting-number-of-vehicles" title="Link to this heading"></a></h3>
+<span id="s0205"></span><h3><span class="section-number">3.4.45. </span>S0205 Traffic Counting: Number of vehicles<a class="headerlink" href="#s0205-traffic-counting-number-of-vehicles" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.14</span></code></p>
 <p>This status was introduced to improve performance in case traffic
 counting is done on all all detectors. Please see Section 4: “Traffic
@@ -2857,7 +2858,7 @@ counting” for additional requirements.</p>
 </div></blockquote>
 </section>
 <section id="s0206-traffic-counting-vehicle-speed">
-<span id="s0206"></span><h3><span class="section-number">2.4.46. </span>S0206 Traffic Counting: Vehicle speed<a class="headerlink" href="#s0206-traffic-counting-vehicle-speed" title="Link to this heading"></a></h3>
+<span id="s0206"></span><h3><span class="section-number">3.4.46. </span>S0206 Traffic Counting: Vehicle speed<a class="headerlink" href="#s0206-traffic-counting-vehicle-speed" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.14</span></code></p>
 <p>This status was introduced to improve performance in case traffic
 counting is done on all all detectors. Please see Section 4: “Traffic
@@ -2876,7 +2877,7 @@ counting” for additional requirements.</p>
 </div></blockquote>
 </section>
 <section id="s0207-traffic-counting-occupancy">
-<span id="s0207"></span><h3><span class="section-number">2.4.47. </span>S0207 Traffic Counting: Occupancy<a class="headerlink" href="#s0207-traffic-counting-occupancy" title="Link to this heading"></a></h3>
+<span id="s0207"></span><h3><span class="section-number">3.4.47. </span>S0207 Traffic Counting: Occupancy<a class="headerlink" href="#s0207-traffic-counting-occupancy" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.14</span></code></p>
 <p>This status was introduced to improve performance in case traffic
 counting is done on all all detectors. Please see Section 4: “Traffic
@@ -2895,7 +2896,7 @@ counting” for additional requirements.</p>
 </div></blockquote>
 </section>
 <section id="s0208-traffic-counting-number-of-vehicles-of-given-classification">
-<span id="s0208"></span><h3><span class="section-number">2.4.48. </span>S0208 Traffic Counting: Number of vehicles of given classification<a class="headerlink" href="#s0208-traffic-counting-number-of-vehicles-of-given-classification" title="Link to this heading"></a></h3>
+<span id="s0208"></span><h3><span class="section-number">3.4.48. </span>S0208 Traffic Counting: Number of vehicles of given classification<a class="headerlink" href="#s0208-traffic-counting-number-of-vehicles-of-given-classification" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.14</span></code></p>
 <p>This status was introduced to improve performance in case traffic
 counting is done on all all detectors. Please see Section 4: “Traffic
@@ -2971,9 +2972,9 @@ counting” for additional requirements.</p>
 </section>
 </section>
 <section id="commands">
-<h2><span class="section-number">2.5. </span>Commands<a class="headerlink" href="#commands" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.5. </span>Commands<a class="headerlink" href="#commands" title="Link to this heading"></a></h2>
 <table class="longtable docutils align-default" id="id7">
-<caption><span class="caption-number">Table 2.7 </span><span class="caption-text">Commands</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
+<caption><span class="caption-number">Table 3.7 </span><span class="caption-text">Commands</span><a class="headerlink" href="#id7" title="Link to this table"></a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>ObjectType</p></th>
 <th class="head"><p>commandCodeId</p></th>
@@ -3110,7 +3111,7 @@ counting” for additional requirements.</p>
 </tbody>
 </table>
 <section id="m0001-sets-functional-position">
-<span id="m0001"></span><h3><span class="section-number">2.5.1. </span>M0001 Sets functional position<a class="headerlink" href="#m0001-sets-functional-position" title="Link to this heading"></a></h3>
+<span id="m0001"></span><h3><span class="section-number">3.5.1. </span>M0001 Sets functional position<a class="headerlink" href="#m0001-sets-functional-position" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Sets the controller to yellow flash, dark mode or normal control.
 Requires security code 2.</p>
@@ -3174,7 +3175,7 @@ Command only applies to specified intersection. Other intersections remains in t
 </div></blockquote>
 </section>
 <section id="m0002-sets-current-time-plan">
-<span id="m0002"></span><h3><span class="section-number">2.5.2. </span>M0002 Sets current time plan<a class="headerlink" href="#m0002-sets-current-time-plan" title="Link to this heading"></a></h3>
+<span id="m0002"></span><h3><span class="section-number">3.5.2. </span>M0002 Sets current time plan<a class="headerlink" href="#m0002-sets-current-time-plan" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Change of traffic program of the traffic light controller. Typical
 usages is scenario based control where change of program is used to
@@ -3206,7 +3207,7 @@ True: Controller uses time plan according to command</p>
 </div></blockquote>
 </section>
 <section id="m0003-sets-traffic-situation-the-controller-uses">
-<span id="m0003"></span><h3><span class="section-number">2.5.3. </span>M0003 Sets traffic situation the controller uses<a class="headerlink" href="#m0003-sets-traffic-situation-the-controller-uses" title="Link to this heading"></a></h3>
+<span id="m0003"></span><h3><span class="section-number">3.5.3. </span>M0003 Sets traffic situation the controller uses<a class="headerlink" href="#m0003-sets-traffic-situation-the-controller-uses" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Used for area-based control where this command can be sent to a master
 traffic light controller about which predefined traffic situation to use
@@ -3241,7 +3242,7 @@ True: Controller uses traffic situation according to command</p>
 </div></blockquote>
 </section>
 <section id="m0004-reset-traffic-light-controller">
-<span id="m0004"></span><h3><span class="section-number">2.5.4. </span>M0004 Reset Traffic Light Controller<a class="headerlink" href="#m0004-reset-traffic-light-controller" title="Link to this heading"></a></h3>
+<span id="m0004"></span><h3><span class="section-number">3.5.4. </span>M0004 Reset Traffic Light Controller<a class="headerlink" href="#m0004-reset-traffic-light-controller" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>This command is used as a last resort to attempt to remotely fix serious
 faults. If unsuccessful, manual intervention on site is probably
@@ -3269,7 +3270,7 @@ be set to true.</p>
 </div></blockquote>
 </section>
 <section id="m0005-activate-emergency-route">
-<span id="m0005"></span><h3><span class="section-number">2.5.5. </span>M0005 Activate emergency route<a class="headerlink" href="#m0005-activate-emergency-route" title="Link to this heading"></a></h3>
+<span id="m0005"></span><h3><span class="section-number">3.5.5. </span>M0005 Activate emergency route<a class="headerlink" href="#m0005-activate-emergency-route" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>The function is made for emergency prioritization. Works in the same way
 as the M0006 and M0008 where the traffic light controller responds to an
@@ -3301,7 +3302,7 @@ True: Activate emergency route</p>
 </div></blockquote>
 </section>
 <section id="m0006-activate-input">
-<span id="m0006"></span><h3><span class="section-number">2.5.6. </span>M0006 Activate input<a class="headerlink" href="#m0006-activate-input" title="Link to this heading"></a></h3>
+<span id="m0006"></span><h3><span class="section-number">3.5.6. </span>M0006 Activate input<a class="headerlink" href="#m0006-activate-input" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Set given input (1-255) of the controllers general purpose I/O to either
 true or false. The function can provide an input to the traffic light
@@ -3336,7 +3337,7 @@ True: Activate input</p>
 </div></blockquote>
 </section>
 <section id="m0007-activate-fixed-time-control">
-<span id="m0007"></span><h3><span class="section-number">2.5.7. </span>M0007 Activate fixed time control<a class="headerlink" href="#m0007-activate-fixed-time-control" title="Link to this heading"></a></h3>
+<span id="m0007"></span><h3><span class="section-number">3.5.7. </span>M0007 Activate fixed time control<a class="headerlink" href="#m0007-activate-fixed-time-control" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.2</span></code></p>
 <p>Deactivates the traffic actuated control using detectors and activates
 pre-timed control. Can be used in case normal detectors can’t be used,
@@ -3353,7 +3354,7 @@ True: Activate fixed time control</p>
 </div></blockquote>
 </section>
 <section id="m0008-force-detector-logic">
-<span id="m0008"></span><h3><span class="section-number">2.5.8. </span>M0008 Force detector logic<a class="headerlink" href="#m0008-force-detector-logic" title="Link to this heading"></a></h3>
+<span id="m0008"></span><h3><span class="section-number">3.5.8. </span>M0008 Force detector logic<a class="headerlink" href="#m0008-force-detector-logic" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.3</span></code></p>
 <p>Force a given detector logic (1-255) to either true or false.</p>
 <p>When ‘status’ is true the detector logic is forced to the state
@@ -3402,7 +3403,7 @@ True: Activate detector logic</p>
 </div></blockquote>
 </section>
 <section id="m0010-reserved">
-<span id="m0010"></span><h3><span class="section-number">2.5.9. </span>M0010 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code><a class="headerlink" href="#m0010-reserved" title="Link to this heading"></a></h3>
+<span id="m0010"></span><h3><span class="section-number">3.5.9. </span>M0010 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code><a class="headerlink" href="#m0010-reserved" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.8</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p>
 <p><strong>Arguments</strong></p>
@@ -3416,7 +3417,7 @@ True: Activate detector logic</p>
 </div></blockquote>
 </section>
 <section id="m0011-reserved">
-<span id="m0011"></span><h3><span class="section-number">2.5.10. </span>M0011 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code><a class="headerlink" href="#m0011-reserved" title="Link to this heading"></a></h3>
+<span id="m0011"></span><h3><span class="section-number">3.5.10. </span>M0011 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code><a class="headerlink" href="#m0011-reserved" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.8</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p>
 <p><strong>Arguments</strong></p>
@@ -3430,7 +3431,7 @@ True: Activate detector logic</p>
 </div></blockquote>
 </section>
 <section id="m0012-reserved">
-<span id="m0012"></span><h3><span class="section-number">2.5.11. </span>M0012 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code><a class="headerlink" href="#m0012-reserved" title="Link to this heading"></a></h3>
+<span id="m0012"></span><h3><span class="section-number">3.5.11. </span>M0012 <code class="docutils literal notranslate"><span class="pre">Reserved</span></code><a class="headerlink" href="#m0012-reserved" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.8</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">Reserved</span></code></p>
 <p><strong>Arguments</strong></p>
@@ -3444,7 +3445,7 @@ True: Activate detector logic</p>
 </div></blockquote>
 </section>
 <section id="m0013-activate-a-series-of-inputs">
-<span id="m0013"></span><h3><span class="section-number">2.5.12. </span>M0013 Activate a series of inputs<a class="headerlink" href="#m0013-activate-a-series-of-inputs" title="Link to this heading"></a></h3>
+<span id="m0013"></span><h3><span class="section-number">3.5.12. </span>M0013 Activate a series of inputs<a class="headerlink" href="#m0013-activate-a-series-of-inputs" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.8</span></code></p>
 <p>Set given inputs (1-255) of the controllers general purpose I/O to
 either true or false. This command was introduced due to coordination
@@ -3492,7 +3493,7 @@ Format: [Offset];[Bits to set];[Bits to unset];…</p>
 </div></blockquote>
 </section>
 <section id="m0014-set-dynamic-bands">
-<span id="m0014"></span><h3><span class="section-number">2.5.13. </span>M0014 Set dynamic bands<a class="headerlink" href="#m0014-set-dynamic-bands" title="Link to this heading"></a></h3>
+<span id="m0014"></span><h3><span class="section-number">3.5.13. </span>M0014 Set dynamic bands<a class="headerlink" href="#m0014-set-dynamic-bands" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Can be used to change between predefined signal timings. Moves the start
 of signal groups in the cycle. This command can be used to change the
@@ -3532,7 +3533,7 @@ dd-ee,dd-ee</p>
 </div></blockquote>
 </section>
 <section id="m0015-set-offset-time">
-<span id="m0015"></span><h3><span class="section-number">2.5.14. </span>M0015 Set Offset time<a class="headerlink" href="#m0015-set-offset-time" title="Link to this heading"></a></h3>
+<span id="m0015"></span><h3><span class="section-number">3.5.14. </span>M0015 Set Offset time<a class="headerlink" href="#m0015-set-offset-time" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Offset time is used to define an offset between intersections in
 coordinated control. It is based on the expected travel time between
@@ -3573,7 +3574,7 @@ for optimal traffic flow. Requires security code 2.</p>
 </div></blockquote>
 </section>
 <section id="m0016-set-week-time-table">
-<span id="m0016"></span><h3><span class="section-number">2.5.15. </span>M0016 Set week time table<a class="headerlink" href="#m0016-set-week-time-table" title="Link to this heading"></a></h3>
+<span id="m0016"></span><h3><span class="section-number">3.5.15. </span>M0016 Set week time table<a class="headerlink" href="#m0016-set-week-time-table" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Set which time table for signal programs to use for each day during a
 week. This command changes the signal timings during the week for
@@ -3605,7 +3606,7 @@ d-t,d-t</p>
 </div></blockquote>
 </section>
 <section id="m0017-set-time-tables">
-<span id="m0017"></span><h3><span class="section-number">2.5.16. </span>M0017 Set time tables<a class="headerlink" href="#m0017-set-time-tables" title="Link to this heading"></a></h3>
+<span id="m0017"></span><h3><span class="section-number">3.5.16. </span>M0017 Set time tables<a class="headerlink" href="#m0017-set-time-tables" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Set time of day for when to automatically switch signal program (time
 plan). This command changes the signal timings according to time of day
@@ -3639,7 +3640,7 @@ t-o-h-m,t-o-h-m</p>
 </div></blockquote>
 </section>
 <section id="m0018-set-cycle-time">
-<span id="m0018"></span><h3><span class="section-number">2.5.17. </span>M0018 Set Cycle time<a class="headerlink" href="#m0018-set-cycle-time" title="Link to this heading"></a></h3>
+<span id="m0018"></span><h3><span class="section-number">3.5.17. </span>M0018 Set Cycle time<a class="headerlink" href="#m0018-set-cycle-time" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Cycle time (or cycle length) is the sum of all phases in a time plan
 (traffic program). This time is fixed when using fixed time control or
@@ -3683,7 +3684,7 @@ with scenario based control. Requires security code 2.</p>
 </div></blockquote>
 </section>
 <section id="m0019-force-input">
-<span id="m0019"></span><h3><span class="section-number">2.5.18. </span>M0019 Force input<a class="headerlink" href="#m0019-force-input" title="Link to this heading"></a></h3>
+<span id="m0019"></span><h3><span class="section-number">3.5.18. </span>M0019 Force input<a class="headerlink" href="#m0019-force-input" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.13</span></code></p>
 <p>Force a given input (1-255) of the controllers general purpose I/O to
 either True or False. Can be used for all types of input where the
@@ -3721,7 +3722,7 @@ True: input forced to True</p>
 </div></blockquote>
 </section>
 <section id="m0020-force-output">
-<span id="m0020"></span><h3><span class="section-number">2.5.19. </span>M0020 Force output<a class="headerlink" href="#m0020-force-output" title="Link to this heading"></a></h3>
+<span id="m0020"></span><h3><span class="section-number">3.5.19. </span>M0020 Force output<a class="headerlink" href="#m0020-force-output" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.15</span></code></p>
 <p>Force a given output (1-255) of the controllers general purpose I/O to
 either True of False. Can be used for all types of output where the
@@ -3760,7 +3761,7 @@ True: output forced on</p>
 </div></blockquote>
 </section>
 <section id="m0021-set-trigger-level-sensitivity-for-loop-detector">
-<span id="m0021"></span><h3><span class="section-number">2.5.20. </span>M0021 Set trigger level sensitivity for loop detector<a class="headerlink" href="#m0021-set-trigger-level-sensitivity-for-loop-detector" title="Link to this heading"></a></h3>
+<span id="m0021"></span><h3><span class="section-number">3.5.20. </span>M0021 Set trigger level sensitivity for loop detector<a class="headerlink" href="#m0021-set-trigger-level-sensitivity-for-loop-detector" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.15</span></code></p>
 <p>The trigger level sensitivity determines at what level a loop detector
 should trigger. If it set too low then then traffic will not be detected
@@ -3780,7 +3781,7 @@ ss=sensitivity value</p>
 </div></blockquote>
 </section>
 <section id="m0022-request-signal-priority">
-<span id="m0022"></span><h3><span class="section-number">2.5.21. </span>M0022 Request Signal Priority<a class="headerlink" href="#m0022-request-signal-priority" title="Link to this heading"></a></h3>
+<span id="m0022"></span><h3><span class="section-number">3.5.21. </span>M0022 Request Signal Priority<a class="headerlink" href="#m0022-request-signal-priority" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code></p>
 <p>Useful for bus priority or other type of priorities like emergency
 vehicles or groups of cyclists.</p>
@@ -4061,7 +4062,7 @@ priority when it’s not needed anymore.</p>
 </div></blockquote>
 </section>
 <section id="m0023-set-timeout-for-dynamic-bands">
-<span id="m0023"></span><h3><span class="section-number">2.5.22. </span>M0023 Set timeout for dynamic bands<a class="headerlink" href="#m0023-set-timeout-for-dynamic-bands" title="Link to this heading"></a></h3>
+<span id="m0023"></span><h3><span class="section-number">3.5.22. </span>M0023 Set timeout for dynamic bands<a class="headerlink" href="#m0023-set-timeout-for-dynamic-bands" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.1.0</span></code></p>
 <p>Switch to a designated time plan if this timeout is reached due to lost
 connection with the supervisor. Disable by setting timeout to ‘0’. Used
@@ -4087,7 +4088,7 @@ in conjunction with dynamic bands, M0014 Requires security code 2.</p>
 </div></blockquote>
 </section>
 <section id="m0024-clear-all-alarms">
-<span id="m0024"></span><h3><span class="section-number">2.5.23. </span>M0024 Clear all alarms<a class="headerlink" href="#m0024-clear-all-alarms" title="Link to this heading"></a></h3>
+<span id="m0024"></span><h3><span class="section-number">3.5.23. </span>M0024 Clear all alarms<a class="headerlink" href="#m0024-clear-all-alarms" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.3.0</span></code></p>
 <p>Clear all active alarms in the traffic light controller. If the cause of
 an alarm is still present, the alarm will be reactivated again.</p>
@@ -4098,7 +4099,7 @@ an alarm is still present, the alarm will be reactivated again.</p>
 </div></blockquote>
 </section>
 <section id="m0103-set-security-code">
-<span id="m0103"></span><h3><span class="section-number">2.5.24. </span>M0103 Set security code<a class="headerlink" href="#m0103-set-security-code" title="Link to this heading"></a></h3>
+<span id="m0103"></span><h3><span class="section-number">3.5.24. </span>M0103 Set security code<a class="headerlink" href="#m0103-set-security-code" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>Change the security code to use when sending commands Security codes are
 used as an extra layer of security in many commands. They need to match
@@ -4133,7 +4134,7 @@ for the commands to be executed.</p>
 </div></blockquote>
 </section>
 <section id="m0104-set-clock">
-<span id="m0104"></span><h3><span class="section-number">2.5.25. </span>M0104 Set clock<a class="headerlink" href="#m0104-set-clock" title="Link to this heading"></a></h3>
+<span id="m0104"></span><h3><span class="section-number">3.5.25. </span>M0104 Set clock<a class="headerlink" href="#m0104-set-clock" title="Link to this heading"></a></h3>
 <p>Available from SXL version: <code class="docutils literal notranslate"><span class="pre">1.0.1</span></code></p>
 <p>This command will be removed in an upcoming version. You should instead
 use automatic time synchronization using e.g. using NTP or GPS.</p>
@@ -4240,8 +4241,8 @@ normal response, but is otherwise ignored and does not set the clock.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="definitions.html" class="btn btn-neutral float-left" title="1. Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="signal_group_status.html" class="btn btn-neutral float-right" title="3. Signal Group status" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="definitions.html" class="btn btn-neutral float-left" title="2. Definitions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="signal_group_status.html" class="btn btn-neutral float-right" title="4. Signal Group status" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
