@@ -88,7 +88,7 @@ This document contains examples for all message types.
 + `M0011 Stop of signal group`_
 + `M0012 Request start or stop of a series of signal groups`_
 + `M0013 Activate a series of inputs`_
-+ `M0014 Set command table`_
++ `M0014 Set dynamic bands`_
 + `M0015 Set offset time`_
 + `M0016 Set week time table`_
 + `M0017 Set time tables`_
@@ -3857,7 +3857,7 @@ M0013 Activate a series of inputs
    }
 
    
-M0014 Set command table
+M0014 Set dynamic bands
 ~~~~~~~~~~~~~~~~~~~~~~~
    
 **Command Request**
@@ -3880,7 +3880,7 @@ M0014 Set command table
    		"cCI":"M0014",
    		"n":"status",
    		"cO":"setCommands",
-   		"v":"01-01,02-02"
+                "v":"1-12,3-5"
    	},{
    		"cCI":"M0014",
    		"n":"securityCode",
@@ -3910,7 +3910,7 @@ M0014 Set command table
    	},{
    		"cCI":"M0014",
    		"n":"status",
-   		"v":"01-01,02-02",
+                "v":"1-12,3-5",
    		"age":"recent"
    	},{
    		"cCI":"M0014",
