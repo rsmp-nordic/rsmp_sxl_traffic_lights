@@ -6,7 +6,7 @@ General concepts
 Coordination between Traffic Light Controllers (TLC) implies that several
 intersections are controlled together in a coordinated control mode at
 local or central level. Regardless of operational mode, prerequisites
-are - among other things, that TLC:s must use the same time plan and must
+are - among other things, that TLCs must use the same time plan and must
 be in synchronous operation. 
 
 Local coordination can be applied in minor systems (up to 4
@@ -23,8 +23,8 @@ smaller degree of traffic adaption should be allowed, however, only
 within the framework of the fixed and given cycle time.
 
 The two coordination levels should be possible to combine. During peak
-hours should e.g. the entire traffic signal area be coordinated at
-central level while a split in locally coordinated sub areas should be
+hours, for example, the entire traffic signal area should be coordinated at
+central level while a split into locally coordinated sub-areas should be
 possible during normal off-peak hours.
 
 .. figure:: /img/svg/types_of_coordination.png
@@ -34,9 +34,9 @@ possible during normal off-peak hours.
    Types of coordination
 
 Since there are variants of coordination which are not strictly
-centralized but still uses the same principles of communication, the
+centralized but still use the same principles of communication, the
 term *coordination with synchronized cycle counter* is used rather than
-*central coordination* here on after.
+*central coordination* hereinafter.
 
 .. figure:: /img/svg/coordination.png
    :align: center
@@ -46,18 +46,18 @@ term *coordination with synchronized cycle counter* is used rather than
 
 Coordination type "Local coordination"
 --------------------------------------
-Local coordination is achieved by supplementing the TLC:s control bits
+Local coordination is achieved by supplementing the TLCs' control bits
 of the signal groups with special control bits from signal group(s) in
 another intersection.
 
 This can be achieved with the following status modes:
 
-- “Front edge of green wave”, which is normally sent when conflicting
+- “Front edge of green wave”, which is normally sent when a conflicting
   signal group in downstream traffic lights turns yellow
 - “Rear edge of green wave”, which is normally sent when demand for
   green ends or yellow is sent to downstream TLC.
 
-Front edge of green wave normally prevents signal groups in other TLC:s
+Front edge of green wave normally prevents signal groups in other TLCs
 to start and rear edge of green wave normally extends signal groups in
 green, normally when demand for green ends, or yellow.  
 
@@ -95,14 +95,14 @@ Coordination should be achieved by exchanging the normal start bits
 against special control bits which should be possible to send per one
 second steps.
 
-If control bits to the local TLC is missing for 120 seconds, the TLC
-should automatically revert to a predetermined back up or safety mode.
-If/when the control bits returns, the TLC should automatically return to
+If control bits to the local TLC are missing for 120 seconds, the TLC
+should automatically revert to a predetermined backup or safety mode.
+If/when the control bits return, the TLC should automatically return to
 coordination.
 
 The control bits, arranged and time distributed within the framework of
 the cycle of the time plan, should give the coordinated installation a
-certain signal group sequence, split and offset between TLC'S. 
+certain signal group sequence, split and offset between TLCs. 
  
 The control bits should be possible to use internally in a TLC or be
 possible to send externally to another TLC which consequently also
@@ -123,26 +123,26 @@ situation, initialization and clock sync needs to be sent and received.
 In addition to the control bits in the previous paragraph, start bits
 and stop bits must be sent and received. 
 
-TLC:s should also be able to receive external start/stop bits. If the
+TLCs should also be able to receive external start/stop bits. If the
 active time plan is controlled by the other TLC, it must also be able
-to receive subscription/request of e. g traffic data, detector logic
-and signal groups status etc. 
+to receive subscription/request of e.g. traffic data, detector logic
+and signal group status etc. 
 
 General RSMP requirements
 -------------------------
-Communication must be established directly between TLC:s. This demands
+Communication must be established directly between TLCs. This demands
 the following general requirements:
 
 - The TLC needs to support communication between sites according to section
   `4.3 Transport of data`_ in the RSMP specification
 
-- In every TLC, it must be possible to connect to other TLC:s and to
-  receive connections from other TLC:s (client-server).
+- In every TLC, it must be possible to connect to other TLCs and to
+  receive connections from other TLCs (client-server).
 
 - The TLC must have a list with every connected and communicating TLC
   with editable communication parameters for each individual unit.
 
-- The mentioned list above includes IP-addresses and signal exchange
+- The mentioned list above includes IP addresses and signal exchange
   lists for every connected TLC. 
 
 - The TLC must be configurable with signal exchange lists for every TLC
@@ -153,19 +153,19 @@ the following general requirements:
   **siteId**, **component-id**, etc.
 
 - The TLC must be able to communicate with the supervision system at the
-  same as communicating between TLC:s.
+  same time as communicating between TLCs.
 
 ..  _4.3 Transport of data:  https://rsmp-nordic.github.io/rsmp_specifications/core/3.2.1/applicability/transport_of_data.html
 
 Functional requirements of the TLC
 ----------------------------------
-To establish coordination, it is required that both TLC:s use suitable
+To establish coordination, it is required that both TLCs use suitable
 time plan/traffic situation and synchronize their cycle timers.
 
-- It must be possible to configure TLC:s as leader/follower
+- It must be possible to configure TLCs as leader/follower
 
 - One leader TLC should be able to communicate with up to 20 follower
-  TLC:s.
+  TLCs.
 
 The following input/output is needed
 
@@ -240,12 +240,12 @@ field is empty for this reason.
 
 Communication establishment
 ---------------------------
-Follower TLC's acts server and waits for a leader TLC to connect.
+Follower TLCs act as servers and wait for a leader TLC to connect.
 Should communication fail, it is the responsibility of the leader
 TLC to connect again.
 
-When the leader TLC has connected, messages between the TLC's are
-sent according the initialization sequence.
+When the leader TLC has connected, messages between the TLCs are
+sent according to the initialization sequence.
 
 Communication is continuously established even if coordination is not
 active.
@@ -261,9 +261,9 @@ Initialization sequence for local coordination
 2. Leader switches to coordinated time plan in its own TLC.
 3. Leader sends command to all followers to switch to coordinated time
    plan.
-4. Leader waits at own synchronisation step until synchronisation
+4. Leader waits at own synchronization step until synchronization
    step is active in all followers. Leader must subscribe to
-   S0004 *Synchronisation step* in all followers to verify this.
+   S0004 *Synchronization step* in all followers to verify this.
 5. Leader activates input (S0013) *coordination can continue*
    in all followers about continued coordination.
 6. Coordination active. Leader continuously checks that coordination
@@ -289,16 +289,16 @@ Initialization sequence for coordination with synchronized cycle counter
    can’t activate coordination.
 2. Leader switches to coordinated time plan in its own TLC.
 3. Leader sends command to all followers to switch to coordinated time
-   plan. Followers switch time plan when their cycle counters reaches
+   plan. Followers switch time plan when their cycle counters reach
    zero.
 4. Leader sends synchronization pulse when its base cycle counter
    reaches zero. Synchronization pulse means that the cycle counter
-   should be set to zero. Followers adds any configured offset time on
+   should be set to zero. Followers add any configured offset time on
    their own.
 5. Coordination active. Leader continuously checks that coordination
    still is possible in all followers (see step 1) through subscription
    on output (S0004) *coordination is possible*. Coordination is
-   terminated if output (S0004) *coordination is possible* turns false is
+   terminated if output (S0004) *coordination is possible* turns false in
    any follower TLC.
 6. If external control bits are used: Leader sends START/STOP order to
    followers during each cycle
@@ -333,8 +333,8 @@ StatusResponse) needs to be sent because no command is executed.
 A command should be acknowledged when received using CommandResponse,
 but for certain commands this is no guarantee that the command really
 is executed. To confirm command execution, Leader TLC needs to
-subscribe to corresponding statuses and check whether expected statues
-changes according to command.
+subscribe to corresponding statuses and check whether expected statuses
+change according to command.
 
 MessageNotAck terminates coordination, but communication continues
 to be active. 
@@ -346,7 +346,7 @@ A0005 must continuously be activated in the TLC.
   try to send the same command multiple times as an effect of
   MessageNotAck with the intention of later succeeding with the command.
 
-- Alarm is activated in both of the TLC:s sending MessageNotAck
+- Alarm is activated in both of the TLCs sending MessageNotAck
   as well as the TLC the message.
 
 - Alarm A0005 is sent to the supervision system.
