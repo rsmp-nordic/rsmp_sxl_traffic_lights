@@ -2284,6 +2284,7 @@ objects:
               False: Release detector logic, 'mode' is ignored.
               True: Force detector logic to the value in 'mode'.
           duration:
+            optional: true
             type: integer_as_string
             description: |-
               If set, automatically release after this number of

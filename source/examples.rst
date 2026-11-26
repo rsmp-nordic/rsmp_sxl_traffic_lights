@@ -3574,7 +3574,10 @@ M0007 Activate fixed time control
    
 M0008 Force detector logic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-   
+
+This request forces the detector on for 1000 milliseconds. Omit ``duration``
+or set it to ``"0"`` to keep the detector forced until explicitly released.
+
 **Command Request**
 
 .. code-block:: json

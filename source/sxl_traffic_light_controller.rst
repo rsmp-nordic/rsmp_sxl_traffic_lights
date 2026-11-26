@@ -2816,7 +2816,7 @@ Requires security code 2
 
 **duration** ``integer_as_string``
 
-    If set, automatically release after this number of |br|
+    (Optional) If set, automatically release after this number of |br|
     milliseconds. Ignored if 'status' is false. |br|
     Setting to zero is the same as leaving out, and means |br|
     no automatic release will happen.
